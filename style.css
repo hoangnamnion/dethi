@@ -73,8 +73,14 @@ body {
 
 /* Khung đặc (Thi & Ôn tập) */
 .app-full {
-    width: 100%; max-width: 800px; height: 95vh; 
-    background: white; border-radius: 16px; 
+    width: 100%; 
+    max-width: 800px; 
+    
+    /* --- SỬA DÒNG NÀY --- */
+    height: 100dvh; /* Thay 95vh thành 100dvh (Để nó tự co lại khi có thanh địa chỉ) */
+    
+    background: white; 
+    border-radius: 16px; 
     box-shadow: var(--card-shadow);
     display: flex; flex-direction: column; 
     overflow: hidden; position: relative;
