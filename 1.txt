@@ -3,12 +3,13 @@ Câu 0. Quyết Tâm làm Hết Không Mà Vào Đây [IMG:logo.jpg]
 *A. Có
 B. Không 
 
-Câu 1. Trong Microsoft Excel, một tệp tin được gọi là gì? 
+Phần 1. Excel
+Câu 1. Trong Microsoft Excel, một tệp tin được gọi là gì?
 A. Một tài liệu văn bản (Document).
 *B. Một sổ làm việc (Workbook).
 C. Một bài trình chiếu (Presentation).
 D. Một cơ sở dữ liệu (Database).
-Câu 2. Giao điểm của một hàng (Row) và một cột (Column) trong Excel được gọi là gì? 
+Câu 2. Giao điểm của một hàng (Row) và một cột (Column) trong Excel được gọi là gì?
 A. Range (Vùng).
 *B. Cell (Ô).
 C. Address (Địa chỉ).
@@ -136,7 +137,7 @@ D. Một chuỗi văn bản “TODAY”.
 Câu 27. Chức năng “Text to Columns” (Chuyển văn bản thành cột) trong tab Data dùng để.
 A. Dùng để gộp nội dung từ nhiều cột lại.
 B. Dùng để định dạng kiểu chữ cho cả cột.
-C. Phân tách nội dung của một cột thành nhiều cột.
+*C. Phân tách nội dung của một cột thành nhiều cột.
 D. Dùng để xóa các cột không cần thiết đi.
 Câu 28. Ký hiệu & trong công thức Excel được sử dụng để làm gì?
 A. Dùng để thực hiện phép tính nhân.
