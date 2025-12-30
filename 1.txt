@@ -1,5 +1,5 @@
 Phần 1. Excel
-Câu 1. Trong Microsoft Excel, một tệp tin được gọi là gì?
+Câu 1. Trong Microsoft Excel, một tệp tin được gọi là gì? [IMG:logo.jpg]
 A. Một tài liệu văn bản (Document).
 *B. Một sổ làm việc (Workbook).
 C. Một bài trình chiếu (Presentation).

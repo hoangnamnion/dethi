@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Thông Tin Đề</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container-box">
+        <div style="position: absolute; top: 20px; left: 20px;">
+            <a href="index.html" style="text-decoration: none; font-size: 1.5em;">🔙</a>
+        </div>
+
+        <div class="big-title" id="examName" style="margin-top:20px">Loading...</div>
+        <div class="sub-title">Kết quả lần nộp bài gần nhất</div>
+
+        <div class="score-circle" id="scoreCircle">
+            <div class="score-inner">
+                <div class="score-val" id="scoreDisplay">?</div>
+                <div class="score-lbl">Điểm số</div>
+            </div>
+        </div>
+
+        <div class="action-grid">
+            <a href="#" id="btnStart" class="action-card">
+                <div class="card-icon">📝</div>
+                <div class="card-title">Làm Ngay</div>
+            </a>
+            <a href="#" id="btnReview" class="action-card">
+                <div class="card-icon">📖</div>
+                <div class="card-title">Ôn Tập</div>
+            </a>
+            <a href="https://zalo.me/0378787154" target="_blank" class="action-card">
+                <div class="card-icon">💬</div>
+                <div class="card-title">Tạo File</div>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const fileID = params.get('id');
+        const fileName = params.get('name');
+
+        if (!fileID) window.location.href = "index.html";
+
+        document.getElementById('examName').innerText = fileName || ("Đề số " + fileID);
+        // Gửi kèm cả name sang bên kia
+document.getElementById('btnStart').href = `thi.html?id=${fileID}&name=${encodeURIComponent(fileName)}`;
+        document.getElementById('btnReview').href = `ontap.html?id=${fileID}`;
+
+        // Lấy điểm
+        const savedData = localStorage.getItem('quiz_data_' + fileID);
+        let score = 0;
+        let isSubmitted = false;
+        if (savedData) {
+            const data = JSON.parse(savedData);
+            if (data.isSubmitted) {
+                score = data.score || 0;
+                isSubmitted = true;
+            }
+        }
+
+        if (isSubmitted) {
+            // Animation số nhảy
+            let current = 0;
+            const display = document.getElementById('scoreDisplay');
+            const interval = setInterval(() => {
+                if (current >= score) {
+                    current = score;
+                    clearInterval(interval);
+                } else {
+                    current++;
+                }
+                display.innerText = current;
+            }, 30);
+
+            // Vẽ màu vòng tròn (Tạm tính 1 điểm = 5%)
+            const percent = Math.min(score * 5, 100); 
+            document.getElementById('scoreCircle').style.background = 
+                `conic-gradient(#d63031 ${percent}%, #dfe6e9 ${percent}% 100%)`;
+        } else {
+            document.getElementById('scoreDisplay').innerText = "--";
+            document.getElementById('scoreCircle').style.background = "#dfe6e9";
+        }
+    </script>
+    <script src="tet.js"></script>
+</body>
+</html>

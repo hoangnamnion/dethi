@@ -1,1 +1,64 @@
-Hiện tại ĐANG UPDATE NÀO XONG THÌ BẢO VÀO SAUUUU DEMO VẬY THÔI
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Danh Sách Đề Thi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container-box">
+        <div class="school-logos">
+            <img src="logoutt.png" alt="UTT" class="logo-school">
+            <img src="logobk.png" alt="Bách Khoa" class="logo-school">
+            <img src="logohpc.png" alt="HPC" class="logo-school">
+        </div>
+
+        <div class="big-title">📚 NGÂN HÀNG ĐỀ</div>
+        <div class="sub-title">Chọn đề thi để bắt đầu</div>
+        <div class="grid-menu" id="menuGrid"></div>
+    </div>
+
+    <script>
+        // ==========================================
+        // ⚙️ CÀI ĐẶT DANH SÁCH ĐỀ TẠI ĐÂY
+        // ==========================================
+        const danhSachDeThi = [
+            { file: '1', ten: 'TIN HỌC ĐẠI CƯƠNG' },
+            { file: '2', ten: 'ĐANG UPDATE' },
+        ];
+
+        const menuGrid = document.getElementById('menuGrid');
+        
+        danhSachDeThi.forEach(item => {
+            const btn = document.createElement('div');
+            btn.className = 'menu-btn';
+            
+            // Check điểm cũ
+            const savedData = localStorage.getItem('quiz_data_' + item.file);
+            let badge = '';
+            if (savedData) {
+                const parsed = JSON.parse(savedData);
+                if(parsed.isSubmitted && parsed.score !== undefined) {
+                    badge = `<div class="badge-score">Điểm: ${parsed.score}</div>`;
+                } else if (parsed.history && parsed.history.some(h => h.userSelected !== null)) {
+                    badge = `<div class="badge-score" style="background:#3498db">Đang làm</div>`;
+                }
+            }
+
+            btn.innerHTML = `
+                <div style="font-size:2em; margin-bottom:5px">📁</div> 
+                <div style="font-weight:700; font-size:0.9em">${item.ten}</div> 
+                ${badge}
+            `;
+            
+            btn.onclick = () => {
+                window.location.href = `product.html?id=${item.file}&name=${encodeURIComponent(item.ten)}`;
+            };
+            menuGrid.appendChild(btn);
+        });
+    </script>
+    <script src="tet.js"></script>
+</body>
+</html>
