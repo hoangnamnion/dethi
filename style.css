@@ -189,3 +189,23 @@ body {
 
 @keyframes fadeIn { from {opacity: 0; transform: translateY(10px);} to {opacity: 1; transform: translateY(0);} }
 @keyframes zoomIn { from {transform: scale(0.8); opacity: 0;} to {transform: scale(1); opacity: 1;} }
+/* --- FIX LỖI BỊ CHE NÚT TRÊN ĐIỆN THOẠI --- */
+@media (max-width: 768px) {
+    body {
+        /* Đẩy app lên trên cùng, không căn giữa dọc nữa để tránh bị mất đầu mất đuôi */
+        align-items: flex-start; 
+        background-attachment: fixed; /* Giữ nền không bị trượt */
+    }
+
+    .app-full {
+        height: 100dvh; /* Chiếm full màn hình điện thoại */
+        border-radius: 0; /* Bỏ bo góc cho vừa khít màn hình */
+    }
+
+    .footer {
+        /* Đẩy nút lên cao thêm 20px + khoảng cách an toàn của iPhone (cái thanh ngang đen đen) */
+        padding-bottom: calc(20px + env(safe-area-inset-bottom)); 
+        min-height: 80px; /* Đảm bảo footer đủ cao */
+        align-items: flex-start; /* Căn nút lên trên */
+    }
+}
