@@ -1,3 +1,12 @@
+/* Thêm vào đầu file style.css */
+button, 
+.option-item, 
+.menu-btn, 
+.home-btn, 
+.btn {
+    touch-action: manipulation; /* Thần chú chống zoom khi bấm nhanh */
+    -webkit-tap-highlight-color: transparent; /* Bỏ cái màu xanh xanh nháy lên khi bấm trên iPhone */
+}
 /* --- 1. CẤU HÌNH CƠ BẢN & MÀU SẮC --- */
 :root {
     --primary-color: #6C5CE7; /* Tím hiện đại */
@@ -121,9 +130,27 @@ body {
     z-index: 10;
 }
 
+/* Sửa lại class .home-btn cũ (nếu có) hoặc chép đè */
 .home-btn {
-    font-size: 1.5em; background: none; border: none; cursor: pointer;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex; /* Căn giữa ảnh */
+    align-items: center;
+}
+
+/* Thêm class mới cho tấm ảnh logo */
+.logo-img {
+    height: 40px; /* Chiều cao cố định cho vừa header */
+    width: auto;  /* Chiều rộng tự chỉnh theo tỉ lệ ảnh */
+    object-fit: contain; /* Đảm bảo ảnh không bị méo */
     transition: transform 0.2s;
+}
+
+/* Hiệu ứng khi di chuột vào logo */
+.logo-img:hover {
+    transform: scale(1.1); /* Phóng to nhẹ */
 }
 .home-btn:hover { transform: scale(1.1); }
 
