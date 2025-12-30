@@ -1,2 +1,155 @@
-Câu 1. WEB ĐÃ ĐÓNG CỬA SẼ MỞ RA SAU 2 NGÀY NỮA
+Phần 1. Excel
+Câu 0. Quyết Tâm làm Hết Không Mà Vào Đây [IMG:logo.jpg] 
+*A. Có
+B. Không 
 
+Câu 1. Trong Microsoft Excel, một tệp tin được gọi là gì? 
+A. Một tài liệu văn bản (Document).
+*B. Một sổ làm việc (Workbook).
+C. Một bài trình chiếu (Presentation).
+D. Một cơ sở dữ liệu (Database).
+Câu 2. Giao điểm của một hàng (Row) và một cột (Column) trong Excel được gọi là gì? 
+A. Range (Vùng).
+*B. Cell (Ô).
+C. Address (Địa chỉ).
+D. Formula (Công thức).
+Câu 3. Địa chỉ ô C5 trong Excel có nghĩa là.
+A. Ô nằm tại cột 5, hàng C
+B. Ô thứ C trong hàng có số 5
+C. Ô thứ 5 trong cột có tên C
+*D. Ô nằm tại cột C, hàng 5.
+Câu 4. Để bắt đầu nhập một công thức vào ô trong Excel, ký tự đầu tiên phải là.
+A. Dấu sao (*).
+B. Dấu thăng (#).
+*C. Dấu bằng (=).
+D. Dấu chấm hỏi (?).
+Câu 5. Hàm nào sau đây dùng để tính tổng các giá trị trong một dãy ô?
+*A. SUM.
+B. AVERAGE.
+C. MAX.
+D. COUNT.
+Câu 6. Để tìm giá trị lớn nhất trong các ô từ A1 đến A10, bạn sử dụng công thức nào?
+A. =MIN(A1.A10).
+B. =AVERAGE(A1.A10).
+*C. =MAX(A1.A10).
+D. =TOTAL(A1.A10).
+Câu 7. Địa chỉ $4 trong một công thức Excel là một ví dụ về.
+A. Một địa chỉ tương đối.
+B. Một địa chỉ không hợp lệ.
+C. Một địa chỉ hỗn hợp.
+*D. Một địa chỉ tuyệt đối.
+Câu 8. Khi sao chép công thức =A1+B1 từ ô C1 sang ô C2, công thức tại ô C2 sẽ là.
+*A. =A2+B2.
+B. =A1+B1.
+C. =A1+B2.
+D. =A2+B1.
+Câu 9. Hàm AVERAGE(B2.B6) trong Excel thực hiện chức năng gì?
+*A. Tính giá trị trung bình cộng của vùng B2.B6.
+B. Tính tổng các giá trị trong vùng từ B2 đến B6.
+C. Đếm số lượng ô có dữ liệu trong vùng B2.B6.
+D. Tìm ra giá trị nhỏ nhất trong vùng từ B2 đến B6.
+Câu 10. Thanh công cụ nào hiển thị nội dung hoặc công thức của ô đang được chọn?
+A. Thanh công cụ Ribbon.
+B. Thanh trạng thái (Status Bar).
+*C. Thanh công thức (Formula Bar).
+D. Hộp tên ô (Name Box).
+Câu 11. Để sắp xếp dữ liệu trong một bảng tính, bạn thường sử dụng các lệnh trong tab nào?
+A. Home.
+B. Insert.
+*C. Data.
+D. View.
+Câu 12. Chức năng “Filter” (Lọc) trong Excel cho phép bạn làm gì?
+A. Dùng để định dạng dữ liệu có trong bảng.
+*B. Hiển thị các hàng thỏa mãn điều kiện lọc.
+C. Dùng để tạo biểu đồ từ các dữ liệu đã chọn.
+D. Dùng để kiểm tra lỗi chính tả trong các ô.
+Câu 13. Phần mở rộng tập tin mặc định của một Workbook Excel (phiên bản mới) là gì?
+A. .doc.
+B. .txt.
+C. .pptx.
+*D. .xlsx.
+Câu 14. Để chèn một biểu đồ (Chart) vào bảng tính, bạn chọn tab nào?
+A. Home.
+*B. Insert.
+C. Formulas.
+D. Page Layout.
+Câu 15. Hàm IF(logical_test, value_if_true, value_if_false) dùng để.
+A. Dùng để tính tổng các giá trị có điều kiện.
+B. Dùng để đếm số ô thỏa mãn một điều kiện.
+*C. Kiểm tra điều kiện và trả về một trong hai giá trị.
+D. Dùng để tìm kiếm một giá trị trong bảng dữ liệu.
+Câu 16. Để định dạng số trong ô (ví dụ. tiền tệ, phần trăm), bạn sử dụng nhóm công cụ “Number” của tab nào?
+*A. Home.
+B. Insert.
+C. Data.
+D. Formulas.
+Câu 17. Chức năng “Freeze Panes” (Cố định khung) trong tab View dùng để làm gì?
+*A. Giữ cố định hàng/cột khi cuộn trang tính.
+B. Dùng để khóa toàn bộ trang tính đang mở.
+C. Dùng để chia trang tính thành nhiều cửa sổ.
+D. Dùng để ẩn các hàng và cột không cần thiết.
+Câu 18. Hàm COUNT(D1.D10) sẽ trả về.
+A. Tính tổng các giá trị số trong vùng D1.D10.
+B. Đếm số lượng tất cả các ô không rỗng.
+*C. Đếm số lượng ô có chứa dữ liệu kiểu số.
+D. Đếm số lượng các ô rỗng trong vùng D1.D10.
+Câu 19. Để gộp nhiều ô thành một ô lớn hơn, bạn sử dụng lệnh nào trong nhóm “Alignment” của tab Home?
+*A. Merge & Center.
+B. Wrap Text.
+C. Format Painter.
+D. Conditional Formatting.
+Câu 20. Lỗi #NAME? trong Excel xuất hiện khi nào?
+*A. Khi tên hàm hoặc tên vùng trong công thức bị sai.
+B. Khi công thức thực hiện một phép chia cho số 0.
+C. Khi giá trị sử dụng trong công thức không hợp lệ.
+D. Khi ô được tham chiếu trong công thức không tồn tại.
+Câu 21. Muốn thay đổi hướng giấy (Orientation) từ dọc sang ngang khi in, bạn vào tab nào?
+A. Home.
+B. Insert.
+*C. Page Layout.
+D. View.
+Câu 22. Chức năng “Conditional Formatting” (Định dạng theo điều kiện) cho phép bạn.
+A. Dùng để tạo ra các công thức tính toán phức tạp.
+B. Dùng để lọc dữ liệu với các tiêu chí nâng cao.
+C. Dùng để chèn các đối tượng đồ họa vào trang tính.
+*D. Tự động thay đổi định dạng của ô theo điều kiện.
+Câu 23. Phím tắt để lưu Workbook hiện tại trong Excel là gì?
+A. Ctrl + N.
+*B. Ctrl + S.
+C. Ctrl + O.
+D. Ctrl + P.
+Câu 24. Nếu ô A1 chứa 5 và ô B1 chứa 10, công thức =SUM(A1,B12) sẽ cho kết quả là.
+A. 25, vì 5 + (102).
+B. 30, vì (5+10)*2.
+*C. 15, vì chỉ tính 5+10.
+D. Lỗi, vì thiếu dấu ngoặc.
+Câu 25. Để hiển thị các đường lưới (Gridlines) khi in bảng tính, bạn cần thiết lập trong.
+A. Trong tab View, tại nhóm công cụ Show.
+B. Trong tab Home, tại nhóm công cụ Cells.
+C. Trong tab File, mục Print, rồi đến Page Setup.
+*D. Trong tab Page Layout, tại nhóm Sheet Options.
+Câu 26. Hàm TODAY() trong Excel trả về giá trị gì?
+A. Ngày và giờ hiện tại.
+*B. Chỉ ngày hiện tại.
+C. Chỉ giờ hiện tại.
+D. Một chuỗi văn bản “TODAY”.
+Câu 27. Chức năng “Text to Columns” (Chuyển văn bản thành cột) trong tab Data dùng để.
+A. Dùng để gộp nội dung từ nhiều cột lại.
+B. Dùng để định dạng kiểu chữ cho cả cột.
+C. Phân tách nội dung của một cột thành nhiều cột.
+D. Dùng để xóa các cột không cần thiết đi.
+Câu 28. Ký hiệu & trong công thức Excel được sử dụng để làm gì?
+A. Dùng để thực hiện phép tính nhân.
+B. Dùng để thực hiện phép tính chia.
+*C. Dùng để nối các chuỗi văn bản lại với nhau.
+D. Dùng để so sánh sự bằng nhau.
+Câu 29. Để chọn toàn bộ một cột trong Excel, bạn nhấp chuột vào đâu?
+*A. Vào tiêu đề của cột đó (A, B, C,…).
+B. Vào ô đầu tiên của cột đó.
+C. Vào ô cuối cùng của cột đó.
+D. Vào số thứ tự của hàng đầu tiên.
+Câu 30. Hàm ROUND(number, num_digits) trong Excel dùng để làm gì?
+A. Dùng để tính căn bậc hai của một số.
+B. Dùng để tìm phần dư của một phép chia.
+C. Dùng để chuyển đổi một số thành dạng văn bản.
+*D. Dùng để làm tròn một số đến số thập phân xác định.
