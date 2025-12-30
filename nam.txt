@@ -1,10 +1,14 @@
 Phần 1. Excel
-Câu 1. Trong Microsoft Excel, một tệp tin được gọi là gì?
+Câu 0. Quyết Tâm làm Hết Không Mà Vào Đây [IMG:logo.jpg] 
+A. Có
+B. Không 
+
+Câu 1. Trong Microsoft Excel, một tệp tin được gọi là gì? [IMG:logo.jpg]
 A. Một tài liệu văn bản (Document).
 *B. Một sổ làm việc (Workbook).
 C. Một bài trình chiếu (Presentation).
 D. Một cơ sở dữ liệu (Database).
-Câu 2. Giao điểm của một hàng (Row) và một cột (Column) trong Excel được gọi là gì?
+Câu 2. Giao điểm của một hàng (Row) và một cột (Column) trong Excel được gọi là gì? 
 A. Range (Vùng).
 *B. Cell (Ô).
 C. Address (Địa chỉ).
@@ -1470,6 +1474,9 @@ A. Làm robot hình người
 C. Tạo giao diện thông minh
 D. Xây mạng tốc độ cao
 
+Câu 31. CAO VĂN NAM CÓ TUYỆT VỜI KHÔNG Ạ [IMG:logo.jpg] 
+A.CŨNG BÌNH THƯỜNG
+*B.TUYỆT VỜI VÃI CẢ NHO
 
 
 
