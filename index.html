@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Trắc Nghiệm Pro</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="menu-container" id="menuScreen">
+        <div class="menu-title">📚 Ngân Hàng Đề Thi</div>
+        <div class="grid-menu" id="menuGrid">
+            </div>
+    </div>
+
+    <div class="app-container" id="quizScreen">
+        <div class="header">
+            <div class="header-left">
+                <button class="home-btn" onclick="backToMenu()" title="Về danh sách đề">🏠</button>
+                <div class="section-title" id="sectionTitle">Loading...</div>
+            </div>
+            <div class="header-right">
+                <button class="reset-btn" onclick="resetExam()" title="Xóa kết quả làm lại">🔄 Làm lại</button>
+                <div class="score-badge" id="scoreBadge">0</div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div id="loading" style="display:none;">
+                <p>Đang tải dữ liệu...</p>
+            </div>
+            
+            <div id="quizArea" style="display: none;">
+                <div class="question-number" id="qNumber">Câu 0/0</div>
+                <div class="question-text" id="qText">Nội dung câu hỏi...</div>
+                <div class="options-grid" id="optionsArea"></div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <button class="btn btn-list" onclick="toggleModal()">☰</button>
+            <button class="btn btn-nav" id="btnPrev" onclick="changeQuestion(-1)">❮ Trước</button>
+            <button class="btn btn-nav" id="btnNext" onclick="changeQuestion(1)">Tiếp ❯</button>
+        </div>
+
+        <div class="modal" id="modalList">
+            <div class="modal-header">
+                <h3 style="margin:0">Danh sách câu hỏi</h3>
+                <button class="btn" onclick="toggleModal()" style="background:transparent; color:red; font-size:1.2em; padding:0;">✕</button>
+            </div>
+            <div class="modal-content">
+                <div class="grid-map" id="gridMap"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

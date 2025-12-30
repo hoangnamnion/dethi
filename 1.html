@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bài Trắc Nghiệm Có Âm Thanh</title>
+</head>
+<body>
+  <h1>Bài Trắc Nghiệm</h1>
+
+  <p>Câu 1: 2 + 2 = ?</p>
+  <button onclick="checkAnswer(this, true)">4</button>
+  <button onclick="checkAnswer(this, false)">5</button>
+  <button onclick="checkAnswer(this, false)">3</button>
+
+  <p>Câu 2: Thủ đô của Việt Nam là ?</p>
+  <button onclick="checkAnswer(this, false)">Hồ Chí Minh</button>
+  <button onclick="checkAnswer(this, true)">Hà Nội</button>
+  <button onclick="checkAnswer(this, false)">Đà Nẵng</button>
+
+  <!-- Âm thanh -->
+  <audio id="correctSound" src="correct.mp3"></audio>
+  <audio id="wrongSound" src="wrong.mp3"></audio>
+
+  <script>
+    function checkAnswer(button, isCorrect) {
+      if (isCorrect) {
+        document.getElementById('correctSound').play();
+        button.style.backgroundColor = "lightgreen";
+      } else {
+        document.getElementById('wrongSound').play();
+        button.style.backgroundColor = "lightcoral";
+      }
+    }
+  </script>
+</body>
+</html>
