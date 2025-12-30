@@ -189,23 +189,28 @@ body {
 
 @keyframes fadeIn { from {opacity: 0; transform: translateY(10px);} to {opacity: 1; transform: translateY(0);} }
 @keyframes zoomIn { from {transform: scale(0.8); opacity: 0;} to {transform: scale(1); opacity: 1;} }
-/* --- FIX LỖI BỊ CHE NÚT TRÊN ĐIỆN THOẠI --- */
+/* --- FIX LỖI HIỂN THỊ TRÊN ĐIỆN THOẠI (BẢN FINAL) --- */
 @media (max-width: 768px) {
     body {
-        /* Đẩy app lên trên cùng, không căn giữa dọc nữa để tránh bị mất đầu mất đuôi */
+        /* Vẫn giữ flex-start để trang Thi không bị lỗi */
         align-items: flex-start; 
-        background-attachment: fixed; /* Giữ nền không bị trượt */
+        background-attachment: fixed;
     }
 
+    /* --- THÊM DÒNG NÀY ĐỂ MENU VỀ GIỮA --- */
+    .container-box {
+        margin: auto; /* Tự động căn giữa màn hình */
+    }
+
+    /* Cấu hình cho trang Thi (giữ nguyên) */
     .app-full {
-        height: 100dvh; /* Chiếm full màn hình điện thoại */
-        border-radius: 0; /* Bỏ bo góc cho vừa khít màn hình */
+        height: 100dvh; 
+        border-radius: 0; 
     }
 
     .footer {
-        /* Đẩy nút lên cao thêm 20px + khoảng cách an toàn của iPhone (cái thanh ngang đen đen) */
         padding-bottom: calc(20px + env(safe-area-inset-bottom)); 
-        min-height: 80px; /* Đảm bảo footer đủ cao */
-        align-items: flex-start; /* Căn nút lên trên */
+        min-height: 80px; 
+        align-items: flex-start; 
     }
 }
