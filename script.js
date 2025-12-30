@@ -232,6 +232,5 @@ function toggleModal() {
     }
 
 }
-window.onblur = function() {
-    alert("Cảnh báo: Bạn vừa rời khỏi trang thi! Tập Trung mà ôn thi đi tắt mesenger với tiktok đi ạ .");
-};
+
+
