@@ -1,0 +1,155 @@
+Câu 0. Quyết Tâm làm Hết Không Mà Vào Đây [IMG:logo.jpg] 
+*A. Có
+B. Không 
+
+Phần 4. Tin học đại cương
+Câu 1. Hệ đếm nào được máy tính sử dụng làm cơ sở để biểu diễn thông tin?
+A. Hệ thập phân (Decimal)
+*B. Hệ nhị phân (Binary)
+C. Hệ thập lục phân (Hexadecimal)
+D. Hệ bát phân (Octal)
+Câu 2. Thành phần nào của máy tính thực hiện các phép tính số học và logic?
+*A. Bộ xử lý trung tâm (CPU)
+B. Bộ nhớ trong (RAM)
+C. Bộ nhớ ngoài (Ổ cứng)
+D. Bo mạch chủ (Mainboard)
+Câu 3. Phần mềm nào chịu trách nhiệm quản lý và điều phối toàn bộ hoạt động của máy tính?
+A. Phần mềm ứng dụng
+*B. Hệ điều hành
+C. Phần mềm tiện ích
+D. Trình điều khiển thiết bị
+Câu 4. Thiết bị nào sau đây là một thiết bị lưu trữ quang học?
+A. Ổ đĩa cứng (HDD)
+B. Thẻ nhớ SD
+*C. Đĩa CD-ROM
+D. USB Flash Drive
+Câu 5. Trong kiến trúc máy tính Von Neumann, chương trình và dữ liệu được lưu trữ ở đâu khi đang thực thi?
+A. Chỉ ở trong bộ xử lý trung tâm CPU
+B. Ở trong bộ nhớ chỉ đọc của máy (ROM)
+C. Chỉ ở trong bộ nhớ ngoài như ổ cứng
+*D. Ở trong bộ nhớ chính của máy (RAM)
+Câu 6. “Mạng của các mạng” là thuật ngữ dùng để chỉ?
+A. Mạng LAN
+B. Mạng WAN
+*C. Internet
+D. Mạng MAN
+Câu 7. Giao thức nào là cơ bản để truyền tải siêu văn bản trên World Wide Web?
+A. Giao thức truyền tải tập tin FTP
+B. Giao thức gửi thư điện tử SMTP
+*C. Giao thức siêu văn bản HTTP
+D. Giao thức truyền vận TCP và IP
+Câu 8. Một chương trình máy tính được viết bằng ngôn ngữ lập trình bậc cao cần phải được làm gì trước khi CPU có thể thực thi?
+*A. Biên dịch hoặc thông dịch sang mã máy
+B. Được nén lại để giảm bớt dung lượng
+C. Được mã hóa để tăng cường bảo mật
+D. Được lưu trữ vào bộ nhớ chỉ đọc ROM
+Câu 9. Đâu là một ví dụ về mã độc (malware)?
+A. Hệ điều hành Windows
+B. Trình duyệt Google Chrome
+C. Phần mềm Microsoft Office
+*D. Virus máy tính
+Câu 10. Tốc độ của CPU thường được đo bằng đơn vị nào?
+A. Bytes per second (Bps)
+*B. Gigahertz (GHz)
+C. Dots per inch (DPI)
+D. Megabytes (MB)
+Câu 11. Chức năng chính của bộ nhớ Cache trong CPU là gì?
+*A. Tăng tốc truy xuất dữ liệu dùng thường xuyên
+B. Dùng để lưu trữ hệ điều hành của máy
+C. Dùng để lưu trữ dữ liệu vĩnh viễn
+D. Dùng để kết nối các thành phần phần cứng
+Câu 12. Địa chỉ nào được sử dụng để xác định duy nhất một máy tính trên mạng Internet?
+A. Địa chỉ MAC
+*B. Địa chỉ IP
+C. Tên miền
+D. Địa chỉ cổng (Port)
+Câu 13. Trong mô hình client-server, máy khách (client) là gì?
+A. Là máy tính cung cấp các tài nguyên dịch vụ
+B. Là một thiết bị mạng trung gian như router
+C. Là một phần mềm diệt virus trên máy tính
+*D. Là máy tính yêu cầu và sử dụng các dịch vụ
+Câu 14. Ngôn ngữ nào sau đây được coi là ngôn ngữ đánh dấu, dùng để tạo cấu trúc cho trang web?
+A. Ngôn ngữ lập trình Python
+B. Ngôn ngữ lập trình Java
+*C. Ngôn ngữ đánh dấu HTML
+D. Ngôn ngữ lập trình C++
+Câu 15. Khái niệm “Bit” là viết tắt của?
+A. Basic Input Unit
+*B. Binary Digit
+C. Byte Information Transfer
+D. Basic Integer Type
+Câu 16. ROM (Read-Only Memory) chứa thông tin gì quan trọng?
+A. Chứa các dữ liệu cá nhân của người dùng
+*B. Chứa chương trình khởi động máy tính (BIOS)
+C. Chứa các ứng dụng đang chạy trên máy
+D. Chứa các tệp tin tạm thời của hệ thống
+Câu 17. Phần mở rộng tệp tin (ví dụ. .docx, .jpg, .mp3) có ý nghĩa gì?
+A. Cho biết kích thước của tệp tin trên đĩa
+B. Cho biết ngày tháng tạo ra của tệp tin
+*C. Gợi ý về loại dữ liệu và ứng dụng có thể mở tệp
+D. Bảo vệ tệp tin khỏi sự lây nhiễm của virus
+Câu 18. “Sao lưu dữ liệu” (Data Backup) có mục đích chính là gì?
+A. Giúp làm tăng tốc độ xử lý của máy tính
+B. Giúp giải phóng không gian lưu trữ trống
+*C. Phòng ngừa việc mất dữ liệu do các sự cố
+D. Giúp cải thiện hiệu suất kết nối mạng
+Câu 19. Đâu là một lợi ích chính của việc sử dụng điện toán đám mây (Cloud Computing)?
+*A. Truy cập dữ liệu, ứng dụng từ bất cứ đâu có mạng
+B. Không cần có kết nối mạng Internet khi dùng
+C. Tăng cường bảo mật tuyệt đối cho dữ liệu
+D. Giảm hoàn toàn chi phí sử dụng máy tính
+Câu 20. Trong an toàn thông tin, “Phishing” là hình thức tấn công nào?
+A. Hình thức tấn công từ chối dịch vụ (DDoS)
+*B. Hình thức lừa đảo để lấy cắp thông tin nhạy cảm
+C. Hình thức cài đặt phần mềm gián điệp (Spyware)
+D. Hình thức mã hóa dữ liệu đòi tiền chuộc
+Câu 21. Đơn vị đo dung lượng lưu trữ nào lớn nhất trong các lựa chọn sau?
+A. Megabyte (MB)
+B. Gigabyte (GB)
+*C. Terabyte (TB)
+D. Kilobyte (KB)
+Câu 22. “Giao diện người dùng đồ họa” (GUI) cho phép người dùng tương tác với máy tính thông qua?
+A. Chỉ các dòng lệnh văn bản trên màn hình
+B. Các loại sóng âm thanh phát ra từ loa
+C. Các tín hiệu của não bộ con người
+*D. Các biểu tượng, cửa sổ, menu và con trỏ
+Câu 23. Thiết bị nào chuyển đổi tín hiệu số từ máy tính thành tín hiệu analog để truyền qua đường điện thoại?
+*A. Modem (Bộ điều chế)
+B. Router (Bộ định tuyến)
+C. Switch (Bộ chuyển mạch)
+D. Hub (Bộ chia)
+Câu 24. “Mã nguồn mở” (Open Source Software) có đặc điểm gì?
+A. Luôn miễn phí nhưng không được phép sửa đổi
+B. Chỉ có thể chạy được trên hệ điều hành Linux
+*C. Công khai mã nguồn để xem, sửa và phân phối lại
+D. Không cần cài đặt, chạy trực tiếp từ trên web
+Câu 25. Trong lập trình, một biến (variable) dùng để làm gì?
+A. Dùng để thực hiện một hành động cụ thể
+B. Dùng để định nghĩa một cấu trúc dữ liệu
+C. Dùng để biểu diễn một hằng số không đổi
+*D. Lưu trữ một giá trị có thể thay đổi được
+Câu 26. Hệ thống tên miền (DNS – Domain Name System) có chức năng gì?
+*A. Chuyển đổi tên miền thành địa chỉ IP tương ứng
+B. Dùng để mã hóa dữ liệu truyền trên mạng
+C. Dùng để quản lý việc cấp phát các địa chỉ IP
+D. Dùng để lọc các nội dung web độc hại
+Câu 27. Khi nói về độ phân giải màn hình (ví dụ. 1920×1080), các con số này biểu thị điều gì?
+*A. Số lượng điểm ảnh (pixel) theo chiều ngang và dọc
+B. Kích thước vật lý của màn hình tính bằng inch
+C. Tốc độ làm mới của màn hình tính bằng Hertz
+D. Tỷ lệ tương phản sáng tối của màn hình
+Câu 28. Phần mềm nào sau đây thường được sử dụng để tạo các bảng tính và thực hiện tính toán?
+A. Microsoft Word
+B. Microsoft PowerPoint
+C. Adobe Photoshop
+*D. Microsoft Excel
+Câu 29. “Firewall” (Tường lửa) trong mạng máy tính có vai trò gì?
+A. Giúp tăng tốc độ kết nối mạng Internet
+B. Thực hiện sao lưu dữ liệu một cách tự động
+*C. Lọc lưu lượng mạng, chặn truy cập trái phép
+D. Diệt virus và các phần mềm độc hại khác
+Câu 30. Bus hệ thống (System Bus) trong máy tính có chức năng chính là gì?
+*A. Là đường truyền dữ liệu giữa các thành phần chính
+B. Cung cấp nguồn năng lượng cho các thành phần
+C. Là bộ phận làm mát cho bộ xử lý trung tâm
+D. Là nơi lưu trữ chính của hệ điều hành

@@ -1,0 +1,155 @@
+Câu 0. Quyết Tâm làm Hết Không Mà Vào Đây [IMG:logo.jpg] 
+*A. Có
+B. Không 
+
+Phần 2. Word
+Câu 1. Trong Microsoft Word, để tạo một tài liệu mới, bạn chọn lệnh nào trong tab File?
+A. Open.
+*B. New.
+C. Save.
+D. Print.
+Câu 2. Tổ hợp phím nào sau đây dùng để lưu tài liệu hiện tại trong Microsoft Word?
+A. Ctrl + N.
+B. Ctrl + P.
+C. Ctrl + O.
+*D. Ctrl + S.
+Câu 3. Thanh công cụ nào chứa các lệnh thường dùng như Save, Undo, Redo và có thể tùy chỉnh được?
+*A. Ribbon.
+B. Status Bar.
+C. Quick Access Toolbar.
+D. Title Bar.
+Câu 4. Chức năng “Find and Replace” (Tìm kiếm và Thay thế) thường nằm ở tab nào trên thanh Ribbon?
+*A. Home.
+B. Insert.
+C. Design.
+D. Layout.
+Câu 5. Để thay đổi kiểu chữ, cỡ chữ, màu chữ cho một đoạn văn bản, bạn sử dụng các công cụ trong nhóm “Font” của tab nào?
+*A. Home.
+B. View.
+C. Review.
+D. Insert.
+Câu 6. Để căn lề cho đoạn văn bản (trái, phải, giữa, đều hai bên), bạn sử dụng các lệnh trong nhóm “Paragraph” của tab.
+*A. Home.
+B. Page Layout.
+C. References.
+D. Mailings.
+Câu 7. Muốn chèn một bảng (Table) vào văn bản, bạn chọn tab nào?
+A. Home.
+B. Layout.
+C. Design.
+*D. Insert.
+Câu 8. Chức năng “Header and Footer” (Đầu trang và Chân trang) dùng để làm gì?
+A. Tạo một danh sách mục lục tự động.
+B. Thiết lập khổ giấy và lề cho trang.
+C. Kiểm tra các lỗi chính tả và ngữ pháp.
+*D. Chèn nội dung lặp lại ở đầu hoặc cuối trang.
+Câu 9. Để chèn số trang tự động vào tài liệu, bạn vào tab Insert và chọn.
+A. Symbols.
+B. Pictures.
+*C. Page Number.
+D. Text Box.
+Câu 10. Tổ hợp phím Ctrl + X dùng để thực hiện thao tác gì?
+A. Sao chép (Copy).
+B. Hoàn tác (Undo).
+C. Dán (Paste).
+*D. Cắt (Cut).
+Câu 11. Tổ hợp phím Ctrl + V dùng để thực hiện thao tác gì?
+A. Sao chép (Copy).
+B. Cắt (Cut).
+*C. Dán (Paste).
+D. Lưu (Save).
+Câu 12. Để thay đổi hướng trang giấy từ dọc (Portrait) sang ngang (Landscape), bạn vào tab.
+A. Home.
+B. Insert.
+*C. Layout.
+D. View.
+Câu 13. Chức năng “Spelling & Grammar” (Kiểm tra chính tả và ngữ pháp) thường nằm ở tab nào?
+A. Home.
+B. File.
+*C. Review.
+D. View.
+Câu 14. Trong Microsoft Word, để tạo danh sách có đánh số thứ tự (numbered list), bạn sử dụng nút lệnh nào?
+*A. Numbering.
+B. Bullets.
+C. Multilevel List.
+D. Borders.
+Câu 15. Phần mở rộng tập tin mặc định cho tài liệu Microsoft Word (phiên bản mới) là.
+A. .doc.
+*B. .docx.
+C. .txt.
+D. .rtf.
+Câu 16. Để xem tài liệu trước khi in (Print Preview), bạn thường chọn.
+A. Chuyển sang chế độ xem Print Layout.
+*B. Vào mục In (Print) trong thẻ File.
+C. Bật chế độ theo dõi thay đổi (Track Changes).
+D. Sử dụng nhóm lệnh Editing trên thẻ Home.
+Câu 17. Chức năng “Margins” (Lề trang) trong tab Layout dùng để.
+A. Thay đổi màu sắc cho nền trang giấy.
+B. Chia đoạn văn bản thành nhiều cột.
+*C. Thiết lập khoảng cách lề cho trang giấy.
+D. Chèn hình ảnh làm nền cho trang giấy.
+Câu 18. Để chèn một hình ảnh (Picture) từ máy tính vào văn bản, bạn chọn tab Insert rồi chọn.
+*A. Pictures.
+B. Online Pictures.
+C. Shapes.
+D. SmartArt.
+Câu 19. Tổ hợp phím Ctrl + A dùng để làm gì trong văn bản?
+A. Lưu tài liệu hiện tại đang mở.
+B. In tài liệu ra máy in được kết nối.
+*C. Chọn tất cả văn bản trong tài liệu.
+D. Mở một tài liệu hoàn toàn mới.
+Câu 20. Chức năng “Undo” (Hoàn tác), thường được biểu thị bằng mũi tên cong ngược, có tác dụng.
+A. Thực hiện lại thao tác vừa hủy bỏ.
+*B. Hủy bỏ thao tác vừa được thực hiện.
+C. Lưu lại các thay đổi vào trong tập tin.
+D. Xóa đi phần văn bản đang được chọn.
+Câu 21. Để tạo chữ nghiêng (Italic) cho văn bản, bạn có thể sử dụng tổ hợp phím nào?
+*A. Ctrl + I.
+B. Ctrl + B.
+C. Ctrl + U.
+D. Ctrl + L.
+Câu 22. Để tạo chữ gạch chân (Underline) cho văn bản, bạn có thể sử dụng tổ hợp phím nào?
+A. Ctrl + I.
+B. Ctrl + B.
+*C. Ctrl + U.
+D. Ctrl + E.
+Câu 23. Chức năng “Track Changes” (Theo dõi thay đổi) trong tab Review hữu ích khi.
+A. Khi người dùng muốn tạo hiệu ứng chữ.
+B. Khi người dùng muốn tìm kiếm từ khóa.
+C. Khi người dùng muốn chèn thêm biểu đồ.
+*D. Khi cần theo dõi các thay đổi khi sửa tài liệu.
+Câu 24. Muốn chia văn bản thành nhiều cột (Columns), bạn vào tab nào?
+A. Insert.
+B. Design.
+C. View.
+*D. Layout.
+Câu 25. “WordArt” trong tab Insert của Microsoft Word dùng để.
+A. Dùng để chèn bảng biểu vào văn bản.
+B. Dùng để chèn các ký tự đặc biệt.
+C. Dùng để vẽ các hình khối cơ bản.
+*D. Tạo ra các dòng chữ nghệ thuật.
+Câu 26. Để tạo một dòng kẻ ngang nhanh trong Word, bạn có thể gõ ba dấu gạch nối (—) rồi nhấn Enter. Đây là một tính năng của.
+A. Các kiểu định dạng nhanh (Styles).
+*B. Tính năng tự động sửa lỗi (AutoCorrect).
+C. Các mẫu tài liệu có sẵn (Templates).
+D. Tính năng trộn thư hàng loạt (Mail Merge).
+Câu 27. Chức năng “Mail Merge” (Trộn thư) được sử dụng để.
+A. Dùng để gửi email trực tiếp từ Word.
+*B. Tạo tài liệu hàng loạt từ một mẫu và danh sách.
+C. Kiểm tra các lỗi chính tả có trong thư.
+D. Thiết lập định dạng cho một phong bì thư.
+Câu 28. Để ngắt trang hiện tại và bắt đầu một trang mới, bạn có thể sử dụng lệnh “Page Break” trong tab.
+*A. Insert (trong nhóm Pages).
+B. Layout (trong nhóm Page Setup).
+C. Home (trong nhóm Paragraph).
+D. View (trong nhóm Views).
+Câu 29. Trong Microsoft Word, thước kẻ ngang và dọc giúp bạn.
+A. Dùng để kẻ các đường thẳng trong văn bản.
+*B. Hiển thị và điều chỉnh lề, tab và thụt lề.
+C. Dùng để đo chiều dài của một đoạn văn bản.
+D. Dùng để vẽ các hình học phức tạp.
+Câu 30. Chế độ xem nào trong Microsoft Word hiển thị tài liệu gần giống nhất với khi được in ra giấy?
+A. Read Mode.
+B. Web Layout.
+*C. Print Layout.
+D. Outline View.

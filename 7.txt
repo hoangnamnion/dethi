@@ -1,0 +1,155 @@
+Câu 0. Quyết Tâm làm Hết Không Mà Vào Đây [IMG:logo.jpg] 
+*A. Có
+B. Không 
+
+Phần 7. Không biết
+Câu 1. Phần mềm độc hại (Malware) nào sau đây mã hóa dữ liệu và đòi tiền chuộc?
+A. Virus.
+B. Spyware.
+*C. Ransomware.
+D. Adware.
+Câu 2. Biện pháp nào sau đây KHÔNG phải là biện pháp hiệu quả để bảo vệ máy tính?
+*A. Luôn đảm bảo kết nối Internet phải ở tốc độ cao nhất.
+B. Cài đặt và cập nhật thường xuyên phần mềm diệt virus.
+C. Thận trọng khi mở các tệp đính kèm từ email lạ.
+D. Cập nhật hệ điều hành và các phần mềm ứng dụng.
+Câu 3. “Phishing” là một hình thức tấn công mạng nhằm mục đích chính là gì?
+A. Làm tê liệt toàn bộ hệ thống máy tính của nạn nhân.
+*B. Lừa đảo người dùng để lấy cắp các thông tin nhạy cảm.
+C. Phá hủy vĩnh viễn dữ liệu trên ổ cứng của nạn nhân.
+D. Gửi thư rác quảng cáo với số lượng lớn ra bên ngoài.
+Câu 4. Đặc điểm nào sau đây giúp tạo một mật khẩu mạnh?
+A. Sử dụng một chuỗi ngắn gọn, dễ nhớ như ngày sinh.
+B. Chỉ sử dụng một loại ký tự là chữ thường cho dễ nhớ.
+*C. Kết hợp chữ hoa, chữ thường, số và ký tự đặc biệt.
+D. Sử dụng tên của người thân hoặc vật nuôi trong nhà.
+Câu 5. Tường lửa (Firewall) có chức năng chính là gì?
+A. Tăng tốc độ kết nối của đường truyền Internet.
+B. Diệt virus và các phần mềm độc hại có trong máy.
+*C. Kiểm soát lưu lượng mạng, ngăn chặn truy cập trái phép.
+D. Nén và giải nén các tập tin dữ liệu có kích thước lớn.
+Câu 6. Sao lưu dữ liệu (Backup) thường xuyên có ý nghĩa quan trọng nhất là gì?
+*A. Giúp khôi phục lại dữ liệu quan trọng sau khi gặp sự cố.
+B. Giúp tăng thêm dung lượng lưu trữ trống cho máy tính.
+C. Làm cho hệ điều hành máy tính chạy nhanh và mượt hơn.
+D. Bảo vệ máy tính khỏi sự tấn công của các loại virus.
+Câu 7. Phần mềm gián điệp (Spyware) được thiết kế để làm gì?
+*A. Bí mật thu thập thông tin và hoạt động của người dùng.
+B. Thực hiện việc mã hóa dữ liệu để đòi tiền chuộc.
+C. Liên tục hiển thị các quảng cáo không mong muốn.
+D. Tự động nhân bản và lây lan sang các máy tính khác.
+Câu 8. Khi nhận được một email lạ yêu cầu cung cấp thông tin cá nhân, bạn nên làm gì?
+*A. Không trả lời, không nhấp vào liên kết và xóa email đó.
+B. Trả lời và cung cấp thông tin theo yêu cầu của họ.
+C. Chuyển tiếp email đó cho bạn bè để cùng cảnh giác.
+D. Tải về và mở ngay các tệp đính kèm trong email.
+Câu 9. Quyền sở hữu trí tuệ trong lĩnh vực phần mềm KHÔNG bảo vệ điều gì sau đây?
+A. Mã nguồn lập trình của một phần mềm cụ thể.
+B. Thiết kế giao diện người dùng của phần mềm.
+*C. Ý tưởng chung về một phần mềm chưa được triển khai.
+D. Tài liệu hướng dẫn sử dụng đi kèm sản phẩm.
+Câu 10. Hành vi nào sau đây là vi phạm bản quyền phần mềm?
+A. Mua và sử dụng một phần mềm có bản quyền hợp lệ.
+*B. Sao chép và sử dụng phần mềm thương mại không có giấy phép.
+C. Sử dụng phần mềm nguồn mở theo đúng giấy phép đi kèm.
+D. Gỡ cài đặt một phần mềm không còn nhu cầu sử dụng.
+Câu 11. “Netiquette” (Phép lịch sự trên mạng) đề cập đến điều gì?
+A. Các quy định của pháp luật về việc sử dụng Internet.
+B. Các biện pháp kỹ thuật dùng để bảo vệ máy tính.
+C. Tốc độ kết nối mạng Internet tối thiểu cần phải có.
+*D. Bộ quy tắc ứng xử văn minh, lịch sự trên môi trường mạng.
+Câu 12. Việc phát tán thông tin sai sự thật, vu khống người khác trên mạng xã hội có thể bị coi là.
+A. Một hành vi thể hiện quyền tự do ngôn luận cá nhân.
+B. Một trò đùa vui vẻ vô hại giữa những người bạn.
+*C. Hành vi vi phạm pháp luật và chuẩn mực đạo đức xã hội.
+D. Một cách để tăng tương tác cho trang mạng xã hội.
+Câu 13. Luật An ninh mạng ở nhiều quốc gia, bao gồm Việt Nam, nhằm mục đích chính là gì?
+A. Hạn chế quyền truy cập và sử dụng Internet của người dân.
+*B. Bảo vệ an ninh quốc gia và quyền lợi hợp pháp của cá nhân.
+C. Đưa ra các quy định để thu phí sử dụng Internet.
+D. Thực hiện kiểm soát tất cả các nội dung trên mạng.
+Câu 14. Để tránh bị lừa đảo trực tuyến (Online Scams), bạn KHÔNG nên làm gì?
+A. Luôn cẩn thận với những lời mời chào hấp dẫn phi thực tế.
+B. Kiểm tra kỹ địa chỉ web trước khi nhập thông tin nhạy cảm.
+*C. Cung cấp thông tin cá nhân cho người lạ mà không kiểm chứng.
+D. Sử dụng các phương thức thanh toán an toàn và có uy tín.
+Câu 15. Cookie trong trình duyệt web là gì?
+A. Một loại virus máy tính lây lan qua trình duyệt web.
+B. Một chương trình diệt virus được tích hợp sẵn vào trình duyệt.
+C. Một hình thức quảng cáo trực tuyến phổ biến trên các web.
+*D. Tệp văn bản nhỏ mà website lưu trên máy tính để ghi nhớ thông tin.
+Câu 16. “Social Engineering” trong lĩnh vực an toàn thông tin là gì?
+*A. Kỹ thuật thao túng tâm lý để lừa người dùng tiết lộ thông tin.
+B. Một phần mềm chuyên dùng để thiết kế các mạng xã hội.
+C. Một phương pháp mã hóa dữ liệu an toàn và hiệu quả.
+D. Một loại thiết bị phần cứng dùng trong hệ thống mạng.
+Câu 17. Biện pháp nào giúp bảo mật cho mạng Wi-Fi cá nhân hoặc gia đình?
+A. Giữ nguyên tên mạng và mật khẩu mặc định của nhà sản xuất.
+*B. Đặt mật khẩu mạnh cho Wi-Fi, đổi tên mạng và ẩn SSID.
+C. Chia sẻ mật khẩu Wi-Fi công khai cho tất cả mọi người.
+D. Không bao giờ tắt thiết bị phát sóng router Wi-Fi.
+Câu 18. Đạo đức trong sử dụng công nghệ thông tin KHÔNG bao gồm hành vi nào sau đây?
+A. Luôn tôn trọng quyền riêng tư của những người khác.
+B. Không sử dụng công nghệ để gây hại cho người khác.
+C. Sử dụng tài sản trí tuệ của người khác một cách hợp pháp.
+*D. Tự do sao chép phần mềm có bản quyền không được phép.
+Câu 19. Trong Microsoft Word, để chèn một bảng biểu vào văn bản, bạn thường chọn tab nào?
+A. File.
+B. Home.
+*C. Insert.
+D. View.
+Câu 20. Trong Microsoft Excel, công thức =SUM(A1.A5) có nghĩa là gì?
+A. Tính giá trị trung bình cộng của các ô từ A1 đến A5.
+*B. Tính tổng giá trị của các ô trong vùng từ A1 đến A5.
+C. Đếm số lượng các ô có chứa dữ liệu từ A1 đến A5.
+D. Tìm giá trị lớn nhất trong các ô từ A1 đến A5.
+Câu 21. Trong Microsoft PowerPoint, chế độ “Slide Sorter View” cho phép bạn làm gì?
+*A. Xem tổng quan và sắp xếp lại thứ tự các slide dễ dàng.
+B. Chỉnh sửa chi tiết nội dung văn bản của từng slide.
+C. Bắt đầu trình chiếu bài thuyết trình cho khán giả xem.
+D. Thêm các hiệu ứng chuyển động cho từng slide.
+Câu 22. Phần mở rộng tập tin phổ biến cho một tài liệu bảng tính Excel là gì?
+A. .docx
+B. .pptx
+C. .txt
+*D. .xlsx
+Câu 23. Hành vi “Cyberbullying” (bắt nạt trực tuyến) có thể bao gồm những gì?
+A. Gửi những lời khen ngợi một cách ẩn danh trên mạng.
+*B. Gửi tin nhắn đe dọa, đăng tin sai lệch hoặc chế giễu người khác.
+C. Chia sẻ các kiến thức học tập hữu ích với mọi người.
+D. Tạo các nhóm học tập trực tuyến để trao đổi bài vở.
+Câu 24. Giấy phép phần mềm (Software License) là gì?
+A. Chứng chỉ xác nhận đã hoàn thành một khóa học phần mềm.
+B. Một đoạn mã dùng để kích hoạt bản quyền của phần mềm.
+C. Tài liệu hướng dẫn các bước cài đặt phần mềm chi tiết.
+*D. Văn bản pháp lý quy định quyền và hạn chế khi dùng phần mềm.
+Câu 25. Khi sử dụng máy tính ở nơi công cộng, bạn nên làm gì để bảo vệ thông tin cá nhân?
+*A. Tránh giao dịch quan trọng, luôn đăng xuất và xóa lịch sử web.
+B. Lưu lại tất cả mật khẩu trên trình duyệt để tiện đăng nhập.
+C. Để máy tính không khóa màn hình khi bạn rời đi đâu đó.
+D. Tự ý cài đặt các phần mềm cá nhân lên máy tính công cộng.
+Câu 26. “Two-Factor Authentication” (2FA – Xác thực hai yếu tố) là một biện pháp bảo mật nhằm.
+A. Giúp tăng tốc độ đăng nhập vào các tài khoản.
+*B. Tăng cường bảo mật bằng cách yêu cầu hai yếu tố xác thực.
+C. Giảm bớt số lượng mật khẩu người dùng cần phải nhớ.
+D. Tự động thay đổi mật khẩu của người dùng định kỳ.
+Câu 27. Khi một trang web yêu cầu bạn tải về một tệp .exe để xem nội dung, bạn nên.
+A. Tải về và chạy ngay để không bỏ lỡ thông tin quan trọng.
+B. Nên bỏ qua và tìm một trang web khác để thay thế.
+C. Chia sẻ ngay liên kết đó cho bạn bè cùng xem.
+*D. Rất cẩn trọng, đây có thể là phần mềm độc hại, cần quét virus.
+Câu 28. Việc thường xuyên xóa bộ nhớ cache và cookie của trình duyệt có thể giúp gì?
+A. Giúp tăng tốc độ kết nối Internet của bạn lên đáng kể.
+*B. Giúp giải phóng dung lượng và xóa bỏ một số dữ liệu theo dõi.
+C. Có khả năng ngăn chặn hoàn toàn virus lây nhiễm.
+D. Giúp tự động cập nhật các phần mềm trong máy tính.
+Câu 29. Trong Microsoft Word, để thay đổi hướng trang giấy từ dọc sang ngang, bạn vào mục nào?
+*A. Layout -> Orientation.
+B. Insert -> Page Orientation.
+C. View -> Page Orientation.
+D. File -> Page Setup -> Orientation.
+Câu 30. Hàm AVERAGE trong Microsoft Excel dùng để làm gì?
+A. Tìm giá trị lớn nhất.
+B. Tìm giá trị nhỏ nhất.
+*C. Tính giá trị trung bình cộng.
+D. Đếm số ô có dữ liệu. 

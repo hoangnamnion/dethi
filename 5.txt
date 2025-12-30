@@ -1,0 +1,156 @@
+Câu 0. Quyết Tâm làm Hết Không Mà Vào Đây [IMG:logo.jpg] 
+*A. Có
+B. Không 
+
+Phần 5. Không biết
+Câu 1. Hệ điều hành là gì?
+A. Một thiết bị phần cứng của máy tính.
+*B. Phần mềm hệ thống quản lý hoạt động của phần cứng và phần mềm.
+C. Một chương trình ứng dụng dùng để soạn thảo văn bản.
+D. Một ngôn ngữ lập trình để tạo ra ứng dụng.
+Câu 2. Chức năng nào sau đây KHÔNG phải là chức năng chính của hệ điều hành?
+A. Quản lý tài nguyên (CPU, bộ nhớ, thiết bị).
+B. Cung cấp giao diện tương tác cho người dùng.
+C. Quản lý hệ thống tập tin và thư mục.
+*D. Soạn thảo văn bản và tạo bảng tính.
+Câu 3. Hệ điều hành nào sau đây là hệ điều hành mã nguồn mở?
+A. Windows 10.
+B. macOS.
+*C. Linux.
+D. iOS.
+Câu 4. Giao diện người dùng đồ họa (GUI) là viết tắt của?
+*A. Graphical User Interface.
+B. General User Interface.
+C. Graphic Utility Interface.
+D. General Utility Interface.
+Câu 5. Trong hệ điều hành Windows, để xem các tiến trình đang chạy, ta thường dùng công cụ nào?
+A. File Explorer.
+B. Control Panel.
+C. Command Prompt.
+*D. Task Manager.
+Câu 6. Tập tin (File) là gì?
+A. Một thiết bị lưu trữ vật lý trong máy tính.
+*B. Một tập hợp dữ liệu được đặt tên, lưu trên thiết bị lưu trữ.
+C. Một chương trình ứng dụng để chạy phần mềm.
+D. Một thư mục hệ thống chứa các tập tin khác.
+Câu 7. Thư mục (Folder/Directory) dùng để làm gì?
+A. Chạy các chương trình ứng dụng.
+B. Kết nối với mạng Internet.
+*C. Tổ chức và quản lý các tập tin.
+D. Lưu trữ tạm thời các dữ liệu.
+Câu 8. Phần mở rộng của tập tin (ví dụ. .docx, .xlsx) thường cho biết điều gì?
+A. Tên người tạo ra tập tin đó.
+B. Kích thước của tập tin trên đĩa.
+*C. Định dạng tập tin và chương trình có thể mở nó.
+D. Ngày và giờ tạo ra tập tin.
+Câu 9. Thao tác “Copy” và “Paste” một tập tin có nghĩa là gì?
+A. Di chuyển tập tin từ vị trí này sang vị trí khác.
+*B. Tạo bản sao của tập tin ở vị trí mới, giữ lại bản gốc.
+C. Xóa vĩnh viễn tập tin khỏi máy tính.
+D. Đổi tên của tập tin đang được chọn.
+Câu 10. Thao tác “Cut” và “Paste” một tập tin có nghĩa là gì?
+*A. Di chuyển tập tin tới vị trí mới, xóa ở vị trí cũ.
+B. Tạo một bản sao lưu của tập tin đó.
+C. Xóa tập tin tạm thời vào thùng rác.
+D. Nén tập tin để giảm dung lượng.
+Câu 11. Recycle Bin (Windows) hoặc Trash (macOS) dùng để làm gì?
+A. Lưu trữ các tập tin hệ thống quan trọng.
+*B. Chứa các mục đã xóa tạm thời và cho phép khôi phục.
+C. Tăng tốc độ khởi động của máy tính.
+D. Quét và diệt virus cho hệ điều hành.
+Câu 12. Phần mềm nào sau đây KHÔNG phải là trình duyệt web?
+A. Google Chrome.
+B. Mozilla Firefox.
+C. Microsoft Edge.
+*D. Microsoft Word.
+Câu 13. “Freeware” là loại phần mềm như thế nào?
+*A. Phần mềm miễn phí khi sử dụng nhưng thường là mã nguồn đóng.
+B. Phần mềm dùng thử có giới hạn thời gian hoặc tính năng.
+C. Phần mềm thương mại phải trả phí để được sử dụng.
+D. Phần mềm có mã nguồn mở, cho phép sửa đổi tự do.
+Câu 14. “Shareware” là loại phần mềm như thế nào?
+A. Phần mềm hoàn toàn miễn phí và không giới hạn.
+*B. Phần mềm cho dùng thử, cần trả phí để sử dụng đầy đủ.
+C. Phần mềm độc hại gây ảnh hưởng đến máy tính.
+D. Một loại phần mềm hệ thống của máy tính.
+Câu 15. Phần mềm diệt virus có chức năng chính là gì?
+A. Tăng tốc độ kết nối của mạng Internet.
+B. Dọn dẹp các tập tin rác trong hệ thống.
+*C. Phát hiện, ngăn chặn và gỡ bỏ phần mềm độc hại.
+D. Sao lưu và phục hồi dữ liệu người dùng.
+Câu 16. Trong hệ điều hành Windows, Control Panel (Bảng điều khiển) dùng để làm gì?
+*A. Dùng để xem và thay đổi các thiết lập của hệ thống.
+B. Duyệt các tập tin và thư mục có trên máy tính.
+C. Chạy các chương trình ứng dụng đã được cài đặt.
+D. Soạn thảo các văn bản và tài liệu đơn giản.
+Câu 17. Hệ điều hành đa nhiệm (Multitasking) có nghĩa là gì?
+A. Cho phép nhiều người dùng đăng nhập cùng lúc.
+*B. Cho phép hệ thống thực thi nhiều chương trình cùng lúc.
+C. Chỉ chạy trên các máy tính có nhiều nhân CPU.
+D. Hệ điều hành bắt buộc phải có giao diện đồ họa.
+Câu 18. Khi một chương trình bị “treo” (Not Responding), bạn thường làm gì trong Windows?
+A. Khởi động lại máy tính ngay lập tức.
+B. Gỡ cài đặt chương trình đó khỏi máy.
+C. Cài đặt lại toàn bộ hệ điều hành.
+*D. Dùng Task Manager để đóng chương trình.
+Câu 19. Để cài đặt một phần mềm mới vào máy tính, bạn thường chạy tập tin có phần mở rộng nào?
+A. .txt
+B. .jpg
+*C. .exe hoặc .msi
+D. .dll
+Câu 20. Driver (Trình điều khiển thiết bị) là gì?
+*A. Phần mềm giúp hệ điều hành giao tiếp với một phần cứng.
+B. Một thiết bị phần cứng để tăng tốc độ của máy tính.
+C. Một loại virus máy tính lây lan qua mạng.
+D. Một ứng dụng văn phòng cơ bản có sẵn.
+Câu 21. Hệ thống tập tin (File System) phổ biến trên các ổ đĩa Windows hiện nay là gì?
+A. FAT32.
+*B. NTFS.
+C. HFS+.
+D. ext4.
+Câu 22. Chức năng “Defragmentation” (Chống phân mảnh ổ đĩa) có tác dụng gì?
+A. Xóa các tập tin không cần thiết trên ổ đĩa.
+B. Quét virus và phần mềm độc hại cho ổ đĩa.
+*C. Sắp xếp lại dữ liệu trên ổ đĩa để tăng tốc độ truy cập.
+D. Mã hóa toàn bộ dữ liệu có trên ổ đĩa.
+Câu 23. Hệ điều hành nào thường được sử dụng trên điện thoại iPhone?
+A. Android.
+*B. iOS.
+C. Windows Mobile.
+D. Symbian.
+Câu 24. “Path” (Đường dẫn) của một tập tin hoặc thư mục là gì?
+A. Tên riêng của tập tin hoặc thư mục đó.
+B. Kích thước của tập tin hoặc thư mục trên đĩa.
+C. Phần mở rộng chỉ định loại của tập tin.
+*D. Chuỗi ký tự xác định vị trí của một tập tin/thư mục.
+Câu 25. Phần mềm nguồn mở (Open Source Software) có đặc điểm nổi bật là.
+A. Luôn luôn được cung cấp miễn phí.
+B. Không được phép chỉnh sửa mã nguồn.
+*C. Cung cấp mã nguồn để tự do xem, sửa đổi, phân phối.
+D. Chỉ có thể chạy trên hệ điều hành Linux.
+Câu 26. Hệ điều hành nào sau đây KHÔNG phải là hệ điều hành cho máy tính cá nhân (PC)?
+*A. Android.
+B. Windows.
+C. macOS.
+D. Linux.
+Câu 27. Khi bạn xóa một tập tin bằng cách nhấn phím “Delete”, tập tin đó thường được chuyển đến đâu?
+A. Bị xóa vĩnh viễn khỏi ổ cứng.
+*B. Được chuyển vào Recycle Bin (Thùng rác).
+C. Được sao chép sang một thư mục khác.
+D. Được tự động nén lại để tiết kiệm.
+Câu 28. Giao diện dòng lệnh (CLI) là viết tắt của?
+A. Computer Line Interface.
+B. Control Line Interface.
+*C. Common Language Interface.
+D. Command Line Interface.
+Câu 29. Utility Software (Phần mềm tiện ích) là loại phần mềm nào?
+A. Các phần mềm ứng dụng chính như Word, Excel.
+*B. Phần mềm hỗ trợ phân tích, cấu hình, bảo trì máy tính.
+C. Một tên gọi khác của chính hệ điều hành.
+D. Các loại trình duyệt web để truy cập Internet.
+Câu 30. Để giải nén một tập tin có định dạng .zip hoặc .rar, bạn cần sử dụng loại phần mềm nào?
+A. Một trình duyệt web bất kỳ.
+B. Trình soạn thảo văn bản như Notepad.
+*C. Phần mềm chuyên dụng để nén và giải nén.
+D. Phần mềm diệt virus có trong máy.
+

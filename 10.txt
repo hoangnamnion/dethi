@@ -1,0 +1,154 @@
+Câu 0. Quyết Tâm làm Hết Không Mà Vào Đây [IMG:logo.jpg] 
+*A. Có
+B. Không 
+
+Câu 1. Tin học là ngành nghiên cứu về.
+A. Lắp ráp và sửa chữa máy tính
+*B. Cơ sở lý thuyết thông tin và tính toán trong máy tính
+C. Thiết kế đồ họa
+D. Lịch sử thiết bị điện tử
+Câu 2. Đơn vị cơ bản để biểu diễn thông tin là.
+A. Byte
+*B. Bit
+C. Word
+D. Register
+Câu 3. 1 Terabyte bằng.
+A. 1000 GB
+*B. 1024 GB
+C. 1000 MB
+D. 1024 MB
+Câu 4. Thiết bị thực hiện tính toán và điều khiển máy là.
+*A. CPU
+B. GPU
+C. RAM
+D. Bo mạch chủ
+Câu 5. Ví dụ về hệ điều hành là.
+A. Office
+B. Chrome
+*C. Linux Kernel
+D. Photoshop
+Câu 6. Bộ nhớ nào bị mất dữ liệu khi tắt máy?
+*A. RAM
+B. ROM
+C. SSD
+D. Flash
+Câu 7. Ngôn ngữ thường dùng cho web phía client là.
+A. Python
+B. Java
+*C. JavaScript
+D. C++
+Câu 8. Mạng dùng trong phạm vi hẹp là.
+*A. LAN
+B. WAN
+C. MAN
+D. VPN
+Câu 9. Phần mềm DBMS dùng để.
+A. Soạn văn bản
+*B. Quản lý và truy vấn cơ sở dữ liệu
+C. Thiết kế giao diện
+D. Biên dịch mã nguồn
+Câu 10. Tên miền “.net” dành cho.
+A. Thương mại
+*B. Hạ tầng mạng
+C. Giáo dục
+D. Chính phủ
+Câu 11. Nhị phân 1110 tương đương.
+A. 12
+B. 13
+C. 14
+D. 15
+Câu 12. Malware là.
+A. Lỗi phần cứng
+B. Phần mềm độc hại truy cập trái phép
+C. Cập nhật phần mềm
+D. Giao thức mạng
+Câu 13. IDE như VS Code cung cấp.
+A. Soạn thảo văn bản
+B. Bộ công cụ lập trình tích hợp
+*C. Trình duyệt web
+D. Hệ quản trị cơ sở dữ liệu
+Câu 14. WWW là viết tắt của.
+*A. World Wide Web
+B. World Web Wide
+C. Wide World Web
+D. Web World Wide
+Câu 15. BIOS/UEFI có nhiệm vụ.
+A. Chạy đồ họa
+*B. Khởi tạo và nạp hệ điều hành
+C. Quản lý mạng
+D. Giao diện người dùng
+Câu 16. Android chủ yếu dành cho.
+A. PC
+*B. Thiết bị di động
+C. Máy chủ
+D. Hệ nhúng
+Câu 17. Mục tiêu của tấn công DoS/DDoS là.
+A. Đánh cắp thông tin
+B. Làm nghẽn dịch vụ mạng
+C. Mã hóa dữ liệu đòi chuộc
+D. Cài phần mềm gián điệp
+Câu 18. Đơn vị đo băng thông mạng là.
+A. Hertz
+*B. bps hoặc Mbps
+C. GB
+D. PPI
+Câu 19. Lệnh SQL SELECT * FROM Students dùng để.
+A. Xóa dữ liệu
+B. Cập nhật dữ liệu
+*C. Hiển thị toàn bộ bảng
+D. Thêm bản ghi mới
+Câu 20. Tệp “.exe” là.
+A. Văn bản
+B. Hình ảnh
+*C. Tệp thực thi
+D. Âm thanh
+Câu 21. Giao thức truyền tin cậy là.
+A. TCP
+B. UDP
+C. IP
+*D. HTTP
+Câu 22. Thiết bị hoạt động ở tầng mạng OSI là.
+A. Switch
+*B. Router
+C. Hub
+D. Repeater
+Câu 23. Cloud Computing cung cấp.
+A. Chỉ SaaS
+B. Chỉ PaaS
+C. Chỉ IaaS
+*D. Cả SaaS, PaaS và IaaS
+Câu 24. Thuật toán là gì?
+A. Ngôn ngữ lập trình
+*B. Tập hợp quy tắc rõ ràng để giải quyết bài toán
+C. Lỗi logic
+D. Kiến trúc phần cứng
+Câu 25. API là.
+A. Ngôn ngữ lập trình
+*B. Tập quy tắc cho phép phần mềm tương tác
+C. Cơ sở dữ liệu
+D. Hệ điều hành
+Câu 26. Đặc điểm phần mềm nguồn mở là.
+A. Miễn phí không bản quyền
+*B. Mã nguồn công khai, được phép sửa đổi
+C. Chỉ do cá nhân phát triển
+D. Khó sử dụng
+Câu 27. VR là công nghệ.
+A. Tăng cường thực tế
+*B. Mô phỏng môi trường ảo hoàn toàn
+C. Kết nối thiết bị
+D. Phân tích dữ liệu lớn
+Câu 28. Cache có vai trò gì?
+A. Lưu hệ điều hành
+*B. Bộ nhớ tạm tốc độ cao gần CPU
+C. Lưu trữ vĩnh viễn
+D. Kết nối phần cứng
+Câu 29. Authentication là.
+A. Mã hóa dữ liệu
+*B. Xác minh danh tính truy cập hệ thống
+C. Cấp quyền truy cập
+D. Ghi lại hoạt động
+Câu 30. Machine Learning là gì?
+A. Làm robot hình người
+*B. Cho máy học từ dữ liệu mà không cần lập trình rõ ràng
+C. Tạo giao diện thông minh
+D. Xây mạng tốc độ cao

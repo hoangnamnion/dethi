@@ -1,0 +1,155 @@
+Câu 0. Quyết Tâm làm Hết Không Mà Vào Đây [IMG:logo.jpg] 
+*A. Có
+B. Không 
+
+Phần 3. Powerpoint
+Câu 1. Đuôi tệp tin mặc định của một bài trình chiếu Microsoft PowerPoint (phiên bản mới) là gì?
+A. .doc
+B. .xls
+*C. .pptx
+D. .txt
+Câu 2. Để bắt đầu trình chiếu một bài thuyết trình từ slide đầu tiên, bạn nhấn phím nào?
+A. F5
+*B. Shift + F5
+C. Ctrl + P
+D. Esc
+Câu 3. Trong PowerPoint, “Slide Master” được sử dụng để làm gì?
+A. Dùng để chèn một slide mới vào trong bài.
+*B. Thiết lập định dạng chung cho toàn bộ các slide.
+C. Dùng để chạy hiệu ứng cho các đối tượng.
+D. Dùng để lưu bài trình chiếu dưới dạng video.
+Câu 4. Chức năng “Transitions” (Chuyển tiếp) trong PowerPoint áp dụng cho đối tượng nào?
+A. Các đối tượng văn bản trên một slide.
+B. Các hình ảnh và đồ họa trên slide.
+C. Các hiệu ứng âm thanh được chèn vào.
+*D. Áp dụng khi chuyển tiếp giữa các slide.
+Câu 5. Để chèn một hình ảnh từ máy tính vào slide, bạn thường chọn tab nào trên Ribbon?
+A. Home
+*B. Insert
+C. Design
+D. Animations
+Câu 6. “Placeholder” trong PowerPoint là gì?
+*A. Một khung chứa định sẵn cho văn bản và đối tượng.
+B. Một hiệu ứng chuyển tiếp giữa các slide.
+C. Tên của một chủ đề thiết kế có sẵn.
+D. Một công cụ dùng để vẽ các hình khối.
+Câu 7. Để thay đổi bố cục (layout) của một slide đã có, bạn thường thực hiện thao tác nào trong tab “Home”?
+A. New Slide
+B. Reset
+C. Section
+*D. Layout
+Câu 8. Hiệu ứng xuất hiện, biến mất hoặc di chuyển của các đối tượng trên một slide được gọi là gì?
+A. Transitions
+B. Themes
+*C. Animations
+D. SmartArt
+Câu 9. Chế độ xem nào trong PowerPoint cho phép bạn dễ dàng sắp xếp lại thứ tự các slide?
+A. Normal View
+*B. Slide Sorter View
+C. Notes Page View
+D. Reading View
+Câu 10. Để bắt đầu trình chiếu từ slide hiện tại đang chọn, bạn sử dụng tổ hợp phím nào?
+*A. Shift + F5
+B. F5
+C. Ctrl + S
+D. Alt + F4
+Câu 11. Chức năng “Themes” (Chủ đề) trong PowerPoint giúp bạn làm gì?
+A. Dùng để chèn âm thanh vào trong bài.
+B. Dùng để kiểm tra các lỗi chính tả.
+C. Dùng để in ấn bài trình chiếu ra giấy.
+*D. Áp dụng một bộ thiết kế nhất quán cho bài trình chiếu.
+Câu 12. Để thêm ghi chú cho người thuyết trình mà khán giả không nhìn thấy, bạn sử dụng vùng nào?
+A. Vùng tiêu đề chính của slide.
+B. Vùng chứa danh sách các slide.
+*C. Sử dụng vùng ghi chú (Notes Pane) ở dưới slide.
+D. Chèn một hộp văn bản (Text Box) ẩn.
+Câu 13. Trong PowerPoint, “WordArt” là công cụ dùng để làm gì?
+*A. Tạo ra các dòng chữ nghệ thuật đặc biệt.
+B. Dùng để vẽ các hình khối cơ bản.
+C. Dùng để chèn các bảng biểu dữ liệu.
+D. Dùng để chèn video từ máy tính.
+Câu 14. Để căn lề cho một đoạn văn bản trong Text Box, bạn sử dụng các công cụ trong nhóm nào của tab “Home”?
+A. Font
+*B. Paragraph
+C. Drawing
+D. Editing
+Câu 15. Nếu muốn một hiệu ứng chuyển slide áp dụng cho tất cả các slide, bạn sẽ chọn nút lệnh nào?
+A. Effect Options
+B. Preview
+*C. Apply To All
+D. After
+Câu 16. Chức năng “SmartArt” trong tab “Insert” dùng để tạo ra đối tượng nào?
+A. Các bảng dữ liệu phức tạp.
+B. Các video clip minh họa ngắn.
+C. Các hình ảnh từ thư viện trực tuyến.
+*D. Tạo các sơ đồ và quy trình một cách trực quan.
+Câu 17. Để thoát khỏi chế độ trình chiếu (Slide Show), bạn nhấn phím nào?
+*A. Esc (Escape)
+B. Enter
+C. Spacebar
+D. Tab
+Câu 18. Trong tab “File”, lệnh “Save As” khác với “Save” ở điểm nào?
+A. Lệnh “Save As” chỉ dùng để lưu dưới dạng PDF.
+*B. Lệnh “Save As” cho phép lưu với tên hoặc vị trí mới.
+C. Lệnh “Save As” có tốc độ lưu nhanh hơn “Save”.
+D. Lệnh “Save As” không thể ghi đè lên tệp cũ.
+Câu 19. Để ẩn một slide để nó không xuất hiện khi trình chiếu, bạn làm gì?
+A. Xóa vĩnh viễn slide đó khỏi bài.
+B. Chuyển màu nền slide thành màu đen.
+*C. Chuột phải vào slide và chọn “Hide Slide”.
+D. Đặt thời gian chuyển của slide đó bằng 0.
+Câu 20. Chức năng nào cho phép bạn chèn một đoạn video vào slide thuyết trình?
+A. Picture
+B. Shapes
+C. Chart
+*D. Video (trong tab Insert)
+Câu 21. Tab nào trên Ribbon chứa các công cụ liên quan đến việc thiết lập hiệu ứng hoạt hình (Animations)?
+A. Design
+B. Transitions
+*C. Animations
+D. Slide Show
+Câu 22. Khi trình chiếu, để chuyển sang slide tiếp theo, ngoài việc nhấn chuột, bạn có thể sử dụng phím nào?
+A. Dùng phím mũi tên lên.
+*B. Dùng phím cách hoặc mũi tên phải.
+C. Dùng phím Page Up.
+D. Dùng phím Home.
+Câu 23. Chức năng “Header & Footer” trong tab “Insert” cho phép bạn thêm thông tin gì vào slide?
+*A. Thêm ngày tháng, số slide, và văn bản chân trang.
+B. Chỉ cho phép thêm hình ảnh làm nền.
+C. Chỉ cho phép thêm các hiệu ứng âm thanh.
+D. Dùng để chèn các loại biểu đồ dữ liệu.
+Câu 24. “Animation Pane” (Ngăn hoạt hình) có tác dụng gì?
+A. Dùng để chọn một theme mới cho bài.
+B. Dùng để chèn các biểu tượng vào slide.
+C. Dùng để điều chỉnh kích thước của slide.
+*D. Hiển thị và tùy chỉnh các hiệu ứng hoạt hình.
+Câu 25. Để tạo một slide mới có bố cục giống hệt slide hiện tại, bạn có thể làm gì?
+*A. Chuột phải vào slide và chọn “Duplicate Slide”.
+B. Chọn New Slide rồi chọn lại layout tương tự.
+C. Sao chép tất cả đối tượng và dán vào slide mới.
+D. Sử dụng chức năng Slide Master để tạo mới.
+Câu 26. Chế độ xem “Presenter View” (Chế độ xem của diễn giả) khi trình chiếu có lợi ích gì?
+A. Giúp khán giả thấy được toàn bộ các slide.
+*B. Giúp diễn giả xem ghi chú và slide kế tiếp.
+C. Giúp tự động chuyển các slide theo thời gian.
+D. Chỉ hiển thị phần văn bản có trên slide.
+Câu 27. Để chèn một bảng (Table) vào slide, bạn vào tab “Insert” và chọn?
+A. Shapes
+B. SmartArt
+C. Chart
+*D. Table
+Câu 28. Nếu bạn muốn thay đổi màu nền cho một slide cụ thể mà không ảnh hưởng đến các slide khác, bạn nên làm gì?
+A. Thay đổi Theme trong tab Design.
+*B. Chuột phải vào slide và chọn “Format Background”.
+C. Chỉnh sửa thuộc tính trong Slide Master.
+D. Chèn một hình chữ nhật lớn che phủ slide.
+Câu 29. Công cụ “Eyedropper” (Ống hút màu) trong các tùy chọn định dạng màu sắc dùng để làm gì?
+A. Dùng để vẽ một hình tròn hoàn hảo.
+B. Dùng để tạo hiệu ứng đổ bóng cho đối tượng.
+*C. Lấy một mẫu màu từ vị trí bất kỳ trên màn hình.
+D. Dùng để tăng độ trong suốt của màu sắc.
+Câu 30. Để lưu bài trình chiếu dưới dạng một tệp video, bạn thường chọn tùy chọn nào trong “File”?
+A. Dùng lệnh Package Presentation for CD.
+B. Dùng lệnh Create Handouts để tạo bản in.
+C. Dùng lệnh Create PDF/XPS Document.
+*D. Dùng lệnh Export và chọn Create a Video.

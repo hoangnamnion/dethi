@@ -1,0 +1,155 @@
+Câu 0. Quyết Tâm làm Hết Không Mà Vào Đây [IMG:logo.jpg] 
+*A. Có
+B. Không 
+
+Phần 6. Không Biết
+Câu 1. Mạng máy tính (Computer Network) là gì?
+A. Một tập hợp các máy tính được đặt gần nhau trong một phòng.
+*B. Tập hợp các máy tính và thiết bị kết nối để chia sẻ tài nguyên.
+C. Một loại phần mềm dùng để kết nối các máy tính với nhau.
+D. Một thiết bị phần cứng đơn lẻ dùng để truyền dữ liệu đi xa.
+Câu 2. Mạng LAN là viết tắt của cụm từ nào?
+A. Long Area Network.
+B. Logical Area Network.
+*C. Local Area Network.
+D. Large Area Network.
+Câu 3. Mạng WAN là viết tắt của cụm từ nào?
+*A. Wide Area Network.
+B. Wireless Area Network.
+C. World Area Network.
+D. Web Area Network.
+Câu 4. Internet là một ví dụ điển hình của loại mạng nào?
+A. LAN (Mạng cục bộ).
+B. MAN (Mạng đô thị).
+C. PAN (Mạng cá nhân).
+*D. WAN (Mạng diện rộng).
+Câu 5. Thiết bị nào dùng để kết nối nhiều máy tính trong mạng LAN và chuyển tiếp dữ liệu đến đúng cổng đích?
+A. Hub.
+B. Modem.
+C. Repeater.
+*D. Switch.
+Câu 6. Thiết bị nào dùng để kết nối các mạng khác nhau và định tuyến gói tin giữa chúng?
+A. Switch.
+B. Hub.
+*C. Router.
+D. Bridge.
+Câu 7. Địa chỉ IP (Internet Protocol address) được sử dụng để làm gì?
+A. Xác định tên nhà sản xuất của máy tính.
+*B. Định danh duy nhất cho một thiết bị trên mạng.
+C. Xác định phần mềm đang chạy trên máy.
+D. Đo lường tốc độ tối đa của kết nối mạng.
+Câu 8. Tên miền (Domain Name) ví dụ như “google.com” được sử dụng để làm gì?
+A. Thay thế cho địa chỉ MAC của card mạng.
+B. Một phương thức mã hóa dữ liệu truyền đi.
+C. Xác định vị trí địa lý của một máy chủ.
+*D. Tên định danh dễ nhớ thay cho địa chỉ IP.
+Câu 9. Dịch vụ nào chuyển đổi tên miền sang địa chỉ IP và ngược lại?
+A. HTTP.
+B. FTP.
+*C. DNS (Domain Name System).
+D. DHCP.
+Câu 10. Giao thức nào là giao thức chính của World Wide Web (WWW)?
+A. Giao thức truyền tải tập tin FTP.
+*B. Giao thức web HTTP hoặc HTTPS.
+C. Giao thức gửi thư điện tử SMTP.
+D. Giao thức điều khiển truyền vận TCP.
+Câu 11. WWW là viết tắt của cụm từ nào?
+A. World Web Wide.
+B. Wide World Web.
+*C. World Wide Web.
+D. Web World Wide.
+Câu 12. Để gửi và nhận thư điện tử (email), bạn thường sử dụng các giao thức nào?
+*A. SMTP để gửi và POP3/IMAP để nhận thư.
+B. Giao thức web HTTP và truyền file FTP.
+C. Giao thức nền tảng TCP và giao thức IP.
+D. Giao thức phân giải DNS và cấp IP DHCP.
+Câu 13. Giao thức FTP (File Transfer Protocol) được sử dụng để làm gì?
+A. Gửi và nhận các thư điện tử.
+B. Duyệt các trang web trên Internet.
+*C. Dùng để truyền tải tập tin qua lại trên mạng.
+D. Thực hiện các cuộc trò chuyện trực tuyến.
+Câu 14. Địa chỉ IP phiên bản 4 (IPv4) có bao nhiêu bit?
+A. 16 bits.
+*B. 32 bits.
+C. 64 bits.
+D. 128 bits.
+Câu 15. Địa chỉ IP phiên bản 6 (IPv6) có bao nhiêu bit?
+A. 32 bits.
+B. 64 bits.
+*C. 128 bits.
+D. 256 bits.
+Câu 16. “Client-Server” là một mô hình mạng trong đó.
+*A. Có máy chủ (Server) cung cấp dịch vụ cho máy khách (Client).
+B. Mọi máy tính trong mạng đều có vai trò hoàn toàn ngang hàng.
+C. Các máy tính trong mạng không được kết nối với nhau.
+D. Chỉ có một máy tính duy nhất được phép hoạt động.
+Câu 17. “Peer-to-Peer” (P2P) là một mô hình mạng trong đó.
+*A. Các máy tính có vai trò ngang hàng, vừa là máy chủ vừa là máy khách.
+B. Có một máy chủ trung tâm quản lý tất cả các hoạt động.
+C. Một mô hình chỉ được sử dụng để chia sẻ các tập tin.
+D. Mạng có thể hoạt động mà không cần kết nối Internet.
+Câu 18. URL là viết tắt của cụm từ nào?
+A. Universal Resource Link.
+B. Uniform Resource Link.
+*C. Uniform Resource Locator.
+D. Universal Resource Locator.
+Câu 19. Để bảo vệ máy tính khỏi các phần mềm độc hại từ Internet, bạn nên làm gì?
+A. Chỉ truy cập các trang web đã được xác thực nổi tiếng.
+B. Không bao giờ tải xuống bất kỳ tập tin nào từ mạng.
+C. Ngắt kết nối Internet hoàn toàn khi không sử dụng.
+*D. Dùng phần mềm diệt virus và cẩn trọng khi mở email, tải file.
+Câu 20. HTTPS khác với HTTP ở điểm nào?
+*A. HTTPS có mã hóa để bảo mật dữ liệu, an toàn hơn.
+B. HTTPS có tốc độ truyền dữ liệu nhanh hơn HTTP.
+C. HTTPS là giao thức chỉ dành cho các trang web chính phủ.
+D. HTTPS là phiên bản không cần sử dụng địa chỉ IP.
+Câu 21. Wi-Fi là công nghệ cho phép kết nối mạng.
+A. Sử dụng dây cáp mạng.
+*B. Không cần sử dụng dây.
+C. Bằng đường truyền cáp quang.
+D. Thông qua các vệ tinh.
+Câu 22. Modem là thiết bị dùng để.
+A. Khuếch đại tín hiệu mạng để truyền đi xa hơn.
+B. Chia sẻ một kết nối Internet cho nhiều thiết bị khác.
+C. Lưu trữ tạm thời dữ liệu của người dùng.
+*D. Chuyển đổi tín hiệu số sang tương tự và ngược lại.
+Câu 23. ISP là viết tắt của cụm từ nào?
+A. Internal Service Provider.
+B. International Service Protocol.
+*C. Internet Service Provider.
+D. Internet System Protocol.
+Câu 24. Khi bạn gõ “www.example.com” vào trình duyệt, yêu cầu đầu tiên thường được gửi đến đâu?
+A. Máy chủ Web của trang example.com.
+*B. Máy chủ DNS để phân giải tên miền ra địa chỉ IP.
+C. Router mạng tại nhà của bạn.
+D. Máy chủ nhận và gửi email.
+Câu 25. Địa chỉ MAC (Media Access Control) là gì?
+*A. Địa chỉ vật lý duy nhất được gán cho card mạng.
+B. Một địa chỉ logic của máy tính trên mạng.
+C. Địa chỉ IP công khai của router mạng.
+D. Tên của người dùng đăng nhập trên mạng.
+Câu 26. “Tường lửa” (Firewall) trong mạng máy tính có chức năng chính là gì?
+A. Tăng tốc độ truyền dữ liệu trên mạng.
+B. Lưu trữ các trang web bạn đã truy cập.
+C. Quét và diệt virus trên máy tính.
+*D. Kiểm soát lưu lượng, ngăn chặn các truy cập trái phép.
+Câu 27. Giao thức TCP (Transmission Control Protocol) đảm bảo điều gì khi truyền dữ liệu?
+A. Đạt tốc độ truyền dữ liệu nhanh nhất.
+*B. Đảm bảo truyền dữ liệu tin cậy, có kiểm soát lỗi.
+C. Không cần thiết lập kết nối trước khi truyền.
+D. Chỉ được dùng để truyền các dữ liệu văn bản.
+Câu 28. Trong mô hình TCP/IP, tầng nào chịu trách nhiệm định tuyến các gói tin qua các mạng?
+A. Tầng ứng dụng (Application Layer).
+B. Tầng giao vận (Transport Layer).
+*C. Tầng Internet (Internet Layer).
+D. Tầng truy cập mạng (Network Access Layer).
+Câu 29. Dịch vụ nào cho phép người dùng lưu trữ tập tin trực tuyến và truy cập từ nhiều thiết bị?
+A. Dịch vụ thư điện tử (Email).
+B. Giao thức truyền tập tin (FTP).
+C. Các nền tảng mạng xã hội (Social Media).
+*D. Lưu trữ đám mây (Google Drive, Dropbox).
+Câu 30. “Phishing” là một hình thức tấn công mạng nhằm mục đích gì?
+A. Tấn công phá hoại hệ thống máy tính.
+*B. Lừa đảo để lấy cắp thông tin nhạy cảm của người dùng.
+C. Gửi thư rác quảng cáo hàng loạt.
+

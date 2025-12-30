@@ -1,0 +1,1474 @@
+Câu 0. Quyết Tâm làm Hết Không Mà Vào Đây [IMG:logo.jpg] 
+*A. Có
+B. Không 
+Phần 1. Excel
+Câu 1. Trong Microsoft Excel, một tệp tin được gọi là gì? [ima]
+A. Một tài liệu văn bản (Document).
+*B. Một sổ làm việc (Workbook).
+C. Một bài trình chiếu (Presentation).
+D. Một cơ sở dữ liệu (Database).
+Câu 2. Giao điểm của một hàng (Row) và một cột (Column) trong Excel được gọi là gì?
+A. Range (Vùng).
+*B. Cell (Ô).
+C. Address (Địa chỉ).
+D. Formula (Công thức).
+Câu 3. Địa chỉ ô C5 trong Excel có nghĩa là.
+A. Ô nằm tại cột 5, hàng C
+B. Ô thứ C trong hàng có số 5
+C. Ô thứ 5 trong cột có tên C
+*D. Ô nằm tại cột C, hàng 5.
+Câu 4. Để bắt đầu nhập một công thức vào ô trong Excel, ký tự đầu tiên phải là.
+A. Dấu sao (*).
+B. Dấu thăng (#).
+*C. Dấu bằng (=).
+D. Dấu chấm hỏi (?).
+Câu 5. Hàm nào sau đây dùng để tính tổng các giá trị trong một dãy ô?
+*A. SUM.
+B. AVERAGE.
+C. MAX.
+D. COUNT.
+Câu 6. Để tìm giá trị lớn nhất trong các ô từ A1 đến A10, bạn sử dụng công thức nào?
+A. =MIN(A1.A10).
+B. =AVERAGE(A1.A10).
+*C. =MAX(A1.A10).
+D. =TOTAL(A1.A10).
+Câu 7. Địa chỉ $4 trong một công thức Excel là một ví dụ về.
+A. Một địa chỉ tương đối.
+B. Một địa chỉ không hợp lệ.
+C. Một địa chỉ hỗn hợp.
+*D. Một địa chỉ tuyệt đối.
+Câu 8. Khi sao chép công thức =A1+B1 từ ô C1 sang ô C2, công thức tại ô C2 sẽ là.
+*A. =A2+B2.
+B. =A1+B1.
+C. =A1+B2.
+D. =A2+B1.
+Câu 9. Hàm AVERAGE(B2.B6) trong Excel thực hiện chức năng gì?
+*A. Tính giá trị trung bình cộng của vùng B2.B6.
+B. Tính tổng các giá trị trong vùng từ B2 đến B6.
+C. Đếm số lượng ô có dữ liệu trong vùng B2.B6.
+D. Tìm ra giá trị nhỏ nhất trong vùng từ B2 đến B6.
+Câu 10. Thanh công cụ nào hiển thị nội dung hoặc công thức của ô đang được chọn?
+A. Thanh công cụ Ribbon.
+B. Thanh trạng thái (Status Bar).
+*C. Thanh công thức (Formula Bar).
+D. Hộp tên ô (Name Box).
+Câu 11. Để sắp xếp dữ liệu trong một bảng tính, bạn thường sử dụng các lệnh trong tab nào?
+A. Home.
+B. Insert.
+*C. Data.
+D. View.
+Câu 12. Chức năng “Filter” (Lọc) trong Excel cho phép bạn làm gì?
+A. Dùng để định dạng dữ liệu có trong bảng.
+*B. Hiển thị các hàng thỏa mãn điều kiện lọc.
+C. Dùng để tạo biểu đồ từ các dữ liệu đã chọn.
+D. Dùng để kiểm tra lỗi chính tả trong các ô.
+Câu 13. Phần mở rộng tập tin mặc định của một Workbook Excel (phiên bản mới) là gì?
+A. .doc.
+B. .txt.
+C. .pptx.
+*D. .xlsx.
+Câu 14. Để chèn một biểu đồ (Chart) vào bảng tính, bạn chọn tab nào?
+A. Home.
+*B. Insert.
+C. Formulas.
+D. Page Layout.
+Câu 15. Hàm IF(logical_test, value_if_true, value_if_false) dùng để.
+A. Dùng để tính tổng các giá trị có điều kiện.
+B. Dùng để đếm số ô thỏa mãn một điều kiện.
+*C. Kiểm tra điều kiện và trả về một trong hai giá trị.
+D. Dùng để tìm kiếm một giá trị trong bảng dữ liệu.
+Câu 16. Để định dạng số trong ô (ví dụ. tiền tệ, phần trăm), bạn sử dụng nhóm công cụ “Number” của tab nào?
+*A. Home.
+B. Insert.
+C. Data.
+D. Formulas.
+Câu 17. Chức năng “Freeze Panes” (Cố định khung) trong tab View dùng để làm gì?
+*A. Giữ cố định hàng/cột khi cuộn trang tính.
+B. Dùng để khóa toàn bộ trang tính đang mở.
+C. Dùng để chia trang tính thành nhiều cửa sổ.
+D. Dùng để ẩn các hàng và cột không cần thiết.
+Câu 18. Hàm COUNT(D1.D10) sẽ trả về.
+A. Tính tổng các giá trị số trong vùng D1.D10.
+B. Đếm số lượng tất cả các ô không rỗng.
+*C. Đếm số lượng ô có chứa dữ liệu kiểu số.
+D. Đếm số lượng các ô rỗng trong vùng D1.D10.
+Câu 19. Để gộp nhiều ô thành một ô lớn hơn, bạn sử dụng lệnh nào trong nhóm “Alignment” của tab Home?
+*A. Merge & Center.
+B. Wrap Text.
+C. Format Painter.
+D. Conditional Formatting.
+Câu 20. Lỗi #NAME? trong Excel xuất hiện khi nào?
+*A. Khi tên hàm hoặc tên vùng trong công thức bị sai.
+B. Khi công thức thực hiện một phép chia cho số 0.
+C. Khi giá trị sử dụng trong công thức không hợp lệ.
+D. Khi ô được tham chiếu trong công thức không tồn tại.
+Câu 21. Muốn thay đổi hướng giấy (Orientation) từ dọc sang ngang khi in, bạn vào tab nào?
+A. Home.
+B. Insert.
+*C. Page Layout.
+D. View.
+Câu 22. Chức năng “Conditional Formatting” (Định dạng theo điều kiện) cho phép bạn.
+A. Dùng để tạo ra các công thức tính toán phức tạp.
+B. Dùng để lọc dữ liệu với các tiêu chí nâng cao.
+C. Dùng để chèn các đối tượng đồ họa vào trang tính.
+*D. Tự động thay đổi định dạng của ô theo điều kiện.
+Câu 23. Phím tắt để lưu Workbook hiện tại trong Excel là gì?
+A. Ctrl + N.
+*B. Ctrl + S.
+C. Ctrl + O.
+D. Ctrl + P.
+Câu 24. Nếu ô A1 chứa 5 và ô B1 chứa 10, công thức =SUM(A1,B12) sẽ cho kết quả là.
+A. 25, vì 5 + (102).
+B. 30, vì (5+10)*2.
+*C. 15, vì chỉ tính 5+10.
+D. Lỗi, vì thiếu dấu ngoặc.
+Câu 25. Để hiển thị các đường lưới (Gridlines) khi in bảng tính, bạn cần thiết lập trong.
+A. Trong tab View, tại nhóm công cụ Show.
+B. Trong tab Home, tại nhóm công cụ Cells.
+C. Trong tab File, mục Print, rồi đến Page Setup.
+*D. Trong tab Page Layout, tại nhóm Sheet Options.
+Câu 26. Hàm TODAY() trong Excel trả về giá trị gì?
+A. Ngày và giờ hiện tại.
+*B. Chỉ ngày hiện tại.
+C. Chỉ giờ hiện tại.
+D. Một chuỗi văn bản “TODAY”.
+Câu 27. Chức năng “Text to Columns” (Chuyển văn bản thành cột) trong tab Data dùng để.
+A. Dùng để gộp nội dung từ nhiều cột lại.
+B. Dùng để định dạng kiểu chữ cho cả cột.
+*C. Phân tách nội dung của một cột thành nhiều cột.
+D. Dùng để xóa các cột không cần thiết đi.
+Câu 28. Ký hiệu & trong công thức Excel được sử dụng để làm gì?
+A. Dùng để thực hiện phép tính nhân.
+B. Dùng để thực hiện phép tính chia.
+*C. Dùng để nối các chuỗi văn bản lại với nhau.
+D. Dùng để so sánh sự bằng nhau.
+Câu 29. Để chọn toàn bộ một cột trong Excel, bạn nhấp chuột vào đâu?
+*A. Vào tiêu đề của cột đó (A, B, C,…).
+B. Vào ô đầu tiên của cột đó.
+C. Vào ô cuối cùng của cột đó.
+D. Vào số thứ tự của hàng đầu tiên.
+Câu 30. Hàm ROUND(number, num_digits) trong Excel dùng để làm gì?
+A. Dùng để tính căn bậc hai của một số.
+B. Dùng để tìm phần dư của một phép chia.
+C. Dùng để chuyển đổi một số thành dạng văn bản.
+*D. Dùng để làm tròn một số đến số thập phân xác định.
+
+Phần 2. Word
+Câu 1. Trong Microsoft Word, để tạo một tài liệu mới, bạn chọn lệnh nào trong tab File?
+A. Open.
+*B. New.
+C. Save.
+D. Print.
+Câu 2. Tổ hợp phím nào sau đây dùng để lưu tài liệu hiện tại trong Microsoft Word?
+A. Ctrl + N.
+B. Ctrl + P.
+C. Ctrl + O.
+*D. Ctrl + S.
+Câu 3. Thanh công cụ nào chứa các lệnh thường dùng như Save, Undo, Redo và có thể tùy chỉnh được?
+*A. Ribbon.
+B. Status Bar.
+C. Quick Access Toolbar.
+D. Title Bar.
+Câu 4. Chức năng “Find and Replace” (Tìm kiếm và Thay thế) thường nằm ở tab nào trên thanh Ribbon?
+*A. Home.
+B. Insert.
+C. Design.
+D. Layout.
+Câu 5. Để thay đổi kiểu chữ, cỡ chữ, màu chữ cho một đoạn văn bản, bạn sử dụng các công cụ trong nhóm “Font” của tab nào?
+*A. Home.
+B. View.
+C. Review.
+D. Insert.
+Câu 6. Để căn lề cho đoạn văn bản (trái, phải, giữa, đều hai bên), bạn sử dụng các lệnh trong nhóm “Paragraph” của tab.
+*A. Home.
+B. Page Layout.
+C. References.
+D. Mailings.
+Câu 7. Muốn chèn một bảng (Table) vào văn bản, bạn chọn tab nào?
+A. Home.
+B. Layout.
+C. Design.
+*D. Insert.
+Câu 8. Chức năng “Header and Footer” (Đầu trang và Chân trang) dùng để làm gì?
+A. Tạo một danh sách mục lục tự động.
+B. Thiết lập khổ giấy và lề cho trang.
+C. Kiểm tra các lỗi chính tả và ngữ pháp.
+*D. Chèn nội dung lặp lại ở đầu hoặc cuối trang.
+Câu 9. Để chèn số trang tự động vào tài liệu, bạn vào tab Insert và chọn.
+A. Symbols.
+B. Pictures.
+*C. Page Number.
+D. Text Box.
+Câu 10. Tổ hợp phím Ctrl + X dùng để thực hiện thao tác gì?
+A. Sao chép (Copy).
+B. Hoàn tác (Undo).
+C. Dán (Paste).
+*D. Cắt (Cut).
+Câu 11. Tổ hợp phím Ctrl + V dùng để thực hiện thao tác gì?
+A. Sao chép (Copy).
+B. Cắt (Cut).
+*C. Dán (Paste).
+D. Lưu (Save).
+Câu 12. Để thay đổi hướng trang giấy từ dọc (Portrait) sang ngang (Landscape), bạn vào tab.
+A. Home.
+B. Insert.
+*C. Layout.
+D. View.
+Câu 13. Chức năng “Spelling & Grammar” (Kiểm tra chính tả và ngữ pháp) thường nằm ở tab nào?
+A. Home.
+B. File.
+*C. Review.
+D. View.
+Câu 14. Trong Microsoft Word, để tạo danh sách có đánh số thứ tự (numbered list), bạn sử dụng nút lệnh nào?
+*A. Numbering.
+B. Bullets.
+C. Multilevel List.
+D. Borders.
+Câu 15. Phần mở rộng tập tin mặc định cho tài liệu Microsoft Word (phiên bản mới) là.
+A. .doc.
+*B. .docx.
+C. .txt.
+D. .rtf.
+Câu 16. Để xem tài liệu trước khi in (Print Preview), bạn thường chọn.
+A. Chuyển sang chế độ xem Print Layout.
+*B. Vào mục In (Print) trong thẻ File.
+C. Bật chế độ theo dõi thay đổi (Track Changes).
+D. Sử dụng nhóm lệnh Editing trên thẻ Home.
+Câu 17. Chức năng “Margins” (Lề trang) trong tab Layout dùng để.
+A. Thay đổi màu sắc cho nền trang giấy.
+B. Chia đoạn văn bản thành nhiều cột.
+*C. Thiết lập khoảng cách lề cho trang giấy.
+D. Chèn hình ảnh làm nền cho trang giấy.
+Câu 18. Để chèn một hình ảnh (Picture) từ máy tính vào văn bản, bạn chọn tab Insert rồi chọn.
+*A. Pictures.
+B. Online Pictures.
+C. Shapes.
+D. SmartArt.
+Câu 19. Tổ hợp phím Ctrl + A dùng để làm gì trong văn bản?
+A. Lưu tài liệu hiện tại đang mở.
+B. In tài liệu ra máy in được kết nối.
+*C. Chọn tất cả văn bản trong tài liệu.
+D. Mở một tài liệu hoàn toàn mới.
+Câu 20. Chức năng “Undo” (Hoàn tác), thường được biểu thị bằng mũi tên cong ngược, có tác dụng.
+A. Thực hiện lại thao tác vừa hủy bỏ.
+*B. Hủy bỏ thao tác vừa được thực hiện.
+C. Lưu lại các thay đổi vào trong tập tin.
+D. Xóa đi phần văn bản đang được chọn.
+Câu 21. Để tạo chữ nghiêng (Italic) cho văn bản, bạn có thể sử dụng tổ hợp phím nào?
+*A. Ctrl + I.
+B. Ctrl + B.
+C. Ctrl + U.
+D. Ctrl + L.
+Câu 22. Để tạo chữ gạch chân (Underline) cho văn bản, bạn có thể sử dụng tổ hợp phím nào?
+A. Ctrl + I.
+B. Ctrl + B.
+*C. Ctrl + U.
+D. Ctrl + E.
+Câu 23. Chức năng “Track Changes” (Theo dõi thay đổi) trong tab Review hữu ích khi.
+A. Khi người dùng muốn tạo hiệu ứng chữ.
+B. Khi người dùng muốn tìm kiếm từ khóa.
+C. Khi người dùng muốn chèn thêm biểu đồ.
+*D. Khi cần theo dõi các thay đổi khi sửa tài liệu.
+Câu 24. Muốn chia văn bản thành nhiều cột (Columns), bạn vào tab nào?
+A. Insert.
+B. Design.
+C. View.
+*D. Layout.
+Câu 25. “WordArt” trong tab Insert của Microsoft Word dùng để.
+A. Dùng để chèn bảng biểu vào văn bản.
+B. Dùng để chèn các ký tự đặc biệt.
+C. Dùng để vẽ các hình khối cơ bản.
+*D. Tạo ra các dòng chữ nghệ thuật.
+Câu 26. Để tạo một dòng kẻ ngang nhanh trong Word, bạn có thể gõ ba dấu gạch nối (—) rồi nhấn Enter. Đây là một tính năng của.
+A. Các kiểu định dạng nhanh (Styles).
+*B. Tính năng tự động sửa lỗi (AutoCorrect).
+C. Các mẫu tài liệu có sẵn (Templates).
+D. Tính năng trộn thư hàng loạt (Mail Merge).
+Câu 27. Chức năng “Mail Merge” (Trộn thư) được sử dụng để.
+A. Dùng để gửi email trực tiếp từ Word.
+*B. Tạo tài liệu hàng loạt từ một mẫu và danh sách.
+C. Kiểm tra các lỗi chính tả có trong thư.
+D. Thiết lập định dạng cho một phong bì thư.
+Câu 28. Để ngắt trang hiện tại và bắt đầu một trang mới, bạn có thể sử dụng lệnh “Page Break” trong tab.
+*A. Insert (trong nhóm Pages).
+B. Layout (trong nhóm Page Setup).
+C. Home (trong nhóm Paragraph).
+D. View (trong nhóm Views).
+Câu 29. Trong Microsoft Word, thước kẻ ngang và dọc giúp bạn.
+A. Dùng để kẻ các đường thẳng trong văn bản.
+*B. Hiển thị và điều chỉnh lề, tab và thụt lề.
+C. Dùng để đo chiều dài của một đoạn văn bản.
+D. Dùng để vẽ các hình học phức tạp.
+Câu 30. Chế độ xem nào trong Microsoft Word hiển thị tài liệu gần giống nhất với khi được in ra giấy?
+A. Read Mode.
+B. Web Layout.
+*C. Print Layout.
+D. Outline View.
+Phần 3. Powerpoint
+Câu 1. Đuôi tệp tin mặc định của một bài trình chiếu Microsoft PowerPoint (phiên bản mới) là gì?
+A. .doc
+B. .xls
+*C. .pptx
+D. .txt
+Câu 2. Để bắt đầu trình chiếu một bài thuyết trình từ slide đầu tiên, bạn nhấn phím nào?
+A. F5
+*B. Shift + F5
+C. Ctrl + P
+D. Esc
+Câu 3. Trong PowerPoint, “Slide Master” được sử dụng để làm gì?
+A. Dùng để chèn một slide mới vào trong bài.
+*B. Thiết lập định dạng chung cho toàn bộ các slide.
+C. Dùng để chạy hiệu ứng cho các đối tượng.
+D. Dùng để lưu bài trình chiếu dưới dạng video.
+Câu 4. Chức năng “Transitions” (Chuyển tiếp) trong PowerPoint áp dụng cho đối tượng nào?
+A. Các đối tượng văn bản trên một slide.
+B. Các hình ảnh và đồ họa trên slide.
+C. Các hiệu ứng âm thanh được chèn vào.
+*D. Áp dụng khi chuyển tiếp giữa các slide.
+Câu 5. Để chèn một hình ảnh từ máy tính vào slide, bạn thường chọn tab nào trên Ribbon?
+A. Home
+*B. Insert
+C. Design
+D. Animations
+Câu 6. “Placeholder” trong PowerPoint là gì?
+*A. Một khung chứa định sẵn cho văn bản và đối tượng.
+B. Một hiệu ứng chuyển tiếp giữa các slide.
+C. Tên của một chủ đề thiết kế có sẵn.
+D. Một công cụ dùng để vẽ các hình khối.
+Câu 7. Để thay đổi bố cục (layout) của một slide đã có, bạn thường thực hiện thao tác nào trong tab “Home”?
+A. New Slide
+B. Reset
+C. Section
+*D. Layout
+Câu 8. Hiệu ứng xuất hiện, biến mất hoặc di chuyển của các đối tượng trên một slide được gọi là gì?
+A. Transitions
+B. Themes
+*C. Animations
+D. SmartArt
+Câu 9. Chế độ xem nào trong PowerPoint cho phép bạn dễ dàng sắp xếp lại thứ tự các slide?
+A. Normal View
+*B. Slide Sorter View
+C. Notes Page View
+D. Reading View
+Câu 10. Để bắt đầu trình chiếu từ slide hiện tại đang chọn, bạn sử dụng tổ hợp phím nào?
+*A. Shift + F5
+B. F5
+C. Ctrl + S
+D. Alt + F4
+Câu 11. Chức năng “Themes” (Chủ đề) trong PowerPoint giúp bạn làm gì?
+A. Dùng để chèn âm thanh vào trong bài.
+B. Dùng để kiểm tra các lỗi chính tả.
+C. Dùng để in ấn bài trình chiếu ra giấy.
+*D. Áp dụng một bộ thiết kế nhất quán cho bài trình chiếu.
+Câu 12. Để thêm ghi chú cho người thuyết trình mà khán giả không nhìn thấy, bạn sử dụng vùng nào?
+A. Vùng tiêu đề chính của slide.
+B. Vùng chứa danh sách các slide.
+*C. Sử dụng vùng ghi chú (Notes Pane) ở dưới slide.
+D. Chèn một hộp văn bản (Text Box) ẩn.
+Câu 13. Trong PowerPoint, “WordArt” là công cụ dùng để làm gì?
+*A. Tạo ra các dòng chữ nghệ thuật đặc biệt.
+B. Dùng để vẽ các hình khối cơ bản.
+C. Dùng để chèn các bảng biểu dữ liệu.
+D. Dùng để chèn video từ máy tính.
+Câu 14. Để căn lề cho một đoạn văn bản trong Text Box, bạn sử dụng các công cụ trong nhóm nào của tab “Home”?
+A. Font
+*B. Paragraph
+C. Drawing
+D. Editing
+Câu 15. Nếu muốn một hiệu ứng chuyển slide áp dụng cho tất cả các slide, bạn sẽ chọn nút lệnh nào?
+A. Effect Options
+B. Preview
+*C. Apply To All
+D. After
+Câu 16. Chức năng “SmartArt” trong tab “Insert” dùng để tạo ra đối tượng nào?
+A. Các bảng dữ liệu phức tạp.
+B. Các video clip minh họa ngắn.
+C. Các hình ảnh từ thư viện trực tuyến.
+*D. Tạo các sơ đồ và quy trình một cách trực quan.
+Câu 17. Để thoát khỏi chế độ trình chiếu (Slide Show), bạn nhấn phím nào?
+*A. Esc (Escape)
+B. Enter
+C. Spacebar
+D. Tab
+Câu 18. Trong tab “File”, lệnh “Save As” khác với “Save” ở điểm nào?
+A. Lệnh “Save As” chỉ dùng để lưu dưới dạng PDF.
+*B. Lệnh “Save As” cho phép lưu với tên hoặc vị trí mới.
+C. Lệnh “Save As” có tốc độ lưu nhanh hơn “Save”.
+D. Lệnh “Save As” không thể ghi đè lên tệp cũ.
+Câu 19. Để ẩn một slide để nó không xuất hiện khi trình chiếu, bạn làm gì?
+A. Xóa vĩnh viễn slide đó khỏi bài.
+B. Chuyển màu nền slide thành màu đen.
+*C. Chuột phải vào slide và chọn “Hide Slide”.
+D. Đặt thời gian chuyển của slide đó bằng 0.
+Câu 20. Chức năng nào cho phép bạn chèn một đoạn video vào slide thuyết trình?
+A. Picture
+B. Shapes
+C. Chart
+*D. Video (trong tab Insert)
+Câu 21. Tab nào trên Ribbon chứa các công cụ liên quan đến việc thiết lập hiệu ứng hoạt hình (Animations)?
+A. Design
+B. Transitions
+*C. Animations
+D. Slide Show
+Câu 22. Khi trình chiếu, để chuyển sang slide tiếp theo, ngoài việc nhấn chuột, bạn có thể sử dụng phím nào?
+A. Dùng phím mũi tên lên.
+*B. Dùng phím cách hoặc mũi tên phải.
+C. Dùng phím Page Up.
+D. Dùng phím Home.
+Câu 23. Chức năng “Header & Footer” trong tab “Insert” cho phép bạn thêm thông tin gì vào slide?
+*A. Thêm ngày tháng, số slide, và văn bản chân trang.
+B. Chỉ cho phép thêm hình ảnh làm nền.
+C. Chỉ cho phép thêm các hiệu ứng âm thanh.
+D. Dùng để chèn các loại biểu đồ dữ liệu.
+Câu 24. “Animation Pane” (Ngăn hoạt hình) có tác dụng gì?
+A. Dùng để chọn một theme mới cho bài.
+B. Dùng để chèn các biểu tượng vào slide.
+C. Dùng để điều chỉnh kích thước của slide.
+*D. Hiển thị và tùy chỉnh các hiệu ứng hoạt hình.
+Câu 25. Để tạo một slide mới có bố cục giống hệt slide hiện tại, bạn có thể làm gì?
+*A. Chuột phải vào slide và chọn “Duplicate Slide”.
+B. Chọn New Slide rồi chọn lại layout tương tự.
+C. Sao chép tất cả đối tượng và dán vào slide mới.
+D. Sử dụng chức năng Slide Master để tạo mới.
+Câu 26. Chế độ xem “Presenter View” (Chế độ xem của diễn giả) khi trình chiếu có lợi ích gì?
+A. Giúp khán giả thấy được toàn bộ các slide.
+*B. Giúp diễn giả xem ghi chú và slide kế tiếp.
+C. Giúp tự động chuyển các slide theo thời gian.
+D. Chỉ hiển thị phần văn bản có trên slide.
+Câu 27. Để chèn một bảng (Table) vào slide, bạn vào tab “Insert” và chọn?
+A. Shapes
+B. SmartArt
+C. Chart
+*D. Table
+Câu 28. Nếu bạn muốn thay đổi màu nền cho một slide cụ thể mà không ảnh hưởng đến các slide khác, bạn nên làm gì?
+A. Thay đổi Theme trong tab Design.
+*B. Chuột phải vào slide và chọn “Format Background”.
+C. Chỉnh sửa thuộc tính trong Slide Master.
+D. Chèn một hình chữ nhật lớn che phủ slide.
+Câu 29. Công cụ “Eyedropper” (Ống hút màu) trong các tùy chọn định dạng màu sắc dùng để làm gì?
+A. Dùng để vẽ một hình tròn hoàn hảo.
+B. Dùng để tạo hiệu ứng đổ bóng cho đối tượng.
+*C. Lấy một mẫu màu từ vị trí bất kỳ trên màn hình.
+D. Dùng để tăng độ trong suốt của màu sắc.
+Câu 30. Để lưu bài trình chiếu dưới dạng một tệp video, bạn thường chọn tùy chọn nào trong “File”?
+A. Dùng lệnh Package Presentation for CD.
+B. Dùng lệnh Create Handouts để tạo bản in.
+C. Dùng lệnh Create PDF/XPS Document.
+*D. Dùng lệnh Export và chọn Create a Video.
+Phần 4. Tin học đại cương
+Câu 1. Hệ đếm nào được máy tính sử dụng làm cơ sở để biểu diễn thông tin?
+A. Hệ thập phân (Decimal)
+*B. Hệ nhị phân (Binary)
+C. Hệ thập lục phân (Hexadecimal)
+D. Hệ bát phân (Octal)
+Câu 2. Thành phần nào của máy tính thực hiện các phép tính số học và logic?
+*A. Bộ xử lý trung tâm (CPU)
+B. Bộ nhớ trong (RAM)
+C. Bộ nhớ ngoài (Ổ cứng)
+D. Bo mạch chủ (Mainboard)
+Câu 3. Phần mềm nào chịu trách nhiệm quản lý và điều phối toàn bộ hoạt động của máy tính?
+A. Phần mềm ứng dụng
+*B. Hệ điều hành
+C. Phần mềm tiện ích
+D. Trình điều khiển thiết bị
+Câu 4. Thiết bị nào sau đây là một thiết bị lưu trữ quang học?
+A. Ổ đĩa cứng (HDD)
+B. Thẻ nhớ SD
+*C. Đĩa CD-ROM
+D. USB Flash Drive
+Câu 5. Trong kiến trúc máy tính Von Neumann, chương trình và dữ liệu được lưu trữ ở đâu khi đang thực thi?
+A. Chỉ ở trong bộ xử lý trung tâm CPU
+B. Ở trong bộ nhớ chỉ đọc của máy (ROM)
+C. Chỉ ở trong bộ nhớ ngoài như ổ cứng
+*D. Ở trong bộ nhớ chính của máy (RAM)
+Câu 6. “Mạng của các mạng” là thuật ngữ dùng để chỉ?
+A. Mạng LAN
+B. Mạng WAN
+*C. Internet
+D. Mạng MAN
+Câu 7. Giao thức nào là cơ bản để truyền tải siêu văn bản trên World Wide Web?
+A. Giao thức truyền tải tập tin FTP
+B. Giao thức gửi thư điện tử SMTP
+*C. Giao thức siêu văn bản HTTP
+D. Giao thức truyền vận TCP và IP
+Câu 8. Một chương trình máy tính được viết bằng ngôn ngữ lập trình bậc cao cần phải được làm gì trước khi CPU có thể thực thi?
+*A. Biên dịch hoặc thông dịch sang mã máy
+B. Được nén lại để giảm bớt dung lượng
+C. Được mã hóa để tăng cường bảo mật
+D. Được lưu trữ vào bộ nhớ chỉ đọc ROM
+Câu 9. Đâu là một ví dụ về mã độc (malware)?
+A. Hệ điều hành Windows
+B. Trình duyệt Google Chrome
+C. Phần mềm Microsoft Office
+*D. Virus máy tính
+Câu 10. Tốc độ của CPU thường được đo bằng đơn vị nào?
+A. Bytes per second (Bps)
+*B. Gigahertz (GHz)
+C. Dots per inch (DPI)
+D. Megabytes (MB)
+Câu 11. Chức năng chính của bộ nhớ Cache trong CPU là gì?
+*A. Tăng tốc truy xuất dữ liệu dùng thường xuyên
+B. Dùng để lưu trữ hệ điều hành của máy
+C. Dùng để lưu trữ dữ liệu vĩnh viễn
+D. Dùng để kết nối các thành phần phần cứng
+Câu 12. Địa chỉ nào được sử dụng để xác định duy nhất một máy tính trên mạng Internet?
+A. Địa chỉ MAC
+*B. Địa chỉ IP
+C. Tên miền
+D. Địa chỉ cổng (Port)
+Câu 13. Trong mô hình client-server, máy khách (client) là gì?
+A. Là máy tính cung cấp các tài nguyên dịch vụ
+B. Là một thiết bị mạng trung gian như router
+C. Là một phần mềm diệt virus trên máy tính
+*D. Là máy tính yêu cầu và sử dụng các dịch vụ
+Câu 14. Ngôn ngữ nào sau đây được coi là ngôn ngữ đánh dấu, dùng để tạo cấu trúc cho trang web?
+A. Ngôn ngữ lập trình Python
+B. Ngôn ngữ lập trình Java
+*C. Ngôn ngữ đánh dấu HTML
+D. Ngôn ngữ lập trình C++
+Câu 15. Khái niệm “Bit” là viết tắt của?
+A. Basic Input Unit
+*B. Binary Digit
+C. Byte Information Transfer
+D. Basic Integer Type
+Câu 16. ROM (Read-Only Memory) chứa thông tin gì quan trọng?
+A. Chứa các dữ liệu cá nhân của người dùng
+*B. Chứa chương trình khởi động máy tính (BIOS)
+C. Chứa các ứng dụng đang chạy trên máy
+D. Chứa các tệp tin tạm thời của hệ thống
+Câu 17. Phần mở rộng tệp tin (ví dụ. .docx, .jpg, .mp3) có ý nghĩa gì?
+A. Cho biết kích thước của tệp tin trên đĩa
+B. Cho biết ngày tháng tạo ra của tệp tin
+*C. Gợi ý về loại dữ liệu và ứng dụng có thể mở tệp
+D. Bảo vệ tệp tin khỏi sự lây nhiễm của virus
+Câu 18. “Sao lưu dữ liệu” (Data Backup) có mục đích chính là gì?
+A. Giúp làm tăng tốc độ xử lý của máy tính
+B. Giúp giải phóng không gian lưu trữ trống
+*C. Phòng ngừa việc mất dữ liệu do các sự cố
+D. Giúp cải thiện hiệu suất kết nối mạng
+Câu 19. Đâu là một lợi ích chính của việc sử dụng điện toán đám mây (Cloud Computing)?
+*A. Truy cập dữ liệu, ứng dụng từ bất cứ đâu có mạng
+B. Không cần có kết nối mạng Internet khi dùng
+C. Tăng cường bảo mật tuyệt đối cho dữ liệu
+D. Giảm hoàn toàn chi phí sử dụng máy tính
+Câu 20. Trong an toàn thông tin, “Phishing” là hình thức tấn công nào?
+A. Hình thức tấn công từ chối dịch vụ (DDoS)
+*B. Hình thức lừa đảo để lấy cắp thông tin nhạy cảm
+C. Hình thức cài đặt phần mềm gián điệp (Spyware)
+D. Hình thức mã hóa dữ liệu đòi tiền chuộc
+Câu 21. Đơn vị đo dung lượng lưu trữ nào lớn nhất trong các lựa chọn sau?
+A. Megabyte (MB)
+B. Gigabyte (GB)
+*C. Terabyte (TB)
+D. Kilobyte (KB)
+Câu 22. “Giao diện người dùng đồ họa” (GUI) cho phép người dùng tương tác với máy tính thông qua?
+A. Chỉ các dòng lệnh văn bản trên màn hình
+B. Các loại sóng âm thanh phát ra từ loa
+C. Các tín hiệu của não bộ con người
+*D. Các biểu tượng, cửa sổ, menu và con trỏ
+Câu 23. Thiết bị nào chuyển đổi tín hiệu số từ máy tính thành tín hiệu analog để truyền qua đường điện thoại?
+*A. Modem (Bộ điều chế)
+B. Router (Bộ định tuyến)
+C. Switch (Bộ chuyển mạch)
+D. Hub (Bộ chia)
+Câu 24. “Mã nguồn mở” (Open Source Software) có đặc điểm gì?
+A. Luôn miễn phí nhưng không được phép sửa đổi
+B. Chỉ có thể chạy được trên hệ điều hành Linux
+*C. Công khai mã nguồn để xem, sửa và phân phối lại
+D. Không cần cài đặt, chạy trực tiếp từ trên web
+Câu 25. Trong lập trình, một biến (variable) dùng để làm gì?
+A. Dùng để thực hiện một hành động cụ thể
+B. Dùng để định nghĩa một cấu trúc dữ liệu
+C. Dùng để biểu diễn một hằng số không đổi
+*D. Lưu trữ một giá trị có thể thay đổi được
+Câu 26. Hệ thống tên miền (DNS – Domain Name System) có chức năng gì?
+*A. Chuyển đổi tên miền thành địa chỉ IP tương ứng
+B. Dùng để mã hóa dữ liệu truyền trên mạng
+C. Dùng để quản lý việc cấp phát các địa chỉ IP
+D. Dùng để lọc các nội dung web độc hại
+Câu 27. Khi nói về độ phân giải màn hình (ví dụ. 1920×1080), các con số này biểu thị điều gì?
+*A. Số lượng điểm ảnh (pixel) theo chiều ngang và dọc
+B. Kích thước vật lý của màn hình tính bằng inch
+C. Tốc độ làm mới của màn hình tính bằng Hertz
+D. Tỷ lệ tương phản sáng tối của màn hình
+Câu 28. Phần mềm nào sau đây thường được sử dụng để tạo các bảng tính và thực hiện tính toán?
+A. Microsoft Word
+B. Microsoft PowerPoint
+C. Adobe Photoshop
+*D. Microsoft Excel
+Câu 29. “Firewall” (Tường lửa) trong mạng máy tính có vai trò gì?
+A. Giúp tăng tốc độ kết nối mạng Internet
+B. Thực hiện sao lưu dữ liệu một cách tự động
+*C. Lọc lưu lượng mạng, chặn truy cập trái phép
+D. Diệt virus và các phần mềm độc hại khác
+Câu 30. Bus hệ thống (System Bus) trong máy tính có chức năng chính là gì?
+*A. Là đường truyền dữ liệu giữa các thành phần chính
+B. Cung cấp nguồn năng lượng cho các thành phần
+C. Là bộ phận làm mát cho bộ xử lý trung tâm
+D. Là nơi lưu trữ chính của hệ điều hành
+Phần 5. Không biết
+Câu 1. Hệ điều hành là gì?
+A. Một thiết bị phần cứng của máy tính.
+*B. Phần mềm hệ thống quản lý hoạt động của phần cứng và phần mềm.
+C. Một chương trình ứng dụng dùng để soạn thảo văn bản.
+D. Một ngôn ngữ lập trình để tạo ra ứng dụng.
+Câu 2. Chức năng nào sau đây KHÔNG phải là chức năng chính của hệ điều hành?
+A. Quản lý tài nguyên (CPU, bộ nhớ, thiết bị).
+B. Cung cấp giao diện tương tác cho người dùng.
+C. Quản lý hệ thống tập tin và thư mục.
+*D. Soạn thảo văn bản và tạo bảng tính.
+Câu 3. Hệ điều hành nào sau đây là hệ điều hành mã nguồn mở?
+A. Windows 10.
+B. macOS.
+*C. Linux.
+D. iOS.
+Câu 4. Giao diện người dùng đồ họa (GUI) là viết tắt của?
+*A. Graphical User Interface.
+B. General User Interface.
+C. Graphic Utility Interface.
+D. General Utility Interface.
+Câu 5. Trong hệ điều hành Windows, để xem các tiến trình đang chạy, ta thường dùng công cụ nào?
+A. File Explorer.
+B. Control Panel.
+C. Command Prompt.
+*D. Task Manager.
+Câu 6. Tập tin (File) là gì?
+A. Một thiết bị lưu trữ vật lý trong máy tính.
+*B. Một tập hợp dữ liệu được đặt tên, lưu trên thiết bị lưu trữ.
+C. Một chương trình ứng dụng để chạy phần mềm.
+D. Một thư mục hệ thống chứa các tập tin khác.
+Câu 7. Thư mục (Folder/Directory) dùng để làm gì?
+A. Chạy các chương trình ứng dụng.
+B. Kết nối với mạng Internet.
+*C. Tổ chức và quản lý các tập tin.
+D. Lưu trữ tạm thời các dữ liệu.
+Câu 8. Phần mở rộng của tập tin (ví dụ. .docx, .xlsx) thường cho biết điều gì?
+A. Tên người tạo ra tập tin đó.
+B. Kích thước của tập tin trên đĩa.
+*C. Định dạng tập tin và chương trình có thể mở nó.
+D. Ngày và giờ tạo ra tập tin.
+Câu 9. Thao tác “Copy” và “Paste” một tập tin có nghĩa là gì?
+A. Di chuyển tập tin từ vị trí này sang vị trí khác.
+*B. Tạo bản sao của tập tin ở vị trí mới, giữ lại bản gốc.
+C. Xóa vĩnh viễn tập tin khỏi máy tính.
+D. Đổi tên của tập tin đang được chọn.
+Câu 10. Thao tác “Cut” và “Paste” một tập tin có nghĩa là gì?
+*A. Di chuyển tập tin tới vị trí mới, xóa ở vị trí cũ.
+B. Tạo một bản sao lưu của tập tin đó.
+C. Xóa tập tin tạm thời vào thùng rác.
+D. Nén tập tin để giảm dung lượng.
+Câu 11. Recycle Bin (Windows) hoặc Trash (macOS) dùng để làm gì?
+A. Lưu trữ các tập tin hệ thống quan trọng.
+*B. Chứa các mục đã xóa tạm thời và cho phép khôi phục.
+C. Tăng tốc độ khởi động của máy tính.
+D. Quét và diệt virus cho hệ điều hành.
+Câu 12. Phần mềm nào sau đây KHÔNG phải là trình duyệt web?
+A. Google Chrome.
+B. Mozilla Firefox.
+C. Microsoft Edge.
+*D. Microsoft Word.
+Câu 13. “Freeware” là loại phần mềm như thế nào?
+*A. Phần mềm miễn phí khi sử dụng nhưng thường là mã nguồn đóng.
+B. Phần mềm dùng thử có giới hạn thời gian hoặc tính năng.
+C. Phần mềm thương mại phải trả phí để được sử dụng.
+D. Phần mềm có mã nguồn mở, cho phép sửa đổi tự do.
+Câu 14. “Shareware” là loại phần mềm như thế nào?
+A. Phần mềm hoàn toàn miễn phí và không giới hạn.
+*B. Phần mềm cho dùng thử, cần trả phí để sử dụng đầy đủ.
+C. Phần mềm độc hại gây ảnh hưởng đến máy tính.
+D. Một loại phần mềm hệ thống của máy tính.
+Câu 15. Phần mềm diệt virus có chức năng chính là gì?
+A. Tăng tốc độ kết nối của mạng Internet.
+B. Dọn dẹp các tập tin rác trong hệ thống.
+*C. Phát hiện, ngăn chặn và gỡ bỏ phần mềm độc hại.
+D. Sao lưu và phục hồi dữ liệu người dùng.
+Câu 16. Trong hệ điều hành Windows, Control Panel (Bảng điều khiển) dùng để làm gì?
+*A. Dùng để xem và thay đổi các thiết lập của hệ thống.
+B. Duyệt các tập tin và thư mục có trên máy tính.
+C. Chạy các chương trình ứng dụng đã được cài đặt.
+D. Soạn thảo các văn bản và tài liệu đơn giản.
+Câu 17. Hệ điều hành đa nhiệm (Multitasking) có nghĩa là gì?
+A. Cho phép nhiều người dùng đăng nhập cùng lúc.
+*B. Cho phép hệ thống thực thi nhiều chương trình cùng lúc.
+C. Chỉ chạy trên các máy tính có nhiều nhân CPU.
+D. Hệ điều hành bắt buộc phải có giao diện đồ họa.
+Câu 18. Khi một chương trình bị “treo” (Not Responding), bạn thường làm gì trong Windows?
+A. Khởi động lại máy tính ngay lập tức.
+B. Gỡ cài đặt chương trình đó khỏi máy.
+C. Cài đặt lại toàn bộ hệ điều hành.
+*D. Dùng Task Manager để đóng chương trình.
+Câu 19. Để cài đặt một phần mềm mới vào máy tính, bạn thường chạy tập tin có phần mở rộng nào?
+A. .txt
+B. .jpg
+*C. .exe hoặc .msi
+D. .dll
+Câu 20. Driver (Trình điều khiển thiết bị) là gì?
+*A. Phần mềm giúp hệ điều hành giao tiếp với một phần cứng.
+B. Một thiết bị phần cứng để tăng tốc độ của máy tính.
+C. Một loại virus máy tính lây lan qua mạng.
+D. Một ứng dụng văn phòng cơ bản có sẵn.
+Câu 21. Hệ thống tập tin (File System) phổ biến trên các ổ đĩa Windows hiện nay là gì?
+A. FAT32.
+*B. NTFS.
+C. HFS+.
+D. ext4.
+Câu 22. Chức năng “Defragmentation” (Chống phân mảnh ổ đĩa) có tác dụng gì?
+A. Xóa các tập tin không cần thiết trên ổ đĩa.
+B. Quét virus và phần mềm độc hại cho ổ đĩa.
+*C. Sắp xếp lại dữ liệu trên ổ đĩa để tăng tốc độ truy cập.
+D. Mã hóa toàn bộ dữ liệu có trên ổ đĩa.
+Câu 23. Hệ điều hành nào thường được sử dụng trên điện thoại iPhone?
+A. Android.
+*B. iOS.
+C. Windows Mobile.
+D. Symbian.
+Câu 24. “Path” (Đường dẫn) của một tập tin hoặc thư mục là gì?
+A. Tên riêng của tập tin hoặc thư mục đó.
+B. Kích thước của tập tin hoặc thư mục trên đĩa.
+C. Phần mở rộng chỉ định loại của tập tin.
+*D. Chuỗi ký tự xác định vị trí của một tập tin/thư mục.
+Câu 25. Phần mềm nguồn mở (Open Source Software) có đặc điểm nổi bật là.
+A. Luôn luôn được cung cấp miễn phí.
+B. Không được phép chỉnh sửa mã nguồn.
+*C. Cung cấp mã nguồn để tự do xem, sửa đổi, phân phối.
+D. Chỉ có thể chạy trên hệ điều hành Linux.
+Câu 26. Hệ điều hành nào sau đây KHÔNG phải là hệ điều hành cho máy tính cá nhân (PC)?
+*A. Android.
+B. Windows.
+C. macOS.
+D. Linux.
+Câu 27. Khi bạn xóa một tập tin bằng cách nhấn phím “Delete”, tập tin đó thường được chuyển đến đâu?
+A. Bị xóa vĩnh viễn khỏi ổ cứng.
+*B. Được chuyển vào Recycle Bin (Thùng rác).
+C. Được sao chép sang một thư mục khác.
+D. Được tự động nén lại để tiết kiệm.
+Câu 28. Giao diện dòng lệnh (CLI) là viết tắt của?
+A. Computer Line Interface.
+B. Control Line Interface.
+*C. Common Language Interface.
+D. Command Line Interface.
+Câu 29. Utility Software (Phần mềm tiện ích) là loại phần mềm nào?
+A. Các phần mềm ứng dụng chính như Word, Excel.
+*B. Phần mềm hỗ trợ phân tích, cấu hình, bảo trì máy tính.
+C. Một tên gọi khác của chính hệ điều hành.
+D. Các loại trình duyệt web để truy cập Internet.
+Câu 30. Để giải nén một tập tin có định dạng .zip hoặc .rar, bạn cần sử dụng loại phần mềm nào?
+A. Một trình duyệt web bất kỳ.
+B. Trình soạn thảo văn bản như Notepad.
+*C. Phần mềm chuyên dụng để nén và giải nén.
+D. Phần mềm diệt virus có trong máy.
+ 
+Phần 6. Không Biết
+Câu 1. Mạng máy tính (Computer Network) là gì?
+A. Một tập hợp các máy tính được đặt gần nhau trong một phòng.
+*B. Tập hợp các máy tính và thiết bị kết nối để chia sẻ tài nguyên.
+C. Một loại phần mềm dùng để kết nối các máy tính với nhau.
+D. Một thiết bị phần cứng đơn lẻ dùng để truyền dữ liệu đi xa.
+Câu 2. Mạng LAN là viết tắt của cụm từ nào?
+A. Long Area Network.
+B. Logical Area Network.
+*C. Local Area Network.
+D. Large Area Network.
+Câu 3. Mạng WAN là viết tắt của cụm từ nào?
+*A. Wide Area Network.
+B. Wireless Area Network.
+C. World Area Network.
+D. Web Area Network.
+Câu 4. Internet là một ví dụ điển hình của loại mạng nào?
+A. LAN (Mạng cục bộ).
+B. MAN (Mạng đô thị).
+C. PAN (Mạng cá nhân).
+*D. WAN (Mạng diện rộng).
+Câu 5. Thiết bị nào dùng để kết nối nhiều máy tính trong mạng LAN và chuyển tiếp dữ liệu đến đúng cổng đích?
+A. Hub.
+B. Modem.
+C. Repeater.
+*D. Switch.
+Câu 6. Thiết bị nào dùng để kết nối các mạng khác nhau và định tuyến gói tin giữa chúng?
+A. Switch.
+B. Hub.
+*C. Router.
+D. Bridge.
+Câu 7. Địa chỉ IP (Internet Protocol address) được sử dụng để làm gì?
+A. Xác định tên nhà sản xuất của máy tính.
+*B. Định danh duy nhất cho một thiết bị trên mạng.
+C. Xác định phần mềm đang chạy trên máy.
+D. Đo lường tốc độ tối đa của kết nối mạng.
+Câu 8. Tên miền (Domain Name) ví dụ như “google.com” được sử dụng để làm gì?
+A. Thay thế cho địa chỉ MAC của card mạng.
+B. Một phương thức mã hóa dữ liệu truyền đi.
+C. Xác định vị trí địa lý của một máy chủ.
+*D. Tên định danh dễ nhớ thay cho địa chỉ IP.
+Câu 9. Dịch vụ nào chuyển đổi tên miền sang địa chỉ IP và ngược lại?
+A. HTTP.
+B. FTP.
+*C. DNS (Domain Name System).
+D. DHCP.
+Câu 10. Giao thức nào là giao thức chính của World Wide Web (WWW)?
+A. Giao thức truyền tải tập tin FTP.
+*B. Giao thức web HTTP hoặc HTTPS.
+C. Giao thức gửi thư điện tử SMTP.
+D. Giao thức điều khiển truyền vận TCP.
+Câu 11. WWW là viết tắt của cụm từ nào?
+A. World Web Wide.
+B. Wide World Web.
+*C. World Wide Web.
+D. Web World Wide.
+Câu 12. Để gửi và nhận thư điện tử (email), bạn thường sử dụng các giao thức nào?
+*A. SMTP để gửi và POP3/IMAP để nhận thư.
+B. Giao thức web HTTP và truyền file FTP.
+C. Giao thức nền tảng TCP và giao thức IP.
+D. Giao thức phân giải DNS và cấp IP DHCP.
+Câu 13. Giao thức FTP (File Transfer Protocol) được sử dụng để làm gì?
+A. Gửi và nhận các thư điện tử.
+B. Duyệt các trang web trên Internet.
+*C. Dùng để truyền tải tập tin qua lại trên mạng.
+D. Thực hiện các cuộc trò chuyện trực tuyến.
+Câu 14. Địa chỉ IP phiên bản 4 (IPv4) có bao nhiêu bit?
+A. 16 bits.
+*B. 32 bits.
+C. 64 bits.
+D. 128 bits.
+Câu 15. Địa chỉ IP phiên bản 6 (IPv6) có bao nhiêu bit?
+A. 32 bits.
+B. 64 bits.
+*C. 128 bits.
+D. 256 bits.
+Câu 16. “Client-Server” là một mô hình mạng trong đó.
+*A. Có máy chủ (Server) cung cấp dịch vụ cho máy khách (Client).
+B. Mọi máy tính trong mạng đều có vai trò hoàn toàn ngang hàng.
+C. Các máy tính trong mạng không được kết nối với nhau.
+D. Chỉ có một máy tính duy nhất được phép hoạt động.
+Câu 17. “Peer-to-Peer” (P2P) là một mô hình mạng trong đó.
+*A. Các máy tính có vai trò ngang hàng, vừa là máy chủ vừa là máy khách.
+B. Có một máy chủ trung tâm quản lý tất cả các hoạt động.
+C. Một mô hình chỉ được sử dụng để chia sẻ các tập tin.
+D. Mạng có thể hoạt động mà không cần kết nối Internet.
+Câu 18. URL là viết tắt của cụm từ nào?
+A. Universal Resource Link.
+B. Uniform Resource Link.
+*C. Uniform Resource Locator.
+D. Universal Resource Locator.
+Câu 19. Để bảo vệ máy tính khỏi các phần mềm độc hại từ Internet, bạn nên làm gì?
+A. Chỉ truy cập các trang web đã được xác thực nổi tiếng.
+B. Không bao giờ tải xuống bất kỳ tập tin nào từ mạng.
+C. Ngắt kết nối Internet hoàn toàn khi không sử dụng.
+*D. Dùng phần mềm diệt virus và cẩn trọng khi mở email, tải file.
+Câu 20. HTTPS khác với HTTP ở điểm nào?
+*A. HTTPS có mã hóa để bảo mật dữ liệu, an toàn hơn.
+B. HTTPS có tốc độ truyền dữ liệu nhanh hơn HTTP.
+C. HTTPS là giao thức chỉ dành cho các trang web chính phủ.
+D. HTTPS là phiên bản không cần sử dụng địa chỉ IP.
+Câu 21. Wi-Fi là công nghệ cho phép kết nối mạng.
+A. Sử dụng dây cáp mạng.
+*B. Không cần sử dụng dây.
+C. Bằng đường truyền cáp quang.
+D. Thông qua các vệ tinh.
+Câu 22. Modem là thiết bị dùng để.
+A. Khuếch đại tín hiệu mạng để truyền đi xa hơn.
+B. Chia sẻ một kết nối Internet cho nhiều thiết bị khác.
+C. Lưu trữ tạm thời dữ liệu của người dùng.
+*D. Chuyển đổi tín hiệu số sang tương tự và ngược lại.
+Câu 23. ISP là viết tắt của cụm từ nào?
+A. Internal Service Provider.
+B. International Service Protocol.
+*C. Internet Service Provider.
+D. Internet System Protocol.
+Câu 24. Khi bạn gõ “www.example.com” vào trình duyệt, yêu cầu đầu tiên thường được gửi đến đâu?
+A. Máy chủ Web của trang example.com.
+*B. Máy chủ DNS để phân giải tên miền ra địa chỉ IP.
+C. Router mạng tại nhà của bạn.
+D. Máy chủ nhận và gửi email.
+Câu 25. Địa chỉ MAC (Media Access Control) là gì?
+*A. Địa chỉ vật lý duy nhất được gán cho card mạng.
+B. Một địa chỉ logic của máy tính trên mạng.
+C. Địa chỉ IP công khai của router mạng.
+D. Tên của người dùng đăng nhập trên mạng.
+Câu 26. “Tường lửa” (Firewall) trong mạng máy tính có chức năng chính là gì?
+A. Tăng tốc độ truyền dữ liệu trên mạng.
+B. Lưu trữ các trang web bạn đã truy cập.
+C. Quét và diệt virus trên máy tính.
+*D. Kiểm soát lưu lượng, ngăn chặn các truy cập trái phép.
+Câu 27. Giao thức TCP (Transmission Control Protocol) đảm bảo điều gì khi truyền dữ liệu?
+A. Đạt tốc độ truyền dữ liệu nhanh nhất.
+*B. Đảm bảo truyền dữ liệu tin cậy, có kiểm soát lỗi.
+C. Không cần thiết lập kết nối trước khi truyền.
+D. Chỉ được dùng để truyền các dữ liệu văn bản.
+Câu 28. Trong mô hình TCP/IP, tầng nào chịu trách nhiệm định tuyến các gói tin qua các mạng?
+A. Tầng ứng dụng (Application Layer).
+B. Tầng giao vận (Transport Layer).
+*C. Tầng Internet (Internet Layer).
+D. Tầng truy cập mạng (Network Access Layer).
+Câu 29. Dịch vụ nào cho phép người dùng lưu trữ tập tin trực tuyến và truy cập từ nhiều thiết bị?
+A. Dịch vụ thư điện tử (Email).
+B. Giao thức truyền tập tin (FTP).
+C. Các nền tảng mạng xã hội (Social Media).
+*D. Lưu trữ đám mây (Google Drive, Dropbox).
+Câu 30. “Phishing” là một hình thức tấn công mạng nhằm mục đích gì?
+A. Tấn công phá hoại hệ thống máy tính.
+*B. Lừa đảo để lấy cắp thông tin nhạy cảm của người dùng.
+C. Gửi thư rác quảng cáo hàng loạt.
+Phần 7. Không biết
+Câu 1. Phần mềm độc hại (Malware) nào sau đây mã hóa dữ liệu và đòi tiền chuộc?
+A. Virus.
+B. Spyware.
+*C. Ransomware.
+D. Adware.
+Câu 2. Biện pháp nào sau đây KHÔNG phải là biện pháp hiệu quả để bảo vệ máy tính?
+*A. Luôn đảm bảo kết nối Internet phải ở tốc độ cao nhất.
+B. Cài đặt và cập nhật thường xuyên phần mềm diệt virus.
+C. Thận trọng khi mở các tệp đính kèm từ email lạ.
+D. Cập nhật hệ điều hành và các phần mềm ứng dụng.
+Câu 3. “Phishing” là một hình thức tấn công mạng nhằm mục đích chính là gì?
+A. Làm tê liệt toàn bộ hệ thống máy tính của nạn nhân.
+*B. Lừa đảo người dùng để lấy cắp các thông tin nhạy cảm.
+C. Phá hủy vĩnh viễn dữ liệu trên ổ cứng của nạn nhân.
+D. Gửi thư rác quảng cáo với số lượng lớn ra bên ngoài.
+Câu 4. Đặc điểm nào sau đây giúp tạo một mật khẩu mạnh?
+A. Sử dụng một chuỗi ngắn gọn, dễ nhớ như ngày sinh.
+B. Chỉ sử dụng một loại ký tự là chữ thường cho dễ nhớ.
+*C. Kết hợp chữ hoa, chữ thường, số và ký tự đặc biệt.
+D. Sử dụng tên của người thân hoặc vật nuôi trong nhà.
+Câu 5. Tường lửa (Firewall) có chức năng chính là gì?
+A. Tăng tốc độ kết nối của đường truyền Internet.
+B. Diệt virus và các phần mềm độc hại có trong máy.
+*C. Kiểm soát lưu lượng mạng, ngăn chặn truy cập trái phép.
+D. Nén và giải nén các tập tin dữ liệu có kích thước lớn.
+Câu 6. Sao lưu dữ liệu (Backup) thường xuyên có ý nghĩa quan trọng nhất là gì?
+*A. Giúp khôi phục lại dữ liệu quan trọng sau khi gặp sự cố.
+B. Giúp tăng thêm dung lượng lưu trữ trống cho máy tính.
+C. Làm cho hệ điều hành máy tính chạy nhanh và mượt hơn.
+D. Bảo vệ máy tính khỏi sự tấn công của các loại virus.
+Câu 7. Phần mềm gián điệp (Spyware) được thiết kế để làm gì?
+*A. Bí mật thu thập thông tin và hoạt động của người dùng.
+B. Thực hiện việc mã hóa dữ liệu để đòi tiền chuộc.
+C. Liên tục hiển thị các quảng cáo không mong muốn.
+D. Tự động nhân bản và lây lan sang các máy tính khác.
+Câu 8. Khi nhận được một email lạ yêu cầu cung cấp thông tin cá nhân, bạn nên làm gì?
+*A. Không trả lời, không nhấp vào liên kết và xóa email đó.
+B. Trả lời và cung cấp thông tin theo yêu cầu của họ.
+C. Chuyển tiếp email đó cho bạn bè để cùng cảnh giác.
+D. Tải về và mở ngay các tệp đính kèm trong email.
+Câu 9. Quyền sở hữu trí tuệ trong lĩnh vực phần mềm KHÔNG bảo vệ điều gì sau đây?
+A. Mã nguồn lập trình của một phần mềm cụ thể.
+B. Thiết kế giao diện người dùng của phần mềm.
+*C. Ý tưởng chung về một phần mềm chưa được triển khai.
+D. Tài liệu hướng dẫn sử dụng đi kèm sản phẩm.
+Câu 10. Hành vi nào sau đây là vi phạm bản quyền phần mềm?
+A. Mua và sử dụng một phần mềm có bản quyền hợp lệ.
+*B. Sao chép và sử dụng phần mềm thương mại không có giấy phép.
+C. Sử dụng phần mềm nguồn mở theo đúng giấy phép đi kèm.
+D. Gỡ cài đặt một phần mềm không còn nhu cầu sử dụng.
+Câu 11. “Netiquette” (Phép lịch sự trên mạng) đề cập đến điều gì?
+A. Các quy định của pháp luật về việc sử dụng Internet.
+B. Các biện pháp kỹ thuật dùng để bảo vệ máy tính.
+C. Tốc độ kết nối mạng Internet tối thiểu cần phải có.
+*D. Bộ quy tắc ứng xử văn minh, lịch sự trên môi trường mạng.
+Câu 12. Việc phát tán thông tin sai sự thật, vu khống người khác trên mạng xã hội có thể bị coi là.
+A. Một hành vi thể hiện quyền tự do ngôn luận cá nhân.
+B. Một trò đùa vui vẻ vô hại giữa những người bạn.
+*C. Hành vi vi phạm pháp luật và chuẩn mực đạo đức xã hội.
+D. Một cách để tăng tương tác cho trang mạng xã hội.
+Câu 13. Luật An ninh mạng ở nhiều quốc gia, bao gồm Việt Nam, nhằm mục đích chính là gì?
+A. Hạn chế quyền truy cập và sử dụng Internet của người dân.
+*B. Bảo vệ an ninh quốc gia và quyền lợi hợp pháp của cá nhân.
+C. Đưa ra các quy định để thu phí sử dụng Internet.
+D. Thực hiện kiểm soát tất cả các nội dung trên mạng.
+Câu 14. Để tránh bị lừa đảo trực tuyến (Online Scams), bạn KHÔNG nên làm gì?
+A. Luôn cẩn thận với những lời mời chào hấp dẫn phi thực tế.
+B. Kiểm tra kỹ địa chỉ web trước khi nhập thông tin nhạy cảm.
+*C. Cung cấp thông tin cá nhân cho người lạ mà không kiểm chứng.
+D. Sử dụng các phương thức thanh toán an toàn và có uy tín.
+Câu 15. Cookie trong trình duyệt web là gì?
+A. Một loại virus máy tính lây lan qua trình duyệt web.
+B. Một chương trình diệt virus được tích hợp sẵn vào trình duyệt.
+C. Một hình thức quảng cáo trực tuyến phổ biến trên các web.
+*D. Tệp văn bản nhỏ mà website lưu trên máy tính để ghi nhớ thông tin.
+Câu 16. “Social Engineering” trong lĩnh vực an toàn thông tin là gì?
+*A. Kỹ thuật thao túng tâm lý để lừa người dùng tiết lộ thông tin.
+B. Một phần mềm chuyên dùng để thiết kế các mạng xã hội.
+C. Một phương pháp mã hóa dữ liệu an toàn và hiệu quả.
+D. Một loại thiết bị phần cứng dùng trong hệ thống mạng.
+Câu 17. Biện pháp nào giúp bảo mật cho mạng Wi-Fi cá nhân hoặc gia đình?
+A. Giữ nguyên tên mạng và mật khẩu mặc định của nhà sản xuất.
+*B. Đặt mật khẩu mạnh cho Wi-Fi, đổi tên mạng và ẩn SSID.
+C. Chia sẻ mật khẩu Wi-Fi công khai cho tất cả mọi người.
+D. Không bao giờ tắt thiết bị phát sóng router Wi-Fi.
+Câu 18. Đạo đức trong sử dụng công nghệ thông tin KHÔNG bao gồm hành vi nào sau đây?
+A. Luôn tôn trọng quyền riêng tư của những người khác.
+B. Không sử dụng công nghệ để gây hại cho người khác.
+C. Sử dụng tài sản trí tuệ của người khác một cách hợp pháp.
+*D. Tự do sao chép phần mềm có bản quyền không được phép.
+Câu 19. Trong Microsoft Word, để chèn một bảng biểu vào văn bản, bạn thường chọn tab nào?
+A. File.
+B. Home.
+*C. Insert.
+D. View.
+Câu 20. Trong Microsoft Excel, công thức =SUM(A1.A5) có nghĩa là gì?
+A. Tính giá trị trung bình cộng của các ô từ A1 đến A5.
+*B. Tính tổng giá trị của các ô trong vùng từ A1 đến A5.
+C. Đếm số lượng các ô có chứa dữ liệu từ A1 đến A5.
+D. Tìm giá trị lớn nhất trong các ô từ A1 đến A5.
+Câu 21. Trong Microsoft PowerPoint, chế độ “Slide Sorter View” cho phép bạn làm gì?
+*A. Xem tổng quan và sắp xếp lại thứ tự các slide dễ dàng.
+B. Chỉnh sửa chi tiết nội dung văn bản của từng slide.
+C. Bắt đầu trình chiếu bài thuyết trình cho khán giả xem.
+D. Thêm các hiệu ứng chuyển động cho từng slide.
+Câu 22. Phần mở rộng tập tin phổ biến cho một tài liệu bảng tính Excel là gì?
+A. .docx
+B. .pptx
+C. .txt
+*D. .xlsx
+Câu 23. Hành vi “Cyberbullying” (bắt nạt trực tuyến) có thể bao gồm những gì?
+A. Gửi những lời khen ngợi một cách ẩn danh trên mạng.
+*B. Gửi tin nhắn đe dọa, đăng tin sai lệch hoặc chế giễu người khác.
+C. Chia sẻ các kiến thức học tập hữu ích với mọi người.
+D. Tạo các nhóm học tập trực tuyến để trao đổi bài vở.
+Câu 24. Giấy phép phần mềm (Software License) là gì?
+A. Chứng chỉ xác nhận đã hoàn thành một khóa học phần mềm.
+B. Một đoạn mã dùng để kích hoạt bản quyền của phần mềm.
+C. Tài liệu hướng dẫn các bước cài đặt phần mềm chi tiết.
+*D. Văn bản pháp lý quy định quyền và hạn chế khi dùng phần mềm.
+Câu 25. Khi sử dụng máy tính ở nơi công cộng, bạn nên làm gì để bảo vệ thông tin cá nhân?
+*A. Tránh giao dịch quan trọng, luôn đăng xuất và xóa lịch sử web.
+B. Lưu lại tất cả mật khẩu trên trình duyệt để tiện đăng nhập.
+C. Để máy tính không khóa màn hình khi bạn rời đi đâu đó.
+D. Tự ý cài đặt các phần mềm cá nhân lên máy tính công cộng.
+Câu 26. “Two-Factor Authentication” (2FA – Xác thực hai yếu tố) là một biện pháp bảo mật nhằm.
+A. Giúp tăng tốc độ đăng nhập vào các tài khoản.
+*B. Tăng cường bảo mật bằng cách yêu cầu hai yếu tố xác thực.
+C. Giảm bớt số lượng mật khẩu người dùng cần phải nhớ.
+D. Tự động thay đổi mật khẩu của người dùng định kỳ.
+Câu 27. Khi một trang web yêu cầu bạn tải về một tệp .exe để xem nội dung, bạn nên.
+A. Tải về và chạy ngay để không bỏ lỡ thông tin quan trọng.
+B. Nên bỏ qua và tìm một trang web khác để thay thế.
+C. Chia sẻ ngay liên kết đó cho bạn bè cùng xem.
+*D. Rất cẩn trọng, đây có thể là phần mềm độc hại, cần quét virus.
+Câu 28. Việc thường xuyên xóa bộ nhớ cache và cookie của trình duyệt có thể giúp gì?
+A. Giúp tăng tốc độ kết nối Internet của bạn lên đáng kể.
+*B. Giúp giải phóng dung lượng và xóa bỏ một số dữ liệu theo dõi.
+C. Có khả năng ngăn chặn hoàn toàn virus lây nhiễm.
+D. Giúp tự động cập nhật các phần mềm trong máy tính.
+Câu 29. Trong Microsoft Word, để thay đổi hướng trang giấy từ dọc sang ngang, bạn vào mục nào?
+*A. Layout -> Orientation.
+B. Insert -> Page Orientation.
+C. View -> Page Orientation.
+D. File -> Page Setup -> Orientation.
+Câu 30. Hàm AVERAGE trong Microsoft Excel dùng để làm gì?
+A. Tìm giá trị lớn nhất.
+B. Tìm giá trị nhỏ nhất.
+*C. Tính giá trị trung bình cộng.
+D. Đếm số ô có dữ liệu. 
+Phần 8. Không Biết
+Câu 1. Đơn vị cơ bản nhất để đo lượng thông tin trong máy tính là gì?
+A. Byte.
+*B. Bit.
+C. Kilobyte (KB).
+D. Word.
+Câu 2. CPU là viết tắt của cụm từ tiếng Anh nào?
+A. Central Program Unit.
+B. Computer Processing Unit.
+*C. Central Processing Unit.
+D. Control Processing Unit.
+Câu 3. Thiết bị nào sau đây là thiết bị nhập (Input device)?
+A. Màn hình (Monitor).
+B. Máy in (Printer).
+C. Loa (Speaker).
+*D. Chuột (Mouse).
+Câu 4. Phần mềm nào sau đây là một hệ điều hành?
+A. Microsoft Word.
+B. Google Chrome.
+*C. Windows 10.
+D. Adobe Photoshop.
+Câu 5. 1 Kilobyte (KB) bằng bao nhiêu Byte?
+A. 1000 Bytes.
+*B. 1024 Bytes.
+C. 8 Bytes.
+D. 1024 Bits.
+Câu 6. RAM là viết tắt của cụm từ nào?
+*A. Random Access Memory.
+B. Read And Memory.
+C. Run Access Memory.
+D. Real Access Memory.
+Câu 7. Thiết bị nào sau đây là thiết bị xuất (Output device)?
+*A. Máy chiếu (Projector).
+B. Bàn phím (Keyboard).
+C. Máy quét (Scanner).
+D. Micro.
+Câu 8. Hệ đếm nào được máy tính sử dụng trực tiếp để xử lý thông tin?
+A. Hệ thập phân (Decimal).
+B. Hệ bát phân (Octal).
+C. Hệ thập lục phân (Hexadecimal).
+*D. Hệ nhị phân (Binary).
+Câu 9. Phần mềm nào sau đây là một trình duyệt web?
+*A. Microsoft Excel.
+B. Mozilla Firefox.
+C. WinRAR.
+D. Skype.
+Câu 10. Mạng LAN là viết tắt của cụm từ nào?
+A. Large Area Network.
+B. Long Area Network.
+*C. Local Area Network.
+D. Logical Area Network.
+Câu 11. Địa chỉ IP (Internet Protocol address) được sử dụng để làm gì?
+A. Dùng để xác định tên của người dùng máy.
+B. Là phương pháp mã hóa dữ liệu truyền đi.
+C. Dùng để đo lường tốc độ kết nối mạng.
+*D. Định danh duy nhất cho một thiết bị trên mạng.
+Câu 12. Dịch vụ DNS (Domain Name System) có chức năng chính là gì?
+*A. Chuyển đổi tên miền thành địa chỉ IP và ngược lại.
+B. Là giao thức để gửi và nhận thư điện tử.
+C. Dùng để lưu trữ các tập tin chung trên mạng.
+D. Là dịch vụ cung cấp kết nối mạng Internet.
+Câu 13. Phần mở rộng của một tập tin (ví dụ. .txt, .docx, .jpg) thường cho biết điều gì?
+A. Kích thước của tập tin đó.
+B. Ngày tạo ra của tập tin.
+*C. Loại định dạng của tập tin.
+D. Tên người tạo ra tập tin.
+Câu 14. Virus máy tính là một loại.
+A. Thiết bị phần cứng máy tính.
+B. Lỗi của hệ điều hành.
+C. Thiết bị lưu trữ di động.
+*D. Phần mềm độc hại có chủ đích.
+Câu 15. Chức năng chính của tường lửa (Firewall) là gì?
+*A. Kiểm soát, ngăn chặn các truy cập mạng trái phép.
+B. Tăng tốc độ kết nối mạng Internet.
+C. Diệt virus và các phần mềm gián điệp.
+D. Thực hiện sao lưu dữ liệu dự phòng.
+Câu 16. ROM (Read-Only Memory) là loại bộ nhớ.
+A. Cho phép đọc và ghi, mất dữ liệu khi tắt máy.
+*B. Chỉ đọc, không mất dữ liệu, chứa chương trình khởi động.
+C. Cho phép đọc và ghi, không mất dữ liệu.
+D. Là một loại bộ nhớ lưu trữ ngoài.
+Câu 17. Trong hệ điều hành Windows, để quản lý các tập tin và thư mục, người dùng thường sử dụng công cụ nào?
+A. Task Manager.
+*B. File Explorer (hoặc Windows Explorer).
+C. Control Panel.
+D. Command Prompt.
+Câu 18. Thuật toán (Algorithm) trong tin học được hiểu là.
+*A. Dãy các bước rõ ràng, có thứ tự để giải quyết một bài toán.
+B. Là một ngôn ngữ lập trình cụ thể.
+C. Là một phần mềm ứng dụng hoàn chỉnh.
+D. Là một dạng sơ đồ khối minh họa.
+Câu 19. Thiết bị nào dùng để kết nối máy tính với mạng Internet thông qua đường dây điện thoại hoặc cáp?
+A. Switch.
+B. Hub.
+*C. Modem.
+D. Repeater.
+Câu 20. WWW là viết tắt của cụm từ nào?
+A. World Web Wide.
+B. Wide World Web.
+C. Web Wide World.
+*D. World Wide Web.
+Câu 21. Phần mềm nào sau đây là phần mềm ứng dụng?
+A. Linux.
+B. BIOS.
+*C. Microsoft PowerPoint.
+D. Trình điều khiển (Driver).
+Câu 22. Để tạo một mật khẩu mạnh, bạn nên.
+A. Sử dụng ngày tháng năm sinh của mình.
+B. Dùng một từ đơn giản, dễ nhớ và quen thuộc.
+C. Sử dụng tên của người thân trong gia đình.
+*D. Kết hợp chữ hoa, thường, số, ký tự đặc biệt và đủ dài.
+Câu 23. “Phishing” là một hình thức tấn công nhằm.
+*A. Lừa đảo để lấy cắp các thông tin cá nhân nhạy cảm.
+B. Phá hoại dữ liệu có trong máy tính.
+C. Làm chậm hoạt động của hệ thống mạng.
+D. Gửi thư rác quảng cáo đến nhiều người.
+Câu 24. Khi bạn xóa một tập tin trong Windows bằng phím Delete, tập tin đó thường được chuyển đến đâu?
+A. Bị xóa vĩnh viễn khỏi máy tính.
+*B. Chuyển vào trong Recycle Bin (Thùng rác).
+C. Sao chép sang một thư mục khác.
+D. Bị ẩn đi khỏi thư mục hiện tại.
+Câu 25. Đơn vị nào sau đây dùng để đo tốc độ xử lý của CPU?
+A. Byte.
+B. Bit per second (bps).
+*C. Hertz (Hz) hoặc Gigahertz (GHz).
+D. Dot per inch (DPI).
+Câu 26. Chức năng chính của bộ nhớ RAM là gì?
+A. Lưu trữ dữ liệu lâu dài cho máy tính.
+B. Dùng để khởi động máy tính và hệ điều hành.
+*C. Lưu trữ tạm thời chương trình và dữ liệu đang xử lý.
+D. Điều khiển hoạt động của các thiết bị ngoại vi.
+Câu 27. Giao thức nào là giao thức chính để truyền tải các trang web trên Internet?
+*A. HTTP (hoặc HTTPS).
+B. SMTP.
+C. FTP.
+D. TCP.
+Câu 28. Trong Microsoft Word, để lưu tài liệu với một tên mới hoặc định dạng khác, bạn chọn lệnh nào?
+A. Save.
+*B. Save As.
+C. Open.
+D. New.
+Câu 29. Trong Microsoft Excel, ô tính là giao điểm của.
+*A. Một hàng và một cột.
+B. Hai ô tính liền kề nhau.
+C. Hai hàng khác nhau.
+D. Một trang tính và một bảng tính.
+Câu 30. Để trình chiếu một bài thuyết trình trong Microsoft PowerPoint từ slide hiện tại, bạn nhấn tổ hợp phím nào?
+A. F5.
+B. Ctrl + F5.
+C. Alt + F5.
+*D. Shift + F5.
+Phần 9. Không biết
+Câu 1. Kiến trúc máy tính Von Neumann nổi bật với đặc điểm nào?
+A. Chỉ xử lý dữ liệu số.
+*B. Chương trình và dữ liệu được lưu trữ chung trong cùng một bộ nhớ.
+C. Sử dụng nhiều CPU để tăng tốc độ.
+D. Chỉ cho phép nhập liệu bằng bàn phím.
+Câu 2. Số 1A trong hệ thập lục phân (Hexadecimal) tương đương với số nào trong hệ thập phân?
+A. 11
+B. 10
+*C. 26
+D. 30
+Câu 3. Phần mềm nào sau đây là một ví dụ về Firmware?
+A. Hệ điều hành Windows.
+B. Trình duyệt Google Chrome.
+*C. BIOS/UEFI trên bo mạch chủ.
+D. Bộ ứng dụng Microsoft Office.
+Câu 4. Giao thức nào chịu trách nhiệm phân giải tên miền thành địa chỉ IP?
+A. HTTP (HyperText Transfer Protocol)
+B. FTP (File Transfer Protocol)
+*C. DNS (Domain Name System)
+D. SMTP (Simple Mail Transfer Protocol)
+Câu 5. Thiết bị nào sau đây vừa có chức năng nhập vừa có chức năng xuất?
+A. Máy quét (Scanner)
+B. Bàn phím (Keyboard)
+*C. Màn hình cảm ứng (Touchscreen)
+D. Máy in (Printer)
+Câu 6. Đơn vị đo dung lượng lưu trữ nào lớn nhất trong các đơn vị sau?
+A. Megabyte (MB)
+B. Gigabyte (GB)
+*C. Terabyte (TB)
+D. Kilobyte (KB)
+Câu 7. Bộ nhớ Cache của CPU có đặc điểm gì?
+*A. Dung lượng nhỏ, tốc độ truy cập rất nhanh, dùng để lưu trữ dữ liệu thường xuyên được sử dụng.
+B. Dung lượng lớn, tốc độ truy cập chậm, dùng để lưu trữ hệ điều hành.
+C. Không bị mất dữ liệu khi tắt nguồn.
+D. Chỉ dùng để lưu trữ các tệp tin video.
+Câu 8. “Cloud Storage” (Lưu trữ đám mây) có nghĩa là gì?
+A. Lưu trữ dữ liệu trên ổ cứng di động.
+*B. Lưu trữ dữ liệu trên các máy chủ từ xa thông qua Internet.
+C. Sử dụng công nghệ lưu trữ quang học mới nhất.
+D. Mã hóa dữ liệu bằng thuật toán đám mây.
+Câu 9. Trong Microsoft Excel, công thức =AVERAGE(B1.B5) dùng để làm gì?
+A. Tính tổng các ô từ B1 đến B5.
+B. Đếm số ô có dữ liệu trong khoảng từ B1 đến B5.
+*C. Tính giá trị trung bình của các ô từ B1 đến B5.
+D. Tìm giá trị lớn nhất trong khoảng từ B1 đến B5.
+Câu 10. Tên miền cấp cao nhất (TLD) nào thường được sử dụng cho các tổ chức thương mại?
+*A. .com
+B. .org
+C. .gov
+D. .edu
+Câu 11. Ngôn ngữ lập trình nào được coi là “ngôn ngữ của web” phía client-side, dùng để tạo tương tác cho trang web?
+A. Python
+B. Java
+*C. JavaScript
+D. C#
+Câu 12. Tổ hợp phím Ctrl + X trong Windows thường dùng để làm gì?
+A. Sao chép (Copy)
+*B. Cắt (Cut)
+C. Dán (Paste)
+D. Mở tệp mới (New)
+Câu 13. “Cookie” trên trình duyệt web là gì?
+A. Một loại virus máy tính.
+*B. Một tệp văn bản nhỏ mà website lưu trữ trên máy tính người dùng để ghi nhớ thông tin về họ.
+C. Một chương trình quảng cáo.
+D. Một tiện ích mở rộng của trình duyệt.
+Câu 14. Thiết bị nào sử dụng các đầu đọc/ghi từ tính để lưu trữ và truy xuất dữ liệu trên các đĩa quay?
+*A. Ổ đĩa cứng (HDD – Hard Disk Drive)
+B. Ổ đĩa SSD (Solid State Drive)
+C. Ổ đĩa quang (CD/DVD Drive)
+D. USB Flash Drive
+Câu 15. “Ransomware” là một loại phần mềm độc hại thực hiện hành vi nào?
+A. Đánh cắp thông tin cá nhân.
+B. Hiển thị quảng cáo không mong muốn.
+*C. Mã hóa dữ liệu của nạn nhân và đòi tiền chuộc để giải mã.
+D. Ghi lại các thao tác bàn phím.
+Câu 16. Trong Microsoft Word, chức năng “Header and Footer” dùng để làm gì?
+A. Chèn hình ảnh vào văn bản.
+B. Tạo mục lục tự động.
+*C. Chèn nội dung lặp lại ở đầu trang và cuối trang của tài liệu.
+D. Kiểm tra lỗi chính tả và ngữ pháp.
+Câu 17. Hệ điều hành nào được phát triển bởi Google và chủ yếu dùng cho thiết bị di động?
+A. iOS
+*B. Android
+C. Windows Phone (cũ)
+D. Symbian
+Câu 18. Bus hệ thống (System Bus) trong máy tính KHÔNG bao gồm loại bus nào sau đây?
+A. Bus Địa chỉ (Address Bus)
+B. Bus Dữ liệu (Data Bus)
+C. Bus Điều khiển (Control Bus)
+*D. Bus USB (Universal Serial Bus) (USB là một chuẩn kết nối ngoại vi, không phải là thành phần cốt lõi của System Bus nội bộ)
+Câu 19. Một trình biên dịch (Compiler) khác với một trình thông dịch (Interpreter) ở điểm nào?
+*A. Trình biên dịch dịch toàn bộ mã nguồn sang mã máy một lần trước khi thực thi, trình thông dịch dịch và thực thi từng dòng lệnh.
+B. Trình biên dịch chạy chậm hơn trình thông dịch.
+C. Trình biên dịch không kiểm tra lỗi, trình thông dịch có kiểm tra lỗi.
+D. Trình biên dịch chỉ dùng cho ngôn ngữ bậc thấp, trình thông dịch dùng cho ngôn ngữ bậc cao.
+Câu 20. Dịch vụ nào sau đây là một ví dụ về Nền tảng như một Dịch vụ (PaaS – Platform as a Service) trong điện toán đám mây?
+A. Google Drive (Lưu trữ)
+B. Microsoft Office 365 (Phần mềm)
+*C. Google App Engine hoặc AWS Elastic Beanstalk (Nền tảng phát triển ứng dụng)
+D. Gmail (Ứng dụng email)
+Câu 21. Wi-Fi là một công nghệ cho phép các thiết bị kết nối mạng không dây dựa trên chuẩn nào?
+A. Bluetooth
+*B. IEEE 802.11
+C. Ethernet
+D. NFC
+Câu 22. Chipset trên bo mạch chủ (Motherboard) có vai trò gì?
+A. Cung cấp nguồn điện cho CPU.
+*B. Điều phối giao tiếp giữa CPU, RAM, card mở rộng và các thiết bị ngoại vi.
+C. Lưu trữ hệ điều hành.
+D. Xử lý tín hiệu âm thanh.
+Phần 10. Không Biết
+Câu 1. Tin học là ngành nghiên cứu về.
+A. Lắp ráp và sửa chữa máy tính
+*B. Cơ sở lý thuyết thông tin và tính toán trong máy tính
+C. Thiết kế đồ họa
+D. Lịch sử thiết bị điện tử
+Câu 2. Đơn vị cơ bản để biểu diễn thông tin là.
+A. Byte
+*B. Bit
+C. Word
+D. Register
+Câu 3. 1 Terabyte bằng.
+A. 1000 GB
+*B. 1024 GB
+C. 1000 MB
+D. 1024 MB
+Câu 4. Thiết bị thực hiện tính toán và điều khiển máy là.
+*A. CPU
+B. GPU
+C. RAM
+D. Bo mạch chủ
+Câu 5. Ví dụ về hệ điều hành là.
+A. Office
+B. Chrome
+*C. Linux Kernel
+D. Photoshop
+Câu 6. Bộ nhớ nào bị mất dữ liệu khi tắt máy?
+*A. RAM
+B. ROM
+C. SSD
+D. Flash
+Câu 7. Ngôn ngữ thường dùng cho web phía client là.
+A. Python
+B. Java
+*C. JavaScript
+D. C++
+Câu 8. Mạng dùng trong phạm vi hẹp là.
+*A. LAN
+B. WAN
+C. MAN
+D. VPN
+Câu 9. Phần mềm DBMS dùng để.
+A. Soạn văn bản
+*B. Quản lý và truy vấn cơ sở dữ liệu
+C. Thiết kế giao diện
+D. Biên dịch mã nguồn
+Câu 10. Tên miền “.net” dành cho.
+A. Thương mại
+*B. Hạ tầng mạng
+C. Giáo dục
+D. Chính phủ
+Câu 11. Nhị phân 1110 tương đương.
+A. 12
+B. 13
+C. 14
+D. 15
+Câu 12. Malware là.
+A. Lỗi phần cứng
+B. Phần mềm độc hại truy cập trái phép
+C. Cập nhật phần mềm
+D. Giao thức mạng
+Câu 13. IDE như VS Code cung cấp.
+A. Soạn thảo văn bản
+B. Bộ công cụ lập trình tích hợp
+*C. Trình duyệt web
+D. Hệ quản trị cơ sở dữ liệu
+Câu 14. WWW là viết tắt của.
+*A. World Wide Web
+B. World Web Wide
+C. Wide World Web
+D. Web World Wide
+Câu 15. BIOS/UEFI có nhiệm vụ.
+A. Chạy đồ họa
+*B. Khởi tạo và nạp hệ điều hành
+C. Quản lý mạng
+D. Giao diện người dùng
+Câu 16. Android chủ yếu dành cho.
+A. PC
+*B. Thiết bị di động
+C. Máy chủ
+D. Hệ nhúng
+Câu 17. Mục tiêu của tấn công DoS/DDoS là.
+A. Đánh cắp thông tin
+B. Làm nghẽn dịch vụ mạng
+C. Mã hóa dữ liệu đòi chuộc
+D. Cài phần mềm gián điệp
+Câu 18. Đơn vị đo băng thông mạng là.
+A. Hertz
+*B. bps hoặc Mbps
+C. GB
+D. PPI
+Câu 19. Lệnh SQL SELECT * FROM Students dùng để.
+A. Xóa dữ liệu
+B. Cập nhật dữ liệu
+*C. Hiển thị toàn bộ bảng
+D. Thêm bản ghi mới
+Câu 20. Tệp “.exe” là.
+A. Văn bản
+B. Hình ảnh
+*C. Tệp thực thi
+D. Âm thanh
+Câu 21. Giao thức truyền tin cậy là.
+A. TCP
+B. UDP
+C. IP
+*D. HTTP
+Câu 22. Thiết bị hoạt động ở tầng mạng OSI là.
+A. Switch
+*B. Router
+C. Hub
+D. Repeater
+Câu 23. Cloud Computing cung cấp.
+A. Chỉ SaaS
+B. Chỉ PaaS
+C. Chỉ IaaS
+*D. Cả SaaS, PaaS và IaaS
+Câu 24. Thuật toán là gì?
+A. Ngôn ngữ lập trình
+*B. Tập hợp quy tắc rõ ràng để giải quyết bài toán
+C. Lỗi logic
+D. Kiến trúc phần cứng
+Câu 25. API là.
+A. Ngôn ngữ lập trình
+*B. Tập quy tắc cho phép phần mềm tương tác
+C. Cơ sở dữ liệu
+D. Hệ điều hành
+Câu 26. Đặc điểm phần mềm nguồn mở là.
+A. Miễn phí không bản quyền
+*B. Mã nguồn công khai, được phép sửa đổi
+C. Chỉ do cá nhân phát triển
+D. Khó sử dụng
+Câu 27. VR là công nghệ.
+A. Tăng cường thực tế
+*B. Mô phỏng môi trường ảo hoàn toàn
+C. Kết nối thiết bị
+D. Phân tích dữ liệu lớn
+Câu 28. Cache có vai trò gì?
+A. Lưu hệ điều hành
+*B. Bộ nhớ tạm tốc độ cao gần CPU
+C. Lưu trữ vĩnh viễn
+D. Kết nối phần cứng
+Câu 29. Authentication là.
+A. Mã hóa dữ liệu
+*B. Xác minh danh tính truy cập hệ thống
+C. Cấp quyền truy cập
+D. Ghi lại hoạt động
+Câu 30. Machine Learning là gì?
+A. Làm robot hình người
+*B. Cho máy học từ dữ liệu mà không cần lập trình rõ ràng
+C. Tạo giao diện thông minh
+D. Xây mạng tốc độ cao

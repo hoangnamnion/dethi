@@ -1,0 +1,115 @@
+Câu 0. Quyết Tâm làm Hết Không Mà Vào Đây [IMG:logo.jpg] 
+*A. Có
+B. Không 
+
+Phần 9. Không biết
+Câu 1. Kiến trúc máy tính Von Neumann nổi bật với đặc điểm nào?
+A. Chỉ xử lý dữ liệu số.
+*B. Chương trình và dữ liệu được lưu trữ chung trong cùng một bộ nhớ.
+C. Sử dụng nhiều CPU để tăng tốc độ.
+D. Chỉ cho phép nhập liệu bằng bàn phím.
+Câu 2. Số 1A trong hệ thập lục phân (Hexadecimal) tương đương với số nào trong hệ thập phân?
+A. 11
+B. 10
+*C. 26
+D. 30
+Câu 3. Phần mềm nào sau đây là một ví dụ về Firmware?
+A. Hệ điều hành Windows.
+B. Trình duyệt Google Chrome.
+*C. BIOS/UEFI trên bo mạch chủ.
+D. Bộ ứng dụng Microsoft Office.
+Câu 4. Giao thức nào chịu trách nhiệm phân giải tên miền thành địa chỉ IP?
+A. HTTP (HyperText Transfer Protocol)
+B. FTP (File Transfer Protocol)
+*C. DNS (Domain Name System)
+D. SMTP (Simple Mail Transfer Protocol)
+Câu 5. Thiết bị nào sau đây vừa có chức năng nhập vừa có chức năng xuất?
+A. Máy quét (Scanner)
+B. Bàn phím (Keyboard)
+*C. Màn hình cảm ứng (Touchscreen)
+D. Máy in (Printer)
+Câu 6. Đơn vị đo dung lượng lưu trữ nào lớn nhất trong các đơn vị sau?
+A. Megabyte (MB)
+B. Gigabyte (GB)
+*C. Terabyte (TB)
+D. Kilobyte (KB)
+Câu 7. Bộ nhớ Cache của CPU có đặc điểm gì?
+*A. Dung lượng nhỏ, tốc độ truy cập rất nhanh, dùng để lưu trữ dữ liệu thường xuyên được sử dụng.
+B. Dung lượng lớn, tốc độ truy cập chậm, dùng để lưu trữ hệ điều hành.
+C. Không bị mất dữ liệu khi tắt nguồn.
+D. Chỉ dùng để lưu trữ các tệp tin video.
+Câu 8. “Cloud Storage” (Lưu trữ đám mây) có nghĩa là gì?
+A. Lưu trữ dữ liệu trên ổ cứng di động.
+*B. Lưu trữ dữ liệu trên các máy chủ từ xa thông qua Internet.
+C. Sử dụng công nghệ lưu trữ quang học mới nhất.
+D. Mã hóa dữ liệu bằng thuật toán đám mây.
+Câu 9. Trong Microsoft Excel, công thức =AVERAGE(B1.B5) dùng để làm gì?
+A. Tính tổng các ô từ B1 đến B5.
+B. Đếm số ô có dữ liệu trong khoảng từ B1 đến B5.
+*C. Tính giá trị trung bình của các ô từ B1 đến B5.
+D. Tìm giá trị lớn nhất trong khoảng từ B1 đến B5.
+Câu 10. Tên miền cấp cao nhất (TLD) nào thường được sử dụng cho các tổ chức thương mại?
+*A. .com
+B. .org
+C. .gov
+D. .edu
+Câu 11. Ngôn ngữ lập trình nào được coi là “ngôn ngữ của web” phía client-side, dùng để tạo tương tác cho trang web?
+A. Python
+B. Java
+*C. JavaScript
+D. C#
+Câu 12. Tổ hợp phím Ctrl + X trong Windows thường dùng để làm gì?
+A. Sao chép (Copy)
+*B. Cắt (Cut)
+C. Dán (Paste)
+D. Mở tệp mới (New)
+Câu 13. “Cookie” trên trình duyệt web là gì?
+A. Một loại virus máy tính.
+*B. Một tệp văn bản nhỏ mà website lưu trữ trên máy tính người dùng để ghi nhớ thông tin về họ.
+C. Một chương trình quảng cáo.
+D. Một tiện ích mở rộng của trình duyệt.
+Câu 14. Thiết bị nào sử dụng các đầu đọc/ghi từ tính để lưu trữ và truy xuất dữ liệu trên các đĩa quay?
+*A. Ổ đĩa cứng (HDD – Hard Disk Drive)
+B. Ổ đĩa SSD (Solid State Drive)
+C. Ổ đĩa quang (CD/DVD Drive)
+D. USB Flash Drive
+Câu 15. “Ransomware” là một loại phần mềm độc hại thực hiện hành vi nào?
+A. Đánh cắp thông tin cá nhân.
+B. Hiển thị quảng cáo không mong muốn.
+*C. Mã hóa dữ liệu của nạn nhân và đòi tiền chuộc để giải mã.
+D. Ghi lại các thao tác bàn phím.
+Câu 16. Trong Microsoft Word, chức năng “Header and Footer” dùng để làm gì?
+A. Chèn hình ảnh vào văn bản.
+B. Tạo mục lục tự động.
+*C. Chèn nội dung lặp lại ở đầu trang và cuối trang của tài liệu.
+D. Kiểm tra lỗi chính tả và ngữ pháp.
+Câu 17. Hệ điều hành nào được phát triển bởi Google và chủ yếu dùng cho thiết bị di động?
+A. iOS
+*B. Android
+C. Windows Phone (cũ)
+D. Symbian
+Câu 18. Bus hệ thống (System Bus) trong máy tính KHÔNG bao gồm loại bus nào sau đây?
+A. Bus Địa chỉ (Address Bus)
+B. Bus Dữ liệu (Data Bus)
+C. Bus Điều khiển (Control Bus)
+*D. Bus USB (Universal Serial Bus) (USB là một chuẩn kết nối ngoại vi, không phải là thành phần cốt lõi của System Bus nội bộ)
+Câu 19. Một trình biên dịch (Compiler) khác với một trình thông dịch (Interpreter) ở điểm nào?
+*A. Trình biên dịch dịch toàn bộ mã nguồn sang mã máy một lần trước khi thực thi, trình thông dịch dịch và thực thi từng dòng lệnh.
+B. Trình biên dịch chạy chậm hơn trình thông dịch.
+C. Trình biên dịch không kiểm tra lỗi, trình thông dịch có kiểm tra lỗi.
+D. Trình biên dịch chỉ dùng cho ngôn ngữ bậc thấp, trình thông dịch dùng cho ngôn ngữ bậc cao.
+Câu 20. Dịch vụ nào sau đây là một ví dụ về Nền tảng như một Dịch vụ (PaaS – Platform as a Service) trong điện toán đám mây?
+A. Google Drive (Lưu trữ)
+B. Microsoft Office 365 (Phần mềm)
+*C. Google App Engine hoặc AWS Elastic Beanstalk (Nền tảng phát triển ứng dụng)
+D. Gmail (Ứng dụng email)
+Câu 21. Wi-Fi là một công nghệ cho phép các thiết bị kết nối mạng không dây dựa trên chuẩn nào?
+A. Bluetooth
+*B. IEEE 802.11
+C. Ethernet
+D. NFC
+Câu 22. Chipset trên bo mạch chủ (Motherboard) có vai trò gì?
+A. Cung cấp nguồn điện cho CPU.
+*B. Điều phối giao tiếp giữa CPU, RAM, card mở rộng và các thiết bị ngoại vi.
+C. Lưu trữ hệ điều hành.
+D. Xử lý tín hiệu âm thanh.

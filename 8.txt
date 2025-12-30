@@ -1,0 +1,155 @@
+Câu 0. Quyết Tâm làm Hết Không Mà Vào Đây [IMG:logo.jpg] 
+*A. Có
+B. Không 
+
+Phần 8. Không Biết
+Câu 1. Đơn vị cơ bản nhất để đo lượng thông tin trong máy tính là gì?
+A. Byte.
+*B. Bit.
+C. Kilobyte (KB).
+D. Word.
+Câu 2. CPU là viết tắt của cụm từ tiếng Anh nào?
+A. Central Program Unit.
+B. Computer Processing Unit.
+*C. Central Processing Unit.
+D. Control Processing Unit.
+Câu 3. Thiết bị nào sau đây là thiết bị nhập (Input device)?
+A. Màn hình (Monitor).
+B. Máy in (Printer).
+C. Loa (Speaker).
+*D. Chuột (Mouse).
+Câu 4. Phần mềm nào sau đây là một hệ điều hành?
+A. Microsoft Word.
+B. Google Chrome.
+*C. Windows 10.
+D. Adobe Photoshop.
+Câu 5. 1 Kilobyte (KB) bằng bao nhiêu Byte?
+A. 1000 Bytes.
+*B. 1024 Bytes.
+C. 8 Bytes.
+D. 1024 Bits.
+Câu 6. RAM là viết tắt của cụm từ nào?
+*A. Random Access Memory.
+B. Read And Memory.
+C. Run Access Memory.
+D. Real Access Memory.
+Câu 7. Thiết bị nào sau đây là thiết bị xuất (Output device)?
+*A. Máy chiếu (Projector).
+B. Bàn phím (Keyboard).
+C. Máy quét (Scanner).
+D. Micro.
+Câu 8. Hệ đếm nào được máy tính sử dụng trực tiếp để xử lý thông tin?
+A. Hệ thập phân (Decimal).
+B. Hệ bát phân (Octal).
+C. Hệ thập lục phân (Hexadecimal).
+*D. Hệ nhị phân (Binary).
+Câu 9. Phần mềm nào sau đây là một trình duyệt web?
+*A. Microsoft Excel.
+B. Mozilla Firefox.
+C. WinRAR.
+D. Skype.
+Câu 10. Mạng LAN là viết tắt của cụm từ nào?
+A. Large Area Network.
+B. Long Area Network.
+*C. Local Area Network.
+D. Logical Area Network.
+Câu 11. Địa chỉ IP (Internet Protocol address) được sử dụng để làm gì?
+A. Dùng để xác định tên của người dùng máy.
+B. Là phương pháp mã hóa dữ liệu truyền đi.
+C. Dùng để đo lường tốc độ kết nối mạng.
+*D. Định danh duy nhất cho một thiết bị trên mạng.
+Câu 12. Dịch vụ DNS (Domain Name System) có chức năng chính là gì?
+*A. Chuyển đổi tên miền thành địa chỉ IP và ngược lại.
+B. Là giao thức để gửi và nhận thư điện tử.
+C. Dùng để lưu trữ các tập tin chung trên mạng.
+D. Là dịch vụ cung cấp kết nối mạng Internet.
+Câu 13. Phần mở rộng của một tập tin (ví dụ. .txt, .docx, .jpg) thường cho biết điều gì?
+A. Kích thước của tập tin đó.
+B. Ngày tạo ra của tập tin.
+*C. Loại định dạng của tập tin.
+D. Tên người tạo ra tập tin.
+Câu 14. Virus máy tính là một loại.
+A. Thiết bị phần cứng máy tính.
+B. Lỗi của hệ điều hành.
+C. Thiết bị lưu trữ di động.
+*D. Phần mềm độc hại có chủ đích.
+Câu 15. Chức năng chính của tường lửa (Firewall) là gì?
+*A. Kiểm soát, ngăn chặn các truy cập mạng trái phép.
+B. Tăng tốc độ kết nối mạng Internet.
+C. Diệt virus và các phần mềm gián điệp.
+D. Thực hiện sao lưu dữ liệu dự phòng.
+Câu 16. ROM (Read-Only Memory) là loại bộ nhớ.
+A. Cho phép đọc và ghi, mất dữ liệu khi tắt máy.
+*B. Chỉ đọc, không mất dữ liệu, chứa chương trình khởi động.
+C. Cho phép đọc và ghi, không mất dữ liệu.
+D. Là một loại bộ nhớ lưu trữ ngoài.
+Câu 17. Trong hệ điều hành Windows, để quản lý các tập tin và thư mục, người dùng thường sử dụng công cụ nào?
+A. Task Manager.
+*B. File Explorer (hoặc Windows Explorer).
+C. Control Panel.
+D. Command Prompt.
+Câu 18. Thuật toán (Algorithm) trong tin học được hiểu là.
+*A. Dãy các bước rõ ràng, có thứ tự để giải quyết một bài toán.
+B. Là một ngôn ngữ lập trình cụ thể.
+C. Là một phần mềm ứng dụng hoàn chỉnh.
+D. Là một dạng sơ đồ khối minh họa.
+Câu 19. Thiết bị nào dùng để kết nối máy tính với mạng Internet thông qua đường dây điện thoại hoặc cáp?
+A. Switch.
+B. Hub.
+*C. Modem.
+D. Repeater.
+Câu 20. WWW là viết tắt của cụm từ nào?
+A. World Web Wide.
+B. Wide World Web.
+C. Web Wide World.
+*D. World Wide Web.
+Câu 21. Phần mềm nào sau đây là phần mềm ứng dụng?
+A. Linux.
+B. BIOS.
+*C. Microsoft PowerPoint.
+D. Trình điều khiển (Driver).
+Câu 22. Để tạo một mật khẩu mạnh, bạn nên.
+A. Sử dụng ngày tháng năm sinh của mình.
+B. Dùng một từ đơn giản, dễ nhớ và quen thuộc.
+C. Sử dụng tên của người thân trong gia đình.
+*D. Kết hợp chữ hoa, thường, số, ký tự đặc biệt và đủ dài.
+Câu 23. “Phishing” là một hình thức tấn công nhằm.
+*A. Lừa đảo để lấy cắp các thông tin cá nhân nhạy cảm.
+B. Phá hoại dữ liệu có trong máy tính.
+C. Làm chậm hoạt động của hệ thống mạng.
+D. Gửi thư rác quảng cáo đến nhiều người.
+Câu 24. Khi bạn xóa một tập tin trong Windows bằng phím Delete, tập tin đó thường được chuyển đến đâu?
+A. Bị xóa vĩnh viễn khỏi máy tính.
+*B. Chuyển vào trong Recycle Bin (Thùng rác).
+C. Sao chép sang một thư mục khác.
+D. Bị ẩn đi khỏi thư mục hiện tại.
+Câu 25. Đơn vị nào sau đây dùng để đo tốc độ xử lý của CPU?
+A. Byte.
+B. Bit per second (bps).
+*C. Hertz (Hz) hoặc Gigahertz (GHz).
+D. Dot per inch (DPI).
+Câu 26. Chức năng chính của bộ nhớ RAM là gì?
+A. Lưu trữ dữ liệu lâu dài cho máy tính.
+B. Dùng để khởi động máy tính và hệ điều hành.
+*C. Lưu trữ tạm thời chương trình và dữ liệu đang xử lý.
+D. Điều khiển hoạt động của các thiết bị ngoại vi.
+Câu 27. Giao thức nào là giao thức chính để truyền tải các trang web trên Internet?
+*A. HTTP (hoặc HTTPS).
+B. SMTP.
+C. FTP.
+D. TCP.
+Câu 28. Trong Microsoft Word, để lưu tài liệu với một tên mới hoặc định dạng khác, bạn chọn lệnh nào?
+A. Save.
+*B. Save As.
+C. Open.
+D. New.
+Câu 29. Trong Microsoft Excel, ô tính là giao điểm của.
+*A. Một hàng và một cột.
+B. Hai ô tính liền kề nhau.
+C. Hai hàng khác nhau.
+D. Một trang tính và một bảng tính.
+Câu 30. Để trình chiếu một bài thuyết trình trong Microsoft PowerPoint từ slide hiện tại, bạn nhấn tổ hợp phím nào?
+A. F5.
+B. Ctrl + F5.
+C. Alt + F5.
+*D. Shift + F5.
