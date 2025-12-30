@@ -1,9 +1,9 @@
 Phần 1. Excel
 Câu 0. Quyết Tâm làm Hết Không Mà Vào Đây [IMG:logo.jpg] 
-A. Có
+*A. Có
 B. Không 
 
-Câu 1. Trong Microsoft Excel, một tệp tin được gọi là gì? [IMG:logo.jpg]
+Câu 1. Trong Microsoft Excel, một tệp tin được gọi là gì? 
 A. Một tài liệu văn bản (Document).
 *B. Một sổ làm việc (Workbook).
 C. Một bài trình chiếu (Presentation).
