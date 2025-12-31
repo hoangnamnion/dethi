@@ -1,4 +1,4 @@
-Câu 0. Quyết Tâm làm Hết Không Mà Vào Đây [IMG:logo.jpg] 
+Câu 0. Quyết Tâm làm Hết Không Mà Vào Đây [IMG:banthanhung.jpg] 
 *A. Có
 B. Không 
 
@@ -153,3 +153,4 @@ Câu 30. Bus hệ thống (System Bus) trong máy tính có chức năng chính 
 B. Cung cấp nguồn năng lượng cho các thành phần
 C. Là bộ phận làm mát cho bộ xử lý trung tâm
 D. Là nơi lưu trữ chính của hệ điều hành
+
