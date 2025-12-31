@@ -561,4 +561,23 @@ style.textContent = `
         100% { transform: scale(1); }
     }
 `;
+
 document.head.appendChild(style);
+// Thêm sự kiện điều khiển bằng bàn phím
+document.addEventListener('keydown', (event) => {
+    // Nếu đang mở Modal (danh sách câu hỏi hoặc kết quả) thì không thực hiện
+    const modalList = document.getElementById('modalList');
+    const modalResult = document.getElementById('modalResult');
+    if ((modalList && modalList.style.display === 'flex') || 
+        (modalResult && modalResult.style.display === 'flex')) {
+        return;
+    }
+
+    if (event.key === 'ArrowRight') {
+        // Phím mũi tên sang phải -> Câu tiếp theo
+        changeQuestion(1);
+    } else if (event.key === 'ArrowLeft') {
+        // Phím mũi tên sang trái -> Câu trước đó
+        changeQuestion(-1);
+    }
+});
