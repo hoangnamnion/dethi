@@ -6,6 +6,224 @@
     <title>Thông Tin Đề</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Modal chọn chế độ */
+        .mode-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .mode-box {
+            background: white;
+            width: 90%;
+            max-width: 400px;
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        
+        .mode-title {
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .mode-option {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-align: left;
+        }
+        
+        .mode-option:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary);
+            background: #fff5f5;
+        }
+        
+        .mode-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+        
+        .mode-icon {
+            font-size: 1.5em;
+        }
+        
+        .mode-name {
+            font-weight: 700;
+            font-size: 1em;
+        }
+        
+        .mode-desc {
+            font-size: 0.85em;
+            color: var(--text-gray);
+            line-height: 1.4;
+            padding-left: 35px;
+        }
+        
+        .mode-sub-options {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px dashed #ddd;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .sub-option {
+            flex: 1;
+            padding: 10px;
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 0.85em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+            min-width: 120px;
+            text-align: center;
+        }
+        
+        .sub-option.active {
+            border-color: var(--primary);
+            background: #ffeaa7;
+            color: #d63031;
+        }
+        
+        .btn-start-mode {
+            background: linear-gradient(135deg, #d63031, #e17055);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1em;
+            cursor: pointer;
+            margin-top: 20px;
+            width: 100%;
+            transition: 0.3s;
+        }
+        
+        .btn-start-mode:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(214, 48, 49, 0.3);
+        }
+        
+        .btn-close-mode {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 1.5em;
+            color: #636e72;
+            cursor: pointer;
+        }
+
+        /* Các nút trên product */
+        .resume-card {
+            background: linear-gradient(135deg, #00b894, #00cec9);
+            color: white;
+            padding: 20px;
+            border-radius: 16px;
+            margin: 15px 0;
+            cursor: pointer;
+            border: none;
+            font-weight: 700;
+            font-size: 1em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 184, 148, 0.3);
+        }
+        
+        .resume-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 184, 148, 0.4);
+        }
+        
+        .resume-stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 10px 0;
+            font-size: 0.9em;
+            color: #636e72;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 1.2em;
+        }
+        
+        .stat-label {
+            font-size: 0.8em;
+            margin-top: 2px;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .btn-resume, .btn-new {
+            flex: 1;
+            padding: 12px;
+            border-radius: 12px;
+            border: none;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .btn-resume {
+            background: #00b894;
+            color: white;
+        }
+        
+        .btn-new {
+            background: #ffeaa7;
+            color: var(--text-dark);
+        }
+        
+        .btn-resume:hover {
+            background: #00a085;
+            transform: translateY(-2px);
+        }
+        
+        .btn-new:hover {
+            background: #fdcb6e;
+            transform: translateY(-2px);
+        }
+    </style>
 </head>
 <body>
     <div class="container-box">
@@ -23,7 +241,28 @@
             </div>
         </div>
 
-        <div class="action-grid">
+        <!-- Hiển thị nếu có bài đang làm dở -->
+        <div id="resumeSection" style="display: none;">
+            <div style="font-weight: 700; color: var(--primary); margin: 20px 0 10px 0;">
+                📌 BÀI ĐANG LÀM DỞ
+            </div>
+            
+            <div class="resume-stats" id="progressStats">
+                <!-- Sẽ được cập nhật bằng JS -->
+            </div>
+            
+            <div class="action-buttons">
+                <button class="btn-resume" onclick="resumeExam()">
+                    ▶️ Tiếp tục làm bài
+                </button>
+                <button class="btn-new" onclick="openModeModal()">
+                    🔄 Làm mới
+                </button>
+            </div>
+        </div>
+
+        <!-- Các nút chức năng chính (hiển thị khi không có bài dở) -->
+        <div id="normalActions" class="action-grid">
             <a href="#" id="btnStart" class="action-card">
                 <div class="card-icon">📝</div>
                 <div class="card-title">Làm Ngay</div>
@@ -39,6 +278,47 @@
         </div>
     </div>
 
+    <!-- Modal chọn chế độ làm bài -->
+    <div class="mode-modal" id="modeModal">
+        <div class="mode-box">
+            <button class="btn-close-mode" onclick="closeModeModal()">✕</button>
+            <div class="mode-title">📋 CHỌN CHẾ ĐỘ THI</div>
+            
+            <div class="mode-option" onclick="selectMode('normal')" id="normalOption">
+                <div class="mode-header">
+                    <div class="mode-icon">😊</div>
+                    <div class="mode-name">Chế độ Thường</div>
+                </div>
+                <div class="mode-desc">
+                    Sai vẫn làm tiếp được, không sửa lại được đáp án đã chọn.
+                </div>
+            </div>
+            
+            <div class="mode-option" onclick="selectMode('survival')" id="survivalOption">
+                <div class="mode-header">
+                    <div class="mode-icon">💀</div>
+                    <div class="mode-name">Chế độ Sinh tử</div>
+                </div>
+                <div class="mode-desc">
+                    Chỉ có 1 mạng duy nhất! Sai 1 câu là LÀM LẠI TỪ ĐẦU ngay lập tức!
+                </div>
+            </div>
+            
+            <div class="mode-sub-options">
+                <div class="sub-option" onclick="selectOrder('normal')" id="orderNormal">
+                    Giữ nguyên câu hỏi 
+                </div>
+                <div class="sub-option" onclick="selectOrder('random')" id="orderRandom">
+                    Đảo lộn câu hỏi
+                </div>
+            </div>
+            
+            <button class="btn-start-mode" onclick="startExam(true)">
+                🚀 BẮT ĐẦU THI 
+            </button>
+        </div>
+    </div>
+
     <script>
         const params = new URLSearchParams(window.location.search);
         const fileID = params.get('id');
@@ -47,12 +327,166 @@
         if (!fileID) window.location.href = "index.html";
 
         document.getElementById('examName').innerText = fileName || ("Đề số " + fileID);
-        // Gửi kèm cả name sang bên kia
-document.getElementById('btnStart').href = `thi.html?id=${fileID}&name=${encodeURIComponent(fileName)}`;
         document.getElementById('btnReview').href = `ontap.html?id=${fileID}`;
 
-        // Lấy điểm
+        // Biến lưu chế độ được chọn
+        let selectedMode = 'normal';
+        let selectedOrder = 'normal';
+        
+        // Kiểm tra có bài đang làm dở không
         const savedData = localStorage.getItem('quiz_data_' + fileID);
+        let hasUnsubmittedExam = false;
+        let examData = null;
+        
+        if (savedData) {
+            examData = JSON.parse(savedData);
+            // Có bài chưa nộp và đã làm ít nhất 1 câu
+            if (!examData.isSubmitted && 
+                (examData.history?.some(h => h.userSelected !== null) || examData.currentIndex > 0)) {
+                hasUnsubmittedExam = true;
+            }
+        }
+        
+        // Hiển thị giao diện phù hợp
+        if (hasUnsubmittedExam) {
+            // Hiển thị phần tiếp tục bài cũ
+            document.getElementById('resumeSection').style.display = 'block';
+            document.getElementById('normalActions').style.display = 'none';
+            
+            // Hiển thị thông tin tiến độ
+            displayProgressInfo(examData);
+        } else {
+            // Hiển thị nút làm bài bình thường
+            document.getElementById('resumeSection').style.display = 'none';
+            document.getElementById('normalActions').style.display = 'grid';
+        }
+        
+        // Mở modal khi click "Làm Ngay"
+        document.getElementById('btnStart').addEventListener('click', function(e) {
+            e.preventDefault();
+            openModeModal();
+        });
+
+        // Mở modal chọn chế độ
+        function openModeModal() {
+            document.getElementById('modeModal').style.display = 'flex';
+            selectMode('normal');
+            selectOrder('normal');
+        }
+        
+        // Đóng modal chọn chế độ
+        function closeModeModal() {
+            document.getElementById('modeModal').style.display = 'none';
+        }
+        
+        // Chọn chế độ làm bài
+        function selectMode(mode) {
+            selectedMode = mode;
+            
+            document.getElementById('normalOption').style.borderColor = mode === 'normal' ? '#d63031' : '#e9ecef';
+            document.getElementById('normalOption').style.background = mode === 'normal' ? '#fff5f5' : '#f8f9fa';
+            
+            document.getElementById('survivalOption').style.borderColor = mode === 'survival' ? '#d63031' : '#e9ecef';
+            document.getElementById('survivalOption').style.background = mode === 'survival' ? '#fff5f5' : '#f8f9fa';
+        }
+        
+        // Chọn thứ tự câu hỏi
+        function selectOrder(order) {
+            selectedOrder = order;
+            
+            document.getElementById('orderNormal').classList.toggle('active', order === 'normal');
+            document.getElementById('orderRandom').classList.toggle('active', order === 'random');
+        }
+        
+        // Tiếp tục bài cũ
+        function resumeExam() {
+            // Lấy thông tin chế độ từ bài cũ
+            const savedMode = localStorage.getItem('exam_mode_' + fileID);
+            let mode = 'normal';
+            let order = 'normal';
+            
+            if (savedMode) {
+                const modeData = JSON.parse(savedMode);
+                mode = modeData.mode;
+                order = modeData.order;
+            }
+            
+            // Chuyển đến trang thi với chế độ cũ
+            window.location.href = `thi.html?id=${fileID}&name=${encodeURIComponent(fileName)}&mode=${mode}&order=${order}`;
+        }
+        
+        // Bắt đầu làm mới
+        function startExam(isNewAttempt) {
+            closeModeModal();
+            
+            const modeData = {
+                mode: selectedMode,
+                order: selectedOrder,
+                timestamp: new Date().getTime()
+            };
+            localStorage.setItem('exam_mode_' + fileID, JSON.stringify(modeData));
+            
+            // Nếu là làm mới, xóa dữ liệu bài cũ
+            if (isNewAttempt) {
+                localStorage.removeItem('quiz_data_' + fileID);
+            }
+            
+            window.location.href = `thi.html?id=${fileID}&name=${encodeURIComponent(fileName)}&mode=${selectedMode}&order=${selectedOrder}`;
+        }
+        
+        // Hiển thị thông tin tiến độ bài cũ
+        function displayProgressInfo(data) {
+            const statsElement = document.getElementById('progressStats');
+            
+            // Tính toán thống kê
+            let answered = 0;
+            let correct = 0;
+            let progress = 0;
+            
+            if (data.history) {
+                answered = data.history.filter(h => h.userSelected !== null).length;
+                
+                // Ước tính điểm (cần load file txt mới biết chính xác)
+                // Tạm tính dựa trên history đã lưu
+                correct = data.score || 0;
+            }
+            
+            const totalQuestions = data.history?.length || 0;
+            progress = totalQuestions > 0 ? Math.round((answered / totalQuestions) * 100) : 0;
+            
+            // Tính thời gian
+            const mins = Math.floor((data.totalSeconds || 0) / 60);
+            const secs = (data.totalSeconds || 0) % 60;
+            
+            // Lấy chế độ
+            const savedMode = localStorage.getItem('exam_mode_' + fileID);
+            let modeText = 'Thường';
+            if (savedMode) {
+                const modeData = JSON.parse(savedMode);
+                modeText = modeData.mode === 'survival' ? '💀 Sinh tử' : '😊 Thường';
+            }
+            
+            statsElement.innerHTML = `
+                <div class="stat-item">
+                    <div class="stat-value">${answered}/${totalQuestions}</div>
+                    <div class="stat-label">Đã làm</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">${progress}%</div>
+                    <div class="stat-label">Tiến độ</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">${mins}:${secs.toString().padStart(2, '0')}</div>
+                    <div class="stat-label">Thời gian</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">${modeText}</div>
+                    <div class="stat-label">Chế độ</div>
+                </div>
+            `;
+        }
+
+        // Lấy điểm bài đã nộp
         let score = 0;
         let isSubmitted = false;
         if (savedData) {
@@ -64,7 +498,6 @@ document.getElementById('btnStart').href = `thi.html?id=${fileID}&name=${encodeU
         }
 
         if (isSubmitted) {
-            // Animation số nhảy
             let current = 0;
             const display = document.getElementById('scoreDisplay');
             const interval = setInterval(() => {
@@ -77,7 +510,6 @@ document.getElementById('btnStart').href = `thi.html?id=${fileID}&name=${encodeU
                 display.innerText = current;
             }, 30);
 
-            // Vẽ màu vòng tròn (Tạm tính 1 điểm = 5%)
             const percent = Math.min(score * 5, 100); 
             document.getElementById('scoreCircle').style.background = 
                 `conic-gradient(#d63031 ${percent}%, #dfe6e9 ${percent}% 100%)`;

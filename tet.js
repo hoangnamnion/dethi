@@ -20,7 +20,7 @@ function createFallingIcon() {
     icon.innerText = randomIcon;
 
     // Kích thước ngẫu nhiên (từ 15px đến 30px)
-    const size = Math.random() * 15 + 15;
+    const size = Math.random() * 10 + 10;
     icon.style.fontSize = `${size}px`;
     
     // Vị trí ngang ngẫu nhiên (từ 0% đến 100% màn hình)

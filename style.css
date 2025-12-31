@@ -214,3 +214,145 @@ body {
         align-items: flex-start; 
     }
 }
+/* Thêm vào cuối file */
+.survival-mode {
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Hiệu ứng cho câu đã trả lời sai */
+.option-item.wrong {
+    position: relative;
+}
+
+.option-item.wrong::after {
+    content: "✗";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #d63031;
+    font-weight: bold;
+}
+
+/* Hiệu ứng cho câu đã trả lời đúng */
+.option-item.correct {
+    position: relative;
+}
+
+.option-item.correct::after {
+    content: "✓";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #00b894;
+    font-weight: bold;
+}
+
+/* Nút trong chế độ sinh tử */
+.submit-btn.survival {
+    background: linear-gradient(135deg, #d63031, #e17055);
+    animation: pulse-red 2s infinite;
+}
+
+@keyframes pulse-red {
+    0% { box-shadow: 0 0 0 0 rgba(214, 48, 49, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(214, 48, 49, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(214, 48, 49, 0); }
+}
+/* Thêm vào cuối style.css */
+.survival-warning {
+    animation: pulse-warning 2s infinite !important;
+}
+
+@keyframes pulse-warning {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.02); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* Hiệu ứng cho chế độ sinh tử đang hoạt động */
+.survival-active {
+    position: relative;
+}
+
+.survival-active::before {
+    content: "💀";
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 1.5em;
+    animation: heartbeat 1.5s infinite;
+    z-index: 1;
+}
+/* Thêm vào cuối style.css */
+
+/* Hiệu ứng cho chế độ sinh tử */
+.survival-status {
+    animation: pulse-gentle 2s infinite;
+}
+
+@keyframes pulse-gentle {
+    0% { opacity: 1; }
+    50% { opacity: 0.9; }
+    100% { opacity: 1; }
+}
+
+/* Nút trong chế độ sinh tử */
+.survival-btn {
+    background: linear-gradient(135deg, #d63031, #e17055) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.survival-btn::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.1) 50%,
+        transparent 70%
+    );
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+/* Hiệu ứng cho câu hỏi trong chế độ sinh tử */
+.survival-question {
+    position: relative;
+    border-left: 4px solid #d63031 !important;
+}
+
+/* Badge sinh tử */
+.survival-badge {
+    display: inline-block;
+    background: #d63031;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.7em;
+    font-weight: bold;
+    margin-left: 5px;
+    animation: pulse-badge 1.5s infinite;
+}
+
+@keyframes pulse-badge {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}

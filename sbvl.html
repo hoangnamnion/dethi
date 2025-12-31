@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài liệu bảo mật</title>
+    <style>
+        /* Reset margin và padding để tràn màn hình */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* Chặn cuộn trang bên ngoài */
+            background-color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Giao diện nhập mật khẩu */
+        #login-form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+        }
+
+        .login-box {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        input { padding: 12px; width: 250px; border: 1px solid #ddd; border-radius: 6px; margin-bottom: 15px; outline: none; }
+        button { padding: 12px 25px; background-color: #28a745; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; }
+        button:hover { background-color: #218838; }
+
+        /* Khung chứa PDF tràn màn hình */
+        #pdf-viewer {
+            display: none;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        #error-msg { color: #dc3545; margin-top: 10px; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+    <div id="login-form">
+        <div class="login-box">
+            <h2>🔒 Nội dung khóa</h2>
+            <p>Vui lòng nhập mật khẩu để tiếp tục</p>
+            <input type="password" id="password" placeholder="Mật khẩu...">
+            <br>
+            <button onclick="checkPassword()">Mở tài liệu</button>
+            <p id="error-msg"></p>
+        </div>
+    </div>
+
+    <div id="pdf-viewer">
+        <iframe id="pdf-frame" src="" type="application/pdf"></iframe>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const pass = document.getElementById('password').value;
+            const correctPass = "123456"; // THAY MẬT KHẨU TẠI ĐÂY
+            
+            // Thêm tham số #toolbar=0 để ẩn thanh công cụ (bao gồm nút tải/in)
+            const pdfUrl = "sbvl.pdf#toolbar=0&navpanes=0&scrollbar=0"; 
+
+            if (pass === correctPass) {
+                document.getElementById('login-form').style.display = 'none';
+                document.getElementById('pdf-viewer').style.display = 'block';
+                document.getElementById('pdf-frame').src = pdfUrl;
+            } else {
+                document.getElementById('error-msg').innerText = "Sai mật khẩu!";
+            }
+        }
+
+        // Cho phép nhấn Enter để xác nhận
+        document.getElementById('password').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') { checkPassword(); }
+        });
+    </script>
+
+</body>
+</html>
