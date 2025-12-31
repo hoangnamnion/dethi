@@ -1,4 +1,4 @@
-Câu 0. Quyết Tâm làm Hết Không Mà Vào Đây [IMG:logo.jpg] 
+Câu 0. Quyết Tâm làm Hết Không Mà Vào Đây [IMG:banthanhung.jpg] 
 *A. Có
 B. Không 
 
@@ -153,4 +153,5 @@ A. Một trình duyệt web bất kỳ.
 B. Trình soạn thảo văn bản như Notepad.
 *C. Phần mềm chuyên dụng để nén và giải nén.
 D. Phần mềm diệt virus có trong máy.
+
 
