@@ -44,38 +44,51 @@
 
         const menuGrid = document.getElementById('menuGrid');
         
-        danhSachDeThi.forEach(item => {
-            const btn = document.createElement('div');
-            btn.className = 'menu-btn';
-            
-            // Check điểm cũ
-            const savedData = localStorage.getItem('quiz_data_' + item.file);
-            let badge = '';
-            if (savedData) {
-                const parsed = JSON.parse(savedData);
-                if(parsed.isSubmitted && parsed.score !== undefined) {
-                    badge = `<div class="badge-score">Điểm: ${parsed.score}</div>`;
-                } else if (parsed.history && parsed.history.some(h => h.userSelected !== null)) {
-                    badge = `<div class="badge-score" style="background:#3498db">Đang làm</div>`;
-                }
-            }
+danhSachDeThi.forEach(item => {
+    const btn = document.createElement('div');
+    btn.className = 'menu-btn';
+    
+    // Mặc định icon là thư mục, nếu có icon riêng thì lấy icon đó
+    let displayIcon = item.icon || '📁';
+    let badge = '';
 
-            btn.innerHTML = `
-                <div style="font-size:2em; margin-bottom:5px">📁</div> 
-                <div style="font-weight:700; font-size:0.9em">${item.ten}</div> 
-                ${badge}
-            `;
-            
-            btn.onclick = () => {
-                window.location.href = `product.html?id=${item.file}&name=${encodeURIComponent(item.ten)}`;
-            };
-            menuGrid.appendChild(btn);
-        });
+    // Chỉ hiển thị điểm đối với các bài thi (có thuộc tính 'file')
+    if (item.file) {
+        const savedData = localStorage.getItem('quiz_data_' + item.file);
+        if (savedData) {
+            const parsed = JSON.parse(savedData);
+            if(parsed.isSubmitted && parsed.score !== undefined) {
+                badge = `<div class="badge-score">Điểm: ${parsed.score}</div>`;
+            } else if (parsed.history && parsed.history.some(h => h.userSelected !== null)) {
+                badge = `<div class="badge-score" style="background:#3498db">Đang làm</div>`;
+            }
+        }
+    }
+
+    btn.innerHTML = `
+        <div style="font-size:2em; margin-bottom:5px">${displayIcon}</div> 
+        <div style="font-weight:700; font-size:0.9em">${item.ten}</div> 
+        ${badge}
+    `;
+    
+    // Logic xử lý khi click
+    btn.onclick = () => {
+        if (item.url) {
+            // Nếu có URL thì chuyển hướng đến trang đó
+            window.location.href = item.url;
+        } else {
+            // Nếu là đề thi thì chuyển đến trang làm bài
+            window.location.href = `product.html?id=${item.file}&name=${encodeURIComponent(item.ten)}`;
+        }
+    };
+    menuGrid.appendChild(btn);
+});
     </script>
     <script src="tet.js"></script>
 </body>
 
 </html>
+
 
 
 
