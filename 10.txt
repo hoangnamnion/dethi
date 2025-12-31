@@ -1,4 +1,4 @@
-Câu 0. Quyết Tâm làm Hết Không Mà Vào Đây [IMG:logo.jpg] 
+Câu 0. Quyết Tâm làm Hết Không Mà Vào Đây [IMG:banthanhung.jpg] 
 *A. Có
 B. Không 
 
@@ -152,3 +152,4 @@ A. Làm robot hình người
 *B. Cho máy học từ dữ liệu mà không cần lập trình rõ ràng
 C. Tạo giao diện thông minh
 D. Xây mạng tốc độ cao
+
