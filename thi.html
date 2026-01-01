@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ Thống Đang Bảo Trì - Thời Gian Thực</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #ff0101 0%, #ff0000 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+        
+        .maintenance-container {
+            max-width: 900px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 50px 40px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: fadeIn 1s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .logo {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        
+        .logo span {
+            color: #7c4dff;
+        }
+        
+        .maintenance-icon {
+            font-size: 80px;
+            color: #7c4dff;
+            margin: 20px 0;
+            animation: bounce 2s infinite alternate;
+        }
+        
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-15px); }
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .highlight {
+            color: #7c4dff;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            color: #e0e0e0;
+            line-height: 1.6;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Phần thời gian thực */
+        .realtime-container {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .realtime-title {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: #bb86fc;
+        }
+        
+        .realtime-display {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .time-section {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            padding: 25px 20px;
+            min-width: 200px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .time-section:hover {
+            transform: translateY(-5px);
+        }
+        
+        .time-label {
+            font-size: 1.1rem;
+            color: #b0b0b0;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .time-value {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #7c4dff;
+            line-height: 1;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .time-format {
+            font-size: 1rem;
+            color: #b0b0b0;
+            margin-top: 8px;
+        }
+        
+        .date-display {
+            font-size: 1.3rem;
+            color: #e0e0e0;
+            margin-top: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            font-weight: 500;
+        }
+        
+        /* Phần trạng thái bảo trì */
+        .status-container {
+            margin: 40px 0 30px;
+        }
+        
+        .status-title {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: #bb86fc;
+        }
+        
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+        
+        .status-item {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+        
+        .status-item:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-3px);
+        }
+        
+        .status-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .status-icon {
+            font-size: 1.5rem;
+            color: #7c4dff;
+            margin-right: 12px;
+        }
+        
+        .status-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .status-desc {
+            color: #e0e0e0;
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+        
+        .progress-container {
+            margin: 40px 0 30px;
+        }
+        
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+        
+        .progress-bar {
+            height: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #7c4dff, #b388ff);
+            width: 65%;
+            border-radius: 5px;
+            position: relative;
+            animation: progressAnimation 3s infinite alternate;
+        }
+        
+        @keyframes progressAnimation {
+            0% { width: 65%; }
+            100% { width: 68%; }
+        }
+        
+        .info-box {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: left;
+            border-left: 4px solid #7c4dff;
+        }
+        
+        .info-title {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #bb86fc;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .info-text {
+            line-height: 1.6;
+            color: #e0e0e0;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+            color: #e0e0e0;
+        }
+        
+        .contact-icon {
+            color: #7c4dff;
+            font-size: 1.2rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background: #7c4dff;
+            transform: translateY(-5px);
+        }
+        
+        .footer {
+            margin-top: 40px;
+            color: #aaa;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .maintenance-container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .time-section {
+                min-width: 150px;
+                padding: 20px 15px;
+            }
+            
+            .time-value {
+                font-size: 2.2rem;
+            }
+            
+            .maintenance-icon {
+                font-size: 60px;
+            }
+            
+            .realtime-display {
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .time-section {
+                min-width: 120px;
+                padding: 15px 10px;
+            }
+            
+            .time-value {
+                font-size: 1.8rem;
+            }
+            
+            .realtime-display {
+                gap: 10px;
+            }
+            
+            .status-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Animation cho thời gian */
+        .time-update {
+            animation: timeUpdate 0.5s ease;
+        }
+        
+        @keyframes timeUpdate {
+            0% { opacity: 0.5; transform: scale(0.95); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="maintenance-container">
+        <div class="logo">Trang WED Thi <span> ĐÃ BẢO TRÌ</span></div>
+        
+        <div class="maintenance-icon">
+            <i class="fas fa-cogs"></i>
+        </div>
+        
+        <h1>Hệ thống đang được <span class="highlight">Update</span></h1>
+        
+        <p class="subtitle">
+            Chúng tôi đang nâng cấp hệ thống để mang đến trải nghiệm tốt hơn cho bạn. 
+            Quá trình bảo trì đang diễn ra và chúng tôi sẽ cập nhật ngay khi hoàn tất.
+        </p>
+        
+        <!-- Phần hiển thị thời gian thực -->
+        <div class="realtime-container">
+            <h3 class="realtime-title">
+                <i class="far fa-clock"></i> Thời gian hiện tại
+            </h3>
+            
+            <div class="realtime-display">
+                <div class="time-section">
+                    <div class="time-label">Giờ</div>
+                    <div class="time-value" id="current-hour">00</div>
+                    <div class="time-format">24 giờ</div>
+                </div>
+                
+                <div class="time-section">
+                    <div class="time-label">Phút</div>
+                    <div class="time-value" id="current-minute">00</div>
+                    <div class="time-format">phút</div>
+                </div>
+                
+                <div class="time-section">
+                    <div class="time-label">Giây</div>
+                    <div class="time-value" id="current-second">00</div>
+                    <div class="time-format">giây</div>
+                </div>
+            </div>
+            
+            <div class="date-display" id="current-date">
+                Thứ Hai, 01 Tháng 01, 2023
+            </div>
+        </div>
+        
+        <!-- Phần trạng thái bảo trì -->
+        <div class="status-container">
+            <h3 class="status-title">Trạng thái bảo trì</h3>
+            
+            <div class="status-grid">
+                <div class="status-item">
+                    <div class="status-header">
+                        <i class="fas fa-server status-icon"></i>
+                        <div class="status-name">Máy chủ</div>
+                    </div>
+                    <div class="status-desc">Đang cập nhật phiên bản mới và tối ưu hóa hiệu suất.</div>
+                </div>
+                
+                <div class="status-item">
+                    <div class="status-header">
+                        <i class="fas fa-database status-icon"></i>
+                        <div class="status-name">Cơ sở dữ liệu</div>
+                    </div>
+                    <div class="status-desc">Đang sao lưu và tối ưu hóa cấu trúc dữ liệu.</div>
+                </div>
+                
+                <div class="status-item">
+                    <div class="status-header">
+                        <i class="fas fa-shield-alt status-icon"></i>
+                        <div class="status-name">Bảo mật</div>
+                    </div>
+                    <div class="status-desc">Nâng cấp hệ thống bảo mật và cập nhật chứng chỉ.</div>
+                </div>
+                
+                <div class="status-item">
+                    <div class="status-header">
+                        <i class="fas fa-bolt status-icon"></i>
+                        <div class="status-name">Hiệu suất</div>
+                    </div>
+                    <div class="status-desc">Tối ưu hóa tốc độ tải và xử lý dữ liệu.</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="progress-container">
+            <div class="progress-label">
+                <span>Tiến độ cập nhật tổng thể</span>
+                <span id="progress-percent">65%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+        </div>
+        
+        <div class="info-box">
+            <h3 class="info-title">
+                <i class="fas fa-info-circle"></i>
+                Thông tin bảo trì thời gian thực
+            </h3>
+            <p class="info-text">
+                Quá trình bảo trì đang được thực hiện. Chúng tôi không có thời gian hoàn thành dự kiến cụ thể 
+                vì muốn đảm bảo chất lượng tối ưu trước khi hệ thống hoạt động trở lại. Mọi tiến trình đang được 
+                giám sát chặt chẽ và chúng tôi sẽ thông báo ngay khi hệ thống sẵn sàng. Cảm ơn sự kiên nhẫn của bạn!
+            </p>
+        </div>
+        
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-envelope contact-icon"></i>
+                <span>caovannamdx@gmail.com</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone contact-icon"></i>
+                <span>+84 378 787 154</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-history contact-icon"></i>
+                <span>Bắt đầu bảo trì: <span id="maintenance-start">11:30:24</span></span>
+            </div>
+        </div>
+        
+        <div class="social-links">
+            <a href="#" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-icon">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-icon">
+                <i class="fab fa-telegram"></i>
+            </a>
+            <a href="#" class="social-icon">
+                <i class="fas fa-rss"></i>
+            </a>
+        </div>
+        
+        <div class="footer">
+            <p>&copy; 2025 DEV_CAOVANNAM. Tất cả các quyền được bảo lưu.</p>
+            <p>Hệ thống sẽ tự động cập nhật trạng thái khi hoàn thành bảo trì.</p>
+            <p id="last-updated">Cập nhật lần cuối: <span id="update-time">--:--:--</span></p>
+        </div>
+    </div>
+    
+    <script>
+        // Cập nhật thời gian thực
+        function updateRealTime() {
+            const now = new Date();
+            
+            // Định dạng ngày tháng
+            const days = ['Chủ Nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy'];
+            const months = ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6', 
+                           'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12'];
+            
+            const dayName = days[now.getDay()];
+            const date = now.getDate();
+            const monthName = months[now.getMonth()];
+            const year = now.getFullYear();
+            
+            // Cập nhật ngày tháng
+            document.getElementById('current-date').textContent = 
+                `${dayName}, ${date} ${monthName}, ${year}`;
+            
+            // Lấy giờ, phút, giây
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            let seconds = now.getSeconds();
+            
+            // Định dạng số (thêm số 0 đằng trước nếu cần)
+            hours = hours < 10 ? '0' + hours : hours;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+            
+            // Thêm hiệu ứng cập nhật
+            const hourElement = document.getElementById('current-hour');
+            const minuteElement = document.getElementById('current-minute');
+            const secondElement = document.getElementById('current-second');
+            
+            if (hourElement.textContent !== hours) {
+                hourElement.classList.add('time-update');
+                hourElement.textContent = hours;
+                setTimeout(() => hourElement.classList.remove('time-update'), 500);
+            }
+            
+            if (minuteElement.textContent !== minutes) {
+                minuteElement.classList.add('time-update');
+                minuteElement.textContent = minutes;
+                setTimeout(() => minuteElement.classList.remove('time-update'), 500);
+            }
+            
+            // Giây luôn cập nhật với hiệu ứng
+            secondElement.classList.add('time-update');
+            secondElement.textContent = seconds;
+            setTimeout(() => secondElement.classList.remove('time-update'), 500);
+            
+            // Cập nhật thời gian lần cuối
+            document.getElementById('update-time').textContent = 
+                `${hours}:${minutes}:${seconds}`;
+            
+            // Cập nhật thời gian bắt đầu bảo trì (lần đầu tiên chạy)
+            if (!window.maintenanceStartTime) {
+                window.maintenanceStartTime = `${hours}:${minutes}`;
+                document.getElementById('maintenance-start').textContent = window.maintenanceStartTime;
+            }
+        }
+        
+        // Giả lập tiến độ bảo trì
+        let progress = 65;
+        const progressFill = document.getElementById('progress-fill');
+        const progressPercent = document.getElementById('progress-percent');
+        
+        function simulateProgress() {
+            // Chỉ tăng tiến độ nếu chưa đạt 100%
+            if (progress < 100) {
+                // Tăng tiến độ ngẫu nhiên (0-0.5% mỗi lần)
+                const increment = Math.random() * 0.5;
+                progress = Math.min(100, progress + increment);
+                
+                // Cập nhật giao diện
+                progressFill.style.width = `${progress}%`;
+                progressPercent.textContent = `${Math.round(progress)}%`;
+                
+                // Thay đổi màu khi gần hoàn thành
+                if (progress > 85) {
+                    progressFill.style.background = 'linear-gradient(90deg, #4CAF50, #8BC34A)';
+                } else if (progress > 70) {
+                    progressFill.style.background = 'linear-gradient(90deg, #FF9800, #FFC107)';
+                }
+            } else {
+                // Khi đạt 100%, thêm thông báo
+                clearInterval(progressInterval);
+                document.querySelector('.subtitle').innerHTML = 
+                    '<span style="color:#4CAF50; font-weight:bold;">✓ Hệ thống đã hoàn thành bảo trì và sẽ hoạt động trở lại trong vài phút!</span>';
+            }
+        }
+        
+        // Khởi tạo
+        updateRealTime();
+        
+        // Cập nhật thời gian mỗi giây
+        setInterval(updateRealTime, 1000);
+        
+        // Giả lập tiến độ mỗi 8 giây
+        const progressInterval = setInterval(simulateProgress, 8000);
+        
+        // Thêm hiệu ứng hover cho các phần tử
+        document.querySelectorAll('.time-section').forEach(section => {
+            section.addEventListener('mouseenter', function() {
+                this.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.3)';
+            });
+            
+            section.addEventListener('mouseleave', function() {
+                this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.2)';
+            });
+        });
+        
+        // Thêm hiệu ứng cho biểu tượng bảo trì
+        const maintenanceIcon = document.querySelector('.maintenance-icon');
+        let rotation = 0;
+        
+        setInterval(() => {
+            rotation = (rotation + 0.5) % 360;
+            maintenanceIcon.style.transform = `translateY(-15px) rotate(${rotation}deg)`;
+        }, 50);
+    </script>
+</body>
+</html>
