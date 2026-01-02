@@ -5,26 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tài liệu bảo mật</title>
     <style>
-        /* Reset margin và padding để tràn màn hình */
+        /* Reset và cơ bản */
         html, body {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
             overflow: hidden;
-            background-color: #1a1a1a;
+            background-color: #ffffff;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        /* Giao diện nhập mật khẩu */
+        /* Giao diện đăng nhập */
         #login-form {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            background: linear-gradient(135deg, #afaeae 0%, #282a2e 100%);
             color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
         }
 
         .login-box {
@@ -41,7 +46,7 @@
 
         h2 {
             margin-top: 0;
-            color: #4cc9f0;
+            color: #c9c9c9;
             font-size: 28px;
         }
 
@@ -76,7 +81,7 @@
 
         button {
             padding: 14px 30px;
-            background: linear-gradient(135deg, #4cc9f0 0%, #4361ee 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #484c5c 100%);
             color: white;
             border: none;
             border-radius: 8px;
@@ -94,46 +99,43 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
-        /* Khung chứa PDF tràn màn hình */
-        #pdf-viewer {
+        /* Container cho PDF.js */
+        #pdf-container {
             display: none;
             width: 100vw;
             height: 100vh;
             position: relative;
+            background: #525659;
         }
 
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        #error-msg {
-            color: #ff6b6b;
-            margin-top: 15px;
-            font-size: 14px;
-            min-height: 20px;
-        }
-
-        .footer-note {
-            margin-top: 30px;
-            font-size: 12px;
-            color: rgba(255, 255, 255, 0.5);
-            line-height: 1.5;
+        /* Canvas hiển thị PDF */
+        #pdf-canvas {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         /* Thanh điều khiển PDF */
-        .pdf-controls {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
+        #pdf-controls {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            padding: 12px 20px;
+            border-radius: 30px;
             display: flex;
-            gap: 10px;
+            align-items: center;
+            gap: 15px;
+            z-index: 100;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .control-btn {
-            background: rgba(0, 0, 0, 0.7);
+            background: transparent;
             color: white;
             border: none;
             border-radius: 50%;
@@ -144,29 +146,50 @@
             justify-content: center;
             cursor: pointer;
             transition: all 0.3s ease;
+            font-size: 18px;
         }
 
         .control-btn:hover {
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(255, 255, 255, 0.2);
             transform: scale(1.1);
         }
 
-        /* Hiệu ứng tải */
-        .loading {
+        .control-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        #page-info {
+            color: white;
+            font-size: 14px;
+            min-width: 80px;
+            text-align: center;
+        }
+
+        /* Thanh tiến trình */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
             display: none;
-            margin-top: 10px;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            flex-direction: column;
+            color: white;
         }
 
         .spinner {
-            border: 3px solid rgba(255, 255, 255, 0.3);
+            border: 4px solid rgba(255, 255, 255, 0.3);
             border-radius: 50%;
-            border-top: 3px solid #4cc9f0;
-            width: 20px;
-            height: 20px;
+            border-top: 4px solid #4cc9f0;
+            width: 50px;
+            height: 50px;
             animation: spin 1s linear infinite;
-            display: inline-block;
-            vertical-align: middle;
-            margin-right: 10px;
+            margin-bottom: 20px;
         }
 
         @keyframes spin {
@@ -174,18 +197,66 @@
             100% { transform: rotate(360deg); }
         }
 
+        /* Thông báo lỗi */
+        #error-msg {
+            color: #ff6b6b;
+            margin-top: 15px;
+            font-size: 14px;
+            min-height: 20px;
+        }
+
         /* Responsive */
-        @media (max-width: 480px) {
+        @media (max-width: 768px) {
             .login-box {
                 padding: 25px;
                 width: 85%;
             }
             
+            #pdf-controls {
+                bottom: 10px;
+                padding: 10px 15px;
+                gap: 10px;
+            }
+            
+            .control-btn {
+                width: 35px;
+                height: 35px;
+                font-size: 16px;
+            }
+            
+            #page-info {
+                font-size: 13px;
+                min-width: 70px;
+            }
+        }
+
+        @media (max-width: 480px) {
             h2 {
                 font-size: 24px;
             }
+            
+            .lock-icon {
+                font-size: 36px;
+            }
+            
+            #pdf-controls {
+                width: 90%;
+                justify-content: space-between;
+            }
+        }
+
+        /* Thanh cuộn tùy chỉnh */
+        #pdf-scroll-container {
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch; /* Cuộn mượt trên iOS */
+            padding: 20px 0;
+            box-sizing: border-box;
         }
     </style>
+    <!-- PDF.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 </head>
 <body>
 
@@ -194,167 +265,325 @@
             <div class="lock-icon">🔒</div>
             <h2>Tài liệu bảo mật</h2>
             <p>Vui lòng nhập mật khẩu để truy cập tài liệu</p>
-            <input type="password" id="password" placeholder="Nhập mật khẩu...">
+            <input type="password" id="password" placeholder="Nhập mật khẩu..." autocomplete="off">
             <button onclick="checkPassword()">Mở tài liệu</button>
             <div id="error-msg"></div>
-            <div class="loading" id="loading">
-                <div class="spinner"></div>
-                <span>Đang xác thực...</span>
-            </div>
-            <div class="footer-note">
-                <p>⚠️ Lưu ý: Tài liệu này được bảo vệ bằng mật khẩu. Mọi hoạt động truy cập trái phép đều bị nghiêm cấm.</p>
-            </div>
         </div>
     </div>
 
-    <div id="pdf-viewer">
-        <div class="pdf-controls">
-            <button class="control-btn" onclick="goBack()" title="Quay lại">←</button>
-            <button class="control-btn" onclick="toggleFullscreen()" title="Toàn màn hình">⛶</button>
+    <!-- Overlay tải PDF -->
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="spinner"></div>
+        <div id="loading-text">Đang tải tài liệu...</div>
+        <div id="progress-text" style="margin-top: 10px; font-size: 14px; color: #ccc;"></div>
+    </div>
+
+    <!-- Container hiển thị PDF -->
+    <div id="pdf-container">
+        <div id="pdf-scroll-container">
+            <canvas id="pdf-canvas"></canvas>
         </div>
-        <iframe id="pdf-frame" src="" type="application/pdf"></iframe>
+        <div id="pdf-controls">
+            <button class="control-btn" id="prev-page" disabled>‹</button>
+            <span id="page-info">Trang: <span id="current-page">1</span>/<span id="total-pages">1</span></span>
+            <button class="control-btn" id="next-page" disabled>›</button>
+            <button class="control-btn" id="zoom-out" title="Thu nhỏ">−</button>
+            <button class="control-btn" id="zoom-in" title="Phóng to">+</button>
+            <button class="control-btn" id="close-pdf" title="Đóng">✕</button>
+        </div>
     </div>
 
     <script>
-        // LƯU Ý QUAN TRỌNG: Đây chỉ là bảo mật cơ bản phía client
-        // Để bảo mật thực sự, bạn cần triển khai xác thực phía server
+        // Cấu hình PDF.js
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
         
-        // Mật khẩu mặc định - THAY ĐỔI TRONG MÔI TRƯỜNG THỰC TẾ
-        // Trong ứng dụng thực tế, hãy sử dụng xác thực phía server
-        const correctPass = "2345"; // Thay đổi mật khẩu tại đây
+        // Biến toàn cục
+        let pdfDoc = null;
+        let currentPage = 1;
+        let scale = 1.5;
+        let canvas = document.getElementById('pdf-canvas');
+        let ctx = canvas.getContext('2d');
         
-        // URL PDF - trong môi trường thực tế, file PDF nên được bảo vệ bằng xác thực server
-        const pdfUrl = "sbvl.pdf";
+        // Mật khẩu - THAY ĐỔI Ở ĐÂY
+        const correctPassword = "2345";
         
-        // Biến đếm số lần thử sai
+        // Biến đếm số lần thử
         let failedAttempts = 0;
         const maxAttempts = 5;
         
+        // URL của file PDF - ĐẶT TÊN FILE CỦA BẠN Ở ĐÂY
+        const pdfFileUrl = "sbvl.pdf";
+        
+        // Kiểm tra mật khẩu
         function checkPassword() {
-            const pass = document.getElementById('password').value;
+            const password = document.getElementById('password').value;
             const errorMsg = document.getElementById('error-msg');
-            const loading = document.getElementById('loading');
             
-            // Hiển thị hiệu ứng tải
-            loading.style.display = 'block';
-            errorMsg.innerText = '';
-            
-            // Giả lập thời gian xác thực (trong thực tế sẽ gọi server)
-            setTimeout(() => {
-                loading.style.display = 'none';
+            if (password === correctPassword) {
+                // Đúng mật khẩu
+                failedAttempts = 0;
+                errorMsg.textContent = "";
                 
-                if (pass === correctPass) {
-                    // Đăng nhập thành công
-                    failedAttempts = 0;
-                    document.getElementById('login-form').style.display = 'none';
-                    document.getElementById('pdf-viewer').style.display = 'block';
+                // Ẩn form đăng nhập
+                document.getElementById('login-form').style.display = 'none';
+                
+                // Hiển thị overlay tải
+                const loadingOverlay = document.getElementById('loading-overlay');
+                const progressText = document.getElementById('progress-text');
+                loadingOverlay.style.display = 'flex';
+                
+                // Tải và hiển thị PDF
+                loadAndDisplayPDF(pdfFileUrl);
+                
+            } else {
+                // Sai mật khẩu
+                failedAttempts++;
+                
+                if (failedAttempts >= maxAttempts) {
+                    errorMsg.textContent = "Đã vượt quá số lần thử. Vui lòng thử lại sau 5 phút.";
+                    document.getElementById('password').disabled = true;
+                    document.querySelector('#login-form button').disabled = true;
                     
-                    // Tải PDF với các tham số ẩn công cụ
-                    // Các tham số: 
-                    // #toolbar=0 - ẩn thanh công cụ
-                    // #navpanes=0 - ẩn ngăn điều hướng
-                    // #scrollbar=0 - ẩn thanh cuộn (tùy chọn)
-                    document.getElementById('pdf-frame').src = pdfUrl + "#toolbar=0&navpanes=0";
-                    
-                    // Thêm sự kiện để ngăn menu chuột phải (bảo vệ cơ bản)
-                    document.getElementById('pdf-frame').onload = function() {
-                        try {
-                            this.contentDocument.addEventListener('contextmenu', function(e) {
-                                e.preventDefault();
-                                return false;
-                            });
-                        } catch(e) {
-                            // Bỏ qua lỗi nếu không thể chặn menu chuột phải
-                        }
-                    };
-                    
+                    // Reset sau 5 phút
+                    setTimeout(() => {
+                        document.getElementById('password').disabled = false;
+                        document.querySelector('#login-form button').disabled = false;
+                        errorMsg.textContent = "";
+                        failedAttempts = 0;
+                    }, 300000);
                 } else {
-                    // Sai mật khẩu
-                    failedAttempts++;
-                    
-                    if (failedAttempts >= maxAttempts) {
-                        errorMsg.innerText = "Đã vượt quá số lần thử cho phép. Vui lòng thử lại sau 5 phút.";
-                        document.getElementById('password').disabled = true;
-                        document.querySelector('button').disabled = true;
-                        
-                        // Kích hoạt lại sau 5 phút (300000 ms)
-                        setTimeout(() => {
-                            document.getElementById('password').disabled = false;
-                            document.querySelector('button').disabled = false;
-                            errorMsg.innerText = '';
-                            failedAttempts = 0;
-                        }, 300000);
-                    } else {
-                        errorMsg.innerText = `Sai mật khẩu! Bạn còn ${maxAttempts - failedAttempts} lần thử.`;
-                    }
-                    
-                    // Xóa nội dung ô nhập mật khẩu
-                    document.getElementById('password').value = '';
-                    document.getElementById('password').focus();
+                    errorMsg.textContent = `Sai mật khẩu! Còn ${maxAttempts - failedAttempts} lần thử.`;
                 }
-            }, 800); // Giả lập độ trễ xác thực
+                
+                // Xóa ô nhập
+                document.getElementById('password').value = "";
+                document.getElementById('password').focus();
+            }
         }
-
-        // Cho phép nhấn Enter để xác nhận
-        document.getElementById('password').addEventListener('keypress', function (e) {
-            if (e.key === 'Enter') { 
-                checkPassword(); 
+        
+        // Tải và hiển thị PDF
+        async function loadAndDisplayPDF(url) {
+            try {
+                // Hiển thị trạng thái tải
+                document.getElementById('loading-text').textContent = "Đang tải tài liệu...";
+                
+                // Tải PDF
+                const loadingTask = pdfjsLib.getDocument(url);
+                
+                // Theo dõi tiến trình tải
+                loadingTask.onProgress = function(progressData) {
+                    const progress = Math.round((progressData.loaded / progressData.total) * 100);
+                    document.getElementById('progress-text').textContent = `Đang tải: ${progress}%`;
+                };
+                
+                pdfDoc = await loadingTask.promise;
+                
+                // Ẩn overlay tải
+                document.getElementById('loading-overlay').style.display = 'none';
+                
+                // Hiển thị container PDF
+                document.getElementById('pdf-container').style.display = 'block';
+                
+                // Hiển thị trang đầu tiên
+                renderPage(currentPage);
+                
+                // Cập nhật thông tin trang
+                document.getElementById('total-pages').textContent = pdfDoc.numPages;
+                updatePageControls();
+                
+            } catch (error) {
+                console.error("Lỗi tải PDF:", error);
+                document.getElementById('loading-text').textContent = "Lỗi tải tài liệu!";
+                document.getElementById('progress-text').textContent = "Vui lòng kiểm tra kết nối hoặc file PDF.";
+                
+                // Hiển thị lại form đăng nhập sau 3 giây
+                setTimeout(() => {
+                    document.getElementById('loading-overlay').style.display = 'none';
+                    document.getElementById('login-form').style.display = 'flex';
+                    document.getElementById('error-msg').textContent = "Không thể tải tài liệu. Vui lòng thử lại.";
+                }, 3000);
+            }
+        }
+        
+        // Hiển thị trang PDF
+        async function renderPage(pageNum) {
+            try {
+                // Hiển thị overlay tải trang
+                document.getElementById('loading-overlay').style.display = 'flex';
+                document.getElementById('loading-text').textContent = `Đang tải trang ${pageNum}...`;
+                document.getElementById('progress-text').textContent = "";
+                
+                // Lấy trang
+                const page = await pdfDoc.getPage(pageNum);
+                
+                // Tính toán kích thước viewport
+                const viewport = page.getViewport({ scale: scale });
+                
+                // Đặt kích thước canvas
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+                
+                // Render trang
+                const renderContext = {
+                    canvasContext: ctx,
+                    viewport: viewport
+                };
+                
+                await page.render(renderContext).promise;
+                
+                // Ẩn overlay
+                document.getElementById('loading-overlay').style.display = 'none';
+                
+                // Cập nhật thông tin trang hiện tại
+                document.getElementById('current-page').textContent = pageNum;
+                
+                // Cuộn lên đầu trang
+                document.getElementById('pdf-scroll-container').scrollTop = 0;
+                
+            } catch (error) {
+                console.error("Lỗi render trang:", error);
+                document.getElementById('loading-overlay').style.display = 'none';
+                alert("Lỗi hiển thị trang. Vui lòng thử lại.");
+            }
+        }
+        
+        // Cập nhật trạng thái nút điều khiển trang
+        function updatePageControls() {
+            const prevBtn = document.getElementById('prev-page');
+            const nextBtn = document.getElementById('next-page');
+            
+            prevBtn.disabled = currentPage <= 1;
+            nextBtn.disabled = currentPage >= pdfDoc.numPages;
+        }
+        
+        // Chuyển đến trang trước
+        function prevPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                renderPage(currentPage);
+                updatePageControls();
+            }
+        }
+        
+        // Chuyển đến trang sau
+        function nextPage() {
+            if (currentPage < pdfDoc.numPages) {
+                currentPage++;
+                renderPage(currentPage);
+                updatePageControls();
+            }
+        }
+        
+        // Phóng to
+        function zoomIn() {
+            if (scale < 3) {
+                scale += 0.25;
+                renderPage(currentPage);
+            }
+        }
+        
+        // Thu nhỏ
+        function zoomOut() {
+            if (scale > 0.5) {
+                scale -= 0.25;
+                renderPage(currentPage);
+            }
+        }
+        
+        // Đóng PDF viewer
+        function closePDF() {
+            document.getElementById('pdf-container').style.display = 'none';
+            document.getElementById('login-form').style.display = 'flex';
+            
+            // Reset
+            currentPage = 1;
+            scale = 1.5;
+            pdfDoc = null;
+            
+            // Xóa canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            canvas.height = 0;
+            canvas.width = 0;
+            
+            // Reset ô mật khẩu
+            document.getElementById('password').value = "";
+            document.getElementById('password').focus();
+        }
+        
+        // Sự kiện nhấn phím trong ô mật khẩu
+        document.getElementById('password').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                checkPassword();
             }
         });
+        
+        // Gán sự kiện cho các nút điều khiển
+        document.getElementById('prev-page').addEventListener('click', prevPage);
+        document.getElementById('next-page').addEventListener('click', nextPage);
+        document.getElementById('zoom-in').addEventListener('click', zoomIn);
+        document.getElementById('zoom-out').addEventListener('click', zoomOut);
+        
+        
+        // Sự kiện swipe cho thiết bị cảm ứng (iOS)
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        document.getElementById('pdf-scroll-container').addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        }, false);
+        
+        document.getElementById('pdf-scroll-container').addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, false);
+        
+        function handleSwipe() {
+            const swipeThreshold = 50; // Ngưỡng swipe (pixel)
+            const diff = touchStartX - touchEndX;
+            
+            // Swipe trái -> trang sau
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    // Swipe trái
+                    nextPage();
+                } else {
+                    // Swipe phải
+                    prevPage();
+                }
+            }
+        }
         
         // Đặt focus vào ô mật khẩu khi trang tải
-        document.addEventListener('DOMContentLoaded', function() {
+        window.addEventListener('load', function() {
             document.getElementById('password').focus();
         });
         
-        // Chức năng điều khiển PDF
-        function goBack() {
-            document.getElementById('pdf-viewer').style.display = 'none';
-            document.getElementById('login-form').style.display = 'flex';
-            document.getElementById('pdf-frame').src = '';
-            document.getElementById('password').value = '';
-            document.getElementById('password').focus();
-        }
-        
-        function toggleFullscreen() {
-            const viewer = document.getElementById('pdf-viewer');
-            
-            if (!document.fullscreenElement) {
-                if (viewer.requestFullscreen) {
-                    viewer.requestFullscreen();
-                } else if (viewer.mozRequestFullScreen) { // Firefox
-                    viewer.mozRequestFullScreen();
-                } else if (viewer.webkitRequestFullscreen) { // Chrome, Safari, Opera
-                    viewer.webkitRequestFullscreen();
-                } else if (viewer.msRequestFullscreen) { // IE/Edge
-                    viewer.msRequestFullscreen();
+        // Ngăn chặn các phím tắt khi đang xem PDF
+        document.addEventListener('keydown', function(e) {
+            if (document.getElementById('pdf-container').style.display === 'block') {
+                // Ngăn chặn phím tắt in (Ctrl+P / Cmd+P)
+                if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+                    e.preventDefault();
+                    alert("Chức năng in đã bị vô hiệu hóa cho tài liệu này.");
+                    return false;
                 }
-            } else {
-                if (document.exitFullscreen) {
-                    document.exitFullscreen();
-                } else if (document.mozCancelFullScreen) {
-                    document.mozCancelFullScreen();
-                } else if (document.webkitExitFullscreen) {
-                    document.webkitExitFullscreen();
-                } else if (document.msExitFullscreen) {
-                    document.msExitFullscreen();
+                
+                // Ngăn chặn lưu trang (Ctrl+S / Cmd+S)
+                if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+                    e.preventDefault();
+                    return false;
+                }
+                
+                // Mũi tên trái/phải để chuyển trang
+                if (e.key === 'ArrowLeft') {
+                    prevPage();
+                    e.preventDefault();
+                } else if (e.key === 'ArrowRight') {
+                    nextPage();
+                    e.preventDefault();
                 }
             }
-        }
-        
-        // Xử lý thoát fullscreen bằng phím Esc
-        document.addEventListener('fullscreenchange', exitHandler);
-        document.addEventListener('webkitfullscreenchange', exitHandler);
-        document.addEventListener('mozfullscreenchange', exitHandler);
-        document.addEventListener('MSFullscreenChange', exitHandler);
-        
-        function exitHandler() {
-            if (!document.fullscreenElement && !document.webkitIsFullScreen && 
-                !document.mozFullScreen && !document.msFullscreenElement) {
-                // Người dùng đã thoát chế độ toàn màn hình
-            }
-        }
+        });
     </script>
-
 </body>
 </html>
