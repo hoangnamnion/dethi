@@ -1,6 +1,6 @@
 /* =============================================================
    FILE: script.js 
-   PHIÊN BẢN: HOÀN CHỈNH - TÍCH HỢP RESUME/LÀM MỚI
+   PHIÊN BẢN: HOÀN CHỈNH - TÍCH HỢP RESUME/LÀM MỚI + CHẾ ĐỘ LÀM LẠI CÂU SAI
    ============================================================= */
 
 let allQuestions = [];
@@ -17,6 +17,12 @@ let timerInterval;
 let examMode = 'normal';
 let questionOrder = 'normal';
 let isSurvivalFailed = false;
+
+// Biến mới cho chế độ làm lại câu sai
+let firstAttemptScore = 0; // Điểm lần đầu tiên
+let retryCount = 0; // Số lần làm lại
+let wrongQuestions = []; // Danh sách câu sai cần làm lại
+let isRetryMode = false; // Đang ở chế độ làm lại câu sai
 
 // --- 1. TẢI ĐỀ THI ---
 function loadExam(fileName) {
@@ -39,6 +45,8 @@ function loadExam(fileName) {
     
     let title = "Đề số " + fileName;
     const titleElement = document.getElementById('sectionTitle');
+    
+    // SỬA: Dùng innerHTML để hiển thị badge đúng cách
     if (examMode === 'survival') {
         titleElement.innerHTML = title + ' <span class="survival-badge">💀 1 MẠNG</span>';
     } else {
@@ -64,9 +72,10 @@ function loadExam(fileName) {
             document.getElementById('quizArea').style.display = 'block';
             parseData(text);
             
-            // Áp dụng thứ tự câu hỏi
+            // Áp dụng thứ tự câu hỏi và đảo đáp án nếu cần
             if (questionOrder === 'random') {
                 shuffleQuestions();
+                shuffleOptions(); // Thêm: Đảo đáp án
                 // Lưu lại bản gốc
                 originalQuestions = JSON.parse(JSON.stringify(allQuestions));
             }
@@ -92,6 +101,39 @@ function shuffleQuestions() {
     }
 }
 
+// Hàm mới: Đảo thứ tự đáp án
+function shuffleOptions() {
+    allQuestions.forEach((question, questionIndex) => {
+        // Tạo mảng chỉ số của các đáp án
+        const optionIndices = question.options.map((_, idx) => idx);
+        
+        // Trộn mảng chỉ số
+        for (let i = optionIndices.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [optionIndices[i], optionIndices[j]] = [optionIndices[j], optionIndices[i]];
+        }
+        
+        // Áp dụng thứ tự mới cho options
+        const newOptions = optionIndices.map(idx => question.options[idx]);
+        
+        // Cập nhật lại đáp án đúng (theo thứ tự mới)
+        const correctIndexInOriginal = question.options.findIndex(opt => opt.isCorrect);
+        const newCorrectIndex = optionIndices.indexOf(correctIndexInOriginal);
+        
+        // Cập nhật lại đáp án đã chọn của người dùng (nếu có)
+        if (question.userSelected !== null) {
+            // Tìm vị trí mới của đáp án đã chọn
+            question.userSelected = optionIndices.indexOf(question.userSelected);
+        }
+        
+        // Cập nhật câu hỏi
+        allQuestions[questionIndex].options = newOptions;
+        
+        // Lưu lại thông tin về thứ tự đảo để có thể khôi phục
+        allQuestions[questionIndex].shuffledOptionIndices = optionIndices;
+    });
+}
+
 function parseData(text) {
     text = text.replace(/(\s+)(\*?[A-D]\.)/g, "\n$2");
     const lines = text.split('\n');
@@ -109,7 +151,11 @@ function parseData(text) {
                 text: line, 
                 options: [], 
                 userSelected: null,
-                originalIndex: allQuestions.length
+                originalIndex: allQuestions.length,
+                firstAttemptSelected: null, // Lưu lựa chọn lần đầu
+                isCorrectFirstTime: null, // Đúng/sai lần đầu
+                retrySelected: null, // Lựa chọn khi làm lại (chế độ làm lại câu sai)
+                isRetryMode: false // Đang ở chế độ làm lại
             };
         } else if (optRegex.test(line) && currentQ) {
             let isCorrect = line.startsWith('*');
@@ -162,7 +208,24 @@ function renderQuestion(index) {
         qNumberText += ` (Gốc: ${q.originalIndex + 1})`;
     }
     
-    document.getElementById('qNumber').innerText = qNumberText;
+    // SỬA LẠI PHẦN NÀY: Dùng innerHTML thay vì innerText
+    const qNumberElement = document.getElementById('qNumber');
+    
+    // Xây dựng nội dung HTML
+    let qNumberHTML = `Câu ${index + 1}/${allQuestions.length}`;
+    
+    if (questionOrder === 'random') {
+        qNumberHTML += ` <span style="color:#636e72; font-size:0.8em;">(Gốc: ${q.originalIndex + 1})</span>`;
+    }
+    
+    // Hiển thị trạng thái làm lại nếu đang ở chế độ làm lại câu sai
+    if (isRetryMode && q.isRetryMode) {
+        qNumberHTML += ` <span style="background:#f39c12; color:white; padding:2px 6px; border-radius:8px; font-size:0.8em;">Làm lại</span>`;
+    }
+    
+    // Sử dụng innerHTML để hiển thị đúng HTML
+    qNumberElement.innerHTML = qNumberHTML;
+    
     document.getElementById('qText').innerHTML = processedText;
     document.getElementById('btnPrev').disabled = (index === 0);
     document.getElementById('btnNext').disabled = (index === allQuestions.length - 1);
@@ -173,24 +236,42 @@ function renderQuestion(index) {
     // Kiểm tra đã trả lời chưa
     const isAnswered = (q.userSelected !== null);
     
-    q.options.forEach((opt, idx) => {
-        const btn = document.createElement('div');
-        btn.className = 'option-item';
-        btn.innerText = opt.text;
+// Trong hàm renderQuestion, sửa phần hiển thị đáp án:
+q.options.forEach((opt, idx) => {
+    const btn = document.createElement('div');
+    btn.className = 'option-item';
+    
+    // Hiển thị đáp án với định dạng đẹp
+    const optionText = opt.text;
+    btn.innerHTML = `<span style="font-weight:bold; margin-right:8px; color:#d63031;">${String.fromCharCode(65 + idx)}.</span> ${optionText.replace(/^[A-D]\.\s*/, '')}`;
+    
+    if (isAnswered) {
+        btn.style.pointerEvents = 'none';
         
-        if (isAnswered) {
-            btn.style.pointerEvents = 'none';
+        // Hiển thị màu sắc tùy theo trạng thái
+        if (isRetryMode && q.isRetryMode) {
+            // Trong chế độ làm lại, chỉ hiển thị đáp án đúng
+            if (opt.isCorrect) {
+                btn.classList.add('correct');
+            }
+            if (q.retrySelected === idx) {
+                // Đáp án người dùng chọn trong lần làm lại
+                btn.classList.add(opt.isCorrect ? 'correct' : 'wrong');
+            }
+        } else {
+            // Chế độ bình thường
             if (opt.isCorrect) {
                 btn.classList.add('correct');
             }
             if (q.userSelected === idx && !opt.isCorrect) {
                 btn.classList.add('wrong');
             }
-        } else {
-            btn.onclick = () => handleAnswer(index, idx);
         }
-        optsArea.appendChild(btn);
-    });
+    } else {
+        btn.onclick = () => handleAnswer(index, idx);
+    }
+    optsArea.appendChild(btn);
+});
 }
 
 function handleAnswer(qIndex, optIndex) {
@@ -199,8 +280,45 @@ function handleAnswer(qIndex, optIndex) {
     const q = allQuestions[qIndex];
     const selectedOption = q.options[optIndex];
     
-    // Ghi nhận lựa chọn
+    if (isRetryMode && q.isRetryMode) {
+        // Trong chế độ làm lại câu sai
+        q.retrySelected = optIndex;
+        q.userSelected = optIndex; // Cập nhật cho đồng bộ
+        
+        if (selectedOption.isCorrect) {
+            // Đúng -> xóa khỏi danh sách cần làm lại
+            const wrongIndex = wrongQuestions.findIndex(item => item.index === qIndex);
+            if (wrongIndex !== -1) {
+                wrongQuestions.splice(wrongIndex, 1);
+            }
+            showCorrectEffect();
+            
+            // Kiểm tra còn câu nào sai không
+            if (wrongQuestions.length === 0) {
+                // Đã làm đúng hết -> nộp bài
+                setTimeout(() => {
+                    alert("🎉 Chúc mừng! Bạn đã làm đúng tất cả các câu sai!");
+                    finishRetryMode();
+                }, 500);
+            }
+        } else {
+            // Sai -> vẫn giữ trong danh sách
+            showWrongEffect();
+        }
+        
+        renderQuestion(qIndex);
+        saveProgress();
+        return;
+    }
+    
+    // Chế độ bình thường hoặc sinh tử
     q.userSelected = optIndex;
+    
+    // Lưu lựa chọn lần đầu và kết quả
+    if (q.firstAttemptSelected === null) {
+        q.firstAttemptSelected = optIndex;
+        q.isCorrectFirstTime = selectedOption.isCorrect;
+    }
     
     if (examMode === 'survival') {
         if (!selectedOption.isCorrect) {
@@ -232,6 +350,15 @@ function handleAnswer(qIndex, optIndex) {
     }
 }
 
+// Kết thúc chế độ làm lại câu sai
+function finishRetryMode() {
+    isRetryMode = false;
+    isSubmitted = true;
+    clearInterval(timerInterval);
+    saveProgress();
+    showResultModal();
+}
+
 function performSurvivalReset() {
     // Reset tất cả câu hỏi
     allQuestions.forEach(question => {
@@ -246,6 +373,7 @@ function performSurvivalReset() {
     // Đảo lộn lại nếu cần
     if (questionOrder === 'random') {
         shuffleQuestions();
+        shuffleOptions();
     }
     
     // Reset về câu 1
@@ -358,9 +486,17 @@ function performFullReset() {
     } else {
         allQuestions.forEach(q => {
             q.userSelected = null;
+            q.firstAttemptSelected = null;
+            q.isCorrectFirstTime = null;
+            q.retrySelected = null;
+            q.isRetryMode = false;
         });
     }
     
+    isRetryMode = false;
+    wrongQuestions = [];
+    retryCount = 0;
+    firstAttemptScore = 0;
     isSurvivalFailed = false;
     totalSeconds = 0;
     currentIndex = 0;
@@ -368,6 +504,7 @@ function performFullReset() {
     
     if (questionOrder === 'random') {
         shuffleQuestions();
+        shuffleOptions();
     }
     
     renderQuestion(0);
@@ -379,28 +516,108 @@ function finishExam() {
     if (isSubmitted) { 
         showResultModal(); 
         return; 
-    } 
+    }
     
     if (!confirm("Bạn muốn nộp bài để xem tổng kết điểm chứ?")) return;
 
     isSubmitted = true;
     clearInterval(timerInterval);
-    saveProgress(); 
-    showResultModal();
+    
+    // Tính toán kết quả lần đầu
+    let correct = 0, wrong = 0, skip = 0;
+    allQuestions.forEach(q => {
+        if (q.firstAttemptSelected === null) skip++;
+        else if (q.isCorrectFirstTime) correct++;
+        else wrong++;
+    });
+    
+    firstAttemptScore = correct;
+    
+    // Nếu chế độ thường và có câu sai, hỏi có muốn làm lại không
+    if (examMode === 'normal' && wrong > 0) {
+        setTimeout(() => {
+            if (confirm(`Bạn có ${wrong} câu sai. Bạn có muốn làm lại các câu sai này cho đến khi đúng hết không?`)) {
+                startRetryMode();
+                return;
+            } else {
+                saveProgress();
+                showResultModal();
+            }
+        }, 500);
+    } else {
+        saveProgress();
+        showResultModal();
+    }
+}
+
+// Bắt đầu chế độ làm lại câu sai
+function startRetryMode() {
+    isSubmitted = false;
+    isRetryMode = true;
+    retryCount++;
+    
+    // Tìm các câu sai
+    wrongQuestions = [];
+    allQuestions.forEach((q, index) => {
+        if (!q.isCorrectFirstTime && q.firstAttemptSelected !== null) {
+            q.isRetryMode = true;
+            q.userSelected = null; // Reset để làm lại
+            q.retrySelected = null;
+            wrongQuestions.push({ index, question: q });
+        } else {
+            q.isRetryMode = false;
+        }
+    });
+    
+    // Nếu không có câu sai nào (trường hợp hiếm)
+    if (wrongQuestions.length === 0) {
+        isSubmitted = true;
+        showResultModal();
+        return;
+    }
+    
+    // Hiển thị thông báo
+    alert(`📝 BẮT ĐẦU LÀM LẠI ${wrongQuestions.length} CÂU SAI\nLàm đúng hết để hoàn thành!`);
+    
+    // Chuyển đến câu sai đầu tiên
+    if (wrongQuestions.length > 0) {
+        currentIndex = wrongQuestions[0].index;
+        renderQuestion(currentIndex);
+    }
+    
+    // SỬA: Cập nhật tiêu đề (dùng innerHTML)
+    document.getElementById('sectionTitle').innerHTML = 
+        `Đề số ${currentFileName} <span class="normal-badge" style="background:#f39c12">🔄 LÀM LẠI LẦN ${retryCount}</span>`;
+    
+    // Bắt đầu lại timer
+    startTimer();
 }
 
 function showResultModal() {
     let correct = 0, wrong = 0, skip = 0;
-    allQuestions.forEach(q => {
-        if (q.userSelected === null) skip++;
-        else if (q.options[q.userSelected].isCorrect) correct++;
-        else wrong++;
-    });
+    
+    if (isRetryMode) {
+        // Trong chế độ làm lại, tính theo lần đầu
+        allQuestions.forEach(q => {
+            if (q.firstAttemptSelected === null) skip++;
+            else if (q.isCorrectFirstTime) correct++;
+            else wrong++;
+        });
+    } else {
+        // Tính theo lần làm hiện tại
+        allQuestions.forEach(q => {
+            const selected = isRetryMode ? q.retrySelected : q.userSelected;
+            if (selected === null) skip++;
+            else if (q.options[selected]?.isCorrect) correct++;
+            else wrong++;
+        });
+    }
 
     const mins = Math.floor(totalSeconds / 60);
     const secs = totalSeconds % 60;
 
-    document.getElementById('resScore').innerText = correct + "/" + allQuestions.length;
+    // SỬA: Dùng innerHTML cho phần điểm số
+    document.getElementById('resScore').innerHTML = `<span style="font-size:1em">${correct}</span><span style="font-size:0.6em; color:#636e72">/${allQuestions.length}</span>`;
     document.getElementById('resRight').innerText = correct;
     document.getElementById('resWrong').innerText = wrong;
     document.getElementById('resSkip').innerText = skip;
@@ -422,11 +639,42 @@ function showResultModal() {
     modeText += `<div>🎮 Chế độ: <strong>${examMode === 'survival' ? '💀 Sinh tử' : '😊 Thường'}</strong></div>`;
     modeText += `<div>🔀 Thứ tự: <strong>${questionOrder === 'random' ? 'Đảo lộn' : 'Nguyên bản'}</strong></div>`;
     
+    // Hiển thị điểm lần đầu và số lần làm lại nếu có
+    if (examMode === 'normal' && firstAttemptScore > 0) {
+        modeText += `<div>🏆 Điểm lần đầu: <strong>${firstAttemptScore}/${allQuestions.length}</strong></div>`;
+    }
+    
+    if (retryCount > 0) {
+        modeText += `<div>🔄 Số lần làm lại: <strong>${retryCount}</strong></div>`;
+    }
+    
     modeInfo.innerHTML = modeText;
     
     const resultBox = document.querySelector('.result-box');
     const timeElement = document.getElementById('resTime');
     resultBox.insertBefore(modeInfo, timeElement);
+    
+    // Thêm nút làm lại câu sai nếu chưa ở chế độ làm lại
+    if (examMode === 'normal' && wrong > 0 && !isRetryMode) {
+        const retryButton = document.createElement('button');
+        retryButton.className = 'btn-close-res';
+        retryButton.style.background = '#f39c12';
+        retryButton.style.marginTop = '10px';
+        retryButton.style.width = '100%';
+        retryButton.innerText = '🔄 Làm lại câu sai';
+        retryButton.onclick = function() {
+            closeResult();
+            setTimeout(() => {
+                isSubmitted = false;
+                startRetryMode();
+            }, 300);
+        };
+        
+        const buttonContainer = resultBox.querySelector('div[style*="display:flex; gap:10px"]');
+        if (buttonContainer) {
+            buttonContainer.parentNode.insertBefore(retryButton, buttonContainer.nextSibling);
+        }
+    }
     
     document.getElementById('modalResult').style.display = 'flex';
 }
@@ -434,9 +682,11 @@ function showResultModal() {
 // --- 6. LƯU & TẢI TIẾN ĐỘ ---
 function saveProgress() {
     if(allQuestions.length === 0) return;
+    
     let tempScore = 0;
     allQuestions.forEach(q => {
-        if (q.userSelected !== null && q.options[q.userSelected].isCorrect) tempScore++;
+        const selected = isRetryMode ? q.retrySelected : q.userSelected;
+        if (selected !== null && q.options[selected]?.isCorrect) tempScore++;
     });
 
     const data = { 
@@ -447,9 +697,18 @@ function saveProgress() {
         examMode: examMode,
         questionOrder: questionOrder,
         isSurvivalFailed: isSurvivalFailed,
+        isRetryMode: isRetryMode,
+        retryCount: retryCount,
+        firstAttemptScore: firstAttemptScore,
+        wrongQuestions: wrongQuestions.map(item => item.index),
         history: allQuestions.map(q => ({ 
             userSelected: q.userSelected,
-            originalIndex: q.originalIndex 
+            firstAttemptSelected: q.firstAttemptSelected,
+            isCorrectFirstTime: q.isCorrectFirstTime,
+            retrySelected: q.retrySelected,
+            isRetryMode: q.isRetryMode,
+            originalIndex: q.originalIndex,
+            shuffledOptionIndices: q.shuffledOptionIndices
         })) 
     };
     localStorage.setItem('quiz_data_' + currentFileName, JSON.stringify(data));
@@ -464,6 +723,17 @@ function loadProgress() {
         examMode = data.examMode || examMode;
         questionOrder = data.questionOrder || questionOrder;
         isSurvivalFailed = data.isSurvivalFailed || false;
+        isRetryMode = data.isRetryMode || false;
+        retryCount = data.retryCount || 0;
+        firstAttemptScore = data.firstAttemptScore || 0;
+        
+        // Khôi phục danh sách câu sai
+        if (data.wrongQuestions) {
+            wrongQuestions = data.wrongQuestions.map(index => ({
+                index,
+                question: allQuestions[index]
+            }));
+        }
         
         // Nếu đang ở chế độ sinh tử và đã sai, reset để làm lại
         if (examMode === 'survival' && isSurvivalFailed && !isSubmitted) {
@@ -476,11 +746,29 @@ function loadProgress() {
             data.history.forEach((h, i) => {
                 if (allQuestions[i]) {
                     allQuestions[i].userSelected = h.userSelected;
+                    allQuestions[i].firstAttemptSelected = h.firstAttemptSelected;
+                    allQuestions[i].isCorrectFirstTime = h.isCorrectFirstTime;
+                    allQuestions[i].retrySelected = h.retrySelected;
+                    allQuestions[i].isRetryMode = h.isRetryMode;
                     allQuestions[i].originalIndex = h.originalIndex || i;
+                    allQuestions[i].shuffledOptionIndices = h.shuffledOptionIndices;
+                    
+                    // Nếu có thông tin đảo đáp án, áp dụng lại
+                    if (h.shuffledOptionIndices && questionOrder === 'random') {
+                        // Tạo options mới theo thứ tự đã đảo
+                        const newOptions = h.shuffledOptionIndices.map(idx => allQuestions[i].options[idx]);
+                        allQuestions[i].options = newOptions;
+                    }
                 }
             });
         }
         renderQuestion(data.currentIndex || 0);
+        
+        // SỬA: Cập nhật tiêu đề nếu đang ở chế độ làm lại (dùng innerHTML)
+        if (isRetryMode) {
+            document.getElementById('sectionTitle').innerHTML = 
+                `Đề số ${currentFileName} <span class="normal-badge" style="background:#f39c12">🔄 LÀM LẠI LẦN ${retryCount}</span>`;
+        }
     } else {
         renderQuestion(0);
     }
@@ -504,10 +792,21 @@ function toggleModal() {
             }
             
             if(idx === currentIndex) div.classList.add('current');
-            if (q.userSelected !== null) {
-                if (q.options[q.userSelected].isCorrect) div.classList.add('done-correct');
-                else div.classList.add('done-wrong');
+            
+            // Xác định trạng thái hiển thị
+            if (isRetryMode && q.isRetryMode) {
+                // Trong chế độ làm lại
+                if (q.retrySelected !== null) {
+                    div.classList.add(q.options[q.retrySelected]?.isCorrect ? 'done-correct' : 'done-wrong');
+                }
+            } else {
+                // Chế độ bình thường
+                if (q.userSelected !== null) {
+                    if (q.options[q.userSelected]?.isCorrect) div.classList.add('done-correct');
+                    else div.classList.add('done-wrong');
+                }
             }
+            
             div.onclick = () => { 
                 renderQuestion(idx); 
                 modal.style.display = 'none'; 
@@ -560,8 +859,20 @@ style.textContent = `
         50% { transform: scale(1.05); }
         100% { transform: scale(1); }
     }
+    
+    /* Thêm style cho chế độ làm lại */
+    .retry-badge {
+        display: inline-block;
+        background: #f39c12;
+        color: white;
+        padding: 3px 10px;
+        border-radius: 12px;
+        font-size: 0.7em;
+        font-weight: bold;
+        margin-left: 5px;
+        animation: pulse-badge 1.5s infinite;
+    }
 `;
-
 document.head.appendChild(style);
 // Thêm sự kiện điều khiển bằng bàn phím
 document.addEventListener('keydown', (event) => {
@@ -581,3 +892,186 @@ document.addEventListener('keydown', (event) => {
         changeQuestion(-1);
     }
 });
+// Hàm mới: Đảo thứ tự đáp án nhưng giữ nhãn A, B, C, D
+function shuffleOptions() {
+    allQuestions.forEach((question, questionIndex) => {
+        // Tạo mảng chỉ số của các đáp án
+        const optionIndices = question.options.map((_, idx) => idx);
+        
+        // Trộn mảng chỉ số
+        for (let i = optionIndices.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [optionIndices[i], optionIndices[j]] = [optionIndices[j], optionIndices[i]];
+        }
+        
+        // Tạo options mới theo thứ tự đã đảo
+        const shuffledOptions = optionIndices.map(idx => ({
+            text: question.options[idx].text,
+            isCorrect: question.options[idx].isCorrect
+        }));
+        
+        // Thêm nhãn A, B, C, D vào đầu mỗi đáp án
+        const optionLabels = ['A', 'B', 'C', 'D', 'E', 'F']; // Có thể mở rộng nếu cần
+        shuffledOptions.forEach((opt, idx) => {
+            // Chỉ thêm nhãn nếu chưa có
+            if (!opt.text.startsWith(optionLabels[idx] + '.')) {
+                opt.text = optionLabels[idx] + '. ' + opt.text;
+            }
+        });
+        
+        // Cập nhật lại đáp án đúng (theo thứ tự mới)
+        const correctIndexInOriginal = question.options.findIndex(opt => opt.isCorrect);
+        const newCorrectIndex = optionIndices.indexOf(correctIndexInOriginal);
+        
+        // Cập nhật lại đáp án đã chọn của người dùng (nếu có)
+        if (question.userSelected !== null) {
+            // Tìm vị trí mới của đáp án đã chọn
+            question.userSelected = optionIndices.indexOf(question.userSelected);
+        }
+        
+        // Cập nhật câu hỏi
+        allQuestions[questionIndex].options = shuffledOptions;
+        
+        // Lưu lại thông tin về thứ tự đảo để có thể khôi phục
+        allQuestions[questionIndex].shuffledOptionIndices = optionIndices;
+    });
+}
+function parseData(text) {
+    text = text.replace(/(\s+)(\*?[A-D]\.)/g, "\n$2");
+    const lines = text.split('\n');
+    let currentQ = null;
+    allQuestions = [];
+    const qStartRegex = /^(Câu\s+\d+|Bài\s+\d+|Question\s+\d+)/i;
+    const optRegex = /^(\*)?([A-D])\./;
+
+    lines.forEach(line => {
+        line = line.trim();
+        if (!line) return;
+        if (qStartRegex.test(line)) {
+            if (currentQ) allQuestions.push(currentQ);
+            currentQ = { 
+                text: line, 
+                options: [], 
+                userSelected: null,
+                originalIndex: allQuestions.length,
+                firstAttemptSelected: null, // Lưu lựa chọn lần đầu
+                isCorrectFirstTime: null, // Đúng/sai lần đầu
+                retrySelected: null, // Lựa chọn khi làm lại (chế độ làm lại câu sai)
+                isRetryMode: false // Đang ở chế độ làm lại
+            };
+        } else if (optRegex.test(line) && currentQ) {
+            let isCorrect = line.startsWith('*');
+            // Lưu đáp án kèm nhãn A, B, C, D
+            const label = line.match(/^(\*)?([A-D])\./)[2];
+            const textWithoutLabel = line.replace(/^(\*)?[A-D]\.\s*/, '').trim();
+            currentQ.options.push({ 
+                text: `${label}. ${textWithoutLabel}`, // Đảm bảo có nhãn
+                isCorrect: isCorrect,
+                originalLabel: label // Lưu nhãn gốc
+            });
+        } else {
+            if (currentQ && currentQ.options.length === 0) {
+                currentQ.text += " " + line;
+            }
+        }
+    });
+    if (currentQ) allQuestions.push(currentQ);
+}
+// Thêm vào phần biến toàn cục
+let autoSubmitTimeout = null;
+
+// Hàm kiểm tra xem đã trả lời hết câu chưa
+function checkAllAnswered() {
+    // Trong chế độ làm lại câu sai, chỉ kiểm tra các câu đang làm lại
+    if (isRetryMode) {
+        const allRetryAnswered = wrongQuestions.every(item => 
+            allQuestions[item.index].retrySelected !== null
+        );
+        return allRetryAnswered;
+    }
+    
+    // Chế độ bình thường: kiểm tra tất cả câu
+    const allAnswered = allQuestions.every(q => q.userSelected !== null);
+    return allAnswered;
+}
+
+// Hàm kích hoạt tự động nộp bài
+function activateAutoSubmit() {
+    // Hủy timeout cũ nếu có
+    if (autoSubmitTimeout) {
+        clearTimeout(autoSubmitTimeout);
+    }
+    
+    // Kiểm tra xem đã trả lời hết chưa
+    if (checkAllAnswered() && !isSubmitted) {
+        // Tự động nộp bài sau 2 giây
+        autoSubmitTimeout = setTimeout(() => {
+            if (confirm("🎉 Bạn đã hoàn thành tất cả câu hỏi! Tự động nộp bài sau 2 giây...\n\nNhấn OK để nộp bài ngay, hoặc Cancel để hủy tự động nộp.")) {
+                finishExam();
+            } else {
+                // Nếu hủy, hiển thị nút nộp bài rõ ràng hơn
+                const submitBtn = document.querySelector('.submit-btn');
+                if (submitBtn) {
+                    submitBtn.style.animation = 'pulse-red 1s infinite';
+                    submitBtn.innerHTML = '✨ NỘP BÀI NGAY';
+                    
+                    // Thêm thông báo
+                    const timerElement = document.getElementById('timer');
+                    if (timerElement) {
+                        timerElement.innerHTML += ' <span style="color:#d63031">⏰ Chưa nộp</span>';
+                    }
+                }
+            }
+        }, 2000);
+        
+        // Hiển thị thông báo đếm ngược
+        showAutoSubmitCountdown();
+    }
+}
+
+// Hiển thị đếm ngược tự động nộp bài
+function showAutoSubmitCountdown() {
+    const timerElement = document.getElementById('timer');
+    if (!timerElement) return;
+    
+    // Thêm thông báo đếm ngược
+    let countdown = 2;
+    const originalText = timerElement.innerHTML;
+    
+    const countdownInterval = setInterval(() => {
+        if (!checkAllAnswered() || isSubmitted) {
+            clearInterval(countdownInterval);
+            timerElement.innerHTML = originalText;
+            return;
+        }
+        
+        timerElement.innerHTML = `⏰ Tự động nộp sau: ${countdown}s | ` + originalText;
+        countdown--;
+        
+        if (countdown < 0) {
+            clearInterval(countdownInterval);
+            timerElement.innerHTML = originalText;
+        }
+    }, 1000);
+}
+
+// Hàm kiểm tra và cập nhật trạng thái nút nộp bài
+function updateSubmitButtonState() {
+    const submitBtn = document.querySelector('.submit-btn');
+    if (!submitBtn) return;
+    
+    if (checkAllAnswered() && !isSubmitted) {
+        // Đã trả lời hết -> nút sáng và có hiệu ứng
+        submitBtn.style.background = 'linear-gradient(135deg, #00b894, #00cec9)';
+        submitBtn.style.boxShadow = '0 0 20px rgba(0, 184, 148, 0.5)';
+        submitBtn.innerHTML = '🎯 NỘP BÀI NGAY';
+        
+        // Kích hoạt tự động nộp
+        activateAutoSubmit();
+    } else {
+        // Chưa trả lời hết -> nút bình thường
+        submitBtn.style.background = 'linear-gradient(135deg, #d63031, #e17055)';
+        submitBtn.style.boxShadow = '0 4px 10px rgba(0, 184, 148, 0.3)';
+        submitBtn.innerHTML = '✨ Nộp bài';
+    }
+}

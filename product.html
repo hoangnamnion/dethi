@@ -435,56 +435,63 @@
         }
         
         // Hiển thị thông tin tiến độ bài cũ
-        function displayProgressInfo(data) {
-            const statsElement = document.getElementById('progressStats');
-            
-            // Tính toán thống kê
-            let answered = 0;
-            let correct = 0;
-            let progress = 0;
-            
-            if (data.history) {
-                answered = data.history.filter(h => h.userSelected !== null).length;
-                
-                // Ước tính điểm (cần load file txt mới biết chính xác)
-                // Tạm tính dựa trên history đã lưu
-                correct = data.score || 0;
-            }
-            
-            const totalQuestions = data.history?.length || 0;
-            progress = totalQuestions > 0 ? Math.round((answered / totalQuestions) * 100) : 0;
-            
-            // Tính thời gian
-            const mins = Math.floor((data.totalSeconds || 0) / 60);
-            const secs = (data.totalSeconds || 0) % 60;
-            
-            // Lấy chế độ
-            const savedMode = localStorage.getItem('exam_mode_' + fileID);
-            let modeText = 'Thường';
-            if (savedMode) {
-                const modeData = JSON.parse(savedMode);
-                modeText = modeData.mode === 'survival' ? '💀 Sinh tử' : '😊 Thường';
-            }
-            
-            statsElement.innerHTML = `
-                <div class="stat-item">
-                    <div class="stat-value">${answered}/${totalQuestions}</div>
-                    <div class="stat-label">Đã làm</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-value">${progress}%</div>
-                    <div class="stat-label">Tiến độ</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-value">${mins}:${secs.toString().padStart(2, '0')}</div>
-                    <div class="stat-label">Thời gian</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-value">${modeText}</div>
-                    <div class="stat-label">Chế độ</div>
-                </div>
-            `;
+        <!-- Tìm và thêm đoạn này vào phần displayProgressInfo trong script -->
+function displayProgressInfo(data) {
+    const statsElement = document.getElementById('progressStats');
+    
+    // Tính toán thống kê
+    let answered = 0;
+    let correct = 0;
+    let progress = 0;
+    let retryInfo = '';
+    
+    if (data.history) {
+        answered = data.history.filter(h => h.userSelected !== null).length;
+        correct = data.score || 0;
+        
+        // Hiển thị thông tin làm lại nếu có
+        if (data.retryCount && data.retryCount > 0) {
+            retryInfo = `<div style="background:#f39c12; color:white; padding:5px; border-radius:8px; margin-top:5px; font-size:0.8em;">
+                🔄 Đã làm lại: ${data.retryCount} lần
+            </div>`;
         }
+    }
+    
+    const totalQuestions = data.history?.length || 0;
+    progress = totalQuestions > 0 ? Math.round((answered / totalQuestions) * 100) : 0;
+    
+    // Tính thời gian
+    const mins = Math.floor((data.totalSeconds || 0) / 60);
+    const secs = (data.totalSeconds || 0) % 60;
+    
+    // Lấy chế độ
+    const savedMode = localStorage.getItem('exam_mode_' + fileID);
+    let modeText = 'Thường';
+    if (savedMode) {
+        const modeData = JSON.parse(savedMode);
+        modeText = modeData.mode === 'survival' ? '💀 Sinh tử' : '😊 Thường';
+    }
+    
+    statsElement.innerHTML = `
+        <div class="stat-item">
+            <div class="stat-value">${answered}/${totalQuestions}</div>
+            <div class="stat-label">Đã làm</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-value">${progress}%</div>
+            <div class="stat-label">Tiến độ</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-value">${mins}:${secs.toString().padStart(2, '0')}</div>
+            <div class="stat-label">Thời gian</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-value">${modeText}</div>
+            <div class="stat-label">Chế độ</div>
+        </div>
+        ${retryInfo}
+    `;
+}
 
         // Lấy điểm bài đã nộp
         let score = 0;

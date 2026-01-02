@@ -1,4 +1,4 @@
-Câu 0. Quyết Tâm làm Hết Không Mà Vào Đây [IMG:banthanhung.jpg] 
+Câu 0. Quyết Tâm làm Hết Không Mà Vào Đây [IMG:logo.jpg] 
 *A. Có
 B. Không 
 
@@ -152,5 +152,4 @@ Câu 30. “Phishing” là một hình thức tấn công mạng nhằm mục �
 A. Tấn công phá hoại hệ thống máy tính.
 *B. Lừa đảo để lấy cắp thông tin nhạy cảm của người dùng.
 C. Gửi thư rác quảng cáo hàng loạt.
-
 

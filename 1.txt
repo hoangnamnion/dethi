@@ -1,5 +1,5 @@
 Phần 1. Excel
-Câu 0. Quyết Tâm làm Hết Không Mà Vào Đây [IMG:banthanhung.jpg] 
+Câu 0. Quyết Tâm làm Hết Không Mà Vào Đây [IMG:logo.jpg] 
 *A. Có
 B. Không 
 
@@ -154,4 +154,3 @@ A. Dùng để tính căn bậc hai của một số.
 B. Dùng để tìm phần dư của một phép chia.
 C. Dùng để chuyển đổi một số thành dạng văn bản.
 *D. Dùng để làm tròn một số đến số thập phân xác định.
-

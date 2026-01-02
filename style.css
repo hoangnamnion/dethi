@@ -356,3 +356,32 @@ body {
     50% { transform: scale(1.05); }
     100% { transform: scale(1); }
 }
+/* Thêm vào cuối style.css */
+.retry-mode-indicator {
+    background: linear-gradient(135deg, #f39c12, #e67e22) !important;
+    color: white !important;
+    border: none !important;
+}
+
+.retry-question {
+    border-left: 4px solid #f39c12 !important;
+    background-color: #fffaf0 !important;
+}
+
+.retry-badge {
+    display: inline-block;
+    background: #f39c12;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.7em;
+    font-weight: bold;
+    margin-left: 5px;
+    animation: pulse-badge 1.5s infinite;
+}
+
+@keyframes pulse-retry {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}

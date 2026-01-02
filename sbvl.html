@@ -11,8 +11,8 @@
             padding: 0;
             width: 100%;
             height: 100%;
-            overflow: hidden; /* Chặn cuộn trang bên ngoài */
-            background-color: #333;
+            overflow: hidden;
+            background-color: #1a1a1a;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
@@ -23,26 +23,83 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f4f4f9;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
         }
 
         .login-box {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
             text-align: center;
+            max-width: 400px;
+            width: 90%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        input { padding: 12px; width: 250px; border: 1px solid #ddd; border-radius: 6px; margin-bottom: 15px; outline: none; }
-        button { padding: 12px 25px; background-color: #28a745; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; }
-        button:hover { background-color: #218838; }
+        h2 {
+            margin-top: 0;
+            color: #4cc9f0;
+            font-size: 28px;
+        }
+
+        .lock-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #4cc9f0;
+        }
+
+        input {
+            padding: 14px;
+            width: 100%;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            outline: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 16px;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #4cc9f0;
+            box-shadow: 0 0 0 3px rgba(76, 201, 240, 0.2);
+        }
+
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        button {
+            padding: 14px 30px;
+            background: linear-gradient(135deg, #4cc9f0 0%, #4361ee 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+            width: 100%;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #3aa8d0 0%, #3a56d4 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
 
         /* Khung chứa PDF tràn màn hình */
         #pdf-viewer {
             display: none;
             width: 100vw;
             height: 100vh;
+            position: relative;
         }
 
         iframe {
@@ -51,47 +108,252 @@
             border: none;
         }
 
-        #error-msg { color: #dc3545; margin-top: 10px; font-size: 14px; }
+        #error-msg {
+            color: #ff6b6b;
+            margin-top: 15px;
+            font-size: 14px;
+            min-height: 20px;
+        }
+
+        .footer-note {
+            margin-top: 30px;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            line-height: 1.5;
+        }
+
+        /* Thanh điều khiển PDF */
+        .pdf-controls {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 10px;
+        }
+
+        .control-btn {
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .control-btn:hover {
+            background: rgba(0, 0, 0, 0.9);
+            transform: scale(1.1);
+        }
+
+        /* Hiệu ứng tải */
+        .loading {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .spinner {
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 3px solid #4cc9f0;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .login-box {
+                padding: 25px;
+                width: 85%;
+            }
+            
+            h2 {
+                font-size: 24px;
+            }
+        }
     </style>
 </head>
 <body>
 
     <div id="login-form">
         <div class="login-box">
-            <h2>🔒 Nội dung khóa</h2>
-            <p>Vui lòng nhập mật khẩu để tiếp tục</p>
-            <input type="password" id="password" placeholder="Mật khẩu...">
-            <br>
+            <div class="lock-icon">🔒</div>
+            <h2>Tài liệu bảo mật</h2>
+            <p>Vui lòng nhập mật khẩu để truy cập tài liệu</p>
+            <input type="password" id="password" placeholder="Nhập mật khẩu...">
             <button onclick="checkPassword()">Mở tài liệu</button>
-            <p id="error-msg"></p>
+            <div id="error-msg"></div>
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <span>Đang xác thực...</span>
+            </div>
+            <div class="footer-note">
+                <p>⚠️ Lưu ý: Tài liệu này được bảo vệ bằng mật khẩu. Mọi hoạt động truy cập trái phép đều bị nghiêm cấm.</p>
+            </div>
         </div>
     </div>
 
     <div id="pdf-viewer">
+        <div class="pdf-controls">
+            <button class="control-btn" onclick="goBack()" title="Quay lại">←</button>
+            <button class="control-btn" onclick="toggleFullscreen()" title="Toàn màn hình">⛶</button>
+        </div>
         <iframe id="pdf-frame" src="" type="application/pdf"></iframe>
     </div>
 
     <script>
+        // LƯU Ý QUAN TRỌNG: Đây chỉ là bảo mật cơ bản phía client
+        // Để bảo mật thực sự, bạn cần triển khai xác thực phía server
+        
+        // Mật khẩu mặc định - THAY ĐỔI TRONG MÔI TRƯỜNG THỰC TẾ
+        // Trong ứng dụng thực tế, hãy sử dụng xác thực phía server
+        const correctPass = "2345"; // Thay đổi mật khẩu tại đây
+        
+        // URL PDF - trong môi trường thực tế, file PDF nên được bảo vệ bằng xác thực server
+        const pdfUrl = "sbvl.pdf";
+        
+        // Biến đếm số lần thử sai
+        let failedAttempts = 0;
+        const maxAttempts = 5;
+        
         function checkPassword() {
             const pass = document.getElementById('password').value;
-            const correctPass = "123456"; // THAY MẬT KHẨU TẠI ĐÂY
+            const errorMsg = document.getElementById('error-msg');
+            const loading = document.getElementById('loading');
             
-            // Thêm tham số #toolbar=0 để ẩn thanh công cụ (bao gồm nút tải/in)
-            const pdfUrl = "sbvl.pdf#toolbar=0&navpanes=0&scrollbar=0"; 
-
-            if (pass === correctPass) {
-                document.getElementById('login-form').style.display = 'none';
-                document.getElementById('pdf-viewer').style.display = 'block';
-                document.getElementById('pdf-frame').src = pdfUrl;
-            } else {
-                document.getElementById('error-msg').innerText = "Sai mật khẩu!";
-            }
+            // Hiển thị hiệu ứng tải
+            loading.style.display = 'block';
+            errorMsg.innerText = '';
+            
+            // Giả lập thời gian xác thực (trong thực tế sẽ gọi server)
+            setTimeout(() => {
+                loading.style.display = 'none';
+                
+                if (pass === correctPass) {
+                    // Đăng nhập thành công
+                    failedAttempts = 0;
+                    document.getElementById('login-form').style.display = 'none';
+                    document.getElementById('pdf-viewer').style.display = 'block';
+                    
+                    // Tải PDF với các tham số ẩn công cụ
+                    // Các tham số: 
+                    // #toolbar=0 - ẩn thanh công cụ
+                    // #navpanes=0 - ẩn ngăn điều hướng
+                    // #scrollbar=0 - ẩn thanh cuộn (tùy chọn)
+                    document.getElementById('pdf-frame').src = pdfUrl + "#toolbar=0&navpanes=0";
+                    
+                    // Thêm sự kiện để ngăn menu chuột phải (bảo vệ cơ bản)
+                    document.getElementById('pdf-frame').onload = function() {
+                        try {
+                            this.contentDocument.addEventListener('contextmenu', function(e) {
+                                e.preventDefault();
+                                return false;
+                            });
+                        } catch(e) {
+                            // Bỏ qua lỗi nếu không thể chặn menu chuột phải
+                        }
+                    };
+                    
+                } else {
+                    // Sai mật khẩu
+                    failedAttempts++;
+                    
+                    if (failedAttempts >= maxAttempts) {
+                        errorMsg.innerText = "Đã vượt quá số lần thử cho phép. Vui lòng thử lại sau 5 phút.";
+                        document.getElementById('password').disabled = true;
+                        document.querySelector('button').disabled = true;
+                        
+                        // Kích hoạt lại sau 5 phút (300000 ms)
+                        setTimeout(() => {
+                            document.getElementById('password').disabled = false;
+                            document.querySelector('button').disabled = false;
+                            errorMsg.innerText = '';
+                            failedAttempts = 0;
+                        }, 300000);
+                    } else {
+                        errorMsg.innerText = `Sai mật khẩu! Bạn còn ${maxAttempts - failedAttempts} lần thử.`;
+                    }
+                    
+                    // Xóa nội dung ô nhập mật khẩu
+                    document.getElementById('password').value = '';
+                    document.getElementById('password').focus();
+                }
+            }, 800); // Giả lập độ trễ xác thực
         }
 
         // Cho phép nhấn Enter để xác nhận
         document.getElementById('password').addEventListener('keypress', function (e) {
-            if (e.key === 'Enter') { checkPassword(); }
+            if (e.key === 'Enter') { 
+                checkPassword(); 
+            }
         });
+        
+        // Đặt focus vào ô mật khẩu khi trang tải
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('password').focus();
+        });
+        
+        // Chức năng điều khiển PDF
+        function goBack() {
+            document.getElementById('pdf-viewer').style.display = 'none';
+            document.getElementById('login-form').style.display = 'flex';
+            document.getElementById('pdf-frame').src = '';
+            document.getElementById('password').value = '';
+            document.getElementById('password').focus();
+        }
+        
+        function toggleFullscreen() {
+            const viewer = document.getElementById('pdf-viewer');
+            
+            if (!document.fullscreenElement) {
+                if (viewer.requestFullscreen) {
+                    viewer.requestFullscreen();
+                } else if (viewer.mozRequestFullScreen) { // Firefox
+                    viewer.mozRequestFullScreen();
+                } else if (viewer.webkitRequestFullscreen) { // Chrome, Safari, Opera
+                    viewer.webkitRequestFullscreen();
+                } else if (viewer.msRequestFullscreen) { // IE/Edge
+                    viewer.msRequestFullscreen();
+                }
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.mozCancelFullScreen) {
+                    document.mozCancelFullScreen();
+                } else if (document.webkitExitFullscreen) {
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) {
+                    document.msExitFullscreen();
+                }
+            }
+        }
+        
+        // Xử lý thoát fullscreen bằng phím Esc
+        document.addEventListener('fullscreenchange', exitHandler);
+        document.addEventListener('webkitfullscreenchange', exitHandler);
+        document.addEventListener('mozfullscreenchange', exitHandler);
+        document.addEventListener('MSFullscreenChange', exitHandler);
+        
+        function exitHandler() {
+            if (!document.fullscreenElement && !document.webkitIsFullScreen && 
+                !document.mozFullScreen && !document.msFullscreenElement) {
+                // Người dùng đã thoát chế độ toàn màn hình
+            }
+        }
     </script>
 
 </body>

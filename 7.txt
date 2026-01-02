@@ -1,4 +1,4 @@
-Câu 0. Quyết Tâm làm Hết Không Mà Vào Đây [IMG:banthanhung.jpg] 
+Câu 0. Quyết Tâm làm Hết Không Mà Vào Đây [IMG:logo.jpg] 
 *A. Có
 B. Không 
 
@@ -153,4 +153,3 @@ A. Tìm giá trị lớn nhất.
 B. Tìm giá trị nhỏ nhất.
 *C. Tính giá trị trung bình cộng.
 D. Đếm số ô có dữ liệu. 
-

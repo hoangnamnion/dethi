@@ -1,4 +1,4 @@
-Câu 0. Quyết Tâm làm Hết Không Mà Vào Đây [IMG:banthanhung.jpg] 
+Câu 0. Quyết Tâm làm Hết Không Mà Vào Đây [IMG:logo.jpg] 
 *A. Có
 B. Không 
 
@@ -55,11 +55,11 @@ D. Chính phủ
 Câu 11. Nhị phân 1110 tương đương.
 A. 12
 B. 13
-C. 14
+*C. 14
 D. 15
 Câu 12. Malware là.
 A. Lỗi phần cứng
-B. Phần mềm độc hại truy cập trái phép
+*B. Phần mềm độc hại truy cập trái phép
 C. Cập nhật phần mềm
 D. Giao thức mạng
 Câu 13. IDE như VS Code cung cấp.
@@ -84,7 +84,7 @@ C. Máy chủ
 D. Hệ nhúng
 Câu 17. Mục tiêu của tấn công DoS/DDoS là.
 A. Đánh cắp thông tin
-B. Làm nghẽn dịch vụ mạng
+*B. Làm nghẽn dịch vụ mạng
 C. Mã hóa dữ liệu đòi chuộc
 D. Cài phần mềm gián điệp
 Câu 18. Đơn vị đo băng thông mạng là.
@@ -152,4 +152,3 @@ A. Làm robot hình người
 *B. Cho máy học từ dữ liệu mà không cần lập trình rõ ràng
 C. Tạo giao diện thông minh
 D. Xây mạng tốc độ cao
-

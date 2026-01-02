@@ -255,15 +255,15 @@ A. Thực hiện lại thao tác vừa hủy bỏ.
 C. Lưu lại các thay đổi vào trong tập tin.
 D. Xóa đi phần văn bản đang được chọn.
 Câu 21. Để tạo chữ nghiêng (Italic) cho văn bản, bạn có thể sử dụng tổ hợp phím nào?
-*A. Ctrl + I.
-B. Ctrl + B.
-C. Ctrl + U.
-D. Ctrl + L.
+*A. Ctrl + I
+B. Ctrl + B
+C. Ctrl + U
+D. Ctrl + L
 Câu 22. Để tạo chữ gạch chân (Underline) cho văn bản, bạn có thể sử dụng tổ hợp phím nào?
-A. Ctrl + I.
-B. Ctrl + B.
-*C. Ctrl + U.
-D. Ctrl + E.
+A. Ctrl + I
+B. Ctrl + B
+*C. Ctrl + U
+D. Ctrl + E
 Câu 23. Chức năng “Track Changes” (Theo dõi thay đổi) trong tab Review hữu ích khi.
 A. Khi người dùng muốn tạo hiệu ứng chữ.
 B. Khi người dùng muốn tìm kiếm từ khóa.
@@ -1379,7 +1379,7 @@ C. 14
 D. 15
 Câu 12. Malware là.
 A. Lỗi phần cứng
-B. Phần mềm độc hại truy cập trái phép
+*B. Phần mềm độc hại truy cập trái phép
 C. Cập nhật phần mềm
 D. Giao thức mạng
 Câu 13. IDE như VS Code cung cấp.
@@ -1404,7 +1404,7 @@ C. Máy chủ
 D. Hệ nhúng
 Câu 17. Mục tiêu của tấn công DoS/DDoS là.
 A. Đánh cắp thông tin
-B. Làm nghẽn dịch vụ mạng
+*B. Làm nghẽn dịch vụ mạng
 C. Mã hóa dữ liệu đòi chuộc
 D. Cài phần mềm gián điệp
 Câu 18. Đơn vị đo băng thông mạng là.

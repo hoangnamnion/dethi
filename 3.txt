@@ -1,4 +1,4 @@
-Câu 0. Quyết Tâm làm Hết Không Mà Vào Đây [IMG:banthanhung.jpg] 
+Câu 0. Quyết Tâm làm Hết Không Mà Vào Đây [IMG:logo.jpg] 
 *A. Có
 B. Không 
 
@@ -153,4 +153,3 @@ A. Dùng lệnh Package Presentation for CD.
 B. Dùng lệnh Create Handouts để tạo bản in.
 C. Dùng lệnh Create PDF/XPS Document.
 *D. Dùng lệnh Export và chọn Create a Video.
-
