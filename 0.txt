@@ -1098,8 +1098,8 @@ B. Hệ bát phân (Octal).
 C. Hệ thập lục phân (Hexadecimal).
 *D. Hệ nhị phân (Binary).
 Câu 9. Phần mềm nào sau đây là một trình duyệt web?
-*A. Microsoft Excel.
-B. Mozilla Firefox.
+A. Microsoft Excel.
+*B. Mozilla Firefox.
 C. WinRAR.
 D. Skype.
 Câu 10. Mạng LAN là viết tắt của cụm từ nào?
@@ -1469,6 +1469,7 @@ A. Làm robot hình người
 *B. Cho máy học từ dữ liệu mà không cần lập trình rõ ràng
 C. Tạo giao diện thông minh
 D. Xây mạng tốc độ cao
+
 
 
 
