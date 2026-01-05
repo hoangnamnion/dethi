@@ -1,8 +1,5 @@
-Câu 0. Quyết Tâm làm Hết Không Mà Vào Đây [IMG:logo.jpg] 
-*A. Có
-B. Không 
 Phần 1. Excel
-Câu 1. Trong Microsoft Excel, một tệp tin được gọi là gì? [ima]
+Câu 1. Trong Microsoft Excel, một tệp tin được gọi là gì?
 A. Một tài liệu văn bản (Document).
 *B. Một sổ làm việc (Workbook).
 C. Một bài trình chiếu (Presentation).
@@ -165,9 +162,9 @@ B. Ctrl + P.
 C. Ctrl + O.
 *D. Ctrl + S.
 Câu 3. Thanh công cụ nào chứa các lệnh thường dùng như Save, Undo, Redo và có thể tùy chỉnh được?
-*A. Ribbon.
+A. Ribbon.
 B. Status Bar.
-C. Quick Access Toolbar.
+*C. Quick Access Toolbar.
 D. Title Bar.
 Câu 4. Chức năng “Find and Replace” (Tìm kiếm và Thay thế) thường nằm ở tab nào trên thanh Ribbon?
 *A. Home.
@@ -255,15 +252,15 @@ A. Thực hiện lại thao tác vừa hủy bỏ.
 C. Lưu lại các thay đổi vào trong tập tin.
 D. Xóa đi phần văn bản đang được chọn.
 Câu 21. Để tạo chữ nghiêng (Italic) cho văn bản, bạn có thể sử dụng tổ hợp phím nào?
-*A. Ctrl + I
-B. Ctrl + B
-C. Ctrl + U
-D. Ctrl + L
+*A. Ctrl + I.
+B. Ctrl + B.
+C. Ctrl + U.
+D. Ctrl + L.
 Câu 22. Để tạo chữ gạch chân (Underline) cho văn bản, bạn có thể sử dụng tổ hợp phím nào?
-A. Ctrl + I
-B. Ctrl + B
-*C. Ctrl + U
-D. Ctrl + E
+A. Ctrl + I.
+B. Ctrl + B.
+*C. Ctrl + U.
+D. Ctrl + E.
 Câu 23. Chức năng “Track Changes” (Theo dõi thay đổi) trong tab Review hữu ích khi.
 A. Khi người dùng muốn tạo hiệu ứng chữ.
 B. Khi người dùng muốn tìm kiếm từ khóa.
@@ -1375,11 +1372,11 @@ D. Chính phủ
 Câu 11. Nhị phân 1110 tương đương.
 A. 12
 B. 13
-C. 14
+*C. 14
 D. 15
 Câu 12. Malware là.
 A. Lỗi phần cứng
-*B. Phần mềm độc hại truy cập trái phép
+B. Phần mềm độc hại truy cập trái phép
 C. Cập nhật phần mềm
 D. Giao thức mạng
 Câu 13. IDE như VS Code cung cấp.
@@ -1472,4 +1469,13 @@ A. Làm robot hình người
 *B. Cho máy học từ dữ liệu mà không cần lập trình rõ ràng
 C. Tạo giao diện thông minh
 D. Xây mạng tốc độ cao
+
+
+
+
+
+
+
+
+
 
