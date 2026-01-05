@@ -14,9 +14,9 @@ B. Ctrl + P.
 C. Ctrl + O.
 *D. Ctrl + S.
 Câu 3. Thanh công cụ nào chứa các lệnh thường dùng như Save, Undo, Redo và có thể tùy chỉnh được?
-*A. Ribbon.
+A. Ribbon.
 B. Status Bar.
-C. Quick Access Toolbar.
+*C. Quick Access Toolbar.
 D. Title Bar.
 Câu 4. Chức năng “Find and Replace” (Tìm kiếm và Thay thế) thường nằm ở tab nào trên thanh Ribbon?
 *A. Home.
@@ -153,3 +153,4 @@ A. Read Mode.
 B. Web Layout.
 *C. Print Layout.
 D. Outline View.
+
