@@ -252,15 +252,15 @@ A. Thực hiện lại thao tác vừa hủy bỏ.
 C. Lưu lại các thay đổi vào trong tập tin.
 D. Xóa đi phần văn bản đang được chọn.
 Câu 21. Để tạo chữ nghiêng (Italic) cho văn bản, bạn có thể sử dụng tổ hợp phím nào?
-*A. Ctrl + I.
-B. Ctrl + B.
-C. Ctrl + U.
-D. Ctrl + L.
+*A. Ctrl + I
+B. Ctrl + B
+C. Ctrl + U 
+D. Ctrl + L
 Câu 22. Để tạo chữ gạch chân (Underline) cho văn bản, bạn có thể sử dụng tổ hợp phím nào?
-A. Ctrl + I.
-B. Ctrl + B.
-*C. Ctrl + U.
-D. Ctrl + E.
+A. Ctrl + I
+B. Ctrl + B
+*C. Ctrl + U
+D. Ctrl + E
 Câu 23. Chức năng “Track Changes” (Theo dõi thay đổi) trong tab Review hữu ích khi.
 A. Khi người dùng muốn tạo hiệu ứng chữ.
 B. Khi người dùng muốn tìm kiếm từ khóa.
@@ -1469,6 +1469,7 @@ A. Làm robot hình người
 *B. Cho máy học từ dữ liệu mà không cần lập trình rõ ràng
 C. Tạo giao diện thông minh
 D. Xây mạng tốc độ cao
+
 
 
 
