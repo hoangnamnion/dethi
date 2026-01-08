@@ -141,8 +141,8 @@ D. Được tự động nén lại để tiết kiệm.
 Câu 28. Giao diện dòng lệnh (CLI) là viết tắt của?
 A. Computer Line Interface.
 B. Control Line Interface.
-C. Common Language Interface.
-*D. Command Line Interface.
+*C. Common Language Interface.
+D. Command Line Interface.
 Câu 29. Utility Software (Phần mềm tiện ích) là loại phần mềm nào?
 A. Các phần mềm ứng dụng chính như Word, Excel.
 *B. Phần mềm hỗ trợ phân tích, cấu hình, bảo trì máy tính.
@@ -153,5 +153,4 @@ A. Một trình duyệt web bất kỳ.
 B. Trình soạn thảo văn bản như Notepad.
 *C. Phần mềm chuyên dụng để nén và giải nén.
 D. Phần mềm diệt virus có trong máy.
-
 

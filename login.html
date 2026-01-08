@@ -1,0 +1,271 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập - Ngân hàng đề thi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #ffffff 0%, #f76363 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .login-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            width: 100%;
+            max-width: 500px;
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(168, 69, 69, 0.3);
+            text-align: center;
+        }
+        
+        .school-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .logo-school {
+            height: 55px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+        }
+        
+        .title {
+            font-size: 2em;
+            font-weight: 800;
+            color: #d63031;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+        
+        .subtitle {
+            color: #636e72;
+            font-size: 1em;
+            margin-bottom: 30px;
+        }
+        
+        .input-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+        
+        .input-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2d3436;
+            font-size: 0.95em;
+        }
+        
+        .input-field {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            font-size: 1em;
+            font-weight: 500;
+            transition: all 0.3s;
+            background: white;
+        }
+        
+        .input-field:focus {
+            outline: none;
+            border-color: #d63031;
+            box-shadow: 0 0 0 3px rgba(214, 48, 49, 0.1);
+        }
+        
+        .input-field::placeholder {
+            color: #b2bec3;
+        }
+        
+        .info-note {
+            background: #ffeaa7;
+            padding: 12px 15px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            font-size: 0.9em;
+            color: #2d3436;
+            text-align: left;
+            border-left: 4px solid #f39c12;
+        }
+        
+        .info-note ul {
+            padding-left: 20px;
+            margin-top: 5px;
+        }
+        
+        .info-note li {
+            margin-bottom: 5px;
+        }
+        
+        .login-btn {
+            background: linear-gradient(135deg, #d63031, #e17055);
+            color: white;
+            border: none;
+            padding: 16px 40px;
+            border-radius: 12px;
+            font-size: 1.1em;
+            font-weight: 700;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(214, 48, 49, 0.3);
+        }
+        
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(214, 48, 49, 0.4);
+        }
+        
+        .login-btn:active {
+            transform: translateY(0);
+        }
+        
+        .footer-note {
+            margin-top: 20px;
+            color: #636e72;
+            font-size: 0.85em;
+        }
+        
+        @media (max-width: 600px) {
+            .login-container {
+                padding: 30px 20px;
+            }
+            
+            .title {
+                font-size: 1.6em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="school-logos">
+            <img src="logoutt.png" alt="UTT" class="logo-school">
+            <img src="logobk.png" alt="Bách Khoa" class="logo-school">
+            <img src="logohpc.png" alt="HPC" class="logo-school">
+            <img src="logo.jpg" alt="Logo" class="logo-school">
+        </div>
+        
+        <h1 class="title">📚 NGÂN HÀNG ĐỀ THI</h1>
+        <p class="subtitle">ĐƯỢC BỞI CAO VĂN NAM TẠO RA</p>
+        
+        <div class="input-group">
+            <label class="input-label" for="username">Họ và tên của bạn:</label>
+            <input type="text" id="username" class="input-field" 
+                   placeholder="Ví dụ: Nguyễn Văn A" maxlength="50"
+                   autocomplete="off" autocapitalize="words">
+        </div>
+        
+        <div class="info-note">
+            <strong>Lưu ý quan trọng:</strong>
+            <ul>
+                <li>Tên bạn nhập sẽ được lưu cùng kết quả làm bài</li>
+                <li>Mỗi tên sẽ có lịch sử và điểm số riêng</li>
+                <li>Không nên sử dụng tên quá ngắn hoặc ký tự đặc biệt</li>
+                <li>Bạn có thể đổi tên sau khi vào hệ thống</li>
+            </ul>
+        </div>
+        
+        <button class="login-btn" onclick="login()">
+            🚀 BẮT ĐẦU HỌC TẬP
+        </button>
+        
+        <p class="footer-note">
+            Nhấn Enter hoặc nút trên để tiếp tục
+        </p>
+    </div>
+
+    <script>
+        // Lấy tham chiếu đến input và nút
+        const usernameInput = document.getElementById('username');
+        const loginBtn = document.querySelector('.login-btn');
+        
+        // Tự động focus vào input khi trang load
+        window.onload = function() {
+            usernameInput.focus();
+        };
+        
+        // Cho phép nhấn Enter để đăng nhập
+        usernameInput.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                login();
+            }
+        });
+        
+        // Hàm đăng nhập
+        function login() {
+            const username = usernameInput.value.trim();
+            
+            // Kiểm tra tên hợp lệ
+            if (!username) {
+                alert("⚠️ Vui lòng nhập tên của bạn!");
+                usernameInput.focus();
+                return;
+            }
+            
+            if (username.length < 2) {
+                alert("⚠️ Tên phải có ít nhất 2 ký tự!");
+                usernameInput.focus();
+                return;
+            }
+            
+            if (username.length > 50) {
+                alert("⚠️ Tên quá dài! Vui lòng nhập tên ngắn hơn.");
+                usernameInput.focus();
+                return;
+            }
+            
+            // Lưu tên vào localStorage với key riêng biệt
+            const userData = {
+                username: username,
+                loginTime: new Date().toISOString(),
+                lastActivity: new Date().toISOString()
+            };
+            
+            localStorage.setItem('current_user', JSON.stringify(userData));
+            
+            // Chuyển hướng đến trang chính
+            window.location.href = "index.html";
+        }
+        
+        // Kiểm tra nếu đã đăng nhập rồi thì chuyển thẳng đến trang chính
+        const existingUser = localStorage.getItem('current_user');
+        if (existingUser) {
+            // Có thể hỏi người dùng có muốn chuyển thẳng không
+            const confirmRedirect = confirm("Bạn đã đăng nhập trước đó. Tiếp tục với tên cũ?");
+            if (confirmRedirect) {
+                window.location.href = "index.html";
+            } else {
+                // Nếu không, xóa user cũ và yêu cầu nhập lại
+                localStorage.removeItem('current_user');
+                usernameInput.focus();
+            }
+        }
+    </script>
+    
+    <!-- Thêm hiệu ứng Tết -->
+    <script src=""></script>
+</body>
+</html>
