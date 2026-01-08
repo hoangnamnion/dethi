@@ -2,26 +2,132 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Hiển thị video</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background: #000; /* cho đẹp khi xem video */
-        }
-        video {
-            max-width: 90%;
-            max-height: 90%;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Danh Sách Đề Thi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <video controls>
-        <source src="video.mp4" type="video/mp4">
-        Trình duyệt của bạn không hỗ trợ video.
-    </video>
+    <div class="container-box">
+        <div class="school-logos">
+            <img src="logoutt.png" alt="UTT" class="logo-school">
+            <img src="logobk.png" alt="Bách Khoa" class="logo-school">
+            <img src="logohpc.png" alt="HPC" class="logo-school">
+            <img src="logo.jpg" alt="HPC" class="logo-school">
+        </div>
+
+        <div class="big-title">📚 NGÂN HÀNG ĐỀ</div>
+        <div class="sub-title">ĐƯỢC BỞI CAO VĂN NAM TẠO RA</div>
+        <div class="grid-menu" id="menuGrid"></div>
+    </div>
+
+    <script>
+        // ==========================================
+        // ⚙️ CÀI ĐẶT DANH SÁCH ĐỀ TẠI ĐÂY
+        // ==========================================
+        const danhSachDeThi = [
+            { file: '11', ten: 'Viết Báo Cáo 40 đầu' },
+            { file: '12', ten: 'Viết Báo Cáo 40 cuối' },
+            { file: '13', ten: 'TRỌN BỘ VIẾT BÁO CÁO' },
+            { ten: 'TIN HỌC', url: 'tinhoc.html', icon: '' },
+
+            { ten: 'SỨC BỀN VẬT LIỆU', url: 'sbvl.html', icon: '🏗️' },
+           ,
+        ];
+
+        // ==========================================
+// KIỂM TRA ĐĂNG NHẬP
+// ==========================================
+(function checkLogin() {
+    const userData = localStorage.getItem('current_user');
+    
+    if (!userData) {
+        // Chưa đăng nhập, chuyển đến trang login
+        window.location.href = "login.html";
+        return;
+    }
+    
+    // Đã đăng nhập, hiển thị tên người dùng
+    try {
+        const user = JSON.parse(userData);
+        const subTitle = document.querySelector('.sub-title');
+        if (subTitle && user.username) {
+            subTitle.innerHTML = `Xin chào: <strong style="color:#d63031">${user.username}</strong> | ĐƯỢC BỞI CAO VĂN NAM TẠO RA`;
+            
+            // Thêm nút đổi tên
+            const changeNameBtn = document.createElement('button');
+            changeNameBtn.innerHTML = '✏️ Đổi tên';
+            changeNameBtn.style.cssText = `
+                background: #f39c12;
+                color: white;
+                border: none;
+                padding: 5px 10px;
+                border-radius: 20px;
+                font-size: 0.7em;
+                cursor: pointer;
+                margin-left: 10px;
+                font-weight: bold;
+            `;
+            changeNameBtn.onclick = function() {
+                if (confirm("Bạn muốn đăng nhập với tên khác?")) {
+                    localStorage.removeItem('current_user');
+                    window.location.href = "login.html";
+                }
+            };
+            
+            subTitle.appendChild(changeNameBtn);
+        }
+    } catch (e) {
+        console.error("Lỗi đọc thông tin người dùng:", e);
+    }
+})();
+        // ==========================================
+// TRANG WWEB 
+// ==========================================\
+           
+
+        const menuGrid = document.getElementById('menuGrid');
+        
+danhSachDeThi.forEach(item => {
+    const btn = document.createElement('div');
+    btn.className = 'menu-btn';
+    
+    // Mặc định icon là thư mục, nếu có icon riêng thì lấy icon đó
+    let displayIcon = item.icon || '🧧';
+    let badge = '';
+
+    // Chỉ hiển thị điểm đối với các bài thi (có thuộc tính 'file')
+    if (item.file) {
+        const savedData = localStorage.getItem('quiz_data_' + item.file);
+        if (savedData) {
+            const parsed = JSON.parse(savedData);
+            if(parsed.isSubmitted && parsed.score !== undefined) {
+                badge = `<div class="badge-score">Điểm: ${parsed.score}</div>`;
+            } else if (parsed.history && parsed.history.some(h => h.userSelected !== null)) {
+                badge = `<div class="badge-score" style="background:#3498db">Đang làm</div>`;
+            }
+        }
+    }
+
+    btn.innerHTML = `
+        <div style="font-size:2em; margin-bottom:5px">${displayIcon}</div> 
+        <div style="font-weight:700; font-size:0.9em">${item.ten}</div> 
+        ${badge}
+    `;
+    
+    // Logic xử lý khi click
+    btn.onclick = () => {
+        if (item.url) {
+            // Nếu có URL thì chuyển hướng đến trang đó
+            window.location.href = item.url;
+        } else {
+            // Nếu là đề thi thì chuyển đến trang làm bài
+            window.location.href = `product.html?id=${item.file}&name=${encodeURIComponent(item.ten)}`;
+        }
+    };
+    menuGrid.appendChild(btn);
+});
+    </script>
+    <script src="tet.js"></script>
 </body>
 </html>
