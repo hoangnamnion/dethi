@@ -1,6 +1,6 @@
 Câu 0. Quyết Tâm làm Hết Không Mà Vào Đây [IMG:logo.jpg] 
 *A. Có
-B. Không 
+*B. Không 
 
 Câu 41. Danh sách người thực hiện đề tài được trình bày ở đâu?
 A. Trong phần mở đầu báo cáo.
@@ -246,4 +246,5 @@ Câu 82. Một tiêu đề bài báo khoa học hiệu quả cần:
 A. Mang tính hấp dẫn và giàu cảm xúc.
 B. Thể hiện đầy đủ mọi nội dung chi tiết.
 *C. Ngắn gọn, súc tích và phản ánh nội dung chính của bài báo.
+
 D. Sử dụng nhiều thuật ngữ chuyên ngành phức tạp.
