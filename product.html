@@ -107,6 +107,12 @@
             color: #d63031;
         }
         
+        .sub-option.auto-active {
+            border-color: #0984e3;
+            background: #e3f2fd;
+            color: #0984e3;
+        }
+        
         .btn-start-mode {
             background: linear-gradient(135deg, #d63031, #e17055);
             color: white;
@@ -311,6 +317,9 @@
                 <div class="sub-option" onclick="selectOrder('random')" id="orderRandom">
                     Đảo lộn câu hỏi
                 </div>
+                <div class="sub-option" onclick="toggleAutoNext()" id="optAutoNext">
+                    ⚡ Tự động Next (2s)
+                </div>
             </div>
             
             <button class="btn-start-mode" onclick="startExam(true)">
@@ -332,6 +341,7 @@
         // Biến lưu chế độ được chọn
         let selectedMode = 'normal';
         let selectedOrder = 'normal';
+        let isAutoNextEnabled = false;
         
         // Kiểm tra có bài đang làm dở không
         const savedData = localStorage.getItem('quiz_data_' + fileID);
@@ -372,6 +382,7 @@
             document.getElementById('modeModal').style.display = 'flex';
             selectMode('normal');
             selectOrder('normal');
+            updateAutoNextButton();
         }
         
         // Đóng modal chọn chế độ
@@ -398,21 +409,41 @@
             document.getElementById('orderRandom').classList.toggle('active', order === 'random');
         }
         
+        // Toggle Auto Next
+        function toggleAutoNext() {
+            isAutoNextEnabled = !isAutoNextEnabled;
+            updateAutoNextButton();
+        }
+        
+        function updateAutoNextButton() {
+            const btn = document.getElementById('optAutoNext');
+            btn.classList.toggle('active', isAutoNextEnabled);
+            btn.classList.toggle('auto-active', isAutoNextEnabled);
+            
+            if (isAutoNextEnabled) {
+                btn.innerHTML = '⚡ Tự động Next (2s) ✅';
+            } else {
+                btn.innerHTML = '⚡ Tự động Next (2s)';
+            }
+        }
+        
         // Tiếp tục bài cũ
         function resumeExam() {
             // Lấy thông tin chế độ từ bài cũ
             const savedMode = localStorage.getItem('exam_mode_' + fileID);
             let mode = 'normal';
             let order = 'normal';
+            let auto = false;
             
             if (savedMode) {
                 const modeData = JSON.parse(savedMode);
                 mode = modeData.mode;
                 order = modeData.order;
+                auto = modeData.autoNext || false;
             }
             
             // Chuyển đến trang thi với chế độ cũ
-            window.location.href = `thi.html?id=${fileID}&name=${encodeURIComponent(fileName)}&mode=${mode}&order=${order}`;
+            window.location.href = `thi.html?id=${fileID}&name=${encodeURIComponent(fileName)}&mode=${mode}&order=${order}&auto=${auto}`;
         }
         
         // Bắt đầu làm mới
@@ -422,6 +453,7 @@
             const modeData = {
                 mode: selectedMode,
                 order: selectedOrder,
+                autoNext: isAutoNextEnabled,
                 timestamp: new Date().getTime()
             };
             localStorage.setItem('exam_mode_' + fileID, JSON.stringify(modeData));
@@ -431,67 +463,71 @@
                 localStorage.removeItem('quiz_data_' + fileID);
             }
             
-            window.location.href = `thi.html?id=${fileID}&name=${encodeURIComponent(fileName)}&mode=${selectedMode}&order=${selectedOrder}`;
+            window.location.href = `thi.html?id=${fileID}&name=${encodeURIComponent(fileName)}&mode=${selectedMode}&order=${selectedOrder}&auto=${isAutoNextEnabled}`;
         }
         
         // Hiển thị thông tin tiến độ bài cũ
-        <!-- Tìm và thêm đoạn này vào phần displayProgressInfo trong script -->
-function displayProgressInfo(data) {
-    const statsElement = document.getElementById('progressStats');
-    
-    // Tính toán thống kê
-    let answered = 0;
-    let correct = 0;
-    let progress = 0;
-    let retryInfo = '';
-    
-    if (data.history) {
-        answered = data.history.filter(h => h.userSelected !== null).length;
-        correct = data.score || 0;
-        
-        // Hiển thị thông tin làm lại nếu có
-        if (data.retryCount && data.retryCount > 0) {
-            retryInfo = `<div style="background:#f39c12; color:white; padding:5px; border-radius:8px; margin-top:5px; font-size:0.8em;">
-                🔄 Đã làm lại: ${data.retryCount} lần
-            </div>`;
+        function displayProgressInfo(data) {
+            const statsElement = document.getElementById('progressStats');
+            
+            // Tính toán thống kê
+            let answered = 0;
+            let correct = 0;
+            let progress = 0;
+            let retryInfo = '';
+            
+            if (data.history) {
+                answered = data.history.filter(h => h.userSelected !== null).length;
+                correct = data.score || 0;
+                
+                // Hiển thị thông tin làm lại nếu có
+                if (data.retryCount && data.retryCount > 0) {
+                    retryInfo = `<div style="background:#f39c12; color:white; padding:5px; border-radius:8px; margin-top:5px; font-size:0.8em;">
+                        🔄 Đã làm lại: ${data.retryCount} lần
+                    </div>`;
+                }
+            }
+            
+            const totalQuestions = data.history?.length || 0;
+            progress = totalQuestions > 0 ? Math.round((answered / totalQuestions) * 100) : 0;
+            
+            // Tính thời gian
+            const mins = Math.floor((data.totalSeconds || 0) / 60);
+            const secs = (data.totalSeconds || 0) % 60;
+            
+            // Lấy chế độ
+            const savedMode = localStorage.getItem('exam_mode_' + fileID);
+            let modeText = 'Thường';
+            let autoText = '';
+            if (savedMode) {
+                const modeData = JSON.parse(savedMode);
+                modeText = modeData.mode === 'survival' ? '💀 Sinh tử' : '😊 Thường';
+                if (modeData.autoNext) {
+                    autoText = '<div style="color:#0984e3; margin-top:2px;">⚡ Auto Next</div>';
+                }
+            }
+            
+            statsElement.innerHTML = `
+                <div class="stat-item">
+                    <div class="stat-value">${answered}/${totalQuestions}</div>
+                    <div class="stat-label">Đã làm</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">${progress}%</div>
+                    <div class="stat-label">Tiến độ</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">${mins}:${secs.toString().padStart(2, '0')}</div>
+                    <div class="stat-label">Thời gian</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">${modeText}</div>
+                    <div class="stat-label">Chế độ</div>
+                    ${autoText}
+                </div>
+                ${retryInfo}
+            `;
         }
-    }
-    
-    const totalQuestions = data.history?.length || 0;
-    progress = totalQuestions > 0 ? Math.round((answered / totalQuestions) * 100) : 0;
-    
-    // Tính thời gian
-    const mins = Math.floor((data.totalSeconds || 0) / 60);
-    const secs = (data.totalSeconds || 0) % 60;
-    
-    // Lấy chế độ
-    const savedMode = localStorage.getItem('exam_mode_' + fileID);
-    let modeText = 'Thường';
-    if (savedMode) {
-        const modeData = JSON.parse(savedMode);
-        modeText = modeData.mode === 'survival' ? '💀 Sinh tử' : '😊 Thường';
-    }
-    
-    statsElement.innerHTML = `
-        <div class="stat-item">
-            <div class="stat-value">${answered}/${totalQuestions}</div>
-            <div class="stat-label">Đã làm</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-value">${progress}%</div>
-            <div class="stat-label">Tiến độ</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-value">${mins}:${secs.toString().padStart(2, '0')}</div>
-            <div class="stat-label">Thời gian</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-value">${modeText}</div>
-            <div class="stat-label">Chế độ</div>
-        </div>
-        ${retryInfo}
-    `;
-}
 
         // Lấy điểm bài đã nộp
         let score = 0;
