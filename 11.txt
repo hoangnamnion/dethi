@@ -1,6 +1,6 @@
 Câu 0. Quyết Tâm làm Hết Không Mà Vào Đây [IMG:logo.jpg] 
 *A. Có
-B. Không 
+*B. Không 
 
 Câu 1. Văn bản là gì?
 *A. Là sản phẩm ghi chép bằng ký hiệu ngôn ngữ.
@@ -240,4 +240,5 @@ Câu 40. Trang bìa trước KHÔNG bao gồm nội dung nào sau đây?
 A. Tên đề tài.
 B. Tên tác giả.
 C. Tên cơ quan/đơn vị.
+
 *D. Tóm tắt báo cáo.
