@@ -1,4 +1,4 @@
-Câu 0. Quyết Tâm làm Hết Không Mà Vào Đây [IMG:logo.jpg] 
+Câu 0. Quyết Tâm làm Hết Không Mà Vào Đây [IMG:banthanhung.jpg] 
 *A. Có
 *B. Không 
 
@@ -242,3 +242,4 @@ B. Tên tác giả.
 C. Tên cơ quan/đơn vị.
 
 *D. Tóm tắt báo cáo.
+
