@@ -4,7 +4,11 @@ B. Không
 Câu 0. Đây có có phải bạn thân của Mạnh không ? [IMG:banthanhung.jpg] 
 *A. Có
 B. Không 
-Câu 0. Đây có phải bạn thân của quyến không ? [IMG:banthanquyen.jpg] 
+Câu 0. Đây có phải bạn thân của QUYẾN không ? [IMG:banthanquyen.jpg] 
+*A. Có
+B. Không 
+
+Câu 0. Đây có phải bạn thân của TRUNG VÀ QUYẾN không ? [IMG:banthantrung.jpg] 
 *A. Có
 B. Không 
 
@@ -494,4 +498,5 @@ B. Thể hiện đầy đủ mọi nội dung chi tiết.
 *C. Ngắn gọn, súc tích và phản ánh nội dung chính của bài báo.
 
 D. Sử dụng nhiều thuật ngữ chuyên ngành phức tạp.
+
 
