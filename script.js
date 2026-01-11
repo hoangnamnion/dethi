@@ -340,7 +340,7 @@ function showAutoNextStatus() {
         align-items: center;
         gap: 8px;
     `;
-    msg.innerHTML = `⚡ Auto Next: <strong>${isAutoNextEnabled ? 'BẬT' : 'TẮT'}</strong>`;
+    msg.innerHTML = `⚡ Auto NEXT CÂU: <strong>${isAutoNextEnabled ? 'BẬT' : 'TẮT'}</strong>`;
     document.body.appendChild(msg);
     
     setTimeout(() => {
@@ -569,7 +569,7 @@ function handleAnswer(qIndex, optIndex) {
             if (currentIndex < questionsToShow.length - 1) {
                 changeQuestion(1);
             }
-        }, 2000); // 2 giây
+        }, 500); // 2 giây
     }
 }
 
