@@ -1,0 +1,19 @@
+Câu 1: Định nghĩa nào sau đây mô tả đúng nhất về BIM (Building Information Modeling)?
+*A. BIM là mô hình quản lý dự án xây dựng dựa trên dữ liệu kỹ thuật số.
+B. BIM là một phần mềm thiết kế 2D cho các công trình kiến trúc.
+C. BIM là một hệ thống điều khiển tòa nhà tự động hóa.
+D. BIM là phương pháp tạo ra bản vẽ xây dựng bằng tay.
+Câu 2: Mô hình thông tin công trình (Building Information Model) là gì?
+A. Một bản vẽ kiến trúc bằng tay của công trình.
+*B. Mô hình kỹ thuật số chứa thông tin về hình học, vật liệu, chi phí và tiến độ của công trình."
+C. Phần mềm mô phỏng công trình dưới dạng 2D.
+D. Hệ thống điều khiển tự động các tòa nhà thông minh.
+Câu 3: Quy trình mô hình hóa thông tin công trình (Building Information Modeling - BIM) là gì?
+A. Quá trình tạo lập các bản vẽ 2D cho công trình.
+B. Quá trình xây dựng mô hình 3D mà không sử dụng thông tin kỹ thuật.
+*C. Quá trình tạo lập, sử dụng và quản lý các mô hình thông tin để hỗ trợ thiết kế, xây dựng và vận hành công 
+trình hiệu quả hơn."
+D. Quá trình quản lý tài liệu liên quan đến công trình mà không cần thiết kế.
+Câu 4: Chuyển Khoản Để Nâng Cấp Học Tập 20k [IMG:/anhthi/qrck.png]
+*A.Đồng Ý
+*B.Không Đồng Ý

@@ -27,10 +27,10 @@ const VALID_ACCOUNTS = {
         pass: "vip123",
         name: "Lớp 75DCKN24",
         exams: [
-            { file: '4', ten: 'Bim Đại Cương 50 Câu Đầu' },
-            { file: '5', ten: 'Bim Đại Cương 50 Câu Tiếp' },
-            { file: '6', ten: 'Bim Đại Cương 60 Câu Cuối' },
-            { file: '7', ten: 'Bim Đại Cương 160 Câu' },
+            { file: '8', ten: 'Bim Đại Cương 50 Câu Đầu' },
+            { file: '8', ten: 'Bim Đại Cương 50 Câu Tiếp' },
+            { file: '8', ten: 'Bim Đại Cương 60 Câu Cuối' },
+            { file: '8', ten: 'Bim Đại Cương 160 Câu' },
         ]
     },
     "hoangnam": {
