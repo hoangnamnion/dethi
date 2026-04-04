@@ -33,11 +33,14 @@ const VALID_ACCOUNTS = {
             { file: '8', ten: 'Bim Đại Cương 160 Câu' },
         ]
     },
-    "hoangnam": {
+    "tktest": {
         pass: "123456",
-        name: "Cao Văn Nam",
+        name: "Chỉ Là Tài Khoản Test Chức Năng",
         exams: [
-            { file: 'nam', ten: 'BÀI KIỂM TRA ĐẶC BIỆT CỦA NAM', icon: '🔥' }
+            { file: '8', ten: 'Bim Đại Cương 50 Câu Đầu' ,},
+            { file: '8', ten: 'Bim Đại Cương 50 Câu Tiếp' },
+            { file: '8', ten: 'Bim Đại Cương 60 Câu Cuối' },
+            { file: '8', ten: 'Bim Đại Cương 160 Câu' },
         ]
     },
     "hocsinh1": { pass: "hs111", name: "Học sinh hệ thống" }
