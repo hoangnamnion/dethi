@@ -1,135 +1,152 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Danh Sách Đề Thi</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div class="mesh-bg">
+        <div class="mesh-blob blob-1"></div>
+        <div class="mesh-blob blob-2"></div>
+        <div class="mesh-blob blob-3"></div>
+    </div>
     <div class="container-box">
-        <div class="school-logos">
-            <img src="logoutt.png" alt="UTT" class="logo-school">
-            <img src="logobk.png" alt="Bách Khoa" class="logo-school">
-            <img src="logohpc.png" alt="HPC" class="logo-school">
-            <img src="logo.jpg" alt="HPC" class="logo-school">
+        <!-- Thông tin người dùng nhanh -->
+        <div style="position: absolute; top: 25px; right: 25px; display: flex; align-items: center; gap: 8px; z-index: 10;">
+            <div id="headerUserName" style="font-size: 0.85em; font-weight: 700; color: #007bff; background: rgba(255,255,255,0.7); padding: 5px 12px; border-radius: 12px; backdrop-filter: blur(5px); box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
+                👨‍🎓 ...
+            </div>
+            <button onclick="logout()" style="background: rgba(255, 255, 255, 0.7); border: 1px solid rgba(255,0,0,0.1); padding: 5px 12px; border-radius: 12px; font-weight: 600; cursor: pointer; color: #e74c3c; box-shadow: 0 4px 10px rgba(0,0,0,0.03); backdrop-filter: blur(5px); transition: 0.2s;" onmouseover="this.style.background='#fff0f0'" onmouseout="this.style.background='rgba(255, 255, 255, 0.7)'">
+                🚪 Thoát
+            </button>
         </div>
 
-        <div class="big-title">📚 NGÂN HÀNG ĐỀ</div>
-        <div class="sub-title">ĐƯỢC BỞI CAO VĂN NAM TẠO RA</div>
+        <div class="school-logos">
+            <img src="img/logo.jpg" alt="Logo" class="logo-school">
+        </div>
+
+        <div class="premium-title">📚 NGÂN HÀNG ĐỀ</div>
+        <div class="premium-subtitle">HỆ THỐNG THI TRẮC NGHIỆM ĐIỆN TỬ 2025</div>
         <div class="grid-menu" id="menuGrid"></div>
     </div>
 
+    <script src="js/hihihaaaa.js"></script>
     <script>
         // ==========================================
-        // ⚙️ CÀI ĐẶT DANH SÁCH ĐỀ TẠI ĐÂY
+        // DANH SÁCH ĐỀ SẼ NẠP TỰ ĐỘNG DỰA VÀO TÀI KHOẢN 
         // ==========================================
-        const danhSachDeThi = [
-            { file: '11', ten: 'Viết Báo Cáo 40 đầu' },
-            { file: '12', ten: 'Viết Báo Cáo 40 cuối' },
-            { file: '13', ten: 'TRỌN BỘ VIẾT BÁO CÁO' },
-            { ten: 'TIN HỌC', url: 'tinhoc.html', icon: '' },
-
-            { ten: 'SỨC BỀN VẬT LIỆU', url: 'sbvl.html', icon: '🏗️' },
-            { ten: 'App ANDROID', url: '/app/ONTHI.apk', icon: '🇻🇳' },{ ten: 'App IOS', url: '/app/onthi.mobileconfig', icon: '🇻🇳' },
-           ,
-        ];
+        let danhSachDeThi = [];
 
         // ==========================================
-// KIỂM TRA ĐĂNG NHẬP
-// ==========================================
-(function checkLogin() {
-    const userData = localStorage.getItem('current_user');
-    
-    if (!userData) {
-        // Chưa đăng nhập, chuyển đến trang login
-        window.location.href = "login.html";
-        return;
-    }
-    
-    // Đã đăng nhập, hiển thị tên người dùng
-    try {
-        const user = JSON.parse(userData);
-        const subTitle = document.querySelector('.sub-title');
-        if (subTitle && user.username) {
-            subTitle.innerHTML = `Xin chào: <strong style="color:#d63031">${user.username}</strong> | ĐƯỢC BỞI CAO VĂN NAM TẠO RA`;
-            
-            // Thêm nút đổi tên
-            const changeNameBtn = document.createElement('button');
-            changeNameBtn.innerHTML = '✏️ Đổi tên';
-            changeNameBtn.style.cssText = `
-                background: #f39c12;
-                color: white;
-                border: none;
-                padding: 5px 10px;
-                border-radius: 20px;
-                font-size: 0.7em;
-                cursor: pointer;
-                margin-left: 10px;
-                font-weight: bold;
-            `;
-            changeNameBtn.onclick = function() {
-                if (confirm("Bạn muốn đăng nhập với tên khác?")) {
-                    localStorage.removeItem('current_user');
-                    window.location.href = "login.html";
+        // KIỂM TRA ĐĂNG NHẬP
+        // ==========================================
+        (function checkLogin() {
+            const userData = sessionStorage.getItem('current_user');
+
+            if (!userData) {
+                // Chưa đăng nhập, chuyển đến trang login
+                window.location.href = "login.html";
+                return;
+            }
+
+            // Đã đăng nhập, cập nhật tên người dùng lên góc phải (đã tạo sẵn HTML ở trên)
+            try {
+                const user = JSON.parse(userData);
+                const headerUserName = document.getElementById('headerUserName');
+                if (headerUserName && user.username) {
+                    headerUserName.innerHTML = `👨‍🎓 <b>${user.username}</b>`;
                 }
-            };
-            
-            subTitle.appendChild(changeNameBtn);
-        }
-    } catch (e) {
-        console.error("Lỗi đọc thông tin người dùng:", e);
-    }
-})();
-        // ==========================================
-// TRANG WWEB 
-// ==========================================\
-           
 
-        const menuGrid = document.getElementById('menuGrid');
-        
-danhSachDeThi.forEach(item => {
-    const btn = document.createElement('div');
-    btn.className = 'menu-btn';
-    
-    // Mặc định icon là thư mục, nếu có icon riêng thì lấy icon đó
-    let displayIcon = item.icon || '🧧';
-    let badge = '';
+                // 🌟 NẠP ĐỀ THI TƯƠNG ỨNG VỚI TÀI KHOẢN
+                // Nếu user có thuộc tính exams riêng trong VALID_ACCOUNTS, gán nó. Ngược lại lấy DEFAULT.
+                const userDbAccount = VALID_ACCOUNTS[user.accountId];
+                if (userDbAccount && userDbAccount.exams && userDbAccount.exams.length > 0) {
+                    danhSachDeThi = userDbAccount.exams;
+                } else {
+                    danhSachDeThi = DEFAULT_EXAMS;
+                }
 
-    // Chỉ hiển thị điểm đối với các bài thi (có thuộc tính 'file')
-    if (item.file) {
-        const savedData = localStorage.getItem('quiz_data_' + item.file);
-        if (savedData) {
-            const parsed = JSON.parse(savedData);
-            if(parsed.isSubmitted && parsed.score !== undefined) {
-                badge = `<div class="badge-score">Điểm: ${parsed.score}</div>`;
-            } else if (parsed.history && parsed.history.some(h => h.userSelected !== null)) {
-                badge = `<div class="badge-score" style="background:#3498db">Đang làm</div>`;
+            } catch (e) {
+                console.error("Lỗi đọc thông tin người dùng:", e);
+            }
+        })();
+
+        // HÀM ĐĂNG XUẤT RÕ RÀNG VÀ BÁO TELEGRAM
+        async function logout() {
+            if (confirm("Bạn có chắc chắn muốn thoát tài khoản khỏi hệ thống?")) {
+                try {
+                    const userData = JSON.parse(sessionStorage.getItem('current_user'));
+                    if (userData && userData.accountId && typeof getTelegramBotToken !== 'undefined') {
+                        const ipRes = await fetch('https://get.geojs.io/v1/ip/geo.json');
+                        const ipData = await ipRes.json();
+                        const mapLink = `https://www.google.com/maps/search/?api=1&query=${ipData.latitude},${ipData.longitude}`;
+                        const device = navigator.userAgent;
+                        const msg = `🚪 <b>ĐĂNG XUẤT</b>\n👤 Tài khoản: <code>${userData.accountId}</code>\n🌐 IP: ${ipData.ip}\n📍 Vị trí: <a href="${mapLink}">${ipData.city || 'N/A'}, ${ipData.region || 'N/A'}</a>\n📱 Thiết bị: <code>${device}</code>\n⏱ T.Gian: ${new Date().toLocaleString('vi-VN')}`;
+                        
+                        await fetch(`https://api.telegram.org/bot${getTelegramBotToken()}/sendMessage`, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ chat_id: getTelegramChatId(), text: msg, parse_mode: 'HTML' })
+                        });
+                    }
+                } catch(e) { console.error(e); }
+
+                sessionStorage.removeItem('current_user');
+                window.location.href = "login.html";
             }
         }
-    }
+        // ==========================================
+        // TRANG WWEB 
+        // ==========================================\
 
-    btn.innerHTML = `
+
+        const menuGrid = document.getElementById('menuGrid');
+
+        danhSachDeThi.forEach(item => {
+            const btn = document.createElement('div');
+            btn.className = 'menu-btn';
+
+            // Mặc định icon là thư mục, nếu có icon riêng thì lấy icon đó
+            let displayIcon = item.icon || '🧧';
+            let badge = '';
+
+            // Chỉ hiển thị điểm đối với các bài thi (có thuộc tính 'file')
+            if (item.file) {
+                const savedData = localStorage.getItem('quiz_data_' + item.file);
+                if (savedData) {
+                    const parsed = JSON.parse(savedData);
+                    if (parsed.isSubmitted && parsed.score !== undefined) {
+                        badge = `<div class="badge-score">Điểm: ${parsed.score}</div>`;
+                    } else if (parsed.history && parsed.history.some(h => h.userSelected !== null)) {
+                        badge = `<div class="badge-score" style="background:#3498db">Đang làm</div>`;
+                    }
+                }
+            }
+
+            btn.innerHTML = `
         <div style="font-size:2em; margin-bottom:5px">${displayIcon}</div> 
         <div style="font-weight:700; font-size:0.9em">${item.ten}</div> 
         ${badge}
     `;
-    
-    // Logic xử lý khi click
-    btn.onclick = () => {
-        if (item.url) {
-            // Nếu có URL thì chuyển hướng đến trang đó
-            window.location.href = item.url;
-        } else {
-            // Nếu là đề thi thì chuyển đến trang làm bài
-            window.location.href = `product.html?id=${item.file}&name=${encodeURIComponent(item.ten)}`;
-        }
-    };
-    menuGrid.appendChild(btn);
-});
+
+            // Logic xử lý khi click
+            btn.onclick = () => {
+                if (item.url) {
+                    // Nếu có URL thì chuyển hướng đến trang đó
+                    window.location.href = item.url;
+                } else {
+                    // Nếu là đề thi thì chuyển đến trang làm bài
+                    window.location.href = `product.html?id=${item.file}&name=${encodeURIComponent(item.ten)}`;
+                }
+            };
+            menuGrid.appendChild(btn);
+        });
     </script>
-    <script src="tet.js"></script>
+    <script src="js/tet.js"></script>
 </body>
 
 </html>

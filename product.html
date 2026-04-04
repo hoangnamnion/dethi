@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Thông Tin Đề</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
     <style>
         /* Modal chọn chế độ */
         .mode-modal {
@@ -15,12 +16,12 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.7);
+            background: rgba(0, 0, 0, 0.7);
             z-index: 1000;
             align-items: center;
             justify-content: center;
         }
-        
+
         .mode-box {
             background: white;
             width: 90%;
@@ -28,16 +29,16 @@
             padding: 25px;
             border-radius: 20px;
             text-align: center;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
         }
-        
+
         .mode-title {
             font-size: 1.3em;
             font-weight: 700;
             margin-bottom: 20px;
             color: var(--primary);
         }
-        
+
         .mode-option {
             background: #f8f9fa;
             border: 2px solid #e9ecef;
@@ -48,36 +49,36 @@
             transition: 0.3s;
             text-align: left;
         }
-        
+
         .mode-option:hover {
             transform: translateY(-3px);
             border-color: var(--primary);
             background: #fff5f5;
         }
-        
+
         .mode-header {
             display: flex;
             align-items: center;
             gap: 10px;
             margin-bottom: 8px;
         }
-        
+
         .mode-icon {
             font-size: 1.5em;
         }
-        
+
         .mode-name {
             font-weight: 700;
             font-size: 1em;
         }
-        
+
         .mode-desc {
             font-size: 0.85em;
             color: var(--text-gray);
             line-height: 1.4;
             padding-left: 35px;
         }
-        
+
         .mode-sub-options {
             margin-top: 15px;
             padding-top: 15px;
@@ -86,7 +87,7 @@
             gap: 10px;
             flex-wrap: wrap;
         }
-        
+
         .sub-option {
             flex: 1;
             padding: 10px;
@@ -100,21 +101,21 @@
             min-width: 120px;
             text-align: center;
         }
-        
+
         .sub-option.active {
             border-color: var(--primary);
             background: #ffeaa7;
             color: #d63031;
         }
-        
+
         .sub-option.auto-active {
             border-color: #0984e3;
             background: #e3f2fd;
             color: #0984e3;
         }
-        
+
         .btn-start-mode {
-            background: linear-gradient(135deg, #d63031, #e17055);
+            background: linear-gradient(90deg, #97cbdd 30%, #5398ab 70%);
             color: white;
             border: none;
             padding: 12px 30px;
@@ -126,12 +127,12 @@
             width: 100%;
             transition: 0.3s;
         }
-        
+
         .btn-start-mode:hover {
             transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(214, 48, 49, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
         }
-        
+
         .btn-close-mode {
             position: absolute;
             top: 15px;
@@ -145,7 +146,7 @@
 
         /* Các nút trên product */
         .resume-card {
-            background: linear-gradient(135deg, #00b894, #00cec9);
+            background: linear-gradient(90deg, #97cbdd 30%, #5398ab 70%);
             color: white;
             padding: 20px;
             border-radius: 16px;
@@ -159,14 +160,14 @@
             justify-content: center;
             gap: 10px;
             transition: 0.3s;
-            box-shadow: 0 5px 15px rgba(0, 184, 148, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
         }
-        
+
         .resume-card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 184, 148, 0.4);
+            box-shadow: 0 8px 20px rgba(0, 123, 255, 0.4);
         }
-        
+
         .resume-stats {
             display: flex;
             justify-content: space-around;
@@ -174,29 +175,30 @@
             font-size: 0.9em;
             color: #636e72;
         }
-        
+
         .stat-item {
             text-align: center;
         }
-        
+
         .stat-value {
             font-weight: bold;
             color: var(--primary);
             font-size: 1.2em;
         }
-        
+
         .stat-label {
             font-size: 0.8em;
             margin-top: 2px;
         }
-        
+
         .action-buttons {
             display: flex;
             gap: 10px;
             margin-top: 10px;
         }
-        
-        .btn-resume, .btn-new {
+
+        .btn-resume,
+        .btn-new {
             flex: 1;
             padding: 12px;
             border-radius: 12px;
@@ -209,29 +211,35 @@
             justify-content: center;
             gap: 8px;
         }
-        
+
         .btn-resume {
-            background: #00b894;
+            background: #007bff;
             color: white;
         }
-        
+
         .btn-new {
             background: #ffeaa7;
             color: var(--text-dark);
         }
-        
+
         .btn-resume:hover {
-            background: #00a085;
+            background: #0056b3;
             transform: translateY(-2px);
         }
-        
+
         .btn-new:hover {
             background: #fdcb6e;
             transform: translateY(-2px);
         }
     </style>
 </head>
+
 <body>
+    <div class="mesh-bg">
+        <div class="mesh-blob blob-1"></div>
+        <div class="mesh-blob blob-2"></div>
+        <div class="mesh-blob blob-3"></div>
+    </div>
     <div class="container-box">
         <div style="position: absolute; top: 20px; left: 20px;">
             <a href="index.html" style="text-decoration: none; font-size: 1.5em;">🔙</a>
@@ -252,11 +260,11 @@
             <div style="font-weight: 700; color: var(--primary); margin: 20px 0 10px 0;">
                 📌 BÀI ĐANG LÀM DỞ
             </div>
-            
+
             <div class="resume-stats" id="progressStats">
                 <!-- Sẽ được cập nhật bằng JS -->
             </div>
-            
+
             <div class="action-buttons">
                 <button class="btn-resume" onclick="resumeExam()">
                     ▶️ Tiếp tục làm bài
@@ -289,7 +297,7 @@
         <div class="mode-box">
             <button class="btn-close-mode" onclick="closeModeModal()">✕</button>
             <div class="mode-title">📋 CHỌN CHẾ ĐỘ THI</div>
-            
+
             <div class="mode-option" onclick="selectMode('normal')" id="normalOption">
                 <div class="mode-header">
                     <div class="mode-icon">😊</div>
@@ -299,7 +307,7 @@
                     Sai vẫn làm tiếp được, không sửa lại được đáp án đã chọn.
                 </div>
             </div>
-            
+
             <div class="mode-option" onclick="selectMode('survival')" id="survivalOption">
                 <div class="mode-header">
                     <div class="mode-icon">💀</div>
@@ -309,10 +317,10 @@
                     Chỉ có 1 mạng duy nhất! Sai 1 câu là LÀM LẠI TỪ ĐẦU ngay lập tức!
                 </div>
             </div>
-            
+
             <div class="mode-sub-options">
                 <div class="sub-option" onclick="selectOrder('normal')" id="orderNormal">
-                    Giữ nguyên câu hỏi 
+                    Giữ nguyên câu hỏi
                 </div>
                 <div class="sub-option" onclick="selectOrder('random')" id="orderRandom">
                     Đảo lộn câu hỏi
@@ -321,9 +329,9 @@
                     ⚡ Tự động Next (2s)
                 </div>
             </div>
-            
+
             <button class="btn-start-mode" onclick="startExam(true)">
-                🚀 BẮT ĐẦU THI 
+                🚀 BẮT ĐẦU THI
             </button>
         </div>
     </div>
@@ -342,27 +350,27 @@
         let selectedMode = 'normal';
         let selectedOrder = 'normal';
         let isAutoNextEnabled = false;
-        
+
         // Kiểm tra có bài đang làm dở không
         const savedData = localStorage.getItem('quiz_data_' + fileID);
         let hasUnsubmittedExam = false;
         let examData = null;
-        
+
         if (savedData) {
             examData = JSON.parse(savedData);
             // Có bài chưa nộp và đã làm ít nhất 1 câu
-            if (!examData.isSubmitted && 
+            if (!examData.isSubmitted &&
                 (examData.history?.some(h => h.userSelected !== null) || examData.currentIndex > 0)) {
                 hasUnsubmittedExam = true;
             }
         }
-        
+
         // Hiển thị giao diện phù hợp
         if (hasUnsubmittedExam) {
             // Hiển thị phần tiếp tục bài cũ
             document.getElementById('resumeSection').style.display = 'block';
             document.getElementById('normalActions').style.display = 'none';
-            
+
             // Hiển thị thông tin tiến độ
             displayProgressInfo(examData);
         } else {
@@ -370,9 +378,9 @@
             document.getElementById('resumeSection').style.display = 'none';
             document.getElementById('normalActions').style.display = 'grid';
         }
-        
+
         // Mở modal khi click "Làm Ngay"
-        document.getElementById('btnStart').addEventListener('click', function(e) {
+        document.getElementById('btnStart').addEventListener('click', function (e) {
             e.preventDefault();
             openModeModal();
         });
@@ -384,49 +392,49 @@
             selectOrder('normal');
             updateAutoNextButton();
         }
-        
+
         // Đóng modal chọn chế độ
         function closeModeModal() {
             document.getElementById('modeModal').style.display = 'none';
         }
-        
+
         // Chọn chế độ làm bài
         function selectMode(mode) {
             selectedMode = mode;
-            
+
             document.getElementById('normalOption').style.borderColor = mode === 'normal' ? '#d63031' : '#e9ecef';
             document.getElementById('normalOption').style.background = mode === 'normal' ? '#fff5f5' : '#f8f9fa';
-            
+
             document.getElementById('survivalOption').style.borderColor = mode === 'survival' ? '#d63031' : '#e9ecef';
             document.getElementById('survivalOption').style.background = mode === 'survival' ? '#fff5f5' : '#f8f9fa';
         }
-        
+
         // Chọn thứ tự câu hỏi
         function selectOrder(order) {
             selectedOrder = order;
-            
+
             document.getElementById('orderNormal').classList.toggle('active', order === 'normal');
             document.getElementById('orderRandom').classList.toggle('active', order === 'random');
         }
-        
+
         // Toggle Auto Next
         function toggleAutoNext() {
             isAutoNextEnabled = !isAutoNextEnabled;
             updateAutoNextButton();
         }
-        
+
         function updateAutoNextButton() {
             const btn = document.getElementById('optAutoNext');
             btn.classList.toggle('active', isAutoNextEnabled);
             btn.classList.toggle('auto-active', isAutoNextEnabled);
-            
+
             if (isAutoNextEnabled) {
                 btn.innerHTML = '⚡ Tự động Next Câu ✅';
             } else {
                 btn.innerHTML = '⚡ Tự động Next Câu ';
             }
         }
-        
+
         // Tiếp tục bài cũ
         function resumeExam() {
             // Lấy thông tin chế độ từ bài cũ
@@ -434,22 +442,22 @@
             let mode = 'normal';
             let order = 'normal';
             let auto = false;
-            
+
             if (savedMode) {
                 const modeData = JSON.parse(savedMode);
                 mode = modeData.mode;
                 order = modeData.order;
                 auto = modeData.autoNext || false;
             }
-            
+
             // Chuyển đến trang thi với chế độ cũ
             window.location.href = `thi.html?id=${fileID}&name=${encodeURIComponent(fileName)}&mode=${mode}&order=${order}&auto=${auto}`;
         }
-        
+
         // Bắt đầu làm mới
         function startExam(isNewAttempt) {
             closeModeModal();
-            
+
             const modeData = {
                 mode: selectedMode,
                 order: selectedOrder,
@@ -457,29 +465,29 @@
                 timestamp: new Date().getTime()
             };
             localStorage.setItem('exam_mode_' + fileID, JSON.stringify(modeData));
-            
+
             // Nếu là làm mới, xóa dữ liệu bài cũ
             if (isNewAttempt) {
                 localStorage.removeItem('quiz_data_' + fileID);
             }
-            
+
             window.location.href = `thi.html?id=${fileID}&name=${encodeURIComponent(fileName)}&mode=${selectedMode}&order=${selectedOrder}&auto=${isAutoNextEnabled}`;
         }
-        
+
         // Hiển thị thông tin tiến độ bài cũ
         function displayProgressInfo(data) {
             const statsElement = document.getElementById('progressStats');
-            
+
             // Tính toán thống kê
             let answered = 0;
             let correct = 0;
             let progress = 0;
             let retryInfo = '';
-            
+
             if (data.history) {
                 answered = data.history.filter(h => h.userSelected !== null).length;
                 correct = data.score || 0;
-                
+
                 // Hiển thị thông tin làm lại nếu có
                 if (data.retryCount && data.retryCount > 0) {
                     retryInfo = `<div style="background:#f39c12; color:white; padding:5px; border-radius:8px; margin-top:5px; font-size:0.8em;">
@@ -487,14 +495,14 @@
                     </div>`;
                 }
             }
-            
+
             const totalQuestions = data.history?.length || 0;
             progress = totalQuestions > 0 ? Math.round((answered / totalQuestions) * 100) : 0;
-            
+
             // Tính thời gian
             const mins = Math.floor((data.totalSeconds || 0) / 60);
             const secs = (data.totalSeconds || 0) % 60;
-            
+
             // Lấy chế độ
             const savedMode = localStorage.getItem('exam_mode_' + fileID);
             let modeText = 'Thường';
@@ -506,7 +514,7 @@
                     autoText = '<div style="color:#0984e3; margin-top:2px;">⚡ Auto Next</div>';
                 }
             }
-            
+
             statsElement.innerHTML = `
                 <div class="stat-item">
                     <div class="stat-value">${answered}/${totalQuestions}</div>
@@ -553,14 +561,15 @@
                 display.innerText = current;
             }, 30);
 
-            const percent = Math.min(score * 5, 100); 
-            document.getElementById('scoreCircle').style.background = 
-                `conic-gradient(#d63031 ${percent}%, #dfe6e9 ${percent}% 100%)`;
+            const percent = Math.min(score * 5, 100);
+            document.getElementById('scoreCircle').style.background =
+                `conic-gradient(#007bff ${percent}%, #dfe6e9 ${percent}% 100%)`;
         } else {
             document.getElementById('scoreDisplay').innerText = "--";
             document.getElementById('scoreCircle').style.background = "#dfe6e9";
         }
     </script>
-    <script src="tet.js"></script>
+    <script src="js/tet.js"></script>
 </body>
+
 </html>

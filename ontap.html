@@ -4,26 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Ôn Tập</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div class="mesh-bg">
+        <div class="mesh-blob blob-1"></div>
+        <div class="mesh-blob blob-2"></div>
+        <div class="mesh-blob blob-3"></div>
+    </div>
     <div class="app-full">
         <div class="toolbar">
-            <button onclick="goBack()" class="home-btn"><img src="logo.png" class="logo-img"></button>
+            <button onclick="goBack()" class="home-btn"><img src="img/muiten.jpg" class="logo-img"></button>
             <div style="font-weight:bold" id="titleBar">Đang tải...</div>
             <button class="toggle-btn" id="btnToggle" onclick="toggleAnswers()">👁️ Che Đáp Án</button>
         </div>
         <div class="content" id="listContent"></div>
     </div>
 
-    <script src="review.js"></script>
+    <script src="js/review.js"></script>
     <script>
         const p = new URLSearchParams(window.location.search);
         const fid = p.get('id');
         if(fid) { loadReview(fid); }
         function goBack() { window.location.href = `product.html?id=${fid}`; }
     </script>
-    <script src="tet.js"></script>
+    <script src="js/tet.js"></script>
 </body>
 </html>
