@@ -16,7 +16,7 @@
     </div>
     <div class="container-box">
         <!-- Thông tin người dùng nhanh -->
-        <div style="position: absolute; top: 25px; right: 25px; display: flex; align-items: center; gap: 8px; z-index: 10;">
+        <div class="user-info-bar">
             <div id="headerUserName" style="font-size: 0.85em; font-weight: 700; color: #007bff; background: rgba(255,255,255,0.7); padding: 5px 12px; border-radius: 12px; backdrop-filter: blur(5px); box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
                 👨‍🎓 ...
             </div>
@@ -29,8 +29,8 @@
             <img src="img/logo.jpg" alt="Logo" class="logo-school">
         </div>
 
-        <div class="premium-title">📚 NGÂN HÀNG ĐỀ</div>
-        <div class="premium-subtitle">HỆ THỐNG THI TRẮC NGHIỆM ĐIỆN TỬ 2025</div>
+        <div class="premium-title"><span style="-webkit-text-fill-color: initial;">📚</span> NGÂN HÀNG ĐỀ</div>
+        <div class="premium-subtitle">HỆ THỐNG THI TRẮC NGHIỆM ĐIỆN TỬ 2026</div>
         <div class="grid-menu" id="menuGrid"></div>
     </div>
 
@@ -43,7 +43,7 @@
 
         // ==========================================
         // KIỂM TRA ĐĂNG NHẬP
-        // ==========================================
+        // ==========================================`
         (function checkLogin() {
             const userData = sessionStorage.getItem('current_user');
 

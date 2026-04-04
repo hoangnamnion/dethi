@@ -1,0 +1,333 @@
+Câu 101: Mức độ phát triển thông tin LOD 100 trong thiết kế ý tưởng mô tả đặc điểm nào dưới đây?
+A. Các đối tượng được thể hiện chi tiết với kích thước và vật liệu cụ thể.
+B. Mô hình có đầy đủ thông tin về kết cấu và hệ thống kỹ thuật.
+C. Sử dụng các khối phức tạp với đầy đủ tính năng và thông tin kỹ thuật.
+*D. Các đối tượng được đại diện dưới dạng khối khái niệm hoặc hình học đơn giản, không có chi tiết cụ thể.
+Câu 102: Mức độ phát triển thông tin LOD 200 trong thiết kế sơ bộ có đặc điểm nào sau đây?
+*A. Các thành phần được đại diện bằng hình học cơ bản với kích thước gần đúng và thông tin chi tiết hơn về 
+vị trí và kết nối.
+B. Mô hình hoàn chỉnh với đầy đủ thông tin về vật liệu và kết cấu.
+C. Các đối tượng được thể hiện dưới dạng khối khái niệm mà không có kích thước cụ thể.
+D. Thông tin chỉ định hướng ban đầu, không có dữ liệu về kích thước hay vị trí.
+Câu 103: Mức độ phát triển thông tin LOD 300 trong thiết kế kỹ thuật có đặc điểm nào sau đây?
+A. Các đối tượng được mô hình hóa dưới dạng khối khái niệm mà không có thông tin chi tiết.
+*B. Các thành phần được mô hình hóa với kích thước, hình học và vị trí chính xác, bao gồm thông tin chi tiết 
+về vật liệu."
+C. Thông tin chỉ định hướng ban đầu, chưa có kích thước hay liên kết giữa các bộ phận.
+D. Các thành phần được đại diện bằng hình học cơ bản với kích thước gần đúng và chưa đủ thông tin để thi 
+công.
+Câu 104: Mức độ phát triển thông tin LOD 350 trong thiết kế bản vẽ thi công có đặc điểm nào sau 
+đây?
+A. Các đối tượng được mô hình hóa với kích thước gần đúng và thiếu thông tin về kết nối giữa các bộ phận.
+B. Các thành phần được mô hình hóa với chi tiết đầy đủ, nhưng không bao gồm thông tin về liên kết giữa các 
+hệ thống.
+*C. Các thành phần được mô hình hóa với chi tiết cao, bao gồm cả liên kết giữa các bộ phận và hệ thống, 
+phục vụ cho việc phát hiện xung đột."
+D. Các thông tin chỉ bao gồm các khối khái niệm cơ bản, không có thông tin chi tiết về kích thước hay vật 
+liệu.
+Câu 105: Mức độ phát triển thông tin LOD 500 trong thiết kế bản vẽ thi công có đặc điểm nào sau 
+đây?
+*A. Mô hình hóa chi tiết và chính xác, phản ánh đúng hiện trạng sau thi công.
+B. Chỉ định các thành phần khối lượng chính và kích thước cơ bản.
+C. Cung cấp các thông tin tổng quát về bố trí không gian và hình dạng.
+D. Mô tả cấu trúc sơ bộ và tính chất của các vật liệu được sử dụng.
+Câu 106: Quản lý quyền truy cập trong BIM nhằm mục đích gì?
+A. Đảm bảo tất cả mọi người đều có quyền chỉnh sửa mô hình bất cứ lúc nào.
+*B. Kiểm soát và giới hạn quyền truy cập, chỉnh sửa để đảm bảo an toàn và tính chính xác của dữ liệu.
+C. Cho phép mọi thành viên trong dự án có quyền truy cập và thay đổi dữ liệu mô hình.
+D. Tăng cường sự linh hoạt trong việc quản lý các tài liệu và dữ liệu mà không cần phân quyền cụ thể.
+Câu 107: Có những biện pháp mã hóa dữ liệu nào?
+A. Mã hóa bằng văn bản không bảo mật.
+B. Mã hóa thông qua sử dụng các ký tự đơn giản.
+*C. Mã hóa sử dụng thuật toán đối xứng và bất đối xứng để bảo vệ dữ liệu.
+D. Mã hóa thông qua việc ẩn thông tin trong tài liệu giấy.
+Câu 108: Công nghệ điện toán đám mây có những ưu điểm gì?
+A. Chỉ cung cấp không gian lưu trữ hạn chế cho người dùng.
+B. Hạn chế khả năng truy cập từ các thiết bị di động.
+C. Không cho phép chia sẻ tài nguyên giữa các người dùng.
+*D. Cung cấp khả năng mở rộng linh hoạt, tiết kiệm chi phí và truy cập từ xa dễ dàng.
+Câu 109: Nguyên tắc của việc đặt tên trong BIM là gì?
+*A. Đảm bảo tuân thủ quy tắc thống nhất, dễ hiểu và phản ánh rõ ràng thông tin cần quản lý.
+B. Đặt tên ngẫu nhiên, không cần theo quy tắc cụ thể.
+C. Sử dụng các ký tự đặc biệt để làm nổi bật các tên.
+D. Tên chỉ cần phản ánh số lượng phần tử trong mô hình mà không cần chi tiết.
+Câu 110: Tính đến tháng 10/2024, dự án nào sau đây tại Việt Nam bắt buộc phải áp dụng BIM?
+A. Các dự án xây dựng nhà ở riêng lẻ dưới 3 tầng
+B. Dự án nâng cấp hệ thống điện chiếu sáng công cộng
+*C. Các dự án xây dựng công trình từ cấp II trở lên và công trình có vốn đầu tư công
+D. Dự án sửa chữa đường bộ nhỏ tại địa phương
+Câu 111: Phần mềm nào sau đây chuyên để thiết kế kiến trúc trong BIM?
+*A. Autodesk Revit, ArchiCAD, và Vectorworks
+B. Microsoft Word, PowerPoint, và Excel
+C. Google SketchUp, Canva, và Inkscape
+D. CorelDRAW, AutoCAD LT, và Blender
+Câu 112: Phần mềm nào sau đây chuyên để thiết kế kết cấu trong BIM?
+A. Photoshop, Illustrator, và CorelDRAW
+*B. Tekla Structures, Autodesk Revit, và Robot Structural Analysis
+C. Microsoft Project, Primavera, và Trello
+D. Canva, Inkscape, và Google SketchUp
+Câu 113: Phần mềm nào sau đây chuyên để thiết kế MEP trong BIM?
+A. AutoCAD, SketchUp, và Revit Architecture
+B. ArchiCAD, Civil 3D, và Microsoft Excel
+*C. Autodesk Revit MEP, Trimble SysQue, và MagiCAD
+D. CorelDRAW, Adobe XD, và Notepad
+Câu 114: Phần mềm nào sau đây chuyên dụng để thiết kế BIM 4D?
+A. SketchUp, Adobe Photoshop, và AutoCAD
+B. Revit Architecture, Navisworks, và Microsoft Project
+C. Civil 3D, ArchiCAD, và CorelDRAW
+*D. Navisworks, Synchro, và Vico Office
+Câu 115: Phần mềm nào sau đây chuyên dụng để thiết kế BIM 5D?
+*A. Vico Office, CostX, và Autodesk BIM 360
+B. AutoCAD, SketchUp, và Adobe Illustrator
+C. Revit, Civil 3D, và CorelDRAW
+D. Navisworks, ArchiCAD, và Microsoft Excel
+Câu 116: Phần mềm nào dưới đây được sử dụng chuyên dụng cho thiết kế BIM 6D?
+A. AutoCAD, SketchUp, và CorelDRAW
+*B. ArchiCAD, Autodesk Revit, và BIM 360
+C. Navisworks, SolidWorks, và Microsoft Project
+D. Civil 3D, ETABS, và Adobe Photoshop
+Câu 117: Dưới đây, phần mềm nào được sử dụng chuyên dụng cho thiết kế BIM 7D, liên quan đến 
+quản lý và bảo trì công trình?
+A. AutoCAD, CorelDRAW, và Adobe Illustrator
+B. SketchUp, Navisworks, và MS Project
+*C. ArchiCAD, Autodesk Revit, và BIM 360 Ops
+D. SolidWorks, Civil 3D, và ETABS
+Câu 118: Dưới đây, phần mềm nào được sử dụng chuyên dụng cho thiết kế BIM 8D, tập trung vào việc 
+quản lý và lập kế hoạch bền vững cho công trình?
+A. AutoCAD, 3ds Max, và SketchUp
+B. Primavera P6, MS Project, và Navisworks
+C. Revit, ArchiCAD, và SolidWorks
+*D. Autodesk BIM 360, EcoDomus, và GanttProject
+Câu 119: Trong lĩnh vực thiết kế BIM 9D, phần mềm nào dưới đây được biết đến với khả năng tích 
+hợp quản lý tài sản và tối ưu hóa hiệu suất công trình?
+A. BIM 360, ArchiCAD, và Revit
+B. AutoCAD, SketchUp, và 3ds Max
+*C. MS Project, Primavera P6, và Navisworks
+D. Tekla Structures, SolidWorks, và Rhino
+Câu 120: Trong thiết kế BIM 10D, phần mềm nào sau đây được sử dụng để quản lý thông tin trong 
+suốt vòng đời công trình và hỗ trợ dự đoán chi phí?
+A. SketchUp
+*B. CostOS
+C. Revit
+D. AutoCAD
+Câu 121: Trong việc tạo và quản lý môi trường dữ liệu chung (CDE) trong BIM, phần mềm nào sau 
+đây được coi là chuyên dụng nhất?
+A. Adobe Photoshop
+B. Microsoft Word
+*C. Autodesk BIM 360
+D. Google Chrome
+Câu 122: Cấu trúc của môi trường dữ liệu chung (CDE) trong BIM thường được chia thành bao nhiêu 
+khu vực chính?
+A. 1 khu vực
+B. 2 khu vực
+C. 3 khu vực
+*D. 4 khu vực
+Câu 123: Thứ tự đúng của các khu vực trong môi trường dữ liệu chung (CDE) thường được sắp xếp 
+như thế nào?
+A. Khu vực tổng quan, Khu vực dự án, Khu vực dữ liệu, Khu vực quản lý
+B. Khu vực quản lý, Khu vực dữ liệu, Khu vực tổng quan, Khu vực dự án
+C. Khu vực dữ liệu, Khu vực tổng quan, Khu vực quản lý, Khu vực dự án
+*D. Khu vực tổng quan, Khu vực dữ liệu, Khu vực quản lý, Khu vực dự án
+Câu 124: Trong môi trường dữ liệu chung (CDE), thứ tự đúng của các khu vực được sắp xếp như thế 
+nào?
+A. Khu vực đã xuất bản, Khu vực đã chia sẻ, Khu vực lưu trữ, Khu vực đang tiến hành
+B. Khu vực đã chia sẻ, Khu vực đang tiến hành, Khu vực lưu trữ, Khu vực đã xuất bản
+C. Khu vực lưu trữ, Khu vực đã xuất bản, Khu vực đang tiến hành, Khu vực đã chia sẻ
+*D. Khu vực đang tiến hành, Khu vực đã chia sẻ, Khu vực đã xuất bản, Khu vực lưu trữ
+Câu 125: Việc phối hợp các mô hình thành phần như Kiến trúc, Kết cấu, Điện nước trong quá trình 
+thiết kế nhằm mục đích chính là gì?
+*A. Đảm bảo tính thống nhất và tránh xung đột giữa các bộ phận
+B. Tăng tốc độ xây dựng bằng cách giảm thời gian thiết kế
+C. Giảm chi phí vật liệu bằng cách tối ưu hóa từng mô hình
+D. Đảm bảo các mô hình thành phần được cập nhật liên tục theo thời gian
+Câu 126: Mô hình BIM 4D có những tác dụng chính nào trong quá trình quản lý dự án xây dựng?
+A. Giảm chi phí vật liệu và nhân công
+*B. Kết hợp yếu tố thời gian để lập kế hoạch và theo dõi tiến độ xây dựng
+C. Cải thiện chất lượng bản vẽ và hình ảnh công trình
+D. Tối ưu hóa thiết kế kết cấu để giảm thiểu chi phí xây dựng
+Câu 127: Mô hình BIM 5D có những tác dụng chính nào trong quản lý dự án xây dựng?
+A. Giúp tối ưu hóa thiết kế kiến trúc và cải thiện chất lượng bản vẽ
+B. Tăng cường sự phối hợp giữa các nhóm công việc trên công trường
+*C. Tích hợp yếu tố chi phí, cho phép dự toán và quản lý chi phí trong suốt quá trình xây dựng
+D. Tăng cường an toàn lao động và giảm rủi ro sự cố công trường
+Câu 128: Mô hình BIM 6D có những tác dụng chính nào trong việc quản lý và vận hành công trình 
+xây dựng?
+A. Tăng cường phối hợp giữa các nhóm kỹ thuật và thi công
+B. Tích hợp yếu tố thời gian để quản lý tiến độ dự án
+C. Quản lý chi phí và dự toán kinh phí xây dựng
+*D. Tích hợp yếu tố năng lượng và bền vững, giúp quản lý và tối ưu hóa hiệu quả năng lượng của công trình
+Câu 129: Mô hình BIM 7D có những tác dụng chính nào trong việc quản lý công trình xây dựng?
+*A. Quản lý vòng đời của công trình và bảo trì bảo dưỡng tài sản
+B. Tích hợp chi phí và dự toán kinh phí xây dựng
+C. Tăng cường phối hợp giữa các nhóm kỹ thuật và thi công
+D. Tích hợp yếu tố thời gian để theo dõi tiến độ dự án
+Câu 130: Mô hình BIM 8D có những tác dụng chính nào trong việc quản lý và xây dựng công trình?
+A. Quản lý chi phí và dự toán kinh phí của dự án
+*B. Tăng cường các yếu tố an toàn lao động và an toàn xây dựng
+C. Quản lý vòng đời và bảo trì bảo dưỡng tài sản công trình
+D. Theo dõi và quản lý tiến độ thực hiện của dự án
+Câu 131: Mô hình BIM 9D có những tác dụng chính nào trong việc quản lý công trình?
+A. Dự toán chi phí và quản lý tài chính dự án
+B. Tối ưu hóa thời gian và tiến độ xây dựng
+*C. Quản lý tính bền vững và tác động môi trường của công trình
+D. Tăng cường an toàn lao động và an toàn xây dựng
+Câu 132: Mô hình BIM 10D có những tác dụng chính nào trong quản lý công trình xây dựng?
+A. Tăng cường an toàn lao động trên công trường
+B. Quản lý chi phí và tài chính dự án hiệu quả
+C. Tối ưu hóa thời gian và tiến độ thi công
+*D. Quản lý vòng đời của công trình, bao gồm bảo trì và vận hành sau khi hoàn thành
+Câu 133: Quản lý dữ liệu chung CDE có những tác dụng chính nào trong quá trình thực hiện dự án 
+xây dựng?
+A. Giảm chi phí đầu tư ban đầu cho dự án
+B. Tăng số lượng tài liệu cần thiết trong quá trình xây dựng
+C. Giới hạn quyền truy cập vào dữ liệu cho các bên liên quan
+*D. Cung cấp nền tảng duy nhất để lưu trữ, chia sẻ và quản lý dữ liệu một cách hiệu quả, đảm bảo thông tin 
+được cập nhật liên tục
+Câu 134: Đâu là quy trình làm việc hợp lý của BIM trong quá trình thực hiện dự án xây dựng?
+*A. Lập kế hoạch, tạo mô hình, kiểm tra và phân tích, phối hợp và quản lý, chia sẻ dữ liệu
+B. Tạo mô hình, chia sẻ dữ liệu, lập kế hoạch, kiểm tra và phân tích, phối hợp và quản lý
+C. Phối hợp và quản lý, lập kế hoạch, chia sẻ dữ liệu, tạo mô hình, kiểm tra và phân tích
+D. Kiểm tra và phân tích, lập kế hoạch, chia sẻ dữ liệu, tạo mô hình, phối hợp và quản lý
+Câu 135: Mô hình phối hợp trên CDE (Common Data Environment) cần phải đáp ứng đủ các yêu cầu 
+nào để đảm bảo hiệu quả trong quản lý dự án?
+*A. Độ chính xác, tính khả thi, tính đồng bộ, và khả năng truy cập
+B. Chi phí thấp, dễ sử dụng, không cần kiểm tra, và đồ họa hấp dẫn
+C. Tích hợp với phần mềm khác, không cần tài liệu, và thời gian thực
+D. Độ phức tạp cao, không cần quy chuẩn, và chỉ dành cho các dự án lớn
+Câu 136: Các bước kiểm tra và xử lý xung đột trong mô hình BIM bao gồm những bước nào để đảm 
+bảo tính chính xác và hiệu quả trong thiết kế?
+A. Nhập liệu, xuất dữ liệu, và phân tích chi phí
+*B. Xác định xung đột, phân tích, xử lý và báo cáo
+C. Thiết kế, xây dựng, bảo trì, và hoàn thiện
+D. Lập kế hoạch, thi công, kiểm tra chất lượng, và nghiệm thu
+Câu 137: Tại sao việc lưu trữ thông tin của mô hình là cần thiết, ngay cả sau khi công trình đã bị phá 
+hủy?
+A. Để tiết kiệm chi phí cho các dự án tương lai
+B. Để nâng cao tính thẩm mỹ cho công trình mới
+*C. Để phục vụ cho công tác nghiên cứu, bảo trì và phục hồi trong tương lai
+D. Để tạo điều kiện cho các cuộc khảo sát và đánh giá kỹ thuật
+Câu 138: Công nghệ BIM hỗ trợ công tác quản lý nhà nước trong lĩnh vực xây dựng như thế nào?
+A. Cung cấp phần mềm miễn phí cho mọi người sử dụng
+B. Tăng cường khả năng tự động hóa trong thiết kế kiến trúc
+*C. Cải thiện khả năng giám sát, quản lý dự án và bảo trì công trình hiệu quả hơn
+D. Giảm thiểu các loại chi phí xây dựng không cần thiết
+Câu 139: Khi áp dụng công nghệ BIM, giai đoạn nào trong quá trình xây dựng có khả năng làm tăng 
+chi phí do yêu cầu cao về công nghệ và quản lý?
+A. Giai đoạn lập kế hoạch và khảo sát
+B. Giai đoạn thi công và lắp đặt
+C. Giai đoạn bảo trì và quản lý
+*D. Giai đoạn thiết kế và lập mô hình
+Câu 140: Công nghệ BIM có thể mang lại những đổi mới gì cho việc thiết kế công trình so với phương 
+pháp truyền thống?
+*A. Tích hợp dữ liệu và mô phỏng thiết kế 3D đồng thời
+B. Chỉ giúp tối ưu hóa chi phí thi công
+C. Chỉ hỗ trợ quản lý bảo trì sau khi công trình hoàn thành
+D. Chỉ tập trung vào việc tạo bản vẽ 2D truyền thống
+Câu 141: Công nghệ BIM có thể mang lại những đổi mới gì cho quá trình thi công công trình so với 
+phương pháp truyền thống?
+A. Tăng số lượng công nhân và thời gian thi công
+*B. Quản lý tiến độ thi công chính xác hơn và giảm thiểu lỗi
+C. Giảm khả năng mô phỏng tiến độ và chi phí thi công
+D. Tăng chi phí xây dựng do yêu cầu công nghệ cao
+Câu 142: Tại sao cần ứng dụng BIM trong thiết kế MEP (Cơ điện và ống nước)?
+A. Để tăng số lượng tài liệu in ấn và giảm thời gian thiết kế.
+B. Để loại bỏ hoàn toàn công việc giám sát công trình.
+*C. Để phát hiện xung đột giữa các hệ thống, tăng tính chính xác và quản lý thông tin hiệu quả.
+D. Để giảm chi phí thiết bị bằng cách sử dụng phần mềm cũ hơn.
+Câu 143: Lợi ích của việc ứng dụng BIM trong thiết kế bền vững là gì?
+*A: Nâng cao hiệu quả sử dụng năng lượng, tối ưu vật liệu, giảm lãng phí và tác động môi trường.
+B: Tăng chi phí xây dựng, kéo dài thời gian thi công, phức tạp hóa quy trình thiết kế.
+C: Giảm khả năng kiểm soát chất lượng công trình, làm tăng lượng khí thải trong quá trình thi công.
+D: Giới hạn khả năng sáng tạo của kiến trúc sư và làm giảm độ linh hoạt trong thiết kế.
+Câu 144: Phần mềm nào dưới đây được sử dụng để thiết kế bền vững trong BIM?
+A: Photoshop
+*B: Autodesk Insight
+C: CorelDRAW
+D: SketchUp Free
+Câu 145: Phần mềm nào dưới đây được sử dụng để quản lý tài nguyên nước trong BIM?
+A: AutoCAD
+B: SketchUp
+*C: Civil 3D
+D: Photoshop
+Câu 146: Phương pháp nào dưới đây được sử dụng để lưu trữ và chia sẻ tài liệu trong BIM?
+A: Gửi email trực tiếp giữa các thành viên
+B: Lưu trữ tài liệu trên USB cá nhân
+C: Chia sẻ qua mạng xã hội không chuyên dụng
+*D: Sử dụng nền tảng đám mây như BIM 360
+Câu 147: Ứng dụng nào của BIM giúp quản lý hiệu suất công trình một cách hiệu quả?
+*A: Theo dõi và phân tích dữ liệu vận hành công trình theo thời gian thực
+B: Chỉ sử dụng để tạo mô hình 3D mà không liên quan đến vận hành
+C: Lưu trữ tài liệu dự án nhưng không hỗ trợ quản lý hiệu suất
+D: Chỉ áp dụng trong giai đoạn thiết kế, không ảnh hưởng đến quá trình vận hành
+Câu 148: Lợi ích nào sau đây là đúng khi sử dụng BIM để quản lý phòng cháy chữa cháy?
+A: BIM chỉ hỗ trợ thiết kế kiến trúc, không liên quan đến PCCC
+*B: Cải thiện khả năng mô phỏng và kiểm tra hệ thống PCCC trước khi thi công
+C: BIM không giúp ích trong việc lập kế hoạch thoát hiểm
+D: Quản lý PCCC trong BIM chỉ cần thiết trong giai đoạn xây dựng, không ảnh hưởng đến vận 
+hành
+Câu 149: Công cụ nào sau đây được sử dụng để phân tích năng lượng trong BIM?
+A: SketchUp
+B: AutoCAD
+*C: Autodesk Insight
+D: Photoshop
+Câu 150: Công cụ nào sau đây được sử dụng để phân tích hiệu suất ánh sáng tự nhiên trong BIM?
+A: SketchUp
+B: AutoCAD
+C: 3ds Max
+*D: DIALux
+Câu 151: Ứng dụng nào sau đây là một trong những ứng dụng của BIM trong thi công?
+A: Mô phỏng tiến độ và quản lý xây dựng
+*B: Thiết kế thời trang bằng công nghệ số
+C: Dự báo xu hướng bất động sản
+D: Quản lý tài chính cá nhân
+Câu 152: Lợi ích nào sau đây là một trong những lợi ích của việc quản lý khối lượng bằng 
+BIM?
+A: Giúp tạo ra các mô hình kiến trúc mang tính nghệ thuật cao
+*B: Tự động tính toán và cập nhật khối lượng chính xác theo thiết kế thay đổi
+C: Hỗ trợ thiết kế logo và nhận diện thương hiệu
+D: Cải thiện khả năng lập trình phần mềm quản lý tòa nhà
+Câu 153: Hướng phát triển nào sau đây được coi là xu hướng của BIM trong tương lai?
+A: Giảm bớt tính năng mô phỏng và phân tích để đơn giản hóa quy trình thiết kế
+B: Loại bỏ việc tích hợp với công nghệ thực tế ảo và trí tuệ nhân tạo
+*C: Phát triển BIM theo hướng tích hợp AI, IoT và thực tế ảo để tối ưu hóa quy trình xây dựng
+D: Giới hạn BIM chỉ trong giai đoạn thiết kế, không mở rộng sang quản lý vận hành
+Câu 154: BIMchain được định nghĩa đúng nhất là gì?
+A: Một phần mềm thiết kế 3D đơn thuần trong BIM
+B: Một hệ thống quản lý tài liệu BIM truyền thống không có công nghệ blockchain
+C: Một công cụ lập lịch thi công không liên quan đến BIM
+*D: Một nền tảng sử dụng công nghệ blockchain để đảm bảo tính minh bạch và bảo mật trong quản 
+lý dữ liệu BIM
+Câu 155: Lợi ích chính của việc ứng dụng thực tế ảo (VR) và thực tế tăng cường (AR) trong 
+BIM là gì?
+A: Giúp giảm chi phí vật liệu xây dựng bằng cách tối ưu hóa kết cấu bê tông
+B: Tăng tốc độ dựng mô hình 3D trong phần mềm CAD truyền thống
+*C: Cải thiện trực quan hóa, hỗ trợ kiểm tra thiết kế và nâng cao trải nghiệm tương tác với mô hình 
+công trình
+D: Thay thế hoàn toàn bản vẽ kỹ thuật và mô hình BIM truyền thống
+Câu 156: Lợi ích của việc ứng dụng BIM trong thiết kế là gì?
+A: Giảm chất lượng bản vẽ nhưng tăng tốc độ triển khai dự án
+B: Loại bỏ hoàn toàn nhu cầu điều phối giữa các bộ môn thiết kế
+C: Chỉ hỗ trợ trong giai đoạn thi công, không ảnh hưởng đến thiết kế
+*D: Cải thiện tính chính xác, giảm sai sót, nâng cao hiệu quả phối hợp và tối ưu hóa quy trình thiết 
+kế
+Câu 157: Ứng dụng thực tế nào sau đây của BIM trong thiết kế là đúng?
+A: Chỉnh sửa hình ảnh và tạo hiệu ứng đồ họa 2D
+*B: Mô phỏng không gian, kiểm tra va chạm, tối ưu hóa thiết kế
+C: Lập bảng tính tài chính cho doanh nghiệp phi xây dựng
+D: Quản lý email và tài liệu văn phòng
+Câu 158: Ứng dụng nào sau đây của BIM trong lập kế hoạch và thi công là chính xác nhất?
+A: BIM giúp tạo hình ảnh minh họa 2D cho các báo cáo dự án
+*B: BIM chỉ hỗ trợ thiết kế kiến trúc mà không liên quan đến thi công
+C: BIM hỗ trợ lập kế hoạch chi tiết, kiểm soát tiến độ, tối ưu hóa nhân lực và tài nguyên
+D: BIM chỉ có chức năng lưu trữ hồ sơ công trình mà không hỗ trợ thi công
+Câu 159: BIM hỗ trợ quản lý và kiểm soát chất lượng trong thi công bằng cách nào?
+A: Chỉ sử dụng để tạo bản vẽ kiến trúc mà không liên quan đến chất lượng thi công
+B: Chỉ giúp theo dõi tiến độ mà không kiểm tra sai sót kỹ thuật
+C: Chỉ hỗ trợ quản lý tài liệu nhưng không liên quan đến giám sát công trình
+*D: Phát hiện xung đột sớm, mô phỏng tiến độ, quản lý tài liệu, giám sát và kiểm tra chất lượng từ xa
+Câu 160: BIM hỗ trợ quản lý khối lượng và lập dự toán bằng cách nào?
+*A: Tự động trích xuất khối lượng từ mô hình 3D, liên kết với dự toán và cập nhật thay đổi theo thời 
+gian thực
+B: Chỉ dùng để vẽ mô hình mà không hỗ trợ tính toán khối lượng
+C: Chỉ giúp lưu trữ tài liệu mà không ảnh hưởng đến dự toán
+D: Chỉ hỗ trợ thiết kế kiến trúc mà không có tính năng liên kết với chi phí

@@ -1,0 +1,291 @@
+Câu 51: Trong giai đoạn vận hành của BIM, các yếu tố nào sau đây là quan trọng nhất để đảm bảo 
+công trình hoạt động hiệu quả?
+A. Chỉ cần hoàn thành công trình mà không quan tâm đến giám sát.
+*B. Đưa công trình vào sử dụng đúng cách và giám sát hoạt động của các hệ thống kỹ thuật để đạt hiệu suất 
+tối ưu.
+C. Tập trung vào thiết kế mà không cần theo dõi sau khi hoàn thành.
+D. Không cần quan tâm đến hệ thống kỹ thuật trong quá trình vận hành.
+Câu 52: Trong quá trình hỗ trợ công tác sửa chữa bảo dưỡng, BIM cung cấp những lợi ích gì cho việc 
+bảo trì định kỳ và sửa chữa công trình?
+A. Chỉ cung cấp thông tin về thiết kế ban đầu mà không cập nhật dữ liệu mới.
+B. Tạo ra các mô hình 3D mà không liên quan đến hệ thống kỹ thuật của công trình.
+*C. Giúp theo dõi và quản lý lịch trình bảo trì, đồng thời khắc phục vấn đề kỹ thuật phát sinh."
+D. Không hỗ trợ trong việc theo dõi hiệu suất của các hệ thống kỹ thuật.
+Câu 53:BIM hỗ trợ trong giai đoạn phá hủy công trình như thế nào để đảm bảo an toàn và hiệu quả?
+A. Chỉ giúp lập kế hoạch phá hủy mà không liên quan đến việc tái chế vật liệu.
+B. Không cung cấp thông tin về các vật liệu có thể tái chế trong quá trình phá hủy.
+C. Giúp phân tích các rủi ro liên quan đến phá hủy mà không lập kế hoạch cụ thể.
+*D. Hỗ trợ lập kế hoạch phá dỡ an toàn và thu hồi vật liệu tái chế để giảm thiểu tác động môi trường.
+Câu 54: Thông tin hình học trong mô hình BIM bao gồm những yếu tố nào?
+*A. Hình dáng, kích thước, vị trí và mối quan hệ không gian của các thành phần."
+B. Thông tin về tiến độ dự án và chi phí.
+C. Dữ liệu về vật liệu và yêu cầu bảo trì.
+D. Phân tích hiệu quả năng lượng và môi trường.
+Câu 55: Thông tin phi hình học trong mô hình BIM bao gồm những yếu tố nào?
+A. Kích thước, hình dáng, và vị trí không gian của các thành phần.
+*B. Các thông số về vật liệu, giá thành, và thời gian thi công.
+C. Mô hình 3D của cấu trúc thép và vị trí cửa sổ.
+D. Độ bền và khả năng chịu lực của kết cấu.
+Câu 56 :Thông tin về quy trình trong mô hình BIM bao gồm những yếu tố nào?
+A. Kích thước và hình dạng của các thành phần kiến trúc.
+B. Loại vật liệu và hệ số cách nhiệt của các bộ phận công trình.
+*C. Lịch trình thi công, kế hoạch bảo trì, và thời gian hoàn thành các giai đoạn xây dựng."
+D. Độ bền và khả năng chịu lực của cấu trúc công trình.
+Câu 57:
+Thông tin tài liệu trong mô hình BIM bao gồm những yếu tố nào?
+A. Kích thước và hình dạng của các thành phần trong mô hình.
+B. Loại vật liệu và chi phí xây dựng từng phần công trình.
+C. Lịch trình thi công và thời gian hoàn thành dự án.
+*D. Hợp đồng xây dựng, giấy phép xây dựng, và báo cáo kiểm tra chất lượng.
+Câu 58:
+Thông tin quản lý dự án trong BIM bao gồm những yếu tố nào?
+*A. Ngân sách dự án, danh sách nhà thầu, và phân bổ nhân lực.
+B. Kích thước và hình dạng các đối tượng kiến trúc.
+C. Loại vật liệu sử dụng trong quá trình xây dựng.
+D. Lịch trình thi công và thời gian hoàn thành.
+Câu 59: Dữ liệu BIM về hiệu suất công trình cung cấp những thông tin nào sau đây?
+A. Kích thước và hình dạng của các đối tượng xây dựng.
+*B. Mức tiêu thụ năng lượng, tuổi thọ thiết bị và khả năng chịu lực của cấu trúc.
+C. Lịch trình thi công và thời gian hoàn thành.
+D. Hợp đồng và giấy phép xây dựng.
+Câu 60:Dữ liệu phân tích trong BIM thường được sử dụng để thực hiện những loại phân tích nào sau 
+đây?
+A. Phân tích chi phí dự án và quản lý tài chính.
+B. Phân tích thiết kế nội thất và phối cảnh.
+*C. Phân tích kết cấu, môi trường và năng lượng của công trình.
+D. Phân tích pháp lý và hợp đồng xây dựng.
+Câu 61:Dữ liệu liên quan đến vòng đời công trình trong BIM bao gồm thông tin nào sau đây?
+A. Chỉ các chi phí xây dựng ban đầu của dự án.
+B. Kế hoạch thi công và tiến độ xây dựng.
+C. Thông tin về lựa chọn vật liệu và thiết kế nội thất.
+*D. Thông tin từ thiết kế, xây dựng, vận hành, bảo trì đến khi phá dỡ công trình."
+Câu 62: Định dạng BIM đuôi .IFC (Industry Foundation Classes) có mục đích chính là gì?
+*A. Tạo điều kiện trao đổi thông tin giữa các phần mềm BIM khác nhau.
+B. Giảm dung lượng tệp của các mô hình BIM.
+C. Tăng cường khả năng hiển thị của mô hình 3D.
+D. Tích hợp hình ảnh và video vào mô hình BIM.
+Câu 63: Định dạng tệp .RVT (Revit Project File) có mục đích chính là gì?
+A. Tạo tệp hình ảnh cho mô hình 3D.
+*B. Lưu trữ thông tin mô hình BIM bao gồm cả hình học và phi hình học.
+C. Chuyển đổi mô hình BIM sang định dạng khác.
+D. Tích hợp video và hình ảnh vào mô hình BIM.
+Câu 64: Định dạng tệp .DWG (Drawing File) chủ yếu được sử dụng cho mục đích gì trong môi trường 
+BIM?
+A. Lưu trữ thông tin mô hình 3D chỉ.
+B. Tạo tài liệu kỹ thuật cho dự án.
+*C. Hỗ trợ trao đổi dữ liệu đồ họa 2D/3D giữa các phần mềm CAD.
+D. Phát triển các ứng dụng phần mềm mới.
+Câu 65: Định dạng tệp .DXF (Drawing Exchange Format) chủ yếu được sử dụng cho mục đích gì 
+trong ngành xây dựng?
+A. Lưu trữ mô hình 3D chi tiết của công trình.
+B. Tạo báo cáo kỹ thuật cho dự án xây dựng.
+C. Chỉ sử dụng trong phần mềm AutoCAD.
+*D. Trao đổi dữ liệu thiết kế giữa các phần mềm CAD và BIM khác nhau.
+Câu 66: Định dạng tệp Navisworks (NWD, NWC) chủ yếu được sử dụng cho mục đích gì trong quản 
+lý dự án xây dựng?
+*A. Phối hợp và kiểm tra xung đột giữa các mô hình 3D.
+B. Lưu trữ thông tin thiết kế chi tiết cho từng bộ phận.
+C. Phân tích hiệu suất năng lượng của công trình.
+D. Tạo tài liệu pháp lý và hợp đồng cho dự án.
+Câu 67: Phương pháp mô hình hóa BIM theo phương pháp Bottom-up có đặc điểm gì nổi bật trong 
+quá trình xây dựng mô hình?
+A. Mô hình tổng thể được xây dựng trước, sau đó chi tiết hóa các thành phần.
+*B. Các thành phần riêng lẻ được mô hình hóa trước và lắp ráp thành mô hình tổng thể.
+C. Tập trung vào việc giảm thiểu chi phí và thời gian xây dựng.
+D. Sử dụng công nghệ 3D để tạo ra hình ảnh tổng quan cho dự án.
+Câu 68: Phương pháp mô hình hóa BIM theo phương pháp Top-down có đặc điểm gì nổi bật trong 
+quá trình xây dựng mô hình?
+A. Mô hình chi tiết được tạo ra trước và sau đó lắp ráp thành mô hình tổng thể.
+B. Chỉ tập trung vào các chi tiết nhỏ và bỏ qua tổng thể.
+*C. Bắt đầu với mô hình tổng thể, sau đó thêm chi tiết nhỏ hơn vào từng bước."
+D. Chủ yếu sử dụng cho các dự án nhỏ với ít bộ phận khác nhau.
+Câu 69: Phương pháp mô hình hóa BIM theo Phương pháp Phân lớp có ưu điểm nào nổi bật trong 
+việc quản lý các thành phần của công trình?
+A. Tạo ra một mô hình tổng thể mà không cần chia thành các lớp.
+B. Tăng cường xung đột giữa các hệ thống khác nhau trong công trình.
+C. Giảm thiểu yêu cầu hợp tác giữa các nhóm kỹ sư.
+*D. Dễ dàng phối hợp giữa các bộ phận, giảm thiểu xung đột giữa các hệ thống khác nhau.
+Câu 70:Phương pháp mô hình hóa BIM theo Phương pháp Mô hình hóa tham số (Parametric 
+Modeling) có ưu điểm chính nào trong việc quản lý thiết kế?
+*A. Dễ dàng thay đổi thiết kế, tăng tính linh hoạt và tối ưu hóa mô hình.
+B. Cần thực hiện nhiều thay đổi thủ công khi điều chỉnh một phần của mô hình.
+C. Chỉ sử dụng cho các dự án có yêu cầu thiết kế đơn giản.
+D. Tăng cường độ phức tạp của mô hình mà không cải thiện hiệu suất.
+Câu 71: Dynamo cho Revit là công cụ gì và có chức năng chính nào trong việc hỗ trợ quy trình thiết 
+kế?
+A. Một công cụ lập trình truyền thống giúp tạo ra mô hình 3D.
+*B. Một công cụ lập trình dạng ""visual scripting"" giúp tự động hóa các tác vụ phức tạp trong Revit.
+C. Một ứng dụng độc lập không liên quan đến Revit.
+D. Một phần mềm CAD chuyên dụng cho việc tạo hình ảnh 2D.
+A. Chỉ hỗ trợ trong việc tạo lập hình học 2D đơn giản. 
+Câu 72:
+lý dữ liệu?
+Dynamo có những ứng dụng gì trong Revit giúp tối ưu hóa quy trình thiết kế và quản 
+A. Hỗ trợ trong việc tạo lập hình học 2D đơn giản
+B. Chỉ được sử dụng để tự động hóa tác vụ lặp lại đơn giản.
+*C. Cho phép thiết kế tham số, tạo lập hình học phức tạp, tự động hóa tác vụ và quản lý dữ liệu BIM."
+D. Không có ứng dụng nào liên quan đến phân tích và tối ưu hóa thiết kế.
+Câu 73: Quy tắc nào là quan trọng trong việc tổ chức và phân cấp mô hình BIM để đảm bảo hiệu quả 
+quản lý và truy xuất dữ liệu?
+A. Tổ chức mô hình theo cách ngẫu nhiên để linh hoạt hơn.
+B. Chỉ tạo một tệp tin lớn duy nhất cho toàn bộ mô hình.
+C. Không cần phân quyền truy cập cho từng nhóm người dùng.
+*D. Phân cấp mô hình rõ ràng, cấu trúc tệp tin logic và phân quyền truy cập theo vai trò.
+Câu 74: Quy tắc nào sau đây là thiết yếu trong quản lý dữ liệu trong mô hình BIM để đảm bảo tính 
+nhất quán và hiệu quả?
+*A. Đặt tên nhất quán cho các đối tượng, hệ thống và tầng lớp trong mô hình.
+B. Tạo thẻ thông tin không cần thiết cho các thành phần trong mô hình.
+C. Không cần tích hợp dữ liệu từ các mô hình và phần mềm khác.
+D. Sử dụng tên ngẫu nhiên cho các lớp và thuộc tính đối tượng.
+Câu 75: Trong quy tắc về chi tiết và độ phân giải (LOD - Level of Detail) trong mô hình BIM, việc xác 
+định cấp độ chi tiết phù hợp rất quan trọng. Cấp độ nào trong LOD thường được sử dụng cho thiết kế 
+sơ bộ?
+A. LOD 100
+*B. LOD 200
+C. LOD 300
+D. LOD 400
+Câu 76: Trong quy tắc về quản lý xung đột (Clash Detection) trong mô hình BIM, việc kiểm tra xung đột 
+định kỳ giữa các hệ thống là rất quan trọng. Mục tiêu của việc này là gì?
+A. Tăng cường tính năng của mô hình
+B. Đảm bảo thiết kế đạt yêu cầu
+*C. Phát hiện và xử lý sớm các vấn đề trước thi công
+D. Giảm chi phí xây dựng
+Câu 77: Trong quy tắc về hợp tác và phối hợp (Collaboration) trong mô hình BIM, vai trò của Mô 
+hình chung (Common Data Environment - CDE) là gì?
+A. Tăng cường tính sáng tạo trong thiết kế
+B. Giảm thiểu thời gian thiết kế
+C. Cung cấp phần mềm cho các bên liên quan
+*D. Lưu trữ và chia sẻ mô hình để cập nhật đồng bộ
+Câu 78: Trong quy tắc về hiệu suất mô hình BIM, tại sao việc tối ưu hóa dung lượng mô hình là cần 
+thiết?
+*A. Để tránh làm chậm hệ thống và đảm bảo hiệu suất làm việc
+B. Để tạo ra mô hình có độ chi tiết cao hơn
+C. Để tăng cường khả năng trình bày hình ảnh
+D. Để mở rộng khả năng tương tác với phần mềm khác
+Câu 79:
+Trong quy tắc về tính tương thích và chuyển đổi dữ liệu trong mô hình BIM, điều gì là 
+quan trọng nhất khi chuyển đổi dữ liệu giữa các phần mềm khác nhau?
+A. Chọn định dạng tệp tin có kích thước nhỏ
+*B. Đảm bảo không có mất mát thông tin quan trọng
+C. Thay đổi tên các thuộc tính dữ liệu
+D. Tăng cường chi tiết của mô hình
+Câu 80: Trong quy tắc về lưu trữ và sao lưu mô hình BIM, điều gì là cần thiết để tránh mất dữ liệu và 
+quản lý phiên bản hiệu quả?
+A. Lưu trữ dữ liệu chỉ trên máy tính cá nhân
+B. Không cần sao lưu thường xuyên vì dữ liệu an toàn
+C. Theo dõi các phiên bản mà không cần ghi lại
+*D. Lưu trữ mô hình và tệp liên quan an toàn với sao lưu thường xuyên và quản lý phiên bản
+Câu 81: Trong quy tắc về bảo mật và quyền riêng tư liên quan đến mô hình BIM, điều gì là cần thiết để bảo 
+vệ thông tin nhạy cảm của dự án?
+A. Chia sẻ tất cả thông tin với mọi bên liên quan
+B. Sử dụng định dạng tệp tin mở cho dễ dàng truy cập
+*C. Bảo vệ tệp tin BIM bằng mã hóa và kiểm soát truy cập
+D. Đảm bảo tất cả dữ liệu đều công khai
+Câu 82: Quy tắc nào là quan trọng nhất để đảm bảo tính pháp lý và quy chuẩn xây dựng trong mô 
+hình BIM?
+*A. Mô hình BIM phải tuân thủ các quy định pháp lý và quy chuẩn xây dựng trong từng giai đoạn của dự án.
+B. Không cần phải kiểm tra chất lượng mô hình BIM.
+C. Mô hình BIM có thể không cần tuân thủ tiêu chuẩn ngành.
+D. Không cần chứng nhận trước khi triển khai mô hình BIM.
+Câu 83: Quy tắc nào là quan trọng nhất trong quản lý thông tin liên quan đến mô hình BIM?
+A. Thông tin có thể không cần chính xác miễn là dễ truy cập.
+*B. Mọi thông tin phải đầy đủ, chính xác và nhất quán về các đối tượng trong mô hình BIM."
+C. Cấu trúc thông tin không cần phải logic.
+D. Không cần tổ chức thông tin theo các tiêu chí phân loại.
+Câu 84: Quy tắc nào là quan trọng trong việc đặt tên thuộc tính trong mô hình BIM?
+A. Tên thuộc tính có thể không cần thống nhất.
+B. Định dạng tên thuộc tính không quan trọng.
+*C. Tên của các thuộc tính và thông tin cần được đặt một cách thống nhất để tránh nhầm lẫn.
+D. Tên thuộc tính có thể được đặt tự do mà không cần quy định.
+Câu 85: Trong quản lý metadata của mô hình BIM, điều gì là yêu cầu quan trọng nhất?
+A. Metadata có thể không cần thiết cho các đối tượng trong mô hình.
+B. Metadata chỉ cần cập nhật một lần trong suốt dự án.
+C. Metadata không cần bao gồm thông tin về trạng thái sử dụng.
+*D. Mọi đối tượng trong mô hình BIM đều phải có metadata đầy đủ và được cập nhật khi có thay đổi.
+Câu 86: Tại sao việc chuẩn hóa thông tin trong mô hình BIM lại quan trọng?
+*A. Để đảm bảo khả năng tương thích và tương tác giữa các hệ thống khác nhau.
+B. Để giảm thiểu khối lượng dữ liệu trong mô hình.
+C. Để tạo ra nhiều phiên bản khác nhau của cùng một thông tin.
+D. Để hạn chế sự thay đổi thông tin trong suốt quá trình dự án.
+Câu 87: Tại sao việc liên kết thông tin giữa các bộ môn trong mô hình BIM là cần thiết?
+A. Để giảm thiểu thời gian làm việc của từng bộ môn.
+*B. Để đảm bảo tính đồng bộ và khả năng phối hợp giữa các bộ môn khác nhau.
+C. Để hạn chế việc sử dụng phần mềm BIM.
+D. Để đơn giản hóa quy trình thiết kế.
+Câu 88: Tại sao phân quyền truy cập thông tin trong mô hình BIM là một quy tắc quan trọng?
+A. Để tăng tốc độ xử lý thông tin trong mô hình.
+B. Để giảm thiểu số lượng người sử dụng phần mềm BIM.
+*C. Để bảo vệ thông tin quan trọng và chỉ cho phép những người có thẩm quyền thay đổi thuộc tính.
+D. Để tạo điều kiện thuận lợi cho việc thiết kế.
+Câu 89: Tại sao việc kiểm tra và xác thực thông tin trong mô hình BIM lại quan trọng?
+A. Để tăng tốc độ hoàn thành dự án.
+B. Để giảm thiểu chi phí xây dựng.
+C. Để thu hút thêm nhiều nhà thầu tham gia.
+*D. Để đảm bảo tính chính xác và nhất quán của thông tin, giúp phát hiện các vấn đề kịp thời.
+Câu 90: Tại sao việc cập nhật và lưu trữ thông tin trong mô hình BIM là cần thiết?
+A. Để tiết kiệm thời gian và chi phí.
+B. Để giảm thiểu số lượng nhân viên tham gia dự án.
+*C. Để đảm bảo tính chính xác và đồng bộ của thông tin trong thời gian thực, cũng như lưu trữ thông tin cho 
+vòng đời dự án.
+D. Để tăng cường khả năng cạnh tranh của dự án.
+Câu 91: Tại sao việc tích hợp thông tin từ nhiều nguồn trong mô hình BIM là quan trọng?
+A. Để giảm thiểu chi phí và thời gian cho dự án.
+B. Để nâng cao tính thẩm mỹ của mô hình.
+C. Để hạn chế số lượng phần mềm cần sử dụng trong dự án.
+*D. Để cung cấp cái nhìn toàn diện cho dự án bằng cách tích hợp dữ liệu địa lý, môi trường, và kinh tế."
+Câu 92: Tại sao thông tin trong mô hình BIM cần có tính pháp lý?
+*A. Để đảm bảo rằng thông tin có thể được sử dụng làm cơ sở pháp lý trong giao dịch, hợp đồng hoặc tranh 
+chấp.
+B. Để nâng cao hiệu suất làm việc của các phần mềm BIM.
+C. Để giảm thiểu chi phí cho dự án.
+D. Để tăng tính thẩm mỹ và sự hấp dẫn của mô hình.
+Câu 93:
+BIM?
+Lưu trữ tập trung trên đám mây có những ưu điểm gì trong việc quản lý thông tin 
+A. Giảm chi phí cho phần mềm thiết kế.
+*B. Tính linh hoạt cao, cho phép truy cập từ nhiều địa điểm và cộng tác thời gian thực.
+C. Không cần kết nối internet để sử dụng.
+D. Cải thiện chất lượng của mô hình BIM.
+Câu 94:
+tin BIM?
+Lưu trữ cục bộ trên máy chủ nội bộ mang lại những lợi ích gì cho việc quản lý thông 
+A. Chi phí đầu tư ban đầu lớn nhưng dễ dàng mở rộng.
+B. Tính linh hoạt cao và dễ dàng chia sẻ dữ liệu qua internet.
+*C. Bảo mật nội bộ và không phụ thuộc vào kết nối internet.
+D. Dễ dàng truy cập từ nhiều vị trí địa lý khác nhau.
+Câu 95:
+Lưu trữ phân tán là phương pháp kết hợp giữa lưu trữ cục bộ và lưu trữ trên đám 
+mây. Một trong những ưu điểm của phương pháp này là gì?
+A. Chi phí duy trì thấp và dễ dàng quản lý.
+B. Tốc độ truy cập chậm do nhiều hệ thống.
+C. Dữ liệu luôn được lưu trữ tại một vị trí duy nhất.
+*D. Tối ưu hóa hiệu suất và đảm bảo an toàn dữ liệu.
+Câu 96: Lưu trữ ngoại tuyến (Offline Storage) là phương pháp lưu trữ thông tin BIM trên các thiết bị 
+nào?
+A. Các máy chủ nội bộ trong mạng doanh nghiệp.
+B. Các nền tảng lưu trữ đám mây.
+C. Các hệ thống lưu trữ phân tán.
+*D. Các thiết bị lưu trữ ngoại tuyến như ổ cứng di động và ổ SSD.
+Câu 97: Hệ thống lưu trữ tài liệu điện tử (EDMS) giúp gì trong việc quản lý tài liệu BIM?
+*A. Quản lý tài liệu hiệu quả và tích hợp với các phần mềm BIM.
+B. Lưu trữ tài liệu trên các thiết bị lưu trữ ngoại tuyến.
+C. Cung cấp không gian lưu trữ vô hạn cho mọi tài liệu.
+D. Giảm thiểu chi phí sử dụng tài liệu cho dự án.
+Câu 98:
+Lợi ích chính của việc áp dụng công nghệ blockchain trong lưu trữ thông tin BIM là gì?
+A. Giảm thiểu chi phí vận hành trong quản lý dữ liệu.
+*B. Bảo mật cao và khả năng theo dõi lịch sử thay đổi.
+C. Tăng khả năng lưu trữ và xử lý dữ liệu lớn.
+D. Đơn giản hóa quy trình quản lý thông tin.
+Câu 99: Một trong những ưu điểm chính của việc sử dụng lưu trữ theo tiêu chuẩn mở trong BIM là 
+gì?
+A. Đảm bảo tính bảo mật cao hơn cho dữ liệu.
+B. Giảm thiểu chi phí lưu trữ dữ liệu.
+*C. Tính linh hoạt và khả năng tương thích giữa các phần mềm.
+D. Cung cấp các tính năng đặc thù của phần mềm.
+Câu 100: Mức độ phát triển thông tin (LOD) trong mô hình BIM được sử dụng để chỉ điều gì trong quá trình 
+đầu tư xây dựng?
+A. Chi phí và thời gian hoàn thành dự án.
+B. Khả năng hợp tác giữa các bên liên quan.
+C. Độ bền và hiệu suất của vật liệu xây dựng.
+*D. Chất lượng, số lượng và mức độ chi tiết của thông tin trong mô hình.

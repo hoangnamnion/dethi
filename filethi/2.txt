@@ -1,0 +1,221 @@
+Câu 36.
+Vật liệu hút âm xốp loại có thành lỗ cứng thường bao gồm.
+A. Bông khoáng, bông thủy tinh, thảm sợi mềm
+B. Bê tông bọt, gạch xốp
+C. Cao su xốp, nỉ ép, vải dệt
+D. Thảm trải sàn và rèm vải
+
+Câu 37.
+Một âm có cường độ I = 10-4 W/m2. Biết mức cường độ âm được tính theo công thức.
+L_I=10log(I/I_0 )  (dB),   I0 = 10-12 W/m2
+Mức cường độ âm LI là.
+A. 40 dB
+B. 60 dB
+C. 80 dB
+D. 100 dB
+Câu 38.
+Ưu điểm nổi bật của kết cấu dao động cộng hưởng hút âm là gì?
+A. Chỉ hút âm ở tần số cao
+B. Cấu tạo phức tạp, khó bảo trì
+C. Đơn giản, chịu được va đập, dễ làm sạch và có thể trang trí bề mặt
+D. Hấp thụ âm đều ở mọi dải tần
+Câu 39.
+Trong công thức xác định khả năng cách âm thực nghiệm R = L1 – L2 – 10 log (A/S); đại lượng A thể hiện điều gì?
+A. Mức ồn trong phòng có nguồn ồn (dB)
+B. Diện tích kết cấu khảo sát (m2)
+C. Lượng hút âm trong phòng cách âm (m2)
+D. Mức ồn trong phòng cách âm (dB)
+
+Câu 40.
+Trong ba phạm vi tần số cách âm của kết cấu một lớp đồng nhất, phạm vi nào tuân theo định luật khối lượng?
+A. Phạm vi tần số 1
+B. Phạm vi tần số 2 
+C. Phạm vi tần số 3
+D. Cả 3 phạm vi
+Câu 41. Biện pháp nào dưới đây không phải là nguyên tắc giảm truyền âm va chạm cho sàn?
+A. Cắt rời kết cấu hoặc đưa lớp đàn hồi vào giữa
+B. Sử dụng vật liệu mềm, đàn hồi đặt trên bề mặt
+C. Dùng lớp gỗ mỏng tăng khối lượng sàn
+D. Trải thảm len hoặc thảm sợi thực vật
+
+Câu 42. Trần treo có tác dụng gì trong việc giảm truyền âm?
+A. Giảm được cả tiếng ồn trực tiếp và va chạm sang phòng bên cạnh
+B. Chỉ giảm tiếng ồn truyền trực tiếp từ tầng trên xuống phòng dưới
+C. Giảm tốt tiếng ồn va chạm, nhưng không giảm tiếng nói
+D. Hoàn toàn triệt tiêu được cả tiếng ồn và va chạm
+
+Câu 43.  Tần số cộng hưởng của hệ thống hai tấm có khối lượng m1, m2 và khe không khí d được xác định bởi công thức. [IMG:/anhthi/cau43.png]
+A. f_ch=600√((1/m1 +1/m2 ).1/d)
+B. f_ch=840√((1/m1 +1/m2 ).1/d)
+C. f_ch=600 (m1+m2)/d
+D. f_ch=840 (m1+m2)/d
+
+
+
+
+Chương 5.
+Câu 44. Quang thông (ký hiệu F) là gì?
+A. Công suất điện tiêu thụ của nguồn sáng
+B. Đại lượng đánh giá công suất bức xạ ánh sáng phát ra có hiệu chỉnh độ nhạy phổ của mắt người
+C. Tỷ số giữa quang thông và diện tích bề mặt được chiếu sáng
+D. Đại lượng đặc trưng cho sự chói lóa của nguồn sáng
+Câu 45. Góc khối (Ω) được tính theo công thức nào? Với S là diện tích bề mặt cong (m2); R là bán kính mặt cầu quan sát (m).
+A. Ω = S/R
+B. Ω = S/R²
+C. Ω = R²/S
+D. Ω = S × R
+Câu 46. Một nguồn sáng phát ra quang thông dF tới diện tích dS dưới góc khối dΩ. Cường độ sáng I được xác định theo công thức nào?
+A. I = dF/dS
+B. I = dΩ/dF
+C. I = dF/dΩ
+D. I = dS/dF
+Câu 47.
+Ánh sáng trực xạ của mặt trời không được sử dụng làm nguồn sáng chính trong nội thất vì lý do nào?
+A. Độ rọi nhỏ, không đủ sáng.
+B. Dễ gây hiện tượng lóa và làm tăng nhiệt độ. 
+C. Ánh sáng có màu không phù hợp.
+D. Tốn nhiều chi phí để khai thác.
+Câu 48.
+Hệ số độ rọi tự nhiên tại điểm M trong nhà được tính theo công thức nào? Với EM là độ rọi ánh sáng tự nhiên tại điểm M (bên trong) đơn vị là lux (lx); Với En là độ rọi nằm ngang ngoài nhà tại cùng thời điểm khảo sát, do ánh sáng khuếch tán của bầu trời gây ra, đơn vị là lux (lx);
+A. eM = (EM/En) x 100%
+B. eM = (En/EM) x 100%
+C. eM = (EM + En)/100
+D. eM = (EM – En)/100
+
+Câu 49.
+Độ rọi tự nhiên tại một điểm M trong phòng bao gồm ba thành phần chính.
+A. Ánh sáng trực tiếp từ mặt trời, ánh sáng phản xạ từ mặt đất, ánh sáng từ đèn.
+B. Độ rọi do bầu trời, độ rọi do phản xạ từ các bề mặt công trình xung quanh, độ rọi do phản xạ từ các bề mặt trong nhà. 
+C. Độ rọi từ cửa sổ, độ rọi từ mái nhà, độ rọi từ sàn nhà.
+D. Độ rọi gián tiếp, độ rọi khuếch tán, độ rọi tổng hợp.
+Câu 50.
+Nhóm công trình nào yêu cầu chiếu sáng tự nhiên phải nhấn mạnh ý đồ tư tưởng nghệ thuật tại không gian chính?
+A. Nhà an dưỡng, nhà trẻ, mẫu giáo
+B. Nhà thờ, đền đài, lăng tẩm, tòa án
+C. Trường phổ thông, đại học
+D. Nhà văn phòng, làm việc
+
+Câu 51.
+Trong nhóm công trình bảo tàng, triển lãm, biểu diễn thể thao, ánh sáng tự nhiên thường được dùng nhằm mục đích gì?
+A. Tạo cảm giác ấm áp và nghỉ ngơi
+B. Tạo ảo giác không gian rộng lớn, nhấn mạnh hiện vật trưng bày
+C. Giảm chi phí chiếu sáng nhân tạo
+D. Đảm bảo sự đồng đều ánh sáng tuyệt đối
+
+Câu 52.
+Đối với nhóm công trình nhà ở, nhà nghỉ, nhà an dưỡng, nhà trẻ, yêu cầu chính về chiếu sáng tự nhiên là gì?
+A. Độ rọi lớn và đồng đều tuyệt đối
+B. Chú trọng chiếu sáng tạo hiệu ứng thẩm mỹ
+C. Có ánh nắng chiếu vào phòng vào những giờ nhất định, kết hợp thiết bị che nắng hiệu quả
+D. Chỉ cần chiếu sáng gián tiếp từ bề mặt phản xạ
+Câu 53.
+Trong các kiểu chiếu sáng, “chiếu sáng gián tiếp” được định nghĩa như thế nào?
+A. Trên 90% quang thông chiếu xuống mặt làm việc.
+B. 40 – 60% quang thông chiếu xuống phía dưới.
+C. 10 – 40% quang thông chiếu xuống phía dưới.
+D. Trên 90% quang thông chiếu lên phía trần, phản xạ lại. 
+
+Chương 6. Che nắng
+Câu 54.
+Kết cấu che nắng trong kiến trúc được chia thành mấy loại chính?
+A. 2 loại. ngang và đứng
+B. 3 loại. ngang, đứng, hỗn hợp
+C. 4 loại. ngang, đứng, xiên, hỗn hợp
+D. 5 loại. ngang, đứng, cong, xiên, hỗn hợp
+Câu 55.
+Trong kết cấu che nắng ngang (ô văng), vùng che nắng được xác định bởi.
+A. Góc β của mặt phẳng đứng
+B. Góc α giữa mặt phẳng nghiêng và phương ngang
+C. Đường chân trời song song với cửa sổ
+D. Hướng gió chính trong mùa hè
+Câu 56.
+Hiệu quả che nắng của kết cấu ngang càng tăng khi.
+A. Góc α càng nhỏ, chiều rộng ô văng càng lớn
+B. Góc α càng lớn, chiều rộng ô văng càng nhỏ
+C. Ô văng càng mỏng, góc α càng nhỏ
+D. Ô văng càng dài, góc α càng gần 90°
+Câu 57 .
+Khi đánh giá hiệu quả che nắng của kết cấu thẳng đứng, yếu tố nào quan trọng nhất?
+A. Màu sơn cửa sổ
+B. Góc β giữa mặt phẳng đứng chứa cửa sổ và mặt phẳng che nắng
+C. Kích thước khung cửa
+D. Hình thức mái nhà
+Câu 58.
+Phát biểu nào sau đây sai về yêu cầu che nắng trong kiến trúc khí hậu?
+A. Giúp giảm tải cho hệ thống điều hòa không khí
+B. Loại bỏ hoàn toàn ánh sáng tự nhiên để tránh nóng
+C. Giảm chói lóa, tăng tiện nghi thị giác
+D. Bảo vệ chất lượng và độ bền của vật liệu, đồ đạc trong phòng
+
+Chương 7.
+Câu 59.
+Nguyên nhân chính tạo ra thông gió tự nhiên trong công trình là gì?
+A. Do sự chênh lệch nhiệt độ giữa ngày và đêm
+B. Do sự chênh lệch về áp suất khí quyển
+C. Do sự chênh lệch áp suất giữa nơi có áp cao và nơi có áp thấp
+D. Do thiết bị cơ học tạo luồng khí
+Câu 60.
+Trong công thức P_g=0.612v^2, đơn vị của P_glà.
+A. Pa.s
+B. N/m² (Pascal)
+C. kg/m³
+D. W/m²
+Câu 61.
+Khi vận tốc gió tăng gấp đôi, áp lực gió sẽ.
+A. Không đổi
+B. Tăng gấp đôi
+C. Tăng gấp bốn lần
+D. Giảm một nửa
+Câu 62.
+Trong điều kiện bình thường, vận tốc gió ở khu vực trung tâm thành phố được lấy bằng.
+A. 9 m/s
+B. 5.5 m/s
+C. 3 m/s
+D. 6 m/s
+Câu 63.
+Hiện tượng ống khói nhiệt xảy ra khi.
+A. Áp lực gió ở hai đầu bằng nhau
+B. Nhiệt độ không khí bên trong cao hơn bên ngoài, tạo dòng đối lưu thẳng đứng
+C. Không khí bên ngoài lạnh hơn bên trong
+D. Cửa gió vào và ra nằm ngang nhau
+
+
+Câu 64.Công thức tính chênh lệch áp lực nhiệt giữa hai cột không khí là.
+A. ΔP=ρv^2/2
+B. ΔP=0.612v^2
+C. ΔP=3643×H(1/T_0 -1/T_1 )
+D. ΔP=1.293×273/T
+Câu 65.
+Hiện tượng gió hút quanh nhà chữ L (theo hình minh họa) gây ra.
+A. Áp lực đều trên các mặt
+B. Tạo vùng xoáy và áp âm ở góc trong nhà
+C. Tăng tốc gió ở mặt đón gió
+D. Giảm thông gió tự nhiên
+Câu 66. Khi hướng gió tạo với pháp tuyến mặt nhà một góc từ 0° đến 45°, hiệu quả thông gió sẽ.
+A. Giảm mạnh
+B. Không đổi
+C. Đạt hiệu quả cao nhất
+D. Không ảnh hưởng
+Câu 67. Trong điều kiện bình thường, vận tốc gió ngoài nhà của nhà ở trung tâm thành phố được lấy khoảng.
+A. 9 m/s
+B. 7.5 m/s
+C. 5.5 m/s
+D. 3 m/s
+
+Câu 68. Hệ số thông thoáng k_thđạt giá trị lớn nhất khi góc gió thổi là.
+A. 0°
+B. 30°
+C. 45°
+D. 90°
+
+Câu 69. Trong quy hoạch đô thị, để đảm bảo thông gió tự nhiên hiệu quả, các trục giao thông chính nên được bố trí.
+A. Song song với hướng bức xạ mặt trời mạnh nhất
+B. Vuông góc với hướng gió lạnh mùa đông
+C. Song song với hướng gió mát chủ đạo mùa hè
+D. Theo hướng Bắc – Nam để giảm bức xạ
+
+Câu 70. Khi thiết kế thông gió tự nhiên trong nhà dân dụng, nguyên tắc nào sau đây là sai?
+A. Cần có cửa đón gió và cửa thoát gió
+B. Bố trí các không gian làm cản luồng gió
+C. Có thể dùng giếng trời để hỗ trợ thông gió
+D. Kết hợp thông gió ngang và thông gió đứng
