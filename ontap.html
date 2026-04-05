@@ -24,6 +24,12 @@
 
     <script src="js/review.js"></script>
     <script>
+        // KIỂM TRA ĐĂNG NHẬP
+        const userData = sessionStorage.getItem('current_user');
+        if (!userData) {
+            window.location.href = "login.html";
+        }
+
         const p = new URLSearchParams(window.location.search);
         const fid = p.get('id');
         if(fid) { loadReview(fid); }

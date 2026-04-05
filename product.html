@@ -337,6 +337,12 @@
     </div>
 
     <script>
+        // KIỂM TRA ĐĂNG NHẬP
+        const userData = sessionStorage.getItem('current_user');
+        if (!userData) {
+            window.location.href = "login.html";
+        }
+
         const params = new URLSearchParams(window.location.search);
         const fileID = params.get('id');
         const fileName = params.get('name');

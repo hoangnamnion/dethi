@@ -85,6 +85,13 @@
     <script src="js/hihihaaaa.js"></script>
     <script src="js/script.js"></script>
     <script>
+        // KIỂM TRA ĐĂNG NHẬP
+        const userData = sessionStorage.getItem('current_user');
+        if (!userData) {
+            alert("Bạn cần phải đăng nhập để làm bài!");
+            window.location.href = "login.html";
+        }
+
         const p = new URLSearchParams(window.location.search);
         const fid = p.get('id');
         if (fid) {
@@ -93,7 +100,108 @@
             alert("Lỗi mã đề!"); window.location.href = "index.html";
         }
         function goBack() { window.location.href = `product.html?id=${fid}`; }
-        function closeResult() { document.getElementById('modalResult').style.display = 'none'; }
+
+        // --- SMART REVIEW FILTER ---
+        function closeResult() { 
+            document.getElementById('modalResult').style.display = 'none'; 
+            
+            if (typeof isSubmitted !== 'undefined' && isSubmitted) {
+                showReviewFilterBar();
+            }
+        }
+
+        function showReviewFilterBar() {
+            let filterBar = document.getElementById('reviewFilterBar');
+            if (!filterBar) {
+                filterBar = document.createElement('div');
+                filterBar.id = 'reviewFilterBar';
+                filterBar.style.cssText = `
+                    display: flex; gap: 8px; margin-bottom: 15px; padding: 10px;
+                    background: rgba(255, 255, 255, 0.9);
+                    backdrop-filter: blur(10px);
+                    border-radius: 12px;
+                    justify-content: center; flex-wrap: wrap;
+                    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+                    border: 1px solid rgba(255,255,255,0.5);
+                    animation: fadeIn 0.5s;
+                `;
+                
+                const quizArea = document.getElementById('quizArea');
+                quizArea.insertBefore(filterBar, quizArea.firstChild);
+            }
+            
+            filterBar.style.display = 'flex';
+            filterBar.innerHTML = `
+                <button onclick="applyReviewFilter('all')" class="filter-btn" id="filter-all" style="background:#0984e3; color:white; border:none; padding:6px 15px; border-radius:20px; cursor:pointer; font-weight:bold; transition:0.3s; box-shadow:0 4px 6px rgba(9,132,227,0.3);">Tất cả</button>
+                <button onclick="applyReviewFilter('wrong')" class="filter-btn" id="filter-wrong" style="background:#e17055; color:white; border:none; padding:6px 15px; border-radius:20px; cursor:pointer; font-weight:bold; transition:0.3s; opacity:0.6;">❌ Câu sai</button>
+                <button onclick="applyReviewFilter('skipped')" class="filter-btn" id="filter-skipped" style="background:#636e72; color:white; border:none; padding:6px 15px; border-radius:20px; cursor:pointer; font-weight:bold; transition:0.3s; opacity:0.6;">⚠️ Chưa làm</button>
+            `;
+
+            setupReviewObserver();
+        }
+
+        function applyReviewFilter(type) {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.style.opacity = '0.6'; btn.style.boxShadow = 'none';
+            });
+            
+            const activeBtn = document.getElementById('filter-' + type);
+            if (activeBtn) {
+                activeBtn.style.opacity = '1';
+                let color = type === 'all' ? 'rgba(9,132,227,0.3)' : (type === 'wrong' ? 'rgba(225,112,85,0.3)' : 'rgba(99,110,114,0.3)');
+                activeBtn.style.boxShadow = '0 4px 6px ' + color;
+            }
+            
+            if (type === 'all') {
+                isRetryMode = false;
+            } else if (type === 'wrong') {
+                isRetryMode = true;
+                filteredQuestions = allQuestions.filter(q => q.firstAttemptSelected !== null && !q.isCorrectFirstTime);
+                filteredQuestions.forEach((q, idx) => q.filteredIndex = idx);
+            } else if (type === 'skipped') {
+                isRetryMode = true;
+                filteredQuestions = allQuestions.filter(q => q.firstAttemptSelected === null);
+                filteredQuestions.forEach((q, idx) => q.filteredIndex = idx);
+            }
+            
+            currentIndex = 0;
+            if (typeof renderQuestion === 'function') {
+                if(isRetryMode && filteredQuestions.length === 0) {
+                    document.getElementById('qText').innerHTML = '<div style="text-align:center; padding: 20px; font-weight:bold; color:#636e72">Không có câu hỏi nào trong mục này!</div>';
+                    document.getElementById('optionsArea').innerHTML = '';
+                    document.getElementById('qNumber').innerHTML = 'Lọc: 0 câu';
+                    document.getElementById('btnPrev').disabled = true;
+                    document.getElementById('btnNext').disabled = true;
+                } else {
+                    renderQuestion(0);
+                }
+            }
+        }
+
+        let obs = null;
+        function setupReviewObserver() {
+            if (obs) return;
+            const target = document.getElementById('qNumber');
+            obs = new MutationObserver(() => {
+                // Sửa chữ "Làm lại lần" thành "Chế độ xem lại"
+                if (typeof isSubmitted !== 'undefined' && isSubmitted && typeof isRetryMode !== 'undefined' && isRetryMode) {
+                    const el = document.getElementById('qNumber');
+                    if (el && el.innerHTML.includes('Làm lại lần')) {
+                        el.innerHTML = el.innerHTML.replace(/Làm lại lần \d+/, 'Lọc câu hỏi');
+                    }
+                }
+            });
+            if(target) obs.observe(target, { childList: true, subtree: true });
+            
+            // Auto hide filter bar if exam is restarted
+            setInterval(() => {
+                const fb = document.getElementById('reviewFilterBar');
+                if (fb && typeof isSubmitted !== 'undefined' && !isSubmitted) {
+                    fb.style.display = 'none';
+                }
+            }, 500);
+        }
+
     </script>
     <script src="js/tet.js"></script>
 </body>
