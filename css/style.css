@@ -300,31 +300,50 @@ body {
 /* Hiệu ứng cho câu đã trả lời sai */
 .option-item.wrong {
     position: relative;
+    border-color: #ff7675 !important;
+    background: #fff4f4 !important;
 }
 
 .option-item.wrong::after {
-    content: "✗";
+    content: "✗ Sai";
     position: absolute;
-    right: 10px;
+    right: 15px;
     top: 50%;
     transform: translateY(-50%);
-    color: #d63031;
+    color: white;
+    background: #ff7675;
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 0.8em;
     font-weight: bold;
+    box-shadow: 0 4px 10px rgba(255, 118, 117, 0.3);
 }
 
 /* Hiệu ứng cho câu đã trả lời đúng */
 .option-item.correct {
     position: relative;
+    border-color: #00b894 !important;
+    background: #f0fdf4 !important;
 }
 
 .option-item.correct::after {
-    content: "✓";
+    content: "✓ Đúng";
     position: absolute;
-    right: 10px;
+    right: 15px;
     top: 50%;
     transform: translateY(-50%);
-    color: #00b894;
+    color: white;
+    background: #00b894;
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 0.8em;
     font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 184, 148, 0.3);
+}
+
+/* Ẩn dòng text mặc định của JS */
+.option-item span[style*="font-weight:bold"] {
+    display: none !important;
 }
 
 /* Nút trong chế độ sinh tử */

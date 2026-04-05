@@ -290,6 +290,19 @@
                 <div class="card-title">Tạo File</div>
             </a>
         </div>
+
+        <!-- Phân tích & Gợi ý (Tính năng 6) -->
+        <div id="analyticsSection" style="margin-top: 25px; padding: 20px; background: white; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); text-align: left; display: none; border-left: 5px solid #00b894;">
+            <div style="font-weight: 800; color: #2d3436; margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 1.2em;">📊</span> Phân Tích Lộ Trình
+            </div>
+            <div id="analyticsText" style="font-size: 0.9em; color: #636e72; line-height: 1.5;">
+                Đang phân tích dữ liệu học tập...
+            </div>
+            <div id="analyticsProgress" style="margin-top: 15px; height: 8px; background: #dfe6e9; border-radius: 4px; overflow: hidden;">
+                <div id="analyticsBar" style="height: 100%; width: 0%; background: linear-gradient(90deg, #00b894, #00cec9); transition: width 1s;"></div>
+            </div>
+        </div>
     </div>
 
     <!-- Modal chọn chế độ làm bài -->
@@ -574,6 +587,73 @@
             document.getElementById('scoreDisplay').innerText = "--";
             document.getElementById('scoreCircle').style.background = "#dfe6e9";
         }
+
+        // TÍNH NĂNG 6: Phân tích & Gợi ý lộ trình
+        function renderAnalytics() {
+            let totalExams = 0;
+            let totalScoreAvg = 0;
+            let retryIssues = 0;
+            
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                if (key.startsWith('quiz_data_')) {
+                    try {
+                        const data = JSON.parse(localStorage.getItem(key));
+                        if (data.isSubmitted && data.history) {
+                            totalExams++;
+                            const totalQ = data.history.length;
+                            if (totalQ > 0) {
+                                const pct = Math.round((data.score / totalQ) * 100);
+                                totalScoreAvg += pct;
+                                
+                                // Phân tích first attempt
+                                let wrongFirstTime = 0;
+                                data.history.forEach(q => {
+                                    if (q.isCorrectFirstTime === false) wrongFirstTime++;
+                                });
+                                retryIssues += wrongFirstTime;
+                            }
+                        }
+                    } catch(e) {}
+                }
+            }
+
+            if (totalExams > 0) {
+                const avgPct = Math.round(totalScoreAvg / totalExams);
+                const analyticsSec = document.getElementById('analyticsSection');
+                const metricsText = document.getElementById('analyticsText');
+                const progBar = document.getElementById('analyticsBar');
+                
+                analyticsSec.style.display = 'block';
+                setTimeout(() => {
+                    progBar.style.width = avgPct + '%';
+                }, 300);
+
+                if (totalExams < 3) {
+                    metricsText.innerHTML = `Bạn đã hoàn thành <b>${totalExams}/3</b> đề cần thiết. Cố gắng thêm để hệ thống chẩn đoán chính xác mức độ hiểu bài của bạn.`;
+                    progBar.style.background = 'linear-gradient(90deg, #fdcb6e, #ffeaa7)';
+                } else {
+                    let text = `Bạn đã hoàn thành <b>${totalExams}</b> đề. Điểm trung bình của bạn là <b>${avgPct}%</b>. <br><br>`;
+                    
+                    if (avgPct >= 80) {
+                        text += `<span style="color: #00b894; font-weight: bold;">🌱 Tuyệt vời!</span> Kiến thức của bạn rất vững. Chăm chỉ duy trì phong độ này để tiến vào kỳ thi nhé.`;
+                        progBar.style.background = 'linear-gradient(90deg, #00b894, #00cec9)';
+                    } else if (avgPct >= 50) {
+                        text += `<span style="color: #e17055; font-weight: bold;">⚡ Cần tập trung hơn!</span> Bạn đang yếu nhất ở các câu làm lại, tỷ lệ sai ngay lần đầu là khá cao. Cần tập trung đọc kỹ đề và cải thiện tốc độ!`;
+                        progBar.style.background = 'linear-gradient(90deg, #e17055, #fab1a0)';
+                    } else {
+                        text += `<span style="color: #d63031; font-weight: bold;">🚨 Báo động đỏ!</span> Bạn đang hổng kiến thức khá nhiều. Cứ bình tĩnh xem lại phần Ôn Tập (📖) nhiều lần để nắm cốt lõi trước nhé!`;
+                        progBar.style.background = 'linear-gradient(90deg, #d63031, #ff7675)';
+                    }
+                    
+                    metricsText.innerHTML = text;
+                }
+            }
+        }
+        
+        // Render phân tích ngay khi tải xong file script
+        setTimeout(renderAnalytics, 200);
+
     </script>
     <script src="js/tet.js"></script>
 </body>
