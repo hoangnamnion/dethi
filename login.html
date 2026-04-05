@@ -301,6 +301,15 @@
                 return;
             }
 
+            // KIỂM TRA XEM TÀI KHOẢN CÓ BỊ CẤM KHÔNG
+            if (typeof BANNED_ACCOUNTS !== 'undefined' && BANNED_ACCOUNTS.includes(username)) {
+                alert("⛔ TÀI KHOẢN CỦA BẠN ĐÃ BỊ KHÓA VĨNH VIỄN!\nLý do: Cung Cấp Tài Khoản Cho người khác vì chỉ 1 người 1 tài khoản.\nVui lòng liên hệ Admin qua Zalo 0378787154 để giải quyết.");
+                usernameInput.value = "";
+                passwordInput.value = "";
+                usernameInput.focus();
+                return;
+            }
+
             // Hiển thị trạng thái đang tải
             const prevText = loginBtn.innerHTML;
             loginBtn.innerHTML = "Đang kiểm tra dữ liệu...";
@@ -368,7 +377,7 @@
             }
         }
     </script>
-    
+    <script src="js/tkcam.js"></script>
     <script src="js/hihihaaaa.js"></script>
     <script src="js/tet.js"></script>
 </body>
