@@ -19,6 +19,10 @@
     --text-gray: #555555;
 }
 
+html, body {
+    overscroll-behavior-y: none; /* Tắt pull-to-refresh trên mobile */
+}
+
 * { 
     box-sizing: border-box; 
     touch-action: manipulation; 
