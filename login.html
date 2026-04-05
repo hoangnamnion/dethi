@@ -237,6 +237,29 @@
         <p class="footer-note">
             Nhấn Enter hoặc nút trên để tiếp tục
         </p>
+
+        <!-- Thêm 2 nút tải app -->
+        <div style="display:flex; gap:10px; margin-top:25px; justify-content:center; padding-top:20px; border-top:1px dashed #ddd;">
+            <a href="/app/onthi.mobileconfig" style="flex:1; background:#000; color:#fff; text-decoration:none; padding:10px 15px; border-radius:12px; display:flex; align-items:center; justify-content:center; gap:10px; font-weight:600; transition:0.3s; box-shadow:0 4px 15px rgba(0,0,0,0.1);" 
+               onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.2)'" 
+               onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.1)'">
+                <img src="anhnen/apple.png" alt="Apple" style="height: 1.8em; object-fit: contain;"> 
+                <div style="text-align:left; line-height:1.1;">
+                    <span style="font-size:0.65em; font-weight:400; color:#ccc;">Tải về trên</span><br>
+                    <span style="font-size:0.9em;">App Store</span>
+                </div>
+            </a>
+            
+            <a href="/app/ONTHI.apk" style="flex:1; background:#fff; color:#333; text-decoration:none; padding:10px 15px; border-radius:12px; display:flex; align-items:center; justify-content:center; gap:10px; font-weight:600; border:1px solid #e0e0e0; transition:0.3s; box-shadow:0 4px 15px rgba(0,0,0,0.05);" 
+               onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.1)'; this.style.borderColor='#ccc'" 
+               onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.05)'; this.style.borderColor='#e0e0e0'">
+                <img src="anhnen/android.png" alt="Android" style="height: 1.8em; object-fit: contain;"> 
+                <div style="text-align:left; line-height:1.1;">
+                    <span style="font-size:0.65em; font-weight:400; color:#666;">Tải xuống gốc</span><br>
+                    <span style="font-size:0.9em;">Android APK</span>
+                </div>
+            </a>
+        </div>
     </div>
 
     <script>

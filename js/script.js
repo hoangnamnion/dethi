@@ -388,11 +388,46 @@ function renderQuestion(index) {
     const qNumberElement = document.getElementById('qNumber');
     let qNumberHTML = qNumberText;
     
+    // Nút Bookmark
+    const bookmarkBtn = document.createElement('button');
+    bookmarkBtn.className = 'bookmark-btn';
+    bookmarkBtn.style.cssText = `background:none; border:none; cursor:pointer; font-size:1.2em; margin-left:8px; display:inline-flex; align-items:center; vertical-align:middle; outline:none; transition:transform 0.2s;`;
+    
+    let bookmarks = [];
+    try {
+        bookmarks = JSON.parse(localStorage.getItem('bookmarks_' + currentFileName)) || [];
+        if (!Array.isArray(bookmarks)) bookmarks = [];
+    } catch(e) { bookmarks = []; }
+    
+    const isBookmarked = bookmarks.includes(q.originalIndex);
+    bookmarkBtn.innerHTML = isBookmarked ? '⭐' : '☆';
+    bookmarkBtn.title = isBookmarked ? 'Bỏ đánh dấu' : 'Đánh dấu câu hỏi';
+    bookmarkBtn.onclick = () => {
+        let bm = [];
+        try {
+            bm = JSON.parse(localStorage.getItem('bookmarks_' + currentFileName)) || [];
+            if (!Array.isArray(bm)) bm = [];
+        } catch(e) { bm = []; }
+        
+        const idx = bm.indexOf(q.originalIndex);
+        if (idx === -1) { 
+            bm.push(q.originalIndex); 
+            bookmarkBtn.innerHTML = '⭐';
+            bookmarkBtn.style.transform = 'scale(1.2)';
+            setTimeout(() => bookmarkBtn.style.transform = 'scale(1)', 200);
+        } else { 
+            bm.splice(idx, 1); 
+            bookmarkBtn.innerHTML = '☆'; 
+        }
+        localStorage.setItem('bookmarks_' + currentFileName, JSON.stringify(bm));
+    };
+
     if (isRetryMode) {
         qNumberHTML += ` <span style="background:#f39c12; color:white; padding:2px 6px; border-radius:8px; font-size:0.8em;">Làm lại lần ${retryCount}</span>`;
     }
     
     qNumberElement.innerHTML = qNumberHTML;
+    qNumberElement.appendChild(bookmarkBtn);
     
     document.getElementById('qText').innerHTML = processedText;
     document.getElementById('btnPrev').disabled = (index === 0);
@@ -543,6 +578,8 @@ function handleAnswer(qIndex, optIndex) {
             renderQuestion(qIndex);
             if (selectedOption.isCorrect) {
                 showCorrectEffect();
+                // Trigger emotion animation (local CSS-based, no CDN needed)
+                spawnEmojis(['👍', '🌟', '🎉', '🔥', '✨']);
             } else {
                 showWrongEffect();
             }
@@ -640,6 +677,37 @@ function showDeathEffect() {
     setTimeout(() => {
         overlay.remove();
     }, 2000);
+}
+
+function spawnEmojis(emojiList) {
+    const num = 15; // Số lượng emoji
+    for (let i = 0; i < num; i++) {
+        const span = document.createElement('div');
+        const emoji = emojiList[Math.floor(Math.random() * emojiList.length)];
+        span.innerHTML = emoji;
+        span.style.cssText = `
+            position: fixed;
+            left: ${50 + (Math.random() * 20 - 10)}%;
+            bottom: 20%;
+            font-size: ${Math.random() * 20 + 20}px;
+            z-index: 9999;
+            pointer-events: none;
+            transition: transform 1.5s ease-out, opacity 1.5s ease-out;
+            opacity: 1;
+            transform: translate(-50%, 0) scale(1) rotate(${Math.random() * 40 - 20}deg);
+        `;
+        document.body.appendChild(span);
+        
+        // Buộc trình duyệt nhận diện trạng thái ban đầu trước khi add animation tới
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                span.style.transform = `translate(-50%, -${Math.random() * 200 + 150}px) scale(${Math.random() * 0.5 + 1}) rotate(${Math.random() * 100 - 50}deg)`;
+                span.style.opacity = '0';
+            });
+        });
+
+        setTimeout(() => span.remove(), 1500);
+    }
 }
 
 function showCorrectEffect() {
