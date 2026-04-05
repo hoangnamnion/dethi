@@ -6,7 +6,6 @@
 const BANNED_ACCOUNTS = [
     "hocsinhvipham",
     "cheater123",
-    "shareaccount",
-    "75dckn24"
+    "shareaccount"
     // Thêm các tài khoản khác ở đây, cách nhau bởi dấu phẩy
 ];
