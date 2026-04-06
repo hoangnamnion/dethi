@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Tài liệu bảo mật</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Reset và cơ bản */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #0f172a;
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Mesh background */
+        .mesh-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 0; overflow: hidden; pointer-events: none;
+        }
+        .mesh-blob {
+            position: absolute; border-radius: 50%; filter: blur(100px); opacity: 0.3;
+            animation: blob 15s infinite alternate;
+        }
+        .blob-1 { top: -20%; left: -10%; width: 60vw; height: 60vw; background: #3b82f6; }
+        .blob-2 { bottom: -20%; right: -10%; width: 60vw; height: 60vw; background: #8b5cf6; animation-delay: 2s; }
+        .blob-3 { top: 40%; left: 40%; width: 50vw; height: 50vw; background: #06b6d4; animation-delay: 4s; }
+        @keyframes blob {
+            0% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0, 0) scale(1); }
+        }
+
+        /* Giao diện đăng nhập */
+        #login-form {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .login-box {
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 45px 40px;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255,255,255,0.1);
+            text-align: center;
+            max-width: 420px;
+            width: 90%;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            animation: fadeInUp 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .doc-title {
+            color: #e2e8f0;
+            font-size: 22px;
+            font-weight: 700;
+            margin: 0 0 8px 0;
+        }
+
+        .doc-subtitle {
+            color: #94a3b8;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .lock-icon {
+            font-size: 52px;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 4px 8px rgba(59, 130, 246, 0.3));
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #e2e8f0;
+            font-size: 26px;
+            font-weight: 800;
+        }
+
+        p {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        input {
+            padding: 14px 18px;
+            width: 100%;
+            border: 2px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            margin-bottom: 18px;
+            outline: none;
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            font-size: 16px;
+            font-family: inherit;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.35);
+        }
+
+        .btn-unlock {
+            padding: 14px 30px;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 16px;
+            font-family: inherit;
+            width: 100%;
+            transition: all 0.3s ease;
+            margin-top: 5px;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+
+        .btn-unlock:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+        }
+
+        .btn-unlock:active {
+            transform: translateY(0);
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 20px;
+            padding: 8px 16px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 13px;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-back:hover {
+            background: rgba(255,255,255,0.1);
+            color: #e2e8f0;
+        }
+
+        /* Container cho PDF.js */
+        #pdf-container {
+            display: none;
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            background: #1e293b;
+        }
+
+        /* Canvas hiển thị PDF */
+        #pdf-canvas {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Thanh điều khiển PDF */
+        #pdf-controls {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(15, 23, 42, 0.9);
+            padding: 12px 24px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .control-btn {
+            background: transparent;
+            color: #e2e8f0;
+            border: none;
+            border-radius: 50%;
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 18px;
+            font-family: inherit;
+        }
+
+        .control-btn:hover {
+            background: rgba(59, 130, 246, 0.3);
+            transform: scale(1.1);
+        }
+
+        .control-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .control-btn:disabled:hover {
+            background: transparent;
+            transform: none;
+        }
+
+        #page-info {
+            color: #94a3b8;
+            font-size: 14px;
+            min-width: 80px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* Thanh tiến trình */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            flex-direction: column;
+            color: white;
+        }
+
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            border-top: 4px solid #3b82f6;
+            width: 50px;
+            height: 50px;
+            animation: spin 0.8s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Thông báo lỗi */
+        #error-msg {
+            color: #f87171;
+            margin-top: 12px;
+            font-size: 13px;
+            min-height: 20px;
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .login-box {
+                padding: 30px 25px;
+                width: 92%;
+            }
+
+            #pdf-controls {
+                bottom: 10px;
+                padding: 10px 16px;
+                gap: 8px;
+            }
+
+            .control-btn {
+                width: 36px;
+                height: 36px;
+                font-size: 16px;
+            }
+
+            #page-info {
+                font-size: 13px;
+                min-width: 70px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h2 {
+                font-size: 22px;
+            }
+
+            .lock-icon {
+                font-size: 42px;
+            }
+
+            #pdf-controls {
+                width: 92%;
+                justify-content: space-between;
+            }
+        }
+
+        /* Thanh cuộn tùy chỉnh */
+        #pdf-scroll-container {
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            padding: 20px 0;
+            box-sizing: border-box;
+        }
+
+        /* Ẩn scrollbar */
+        #pdf-scroll-container::-webkit-scrollbar { display: none; }
+        #pdf-scroll-container { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+    <!-- PDF.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+</head>
+<body>
+
+    <!-- Mesh Background -->
+    <div class="mesh-bg">
+        <div class="mesh-blob blob-1"></div>
+        <div class="mesh-blob blob-2"></div>
+        <div class="mesh-blob blob-3"></div>
+    </div>
+
+    <div id="login-form">
+        <div class="login-box">
+            <div class="lock-icon">🔒</div>
+            <h2>Tài liệu bảo mật</h2>
+            <div class="doc-title" id="docTitle">Đang tải...</div>
+            <div class="doc-subtitle">Vui lòng nhập mật khẩu để truy cập</div>
+            <input type="password" id="password" placeholder="Nhập mật khẩu..." autocomplete="off">
+            <button class="btn-unlock" onclick="checkPassword()">🔓 Mở tài liệu</button>
+            <div id="error-msg"></div>
+            <a href="sbvl.html" class="btn-back">← Quay lại</a>
+        </div>
+    </div>
+
+    <!-- Overlay tải PDF -->
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="spinner"></div>
+        <div id="loading-text">Đang tải tài liệu...</div>
+        <div id="progress-text" style="margin-top: 10px; font-size: 14px; color: #94a3b8;"></div>
+    </div>
+
+    <!-- Container hiển thị PDF -->
+    <div id="pdf-container">
+        <div id="pdf-scroll-container">
+            <canvas id="pdf-canvas"></canvas>
+        </div>
+        <div id="pdf-controls">
+            <button class="control-btn" id="prev-page" disabled>‹</button>
+            <span id="page-info">Trang: <span id="current-page">1</span>/<span id="total-pages">1</span></span>
+            <button class="control-btn" id="next-page" disabled>›</button>
+            <button class="control-btn" id="zoom-out" title="Thu nhỏ">−</button>
+            <button class="control-btn" id="zoom-in" title="Phóng to">+</button>
+            <button class="control-btn" id="close-pdf" title="Đóng">✕</button>
+        </div>
+    </div>
+
+    <script>
+        // Cấu hình PDF.js
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+        // Biến toàn cục
+        let pdfDoc = null;
+        let currentPage = 1;
+        let scale = 1.5;
+        let canvas = document.getElementById('pdf-canvas');
+        let ctx = canvas.getContext('2d');
+
+        // Lấy thông tin từ URL params
+        const params = new URLSearchParams(window.location.search);
+        const pdfFile = params.get('file') || 'sbvl.pdf';
+        const docName = params.get('name') || 'Tài liệu';
+        const docPass = params.get('pass') || '5432';
+
+        // Hiển thị tên tài liệu
+        document.getElementById('docTitle').textContent = docName;
+        document.title = docName + ' - Tài liệu bảo mật';
+
+        // Mật khẩu
+        const correctPassword = docPass;
+
+        // Biến đếm số lần thử
+        let failedAttempts = 0;
+        const maxAttempts = 5;
+
+        // URL của file PDF
+        const pdfFileUrl = "filethi/" + pdfFile;
+
+        // Kiểm tra mật khẩu
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            const errorMsg = document.getElementById('error-msg');
+
+            if (password === correctPassword) {
+                failedAttempts = 0;
+                errorMsg.textContent = "";
+
+                document.getElementById('login-form').style.display = 'none';
+
+                const loadingOverlay = document.getElementById('loading-overlay');
+                loadingOverlay.style.display = 'flex';
+
+                loadAndDisplayPDF(pdfFileUrl);
+
+            } else {
+                failedAttempts++;
+
+                if (failedAttempts >= maxAttempts) {
+                    errorMsg.textContent = "Đã vượt quá số lần thử. Vui lòng thử lại sau 5 phút.";
+                    document.getElementById('password').disabled = true;
+                    document.querySelector('.btn-unlock').disabled = true;
+
+                    setTimeout(() => {
+                        document.getElementById('password').disabled = false;
+                        document.querySelector('.btn-unlock').disabled = false;
+                        errorMsg.textContent = "";
+                        failedAttempts = 0;
+                    }, 300000);
+                } else {
+                    errorMsg.textContent = `Sai mật khẩu! Còn ${maxAttempts - failedAttempts} lần thử.`;
+                }
+
+                document.getElementById('password').value = "";
+                document.getElementById('password').focus();
+            }
+        }
+
+        // Tải và hiển thị PDF
+        async function loadAndDisplayPDF(url) {
+            try {
+                document.getElementById('loading-text').textContent = "Đang tải tài liệu...";
+
+                const loadingTask = pdfjsLib.getDocument(url);
+
+                loadingTask.onProgress = function(progressData) {
+                    if (progressData.total) {
+                        const progress = Math.round((progressData.loaded / progressData.total) * 100);
+                        document.getElementById('progress-text').textContent = `Đang tải: ${progress}%`;
+                    }
+                };
+
+                pdfDoc = await loadingTask.promise;
+
+                document.getElementById('loading-overlay').style.display = 'none';
+                document.getElementById('pdf-container').style.display = 'block';
+
+                renderPage(currentPage);
+
+                document.getElementById('total-pages').textContent = pdfDoc.numPages;
+                updatePageControls();
+
+            } catch (error) {
+                console.error("Lỗi tải PDF:", error);
+                document.getElementById('loading-text').textContent = "Lỗi tải tài liệu!";
+                document.getElementById('progress-text').textContent = "Vui lòng kiểm tra kết nối hoặc file PDF.";
+
+                setTimeout(() => {
+                    document.getElementById('loading-overlay').style.display = 'none';
+                    window.location.href = 'sbvl.html';
+                }, 3000);
+            }
+        }
+
+        // Hiển thị trang PDF
+        async function renderPage(pageNum) {
+            try {
+                document.getElementById('loading-overlay').style.display = 'flex';
+                document.getElementById('loading-text').textContent = `Đang tải trang ${pageNum}...`;
+                document.getElementById('progress-text').textContent = "";
+
+                const page = await pdfDoc.getPage(pageNum);
+
+                const viewport = page.getViewport({ scale: scale });
+
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                const renderContext = {
+                    canvasContext: ctx,
+                    viewport: viewport
+                };
+
+                await page.render(renderContext).promise;
+
+                document.getElementById('loading-overlay').style.display = 'none';
+                document.getElementById('current-page').textContent = pageNum;
+
+                document.getElementById('pdf-scroll-container').scrollTop = 0;
+
+            } catch (error) {
+                console.error("Lỗi render trang:", error);
+                document.getElementById('loading-overlay').style.display = 'none';
+                alert("Lỗi hiển thị trang. Vui lòng thử lại.");
+            }
+        }
+
+        // Cập nhật trạng thái nút điều khiển trang
+        function updatePageControls() {
+            const prevBtn = document.getElementById('prev-page');
+            const nextBtn = document.getElementById('next-page');
+
+            prevBtn.disabled = currentPage <= 1;
+            nextBtn.disabled = currentPage >= pdfDoc.numPages;
+        }
+
+        function prevPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                renderPage(currentPage);
+                updatePageControls();
+            }
+        }
+
+        function nextPage() {
+            if (currentPage < pdfDoc.numPages) {
+                currentPage++;
+                renderPage(currentPage);
+                updatePageControls();
+            }
+        }
+
+        function zoomIn() {
+            if (scale < 3) {
+                scale += 0.25;
+                renderPage(currentPage);
+            }
+        }
+
+        function zoomOut() {
+            if (scale > 0.5) {
+                scale -= 0.25;
+                renderPage(currentPage);
+            }
+        }
+
+        function closePDF() {
+            window.location.href = 'sbvl.html';
+        }
+
+        // Event listeners
+        document.getElementById('password').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                checkPassword();
+            }
+        });
+
+        document.getElementById('prev-page').addEventListener('click', prevPage);
+        document.getElementById('next-page').addEventListener('click', nextPage);
+        document.getElementById('zoom-in').addEventListener('click', zoomIn);
+        document.getElementById('zoom-out').addEventListener('click', zoomOut);
+        document.getElementById('close-pdf').addEventListener('click', closePDF);
+
+        // Swipe cho mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.getElementById('pdf-scroll-container').addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        }, false);
+
+        document.getElementById('pdf-scroll-container').addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, false);
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    nextPage();
+                } else {
+                    prevPage();
+                }
+            }
+        }
+
+        window.addEventListener('load', function() {
+            const loadingOverlay = document.getElementById('loading-overlay');
+            loadingOverlay.style.display = 'flex';
+            loadAndDisplayPDF(pdfFileUrl);
+        });
+
+        // Ngăn chặn phím tắt khi xem PDF
+        document.addEventListener('keydown', function(e) {
+            if (document.getElementById('pdf-container').style.display === 'block') {
+                if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+                    e.preventDefault();
+                    alert("Chức năng in đã bị vô hiệu hóa cho tài liệu này.");
+                    return false;
+                }
+
+                if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+                    e.preventDefault();
+                    return false;
+                }
+
+                if (e.key === 'ArrowLeft') {
+                    prevPage();
+                    e.preventDefault();
+                } else if (e.key === 'ArrowRight') {
+                    nextPage();
+                    e.preventDefault();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
