@@ -813,99 +813,99 @@ B. Để loại bỏ hoàn toàn công việc giám sát công trình.
 *C. Để phát hiện xung đột giữa các hệ thống, tăng tính chính xác và quản lý thông tin hiệu quả.
 D. Để giảm chi phí thiết bị bằng cách sử dụng phần mềm cũ hơn.
 Câu 143: Lợi ích của việc ứng dụng BIM trong thiết kế bền vững là gì?
-*A: Nâng cao hiệu quả sử dụng năng lượng, tối ưu vật liệu, giảm lãng phí và tác động môi trường.
-B: Tăng chi phí xây dựng, kéo dài thời gian thi công, phức tạp hóa quy trình thiết kế.
-C: Giảm khả năng kiểm soát chất lượng công trình, làm tăng lượng khí thải trong quá trình thi công.
-D: Giới hạn khả năng sáng tạo của kiến trúc sư và làm giảm độ linh hoạt trong thiết kế.
+*A. Nâng cao hiệu quả sử dụng năng lượng, tối ưu vật liệu, giảm lãng phí và tác động môi trường.
+B. Tăng chi phí xây dựng, kéo dài thời gian thi công, phức tạp hóa quy trình thiết kế.
+C. Giảm khả năng kiểm soát chất lượng công trình, làm tăng lượng khí thải trong quá trình thi công.
+D. Giới hạn khả năng sáng tạo của kiến trúc sư và làm giảm độ linh hoạt trong thiết kế.
 Câu 144: Phần mềm nào dưới đây được sử dụng để thiết kế bền vững trong BIM?
-A: Photoshop
-*B: Autodesk Insight
-C: CorelDRAW
-D: SketchUp Free
+A. Photoshop
+*B. Autodesk Insight
+C. CorelDRAW
+D. SketchUp Free
 Câu 145: Phần mềm nào dưới đây được sử dụng để quản lý tài nguyên nước trong BIM?
-A: AutoCAD
-B: SketchUp
-*C: Civil 3D
-D: Photoshop
+A. AutoCAD
+B. SketchUp
+*C. Civil 3D
+D. Photoshop
 Câu 146: Phương pháp nào dưới đây được sử dụng để lưu trữ và chia sẻ tài liệu trong BIM?
-A: Gửi email trực tiếp giữa các thành viên
-B: Lưu trữ tài liệu trên USB cá nhân
-C: Chia sẻ qua mạng xã hội không chuyên dụng
-*D: Sử dụng nền tảng đám mây như BIM 360
+A. Gửi email trực tiếp giữa các thành viên
+B. Lưu trữ tài liệu trên USB cá nhân
+C. Chia sẻ qua mạng xã hội không chuyên dụng
+*D. Sử dụng nền tảng đám mây như BIM 360
 Câu 147: Ứng dụng nào của BIM giúp quản lý hiệu suất công trình một cách hiệu quả?
-*A: Theo dõi và phân tích dữ liệu vận hành công trình theo thời gian thực
-B: Chỉ sử dụng để tạo mô hình 3D mà không liên quan đến vận hành
-C: Lưu trữ tài liệu dự án nhưng không hỗ trợ quản lý hiệu suất
-D: Chỉ áp dụng trong giai đoạn thiết kế, không ảnh hưởng đến quá trình vận hành
+*A. Theo dõi và phân tích dữ liệu vận hành công trình theo thời gian thực
+B. Chỉ sử dụng để tạo mô hình 3D mà không liên quan đến vận hành
+C. Lưu trữ tài liệu dự án nhưng không hỗ trợ quản lý hiệu suất
+D. Chỉ áp dụng trong giai đoạn thiết kế, không ảnh hưởng đến quá trình vận hành
 Câu 148: Lợi ích nào sau đây là đúng khi sử dụng BIM để quản lý phòng cháy chữa cháy?
-A: BIM chỉ hỗ trợ thiết kế kiến trúc, không liên quan đến PCCC
-*B: Cải thiện khả năng mô phỏng và kiểm tra hệ thống PCCC trước khi thi công
-C: BIM không giúp ích trong việc lập kế hoạch thoát hiểm
-D: Quản lý PCCC trong BIM chỉ cần thiết trong giai đoạn xây dựng, không ảnh hưởng đến vận 
+A. BIM chỉ hỗ trợ thiết kế kiến trúc, không liên quan đến PCCC
+*B. Cải thiện khả năng mô phỏng và kiểm tra hệ thống PCCC trước khi thi công
+C. BIM không giúp ích trong việc lập kế hoạch thoát hiểm
+D. Quản lý PCCC trong BIM chỉ cần thiết trong giai đoạn xây dựng, không ảnh hưởng đến vận 
 hành
 Câu 149: Công cụ nào sau đây được sử dụng để phân tích năng lượng trong BIM?
-A: SketchUp
-B: AutoCAD
-*C: Autodesk Insight
-D: Photoshop
+A. SketchUp
+B. AutoCAD
+*C. Autodesk Insight
+D. Photoshop
 Câu 150: Công cụ nào sau đây được sử dụng để phân tích hiệu suất ánh sáng tự nhiên trong BIM?
-A: SketchUp
-B: AutoCAD
-C: 3ds Max
-*D: DIALux
+A. SketchUp
+B. AutoCAD
+C. 3ds Max
+*D. DIALux
 Câu 151: Ứng dụng nào sau đây là một trong những ứng dụng của BIM trong thi công?
-A: Mô phỏng tiến độ và quản lý xây dựng
-*B: Thiết kế thời trang bằng công nghệ số
-C: Dự báo xu hướng bất động sản
-D: Quản lý tài chính cá nhân
+A. Mô phỏng tiến độ và quản lý xây dựng
+*B. Thiết kế thời trang bằng công nghệ số
+C. Dự báo xu hướng bất động sản
+D. Quản lý tài chính cá nhân
 Câu 152: Lợi ích nào sau đây là một trong những lợi ích của việc quản lý khối lượng bằng 
 BIM?
-A: Giúp tạo ra các mô hình kiến trúc mang tính nghệ thuật cao
-*B: Tự động tính toán và cập nhật khối lượng chính xác theo thiết kế thay đổi
-C: Hỗ trợ thiết kế logo và nhận diện thương hiệu
-D: Cải thiện khả năng lập trình phần mềm quản lý tòa nhà
+A. Giúp tạo ra các mô hình kiến trúc mang tính nghệ thuật cao
+*B. Tự động tính toán và cập nhật khối lượng chính xác theo thiết kế thay đổi
+C. Hỗ trợ thiết kế logo và nhận diện thương hiệu
+D. Cải thiện khả năng lập trình phần mềm quản lý tòa nhà
 Câu 153: Hướng phát triển nào sau đây được coi là xu hướng của BIM trong tương lai?
-A: Giảm bớt tính năng mô phỏng và phân tích để đơn giản hóa quy trình thiết kế
-B: Loại bỏ việc tích hợp với công nghệ thực tế ảo và trí tuệ nhân tạo
-*C: Phát triển BIM theo hướng tích hợp AI, IoT và thực tế ảo để tối ưu hóa quy trình xây dựng
-D: Giới hạn BIM chỉ trong giai đoạn thiết kế, không mở rộng sang quản lý vận hành
+A. Giảm bớt tính năng mô phỏng và phân tích để đơn giản hóa quy trình thiết kế
+B. Loại bỏ việc tích hợp với công nghệ thực tế ảo và trí tuệ nhân tạo
+*C. Phát triển BIM theo hướng tích hợp AI, IoT và thực tế ảo để tối ưu hóa quy trình xây dựng
+D. Giới hạn BIM chỉ trong giai đoạn thiết kế, không mở rộng sang quản lý vận hành
 Câu 154: BIMchain được định nghĩa đúng nhất là gì?
-A: Một phần mềm thiết kế 3D đơn thuần trong BIM
-B: Một hệ thống quản lý tài liệu BIM truyền thống không có công nghệ blockchain
-C: Một công cụ lập lịch thi công không liên quan đến BIM
-*D: Một nền tảng sử dụng công nghệ blockchain để đảm bảo tính minh bạch và bảo mật trong quản 
+A. Một phần mềm thiết kế 3D đơn thuần trong BIM
+B. Một hệ thống quản lý tài liệu BIM truyền thống không có công nghệ blockchain
+C. Một công cụ lập lịch thi công không liên quan đến BIM
+*D. Một nền tảng sử dụng công nghệ blockchain để đảm bảo tính minh bạch và bảo mật trong quản 
 lý dữ liệu BIM
 Câu 155: Lợi ích chính của việc ứng dụng thực tế ảo (VR) và thực tế tăng cường (AR) trong 
 BIM là gì?
-A: Giúp giảm chi phí vật liệu xây dựng bằng cách tối ưu hóa kết cấu bê tông
-B: Tăng tốc độ dựng mô hình 3D trong phần mềm CAD truyền thống
-*C: Cải thiện trực quan hóa, hỗ trợ kiểm tra thiết kế và nâng cao trải nghiệm tương tác với mô hình 
+A. Giúp giảm chi phí vật liệu xây dựng bằng cách tối ưu hóa kết cấu bê tông
+B. Tăng tốc độ dựng mô hình 3D trong phần mềm CAD truyền thống
+*C. Cải thiện trực quan hóa, hỗ trợ kiểm tra thiết kế và nâng cao trải nghiệm tương tác với mô hình 
 công trình
-D: Thay thế hoàn toàn bản vẽ kỹ thuật và mô hình BIM truyền thống
+D. Thay thế hoàn toàn bản vẽ kỹ thuật và mô hình BIM truyền thống
 Câu 156: Lợi ích của việc ứng dụng BIM trong thiết kế là gì?
-A: Giảm chất lượng bản vẽ nhưng tăng tốc độ triển khai dự án
-B: Loại bỏ hoàn toàn nhu cầu điều phối giữa các bộ môn thiết kế
-C: Chỉ hỗ trợ trong giai đoạn thi công, không ảnh hưởng đến thiết kế
-*D: Cải thiện tính chính xác, giảm sai sót, nâng cao hiệu quả phối hợp và tối ưu hóa quy trình thiết 
+A. Giảm chất lượng bản vẽ nhưng tăng tốc độ triển khai dự án
+B. Loại bỏ hoàn toàn nhu cầu điều phối giữa các bộ môn thiết kế
+C. Chỉ hỗ trợ trong giai đoạn thi công, không ảnh hưởng đến thiết kế
+*D. Cải thiện tính chính xác, giảm sai sót, nâng cao hiệu quả phối hợp và tối ưu hóa quy trình thiết 
 kế
 Câu 157: Ứng dụng thực tế nào sau đây của BIM trong thiết kế là đúng?
-A: Chỉnh sửa hình ảnh và tạo hiệu ứng đồ họa 2D
-*B: Mô phỏng không gian, kiểm tra va chạm, tối ưu hóa thiết kế
-C: Lập bảng tính tài chính cho doanh nghiệp phi xây dựng
-D: Quản lý email và tài liệu văn phòng
+A. Chỉnh sửa hình ảnh và tạo hiệu ứng đồ họa 2D
+*B. Mô phỏng không gian, kiểm tra va chạm, tối ưu hóa thiết kế
+C. Lập bảng tính tài chính cho doanh nghiệp phi xây dựng
+D. Quản lý email và tài liệu văn phòng
 Câu 158: Ứng dụng nào sau đây của BIM trong lập kế hoạch và thi công là chính xác nhất?
-A: BIM giúp tạo hình ảnh minh họa 2D cho các báo cáo dự án
-*B: BIM chỉ hỗ trợ thiết kế kiến trúc mà không liên quan đến thi công
-C: BIM hỗ trợ lập kế hoạch chi tiết, kiểm soát tiến độ, tối ưu hóa nhân lực và tài nguyên
-D: BIM chỉ có chức năng lưu trữ hồ sơ công trình mà không hỗ trợ thi công
+A. BIM giúp tạo hình ảnh minh họa 2D cho các báo cáo dự án
+*B. BIM chỉ hỗ trợ thiết kế kiến trúc mà không liên quan đến thi công
+C. BIM hỗ trợ lập kế hoạch chi tiết, kiểm soát tiến độ, tối ưu hóa nhân lực và tài nguyên
+D. BIM chỉ có chức năng lưu trữ hồ sơ công trình mà không hỗ trợ thi công
 Câu 159: BIM hỗ trợ quản lý và kiểm soát chất lượng trong thi công bằng cách nào?
-A: Chỉ sử dụng để tạo bản vẽ kiến trúc mà không liên quan đến chất lượng thi công
-B: Chỉ giúp theo dõi tiến độ mà không kiểm tra sai sót kỹ thuật
-C: Chỉ hỗ trợ quản lý tài liệu nhưng không liên quan đến giám sát công trình
-*D: Phát hiện xung đột sớm, mô phỏng tiến độ, quản lý tài liệu, giám sát và kiểm tra chất lượng từ xa
+A. Chỉ sử dụng để tạo bản vẽ kiến trúc mà không liên quan đến chất lượng thi công
+B. Chỉ giúp theo dõi tiến độ mà không kiểm tra sai sót kỹ thuật
+C. Chỉ hỗ trợ quản lý tài liệu nhưng không liên quan đến giám sát công trình
+*D. Phát hiện xung đột sớm, mô phỏng tiến độ, quản lý tài liệu, giám sát và kiểm tra chất lượng từ xa
 Câu 160: BIM hỗ trợ quản lý khối lượng và lập dự toán bằng cách nào?
-*A: Tự động trích xuất khối lượng từ mô hình 3D, liên kết với dự toán và cập nhật thay đổi theo thời 
+*A. Tự động trích xuất khối lượng từ mô hình 3D, liên kết với dự toán và cập nhật thay đổi theo thời 
 gian thực
-B: Chỉ dùng để vẽ mô hình mà không hỗ trợ tính toán khối lượng
-C: Chỉ giúp lưu trữ tài liệu mà không ảnh hưởng đến dự toán
-D: Chỉ hỗ trợ thiết kế kiến trúc mà không có tính năng liên kết với chi phí
+B. Chỉ dùng để vẽ mô hình mà không hỗ trợ tính toán khối lượng
+C. Chỉ giúp lưu trữ tài liệu mà không ảnh hưởng đến dự toán
+D. Chỉ hỗ trợ thiết kế kiến trúc mà không có tính năng liên kết với chi phí
