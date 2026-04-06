@@ -1,0 +1,122 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education management</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/logo.ico" />
+</head>
+
+<body>
+<div class="wrapper wrapper-login">
+    <div class="content-login">
+        <form method="post" action="./login.aspx" id="formLoginSSO">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="O36VLMemckAT11TlZqQruekT1R14RiaHYIiWri7IKMw47mEZzP1iGaJZYcQBcNKam2Xcdh89VoO3P6kx4AHUDBZs3YgAosuhweCvA8G13+Y=" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="D05E7BEF" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="rYDs8G1AEhZI5dsuXR6CoobntE8b58FM5LwXV0r6nTU0i3GCx64rAGLaIept/Q00NIZVl4U4MPTlTbAjZTuUFZ5J1j5LBMM+5wI+WFgM0ToxeGfGRALts0IPPeB9NTVHOH18mhxvDvo2Qpl+LBNpOTRDVJTUwU2a8OEsIgeAFJ4=" />
+</div>
+            <form id="cms_bm_frm_login" action="#" method="post" onsubmit="return false">
+                <div class="logo-Phenikaa-w justify-content-center d-flex" >
+                    <img src="" class="img-logo-w" alt=""/>
+                </div>
+                <!-- content -->
+                <div class="content-form-login position-relative">
+                    <h2 class="text-center title-h2 text-uppercase color-dask-blue fw-bold">Đăng nhập</h2>
+            
+                    <div>
+                            <span id="lblNotify" style="display:inline-block;color:Red;width:100%;"></span>
+                    </div>
+                    <div class="form-item position-relative mb-20">
+                        <label for="username" class="form-label"><i class="fal fa-user color-dask-blue"></i></label>
+                        <input name="username" type="text" id="username" class="form-control" aria-describedby="Nhập tài khoản hoặc email" placeholder="Nhập tài khoản hoặc email" />
+                    </div>
+                    <div class="form-item position-relative  mb-20 ">
+                        <label for="password" class="form-label"><i class="fal fa-key-skeleton color-dask-blue"></i></label>
+                        <input name="password" id="password" type="password" class="form-control form-control_login__password" placeholder="Nhập mật khẩu" />
+                        <span class="show-pass"><i class="fal fa-eye change_icon"></i></span>
+                    </div>
+                    <div class="help-forgot d-flex justify-content-between  mb-20">
+                        <a class="forgot-pass color-dask-blue" href="pages/forgetpass.aspx">Quên mật khẩu</a>
+                        <a href="#" class="help color-dask-blue"><i class="fal fa-question-circle"></i> Trợ giúp!</a>
+                    </div>
+                    <input type="submit" name="cms_authenticate_do_login" value="Đăng nhập" id="cms_authenticate_do_login" class="btn btn-primary btn-login" />   
+                
+                    <div class="or-login">Hoặc đăng nhập</div>
+                        
+                                    <div class="row login-notify">
+                                        <div class="social-auth-links text-center">
+                                            <a type="submit" href="https://sso.utt.edu.vn/realms/UTTGIANGVIEN/protocol/openid-connect/auth?client_id=daotao-giangvien&redirect_uri=https://daotao.utt.edu.vn/congthongtin/login.aspx&response_type=code&scope=openid+profile" class="btn btn-primary btn-microsoft"><img src="assets/images/icon-Keycloak.png" class="logo-google"> Đăng nhập bằng UTT SSO</a>
+                                        </div>
+                                    </div>    
+                                 
+                    
+                </div>
+                <!-- end content -->
+
+                <!-- copy right -->
+            <!-- end copy right -->
+    
+            </form>
+        </form>
+        
+    </div>
+    <div class="copyright" style="width: 100%">
+        <marquee>
+            Đơn vị phát triển: Công ty Cổ Phần dịch vụ Công nghệ APIS - Địa chỉ: Tầng 6 Tháp Tây, Tòa nhà Hancorp,
+            Số, 72 Trần Đăng Ninh, P, Cầu Giấy, Hà Nội - Điện thoại: 024 3204 5867
+        </marquee>
+    </div>
+</div>
+
+
+</body>
+<script src="assets/js/bootstrap.bundle.min.js "></script>
+<script src="assets/js/swiper-bundle.min.js"></script>
+<script src="assets/js/jquery-2.2.0.min.js" type="text/javascript"></script>
+<script src="assets/js/slick.js"></script>
+<script src="assets/js/custom.js"></script>
+
+</html>
+<script>
+        $(document).ready(function () {
+            sessionStorage.removeItem("objUserN");
+            localStorage.removeItem('strChucNang');
+            localStorage.removeItem('strChucNang_Id');
+    });
+    const passInput = document.querySelector(".form-control_login__password");
+        const passIcon = document.querySelector(".change_icon");
+        passIcon.addEventListener("click", () => {
+            if (passIcon.classList.contains("fa-eye")) {
+                passInput.setAttribute("type", "text");
+                passIcon.classList.toggle("fa-eye");
+                passIcon.classList.toggle("fa-eye-slash");
+            } else {
+                passInput.setAttribute("type", "password");
+                passIcon.classList.toggle("fa-eye");
+                passIcon.classList.toggle("fa-eye-slash");
+            }
+    });
+    try {
+        if (window.location.href.indexOf('congsinhvien') != -1) {
+            var pointMi = $("#btnDangNhapMicrosoft");
+            console.log(pointMi.length)
+            let url = pointMi.attr("href");
+            if(url)
+            window.location.href = url;
+            if (pointMi.length > 0) pointMi.trigger("click");
+        }
+    } catch {
+
+    }
+    </script>
