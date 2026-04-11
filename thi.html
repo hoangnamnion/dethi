@@ -36,8 +36,6 @@
             </div>
 
             <div style="display:flex; align-items:center; gap: 8px;">
-                <button class="low-graphics-btn" id="btnLowGraphics" onclick="toggleLowGraphics()" title="Tắt bớt hiệu ứng để đỡ giật lag cho máy yếu"
-                    style="background:rgba(255,255,255,0.7); border:1px solid #cbd5e1; padding:4px 8px; border-radius:8px; cursor:pointer; font-size:0.85em; font-weight:700; white-space:nowrap; color:#334155; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.05));">⚡ Tắt Hiệu Ứng</button>
                 <button class="reset-btn" onclick="resetExam()" title="Làm lại từ đầu"
                     style="background:none; border:none; cursor:pointer; font-size:1.2em">🔄</button>
                 <button class="submit-btn" onclick="finishExam()">✨ Nộp bài</button>
@@ -45,7 +43,11 @@
         </div>
 
         <div class="content">
-            <div id="loading" style="text-align:center; margin-top:50px">Đang tải câu hỏi...</div>
+            <div style="text-align: right; margin-bottom: 5px;">
+                <button class="low-graphics-btn" id="btnLowGraphics" onclick="toggleLowGraphics()" title="Tắt bớt hiệu ứng để đỡ giật lag cho máy yếu"
+                    style="background:var(--white); border:1px solid #cbd5e1; padding:4px 10px; border-radius:8px; cursor:pointer; font-size:0.8em; font-weight:700; color:#e74c3c; box-shadow: 0 2px 5px rgba(0,0,0,0.05); transition: 0.2s;">⚡ Tắt Hiệu Ứng</button>
+            </div>
+            <div id="loading" style="text-align:center; margin-top:30px">Đang tải câu hỏi...</div>
             <div id="quizArea" style="display:none">
                 <div style="color:var(--primary); font-weight:bold; margin-bottom:5px" id="qNumber"></div>
                 <div class="question-text" id="qText"></div>
@@ -92,6 +94,7 @@
     </div>
 
     <script src="js/hihihaaaa.js"></script>
+    <script src="js/new2.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="js/script.js"></script>
     <script>
@@ -163,6 +166,7 @@
                 <button onclick="applyReviewFilter('all')" class="filter-btn" id="filter-all" style="background:#0984e3; color:white; border:none; padding:6px 15px; border-radius:20px; cursor:pointer; font-weight:bold; transition:0.3s; box-shadow:0 4px 6px rgba(9,132,227,0.3);">Tất cả</button>
                 <button onclick="applyReviewFilter('wrong')" class="filter-btn" id="filter-wrong" style="background:#e17055; color:white; border:none; padding:6px 15px; border-radius:20px; cursor:pointer; font-weight:bold; transition:0.3s; opacity:0.6;">❌ Câu sai</button>
                 <button onclick="applyReviewFilter('skipped')" class="filter-btn" id="filter-skipped" style="background:#636e72; color:white; border:none; padding:6px 15px; border-radius:20px; cursor:pointer; font-weight:bold; transition:0.3s; opacity:0.6;">⚠️ Chưa làm</button>
+                <button onclick="applyReviewFilter('bookmarked')" class="filter-btn" id="filter-bookmarked" style="background:#f1c40f; color:#2c3e50; border:none; padding:6px 15px; border-radius:20px; cursor:pointer; font-weight:bold; transition:0.3s; opacity:0.6;">🚩 Đã ghim</button>
             `;
 
             setupReviewObserver();
@@ -176,7 +180,10 @@
             const activeBtn = document.getElementById('filter-' + type);
             if (activeBtn) {
                 activeBtn.style.opacity = '1';
-                let color = type === 'all' ? 'rgba(9,132,227,0.3)' : (type === 'wrong' ? 'rgba(225,112,85,0.3)' : 'rgba(99,110,114,0.3)');
+                let color = 'rgba(99,110,114,0.3)';
+                if (type === 'all') color = 'rgba(9,132,227,0.3)';
+                if (type === 'wrong') color = 'rgba(225,112,85,0.3)';
+                if (type === 'bookmarked') color = 'rgba(241,196,15,0.5)';
                 activeBtn.style.boxShadow = '0 4px 6px ' + color;
             }
             
@@ -189,6 +196,14 @@
             } else if (type === 'skipped') {
                 isRetryMode = true;
                 filteredQuestions = allQuestions.filter(q => q.firstAttemptSelected === null);
+                filteredQuestions.forEach((q, idx) => q.filteredIndex = idx);
+            } else if (type === 'bookmarked') {
+                isRetryMode = true;
+                let bms = [];
+                try {
+                    bms = JSON.parse(localStorage.getItem('bookmarks_' + currentFileName)) || [];
+                } catch(e) {}
+                filteredQuestions = allQuestions.filter(q => bms.includes(q.originalIndex));
                 filteredQuestions.forEach((q, idx) => q.filteredIndex = idx);
             }
             

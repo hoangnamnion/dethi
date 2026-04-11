@@ -7,6 +7,48 @@
     <title>Danh Sách Đề Thi</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .announcement-banner {
+            background: linear-gradient(135deg, #FF9A9E 0%, #FECFEF 100%);
+            color: #d63031;
+            padding: 8px 12px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            font-size: 0.9em;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(214, 48, 49, 0.15);
+            display: flex;
+            align-items: center;
+        }
+        .announcement-banner::before {
+            content: '📌 Tin mới';
+            margin-right: 10px;
+            z-index: 2;
+            background: #fff;
+            color: #d63031;
+            padding: 3px 10px;
+            border-radius: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: relative;
+            font-size: 0.85em;
+        }
+        .marquee-wrapper {
+            flex: 1;
+            overflow: hidden;
+        }
+        .marquee-text {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 35s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-150%); }
+        }
+    </style>
 </head>
 <body>
     <div class="mesh-bg">
@@ -20,9 +62,21 @@
             <div id="headerUserName" style="font-size: 0.85em; font-weight: 700; color: #007bff; background: rgba(255,255,255,0.7); padding: 5px 12px; border-radius: 12px; backdrop-filter: blur(5px); box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
                 👨‍🎓 ...
             </div>
-            <button onclick="logout()" style="background: rgba(255, 255, 255, 0.7); border: 1px solid rgba(255,0,0,0.1); padding: 5px 12px; border-radius: 12px; font-weight: 600; cursor: pointer; color: #e74c3c; box-shadow: 0 4px 10px rgba(0,0,0,0.03); backdrop-filter: blur(5px); transition: 0.2s;" onmouseover="this.style.background='#fff0f0'" onmouseout="this.style.background='rgba(255, 255, 255, 0.7)'">
-                🚪 Thoát
-            </button>
+            <div style="display: flex; gap: 8px;">
+                <button onclick="showOnlineStatus()" style="background: rgba(46, 204, 113, 0.15); border: 1px solid rgba(46, 204, 113, 0.4); padding: 5px 12px; border-radius: 12px; font-weight: 700; cursor: pointer; color: #27ae60; box-shadow: 0 4px 10px rgba(0,0,0,0.03); backdrop-filter: blur(5px); transition: 0.2s;" onmouseover="this.style.background='rgba(46, 204, 113, 0.25)'" onmouseout="this.style.background='rgba(46, 204, 113, 0.15)'">
+                    🟢 Online
+                </button>
+                <button onclick="logout()" style="background: rgba(255, 255, 255, 0.7); border: 1px solid rgba(255,0,0,0.1); padding: 5px 12px; border-radius: 12px; font-weight: 600; cursor: pointer; color: #e74c3c; box-shadow: 0 4px 10px rgba(0,0,0,0.03); backdrop-filter: blur(5px); transition: 0.2s;" onmouseover="this.style.background='#fff0f0'" onmouseout="this.style.background='rgba(255, 255, 255, 0.7)'">
+                    🚪 Thoát
+                </button>
+            </div>
+        </div>
+
+        <!-- Thanh thông báo ngang đỉnh trang -->
+        <div class="announcement-banner">
+            <div class="marquee-wrapper">
+                <span class="marquee-text"></span>
+            </div>
         </div>
 
         <div class="school-logos">
@@ -35,7 +89,12 @@
     </div>
 
     <script src="js/hihihaaaa.js"></script>
+    <script src="js/new2.js"></script>
+    <script src="js/thongbao.js"></script>
     <script>
+    <script src="js/online.js"></script>
+    <script>
+
         // ==========================================
         // DANH SÁCH ĐỀ SẼ NẠP TỰ ĐỘNG DỰA VÀO TÀI KHOẢN 
         // ==========================================

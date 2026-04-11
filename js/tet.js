@@ -4,6 +4,11 @@
    ============================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
+    // Nếu đang bật chế độ tối giản đồ họa -> Cấm chạy hiệu ứng Tết (tiết kiệm CPU)
+    if (localStorage.getItem('low_graphics') === 'true' || localStorage.getItem('lowGraphics') === 'true') {
+        return; 
+    }
+
     // Cứ 400ms lại sinh ra 1 icon rơi
     setInterval(createFallingIcon, 400);
 

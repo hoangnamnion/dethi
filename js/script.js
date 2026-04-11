@@ -28,6 +28,7 @@ let filteredQuestions = [];
 // --- BIẾN MỚI CHO TÍNH NĂNG AUTO NEXT ---
 let isAutoNextEnabled = false;
 let autoNextTimer = null;
+let currentStreak = 0; // Luôn theo dõi chuỗi câu đúng liên tiếp
 
 // --- 1. TẢI ĐỀ THI ---
 function loadExam(fileName) {
@@ -531,6 +532,8 @@ function handleAnswer(qIndex, optIndex) {
                 wrongQuestions.splice(wrongIndex, 1);
             }
             showCorrectEffect();
+            currentStreak++; // Tăng streak ngay cả khi làm lại câu sai
+            showComboFire(currentStreak);
             updateFilteredQuestions();
             
             if (filteredQuestions.length === 0) {
@@ -544,6 +547,8 @@ function handleAnswer(qIndex, optIndex) {
             }
         } else {
             showWrongEffect();
+            currentStreak = 0; // Sai khi làm lại cũng reset streak
+            showComboFire(0);
             renderQuestion(qIndex);
         }
         
@@ -578,10 +583,14 @@ function handleAnswer(qIndex, optIndex) {
             renderQuestion(qIndex);
             if (selectedOption.isCorrect) {
                 showCorrectEffect();
+                currentStreak++; // Tăng chuỗi câu đúng
+                showComboFire(currentStreak); // Hiển thị hiệu ứng nếu đạt mốc
                 // Trigger emotion animation (local CSS-based, no CDN needed)
                 spawnEmojis(['👍', '🌟', '🎉', '🔥', '✨']);
             } else {
                 showWrongEffect();
+                currentStreak = 0; // Reset chuỗi khi sai
+                showComboFire(0);
             }
             saveProgress();
         }
@@ -796,6 +805,8 @@ function performFullReset() {
     currentIndex = 0;
     isSubmitted = false;
     isAutoNextEnabled = false;
+    currentStreak = 0; // Reset hỏa lực
+    showComboFire(0);
     
     if (questionOrder === 'random') {
         shuffleQuestions();
@@ -1122,6 +1133,7 @@ function saveProgress() {
         retryCount: retryCount,
         firstAttemptScore: firstAttemptScore,
         autoNext: isAutoNextEnabled, // Lưu trạng thái Auto Next
+        currentStreak: currentStreak, // Lưu trạng thái Combo Hỏa lực
         wrongQuestions: wrongQuestions.map(item => item.index),
         history: allQuestions.map(q => ({ 
             userSelected: q.userSelected,
@@ -1148,6 +1160,7 @@ function loadProgress() {
         isRetryMode = data.isRetryMode || false;
         retryCount = data.retryCount || 0;
         firstAttemptScore = data.firstAttemptScore || 0;
+        currentStreak = data.currentStreak || 0; // Phục hồi Combo Hỏa lực
         
         if (data.autoNext !== undefined) isAutoNextEnabled = data.autoNext;
         
@@ -1199,6 +1212,11 @@ function loadProgress() {
         }
     } else {
         renderQuestion(0);
+    }
+    
+    // Khôi phục hiển thị Combo Badge
+    if (currentStreak >= 5) {
+        showComboFire(currentStreak);
     }
 }
 
