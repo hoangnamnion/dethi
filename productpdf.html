@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>Tài liệu bảo mật</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -247,6 +247,48 @@
             font-weight: 600;
         }
 
+        /* Container tải DOCX */
+        #docx-container {
+            display: none;
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            background: #e2e8f0;
+            padding-bottom: 20px;
+        }
+        #docx-container .docx-wrapper {
+            background: transparent !important;
+            padding: 10px !important;
+        }
+        #docx-container .docx-wrapper > section.docx {
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15) !important;
+            margin-bottom: 15px !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+            padding: 15px !important;
+            min-height: auto !important;
+        }
+        #docx-container .docx-wrapper > section.docx img {
+            max-width: 100% !important;
+            height: auto !important;
+        }
+        
+        /* Ép toàn bộ chữ trong Word thành màu đen */
+        #docx-container .docx-wrapper > section.docx,
+        #docx-container .docx-wrapper > section.docx p,
+        #docx-container .docx-wrapper > section.docx span,
+        #docx-container .docx-wrapper > section.docx h1,
+        #docx-container .docx-wrapper > section.docx h2,
+        #docx-container .docx-wrapper > section.docx h3,
+        #docx-container .docx-wrapper > section.docx h4,
+        #docx-container .docx-wrapper > section.docx li,
+        #docx-container .docx-wrapper > section.docx a,
+        #docx-container .docx-wrapper > section.docx td,
+        #docx-container .docx-wrapper > section.docx th {
+            color: #000000 !important;
+        }
+        
         /* Thanh tiến trình */
         .loading-overlay {
             position: fixed;
@@ -333,7 +375,7 @@
             height: 100%;
             overflow-y: auto;
             -webkit-overflow-scrolling: touch;
-            padding: 20px 0;
+            padding: 20px 0 100px 0;
             box-sizing: border-box;
         }
 
@@ -343,6 +385,9 @@
     </style>
     <!-- PDF.js Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <!-- DOCX Library (hỗ trợ đọc file Word) -->
+    <script src="https://unpkg.com/jszip/dist/jszip.min.js"></script>
+    <script src="https://unpkg.com/docx-preview/dist/docx-preview.min.js"></script>
 </head>
 <body>
 
@@ -375,6 +420,7 @@
 
     <!-- Container hiển thị PDF -->
     <div id="pdf-container">
+        <div id="docx-container"></div>
         <div id="pdf-scroll-container">
             <canvas id="pdf-canvas"></canvas>
         </div>
@@ -458,11 +504,49 @@
             }
         }
 
-        // Tải và hiển thị PDF
+        // Tải và hiển thị dữ liệu (cả PDF và Word)
         async function loadAndDisplayPDF(url) {
             try {
                 document.getElementById('loading-text').textContent = "Đang tải tài liệu...";
+                document.getElementById('loading-overlay').style.display = 'flex';
 
+                const ext = url.split('.').pop().toLowerCase();
+
+                if (ext === 'docx') {
+                    // Logic xử lý file Word DOCX
+                    document.getElementById('pdf-scroll-container').style.display = 'none';
+                    document.getElementById('pdf-controls').style.display = 'none';
+                    document.getElementById('docx-container').style.display = 'block';
+
+                    const response = await fetch(url);
+                    if (!response.ok) throw new Error("Không tìm thấy file");
+                    const blob = await response.blob();
+
+                    const container = document.getElementById("docx-container");
+                    await docx.renderAsync(blob, container, null, {
+                        className: "docx",
+                        inWrapper: true,
+                        ignoreWidth: true,   // Cực kỳ quan trọng để Word ko bị tràn sang 2 bên
+                        ignoreHeight: true,
+                        breakPages: false    // Bỏ phân trang để lướt liên tục như xem bài đọc web
+                    });
+
+                    document.getElementById('loading-overlay').style.display = 'none';
+                    document.getElementById('pdf-container').style.display = 'block';
+                    
+                    // Thêm nút Quay lại cho chế độ xem Word
+                    const btnBox = document.createElement('div');
+                    btnBox.innerHTML = '<button onclick="window.location.href=\'sbvl.html\'" style="position:fixed; bottom:20px; right:20px; background:#1e293b; color:#e2e8f0; border:1px solid #3b82f6; padding:12px 25px; border-radius:30px; font-weight:bold; box-shadow:0 5px 15px rgba(0,0,0,0.4); z-index:9999;">← Quay lại</button>';
+                    document.getElementById('pdf-container').appendChild(btnBox);
+                    
+                    return; // Thoát hàm để tải xong file word
+                } else if (ext === 'doc') {
+                    alert("⚠️ Hệ thống chỉ hỗ trợ định dạng Word (.DOCX). Bạn vui lòng lưu lại file (Save As) dạng .DOCX hoặc .PDF rồi dùng nhé!");
+                    window.location.href = 'sbvl.html';
+                    return;
+                }
+
+                // Xử lý mặc định cho file PDF
                 const loadingTask = pdfjsLib.getDocument(url);
 
                 loadingTask.onProgress = function(progressData) {
@@ -483,9 +567,9 @@
                 updatePageControls();
 
             } catch (error) {
-                console.error("Lỗi tải PDF:", error);
+                console.error("Lỗi tải tệp:", error);
                 document.getElementById('loading-text').textContent = "Lỗi tải tài liệu!";
-                document.getElementById('progress-text').textContent = "Vui lòng kiểm tra kết nối hoặc file PDF.";
+                document.getElementById('progress-text').textContent = "Vui lòng xem lại định dạng hoặc đảm bảo tệp tồn tại.";
 
                 setTimeout(() => {
                     document.getElementById('loading-overlay').style.display = 'none';
@@ -502,6 +586,14 @@
                 document.getElementById('progress-text').textContent = "";
 
                 const page = await pdfDoc.getPage(pageNum);
+
+                // Tự động scale cho vừa màn hình mobile ở lần đầu tiên
+                if (window.innerWidth < 768 && !window.initialScaleSet) {
+                    const unscaledViewport = page.getViewport({ scale: 1.0 });
+                    scale = (window.innerWidth - 20) / unscaledViewport.width;
+                    if (scale < 0.3) scale = 0.3; // chống quá nhỏ
+                    window.initialScaleSet = true;
+                }
 
                 const viewport = page.getViewport({ scale: scale });
 
@@ -586,22 +678,28 @@
         // Swipe cho mobile
         let touchStartX = 0;
         let touchEndX = 0;
+        let touchStartY = 0;
+        let touchEndY = 0;
 
         document.getElementById('pdf-scroll-container').addEventListener('touchstart', function(e) {
             touchStartX = e.changedTouches[0].screenX;
+            touchStartY = e.changedTouches[0].screenY;
         }, false);
 
         document.getElementById('pdf-scroll-container').addEventListener('touchend', function(e) {
             touchEndX = e.changedTouches[0].screenX;
+            touchEndY = e.changedTouches[0].screenY;
             handleSwipe();
         }, false);
 
         function handleSwipe() {
-            const swipeThreshold = 50;
-            const diff = touchStartX - touchEndX;
+            const swipeThreshold = 60;
+            const diffX = touchStartX - touchEndX;
+            const diffY = Math.abs(touchStartY - touchEndY);
 
-            if (Math.abs(diff) > swipeThreshold) {
-                if (diff > 0) {
+            // Vuốt ngang phải dài hơn ngưỡng và mạnh hơn vuốt dọc (tránh nhầm với cuộn dọc đọc bài)
+            if (Math.abs(diffX) > swipeThreshold && Math.abs(diffX) > diffY) {
+                if (diffX > 0) {
                     nextPage();
                 } else {
                     prevPage();
