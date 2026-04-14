@@ -1036,21 +1036,34 @@ async function reportScoreAndFirework(correct, wrong, skip) {
 
     // 2. Gửi về Telegram
     try {
-        const userDataStr = sessionStorage.getItem('current_user'); // Fix: changed from localStorage
+        const userDataStr = sessionStorage.getItem('current_user') || localStorage.getItem('current_user') || localStorage.getItem('currentUser');
         if (userDataStr && typeof getTelegramBotToken !== 'undefined') {
             const userData = JSON.parse(userDataStr);
-            const ipRes = await fetch('https://get.geojs.io/v1/ip/geo.json');
-            const ipData = await ipRes.json();
+            
+            let ipData = { ip: 'N/A', city: 'N/A', region: 'N/A', latitude: 0, longitude: 0 };
+            try {
+                const ipRes = await Promise.race([
+                    fetch('https://get.geojs.io/v1/ip/geo.json'),
+                    new Promise((_, reject) => setTimeout(() => reject(new Error('IP Timeout')), 3000))
+                ]);
+                ipData = await ipRes.json();
+            } catch (e) {
+                console.log("Không thể fetch IP:", e);
+            }
+            
             const mapLink = `https://www.google.com/maps/search/?api=1&query=${ipData.latitude},${ipData.longitude}`;
             const device = navigator.userAgent;
             
-            const msg = `📝 <b>NỘP BÀI THI</b>\n👤 Tài khoản: <code>${userData.accountId}</code>\nĐề: ${currentFileName}\n🏆 Điểm: <b>${correct}/${total}</b>\n✅ Đúng: ${correct} | ❌ Sai: ${wrong} | ⏳ Bỏ qua: ${skip}\n🌐 IP: ${ipData.ip}\n📍 Vị trí: <a href="${mapLink}">${ipData.city || 'N/A'}, ${ipData.region || 'N/A'}</a>\n📱 Thiết bị: <code>${device}</code>\n⏱ T.Gian: ${new Date().toLocaleString('vi-VN')}`;
+            const msg = `📝 <b>NỘP BÀI THI</b>\n👤 Tài khoản: <code>${userData.accountId || userData.username || 'Unknown'}</code>\nĐề: ${currentFileName}\n🏆 Điểm: <b>${correct}/${total}</b>\n✅ Đúng: ${correct} | ❌ Sai: ${wrong} | ⏳ Bỏ qua: ${skip}\n🌐 IP: ${ipData.ip}\n📍 Vị trí: <a href="${mapLink}">${ipData.city || 'N/A'}, ${ipData.region || 'N/A'}</a>\n📱 Thiết bị: <code>${device}</code>\n⏱ T.Gian: ${new Date().toLocaleString('vi-VN')}`;
             
-            await fetch(`https://api.telegram.org/bot${getTelegramBotToken()}/sendMessage`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ chat_id: getTelegramChatId(), text: msg, parse_mode: 'HTML' })
-            });
+            await Promise.race([
+                fetch(`https://api.telegram.org/bot${getTelegramBotToken()}/sendMessage`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ chat_id: getTelegramChatId(), text: msg, parse_mode: 'HTML' })
+                }),
+                new Promise(r => setTimeout(r, 2000))
+            ]);
         }
     } catch(e) { console.error("Lỗi gửi điểm Tele:", e); }
 }
