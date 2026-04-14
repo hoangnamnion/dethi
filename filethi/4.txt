@@ -117,16 +117,14 @@ D. BIM giúp tối ưu hóa việc sử dụng tài nguyên trong quá trình x�
 Câu 22: Tại sao BIM được sử dụng để quản lý dự án công cộng?
 A. BIM giúp giảm thiểu chi phí xây dựng cho các dự án công cộng.
 B. BIM tự động hóa toàn bộ quy trình quản lý tài sản mà không cần sự can thiệp của con người.
-*C. BIM cung cấp thông tin chi tiết và cập nhật về cấu trúc, bảo trì, và quản lý tài sản công cộng một cách 
-hiệu quả.
+*C. BIM cung cấp thông tin chi tiết và cập nhật về cấu trúc, bảo trì, và quản lý tài sản công cộng một cách hiệu quả.
 D. BIM tăng cường khả năng giám sát tiến độ thi công công trình công cộng.
 Câu 23: Tại sao BIM giúp tăng cường tính minh bạch và trách nhiệm giải trình của các bên tham gia 
 dự án?
 A. BIM tự động hóa quy trình quản lý dự án mà không cần giám sát.
 B. BIM loại bỏ hoàn toàn sai sót trong quá trình thiết kế và thi công.
 C. BIM giúp theo dõi chi phí và tiến độ một cách tự động.
-*D. BIM cung cấp dữ liệu chính xác và minh bạch, cho phép mọi bên tham gia dễ dàng theo dõi và kiểm tra 
-tiến độ, trách nhiệm công việc."
+*D. BIM cung cấp dữ liệu chính xác và minh bạch, cho phép mọi bên tham gia dễ dàng theo dõi và kiểm tra tiến độ, trách nhiệm công việc."
 Câu 24: Tại sao BIM giúp cải thiện chất lượng thi công và an toàn cho công trình?
 *A. BIM cho phép mô phỏng và phân tích các kịch bản trước khi thi công, giúp phát hiện sớm các rủi ro và 
 điều chỉnh phương án thiết kế phù hợp."
@@ -135,8 +133,7 @@ C. BIM loại bỏ hoàn toàn lỗi kỹ thuật trong quá trình thi công.
 D. BIM tự động hóa quá trình xây dựng mà không cần sự can thiệp của con người.
 Câu 25: Tại sao BIM được coi là một công cụ thúc đẩy phát triển bền vững?
 A. BIM chỉ tập trung vào việc tối ưu hóa chi phí mà không cần quan tâm đến yếu tố môi trường.
-*B. BIM cho phép phân tích và tối ưu hóa các yếu tố như năng lượng, nước và vật liệu, giúp giảm thiểu tác 
-động đến môi trường và tiết kiệm tài nguyên."
+*B. BIM cho phép phân tích và tối ưu hóa các yếu tố như năng lượng, nước và vật liệu, giúp giảm thiểu tác động đến môi trường và tiết kiệm tài nguyên."
 C. BIM giúp tăng tốc độ thi công mà không cần quan tâm đến sự ảnh hưởng lâu dài của công trình.
 D. BIM chỉ cải thiện hiệu quả làm việc của đội ngũ kỹ sư mà không liên quan đến tính bền vững.
 Câu 26: Những khó khăn, thách thức nào thường gặp khi áp dụng BIM tại Việt Nam?
