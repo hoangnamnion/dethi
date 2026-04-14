@@ -1,0 +1,389 @@
+
+Phần trắc nghiệm:
+Câu 1: BIM là gì?
+A. Mô hình 3D;
+B. Mô hình revit;		     
+*C. Mô hình 3D gắn đầy đủ thông tin hình học và phi hình học phục vụ cho việc ra quyết định trong suốt vòng đời công trình;	
+D: Mô hình 3D gắn đầy đủ thông tin hình học phục vụ cho việc ra quyết định trong suốt vòng đời công trình;
+Câu 2: Dự án đầu tư xây dựng cấp 1 hiện nay gồm bao nhiêu giai đoạn?
+A. 2;	                        *B. 3;                        C. 4;	                       D: 5.
+Câu 3: Cơ sở dữ liệu BIM có thể được sử dụng trong những giai đoạn nào trong vòng đời của các công trình?
+A. Giai đoạn thiết kế;                                     B. Giai đoạn thi công;                      
+C. Giai đoạn vận hành;	                           *D: Toàn bộ vòng đời của công trình.
+Câu 4: LOD (trong quản lý dự án/ CN BIM) là viết tắt của từ gì?
+*A. Level of development;                              B. Level development of;                  
+C. Leave off department;                               D: development level of;                  
+Câu 5:  BIM là viết tắt của từ gì? 
+*A. Building Information Modeling;		                    B. Building Modeling Information;
+C. Building Modeling Information;		                    D: Building Information Mode.
+Câu 6: Có bao nhiêu cấp độ của mô hình BIM?
+A. 5;                             B. 6;                            *C. 7;                         D: 8.
+Câu 7: Những nước nào đang bắt buộc áp dụng BIM?
+A. Anh, Mỹ, Việt Nam;                                                B. Anh, Singapore, Trung Quốc;
+*C. Anh, Mỹ, Singapore;                                                D: Anh, Singapore, ThaiLand;
+Câu 8:  LOD 350 phù hợp với gian đoạn thiết kế nào?    
+A. Giai đoạn thiết kế cơ sở;                                               B. Giai đoạn thiết kế kỹ thuật;                  
+*C. Giai đoạn thiết kế bản vẽ thi công;                               D: Giai đoạn vận hành;                  
+Câu 9: CDE (trong quản lý dự án/ CN BIM) là viết tắt của từ nào?
+*A. Common Data Environment;                                   B. Common Environment Data;
+C. Data Common Environment;                                   D: Cement Date Environment.
+Câu 10:  LOD (level of development) nghĩa là gì?
+A. LOD dùng để chỉ mức độ quan trọng của thông tin, mức độ cần thiết của các thành phần trong mô hình BIM;                              
+*B. LOD dùng để chỉ mức độ rõ ràng về thông tin, độ chi tiết của các thành phần trong mô hình BIM;                  
+C. LOD dùng để chỉ mức độ đúng đắn của thông tin, mức độ chính xác của các thành phần trong mô hình BIM;                              
+D: LOD dùng để chỉ mức độ cần thiết của thông tin, mức độ chính xác của các thành phần trong mô hình BIM;                  
+Câu 11: Những phương thức nào sau đây có thể dùng để trao đổi thông tin trong BIM?
+A. Mạng nội bộ;                                               B. Email, Dropbox, Google drive, FPT;
+C. Điện toán đám mây;                                     *D: Tất cả các phương án trên.
+Câu 12:  Cấu trúc của CDE (trong quản lý dự án/ CN  BIM) gồm mấy khu vực?
+A. 2;                                       B. 1;                                     *C. 4;                                 D: 3.
+Câu 13:  Kế hoạch thực hiện BIM do đơn vị nào lập?
+*A. Tư vấn BIM giai đoạn thiết kế;                                 B. Tư vấn giám sát;
+C. Chủ đầu tư;                                                                D: Đơn vị thi công.
+Câu 14:  Có những loại thông tin nào trong mô hình BIM? (Có thể chọn nhiều phương án).
+*A. Thông tin hình học;                                                   B. Thông tin số hóa;
+*C. Thông tin phi hình học;                                             D: Thông tin mã hóa.
+Câu 15: Mỗi dự án có bao nhiêu CDE?
+A. 2;                                      *B. 1;                                    C. 4;                                 D: 3.
+Câu 16: Trong mô hình BIM thông tin có thể được lưu trữ ở đâu?
+A. Ổ cứng;                                                                      B. Email, Google drive;
+C. Cloud;                                                                        *D: Tất cả các phương án trên.
+Câu 17: Cổng phê duyệt của CDE (trong quản lý dự án/ CN  BIM) có chức năng gì?
+A. Kiểm tra sự phù hợp của mô hình;
+B. Kiểm tra nội dung kỹ thuật;
+C. Được sự chấp thuận của Người phụ trách nhiệm vụ tương ứng;
+*D: Tất cả các phương án trên.
+Câu 18: Hồ sơ yêu cầu EIR (trong quản lý dự án/ CN  BIM) do đơn vị nào đưa ra?
+A. Tư vấn BIM giai đoạn thiết kế;                                B. Tư vấn giám sát;
+*C. Chủ đầu tư;                                                               D: Đơn vị thi công.
+Câu 19: Trình tự đầu tư xây dựng khi đã áp dụng BIM bao gồm mấy giai đoạn?
+A. 2;                            *B. 3;                              C. 4;                              D: 5.
+Câu 20: Những phần mềm nào sau đây dùng để lập mô hình BIM 4D?
+A. CAD 2D;                                                                    *B. Synchro;
+C. Tekla;                                                                         D: Revit.
+
+Câu hỏi 2
+
+
+Phần trắc nghiệm:
+Câu 1: BIM là gì?
+A. Mô hình 3D;
+B. Mô hình revit;		     
+*C. Mô hình 3D gắn đầy đủ thông tin hình học và phi hình học phục vụ cho việc ra quyết định trong suốt vòng đời công trình;	
+D: Mô hình 3D gắn đầy đủ thông tin hình học phục vụ cho việc ra quyết định trong suốt vòng đời công trình;
+Câu 2: Dự án đầu tư xây dựng hiện nay gồm bao nhiêu giai đoạn?
+A. 2;	                        *B. 3;                         C. 4;	                       D: 5.
+Câu 3: BIM là viết tắt của từ gì? 
+*A. Building Information Modeling;		                    B. Building Modeling Information;
+C. Building Modeling Information;		                    D: Building Information Mode.
+Câu 4: LOD (level of development) nghĩa là gì?
+A. LOD dùng để chỉ mức độ quan trọng của thông tin, mức độ cần thiết của các thành phần trong mô hình BIM;                              
+*B. LOD dùng để chỉ mức độ rõ ràng về thông tin, độ chi tiết của các thành phần trong mô hình BIM;                  
+C. LOD dùng để chỉ mức độ đúng đắn của thông tin, mức độ chính xác của các thành phần trong mô hình BIM;                              
+D: LOD dùng để chỉ mức độ cần thiết của thông tin, mức độ chính xác của các thành phần trong mô hình BIM;                  
+Câu 5: Cơ sở dữ liệu BIM có thể được sử dụng trong những giai đoạn nào trong vòng đời của các công trình?
+A. Giai đoạn thiết kế;                                    B. Giai đoạn thi công;                      
+C. Giai đoạn vận hành;	                           *D: Toàn bộ vòng đời của công trình.
+Câu 6: Có bao nhiêu cấp độ của mô hình BIM?
+A. 5;                             B. 6;                            *C. 7;                         D: 8.
+Câu 7: LOD (trong quản lý dự án/ CN  BIM) là viết tắt của từ gì?
+*A. Level of development;                              B. Level development of;                  
+C. Leave off department;                               D: development level of;                  
+Câu 8: LOD 200 phù hợp với gian đoạn thiết kế nào?    
+*A. Giai đoạn thiết kế cơ sở;                                               B. Giai đoạn thiết kế kỹ thuật;                  
+C. Giai đoạn thiết kế bản vẽ thi công;                               D: Giai đoạn vận hành;                  
+Câu 9: Những nước nào đang bắt buộc áp dụng BIM?
+A. Anh, Mỹ, Việt Nam;                                                B. Anh, Singapore, Trung Quốc;
+*C. Anh, Mỹ, Singapore;                                                D: Anh, Singapore, ThaiLand;
+Câu 10: CDE (trong quản lý dự án/ CN  BIM) là viết tắt của từ nào?
+*A. Common Data Environment;                                   B. Common Environment Data;
+C. Data Common Environment;                                   D: Cement Date Environment.
+Câu 11: Hồ sơ yêu cầu EIR (trong quản lý dự án/ CN  BIM) do đơn vị nào đưa ra?
+A. Tư vấn BIM giai đoạn thiết kế;                                B. Tư vấn giám sát;
+*C. Chủ đầu tư;                                                                D: Đơn vị thi công.
+Câu 12: Mỗi dự án có bao nhiêu CDE?
+A. 2;                                      *B. 1;                                    C. 4;                                 D: 3.
+Câu 13: Những phương thức nào sau đây có thể dùng để trao đổi thông tin trong BIM?
+A. Mạng nội bộ;                                               B. Email, Dropbox, Google drive, FPT;
+C. Điện toán đám mây;                                     *D: Tất cả các phương án trên.
+Câu 14:  Cấu trúc của CDE (trong quản lý dự án/ CN  BIM) gồm mấy khu vực?
+A. 2;                                       B. 1;                                     *C. 4;                                 D: 3.
+Câu 15:  Cổng phê duyệt của CDE có chức năng gì?
+A. Kiểm tra sự phù hợp của mô hình;
+B. Kiểm tra nội dung kỹ thuật;
+C. Được sự chấp thuận của Người phụ trách nhiệm vụ tương ứng;
+*D: Tất cả các phương án trên.
+Câu 16: Có những loại thông tin nào trong mô hình BIM? (Có thể chọn nhiều phương án).
+*A. Thông tin hình học;                                                   B. Thông tin số hóa;
+*C. Thông tin phi hình học;                                             D: Thông tin mã hóa.
+Câu 17:  Trình tự đầu tư xây dựng khi đã áp dụng BIM bao gồm mấy giai đoạn?
+A. 2;                            *B. 3;                              C. 4;                              D: 5.
+Câu 18: Trong mô hình BIM thông tin có thể được lưu trữ ở đâu?
+A. Ổ cứng;                                                                      B. Email, Google drive;
+C. Cloud;                                                                        *D: Tất cả các phương án trên.
+Câu 19:  Những phần mềm nào sau đây dùng để lập mô hình BIM 4D?
+A. CAD 2D;                                                                   B. Revit;
+C. Tekla;                                                                         *D: Naviswork.
+Câu 20:  Kế hoạch thực hiện BIM do đơn vị nào lập?
+*A. Tư vấn BIM giai đoạn thiết kế;                                 B. Tư vấn giám sát;
+C. Chủ đầu tư;                                                                D: Đơn vị thi công.
+
+Câu hỏi 3
+Phần trắc nghiệm:
+Câu 1:  Cơ sở dữ liệu BIM có thể được sử dụng trong những giai đoạn nào trong vòng đời của các công trình?
+A. Giai đoạn thiết kế;                                    B. Giai đoạn thi công;                      
+C. Giai đoạn vận hành;	                           *D: Toàn bộ vòng đời của công trình.
+Câu 2: Dự án đầu tư xây dựng hiện nay gồm bao nhiêu giai đoạn?
+A. 2;	                        *B. 3;                         C. 4;	                       D: 5.
+Câu 3: BIM là viết tắt của từ gì? 
+*A. Building Information Modeling;		                    B. Building Modeling Information;
+C. Building Modeling Information;		                    D: Building Information Mode.
+Câu 4: Có bao nhiêu cấp độ của mô hình BIM?
+A. 5;                             B. 6;                            *C. 7;                         D: 8.
+Câu 5: LOD là viết tắt của từ gì?
+*A. Level of development;                              B. Level development of;                  
+C. Leave off department;                               D: development level of;                  
+Câu 6: BIM là gì?
+A. Mô hình 3D;
+B. Mô hình revit;		     
+*C. Mô hình 3D gắn đầy đủ thông tin hình học và phi hình học phục vụ cho việc ra quyết định trong suốt vòng đời công trình;	
+D: Mô hình 3D gắn đầy đủ thông tin hình học phục vụ cho việc ra quyết định trong suốt vòng đời công trình;
+Câu 7: LOD (level of development) nghĩa là gì?
+A. LOD dùng để chỉ mức độ quan trọng của thông tin, mức độ cần thiết của các thành phần trong mô hình BIM;                              
+*B. LOD dùng để chỉ mức độ rõ ràng về thông tin, độ chi tiết của các thành phần trong mô hình BIM;                  
+C. LOD dùng để chỉ mức độ đúng đắn của thông tin, mức độ chính xác của các thành phần trong mô hình BIM;                              
+D: LOD dùng để chỉ mức độ cần thiết của thông tin, mức độ chính xác của các thành phần trong mô hình BIM;                  
+Câu 8: Những nước nào đang bắt buộc áp dụng BIM?
+A. Anh, Mỹ, Việt Nam;                                                B. Anh, Singapore, Trung Quốc;
+*C. Anh, Mỹ, Singapore;                                                D: Anh, Singapore, ThaiLand;
+Câu 9: CDE (trong quản lý dự án/ CN BIM) là viết tắt của từ nào?
+*A. Common Data Environment;                                   B. Common Environment Data;
+C. Data Common Environment;                                   D: Cement Date Environment.
+Câu 10: Mỗi dự án có bao nhiêu CDE?
+A. 2;                                      *B. 1;                                    C. 4;                                 D: 3.
+Câu 11: LOD 300 phù hợp với gian đoạn thiết kế nào?    
+A. Giai đoạn thiết kế cơ sở;                                               *B. Giai đoạn thiết kế kỹ thuật;                  
+C. Giai đoạn thiết kế bản vẽ thi công;                               D: Giai đoạn vận hành;                  
+Câu 12:  Những phương thức nào sau đây có thể dùng để trao đổi thông tin trong BIM?
+A. Mạng nội bộ;                                                B. Email, Dropbox, Google drive, FPT;
+C. Điện toán đám mây;                                     *D: Tất cả các phương án trên.
+Câu 13: Cổng phê duyệt của CDE (trong quản lý dự án/ CN BIM) có chức năng gì?
+A. Kiểm tra sự phù hợp của mô hình;
+B. Kiểm tra nội dung kỹ thuật;
+C. Được sự chấp thuận của Người phụ trách nhiệm vụ tương ứng;
+*D: Tất cả các phương án trên.
+Câu 14:  Cấu trúc của CDE (trong quản lý dự án/ CN BIM) gồm mấy khu vực?
+A. 2;                                       B. 1;                                     *C. 4;                                 D: 3.
+Câu 15:  Có những loại thông tin nào trong mô hình BIM? (Có thể chọn nhiều phương án).
+*A. Thông tin hình học;                                                   B. Thông tin số hóa;
+*C. Thông tin phi hình học;                                             D: Thông tin mã hóa.
+Câu 16:  Hồ sơ yêu cầu EIR (trong quản lý dự án/ CN BIM) do đơn vị nào đưa ra?
+A. Tư vấn BIM giai đoạn thiết kế;                                B. Tư vấn giám sát;
+*C. Chủ đầu tư;                                                                D: Đơn vị thi công.
+Câu 17: Trong mô hình BIM thông tin có thể được lưu trữ ở đâu?
+A. Ổ cứng;                                                                      B. Email, Google drive;
+C. Cloud;                                                                        *D: Tất cả các phương án trên.
+Câu 18:  Những phần mềm nào sau đây không dùng để lập mô hình BIM 3D?
+*A. CAD 2D;                                                                   B. REVIT;
+C. Tekla;                                                                         D: Sketchup.
+Câu 19:  Trình tự đầu tư xây dựng khi đã áp dụng BIM bao gồm mấy giai đoạn?
+A. 2;                            *B. 3;                              C. 4;                              D: 5.
+Câu 20:  Kế hoạch thực hiện BIM do đơn vị nào lập?
+*A. Tư vấn BIM giai đoạn thiết kế;                                 B. Tư vấn giám sát;
+C. Chủ đầu tư;                                                                D: Đơn vị thi công.
+
+Câu hỏi 4
+
+Phần trắc nghiệm:
+Câu 1:  BIM là gì?
+A. Mô hình 3D;
+B. Mô hình revit;		     
+*C. Mô hình 3D gắn đầy đủ thông tin hình học và phi hình học phục vụ cho việc ra quyết định trong suốt vòng đời công trình;	
+D: Mô hình 3D gắn đầy đủ thông tin hình học phục vụ cho việc ra quyết định trong suốt vòng đời công trình;
+Câu 2: Dự án đầu tư xây dựng cấp 1 hiện nay gồm bao nhiêu giai đoạn?
+A. 2;	                       *B. 3;                         C. 4;	                       D: 5.
+Câu 3: (0,35 điểm) BIM là viết tắt của từ gì? 
+*A. Building Information Modeling;		                    B. Building Modeling Information;
+C. Building Modeling Information;		                    D: Building Information Mode.
+Câu 4:  Cơ sở dữ liệu BIM có thể được sử dụng trong những giai đoạn nào trong vòng đời của các công trình?
+A. Giai đoạn thiết kế;                                    B. Giai đoạn thi công;                      
+C. Giai đoạn vận hành;	                           *D: Toàn bộ vòng đời của công trình.
+Câu 5: LOD là viết tắt của từ gì?
+*A. Level of development;                              B. Level development of;                  
+C. Leave off department;                               D: development level of;                  
+Câu 6: Có bao nhiêu cấp độ của mô hình BIM?
+A. 5;                             B. 6;                            *C. 7;                         D: 8.
+Câu 7: LOD (level of development) nghĩa là gì?
+A. LOD dùng để chỉ mức độ quan trọng của thông tin, mức độ cần thiết của các thành phần trong mô hình BIM;                              
+*B. LOD dùng để chỉ mức độ rõ ràng về thông tin, độ chi tiết của các thành phần trong mô hình BIM;                  
+C. LOD dùng để chỉ mức độ đúng đắn của thông tin, mức độ chính xác của các thành phần trong mô hình BIM;                              
+D: LOD dùng để chỉ mức độ cần thiết của thông tin, mức độ chính xác của các thành phần trong mô hình BIM;                  
+Câu 8: Những nước nào đang bắt buộc áp dụng BIM?
+A. Anh, Mỹ, Việt Nam;                                                B. Anh, Singapore, Trung Quốc;
+*C. Anh, Mỹ, Singapore;                                                D: Anh, Singapore, ThaiLand;
+Câu 9: LOD 350 phù hợp với gian đoạn thiết kế nào?    
+A. Giai đoạn thiết kế cơ sở;                                               B. Giai đoạn thiết kế kỹ thuật;                  
+*C. Giai đoạn thiết kế bản vẽ thi công;                               D: Giai đoạn vận hành;                  
+Câu 10: CDE (trong quản lý dự án/ CN BIM) là viết tắt của từ nào?
+*A. Common Data Environment;                                   B. Common Environment Data;
+C. Data Common Environment;                                   D: Cement Date Environment.
+Câu 11: Những phương thức nào sau đây có thể dùng để trao đổi thông tin trong BIM?
+A. Mạng nội bộ;                                               B. Email, Dropbox, Google drive, FPT;
+C. Điện toán đám mây;                                     *D: Tất cả các phương án trên.
+Câu 12: Mỗi dự án có bao nhiêu CDE?
+A. 2;                                      *B. 1;                                    C. 4;                                 D: 3.
+Câu 13: Cấu trúc của CDE (trong quản lý dự án/ CN BIM) gồm mấy khu vực?
+A. 2;                                       B. 1;                                     *C. 4;                                 D: 3.
+Câu 14:) Kế hoạch thực hiện BIM do đơn vị nào lập?
+*A. Tư vấn BIM giai đoạn thiết kế;                                 B. Tư vấn giám sát;
+C. Chủ đầu tư;                                                                D: Đơn vị thi công.
+Câu 15: Có những loại thông tin nào trong mô hình BIM? (Có thể chọn nhiều phương án).
+*A. Thông tin hình học;                                                   B. Thông tin số hóa;
+*C. Thông tin phi hình học;                                             D: Thông tin mã hóa.
+Câu 16: Trong mô hình BIM thông tin có thể được lưu trữ ở đâu?
+A. Ổ cứng;                                                                      B. Email, Google drive;
+C. Cloud;                                                                        *D: Tất cả các phương án trên.
+Câu 17: Cổng phê duyệt của CDE (trong quản lý dự án/ CN  BIM) có chức năng gì?
+A. Kiểm tra sự phù hợp của mô hình;
+B. Kiểm tra nội dung kỹ thuật;
+C. Được sự chấp thuận của Người phụ trách nhiệm vụ tương ứng;
+*D: Tất cả các phương án trên.
+Câu 18: Những phần mềm nào sau đây dùng để lập mô hình BIM 4D?
+A. CAD 2D;                                                                   *B. Synchro;
+C. Tekla;                                                                         D: Revit.
+Câu 19: Hồ sơ yêu cầu EIR (trong quản lý dự án/ CN BIM) do đơn vị nào đưa ra?
+A. Tư vấn BIM giai đoạn thiết kế;                                B. Tư vấn giám sát;
+*C. Chủ đầu tư;                                                                D: Đơn vị thi công.
+Câu 20: Trình tự đầu tư xây dựng cấp 1 khi đã áp dụng BIM bao gồm mấy giai đoạn?
+A. 2;                            *B. 3;                              C. 4;                              D: 5.
+
+Câu hỏi 5
+
+Phần trắc nghiệm:
+Câu 1: Dự án đầu tư xây dựng cấp 1 hiện nay gồm bao nhiêu giai đoạn?
+A. 2;	                        *B. 3;                         C. 4;	                       D: 5.
+Câu 2:BIM là gì?
+A. Mô hình 3D;
+B. Mô hình revit;		     
+*C. Mô hình 3D gắn đầy đủ thông tin hình học và phi hình học phục vụ cho việc ra quyết định trong suốt vòng đời công trình;	
+D: Mô hình 3D gắn đầy đủ thông tin hình học phục vụ cho việc ra quyết định trong suốt vòng đời công trình;
+Câu 3: BIM là viết tắt của từ gì? 
+*A. Building Information Modeling;		                    B. Building Modeling Information;
+C. Building Modeling Information;		                    D: Building Information Mode.
+Câu 4: Cơ sở dữ liệu BIM có thể được sử dụng trong những giai đoạn nào trong vòng đời của các công trình?
+A. Giai đoạn thiết kế;                                    B. Giai đoạn thi công;                      
+C. Giai đoạn vận hành;	                           *D: Toàn bộ vòng đời của công trình.
+Câu 5: Có bao nhiêu cấp độ của mô hình BIM?
+A. 5;                             B. 6;                            *C. 7;                         D: 8.
+Câu 6: LOD (level of development) nghĩa là gì?
+A. LOD dùng để chỉ mức độ quan trọng của thông tin, mức độ cần thiết của các thành phần trong mô hình BIM;                              
+*B. LOD dùng để chỉ mức độ rõ ràng về thông tin, độ chi tiết của các thành phần trong mô hình BIM;                  
+C. LOD dùng để chỉ mức độ đúng đắn của thông tin, mức độ chính xác của các thành phần trong mô hình BIM;                              
+D: LOD dùng để chỉ mức độ cần thiết của thông tin, mức độ chính xác của các thành phần trong mô hình BIM;                  
+Câu 7: LOD (trong quản lý dự án/ CN BIM) là viết tắt của từ gì?
+*A. Level of development;                              B. Level development of;                  
+C. Leave off department;                               D: development level of;                  
+Câu 8: LOD 350 phù hợp với gian đoạn thiết kế nào?    
+A. Giai đoạn thiết kế cơ sở;                                               B. Giai đoạn thiết kế kỹ thuật;                  
+*C. Giai đoạn thiết kế bản vẽ thi công;                               D: Giai đoạn vận hành;                  
+Câu 9: CDE (trong quản lý dự án/ CN BIM) là viết tắt của từ nào?
+*A. Common Data Environment;                                   B. Common Environment Data;
+C. Data Common Environment;                                   D: Cement Date Environment.
+Câu 10: Mỗi dự án có bao nhiêu CDE?
+A. 2;                                      *B. 1;                                    C. 4;                                 D: 3.
+Câu 11: Những nước nào đang bắt buộc áp dụng BIM?
+A. Anh, Mỹ, Việt Nam;                                                B. Anh, Singapore, Trung Quốc;
+*C. Anh, Mỹ, Singapore;                                                D: Anh, Singapore, ThaiLand;
+Câu 12: Những phương thức nào sau đây có thể dùng để trao đổi thông tin trong BIM?
+A. Mạng nội bộ;                                               B. Email, Dropbox, Google drive, FPT;
+C. Điện toán đám mây;                                     *D: Tất cả các phương án trên.
+Câu 13: Cấu trúc của CDE (trong quản lý dự án/ CN BIM) gồm mấy khu vực?
+A. 2;                                       *B. 1;                                     C. 4;                                 D: 3.
+Câu 14: Có những loại thông tin nào trong mô hình BIM? (Có thể chọn nhiều phương án).
+*A. Thông tin hình học;                                                   B. Thông tin số hóa;
+*C. Thông tin phi hình học;                                             D: Thông tin mã hóa.
+Câu 15: Trong mô hình BIM thông tin có thể được lưu trữ ở đâu?
+A. Ổ cứng;                                                                      B. Email, Google drive;
+C. Cloud;                                                                        *D: Tất cả các phương án trên.
+Câu 16: Cổng phê duyệt của CDE (trong quản lý dự án/ CN BIM) có chức năng gì?
+A. Kiểm tra sự phù hợp của mô hình;
+B. Kiểm tra nội dung kỹ thuật;
+C. Được sự chấp thuận của Người phụ trách nhiệm vụ tương ứng;
+*D: Tất cả các phương án trên.
+Câu 17: Những phần mềm nào sau đây dùng để lập mô hình BIM 4D?
+A. CAD;                                                                         *B. Synchro;
+C. Tekla;                                                                         D: Revit.
+Câu 18: Kế hoạch thực hiện BIM do đơn vị nào lập?
+*A. Tư vấn BIM giai đoạn thiết kế;                                 B. Tư vấn giám sát;
+C. Chủ đầu tư;                                                                D: Đơn vị thi công.
+Câu 19:Hồ sơ yêu cầu EIR (trong quản lý dự án/ CN BIM) do đơn vị nào đưa ra?
+A. Tư vấn BIM giai đoạn thiết kế;                                B. Tư vấn giám sát;
+*C. Chủ đầu tư;                                                                D: Đơn vị thi công.
+Câu 20: Trình tự đầu tư xây dựng cấp 1 khi đã áp dụng BIM bao gồm mấy giai đoạn?
+A. 2;                            *B. 3;                              C. 4;                              D: 5.
+Phần tự luận:
+ 
+
+Câu hỏi 6
+
+Phần trắc nghiệm:
+Câu 1: BIM là viết tắt của từ gì? 
+*A. Building Information Modeling;		                    B. Building Modeling Information;
+C. Building Modeling Information;		                    D: Building Information Mode.
+
+Câu 3: dự án đầu tư xây dựng cấp 1 hiện nay gồm bao nhiêu giai đoạn?
+A. 2;	                        *B. 3;                         C. 4;	                       D: 5.
+Câu 4: Cơ sở dữ liệu BIM có thể được sử dụng trong những giai đoạn nào trong vòng đời của các công trình?
+A. Giai đoạn thiết kế;                                    B. Giai đoạn thi công;                      
+C. Giai đoạn vận hành;	                           *D: Toàn bộ vòng đời của công trình.
+Câu 5: LOD (trong quản lý dự án/ CN BIM) là viết tắt của từ gì?
+*A. Level of development;                              B. Level development of;                  
+C. Leave off department;                               D: development level of;                  
+Câu 6: LOD (level of development) nghĩa là gì?
+A. LOD dùng để chỉ mức độ quan trọng của thông tin, mức độ cần thiết của các thành phần trong mô hình BIM;                              
+*B. LOD dùng để chỉ mức độ rõ ràng về thông tin, độ chi tiết của các thành phần trong mô hình BIM;                  
+C. LOD dùng để chỉ mức độ đúng đắn của thông tin, mức độ chính xác của các thành phần trong mô hình BIM;                              
+D: LOD dùng để chỉ mức độ cần thiết của thông tin, mức độ chính xác của các thành phần trong mô hình BIM;                  
+Câu 7: Có bao nhiêu cấp độ của mô hình BIM?
+A. 5;                             B. 6;                            *C. 7;                         D: 8.
+Câu 8: LOD 400 phù hợp với gian đoạn thiết kế nào?    
+A. Giai đoạn thiết kế cơ sở;                                               B. Giai đoạn thiết kế kỹ thuật;                  
+*C. Giai đoạn thiết kế bản vẽ thi công;                               D: Giai đoạn vận hành;                  
+Câu 9: CDE (trong quản lý dự án/ CN BIM) là viết tắt của từ nào?
+*A. Common Data Environment;                                   B. Common Environment Data;
+C. Data Common Environment;                                   D: Cement Date Environment.
+Câu 10: Mỗi dự án có bao nhiêu CDE?
+A. 2;                                      *B. 1;                                    C. 4;                                 D: 3.
+Câu 11: Những phương thức nào sau đây có thể dùng để trao đổi thông tin trong BIM?
+A. Mạng nội bộ;                                               B. Email, Dropbox, Google drive, FPT;
+C. Điện toán đám mây;                                     *D: Tất cả các phương án trên.
+Câu 12: Cấu trúc của CDE (trong quản lý dự án/ CN BIM)  gồm mấy khu vực?
+A. 2;                                       B. 1;                                     *C. 4;                                 D: 3.
+Câu 13: Những nước nào đang bắt buộc áp dụng BIM?
+A. Anh, Mỹ, Việt Nam;                                                B. Anh, Singapore, Trung Quốc;
+*C. Anh, Mỹ, Singapore;                                                D: Anh, Singapore, ThaiLand;
+Câu 14: Cổng phê duyệt của CDE (trong quản lý dự án/ CN BIM) có chức năng gì?
+A. Kiểm tra sự phù hợp của mô hình;
+B. Kiểm tra nội dung kỹ thuật;
+C. Được sự chấp thuận của Người phụ trách nhiệm vụ tương ứng;
+*D: Tất cả các phương án trên.
+Câu 15: Trong mô hình BIM thông tin có thể được lưu trữ ở đâu?
+A. Ổ cứng;                                                                      B. Email, Google drive;
+C. Cloud;                                                                        *D: Tất cả các phương án trên.
+Câu 16: Những phần mềm nào sau đây dùng để lập mô hình BIM 4D?
+A. CAD 2D;                                                                   *B. Synchro;
+C. Tekla;                                                                         D: Revit.
+Câu 17: Có những loại thông tin nào trong mô hình BIM? (Có thể chọn nhiều phương án).
+*A. Thông tin hình học;                                                   B. Thông tin số hóa;
+*C. Thông tin phi hình học;                                             D: Thông tin mã hóa.
+Câu 18: Hồ sơ yêu cầu EIR (trong quản lý dự án/ CN BIM) do đơn vị nào đưa ra?
+A. Tư vấn BIM giai đoạn thiết kế;                                B. Tư vấn giám sát;
+*C. Chủ đầu tư;                                                                D: Đơn vị thi công.
+Câu 19: Trình tự đầu tư xây dựng khi đã áp dụng BIM bao gồm mấy giai đoạn?
+A. 2;                            *B. 3;                              C. 4;                              D: 5.
+Câu 20: Kế hoạch thực hiện BIM do đơn vị nào lập?
+*A. Tư vấn BIM giai đoạn thiết kế;                                 B. Tư vấn giám sát;
+C. Chủ đầu tư;                                                                D: Đơn vị thi công.
+
+
+
