@@ -534,16 +534,15 @@ function handleAnswer(qIndex, optIndex) {
             showCorrectEffect();
             currentStreak++; // Tăng streak ngay cả khi làm lại câu sai
             showComboFire(currentStreak);
-            updateFilteredQuestions();
             
-            if (filteredQuestions.length === 0) {
+            renderQuestion(qIndex);
+            
+            if (wrongQuestions.length === 0) {
                 setTimeout(() => {
                     alert("🎉 Chúc mừng! Bạn đã làm đúng tất cả các câu sai!");
                     finishRetryMode();
                 }, 500);
                 return;
-            } else {
-                renderQuestion(qIndex);
             }
         } else {
             showWrongEffect();
