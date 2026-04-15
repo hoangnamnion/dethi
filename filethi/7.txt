@@ -895,8 +895,8 @@ C. Lập bảng tính tài chính cho doanh nghiệp phi xây dựng
 D. Quản lý email và tài liệu văn phòng
 Câu 158: Ứng dụng nào sau đây của BIM trong lập kế hoạch và thi công là chính xác nhất?
 A. BIM giúp tạo hình ảnh minh họa 2D cho các báo cáo dự án
-*B. BIM chỉ hỗ trợ thiết kế kiến trúc mà không liên quan đến thi công
-C. BIM hỗ trợ lập kế hoạch chi tiết, kiểm soát tiến độ, tối ưu hóa nhân lực và tài nguyên
+B. BIM chỉ hỗ trợ thiết kế kiến trúc mà không liên quan đến thi công
+*C. BIM hỗ trợ lập kế hoạch chi tiết, kiểm soát tiến độ, tối ưu hóa nhân lực và tài nguyên
 D. BIM chỉ có chức năng lưu trữ hồ sơ công trình mà không hỗ trợ thi công
 Câu 159: BIM hỗ trợ quản lý và kiểm soát chất lượng trong thi công bằng cách nào?
 A. Chỉ sử dụng để tạo bản vẽ kiến trúc mà không liên quan đến chất lượng thi công
