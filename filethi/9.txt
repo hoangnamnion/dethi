@@ -298,7 +298,7 @@ Câu 12: Những phương thức nào sau đây có thể dùng để trao đổ
 A. Mạng nội bộ;                                               B. Email, Dropbox, Google drive, FPT;
 C. Điện toán đám mây;                                     *D. Tất cả các phương án trên.
 Câu 13: Cấu trúc của CDE (trong quản lý dự án/ CN BIM) gồm mấy khu vực?
-A. 2;                                       *B. 1;                                     C. 4;                                 D. 3.
+A. 2;                                       B. 1;                                     *C. 4;                                 D. 3.
 Câu 14: Có những loại thông tin nào trong mô hình BIM? (Có thể chọn nhiều phương án).
 *A. Thông tin hình học;                                                   B. Thông tin số hóa;
 *C. Thông tin phi hình học;                                             D. Thông tin mã hóa.
