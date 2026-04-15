@@ -854,8 +854,8 @@ B. AutoCAD
 C. 3ds Max
 *D. DIALux
 Câu 151: Ứng dụng nào sau đây là một trong những ứng dụng của BIM trong thi công?
-A. Mô phỏng tiến độ và quản lý xây dựng
-*B. Thiết kế thời trang bằng công nghệ số
+*A. Mô phỏng tiến độ và quản lý xây dựng
+B. Thiết kế thời trang bằng công nghệ số
 C. Dự báo xu hướng bất động sản
 D. Quản lý tài chính cá nhân
 Câu 152: Lợi ích nào sau đây là một trong những lợi ích của việc quản lý khối lượng bằng 
