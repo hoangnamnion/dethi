@@ -117,10 +117,7 @@ A. Một công cụ lập trình truyền thống giúp tạo ra mô hình 3D.
 *B. Một công cụ lập trình dạng ""visual scripting"" giúp tự động hóa các tác vụ phức tạp trong Revit.
 C. Một ứng dụng độc lập không liên quan đến Revit.
 D. Một phần mềm CAD chuyên dụng cho việc tạo hình ảnh 2D.
-A. Chỉ hỗ trợ trong việc tạo lập hình học 2D đơn giản. 
-Câu 72:
-lý dữ liệu?
-Dynamo có những ứng dụng gì trong Revit giúp tối ưu hóa quy trình thiết kế và quản 
+Câu 72:  Dynamo có những ứng dụng gì trong Revit giúp tối ưu hóa quy trình thiết kế và quản lý dữ liệu?
 A. Hỗ trợ trong việc tạo lập hình học 2D đơn giản
 B. Chỉ được sử dụng để tự động hóa tác vụ lặp lại đơn giản.
 *C. Cho phép thiết kế tham số, tạo lập hình học phức tạp, tự động hóa tác vụ và quản lý dữ liệu BIM."
