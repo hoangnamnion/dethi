@@ -8,9 +8,9 @@ const getTelegramChatId = () => atob(_T_CHAT_);
 
 // 2. DANH SÁCH ĐỀ THI MẶC ĐỊNH (Dành cho ai không được gán đề riêng)
 const DEFAULT_EXAMS = [
-    { file: '1', ten: 'Vật liệu xây dựng 35 câu đầu' },
-    { file: '2', ten: 'Vật liệu xây dựng 35 câu tiếp' },
-    { file: '3', ten: 'Vật liệu xây dựng 70 Câu' },
+    { file: '1', ten: 'Vật lý kiến trúc 35 câu đầu' },
+    { file: '2', ten: 'Vật lý kiến trúc 35 câu tiếp' },
+    { file: '3', ten: 'Vật lý kiến trúc 70 Câu' },
 
 
     { ten: 'Trang Có Đề Thi', url: 'sbvl.html', IMG: 'anhnen/pdf.gif' }
