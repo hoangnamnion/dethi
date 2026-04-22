@@ -958,30 +958,33 @@
                 }
 
                 // Kiểm tra mã thiết bị (Device Binding)
-                const currentDeviceId = getOrCreateDeviceId();
-                if (!accountData.id) {
-                    loginBtn.innerHTML = prevText;
-                    loginBtn.disabled = false;
-                    showActivationModal(username, password, 1);
-                    return;
-                } else {
-                    let isAllowed = false;
-                    let registeredCount = 1;
-                    if (Array.isArray(accountData.id)) {
-                        // Nếu admin cấu hình nhiều ID dưới dạng mảng
-                        isAllowed = accountData.id.includes(currentDeviceId);
-                        registeredCount = accountData.id.length;
-                    } else {
-                        // Nếu admin chỉ cấu hình 1 ID dưới dạng chuỗi
-                        isAllowed = (accountData.id === currentDeviceId);
-                        registeredCount = 1;
-                    }
-
-                    if (!isAllowed) {
+                const unlimitedAccounts = ['admin', 'thuy']; // Thêm các tài khoản khác vào đây, ví dụ: ['admin', 'tk1', 'tk2']
+                if (!unlimitedAccounts.includes(username)) {
+                    const currentDeviceId = getOrCreateDeviceId();
+                    if (!accountData.id) {
                         loginBtn.innerHTML = prevText;
                         loginBtn.disabled = false;
-                        showActivationModal(username, password, registeredCount + 1);
+                        showActivationModal(username, password, 1);
                         return;
+                    } else {
+                        let isAllowed = false;
+                        let registeredCount = 1;
+                        if (Array.isArray(accountData.id)) {
+                            // Nếu admin cấu hình nhiều ID dưới dạng mảng
+                            isAllowed = accountData.id.includes(currentDeviceId);
+                            registeredCount = accountData.id.length;
+                        } else {
+                            // Nếu admin chỉ cấu hình 1 ID dưới dạng chuỗi
+                            isAllowed = (accountData.id === currentDeviceId);
+                            registeredCount = 1;
+                        }
+
+                        if (!isAllowed) {
+                            loginBtn.innerHTML = prevText;
+                            loginBtn.disabled = false;
+                            showActivationModal(username, password, registeredCount + 1);
+                            return;
+                        }
                     }
                 }
 
