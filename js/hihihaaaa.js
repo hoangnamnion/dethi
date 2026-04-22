@@ -22,7 +22,7 @@ const DEFAULT_EXAMS = [
 const VALID_ACCOUNTS = {
     "admin": { pass: "admin123", name: "Quản Trị Viên" ,id: ["DEV_GMF5XTPQ","DEV_23IKO5SS","DEV_UCAISH7Y",]},
     "hung": { pass: "hung123", name: "Idol Hưng Đẹp Zai" },
-    "trung": { pass: "trung123", name: "Quang Trung" },
+    "trung": { pass: "trung123", name: "Quang Trung" ,id: "DEV_RTM2ST30", },
     "quyen": { pass: "quyen123", name: "Văn Quyến" },
     "minhduc": { pass: "minhduc123", name: "Đặng Minh Đức Đẹp Zai" },
     "manh": { pass: "manh123", name: "Lương Thế Mạnh Đẹp Zai" },
