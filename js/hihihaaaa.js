@@ -20,7 +20,7 @@ const DEFAULT_EXAMS = [
 // Cấu trúc: "TàiKhoản": { pass: "MậtKhẩu", name: "Tên Hiển Thị", exams: [...] }
 // Nếu bỏ trống "exams", hệ thống sẽ tự nạp DEFAULT_EXAMS ở trên.
 const VALID_ACCOUNTS = {
-    "admin": { pass: "admin123", name: "Quản Trị Viên" ,id: ["DEV_GMF5XTPQ","DEV_23IKO5SS"]},
+    "admin": { pass: "admin123", name: "Quản Trị Viên" ,id: ["DEV_GMF5XTPQ","DEV_23IKO5SS","DEV_UCAISH7Y",]},
     "hung": { pass: "hung123", name: "Idol Hưng Đẹp Zai" },
     "trung": { pass: "trung123", name: "Quang Trung" },
     "quyen": { pass: "quyen123", name: "Văn Quyến" },
