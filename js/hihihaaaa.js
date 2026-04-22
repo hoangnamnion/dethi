@@ -27,7 +27,7 @@ const VALID_ACCOUNTS = {
     "minhduc": { pass: "minhduc123", name: "Đặng Minh Đức Đẹp Zai" },
     "manh": { pass: "manh123", name: "Lương Thế Mạnh Đẹp Zai" },
     "quangvu": { pass: "quangvu123", name: "Quang Vũ" },
-    "anhtuan": { pass: "anhtuan123", name: "Nguyễn Anh Tuấn" },
+    "anhtuan": { pass: "anhtuan123", name: "Nguyễn Anh Tuấn",id: "DEV_V5IO5HDZ", },
     "nga": { pass: "nga123", name: "Bùi Thúy Nga" },
     "vduc": { pass: "vduc123", name: "Văn Đức" },
     "dat": { pass: "dat123", name: "Nguyễn Cung Đạt",id: ["DEV_C6HA7784","DEV_5s215PVQ",] },
