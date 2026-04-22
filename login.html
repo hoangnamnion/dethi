@@ -567,6 +567,81 @@
             0% { transform: translateX(100%); }
             100% { transform: translateX(-150%); }
         }
+        /* ========== ACTIVATION MODAL ========== */
+        .activation-modal {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 10000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+        .activation-content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 90%;
+            width: 400px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            animation: cardAppear 0.3s ease-out;
+        }
+        .activation-content h3 {
+            color: #d63031;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        .activation-content p {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+        .activation-code-box {
+            background: #f1f2f6;
+            padding: 15px;
+            border-radius: 10px;
+            font-family: monospace;
+            font-size: 0.9em;
+            text-align: left;
+            margin-bottom: 20px;
+            border: 1px dashed #a4b0be;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+        .btn-copy {
+            background: #0984e3;
+            color: #fff;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.2s;
+            font-size: 1em;
+        }
+        .btn-copy:hover {
+            background: #74b9ff;
+        }
+        .btn-close-modal {
+            background: #dfe6e9;
+            color: #2d3436;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+            transition: 0.2s;
+        }
+        .btn-close-modal:hover {
+            background: #b2bec3;
+        }
     </style>
 </head>
 <body>
@@ -589,6 +664,17 @@
 
     <!-- Toast notification container -->
     <div id="toast" class="toast"></div>
+
+    <!-- Activation Modal -->
+    <div id="activationModal" class="activation-modal">
+        <div class="activation-content">
+            <h3>⚠️ Yêu Cầu Kích Hoạt Thiết Bị</h3>
+            <p>Tài khoản của bạn chưa được liên kết với thiết bị này. Vui lòng sao chép thông tin bên dưới và gửi cho Admin (Zalo: 0378787154) để được duyệt vào thi.</p>
+            <div id="activationInfo" class="activation-code-box"></div>
+            <button class="btn-copy" onclick="copyActivationInfo()">📋 SAO CHÉP THÔNG TIN</button>
+            <button class="btn-close-modal" onclick="closeActivationModal()">Đóng</button>
+        </div>
+    </div>
 
     <!-- Login Card -->
     <div class="login-card">
@@ -667,6 +753,43 @@
         const usernameInput = document.getElementById('username');
         const passwordInput = document.getElementById('password');
         const loginBtn = document.getElementById('loginBtn');
+
+        // ==========================================
+        // DEVICE BINDING LOGIC
+        // ==========================================
+        function getOrCreateDeviceId() {
+            let deviceId = localStorage.getItem('device_id');
+            if (!deviceId) {
+                // Generate a random string DEV_xxxxxx
+                deviceId = 'DEV_' + Math.random().toString(36).substring(2, 10).toUpperCase();
+                localStorage.setItem('device_id', deviceId);
+            }
+            return deviceId;
+        }
+        
+        // Tạo deviceId ngay khi load trang
+        getOrCreateDeviceId();
+        
+        function showActivationModal(username, password) {
+            const currentDeviceId = getOrCreateDeviceId();
+            const infoText = `Tài khoản: ${username}\nMật khẩu: ${password}\nMã thiết bị: ${currentDeviceId}`;
+            document.getElementById('activationInfo').innerText = infoText;
+            document.getElementById('activationModal').style.display = 'flex';
+        }
+
+        function closeActivationModal() {
+            document.getElementById('activationModal').style.display = 'none';
+        }
+
+        function copyActivationInfo() {
+            const textToCopy = document.getElementById('activationInfo').innerText;
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                showToast('Đã sao chép! Hãy gửi cho Admin', 'success');
+                closeActivationModal();
+            }).catch(err => {
+                showToast('Lỗi sao chép, vui lòng bôi đen và copy tay', 'error');
+            });
+        }
 
         // ==========================================
         // FLOATING PARTICLES
@@ -832,6 +955,31 @@
                     showToast('Mật khẩu không đúng! Vui lòng thử lại.', 'error');
                     passwordInput.focus();
                     return;
+                }
+
+                // Kiểm tra mã thiết bị (Device Binding)
+                const currentDeviceId = getOrCreateDeviceId();
+                if (!accountData.id) {
+                    loginBtn.innerHTML = prevText;
+                    loginBtn.disabled = false;
+                    showActivationModal(username, password);
+                    return;
+                } else {
+                    let isAllowed = false;
+                    if (Array.isArray(accountData.id)) {
+                        // Nếu admin cấu hình nhiều ID dưới dạng mảng
+                        isAllowed = accountData.id.includes(currentDeviceId);
+                    } else {
+                        // Nếu admin chỉ cấu hình 1 ID dưới dạng chuỗi
+                        isAllowed = (accountData.id === currentDeviceId);
+                    }
+
+                    if (!isAllowed) {
+                        loginBtn.innerHTML = prevText;
+                        loginBtn.disabled = false;
+                        showToast('Tài khoản này đã được liên kết với một thiết bị khác!', 'error');
+                        return;
+                    }
                 }
 
                 // ĐĂNG NHẬP THÀNH CÔNG -> BÁO TELEGRAM (chạy ngầm, không block đợi)

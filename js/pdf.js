@@ -4,7 +4,7 @@
 // Cấu trúc: { file: 'ten_file.pdf', ten: 'Tên hiển thị' }
 // =============================================
 const docList = [
-    { file: 'vlxd.docx', ten: 'Vật Liệu Xây Dựng' },
+    { file: 'vlkt.docx', ten: 'Vật lý kiến trúc Tự Luận' },
     // ---- THÊM TÀI LIỆU MỚI Ở ĐÂY ----
     // { file: 'tenfile2.pdf', ten: 'Tài liệu số 2' },
 ];
