@@ -29,7 +29,7 @@ const VALID_ACCOUNTS = {
     "quangvu": { pass: "quangvu123", name: "Quang Vũ" },
     "nga": { pass: "nga123", name: "Bùi Thúy Nga" },
     "vduc": { pass: "vduc123", name: "Văn Đức" },
-    "dat": { pass: "dat123", name: "Nguyễn Cung Đạt" },
+    "dat": { pass: "dat123", name: "Nguyễn Cung Đạt",id: "DEV_C6HA7784", },
     "75dckn24": {
         pass: "vip123",
         name: "Lớp 75DCKN24",
