@@ -770,9 +770,9 @@
         // Tạo deviceId ngay khi load trang
         getOrCreateDeviceId();
         
-        function showActivationModal(username, password) {
+        function showActivationModal(username, password, deviceCount = 1) {
             const currentDeviceId = getOrCreateDeviceId();
-            const infoText = `Tài khoản: ${username}\nMật khẩu: ${password}\nMã thiết bị: ${currentDeviceId}`;
+            const infoText = `Tài khoản: ${username}\nMật khẩu: ${password}\nMã thiết bị thứ ${deviceCount}: ${currentDeviceId}`;
             document.getElementById('activationInfo').innerText = infoText;
             document.getElementById('activationModal').style.display = 'flex';
         }
@@ -962,22 +962,25 @@
                 if (!accountData.id) {
                     loginBtn.innerHTML = prevText;
                     loginBtn.disabled = false;
-                    showActivationModal(username, password);
+                    showActivationModal(username, password, 1);
                     return;
                 } else {
                     let isAllowed = false;
+                    let registeredCount = 1;
                     if (Array.isArray(accountData.id)) {
                         // Nếu admin cấu hình nhiều ID dưới dạng mảng
                         isAllowed = accountData.id.includes(currentDeviceId);
+                        registeredCount = accountData.id.length;
                     } else {
                         // Nếu admin chỉ cấu hình 1 ID dưới dạng chuỗi
                         isAllowed = (accountData.id === currentDeviceId);
+                        registeredCount = 1;
                     }
 
                     if (!isAllowed) {
                         loginBtn.innerHTML = prevText;
                         loginBtn.disabled = false;
-                        showToast('Tài khoản này đã được liên kết với một thiết bị khác!', 'error');
+                        showActivationModal(username, password, registeredCount + 1);
                         return;
                     }
                 }
