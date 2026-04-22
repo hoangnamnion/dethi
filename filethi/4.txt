@@ -126,8 +126,7 @@ B. BIM loại bỏ hoàn toàn sai sót trong quá trình thiết kế và thi c
 C. BIM giúp theo dõi chi phí và tiến độ một cách tự động.
 *D. BIM cung cấp dữ liệu chính xác và minh bạch, cho phép mọi bên tham gia dễ dàng theo dõi và kiểm tra tiến độ, trách nhiệm công việc."
 Câu 24: Tại sao BIM giúp cải thiện chất lượng thi công và an toàn cho công trình?
-*A. BIM cho phép mô phỏng và phân tích các kịch bản trước khi thi công, giúp phát hiện sớm các rủi ro và 
-điều chỉnh phương án thiết kế phù hợp."
+*A. BIM cho phép mô phỏng và phân tích các kịch bản trước khi thi công, giúp phát hiện sớm các rủi ro và điều chỉnh phương án thiết kế phù hợp."
 B. BIM giúp giảm chi phí nguyên vật liệu mà không ảnh hưởng đến chất lượng.
 C. BIM loại bỏ hoàn toàn lỗi kỹ thuật trong quá trình thi công.
 D. BIM tự động hóa quá trình xây dựng mà không cần sự can thiệp của con người.
@@ -241,44 +240,35 @@ Câu 44:Trong mô hình BIM, thông tin hình học (geometric data) bao gồm n
 B. Chỉ mô tả kích thước của công trình mà không có yếu tố hình học.
 C. Thông tin về giá cả và chi phí xây dựng.
 D. Các yếu tố tự nhiên xung quanh công trình như khí hậu.
-Câu 45: Thông tin phi hình học (non-geometric data) trong mô hình BIM bao gồm những loại thông 
-tin nào?
+Câu 45: Thông tin phi hình học (non-geometric data) trong mô hình BIM bao gồm những loại thông tin nào?
 A. Chỉ mô tả hình dạng và kích thước của công trình.
 *B. Các yếu tố như vật liệu, thông số kỹ thuật, yêu cầu bảo trì, và chi phí."
 C. Thông tin về vị trí và địa hình xung quanh công trình.
 D. Các yếu tố tự nhiên như thời tiết và khí hậu.
-Câu 46: Công cụ cộng tác và giao tiếp trong mô hình BIM mang lại lợi ích gì cho các bên liên quan 
-trong dự án xây dựng?
+Câu 46: Công cụ cộng tác và giao tiếp trong mô hình BIM mang lại lợi ích gì cho các bên liên quan trong dự án xây dựng?
 A. Tạo ra các mô hình 3D phức tạp mà không cần thông tin cập nhật.
 B. Chỉ cho phép một bên tham gia cập nhật thông tin trong dự án.
-*C. Cung cấp môi trường dữ liệu chung giúp các bên liên quan cộng tác hiệu quả và cập nhật thông tin theo 
-thời gian thực.
+*C. Cung cấp môi trường dữ liệu chung giúp các bên liên quan cộng tác hiệu quả và cập nhật thông tin theo thời gian thực.
 D. Giúp giảm thiểu chi phí xây dựng mà không cần quản lý dự án.
-Câu 47: Phần mềm và công nghệ hỗ trợ trong BIM có vai trò gì đối với quá trình thiết kế và thi công 
-công trình?
+Câu 47: Phần mềm và công nghệ hỗ trợ trong BIM có vai trò gì đối với quá trình thiết kế và thi công ,công trình?
 A. Chỉ giúp tạo ra các bản vẽ 2D truyền thống mà không có tính năng mô hình hóa.
 B. Chỉ phân tích chi phí mà không đánh giá hiệu suất năng lượng.
-*C. Cung cấp công cụ mô hình hóa, phân tích năng lượng, và hỗ trợ công nghệ VR/AR để tối ưu hóa thiết kế 
-và giám sát công trình."
+*C. Cung cấp công cụ mô hình hóa, phân tích năng lượng, và hỗ trợ công nghệ VR/AR để tối ưu hóa thiết kế và giám sát công trình."
 D. Chỉ sử dụng cho việc lập lịch trình thi công mà không liên quan đến an toàn.
-Câu 48: Các tiêu chuẩn và quy định trong BIM bao gồm những yếu tố nào để đảm bảo tính hiệu quả 
-và tuân thủ trong dự án xây dựng?
+Câu 48: Các tiêu chuẩn và quy định trong BIM bao gồm những yếu tố nào để đảm bảo tính hiệu quả và tuân thủ trong dự án xây dựng?
 A. Chỉ quy định về chi phí và thời gian thi công mà không đề cập đến mô hình hóa.
 B. Không yêu cầu bất kỳ quy trình nào cho việc thực hiện BIM trong dự án.
-*C. Bao gồm Tiêu chuẩn mô hình hóa (BIM Execution Plan - BEP) và các quy định pháp lý nhằm đảm bảo 
-tuân thủ và quy trình thực hiện.
+*C. Bao gồm Tiêu chuẩn mô hình hóa (BIM Execution Plan - BEP) và các quy định pháp lý nhằm đảm bảo tuân thủ và quy trình thực hiện.
 D. Chỉ áp dụng cho các dự án lớn mà không quan tâm đến tiêu chuẩn quốc gia.
 Câu 49: Phân tích trong BIM bao gồm các yếu tố nào nhằm đảm bảo an toàn và hiệu quả cho công 
 trình?
 A. Chỉ tập trung vào phân tích chi phí mà không quan tâm đến an toàn và môi trường.
 B. Đánh giá tác động của công trình đến môi trường mà không xem xét khả năng chịu lực.
 C. Phân tích kết cấu nhưng không tính toán hiệu quả sử dụng năng lượng.
-*D. Bao gồm phân tích kết cấu, phân tích năng lượng, và phân tích môi trường để đảm bảo an toàn và hiệu 
-quả.
+*D. Bao gồm phân tích kết cấu, phân tích năng lượng, và phân tích môi trường để đảm bảo an toàn và hiệu quả.
 Câu 50: Hậu cần xây dựng trong BIM bao gồm những yếu tố nào để đảm bảo tiến độ và chất lượng 
 công trình?
-*A. Quản lý chuỗi cung ứng và điều phối thi công nhằm đảm bảo vật liệu và thiết bị đến công trường đúng 
-tiến độ.
+*A. Quản lý chuỗi cung ứng và điều phối thi công nhằm đảm bảo vật liệu và thiết bị đến công trường đúng tiến độ.
 B. Chỉ tập trung vào việc vận chuyển vật liệu mà không quan tâm đến chất lượng xây dựng.
 C. Lập kế hoạch cho từng đội thi công mà không xem xét quản lý chuỗi cung ứng.
 D. Không liên quan đến việc tối ưu hóa tiến độ và chất lượng thi công.

@@ -61,18 +61,24 @@ function applyLowGraphics(enabled) {
             `;
             document.head.appendChild(styleTag);
         }
-        document.body.classList.add('low-graphics-active');
+        document.body.classList.add('low-graphics-active', 'low-graphics');
         localStorage.setItem('lowGraphics', 'true'); // Lưu thêm format cũ để tương thích thi.html
+        localStorage.setItem('low_graphics', 'true');
     } else {
         if (styleTag) styleTag.remove();
-        document.body.classList.remove('low-graphics-active');
+        document.body.classList.remove('low-graphics-active', 'low-graphics');
         localStorage.setItem('lowGraphics', 'false');
+        localStorage.setItem('low_graphics', 'false');
     }
     
     // Cập nhật nút bấm nếu có trên màn hình
     const btn = document.getElementById('lowGraphicsBtn');
     if (btn) {
         btn.innerHTML = `🎮 Giảm đồ họa: ${enabled ? 'Bật ✅' : 'Tắt'}`;
+    }
+    const btnThi = document.getElementById('btnLowGraphics');
+    if (btnThi) {
+        btnThi.innerHTML = enabled ? '⚡ Bật Hiệu Ứng' : '⚡ Tắt Hiệu Ứng';
     }
 }
 

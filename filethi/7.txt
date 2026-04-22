@@ -404,7 +404,10 @@ A. Một công cụ lập trình truyền thống giúp tạo ra mô hình 3D.
 *B. Một công cụ lập trình dạng ""visual scripting"" giúp tự động hóa các tác vụ phức tạp trong Revit.
 C. Một ứng dụng độc lập không liên quan đến Revit.
 D. Một phần mềm CAD chuyên dụng cho việc tạo hình ảnh 2D.
-Câu 72: Dynamo có những ứng dụng gì trong Revit giúp tối ưu hóa quy trình thiết kế và quản lý dữ liệu?
+A. Chỉ hỗ trợ trong việc tạo lập hình học 2D đơn giản. 
+Câu 72:
+lý dữ liệu?
+Dynamo có những ứng dụng gì trong Revit giúp tối ưu hóa quy trình thiết kế và quản 
 A. Hỗ trợ trong việc tạo lập hình học 2D đơn giản
 B. Chỉ được sử dụng để tự động hóa tác vụ lặp lại đơn giản.
 *C. Cho phép thiết kế tham số, tạo lập hình học phức tạp, tự động hóa tác vụ và quản lý dữ liệu BIM."
@@ -851,8 +854,8 @@ B. AutoCAD
 C. 3ds Max
 *D. DIALux
 Câu 151: Ứng dụng nào sau đây là một trong những ứng dụng của BIM trong thi công?
-*A. Mô phỏng tiến độ và quản lý xây dựng
-B. Thiết kế thời trang bằng công nghệ số
+A. Mô phỏng tiến độ và quản lý xây dựng
+*B. Thiết kế thời trang bằng công nghệ số
 C. Dự báo xu hướng bất động sản
 D. Quản lý tài chính cá nhân
 Câu 152: Lợi ích nào sau đây là một trong những lợi ích của việc quản lý khối lượng bằng 
@@ -892,8 +895,8 @@ C. Lập bảng tính tài chính cho doanh nghiệp phi xây dựng
 D. Quản lý email và tài liệu văn phòng
 Câu 158: Ứng dụng nào sau đây của BIM trong lập kế hoạch và thi công là chính xác nhất?
 A. BIM giúp tạo hình ảnh minh họa 2D cho các báo cáo dự án
-B. BIM chỉ hỗ trợ thiết kế kiến trúc mà không liên quan đến thi công
-*C. BIM hỗ trợ lập kế hoạch chi tiết, kiểm soát tiến độ, tối ưu hóa nhân lực và tài nguyên
+*B. BIM chỉ hỗ trợ thiết kế kiến trúc mà không liên quan đến thi công
+C. BIM hỗ trợ lập kế hoạch chi tiết, kiểm soát tiến độ, tối ưu hóa nhân lực và tài nguyên
 D. BIM chỉ có chức năng lưu trữ hồ sơ công trình mà không hỗ trợ thi công
 Câu 159: BIM hỗ trợ quản lý và kiểm soát chất lượng trong thi công bằng cách nào?
 A. Chỉ sử dụng để tạo bản vẽ kiến trúc mà không liên quan đến chất lượng thi công

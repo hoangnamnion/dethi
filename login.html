@@ -656,6 +656,7 @@
 
     <!-- Load external scripts -->
     <script src="js/tkcam.js"></script>
+    <script src="js/tkhethan.js"></script>
     <script src="js/hihihaaaa.js"></script>
     <script src="js/new2.js"></script>
 
@@ -798,6 +799,14 @@
                     usernameInput.value = "";
                     passwordInput.value = "";
                     usernameInput.focus();
+                    return;
+                }
+
+                // Kiểm tra tài khoản hết hạn
+                if (typeof EXPIRED_ACCOUNTS !== 'undefined' && EXPIRED_ACCOUNTS.includes(username)) {
+                    showExpiredModal(username);
+                    usernameInput.value = "";
+                    passwordInput.value = "";
                     return;
                 }
 

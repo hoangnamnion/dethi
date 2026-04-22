@@ -94,6 +94,7 @@
     </div>
 
     <script src="js/hihihaaaa.js"></script>
+    <script src="js/tkhethan.js"></script>
     <script src="js/new2.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="js/script.js"></script>
@@ -108,22 +109,7 @@
         const p = new URLSearchParams(window.location.search);
         const fid = p.get('id');
 
-        // Logic chế độ máy yếu
-        const btnLowGraphics = document.getElementById('btnLowGraphics');
-        if (localStorage.getItem('lowGraphics') === 'true') {
-            document.body.classList.add('low-graphics');
-            if(btnLowGraphics) btnLowGraphics.innerHTML = 'Bật Hiệu Ứng';
-        } else {
-            if(btnLowGraphics) btnLowGraphics.innerHTML = 'Tắt Hiệu Ứng';
-        }
-
-        function toggleLowGraphics() {
-            const isLow = document.body.classList.toggle('low-graphics');
-            localStorage.setItem('lowGraphics', isLow ? 'true' : 'false');
-            if (btnLowGraphics) {
-                btnLowGraphics.innerHTML = isLow ? 'Bật Hiệu Ứng' : 'Tắt Hiệu Ứng';
-            }
-        }
+        // Đã gỡ logic lowGraphics nội bộ, chuyển qua cho new2.js xử lý toàn cục
 
         if (fid) {
             window.onload = () => loadExam(fid);
