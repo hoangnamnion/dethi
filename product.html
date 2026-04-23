@@ -285,6 +285,10 @@
                 <div class="card-icon">📖</div>
                 <div class="card-title">Ôn Tập</div>
             </a>
+            <a href="#" id="btnFlashcard" class="action-card" onclick="openFlashcardModal(); return false;">
+                <div class="card-icon">🗂️</div>
+                <div class="card-title">Học Thẻ</div>
+            </a>
             <a href="https://zalo.me/0378787154" target="_blank" class="action-card">
                 <div class="card-icon">💬</div>
                 <div class="card-title">Tạo File</div>
@@ -363,7 +367,7 @@
         if (!fileID) window.location.href = "index.html";
 
         document.getElementById('examName').innerText = fileName || ("Đề số " + fileID);
-        document.getElementById('btnReview').href = `ontap.html?id=${fileID}`;
+        document.getElementById('btnReview').href = `ontap.html?id=${fileID}&name=${encodeURIComponent(fileName)}`;
 
         // Biến lưu chế độ được chọn
         let selectedMode = 'normal';
@@ -491,6 +495,46 @@
             }
 
             window.location.href = `thi.html?id=${fileID}&name=${encodeURIComponent(fileName)}&mode=${selectedMode}&order=${selectedOrder}&auto=${isAutoNextEnabled}`;
+        }
+
+        // CHỨC NĂNG CHỌN CHẾ ĐỘ FLASHCARDS
+        function openFlashcardModal() {
+            let fcModal = document.getElementById('flashcardModal');
+            if (!fcModal) {
+                fcModal = document.createElement('div');
+                fcModal.id = 'flashcardModal';
+                fcModal.className = 'mode-modal';
+                fcModal.style.cssText = "display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:1000; align-items:center; justify-content:center;";
+                fcModal.innerHTML = `
+                    <div class="mode-box">
+                        <button class="btn-close-mode" onclick="document.getElementById('flashcardModal').style.display='none'">✕</button>
+                        <div class="mode-title">🗂️ THỨ TỰ HỌC THẺ</div>
+                        
+                        <div class="mode-option" onclick="startFlashcard('normal')">
+                            <div class="mode-header">
+                                <div class="mode-icon">📋</div>
+                                <div class="mode-name">Theo thứ tự gốc</div>
+                            </div>
+                            <div class="mode-desc">Học theo đúng trình tự trong file đề thi.</div>
+                        </div>
+
+                        <div class="mode-option" onclick="startFlashcard('shuffle')">
+                            <div class="mode-header">
+                                <div class="mode-icon">🔀</div>
+                                <div class="mode-name">Đảo câu ngẫu nhiên</div>
+                            </div>
+                            <div class="mode-desc">Xáo trộn câu hỏi để tăng hiệu quả ghi nhớ.</div>
+                        </div>
+                    </div>
+                `;
+                document.body.appendChild(fcModal);
+            }
+            fcModal.style.display = 'flex';
+        }
+
+        function startFlashcard(type) {
+            const shuffle = (type === 'shuffle');
+            window.location.href = `flashcard.html?id=${fileID}&name=${encodeURIComponent(fileName)}&shuffle=${shuffle}`;
         }
 
         // Hiển thị thông tin tiến độ bài cũ

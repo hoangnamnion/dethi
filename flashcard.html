@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Flashcards - Thẻ Ghi Nhớ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .flashcard-container {
+            perspective: 1000px;
+            width: 100%;
+            max-width: 500px;
+            height: 500px; /* Tăng chiều cao để chứa cả đáp án */
+            margin: 30px auto;
+            cursor: pointer;
+        }
+
+        .flashcard-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            border-radius: 28px;
+        }
+
+        .flashcard-container.flipped .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /* Để text bắt đầu từ trên xuống */
+            padding: 40px 25px 30px 25px;
+            border-radius: 28px;
+            background: white;
+            overflow-y: auto;
+            scrollbar-width: none; /* Ẩn scrollbar trên Firefox */
+        }
+        
+        .flashcard-front::-webkit-scrollbar, .flashcard-back::-webkit-scrollbar {
+            display: none; /* Ẩn scrollbar trên Chrome/Safari */
+        }
+
+        .flashcard-back {
+            transform: rotateY(180deg);
+            background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+            border: 2px solid #22c55e;
+        }
+
+        .q-text {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        .a-text {
+            font-size: 1.3em;
+            font-weight: 800;
+            color: #16a34a;
+            line-height: 1.6;
+        }
+
+        .hint {
+            position: absolute;
+            bottom: 20px;
+            font-size: 0.8em;
+            color: #94a3b8;
+            font-weight: 600;
+        }
+
+        .controls-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .nav-btn {
+            background: white;
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .nav-btn:active {
+            transform: scale(0.95);
+        }
+
+        .progress-label {
+            font-weight: 800;
+            color: #64748b;
+            font-size: 1.1em;
+        }
+
+        .category-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: #f1f5f9;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75em;
+            font-weight: 700;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+    <div class="mesh-bg">
+        <div class="mesh-blob blob-1"></div>
+        <div class="mesh-blob blob-2"></div>
+        <div class="mesh-blob blob-3"></div>
+    </div>
+
+    <div class="container-box" style="padding-top: 60px;">
+        <div style="position: absolute; top: 20px; left: 20px;">
+            <button onclick="goBack()" style="background:none; border:none; font-size: 1.5em; cursor:pointer;">🔙</button>
+        </div>
+
+        <div class="big-title" style="margin-bottom: 5px;">HỌC THẺ GHI NHỚ</div>
+        <div id="examName" style="font-weight: 700; color: #64748b; font-size: 0.9em; margin-bottom: 20px;">Đang tải...</div>
+
+        <div class="flashcard-container" id="cardContainer" onclick="this.classList.toggle('flipped')">
+            <div class="flashcard-inner">
+                <div class="flashcard-front">
+                    <div class="category-badge">CÂU HỎI</div>
+                    <div class="q-text" id="qText">...</div>
+                </div>
+                <div class="flashcard-back">
+                    <div class="category-badge" style="background: #dcfce7; color: #16a34a;">ĐÁP ÁN ĐÚNG</div>
+                    <div class="a-text" id="aText">...</div>
+                    <div class="hint">Bấm để quay lại câu hỏi 🔄</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls-bar">
+            <button class="nav-btn" onclick="event.stopPropagation(); changeCard(-1)">👈</button>
+            <div class="progress-label" id="progressLabel">0/0</div>
+            <button class="nav-btn" onclick="event.stopPropagation(); changeCard(1)">👉</button>
+        </div>
+
+        <div style="margin-top: 30px; font-size: 0.85em; color: #94a3b8; line-height: 1.6; text-align: center;">
+            Mẹo: Hãy tự trả lời trong đầu trước khi lật thẻ nhé! <br> Chúc bạn ôn thi tốt! ✨
+        </div>
+    </div>
+
+    <script src="js/flashcard.js"></script>
+    <script>
+        // KIỂM TRA ĐĂNG NHẬP
+        const userData = sessionStorage.getItem('current_user');
+        if (!userData) {
+            window.location.href = "login.html";
+        }
+
+        const params = new URLSearchParams(window.location.search);
+        const fileID = params.get('id');
+        const fileName = params.get('name');
+
+        if (!fileID) window.location.href = "index.html";
+        document.getElementById('examName').innerText = fileName || ("Đề số " + fileID);
+
+        function goBack() {
+            window.location.href = `product.html?id=${fileID}&name=${encodeURIComponent(fileName)}`;
+        }
+
+        // Tải dữ liệu
+        loadFlashcards(fileID);
+    </script>
+    <script src="js/tkhethan.js"></script>
+</body>
+</html>

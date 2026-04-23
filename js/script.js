@@ -1028,9 +1028,23 @@ function showResultModal() {
 async function reportScoreAndFirework(correct, wrong, skip) {
     const total = allQuestions.length;
     
-    // 1. Nếu đạt 100% điểm -> Bắn pháo hoa
+    // 1. Nếu đạt 100% điểm -> Bắn pháo hoa & Hiện bằng khen
     if (correct === total && total > 0) {
         createFireworks();
+        
+        // Hiện bằng khen sau pháo hoa 1 chút
+        setTimeout(() => {
+            const userDataStr = sessionStorage.getItem('current_user') || localStorage.getItem('current_user');
+            let uName = "Học Viên";
+            if (userDataStr) {
+                const ud = JSON.parse(userDataStr);
+                uName = ud.username || ud.accountId || "Học Viên";
+            }
+            
+            if (typeof showCertificate === 'function') {
+                showCertificate(uName, currentFileName, correct, total);
+            }
+        }, 1500);
     }
 
     // 2. Gửi về Telegram
