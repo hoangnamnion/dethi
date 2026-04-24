@@ -1,203 +1,221 @@
-Chương 1.
-Câu 1. Theo phân loại của L.S. Becgô (1938), Trái Đất được chia thành bao nhiêu vùng khí hậu?
-A. 5 vùng khí hậu
-B. 7 vùng khí hậu
-*C. 12 vùng khí hậu 
-D. 4 vùng khí hậu
-Câu 2. Trong hệ thống phân loại khí hậu Köppen, khí hậu được chia thành mấy nhóm chính?
-A. 3 nhóm
-B. 4 nhóm
-*C. 5 nhóm 
-D. 6 nhóm
-Câu 3. Theo BP Alixov (1950), ngoài 4 vùng cơ bản, Trái Đất còn có thêm mấy vùng chuyển tiếp?
-A. 1 vùng
-B. 2 vùng
-*C. 3 vùng 
-D. 5 vùng
-Câu 4. Theo lý thuyết “Khí hậu thái dương”, khí hậu Trái Đất được chia thành mấy đới khí hậu?
-A. 2 đới
-B. 3 đới
-C. 4 đới
-*D. 5 đới 
-Câu 5. Điểm khác biệt cơ bản trong cách tiếp cận giữa hệ thống phân loại khí hậu Köppen và lý thuyết “Khí hậu thái dương” là gì?
-A. Köppen dựa vào vị trí vĩ độ, “Khí hậu thái dương” dựa vào nhiệt độ.
-*B. Köppen dựa vào nhiệt độ và lượng mưa, “Khí hậu thái dương” dựa vào vị trí địa lý và bức xạ mặt trời 
-C. Köppen phân loại theo thảm thực vật, “Khí hậu thái dương” theo độ ẩm.
-D. Cả hai đều dựa hoàn toàn vào lượng mưa.
+Câu 36.
+Vật liệu hút âm xốp loại có thành lỗ cứng thường bao gồm.
+A. Bông khoáng, bông thủy tinh, thảm sợi mềm
+*B. Bê tông bọt, gạch xốp
+C. Cao su xốp, nỉ ép, vải dệt
+D. Thảm trải sàn và rèm vải
+
+Câu 37.
+Một âm có cường độ I = 10-4 W/m2. Biết mức cường độ âm được tính theo công thức.
+L_I=10log(I/I_0 )  (dB),   I0 = 10-12 W/m2
+Mức cường độ âm LI là.
+A. 40 dB
+B. 60 dB
+*C. 80 dB
+D. 100 dB
+Câu 38.
+Ưu điểm nổi bật của kết cấu dao động cộng hưởng hút âm là gì?
+A. Chỉ hút âm ở tần số cao
+B. Cấu tạo phức tạp, khó bảo trì
+*C. Đơn giản, chịu được va đập, dễ làm sạch và có thể trang trí bề mặt
+D. Hấp thụ âm đều ở mọi dải tần
+Câu 39.
+Trong công thức xác định khả năng cách âm thực nghiệm R = L1 – L2 – 10 log (A/S); đại lượng A thể hiện điều gì?
+A. Mức ồn trong phòng có nguồn ồn (dB)
+B. Diện tích kết cấu khảo sát (m2)
+*C. Lượng hút âm trong phòng cách âm (m2)
+D. Mức ồn trong phòng cách âm (dB)
+
+Câu 40.
+Trong ba phạm vi tần số cách âm của kết cấu một lớp đồng nhất, phạm vi nào tuân theo định luật khối lượng?
+A. Phạm vi tần số 1
+*B. Phạm vi tần số 2 
+C. Phạm vi tần số 3
+D. Cả 3 phạm vi
+Câu 41. Biện pháp nào dưới đây không phải là nguyên tắc giảm truyền âm va chạm cho sàn?
+A. Cắt rời kết cấu hoặc đưa lớp đàn hồi vào giữa
+B. Sử dụng vật liệu mềm, đàn hồi đặt trên bề mặt
+*C. Dùng lớp gỗ mỏng tăng khối lượng sàn
+D. Trải thảm len hoặc thảm sợi thực vật
+
+Câu 42. Trần treo có tác dụng gì trong việc giảm truyền âm?
+A. Giảm được cả tiếng ồn trực tiếp và va chạm sang phòng bên cạnh
+*B. Chỉ giảm tiếng ồn truyền trực tiếp từ tầng trên xuống phòng dưới
+C. Giảm tốt tiếng ồn va chạm, nhưng không giảm tiếng nói
+D. Hoàn toàn triệt tiêu được cả tiếng ồn và va chạm
+
+Câu 43.  Tần số cộng hưởng của hệ thống hai tấm có khối lượng m1, m2 và khe không khí d được xác định bởi công thức. [IMG:/anhthi/cau43.png]
+*A. f_ch=600√((1/m1 +1/m2 ).1/d)
+B. f_ch=840√((1/m1 +1/m2 ).1/d)
+C. f_ch=600 (m1+m2)/d
+D. f_ch=840 (m1+m2)/d
 
 
 
 
-Câu 6. Trong bảng so sánh của G.A. Atkinson, vùng khí hậu nóng khô thường có dao động nhiệt độ ngày đêm (Δt) khoảng bao nhiêu?
-A. 3 – 5°C
-B. 5 – 8°C
-*C. 10 – 22°C 
-D. 25 – 30°C
-Câu 7. Việt Nam được xếp vào loại khí hậu nào theo các hệ thống phân loại đã nêu?
-A. Khí hậu sa mạc khô nóng
-B. Khí hậu ôn đới lục địa
-*C. Khí hậu nhiệt đới ẩm gió mùa 
-D. Khí hậu hàn đới
-Câu 8. Khi so sánh các hệ thống phân loại khí hậu (Becgô, Köppen, Alixov, Atkinson), điểm chung lớn nhất của chúng là gì?
-A. Đều chia Trái Đất thành 12 vùng khí hậu.
-B. Đều dựa hoàn toàn vào yếu tố lượng mưa.
-*C. Đều coi yếu tố nhiệt độ và mưa là cơ sở quan trọng trong phân loại 
-D. Đều xuất phát từ cùng một quốc gia.
-Câu 9. Đặc điểm hoạt động của Mặt Trời ở miền Nam Việt Nam là gì?
-A. Mặt Trời qua thiên đỉnh một lần/năm
-*B. Mặt Trời qua thiên đỉnh hai lần/năm cách nhau khoảng 5 tháng 
-C. Mặt Trời chỉ thiên về hạ chí
-D. Mặt Trời chỉ thiên về đông chí
-Câu 10. Yếu tố tự nhiên quan trọng nhất quyết định đặc điểm khí hậu của từng vùng trên Trái Đất là gì?
-A. Hoàn lưu khí quyển
-*B. Mặt Trời 
-C. Địa hình
-D. Gió mùa
-Câu 11. Nguyên nhân chủ yếu làm cho khí hậu Việt Nam có tính chất gió mùa phức tạp là gì?
-A. Lãnh thổ kéo dài theo chiều Bắc – Nam
-*B. Chịu tác động đồng thời của 3 hệ thống gió mùa châu Á 
-C. Địa hình nhiều núi cao
-D. Ảnh hưởng của biển Đông
+Chương 5.
+Câu 44. Quang thông (ký hiệu F) là gì?
+A. Công suất điện tiêu thụ của nguồn sáng
+*B. Đại lượng đánh giá công suất bức xạ ánh sáng phát ra có hiệu chỉnh độ nhạy phổ của mắt người
+C. Tỷ số giữa quang thông và diện tích bề mặt được chiếu sáng
+D. Đại lượng đặc trưng cho sự chói lóa của nguồn sáng
+Câu 45. Góc khối (Ω) được tính theo công thức nào? Với S là diện tích bề mặt cong (m2); R là bán kính mặt cầu quan sát (m).
+A. Ω = S/R
+*B. Ω = S/R²
+C. Ω = R²/S
+D. Ω = S × R
+Câu 46. Một nguồn sáng phát ra quang thông dF tới diện tích dS dưới góc khối dΩ. Cường độ sáng I được xác định theo công thức nào?
+A. I = dF/dS
+B. I = dΩ/dF
+*C. I = dF/dΩ
+D. I = dS/dF
+Câu 47.
+Ánh sáng trực xạ của mặt trời không được sử dụng làm nguồn sáng chính trong nội thất vì lý do nào?
+A. Độ rọi nhỏ, không đủ sáng.
+*B. Dễ gây hiện tượng lóa và làm tăng nhiệt độ. 
+C. Ánh sáng có màu không phù hợp.
+D. Tốn nhiều chi phí để khai thác.
+Câu 48.
+Hệ số độ rọi tự nhiên tại điểm M trong nhà được tính theo công thức nào? Với EM là độ rọi ánh sáng tự nhiên tại điểm M (bên trong) đơn vị là lux (lx); Với En là độ rọi nằm ngang ngoài nhà tại cùng thời điểm khảo sát, do ánh sáng khuếch tán của bầu trời gây ra, đơn vị là lux (lx);
+*A. eM = (EM/En) x 100%
+B. eM = (En/EM) x 100%
+C. eM = (EM + En)/100
+D. eM = (EM – En)/100
+
+Câu 49.
+Độ rọi tự nhiên tại một điểm M trong phòng bao gồm ba thành phần chính.
+A. Ánh sáng trực tiếp từ mặt trời, ánh sáng phản xạ từ mặt đất, ánh sáng từ đèn.
+*B. Độ rọi do bầu trời, độ rọi do phản xạ từ các bề mặt công trình xung quanh, độ rọi do phản xạ từ các bề mặt trong nhà. 
+C. Độ rọi từ cửa sổ, độ rọi từ mái nhà, độ rọi từ sàn nhà.
+D. Độ rọi gián tiếp, độ rọi khuếch tán, độ rọi tổng hợp.
+Câu 50.
+Nhóm công trình nào yêu cầu chiếu sáng tự nhiên phải nhấn mạnh ý đồ tư tưởng nghệ thuật tại không gian chính?
+A. Nhà an dưỡng, nhà trẻ, mẫu giáo
+*B. Nhà thờ, đền đài, lăng tẩm, tòa án
+C. Trường phổ thông, đại học
+D. Nhà văn phòng, làm việc
+
+Câu 51.
+Trong nhóm công trình bảo tàng, triển lãm, biểu diễn thể thao, ánh sáng tự nhiên thường được dùng nhằm mục đích gì?
+A. Tạo cảm giác ấm áp và nghỉ ngơi
+*B. Tạo ảo giác không gian rộng lớn, nhấn mạnh hiện vật trưng bày
+C. Giảm chi phí chiếu sáng nhân tạo
+D. Đảm bảo sự đồng đều ánh sáng tuyệt đối
+
+Câu 52.
+Đối với nhóm công trình nhà ở, nhà nghỉ, nhà an dưỡng, nhà trẻ, yêu cầu chính về chiếu sáng tự nhiên là gì?
+A. Độ rọi lớn và đồng đều tuyệt đối
+B. Chú trọng chiếu sáng tạo hiệu ứng thẩm mỹ
+*C. Có ánh nắng chiếu vào phòng vào những giờ nhất định, kết hợp thiết bị che nắng hiệu quả
+D. Chỉ cần chiếu sáng gián tiếp từ bề mặt phản xạ
+Câu 53.
+Trong các kiểu chiếu sáng, “chiếu sáng gián tiếp” được định nghĩa như thế nào?
+A. Trên 90% quang thông chiếu xuống mặt làm việc.
+B. 40 – 60% quang thông chiếu xuống phía dưới.
+C. 10 – 40% quang thông chiếu xuống phía dưới.
+*D. Trên 90% quang thông chiếu lên phía trần, phản xạ lại. 
+
+Chương 6. Che nắng
+Câu 54.
+Kết cấu che nắng trong kiến trúc được chia thành mấy loại chính?
+A. 2 loại. ngang và đứng
+*B. 3 loại. ngang, đứng, hỗn hợp
+C. 4 loại. ngang, đứng, xiên, hỗn hợp
+D. 5 loại. ngang, đứng, cong, xiên, hỗn hợp
+Câu 55.
+Trong kết cấu che nắng ngang (ô văng), vùng che nắng được xác định bởi.
+A. Góc β của mặt phẳng đứng
+*B. Góc α giữa mặt phẳng nghiêng và phương ngang
+C. Đường chân trời song song với cửa sổ
+D. Hướng gió chính trong mùa hè
+Câu 56.
+Hiệu quả che nắng của kết cấu ngang càng tăng khi.
+*A. Góc α càng nhỏ, chiều rộng ô văng càng lớn
+B. Góc α càng lớn, chiều rộng ô văng càng nhỏ
+C. Ô văng càng mỏng, góc α càng nhỏ
+D. Ô văng càng dài, góc α càng gần 90°
+Câu 57 .
+Khi đánh giá hiệu quả che nắng của kết cấu thẳng đứng, yếu tố nào quan trọng nhất?
+A. Màu sơn cửa sổ
+*B. Góc β giữa mặt phẳng đứng chứa cửa sổ và mặt phẳng che nắng
+C. Kích thước khung cửa
+D. Hình thức mái nhà
+Câu 58.
+Phát biểu nào sau đây sai về yêu cầu che nắng trong kiến trúc khí hậu?
+A. Giúp giảm tải cho hệ thống điều hòa không khí
+*B. Loại bỏ hoàn toàn ánh sáng tự nhiên để tránh nóng
+C. Giảm chói lóa, tăng tiện nghi thị giác
+D. Bảo vệ chất lượng và độ bền của vật liệu, đồ đạc trong phòng
+
+Chương 7.
+Câu 59.
+Nguyên nhân chính tạo ra thông gió tự nhiên trong công trình là gì?
+A. Do sự chênh lệch nhiệt độ giữa ngày và đêm
+B. Do sự chênh lệch về áp suất khí quyển
+*C. Do sự chênh lệch áp suất giữa nơi có áp cao và nơi có áp thấp
+D. Do thiết bị cơ học tạo luồng khí
+Câu 60.
+Trong công thức P_g=0.612v^2, đơn vị của P_glà.
+A. Pa.s
+B. N/m² (Pascal)
+C. kg/m³
+*D. W/m²
+Câu 61.
+Khi vận tốc gió tăng gấp đôi, áp lực gió sẽ.
+A. Không đổi
+B. Tăng gấp đôi
+*C. Tăng gấp bốn lần
+D. Giảm một nửa
+Câu 62.
+Trong điều kiện bình thường, vận tốc gió ở khu vực trung tâm thành phố được lấy bằng.
+A. 9 m/s
+B. 5.5 m/s
+C. 3 m/s
+*D. 6 m/s
+Câu 63.
+Hiện tượng ống khói nhiệt xảy ra khi.
+A. Áp lực gió ở hai đầu bằng nhau
+*B. Nhiệt độ không khí bên trong cao hơn bên ngoài, tạo dòng đối lưu thẳng đứng
+C. Không khí bên ngoài lạnh hơn bên trong
+D. Cửa gió vào và ra nằm ngang nhau
 
 
+Câu 64.Công thức tính chênh lệch áp lực nhiệt giữa hai cột không khí là.
+A. ΔP=ρv^2/2
+B. ΔP=0.612v^2
+*C. ΔP=3643×H(1/T_0 -1/T_1 )
+D. ΔP=1.293×273/T
+Câu 65.
+Hiện tượng gió hút quanh nhà chữ L (theo hình minh họa) gây ra.
+A. Áp lực đều trên các mặt
+*B. Tạo vùng xoáy và áp âm ở góc trong nhà
+C. Tăng tốc gió ở mặt đón gió
+D. Giảm thông gió tự nhiên
+Câu 66. Khi hướng gió tạo với pháp tuyến mặt nhà một góc từ 0° đến 45°, hiệu quả thông gió sẽ.
+A. Giảm mạnh
+B. Không đổi
+*C. Đạt hiệu quả cao nhất
+D. Không ảnh hưởng
+Câu 67. Trong điều kiện bình thường, vận tốc gió ngoài nhà của nhà ở trung tâm thành phố được lấy khoảng.
+A. 9 m/s
+B. 7.5 m/s
+C. 5.5 m/s
+*D. 3 m/s
 
-Câu 12. Sự khác biệt giữa chế độ hoạt động của Mặt Trời ở miền Bắc và miền Nam Việt Nam thể hiện rõ nhất ở điểm nào?
-A. Miền Nam có một mùa nóng, miền Bắc có hai mùa nóng
-B. Miền Bắc có 4 mùa rõ rệt, miền Nam chỉ có mùa khô và mưa
-C. Miền Bắc Mặt Trời thiên đỉnh cách nhau ~ 6 tháng, miền Nam chỉ một lần/năm
-*D. Miền Bắc có một cực đại và một cực tiểu BXMT, miền Nam có hai cực đại và hai cực tiểu 
-Câu 13. Vùng khí hậu AIII (theo TCVN 4088.1997) có đặc điểm chính là gì?
-A. Đông Bắc, lạnh nhất
-B. Tây Bắc – Bắc Trường Sơn, nóng lạnh xen kẽ
-*C. Đồng bằng Bắc Bộ, Bắc Trung Bộ 
-D. Tây Nguyên, núi cao
-Câu 14. Vai trò điều hòa khí hậu của Biển Đông đối với Việt Nam thể hiện rõ nhất vào mùa nào?
-A. Mùa xuân
-B. Mùa hạ
-C. Mùa thu
-*D. Mùa đông 
-Câu 15. Trong yêu cầu xây dựng theo TCVN 4088.1997, vùng khí hậu BV – Nam Bộ – Nam Trung Bộ có đặc trưng chống nóng, thoát ẩm, chống mốc. Nguyên nhân chính là.
-A. Nhiệt độ quá thấp vào mùa đông
-B. Lượng mưa ít, độ ẩm thấp
-*C. Khí hậu nóng ẩm, mưa nhiều, ít biến động 
-D. Khí hậu khô hạn quanh năm
-Chương 2.
-Câu 16. Dụng cụ thường dùng để xác định nhiệt độ và độ ẩm của không khí trong phòng là gì?
-A. Nhiệt kế thủy ngân
-*B. Nhiệt ẩm kế khô – ướt 
-C. Áp kế
-D. Đồng hồ đo áp suất
-Câu 17. Công thức xác định biên độ đao động nhiệt độ không khí trong phòng (Atk) là gì?
-A. Atk = tkmin - tktb
-*B. Atk = tkmax - tktb
-C. Atk = tkmax - tkmin
-D. Atk = tktb - tkmin
-Câu 18. Độ ẩm tuyệt đối của không khí được đo bằng chỉ tiêu nào sau đây?
-A. Áp suất riêng của hơi nước (mmHg)
-*B. Lượng ẩm (g/m³) 
-C. Độ ẩm tương đối (%)
-D. Dung ẩm (g/kg không khí khô)
+Câu 68. Hệ số thông thoáng k_thđạt giá trị lớn nhất khi góc gió thổi là.
+*A. 0°
+B. 30°
+C. 45°
+D. 90°
 
-Câu 19. Trong phương trình cân bằng nhiệt của cơ thể người, ký hiệu M biểu thị điều gì?
-A. Lượng nhiệt nhận trực tiếp từ bức xạ mặt trời
-B. Lượng nhiệt cơ thể tỏa ra môi trường
-*C. Lượng nhiệt sinh học do cơ thể sinh ra 
-D. Lượng nhiệt thu được qua hô hấp
-Câu 20. Đối với chống nóng tường nhà, việc xây tường kép có lớp xốp ở giữa giúp.
-A. Tăng diện tích sử dụng
-B. Tăng độ bền cơ học
-*C. Cách nhiệt và tạo khoảng không khí lưu thông 
-D. Giảm tải trọng công trình
-Câu 21. Theo các giải pháp kiến trúc, tại miền khí hậu phía Bắc và vùng núi cao, hướng nhà nào được ưu tiên để giảm lạnh vào mùa đông?
-A. Tây hoặc Tây Bắc
-B. Đông hoặc Đông Bắc
-*C. Nam hoặc Đông Nam 
-D. Bắc hoặc Tây Nam
-Câu 22. Giải pháp chống nóng cho mái bằng nào sau đây được xem là hiệu quả nhất?
-A. Lợp mái tôn kẽm đơn
-B. Đổ bê tông đặc không có lớp cách nhiệt
-*C. Làm mái vườn hoặc trồng cây xanh trên mái 
-D. Sơn màu tối để hấp thụ nhiệt
-Câu 23. Lam che chắn nắng thường được sử dụng ở vị trí nào trong ngôi nhà?
-A. Trên mái nhà và trong phòng ngủ
-*B. Ở mặt đứng, ngoài cửa sổ hoặc tầng thượng 
-C. Trong tầng hầm để cách nhiệt
-D. Chỉ sử dụng ở hướng Bắc của ngôi nhà
-Câu 24. Việc trồng cây xanh quanh nhà có tác dụng chính nào đối với vi khí hậu?
-A. Giảm độ ẩm không khí trong phòng
-B. Ngăn cản gió mùa Đông Bắc
-*C. Cản nguồn nhiệt, giảm bức xạ mặt trời, tạo bóng râm 
-D. Làm tăng tốc độ thông gió tự nhiên
-Câu 25. Độ ẩm tuyệt đối của không khí được đo bằng chỉ tiêu nào sau đây?
-A. Áp suất riêng của hơi nước (mmHg)
-*B. Lượng ẩm (g/m³) 
-C. Độ ẩm tương đối (%)
-D. Dung ẩm (g/kg không khí khô)
-Chương 3.
-Câu 26. Khi không khí trong phòng tiếp xúc trực tiếp với bề mặt kết cấu, dạng truyền nhiệt nào đóng vai trò chính?
-A. Dẫn nhiệt
-*B. Đối lưu nhiệt 
-C. Bức xạ nhiệt
-D. Truyền nhiệt hỗn hợp
-Câu 27.
-Truyền nhiệt ổn định qua kết cấu trong mùa lạnh thường được tính theo.
-A. Phương trình Bernoulli
-B. Công thức định luật Newton về làm mát
-*C. Công thức q = (tₜ - tₙ)/R₀
-D. Công thức Fourier nghịch đảo
-Câu 28.
-Trong các yếu tố sau, yếu tố nào không ảnh hưởng trực tiếp đến hệ số dẫn nhiệt k của vật liệu?
-A. Tỷ trọng (độ rỗng) của vật liệu
-B. Độ ẩm của vật liệu
-C. Cấu trúc của vật liệu
-*D. Nhiệt độ không khí ngoài trời
-Câu 29.
-Điều kiện cách nhiệt trong mùa lạnh để tránh hiện tượng đọng sương trên bề mặt kết cấu là.
-A. Nhiệt độ mặt trong kết cấu nhỏ hơn nhiệt độ điểm sương
-B. Nhiệt độ mặt ngoài kết cấu nhỏ hơn nhiệt độ không khí ngoài trời
-*C. Nhiệt độ mặt trong kết cấu lớn hơn nhiệt độ điểm sương không khí trong phòng
-D. Nhiệt độ mặt ngoài kết cấu lớn hơn nhiệt độ điểm sương
+Câu 69. Trong quy hoạch đô thị, để đảm bảo thông gió tự nhiên hiệu quả, các trục giao thông chính nên được bố trí.
+A. Song song với hướng bức xạ mặt trời mạnh nhất
+B. Vuông góc với hướng gió lạnh mùa đông
+*C. Song song với hướng gió mát chủ đạo mùa hè
+D. Theo hướng Bắc – Nam để giảm bức xạ
 
-
-
-
-Câu 30. 
-Yêu cầu cách nhiệt trong mùa lạnh để đảm bảo tiện nghi nhiệt là.[IMG:/anhthi/cau30.png]
-*A. τₜ ≥ [τₜ]
-B. τₜ ≤ [τₜ]
-C. τₜ = tₙ - [τₜ]
-D. τₜ = tₜ + [τₜ]
-Câu 31. 
-Nếu hệ số trao đổi nhiệt mặt trong là hₜ, hệ số trao đổi nhiệt mặt ngoài là hₙ, chiều dày kết cấu là d, hệ số dẫn nhiệt vật liệu là k, thì nhiệt trở tổng R₀ được xác định bởi.[IMG:/anhthi/cau31.png]
-A. R₀ = hₜ + hₙ + k/d
-*B. R₀ = 1/hₜ + d/k + 1/hₙ
-C. R₀ = (hₜ·hₙ·d)/k
-D. R₀ = (k·d)/(hₜ + hₙ)
-Câu 32. Trong mùa nóng, dao động nhiệt độ bên ngoài có chu kỳ 24 giờ sẽ truyền qua kết cấu theo dạng.
-A. Sóng vuông với chu kỳ 12 giờ
-B. Dao động ngẫu nhiên không theo quy luật
-*C. Dao động hình sin với chu kỳ 24 giờ
-D. Dao động logarit giảm dần
-Câu 33. Một giải pháp chống nóng hiệu quả cho mái nhà là.
-A. Sử dụng mái kính để tăng khả năng hấp thụ bức xạ mặt trời
-*B. Phun nước tạo lớp sương mù trên mái để giảm bức xạ trực tiếp
-C. Sử dụng mái màu sẫm để hấp thụ nhiệt tối đa
-D. Tăng độ dày lớp chống thấm thay cho lớp cách nhiệt
-
-Chương 4. 
-Câu 34.
-Sóng âm không thể truyền trong môi trường nào sau đây?
-A. Chất rắn
-B. Chất lỏng
-C. Khí quyển
-*D. Chân không 
-
-
-
-Câu 35.
-Tần số âm mà tai người có thể cảm thụ được nằm trong khoảng.
-A. 1 – 1000 Hz
-*B. 20 – 20.000 Hz 
-C. 200 – 200.000 Hz
-D. 2 – 200 Hz
-
+Câu 70. Khi thiết kế thông gió tự nhiên trong nhà dân dụng, nguyên tắc nào sau đây là sai?
+A. Cần có cửa đón gió và cửa thoát gió
+*B. Bố trí các không gian làm cản luồng gió
+C. Có thể dùng giếng trời để hỗ trợ thông gió
+D. Kết hợp thông gió ngang và thông gió đứng
