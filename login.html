@@ -729,7 +729,7 @@
         </div>
 
         <!-- SSO-style info button -->
-        <button class="btn-sso" onclick="showToast('📞 Mua tài khoản liên hệ Zalo: 0378787154 — Giá 20k/kỳ thi', 'warning')">
+        <button class="btn-sso" onclick="showToast('📞 Mua tài khoản liên hệ Zalo: 0378787154 — Giá 30k/kỳ thi', 'warning')">
             <svg viewBox="0 0 24 24"><path d="M21 5v14h-18v-14h18zm0-2h-18c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2v-14c0-1.1-.9-2-2-2zm-9 8c1.65 0 3-1.35 3-3s-1.35-3-3-3-3 1.35-3 3 1.35 3 3 3zm0-4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm6 8.59c0-2.5-3.97-3.59-6-3.59s-6 1.09-6 3.59v1.41h12v-1.41z"/></svg>
             Liên hệ mua tài khoản
         </button>
@@ -916,27 +916,11 @@
                     return;
                 }
 
-                // Kiểm tra tài khoản bị cấm
-                if (typeof BANNED_ACCOUNTS !== 'undefined' && BANNED_ACCOUNTS.includes(username)) {
-                    showToast('Tài khoản đã bị khóa vĩnh viễn! Liên hệ Admin Zalo 0378787154', 'error');
-                    usernameInput.value = "";
-                    passwordInput.value = "";
-                    usernameInput.focus();
-                    return;
-                }
-
-                // Kiểm tra tài khoản hết hạn
-                if (typeof EXPIRED_ACCOUNTS !== 'undefined' && EXPIRED_ACCOUNTS.includes(username)) {
-                    showExpiredModal(username);
-                    usernameInput.value = "";
-                    passwordInput.value = "";
-                    return;
-                }
-
                 // Hiển thị trạng thái đang tải
                 const prevText = loginBtn.innerHTML;
                 loginBtn.innerHTML = '<span class="spinner"></span> Đang kiểm tra...';
                 loginBtn.disabled = true;
+
 
                 // Xác thực tài khoản
                 const accountData = VALID_ACCOUNTS[username];
@@ -954,6 +938,28 @@
                     loginBtn.disabled = false;
                     showToast('Mật khẩu không đúng! Vui lòng thử lại.', 'error');
                     passwordInput.focus();
+                    return;
+                }
+
+                // 2. KIỂM TRA TRẠNG THÁI TÀI KHOẢN (BỊ CẤM / HẾT HẠN)
+                // Kiểm tra tài khoản bị cấm
+                if (typeof BANNED_ACCOUNTS !== 'undefined' && BANNED_ACCOUNTS.includes(username)) {
+                    loginBtn.innerHTML = prevText;
+                    loginBtn.disabled = false;
+                    showToast('Tài khoản đã bị khóa vĩnh viễn! Liên hệ Admin Zalo 0378787154', 'error');
+                    usernameInput.value = "";
+                    passwordInput.value = "";
+                    usernameInput.focus();
+                    return;
+                }
+
+                // Kiểm tra tài khoản hết hạn (Duyệt tkhethan.js)
+                if (typeof EXPIRED_ACCOUNTS !== 'undefined' && EXPIRED_ACCOUNTS.includes(username)) {
+                    loginBtn.innerHTML = prevText;
+                    loginBtn.disabled = false;
+                    showExpiredModal(username);
+                    usernameInput.value = "";
+                    passwordInput.value = "";
                     return;
                 }
 
