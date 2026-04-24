@@ -38,7 +38,7 @@ function showExpiredModal(username) {
                         <span style="font-size: 1.2em; margin-right: 10px;">📞</span> Zalo: <strong>0378787154</strong>
                     </div>
                     <div style="display: flex; align-items: center;">
-                        <span style="font-size: 1.2em; margin-right: 10px;">💵</span> Phí gia hạn: <strong>20.000 VNĐ / Kỳ thi</strong>
+                        <span style="font-size: 1.2em; margin-right: 10px;">💵</span> Phí gia hạn: <strong>30.000 VNĐ / Kỳ thi</strong>
                     </div>
                 </div>
                 
