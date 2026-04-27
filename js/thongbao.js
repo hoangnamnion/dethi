@@ -3,7 +3,7 @@
 // ===============================================
 
 // Anh chỉ cần thay đổi nội dung chữ ở trong dấu ngoặc kép dưới đây:
-const NOI_DUNG_THONG_BAO = "Top 1 :  Tài khoản: admin 🏆 Điểm: 50/50";
+const NOI_DUNG_THONG_BAO = "Chúc Bạn Ôn Thi Thật Tốt Ạ";
 
 // Tự động áp dụng thông báo vào trang web (KHÔNG CẦN CHỈNH SỬA PHẦN NÀY)
 document.addEventListener('DOMContentLoaded', () => {

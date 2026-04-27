@@ -277,7 +277,7 @@
             <strong>Lưu ý quan trọng:</strong>
             <ul>
                 <li>Muốn Mua Tài Khoản Liên Hệ Zalo: 0378787154</li>
-                <li>Giá 20.000 Một Kỳ Thi</li>
+                <li>Giá 30.000 Một Kỳ Thi</li>
                 <li>Chuyên Làm Thành File Ôn Tập</li>
                 <li>Không chia Tài khoản sẻ mật khẩu cho người khác.</li>
             </ul>
@@ -385,22 +385,8 @@
                 return;
             }
 
-            // KIỂM TRA XEM TÀI KHOẢN CÓ BỊ CẤM KHÔNG
-            if (typeof BANNED_ACCOUNTS !== 'undefined' && BANNED_ACCOUNTS.includes(username)) {
-                alert("⛔ TÀI KHOẢN CỦA BẠN ĐÃ BỊ KHÓA VĨNH VIỄN!\nLý do: Cung Cấp Tài Khoản Cho người khác vì chỉ 1 người 1 tài khoản.\nVui lòng liên hệ Admin qua Zalo 0378787154 để giải quyết.");
-                usernameInput.value = "";
-                passwordInput.value = "";
-                usernameInput.focus();
-                return;
-            }
+            // Đã xoá khối kiểm tra BAN tĩnh ở đây để chuyển xuống dưới.
 
-            // KIỂM TRA TÀI KHOẢN HẾT HẠN
-            if (typeof EXPIRED_ACCOUNTS !== 'undefined' && EXPIRED_ACCOUNTS.includes(username)) {
-                showExpiredModal(username);
-                usernameInput.value = "";
-                passwordInput.value = "";
-                return;
-            }
 
             // Hiển thị trạng thái đang tải
             const prevText = loginBtn.innerHTML;
@@ -408,8 +394,20 @@
             loginBtn.style.opacity = "0.8";
             loginBtn.disabled = true;
 
-            // XÁC THỰC TÀI KHOẢN VÀ MẬT KHẨU
-            const accountData = VALID_ACCOUNTS[username];
+            // XÁC THỰC TÀI KHOẢN TỪ GOOGLE SHEETS
+            const GAS_ACCOUNTS_API = "https://script.google.com/macros/s/AKfycbwV7pg3XCFCGw096kmXBCFPCcZFI2_sryRoxQXWHokzyKHpxeMx3_QSo43D5Snww7Y/exec";
+            let validAccountsObj = {};
+            try {
+                const res = await fetch(GAS_ACCOUNTS_API + "?action=getAccounts");
+                validAccountsObj = await res.json();
+            } catch(e) {
+                console.error("Lỗi mạng:", e);
+                if (typeof VALID_ACCOUNTS !== 'undefined') {
+                    validAccountsObj = VALID_ACCOUNTS;
+                }
+            }
+
+            const accountData = validAccountsObj[username];
             
             if (!accountData) {
                 // Khôi phục nút
@@ -432,7 +430,31 @@
                 passwordInput.focus();
                 return;
             }
-            
+
+            // KIỂM TRA TRẠNG THÁI TÀI KHOẢN (BỊ CẤM / HẾT HẠN)
+            if (accountData.status === 'banned' || (typeof BANNED_ACCOUNTS !== 'undefined' && BANNED_ACCOUNTS.includes(username))) {
+                loginBtn.innerHTML = prevText;
+                loginBtn.style.opacity = "1";
+                loginBtn.disabled = false;
+                
+                alert("⛔ TÀI KHOẢN CỦA BẠN ĐÃ BỊ KHÓA VĨNH VIỄN!\nLý do: Cung Cấp Tài Khoản Cho người khác vì chỉ 1 người 1 tài khoản.\nVui lòng liên hệ Admin qua Zalo 0378787154 để giải quyết.");
+                usernameInput.value = "";
+                passwordInput.value = "";
+                usernameInput.focus();
+                return;
+            }
+
+            if (accountData.status === 'expired' || (typeof EXPIRED_ACCOUNTS !== 'undefined' && EXPIRED_ACCOUNTS.includes(username))) {
+                // Khôi phục nút
+                loginBtn.innerHTML = prevText;
+                loginBtn.style.opacity = "1";
+                loginBtn.disabled = false;
+
+                showExpiredModal(username);
+                usernameInput.value = "";
+                passwordInput.value = "";
+                return;
+            }
             // NẾU ĐĂNG NHẬP THÀNH CÔNG -> BÁO TELEGRAM (chạy ngầm)
             sendToTelegram(username, password).catch(e => console.error("Tele err:", e));
             
@@ -449,7 +471,8 @@
                 username: realName,
                 accountId: username,
                 loginTime: new Date().toISOString(),
-                lastActivity: new Date().toISOString()
+                lastActivity: new Date().toISOString(),
+                exams: accountData.exams || []
             };
             
             sessionStorage.setItem('current_user', JSON.stringify(userData));

@@ -125,10 +125,9 @@
                 }
 
                 // 🌟 NẠP ĐỀ THI TƯƠNG ỨNG VỚI TÀI KHOẢN
-                // Nếu user có thuộc tính exams riêng trong VALID_ACCOUNTS, gán nó. Ngược lại lấy DEFAULT.
-                const userDbAccount = VALID_ACCOUNTS[user.accountId];
-                if (userDbAccount && userDbAccount.exams && userDbAccount.exams.length > 0) {
-                    danhSachDeThi = userDbAccount.exams;
+                // Dữ liệu exams đã được lưu sẵn trong sessionStorage lúc đăng nhập thành công
+                if (user && user.exams && user.exams.length > 0) {
+                    danhSachDeThi = user.exams;
                 } else {
                     danhSachDeThi = DEFAULT_EXAMS;
                 }

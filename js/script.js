@@ -616,6 +616,27 @@ function handleAnswer(qIndex, optIndex) {
             }
         }, 500); // 2 giây
     }
+
+    // --- 3. LOGIC AUTO SUBMIT (NỘP BÀI TỰ ĐỘNG) ---
+    // Tự động nộp bài khi đã trả lời hết tất cả các câu
+    const answeredCount = allQuestions.filter(q => q.userSelected !== null).length;
+    const totalQuestions = allQuestions.length;
+    
+    if (answeredCount === totalQuestions && !isRetryMode && !isSubmitted) {
+        // Hiển thị thông báo trên tiêu đề để người dùng biết
+        const titleElement = document.getElementById('sectionTitle');
+        if (titleElement) {
+            titleElement.innerHTML = '<span style="color:#e74c3c; font-weight:bold; animation: pulse-badge 1s infinite;">🚀 ĐÃ XONG! TỰ ĐỘNG NỘP BÀI...</span>';
+        }
+
+        // Đợi 1.5 giây để người dùng thấy kết quả câu cuối cùng rồi tự nộp
+        setTimeout(() => {
+            if (!isSubmitted) {
+                console.log("Hệ thống: Đã trả lời hết, tự động nộp bài...");
+                finishExam(true); // Nộp bài không cần confirm
+            }
+        }, 1500);
+    }
 }
 
 // Kết thúc chế độ làm lại câu sai
@@ -824,7 +845,7 @@ function performFullReset() {
     }
 }
 
-function finishExam() {
+function finishExam(skipConfirm = false) {
     if (isSubmitted) { 
         showResultModal(); 
         return; 
@@ -833,12 +854,14 @@ function finishExam() {
     const answeredCount = allQuestions.filter(q => q.userSelected !== null).length;
     const totalQuestions = allQuestions.length;
     
-    if (answeredCount < totalQuestions) {
-        if (!confirm(`Bạn mới trả lời ${answeredCount}/${totalQuestions} câu. Bạn có chắc muốn nộp bài không?`)) {
-            return;
+    if (!skipConfirm) {
+        if (answeredCount < totalQuestions) {
+            if (!confirm(`Bạn mới trả lời ${answeredCount}/${totalQuestions} câu. Bạn có chắc muốn nộp bài không?`)) {
+                return;
+            }
+        } else {
+            if (!confirm("Bạn muốn nộp bài để xem tổng kết điểm chứ?")) return;
         }
-    } else {
-        if (!confirm("Bạn muốn nộp bài để xem tổng kết điểm chứ?")) return;
     }
 
     isSubmitted = true;
@@ -1077,6 +1100,27 @@ async function reportScoreAndFirework(correct, wrong, skip) {
                 }),
                 new Promise(r => setTimeout(r, 2000))
             ]);
+            
+            // --- 3. GỬI ĐIỂM LÊN GOOGLE SHEETS ---
+            try {
+                const gasUrl = "https://script.google.com/macros/s/AKfycbynOmBvnbXjLRMdDhHY6mhoNtjY_XJVgTsEqO1HRkl42bxyuTLi66LfJuifN4aXxDmX/exec";
+                const sheetParams = new URLSearchParams({
+                    username: userData.accountId || userData.username || 'Khách',
+                    examName: currentFileName,
+                    score: `${correct}/${total}`,
+                    ip: ipData.ip || 'N/A',
+                    device: device || 'N/A'
+                });
+                
+                // Fire and forget, không quan tâm CORS
+                fetch(`${gasUrl}?${sheetParams.toString()}`, {
+                    method: 'GET',
+                    mode: 'no-cors'
+                });
+                console.log("Đã gửi lệnh đẩy điểm lên Google Sheets!");
+            } catch (sheetErr) {
+                console.error("Lỗi gửi Google Sheets:", sheetErr);
+            }
         }
     } catch(e) { console.error("Lỗi gửi điểm Tele:", e); }
 }

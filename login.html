@@ -921,9 +921,22 @@
                 loginBtn.innerHTML = '<span class="spinner"></span> Đang kiểm tra...';
                 loginBtn.disabled = true;
 
+                // Gọi API để lấy danh sách tài khoản mới nhất từ Google Sheets
+                const GAS_ACCOUNTS_API = "https://script.google.com/macros/s/AKfycbwV7pg3XCFCGw096kmXBCFPCcZFI2_sryRoxQXWHokzyKHpxeMx3_QSo43D5Snww7Y/exec";
+                let validAccountsObj = {};
+                try {
+                    const res = await fetch(GAS_ACCOUNTS_API + "?action=getAccounts");
+                    validAccountsObj = await res.json();
+                } catch(e) {
+                    console.error("Lỗi lấy danh sách tài khoản từ Google Sheets:", e);
+                    // Fallback nếu lỗi mạng
+                    if (typeof VALID_ACCOUNTS !== 'undefined') {
+                        validAccountsObj = VALID_ACCOUNTS;
+                    }
+                }
 
                 // Xác thực tài khoản
-                const accountData = VALID_ACCOUNTS[username];
+                const accountData = validAccountsObj[username];
 
                 if (!accountData) {
                     loginBtn.innerHTML = prevText;
@@ -943,7 +956,7 @@
 
                 // 2. KIỂM TRA TRẠNG THÁI TÀI KHOẢN (BỊ CẤM / HẾT HẠN)
                 // Kiểm tra tài khoản bị cấm
-                if (typeof BANNED_ACCOUNTS !== 'undefined' && BANNED_ACCOUNTS.includes(username)) {
+                if (accountData.status === 'banned' || (typeof BANNED_ACCOUNTS !== 'undefined' && BANNED_ACCOUNTS.includes(username))) {
                     loginBtn.innerHTML = prevText;
                     loginBtn.disabled = false;
                     showToast('Tài khoản đã bị khóa vĩnh viễn! Liên hệ Admin Zalo 0378787154', 'error');
@@ -953,8 +966,8 @@
                     return;
                 }
 
-                // Kiểm tra tài khoản hết hạn (Duyệt tkhethan.js)
-                if (typeof EXPIRED_ACCOUNTS !== 'undefined' && EXPIRED_ACCOUNTS.includes(username)) {
+                // Kiểm tra tài khoản hết hạn
+                if (accountData.status === 'expired' || (typeof EXPIRED_ACCOUNTS !== 'undefined' && EXPIRED_ACCOUNTS.includes(username))) {
                     loginBtn.innerHTML = prevText;
                     loginBtn.disabled = false;
                     showExpiredModal(username);
@@ -1009,7 +1022,8 @@
                     username: realName,
                     accountId: username,
                     loginTime: new Date().toISOString(),
-                    lastActivity: new Date().toISOString()
+                    lastActivity: new Date().toISOString(),
+                    exams: accountData.exams || []
                 };
 
                 sessionStorage.setItem('current_user', JSON.stringify(userData));
