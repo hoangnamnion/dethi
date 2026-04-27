@@ -407,6 +407,52 @@
     </style>
 </head>
 <body>
+    <!-- Lớp phủ bảo vệ (Yêu cầu mật khẩu Admin) -->
+    <div id="admin-auth-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.98); backdrop-filter: blur(20px); z-index: 999999; display: flex; justify-content: center; align-items: center;">
+        <div style="background: white; padding: 40px; border-radius: 24px; text-align: center; max-width: 420px; width: 90%; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); animation: cardAppear 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;">
+            <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #4f46e5, #9333ea); border-radius: 50%; display: inline-flex; justify-content: center; align-items: center; margin-bottom: 25px; box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);">
+                <i class="fa-solid fa-lock" style="font-size: 2em; color: white;"></i>
+            </div>
+            <h2 style="color: #0f172a; margin-bottom: 10px; font-size: 1.8em; font-weight: 700;">Hệ Thống Quản Trị</h2>
+            <p style="color: #64748b; margin-bottom: 30px; line-height: 1.5;">Vui lòng nhập mật khẩu cấp cao (Admin) để tiếp tục vào trang.</p>
+            
+            <div style="position: relative; margin-bottom: 20px;">
+                <input type="password" id="admin-password-input" placeholder="Nhập mật khẩu..." style="width: 100%; padding: 16px 20px; border: 2px solid #e2e8f0; border-radius: 16px; font-size: 1.1em; text-align: center; transition: all 0.3s; outline: none; background: #f8fafc;" onfocus="this.style.borderColor='#4f46e5'; this.style.background='white'; this.style.boxShadow='0 0 0 4px rgba(79, 70, 229, 0.1)';" onblur="this.style.borderColor='#e2e8f0'; this.style.background='#f8fafc'; this.style.boxShadow='none';" onkeypress="if(event.key === 'Enter') checkAdminAuth()">
+            </div>
+            
+            <button onclick="checkAdminAuth()" style="width: 100%; background: linear-gradient(135deg, #4f46e5, #9333ea); color: white; border: none; padding: 16px; border-radius: 16px; font-weight: bold; font-size: 1.1em; cursor: pointer; transition: all 0.3s; box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(79, 70, 229, 0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(79, 70, 229, 0.3)';">
+                <i class="fa-solid fa-key" style="margin-right: 8px;"></i> Mở Khóa Hệ Thống
+            </button>
+            <p id="admin-auth-error" style="color: #ef4444; margin-top: 15px; font-size: 0.95em; display: none; font-weight: 600;"><i class="fa-solid fa-circle-exclamation"></i> Mật khẩu không chính xác!</p>
+        </div>
+    </div>
+
+    <script>
+        function checkAdminAuth() {
+            const input = document.getElementById('admin-password-input').value;
+            const errorText = document.getElementById('admin-auth-error');
+            if (input === 'Nam2005@') {
+                const overlay = document.getElementById('admin-auth-overlay');
+                overlay.style.transition = 'opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
+                overlay.style.opacity = '0';
+                overlay.style.transform = 'scale(1.05)';
+                setTimeout(() => overlay.remove(), 400);
+            } else {
+                errorText.style.display = 'block';
+                const inputEl = document.getElementById('admin-password-input');
+                inputEl.style.transition = 'transform 0.1s';
+                inputEl.style.transform = 'translateX(-10px)';
+                setTimeout(() => inputEl.style.transform = 'translateX(10px)', 100);
+                setTimeout(() => inputEl.style.transform = 'translateX(-10px)', 200);
+                setTimeout(() => inputEl.style.transform = 'translateX(10px)', 300);
+                setTimeout(() => inputEl.style.transform = 'translateX(0)', 400);
+                inputEl.focus();
+            }
+        }
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => document.getElementById('admin-password-input').focus(), 100);
+        });
+    </script>
 
     <div class="header">
         <h1><i class="fa-solid fa-shield-halved"></i> ADMIN CAO VĂN NAM</h1>
