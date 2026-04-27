@@ -287,6 +287,12 @@
             🚀 BẮT ĐẦU HỌC TẬP
         </button>
         
+        <!-- Nút Đăng ký (mới thêm) -->
+        <button class="login-btn" onclick="showRegisterModal()" style="background: linear-gradient(135deg, #0984e3, #00cec9); margin-top: 15px; box-shadow: 0 10px 20px rgba(9, 132, 227, 0.3);">
+            <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: white; margin-right: 8px; vertical-align: middle;"><path d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+            <span style="vertical-align: middle;">ĐĂNG KÝ TÀI KHOẢN MỚI</span>
+        </button>
+        
         <p class="footer-note">
             Nhấn Enter hoặc nút trên để tiếp tục
         </p>
@@ -316,6 +322,52 @@
     </div>
 
     <script>
+        // ==========================================
+        // HÀM HIỂN THỊ MODAL ĐĂNG KÝ (LẤY ID THIẾT BỊ)
+        // ==========================================
+        function showRegisterModal() {
+            if (document.getElementById('register-modal')) return;
+            
+            // Hàm lấy/tạo device ID
+            let deviceId = localStorage.getItem('device_id');
+            if (!deviceId) {
+                deviceId = 'DEV_' + Math.random().toString(36).substr(2, 8).toUpperCase();
+                localStorage.setItem('device_id', deviceId);
+            }
+
+            const modalHtml = `
+                <div id="register-modal" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); display: flex; justify-content: center; align-items: center; z-index: 9999999;">
+                    <div style="background: white; padding: 30px; border-radius: 20px; text-align: center; max-width: 400px; width: 90%; box-shadow: 0 15px 40px rgba(0,0,0,0.3); animation: popIn 0.3s ease-out;">
+                        <h2 style="color: #2c3e50; margin-bottom: 15px; font-size: 1.5em; font-family: 'Inter', sans-serif;">ĐĂNG KÝ TÀI KHOẢN</h2>
+                        <p style="color: #34495e; margin-bottom: 20px; font-size: 0.95em; line-height: 1.5;">Hệ thống bảo mật giới hạn 1 thiết bị/tài khoản. Vui lòng copy <b>ID THIẾT BỊ</b> bên dưới và gửi cho Admin để được cấp tài khoản.</p>
+                        
+                        <div style="background: #f1f2f6; padding: 15px; border-radius: 10px; font-family: monospace; font-size: 1.2em; font-weight: bold; color: #e74c3c; margin-bottom: 20px; letter-spacing: 1px; border: 2px dashed #bdc3c7;">
+                            ${deviceId}
+                        </div>
+                        
+                        <button onclick="navigator.clipboard.writeText('${deviceId}').then(() => { this.innerText='Đã Copy ✅'; this.style.background='#27ae60'; setTimeout(()=>this.innerText='Copy Mã ID', 2000); })" style="background: #3498db; color: white; border: none; padding: 12px 20px; border-radius: 10px; font-weight: bold; font-size: 1em; cursor: pointer; width: 100%; margin-bottom: 10px; transition: 0.2s;">
+                            <i class="fa-solid fa-copy"></i> Copy Mã ID
+                        </button>
+                        
+                        <button onclick="window.open('https://zalo.me/0378787154', '_blank')" style="background: #0088cc; color: white; border: none; padding: 12px 20px; border-radius: 10px; font-weight: bold; font-size: 1em; cursor: pointer; width: 100%; margin-bottom: 10px; transition: 0.2s;">
+                            <i class="fa-solid fa-paper-plane"></i> Gửi cho Admin (Zalo)
+                        </button>
+
+                        <button onclick="document.getElementById('register-modal').remove()" style="background: transparent; color: #7f8c8d; border: 1px solid #bdc3c7; padding: 10px 20px; border-radius: 10px; font-weight: bold; font-size: 0.9em; cursor: pointer; width: 100%; transition: 0.2s;">
+                            Đóng lại
+                        </button>
+                    </div>
+                </div>
+                <style>
+                    @keyframes popIn {
+                        from { transform: scale(0.9); opacity: 0; }
+                        to { transform: scale(1); opacity: 1; }
+                    }
+                </style>
+            `;
+            document.body.insertAdjacentHTML('beforeend', modalHtml);
+        }
+
         // Lấy tham chiếu đến input và nút
         const usernameInput = document.getElementById('username');
         const passwordInput = document.getElementById('password');

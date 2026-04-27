@@ -99,6 +99,17 @@
             td:last-child {
                 border-bottom: 0;
             }
+            .action-buttons-container {
+                flex-wrap: wrap;
+                margin-top: 5px;
+                width: 100%;
+                gap: 8px;
+            }
+            .action-btn {
+                padding: 10px 14px;
+                font-size: 1.3em;
+                border-radius: 8px;
+            }
             td::before {
                 content: attr(data-label);
                 font-weight: 600;
@@ -211,6 +222,35 @@
             color: var(--primary);
             display: inline-block;
         }
+
+        /* Action Buttons */
+        .action-buttons-container {
+            display: flex;
+            gap: 6px;
+            flex-wrap: nowrap;
+        }
+
+        .action-btn {
+            border: none;
+            cursor: pointer;
+            padding: 6px 8px;
+            border-radius: 6px;
+            font-size: 1.1em;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .action-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .action-btn.edit { color: #3498db; background: rgba(52, 152, 219, 0.1); }
+        .action-btn.expire { color: #f39c12; background: rgba(243, 156, 18, 0.1); }
+        .action-btn.ban { color: #8e44ad; background: rgba(142, 68, 173, 0.1); }
+        .action-btn.normal { color: var(--success); background: rgba(46, 204, 113, 0.1); }
+        .action-btn.delete { color: var(--danger); background: rgba(231, 76, 60, 0.1); }
 
         /* Form Styles */
         .form-group {
@@ -369,38 +409,13 @@
 <body>
 
     <div class="header">
-        <h1><i class="fa-solid fa-shield-halved"></i> Admin System</h1>
+        <h1><i class="fa-solid fa-shield-halved"></i> ADMIN CAO VĂN NAM</h1>
         <div class="stats">
             <span class="badge" id="total-accounts"><i class="fa-solid fa-users"></i> Đang tải...</span>
         </div>
     </div>
 
     <div class="container">
-        <!-- Danh sách tài khoản -->
-        <div class="glass-card">
-            <div class="card-header">
-                <h2><i class="fa-solid fa-list"></i> Danh sách Tài Khoản</h2>
-            </div>
-            <div class="table-container">
-                <table id="accounts-table">
-                    <thead>
-                        <tr>
-                            <th>Tài khoản</th>
-                            <th>Mật khẩu</th>
-                            <th>Tên hiển thị</th>
-                            <th>Thiết bị (ID)</th>
-                            <th>Đề thi</th>
-                            <th>Trạng thái</th>
-                            <th>Hành động</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Dữ liệu render từ JS -->
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
         <!-- Thêm tài khoản mới -->
         <div class="glass-card">
             <div class="card-header">
@@ -432,8 +447,34 @@
                 <button type="submit" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Thêm vào danh sách</button>
             </form>
             
-            <div style="margin-top: 1.5rem; border-top: 1px solid var(--border-color); padding-top: 1.5rem;">
-                <button id="generate-btn" class="btn btn-success" style="width: 100%;"><i class="fa-solid fa-cloud-arrow-up"></i> Đồng Bộ Lên Server</button>
+            <div style="margin-top: 1.5rem; border-top: 1px solid var(--border-color); padding-top: 1.5rem; display: flex; gap: 1rem;">
+                <button type="button" onclick="importFromHihi()" class="btn" style="background: #e67e22; color: white; flex: 1;"><i class="fa-solid fa-file-import"></i> Nhập từ file cũ</button>
+                <button id="generate-btn" class="btn btn-success" style="flex: 2;"><i class="fa-solid fa-cloud-arrow-up"></i> Đồng Bộ Lên Server</button>
+            </div>
+        </div>
+
+        <!-- Danh sách tài khoản -->
+        <div class="glass-card">
+            <div class="card-header">
+                <h2><i class="fa-solid fa-list"></i> Danh sách Tài Khoản</h2>
+            </div>
+            <div class="table-container">
+                <table id="accounts-table">
+                    <thead>
+                        <tr>
+                            <th>Tài khoản</th>
+                            <th>Mật khẩu</th>
+                            <th>Tên hiển thị</th>
+                            <th>Thiết bị (ID)</th>
+                            <th>Đề thi</th>
+                            <th>Trạng thái</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dữ liệu render từ JS -->
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
@@ -444,6 +485,25 @@
         const GAS_ACCOUNTS_API = "https://script.google.com/macros/s/AKfycbwV7pg3XCFCGw096kmXBCFPCcZFI2_sryRoxQXWHokzyKHpxeMx3_QSo43D5Snww7Y/exec";
         let currentAccounts = {};
         let editingUsername = null; // Biến lưu trạng thái đang chỉnh sửa
+
+        // Hàm nhập dữ liệu từ file cũ
+        function importFromHihi() {
+            if (typeof VALID_ACCOUNTS === 'undefined') {
+                alert("Không tìm thấy file dữ liệu cũ (hihihaaaa.js).");
+                return;
+            }
+            if (confirm("Hành động này sẽ gộp tất cả tài khoản từ file cũ vào danh sách hiện tại. Bạn có chắc chắn?")) {
+                let addedCount = 0;
+                for (const [user, data] of Object.entries(VALID_ACCOUNTS)) {
+                    if (!currentAccounts[user]) {
+                        currentAccounts[user] = data;
+                        addedCount++;
+                    }
+                }
+                renderTable();
+                alert(`Đã nhập thêm ${addedCount} tài khoản mới từ file cũ.\nHãy kiểm tra bảng bên dưới và nhớ bấm ĐỒNG BỘ LÊN SERVER để lưu lại.`);
+            }
+        }
 
         // Tải dữ liệu từ Google Sheets
         async function loadAccountsFromGoogle() {
@@ -500,22 +560,24 @@
                     <td data-label="Thiết bị (ID)">${deviceIds}</td>
                     <td data-label="Đề thi">${examText}</td>
                     <td data-label="Trạng thái">${statusBadge}</td>
-                    <td data-label="Hành động" style="white-space: nowrap;">
-                        <button onclick="editAccount('${username}')" style="background: none; border: none; color: #3498db; cursor: pointer; padding: 5px;" title="Chỉnh sửa tài khoản">
-                            <i class="fa-solid fa-pen-to-square"></i>
-                        </button>
-                        <button onclick="toggleStatus('${username}', 'expired')" style="background: none; border: none; color: #f39c12; cursor: pointer; padding: 5px;" title="Đánh dấu Hết Hạn">
-                            <i class="fa-solid fa-hourglass-end"></i>
-                        </button>
-                        <button onclick="toggleStatus('${username}', 'banned')" style="background: none; border: none; color: #8e44ad; cursor: pointer; padding: 5px;" title="Cấm tài khoản">
-                            <i class="fa-solid fa-ban"></i>
-                        </button>
-                        <button onclick="toggleStatus('${username}', 'normal')" style="background: none; border: none; color: var(--success); cursor: pointer; padding: 5px;" title="Khôi phục Bình Thường">
-                            <i class="fa-solid fa-rotate-left"></i>
-                        </button>
-                        <button onclick="deleteAccount('${username}')" style="background: none; border: none; color: var(--danger); cursor: pointer; padding: 5px;" title="Xóa tài khoản">
-                            <i class="fa-solid fa-trash"></i>
-                        </button>
+                    <td data-label="Hành động">
+                        <div class="action-buttons-container">
+                            <button class="action-btn edit" onclick="editAccount('${username}')" title="Chỉnh sửa tài khoản">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                            </button>
+                            <button class="action-btn expire" onclick="toggleStatus('${username}', 'expired')" title="Đánh dấu Hết Hạn">
+                                <i class="fa-solid fa-hourglass-end"></i>
+                            </button>
+                            <button class="action-btn ban" onclick="toggleStatus('${username}', 'banned')" title="Cấm tài khoản">
+                                <i class="fa-solid fa-ban"></i>
+                            </button>
+                            <button class="action-btn normal" onclick="toggleStatus('${username}', 'normal')" title="Khôi phục Bình Thường">
+                                <i class="fa-solid fa-rotate-left"></i>
+                            </button>
+                            <button class="action-btn delete" onclick="deleteAccount('${username}')" title="Xóa tài khoản">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </div>
                     </td>
                 `;
                 tbody.appendChild(tr);
