@@ -6,6 +6,19 @@
 
 const LEADERBOARD_API = "https://script.google.com/macros/s/AKfycbynOmBvnbXjLRMdDhHY6mhoNtjY_XJVgTsEqO1HRkl42bxyuTLi66LfJuifN4aXxDmX/exec";
 
+// ==========================================
+// TẢI NGẦM DỮ LIỆU ĐỂ HIỂN THỊ TỨC THÌ
+// ==========================================
+window.preFetchedLeaderboard = null;
+window.fetchLeaderboardBackground = function() {
+    try {
+        const examName = typeof currentFileName !== 'undefined' ? currentFileName : '';
+        const fetchUrl = `${LEADERBOARD_API}?action=getLeaderboard&examName=${examName}`;
+        fetch(fetchUrl).then(r => r.json()).then(d => window.preFetchedLeaderboard = d).catch(e => {});
+    } catch(e){}
+};
+setTimeout(window.fetchLeaderboardBackground, 2000);
+
 async function showLeaderboard() {
     let modal = document.getElementById('leaderboardModal');
     if (!modal) {
@@ -16,6 +29,17 @@ async function showLeaderboard() {
             background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(10px); z-index: 99999; justify-content: center; align-items: center;
         `;
         document.body.appendChild(modal);
+    }
+
+    // Nếu đã có dữ liệu tải ngầm, hiển thị luôn không cần chờ
+    if (window.preFetchedLeaderboard) {
+        let topUsers = window.preFetchedLeaderboard;
+        if (topUsers && topUsers.length > 0) {
+            topUsers = topUsers.filter(u => !(u.rawScore && String(u.rawScore).includes('(Đang làm)')));
+        }
+        renderLeaderboardData(modal, topUsers);
+        window.fetchLeaderboardBackground(); // Tải lại ngầm để cập nhật dữ liệu mới cho lần sau
+        return;
     }
     
     // Giao diện Loading
@@ -79,16 +103,8 @@ function renderLeaderboardData(modal, topUsers) {
         return;
     }
 
-    // Gắn màu sắc theo thứ hạng
-    topUsers.forEach((user, index) => {
-        user.rank = index + 1;
-        if (user.rank === 1) user.color = "#f1c40f"; // Vàng
-        else if (user.rank === 2) user.color = "#95a5a6"; // Bạc
-        else if (user.rank === 3) user.color = "#d35400"; // Đồng
-        else user.color = "#34495e"; 
-    });
-
     let examDisplayName = typeof currentFileName !== 'undefined' && currentFileName ? currentFileName : '';
+    let isSpecificExam = false;
     if (examDisplayName) {
         let found = false;
         try {
@@ -106,24 +122,69 @@ function renderLeaderboardData(modal, topUsers) {
             const matched = DEFAULT_EXAMS.find(e => e.file === examDisplayName);
             if (matched) examDisplayName = matched.ten;
         }
+        if (examDisplayName !== currentFileName || typeof currentFileName !== 'undefined') {
+            isSpecificExam = !!currentFileName;
+        }
     }
 
-    let listHTML = topUsers.map(user => {
+    // 1. GOM NHÓM THEO TÊN NGƯỜI & LỌC THEO MÔN HỌC
+    const userMap = new Map();
+    topUsers.forEach(user => {
         let displayUserName = user.name || "";
-        // Loại bỏ phần tài khoản nằm trong ngoặc đơn nếu có (của dữ liệu cũ)
-        if (displayUserName && displayUserName.includes('(')) {
+        if (displayUserName.includes('(')) {
             displayUserName = displayUserName.replace(/\s*\([^)]*\)$/, '').trim();
         }
-
+        
         let realName = displayUserName;
         let subjectName = "";
-        
-        // Nếu tên có chứa ' - ' (định dạng mới do file script.js ghép), tách phần môn học ra
-        if (displayUserName && displayUserName.includes(' - ')) {
+        if (displayUserName.includes(' - ')) {
             const parts = displayUserName.split(' - ');
             realName = parts[0].trim();
             subjectName = parts.slice(1).join(' - ').trim();
         }
+        
+        // Nếu đang xem Xếp hạng của 1 môn cụ thể, bỏ qua các môn khác
+        if (isSpecificExam && subjectName && subjectName !== examDisplayName) {
+            return;
+        }
+
+        let rawScore = user.rawScore || "0";
+        let scoreValue = 0;
+        let baseScoreStr = rawScore.replace('(Đang làm)', '').trim();
+        if (baseScoreStr.includes('/')) {
+            scoreValue = parseInt(baseScoreStr.split('/')[0]) || 0;
+        } else {
+            scoreValue = parseInt(baseScoreStr) || 0;
+        }
+
+        const existing = userMap.get(realName);
+        if (!existing) {
+            userMap.set(realName, { ...user, scoreValue, realName, subjectName });
+        } else {
+            if (scoreValue > existing.scoreValue) {
+                userMap.set(realName, { ...user, scoreValue, realName, subjectName });
+            }
+        }
+    });
+
+    // 2. Chuyển Map thành mảng và sắp xếp lại theo điểm
+    topUsers = Array.from(userMap.values()).sort((a, b) => b.scoreValue - a.scoreValue);
+
+    // Cắt lấy Top 50
+    if (topUsers.length > 50) topUsers = topUsers.slice(0, 50);
+
+    // 3. Gắn màu sắc theo thứ hạng
+    topUsers.forEach((user, index) => {
+        user.rank = index + 1;
+        if (user.rank === 1) user.color = "#f1c40f"; // Vàng
+        else if (user.rank === 2) user.color = "#95a5a6"; // Bạc
+        else if (user.rank === 3) user.color = "#d35400"; // Đồng
+        else user.color = "#34495e"; 
+    });
+
+    let listHTML = topUsers.map(user => {
+        let realName = user.realName || user.name;
+        let subjectName = user.subjectName || "";
 
         return `
         <div style="display:flex; align-items:center; gap: 12px; margin-bottom: 12px; padding: 15px; background: #fff; border: 1px solid #f1f5f9; border-radius: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); transition: 0.3s;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 15px rgba(0,0,0,0.05)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.02)';">

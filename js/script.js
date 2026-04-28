@@ -1105,6 +1105,10 @@ async function reportScoreAndFirework(correct, wrong, skip) {
             try {
                 let examDisplayName = currentFileName;
                 try {
+                    // Yêu cầu tải ngầm lại Bảng Xếp Hạng để cập nhật ngay điểm mới
+                    if (typeof window.fetchLeaderboardBackground === 'function') {
+                        window.fetchLeaderboardBackground();
+                    }
                     let found = false;
                     const uStr = sessionStorage.getItem('current_user') || localStorage.getItem('current_user');
                     if (uStr) {
