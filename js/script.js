@@ -1233,6 +1233,51 @@ function saveProgress() {
         })) 
     };
     localStorage.setItem('quiz_data_' + currentFileName, JSON.stringify(data));
+    
+    // Gọi đồng bộ tiến độ thời gian thực
+    syncLiveProgress();
+}
+
+let syncTimeout = null;
+function syncLiveProgress() {
+    if (isSubmitted || allQuestions.length === 0) return;
+    
+    if (syncTimeout) clearTimeout(syncTimeout);
+    syncTimeout = setTimeout(() => {
+        try {
+            const uStr = sessionStorage.getItem('current_user') || localStorage.getItem('current_user');
+            if (!uStr) return;
+            const userData = JSON.parse(uStr);
+            
+            const total = allQuestions.length;
+            const answered = allQuestions.filter(q => q.userSelected !== null).length;
+            
+            let examDisplayName = currentFileName;
+            let found = false;
+            if (userData.exams && Array.isArray(userData.exams)) {
+                const matched = userData.exams.find(e => e.file === currentFileName);
+                if (matched) { examDisplayName = matched.ten; found = true; }
+            }
+            if (!found && typeof DEFAULT_EXAMS !== 'undefined') {
+                const matched = DEFAULT_EXAMS.find(e => e.file === currentFileName);
+                if (matched) examDisplayName = matched.ten;
+            }
+
+            const gasUrl = "https://script.google.com/macros/s/AKfycbynOmBvnbXjLRMdDhHY6mhoNtjY_XJVgTsEqO1HRkl42bxyuTLi66LfJuifN4aXxDmX/exec";
+            const sheetParams = new URLSearchParams({
+                username: `${userData.username || 'Khách'} - ${examDisplayName}`,
+                examName: currentFileName,
+                score: `${answered}/${total} (Đang làm)`,
+                ip: 'Đang làm...',
+                device: navigator.userAgent
+            });
+            
+            fetch(`${gasUrl}?${sheetParams.toString()}`, {
+                method: 'GET',
+                mode: 'no-cors'
+            });
+        } catch(e) {}
+    }, 4000);
 }
 
 function loadProgress() {

@@ -41,7 +41,12 @@ async function showLeaderboard() {
         const response = await fetch(fetchUrl);
         if (!response.ok) throw new Error("Network response was not ok");
         
-        const topUsers = await response.json();
+        let topUsers = await response.json();
+        
+        // Lọc bỏ những người đang thi dở (chỉ hiển thị những bài Đã nộp)
+        if (topUsers && topUsers.length > 0) {
+            topUsers = topUsers.filter(u => !(u.rawScore && String(u.rawScore).includes('(Đang làm)')));
+        }
         
         // Render Dữ liệu
         renderLeaderboardData(modal, topUsers);
@@ -135,7 +140,7 @@ function renderLeaderboardData(modal, topUsers) {
             </div>
             <div style="text-align: right; background: #f0fdf4; padding: 8px 14px; border-radius: 12px; border: 1px solid #dcfce7; min-width: 65px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
                 <div style="font-size: 1.15em; font-weight: 800; color: #16a34a; line-height: 1;">${user.rawScore}</div>
-                <div style="font-size: 0.6em; color: #16a34a; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px;">Điểm</div>
+                <div style="font-size: 0.6em; color: #16a34a; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px;">Câu</div>
             </div>
         </div>
         `;
