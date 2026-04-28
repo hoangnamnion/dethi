@@ -289,6 +289,10 @@
                 <div class="card-icon">🗂️</div>
                 <div class="card-title">Học Thẻ</div>
             </a>
+            <a href="#" id="btnLeaderboard" class="action-card" onclick="showLeaderboardProduct(); return false;">
+                <div class="card-icon">🏆</div>
+                <div class="card-title">Xếp Hạng</div>
+            </a>
             <a href="https://zalo.me/0378787154" target="_blank" class="action-card">
                 <div class="card-icon">💬</div>
                 <div class="card-title">Tạo File</div>
@@ -353,6 +357,10 @@
         </div>
     </div>
 
+    <!-- Thêm các file cần thiết cho Bảng xếp hạng -->
+    <script src="js/hihihaaaa.js"></script>
+    <script src="js/leaderboard.js"></script>
+    
     <script>
         // KIỂM TRA ĐĂNG NHẬP
         const userData = sessionStorage.getItem('current_user');
@@ -368,6 +376,16 @@
 
         document.getElementById('examName').innerText = fileName || ("Đề số " + fileID);
         document.getElementById('btnReview').href = `ontap.html?id=${fileID}&name=${encodeURIComponent(fileName)}`;
+
+        // Hàm gọi Bảng Xếp Hạng cho đúng môn hiện tại
+        window.currentFileName = fileID;
+        function showLeaderboardProduct() {
+            if (typeof showLeaderboard === 'function') {
+                showLeaderboard();
+            } else {
+                alert("Đang tải dữ liệu Bảng vàng, vui lòng thử lại sau!");
+            }
+        }
 
         // Biến lưu chế độ được chọn
         let selectedMode = 'normal';

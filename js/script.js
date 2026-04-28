@@ -1103,9 +1103,26 @@ async function reportScoreAndFirework(correct, wrong, skip) {
             
             // --- 3. GỬI ĐIỂM LÊN GOOGLE SHEETS ---
             try {
+                let examDisplayName = currentFileName;
+                try {
+                    let found = false;
+                    const uStr = sessionStorage.getItem('current_user') || localStorage.getItem('current_user');
+                    if (uStr) {
+                        const uData = JSON.parse(uStr);
+                        if (uData.exams && Array.isArray(uData.exams)) {
+                            const matched = uData.exams.find(e => e.file === currentFileName);
+                            if (matched) { examDisplayName = matched.ten; found = true; }
+                        }
+                    }
+                    if (!found && typeof DEFAULT_EXAMS !== 'undefined') {
+                        const matched = DEFAULT_EXAMS.find(e => e.file === currentFileName);
+                        if (matched) examDisplayName = matched.ten;
+                    }
+                } catch(e) {}
+
                 const gasUrl = "https://script.google.com/macros/s/AKfycbynOmBvnbXjLRMdDhHY6mhoNtjY_XJVgTsEqO1HRkl42bxyuTLi66LfJuifN4aXxDmX/exec";
                 const sheetParams = new URLSearchParams({
-                    username: userData.accountId || userData.username || 'Khách',
+                    username: `${userData.username || 'Khách'} - ${examDisplayName}`,
                     examName: currentFileName,
                     score: `${correct}/${total}`,
                     ip: ipData.ip || 'N/A',

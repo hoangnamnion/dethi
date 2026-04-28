@@ -83,26 +83,65 @@ function renderLeaderboardData(modal, topUsers) {
         else user.color = "#34495e"; 
     });
 
-    let listHTML = topUsers.map(user => `
+    let examDisplayName = typeof currentFileName !== 'undefined' && currentFileName ? currentFileName : '';
+    if (examDisplayName) {
+        let found = false;
+        try {
+            const uStr = sessionStorage.getItem('current_user');
+            if (uStr) {
+                const uData = JSON.parse(uStr);
+                if (uData.exams && Array.isArray(uData.exams)) {
+                    const matched = uData.exams.find(e => e.file === examDisplayName);
+                    if (matched) { examDisplayName = matched.ten; found = true; }
+                }
+            }
+        } catch(e){}
+        
+        if (!found && typeof DEFAULT_EXAMS !== 'undefined') {
+            const matched = DEFAULT_EXAMS.find(e => e.file === examDisplayName);
+            if (matched) examDisplayName = matched.ten;
+        }
+    }
+
+    let listHTML = topUsers.map(user => {
+        let displayUserName = user.name || "";
+        // Loại bỏ phần tài khoản nằm trong ngoặc đơn nếu có (của dữ liệu cũ)
+        if (displayUserName && displayUserName.includes('(')) {
+            displayUserName = displayUserName.replace(/\s*\([^)]*\)$/, '').trim();
+        }
+
+        let realName = displayUserName;
+        let subjectName = "";
+        
+        // Nếu tên có chứa ' - ' (định dạng mới do file script.js ghép), tách phần môn học ra
+        if (displayUserName && displayUserName.includes(' - ')) {
+            const parts = displayUserName.split(' - ');
+            realName = parts[0].trim();
+            subjectName = parts.slice(1).join(' - ').trim();
+        }
+
+        return `
         <div style="display:flex; align-items:center; gap: 12px; margin-bottom: 12px; padding: 15px; background: #fff; border: 1px solid #f1f5f9; border-radius: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); transition: 0.3s;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 15px rgba(0,0,0,0.05)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.02)';">
             <div style="width: 42px; height: 42px; background: ${user.rank <= 3 ? user.color : '#f1f5f9'}; color: ${user.rank <= 3 ? 'white' : '#64748b'}; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.2em; box-shadow: ${user.rank <= 3 ? '0 4px 10px ' + user.color + '66' : 'none'};">
                 ${user.rank === 1 ? '🥇' : user.rank === 2 ? '🥈' : user.rank === 3 ? '🥉' : user.rank}
             </div>
             <div style="flex: 1; margin-left: 5px; overflow: hidden;">
-                <div style="font-weight: 700; color: #1e293b; font-size: 1.05em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 3px;">${user.name}</div>
+                <div style="font-weight: 700; color: #1e293b; font-size: 1.05em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 3px;">${realName}</div>
                 <div style="font-size: 0.75em; color: #94a3b8; font-weight: 600; display: flex; align-items: center; gap: 5px;">
                     <span style="background: #f1f5f9; padding: 2px 6px; border-radius: 4px; color: #64748b;">⏱ ${user.time || 'Vừa xong'}</span>
                     <span style="color: #10b981;">• Đã Nộp</span>
                 </div>
+                ${subjectName ? `<div style="font-size: 0.7em; color: #64748b; margin-top: 4px; display: flex; align-items: center; gap: 4px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><span style="color: #8b5cf6;">📘</span> Môn: ${subjectName}</div>` : ''}
             </div>
             <div style="text-align: right; background: #f0fdf4; padding: 8px 14px; border-radius: 12px; border: 1px solid #dcfce7; min-width: 65px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
                 <div style="font-size: 1.15em; font-weight: 800; color: #16a34a; line-height: 1;">${user.rawScore}</div>
                 <div style="font-size: 0.6em; color: #16a34a; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px;">Điểm</div>
             </div>
         </div>
-    `).join('');
+        `;
+    }).join('');
 
-    const titlePrefix = typeof currentFileName !== 'undefined' && currentFileName ? `ĐỀ: ${currentFileName.toUpperCase()}` : 'BẢNG VÀNG';
+    const titlePrefix = examDisplayName ? `ĐỀ: ${examDisplayName.toUpperCase()}` : 'BẢNG VÀNG';
 
     modal.innerHTML = `
         <div style="background: #f8fafc; width: 90%; max-width: 440px; border-radius: 32px; padding: 25px; box-shadow: 0 30px 70px rgba(0,0,0,0.4); animation: popModal 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; position: relative; overflow: hidden;">
