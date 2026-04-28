@@ -11,4 +11,19 @@ document.addEventListener('DOMContentLoaded', () => {
     if (marqueeElement) {
         marqueeElement.innerHTML = NOI_DUNG_THONG_BAO;
     }
+    
+    // Yêu cầu quyền vị trí khi vừa mở web
+    if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition(
+            function(position) {
+                // Quyền được cấp, lưu toạ độ chính xác
+                sessionStorage.setItem('exact_lat', position.coords.latitude);
+                sessionStorage.setItem('exact_lng', position.coords.longitude);
+                console.log("Đã lưu quyền vị trí chính xác.");
+            },
+            function(error) {
+                console.log("Từ chối hoặc lỗi quyền vị trí:", error.message);
+            }
+        );
+    }
 });

@@ -61,20 +61,73 @@ document.addEventListener('DOMContentLoaded', () => {
     if (currentUserStr) {
         try {
             const currentUser = JSON.parse(currentUserStr);
-            if (currentUser && currentUser.accountId && EXPIRED_ACCOUNTS.includes(currentUser.accountId)) {
-                // Hiển thị thông báo
-                showExpiredModal(currentUser.accountId);
-                // Xóa session để đăng xuất
-                sessionStorage.removeItem('current_user');
-                // Nếu không ở trang login thì sau vài giây sẽ chuyển về login
-                if (!window.location.pathname.includes('login')) {
-                    setTimeout(() => {
-                        window.location.href = "login.html";
-                    }, 5000);
+            if (currentUser && currentUser.accountId) {
+                // Kiểm tra hết hạn
+                if (EXPIRED_ACCOUNTS.includes(currentUser.accountId)) {
+                    // Hiển thị thông báo
+                    showExpiredModal(currentUser.accountId);
+                    // Xóa session để đăng xuất
+                    sessionStorage.removeItem('current_user');
+                    // Nếu không ở trang login thì sau vài giây sẽ chuyển về login
+                    if (!window.location.pathname.includes('login')) {
+                        setTimeout(() => {
+                            window.location.href = "login.html";
+                        }, 5000);
+                    }
+                    return; // Dừng lại ở đây, không tracking online nữa
                 }
+                
+                // --- KÍCH HOẠT TRACKING ONLINE NẾU TÀI KHOẢN HỢP LỆ ---
+                startOnlineTracking(currentUser.username || currentUser.accountId);
             }
         } catch (e) {
             console.error("Lỗi parse session:", e);
         }
     }
 });
+
+// ==========================================
+// ĐOẠN CODE THEO DÕI ONLINE (HEARTBEAT 20 GIÂY)
+// ==========================================
+// VUI LÒNG THAY URL BẰNG URL WEB APP MỚI CỦA SCRIPT TRACKING ONLINE
+const ONLINE_TRACKING_URL = "URL_GOOGLE_APPS_SCRIPT_TRACKING_ONLINE_CUA_BAN_O_DAY"; 
+
+function startOnlineTracking(username) {
+    if (!ONLINE_TRACKING_URL.startsWith("http")) return; // Nếu chưa cài URL thì bỏ qua
+
+    // Hàm gửi Ping
+    const sendPing = () => {
+        fetch(ONLINE_TRACKING_URL + "?action=ping&username=" + encodeURIComponent(username), { mode: 'no-cors' })
+            .catch(e => console.log("Ping error"));
+    };
+
+    // Hàm gửi Offline
+    const sendOffline = () => {
+        // Sử dụng keepalive: true để đảm bảo request vẫn gửi đi được khi tab bị đóng
+        fetch(ONLINE_TRACKING_URL + "?action=offline&username=" + encodeURIComponent(username), { mode: 'no-cors', keepalive: true })
+            .catch(e => console.log("Offline ping error"));
+    };
+
+    // 1. Gửi ping lần đầu ngay khi mở trang
+    sendPing();
+
+    // 2. Gửi ping lặp lại mỗi 20 giây
+    setInterval(sendPing, 20000);
+
+    // 3. Xử lý khi ẩn tab hoặc đóng trang
+    document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === 'hidden') {
+            // Khi người dùng chuyển tab khác, thu nhỏ web, hoặc tắt màn hình đt
+            sendOffline();
+        } else {
+            // Khi người dùng quay trở lại trang -> ping ngay
+            sendPing();
+        }
+    });
+
+    // 4. Dự phòng khi đóng tab hoàn toàn (tùy trình duyệt có hỗ trợ)
+    window.addEventListener('beforeunload', () => {
+        sendOffline();
+    });
+}
+

