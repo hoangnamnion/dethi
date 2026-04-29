@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Danh Sách Đề Thi</title>
+    <!-- Preconnect cho Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
@@ -48,6 +51,79 @@
             0% { transform: translateX(100%); }
             100% { transform: translateX(-150%); }
         }
+
+        /* Hamburger Menu */
+        .dropdown-menu {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .hamburger-btn {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0,0,0,0.1);
+            color: #2d3436;
+            font-size: 1.2em;
+            padding: 6px 12px;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            backdrop-filter: blur(5px);
+            transition: 0.2s;
+        }
+
+        .hamburger-btn:hover {
+            background: rgba(255, 255, 255, 1);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            margin-top: 8px;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 16px;
+            z-index: 1000;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.05);
+            animation: dropFadeIn 0.2s;
+        }
+
+        .dropdown-content.show {
+            display: block;
+        }
+
+        .dropdown-content button {
+            color: #2d3436;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            text-align: left;
+            border: none;
+            background: none;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            cursor: pointer;
+            transition: 0.2s;
+            border-bottom: 1px solid #f1f2f6;
+            font-size: 0.95em;
+        }
+        
+        .dropdown-content button:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-content button:hover {
+            background-color: #f8f9fa;
+        }
+        
+        @keyframes dropFadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body>
@@ -62,16 +138,14 @@
             <div id="headerUserName" style="font-size: 0.85em; font-weight: 700; color: #007bff; background: rgba(255,255,255,0.7); padding: 5px 12px; border-radius: 12px; backdrop-filter: blur(5px); box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
                 👨‍🎓 ...
             </div>
-            <div style="display: flex; gap: 8px;">
-                <button onclick="showOnlineStatus()" style="background: rgba(46, 204, 113, 0.15); border: 1px solid rgba(46, 204, 113, 0.4); padding: 5px 12px; border-radius: 12px; font-weight: 700; cursor: pointer; color: #27ae60; box-shadow: 0 4px 10px rgba(0,0,0,0.03); backdrop-filter: blur(5px); transition: 0.2s;" onmouseover="this.style.background='rgba(46, 204, 113, 0.25)'" onmouseout="this.style.background='rgba(46, 204, 113, 0.15)'">
-                    🟢 Online
-                </button>
-                <button onclick="showLeaderboard()" style="background: rgba(108, 92, 231, 0.15); border: 1px solid rgba(108, 92, 231, 0.4); padding: 5px 12px; border-radius: 12px; font-weight: 700; cursor: pointer; color: #6c5ce7; box-shadow: 0 4px 10px rgba(0,0,0,0.03); backdrop-filter: blur(5px); transition: 0.2s;" onmouseover="this.style.background='rgba(108, 92, 231, 0.25)'" onmouseout="this.style.background='rgba(108, 92, 231, 0.15)'">
-                    🏆 Xếp Hạng
-                </button>
-                <button onclick="logout()" style="background: rgba(255, 255, 255, 0.7); border: 1px solid rgba(255,0,0,0.1); padding: 5px 12px; border-radius: 12px; font-weight: 600; cursor: pointer; color: #e74c3c; box-shadow: 0 4px 10px rgba(0,0,0,0.03); backdrop-filter: blur(5px); transition: 0.2s;" onmouseover="this.style.background='#fff0f0'" onmouseout="this.style.background='rgba(255, 255, 255, 0.7)'">
-                    🚪 Thoát
-                </button>
+            <div class="dropdown-menu">
+                <button class="hamburger-btn" onclick="toggleDropdown()">☰</button>
+                <div class="dropdown-content" id="myDropdown">
+                    <button onclick="showOnlineStatus()"><span style="display:inline-block; width:20px;">🟢</span> Online</button>
+                    <button onclick="showLeaderboard()"><span style="display:inline-block; width:20px;">🏆</span> Xếp Hạng</button>
+                    <button onclick="window.location.href='profile.html'"><span style="display:inline-block; width:20px;">👤</span> Hồ sơ</button>
+                    <button onclick="logout()" style="color: #e74c3c;"><span style="display:inline-block; width:20px;">🚪</span> Thoát</button>
+                </div>
             </div>
         </div>
 
@@ -91,12 +165,15 @@
         <div class="grid-menu" id="menuGrid"></div>
     </div>
 
+    <!-- Load script đồng bộ để tránh lỗi undefined -->
     <script src="js/hihihaaaa.js"></script>
     <script src="js/tkhethan.js"></script>
     <script src="js/new2.js"></script>
     <script src="js/thongbao.js"></script>
     <script src="js/online.js"></script>
     <script src="js/leaderboard.js"></script>
+    <script src="js/tet.js"></script>
+    <script src="js/no-refresh.js"></script>
     <script>
 
         // ==========================================
@@ -196,11 +273,11 @@
             let iconOrImagePart = '';
             if (item.IMG || item.img) {
                 const imgSrc = item.IMG || item.img;
-                iconOrImagePart = `<img src="${imgSrc}" style="width: 50px; height: 50px; object-fit: contain; margin-bottom: 5px; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));">`;
+                iconOrImagePart = `<img loading="lazy" src="${imgSrc}" style="width: 50px; height: 50px; object-fit: contain; margin-bottom: 5px; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));">`;
             } else if (item.icon) {
                 iconOrImagePart = `<div style="font-size:2em; margin-bottom:5px">${item.icon}</div>`;
             } else {
-                iconOrImagePart = `<img src="anhnen/Booke.gif" style="width: 50px; height: 50px; object-fit: contain; margin-bottom: 5px; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));">`;
+                iconOrImagePart = `<img loading="lazy" src="anhnen/Booke.gif" style="width: 50px; height: 50px; object-fit: contain; margin-bottom: 5px; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));">`;
             }
 
             btn.innerHTML = `
@@ -222,8 +299,25 @@
             menuGrid.appendChild(btn);
         });
     </script>
-    <script src="js/tet.js"></script>
-    <script src="js/no-refresh.js"></script>
+    <script>
+        // JS để ẩn hiện dropdown
+        function toggleDropdown() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+        // Đóng dropdown nếu click ra ngoài
+        window.onclick = function(event) {
+            if (!event.target.matches('.hamburger-btn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
 </body>
 
 </html>

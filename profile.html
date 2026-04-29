@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Hồ Sơ Cá Nhân</title>
+    <!-- Preconnect cho Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .profile-header {
+            background: url('anhnen/anhbia.jpg') center/cover no-repeat; /* Bạn có thể đổi đường dẫn ảnh ở đây */
+            background-color: #fff;
+            border-radius: 24px;
+            padding: 40px 20px 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            z-index: 1;
+        }
+
+        .edit-bg-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            font-size: 1.2em;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            z-index: 10;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .edit-bg-btn:hover {
+            transform: scale(1.1);
+            background: #fff;
+        }
+
+        /* Lớp phủ mờ để chữ dễ đọc hơn nếu ảnh nền quá sáng/tối */
+        .profile-header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.95) 100%);
+            z-index: -1;
+        }
+
+        .avatar-circle {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #007bff, #00b894);
+            border-radius: 50%;
+            margin: 0 auto 15px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3em;
+            color: white;
+            box-shadow: 0 10px 20px rgba(0, 123, 255, 0.3);
+            border: 4px solid white;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .edit-avatar-btn {
+            position: absolute;
+            bottom: 2px;
+            right: 2px;
+            background: white;
+            border: none;
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            font-size: 0.4em;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 10;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2d3436;
+        }
+
+        .edit-avatar-btn:hover {
+            transform: scale(1.1);
+            background: #f8f9fa;
+        }
+
+        .profile-name {
+            font-size: 1.5em;
+            font-weight: 800;
+            color: #2d3436;
+            margin-bottom: 5px;
+        }
+
+        .profile-id {
+            font-size: 0.9em;
+            color: #636e72;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 700;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .status-active {
+            background: #e8f8f5;
+            color: #27ae60;
+            border: 1px solid #27ae60;
+        }
+
+        .status-expired {
+            background: #fdf2e9;
+            color: #d35400;
+            border: 1px solid #d35400;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.02);
+            transition: 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .stat-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .stat-value {
+            font-size: 1.5em;
+            font-weight: 900;
+            color: #2d3436;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.8em;
+            color: #636e72;
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-size: 1.2em;
+            font-weight: 800;
+            color: #2d3436;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cert-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .cert-card {
+            background: linear-gradient(135deg, #fff 0%, #fffcf0 100%);
+            border-radius: 16px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.15);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .cert-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 25px rgba(212, 175, 55, 0.25);
+        }
+
+        .cert-icon {
+            font-size: 2.5em;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+        }
+
+        .cert-info {
+            flex: 1;
+            text-align: left;
+        }
+
+        .cert-name {
+            font-weight: 800;
+            color: #b8860b;
+            font-size: 1.05em;
+            margin-bottom: 4px;
+        }
+
+        .cert-score {
+            font-size: 0.8em;
+            color: #636e72;
+            font-weight: 600;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 20px;
+            color: #636e72;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+        }
+        
+        .empty-state span {
+            display: block;
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mesh-bg">
+        <div class="mesh-blob blob-1"></div>
+        <div class="mesh-blob blob-2"></div>
+        <div class="mesh-blob blob-3"></div>
+    </div>
+    <div class="container-box">
+        <!-- Nút Back -->
+        <div style="position: absolute; top: 20px; left: 20px; z-index: 10;">
+            <a href="index.html" style="text-decoration: none; font-size: 1.5em; background: rgba(255,255,255,0.8); padding: 5px 10px; border-radius: 12px; backdrop-filter: blur(5px); box-shadow: 0 4px 10px rgba(0,0,0,0.1);">🔙</a>
+        </div>
+
+        <div style="margin-top: 30px;"></div>
+
+        <!-- Thông tin User -->
+        <div class="profile-header" id="profileHeader">
+            <!-- Nút đổi ảnh nền -->
+            <button class="edit-bg-btn" onclick="document.getElementById('bgUpload').click()" title="Đổi ảnh bìa">📸</button>
+            <input type="file" id="bgUpload" accept="image/*" style="display: none;">
+
+            <div class="avatar-circle" id="avatarCircle">
+                <span id="avatarEmoji">👨‍🎓</span>
+                <button class="edit-avatar-btn" onclick="document.getElementById('avatarUpload').click()" title="Đổi ảnh đại diện">✏️</button>
+                <input type="file" id="avatarUpload" accept="image/*" style="display: none;">
+            </div>
+            
+            <div class="profile-name" style="display: flex; align-items: center; justify-content: center; gap: 5px;">
+                <span id="profName">Đang tải...</span>
+                <svg width="22" height="22" viewBox="0 0 14 14" fill="#007bff" xmlns="http://www.w3.org/2000/svg">
+                    <g transform="translate(-97, -917)">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="m106.853 922.354-3.5 3.5a.499.499 0 0 1-.706 0l-1.5-1.5a.5.5 0 1 1 .706-.708l1.147 1.147 3.147-3.147a.5.5 0 1 1 .706.708m3.078 2.295-.589-1.149.588-1.15a.633.633 0 0 0-.219-.82l-1.085-.7-.065-1.287a.627.627 0 0 0-.6-.603l-1.29-.066-.703-1.087a.636.636 0 0 0-.82-.217l-1.148.588-1.15-.588a.631.631 0 0 0-.82.22l-.701 1.085-1.289.065a.626.626 0 0 0-.6.6l-.066 1.29-1.088.702a.634.634 0 0 0-.216.82l.588 1.149-.588 1.15a.632.632 0 0 0 .219.819l1.085.701.065 1.286c.014.33.274.59.6.604l1.29.065.703 1.088c.177.27.53.362.82.216l1.148-.588 1.15.589a.629.629 0 0 0 .82-.22l.701-1.085 1.286-.064a.627.627 0 0 0 .604-.601l.065-1.29 1.088-.703a.633.633 0 0 0 .216-.819" />
+                    </g>
+                </svg>
+            </div>
+            <div class="profile-id" id="profId">Tài khoản: ---</div>
+            <div id="profStatus">
+                <!-- Sẽ chèn trạng thái ở đây -->
+            </div>
+        </div>
+
+        <!-- Thống kê -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">⏳</div>
+                <div class="stat-value" id="statTime">0</div>
+                <div class="stat-label">Phút đã học</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🎓</div>
+                <div class="stat-value" id="statCert">0</div>
+                <div class="stat-label">Chứng chỉ đạt được</div>
+            </div>
+        </div>
+
+        <!-- Danh sách chứng chỉ -->
+        <div class="section-title">
+            <span>🏆</span> Bằng Khen Của Bạn
+        </div>
+        <div class="cert-list" id="certList">
+            <!-- Sẽ chèn chứng chỉ ở đây -->
+            <div class="empty-state">
+                <span>🤔</span>
+                Chưa có chứng chỉ nào.<br>Hãy đạt điểm tối đa ở một bài thi để nhận nhé!
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts cần thiết -->
+    <script src="js/hihihaaaa.js"></script>
+    <script src="js/tkhethan.js"></script>
+    <script src="js/certificate.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const userDataStr = sessionStorage.getItem('current_user');
+            if (!userDataStr) {
+                window.location.href = "login.html";
+                return;
+            }
+
+            const userData = JSON.parse(userDataStr);
+            const username = userData.username || 'Học Viên';
+            const accountId = userData.accountId || 'Unknown';
+            
+            // Cập nhật thông tin Header
+            document.getElementById('profName').innerText = username;
+            document.getElementById('profId').innerText = `Tài khoản: ${accountId}`;
+
+            // --- XỬ LÝ ẢNH BÌA VÀ AVATAR (LƯU LOCALSTORAGE) ---
+            const profileHeader = document.getElementById('profileHeader');
+            const bgUpload = document.getElementById('bgUpload');
+            const savedBg = localStorage.getItem('profile_bg_' + accountId);
+
+            const avatarCircle = document.getElementById('avatarCircle');
+            const avatarUpload = document.getElementById('avatarUpload');
+            const avatarEmoji = document.getElementById('avatarEmoji');
+            const savedAvatar = localStorage.getItem('profile_avatar_' + accountId);
+
+            if (savedBg) {
+                profileHeader.style.backgroundImage = `url(${savedBg})`;
+            }
+
+            if (savedAvatar) {
+                avatarCircle.style.backgroundImage = `url(${savedAvatar})`;
+                avatarEmoji.style.display = 'none';
+            }
+
+            // Xử lý nén và lưu ảnh chung
+            function processAndSaveImage(file, isAvatar) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const img = new Image();
+                    img.onload = function() {
+                        const canvas = document.createElement('canvas');
+                        const MAX_WIDTH = isAvatar ? 300 : 800; // Avatar nén nhỏ hơn
+                        let width = img.width;
+                        let height = img.height;
+
+                        // Crop hình vuông cho avatar nếu cần (tùy chọn, ở đây dùng CSS object-fit/background-size cover nên chỉ cần nén)
+                        if (width > MAX_WIDTH) {
+                            height *= MAX_WIDTH / width;
+                            width = MAX_WIDTH;
+                        }
+
+                        canvas.width = width;
+                        canvas.height = height;
+                        const ctx = canvas.getContext('2d');
+                        ctx.drawImage(img, 0, 0, width, height);
+
+                        const dataUrl = canvas.toDataURL('image/jpeg', 0.7);
+                        
+                        try {
+                            if (isAvatar) {
+                                localStorage.setItem('profile_avatar_' + accountId, dataUrl);
+                                avatarCircle.style.backgroundImage = `url(${dataUrl})`;
+                                avatarEmoji.style.display = 'none';
+                            } else {
+                                localStorage.setItem('profile_bg_' + accountId, dataUrl);
+                                profileHeader.style.backgroundImage = `url(${dataUrl})`;
+                            }
+                        } catch (err) {
+                            alert("Dung lượng ảnh quá lớn, bộ nhớ đã đầy. Vui lòng chọn ảnh nhỏ hơn!");
+                        }
+                    };
+                    img.src = event.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+
+            bgUpload.addEventListener('change', function(e) {
+                if (e.target.files[0]) processAndSaveImage(e.target.files[0], false);
+            });
+
+            avatarUpload.addEventListener('change', function(e) {
+                if (e.target.files[0]) processAndSaveImage(e.target.files[0], true);
+            });
+            // ----------------------------------------
+
+            // Kiểm tra trạng thái hết hạn
+            // Biến EXPIRED_ACCOUNTS từ tkhethan.js
+            let isExpired = false;
+            if (typeof EXPIRED_ACCOUNTS !== 'undefined' && EXPIRED_ACCOUNTS.includes(accountId)) {
+                isExpired = true;
+            }
+
+            const statusEl = document.getElementById('profStatus');
+            if (isExpired) {
+                statusEl.innerHTML = `<span class="status-badge status-expired">⏳ Đã hết hạn</span>`;
+            } else {
+                statusEl.innerHTML = `<span class="status-badge status-active">✅ Đang hoạt động</span>`;
+            }
+
+            // Xử lý dữ liệu localStorage để lấy Thống kê
+            let totalSeconds = 0;
+            let earnedCerts = [];
+
+            // Tìm DEFAULT_EXAMS để map tên (ưu tiên user.exams)
+            let examsData = DEFAULT_EXAMS || [];
+            if (userData.exams && Array.isArray(userData.exams) && userData.exams.length > 0) {
+                examsData = userData.exams;
+            }
+
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                if (key.startsWith('quiz_data_')) {
+                    try {
+                        const data = JSON.parse(localStorage.getItem(key));
+                        const fileID = key.replace('quiz_data_', '');
+                        
+                        // Cộng dồn thời gian
+                        if (data.totalSeconds) {
+                            totalSeconds += data.totalSeconds;
+                        }
+
+                        // Kiểm tra chứng chỉ
+                        if (data.isSubmitted && data.history && data.history.length > 0) {
+                            const totalQ = data.history.length;
+                            const score = data.score || 0;
+                            
+                            // Nếu đạt điểm tuyệt đối 100%
+                            if (score === totalQ && score > 0) {
+                                // Tìm tên hiển thị của đề thi
+                                let examDisplayName = fileID;
+                                const matched = examsData.find(e => e.file === fileID);
+                                if (matched && matched.ten) {
+                                    examDisplayName = matched.ten;
+                                }
+
+                                earnedCerts.push({
+                                    id: fileID,
+                                    name: examDisplayName,
+                                    score: score,
+                                    total: totalQ
+                                });
+                            }
+                        }
+                    } catch(e) {
+                        console.error("Lỗi parse data của key", key, e);
+                    }
+                }
+            }
+
+            // Cập nhật thống kê
+            const totalMins = Math.floor(totalSeconds / 60);
+            document.getElementById('statTime').innerText = totalMins;
+            document.getElementById('statCert').innerText = earnedCerts.length;
+
+            // Render danh sách chứng chỉ
+            const certListEl = document.getElementById('certList');
+            if (earnedCerts.length > 0) {
+                certListEl.innerHTML = ''; // Clear empty state
+                
+                earnedCerts.forEach(cert => {
+                    const card = document.createElement('div');
+                    card.className = 'cert-card';
+                    card.innerHTML = `
+                        <div class="cert-icon">📜</div>
+                        <div class="cert-info">
+                            <div class="cert-name">${cert.name}</div>
+                            <div class="cert-score">Điểm tuyệt đối: ${cert.score}/${cert.total} ✅</div>
+                        </div>
+                        <div style="font-size: 1.5em; opacity: 0.5;">▶️</div>
+                    `;
+                    
+                    card.onclick = () => {
+                        // Gọi hàm showCertificate từ certificate.js
+                        if (typeof showCertificate === 'function') {
+                            showCertificate(username, cert.name, cert.score, cert.total);
+                        } else {
+                            alert("Chức năng hiển thị bằng khen đang được tải, vui lòng thử lại sau.");
+                        }
+                    };
+                    
+                    certListEl.appendChild(card);
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
