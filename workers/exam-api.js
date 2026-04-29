@@ -65,6 +65,19 @@ export default {
             case 'getLiveMonitor':
               result = await getLiveMonitor(env);
               break;
+            case 'getOnlineUsers':
+              result = await getOnlineUsers(env);
+              break;
+            case 'pingOnline': {
+              const username = url.searchParams.get('username');
+              result = await pingOnline(env, username);
+              break;
+            }
+            case 'offlineUser': {
+              const username = url.searchParams.get('username');
+              result = await offlineUser(env, username);
+              break;
+            }
             case 'getLeaderboard':
               result = await getLeaderboard(env, url.searchParams.get('examName'));
               break;
@@ -230,11 +243,9 @@ async function getLeaderboard(env, examName) {
 
 async function clearLeaderboard(env, examName) {
   if (examName) {
-    // Xóa 1 đề cụ thể
     await env.DB.delete(`leaderboard:${examName}`);
     return { success: true, message: `Đã xóa BXH cho đề: ${examName}` };
   } else {
-    // Xóa toàn bộ
     const keys = await env.DB.list({ prefix: 'leaderboard:' });
     for (const key of keys.keys) {
       await env.DB.delete(key.name);
@@ -242,3 +253,52 @@ async function clearLeaderboard(env, examName) {
     return { success: true, message: 'Đã xóa toàn bộ bảng xếp hạng!' };
   }
 }
+
+// =====================================================
+// ONLINE TRACKING — Theo dõi người dùng đang online
+// =====================================================
+async function pingOnline(env, username) {
+  if (!username) return { error: 'Missing username' };
+
+  const allOnline = await env.DB.get('online_users', 'json') || {};
+
+  allOnline[username] = {
+    username: username,
+    timestamp: Date.now()
+  };
+
+  // Dọn dẹp user offline (quá 3 phút không ping)
+  const now = Date.now();
+  for (const key of Object.keys(allOnline)) {
+    if (now - allOnline[key].timestamp > 180000) {
+      delete allOnline[key];
+    }
+  }
+
+  await env.DB.put('online_users', JSON.stringify(allOnline));
+  return { success: true };
+}
+
+async function offlineUser(env, username) {
+  if (!username) return { error: 'Missing username' };
+
+  const allOnline = await env.DB.get('online_users', 'json') || {};
+  delete allOnline[username];
+  await env.DB.put('online_users', JSON.stringify(allOnline));
+  return { success: true };
+}
+
+async function getOnlineUsers(env) {
+  const allOnline = await env.DB.get('online_users', 'json') || {};
+
+  const now = Date.now();
+  const active = [];
+  for (const val of Object.values(allOnline)) {
+    if (now - val.timestamp < 180000) {
+      active.push(val.username);
+    }
+  }
+
+  return { users: active, onlineCount: active.length };
+}
+

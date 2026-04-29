@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                     return; // Dừng lại ở đây, không tracking online nữa
                 }
-                
+
                 // --- KÍCH HOẠT TRACKING ONLINE NẾU TÀI KHOẢN HỢP LỆ ---
                 startOnlineTracking(currentUser.username || currentUser.accountId);
             }
@@ -75,47 +75,51 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ==========================================
-// ĐOẠN CODE THEO DÕI ONLINE (HEARTBEAT 20 GIÂY)
+// ONLINE TRACKING QUA GOOGLE SHEETS
+// Ping mỗi 5 giây — offline nếu lệch > 20 giây
 // ==========================================
-// VUI LÒNG THAY URL BẰNG URL WEB APP MỚI CỦA SCRIPT TRACKING ONLINE
-const ONLINE_TRACKING_URL = "URL_GOOGLE_APPS_SCRIPT_TRACKING_ONLINE_CUA_BAN_O_DAY"; 
+// Sau khi deploy Apps Script, dán URL vào đây:
+const ONLINE_GAS_URL = "https://script.google.com/macros/s/AKfycbwznn-dQpHWn74VvgKr1hAewtrFuQxNQWT2LYWmA_CHSAmC8L5btJNjq1rLufEf3xE5/exec";
 
 function startOnlineTracking(username) {
-    if (!ONLINE_TRACKING_URL.startsWith("http")) return; // Nếu chưa cài URL thì bỏ qua
+    if (!ONLINE_GAS_URL || !ONLINE_GAS_URL.startsWith("http")) {
+        console.log("Online tracking: chưa cấu hình ONLINE_GAS_URL");
+        return;
+    }
 
-    // Hàm gửi Ping
+    const encodedName = encodeURIComponent(username);
+
+    // Hàm gửi ping (dùng no-cors để tránh lỗi CORS với GAS)
     const sendPing = () => {
-        fetch(ONLINE_TRACKING_URL + "?action=ping&username=" + encodeURIComponent(username), { mode: 'no-cors' })
-            .catch(e => console.log("Ping error"));
+        fetch(ONLINE_GAS_URL + "?action=ping&username=" + encodedName, { mode: 'no-cors' })
+            .catch(() => {});
     };
 
-    // Hàm gửi Offline
+    // Hàm báo offline (dùng keepalive để gửi được khi đóng tab)
     const sendOffline = () => {
-        // Sử dụng keepalive: true để đảm bảo request vẫn gửi đi được khi tab bị đóng
-        fetch(ONLINE_TRACKING_URL + "?action=offline&username=" + encodeURIComponent(username), { mode: 'no-cors', keepalive: true })
-            .catch(e => console.log("Offline ping error"));
+        fetch(ONLINE_GAS_URL + "?action=offline&username=" + encodedName, {
+            mode: 'no-cors',
+            keepalive: true
+        }).catch(() => {});
     };
 
-    // 1. Gửi ping lần đầu ngay khi mở trang
+    // 1. Ping ngay lập tức khi mở trang
     sendPing();
 
-    // 2. Gửi ping lặp lại mỗi 20 giây
-    setInterval(sendPing, 20000);
+    // 2. Ping lặp lại mỗi 5 giây
+    setInterval(sendPing, 5000);
 
-    // 3. Xử lý khi ẩn tab hoặc đóng trang
+    // 3. Offline khi ẩn tab, online lại khi quay về
     document.addEventListener("visibilitychange", () => {
         if (document.visibilityState === 'hidden') {
-            // Khi người dùng chuyển tab khác, thu nhỏ web, hoặc tắt màn hình đt
             sendOffline();
         } else {
-            // Khi người dùng quay trở lại trang -> ping ngay
             sendPing();
         }
     });
 
-    // 4. Dự phòng khi đóng tab hoàn toàn (tùy trình duyệt có hỗ trợ)
+    // 4. Offline khi đóng tab/trình duyệt
     window.addEventListener('beforeunload', () => {
         sendOffline();
     });
 }
-

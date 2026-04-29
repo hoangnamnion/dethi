@@ -1,5 +1,6 @@
 // ==========================================
-// DANH SÁCH ONLINE - REAL-TIME QUA GOOGLE SHEET
+// DANH SÁCH ONLINE - REAL-TIME QUA CLOUDFLARE WORKERS
+// Sử dụng API_BASE từ js/api-config.js
 // ==========================================
 async function showOnlineStatus() {
     let modal = document.getElementById('onlineStatusModal');
@@ -12,7 +13,7 @@ async function showOnlineStatus() {
         display: flex; position: fixed; top:0; left:0; width:100%; height:100%;
         background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(5px); z-index: 99999; justify-content: center; align-items: center;
     `;
-    
+
     modal.innerHTML = `
         <div style="background: white; width: 90%; max-width: 420px; border-radius: 24px; padding: 25px; box-shadow: 0 20px 50px rgba(0,0,0,0.3); animation: popModal 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; transform-origin: center;">
             <h3 style="margin-top: 0; color: #1e293b; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid #f1f5f9; padding-bottom: 15px; font-weight: 800;">
@@ -46,26 +47,33 @@ async function showOnlineStatus() {
     document.body.appendChild(modal);
 
     try {
-        if (!typeof ONLINE_TRACKING_URL !== 'undefined' || !ONLINE_TRACKING_URL.startsWith("http")) {
-            throw new Error("Chưa cài đặt URL Tracking");
+        if (!ONLINE_GAS_URL || !ONLINE_GAS_URL.startsWith("http")) {
+            throw new Error("Chưa cấu hình ONLINE_GAS_URL trong js/tkhethan.js");
         }
 
-        // Lấy dữ liệu từ Google Sheet
-        const response = await fetch(ONLINE_TRACKING_URL + "?action=get_online");
+        // Lấy danh sách người đang online từ Google Sheets
+        const response = await fetch(ONLINE_GAS_URL + "?action=get_online&t=" + Date.now());
         const data = await response.json();
-        
+
         let listHTML = '';
         const onlineUsers = data.users || [];
-        const totalOnline = data.onlineCount || 0;
+        const totalOnline = data.onlineCount || onlineUsers.length || 0;
 
         if (onlineUsers.length > 0) {
-            listHTML = onlineUsers.map(name => `
-                <div style="display:flex; align-items:center; gap: 12px; margin-bottom: 12px; padding: 12px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; text-align: left;">
+            listHTML = onlineUsers.map(u => {
+                const displayName = (typeof u === 'object') ? (u.name || u.username || '?') : u;
+                const examInfo = (typeof u === 'object' && u.examName) ? `📝 ${u.examName}` : '';
+                const scoreInfo = (typeof u === 'object' && u.rawScore) ? ` • ${u.rawScore}` : '';
+                return `
+                <div style="display:flex; align-items:center; gap: 12px; margin-bottom: 12px; padding: 12px 14px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; text-align: left;">
                     <span class="online-dot"></span>
-                    <div style="font-weight: 700; color: #334155; font-size: 0.95em;">${name}</div>
-                    <div style="margin-left: auto; font-size: 0.8em; font-weight: 600; color: #0984e3; background: #e0f2fe; padding: 3px 8px; border-radius: 20px;">Trực tuyến</div>
+                    <div style="flex: 1; min-width:0;">
+                        <div style="font-weight: 700; color: #334155; font-size: 0.95em;">${displayName}</div>
+                        ${examInfo ? `<div style="font-size:0.78em; color:#64748b; margin-top:2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${examInfo}${scoreInfo}</div>` : ''}
+                    </div>
+                    <div style="flex-shrink:0; font-size: 0.8em; font-weight: 600; color: #0984e3; background: #e0f2fe; padding: 3px 8px; border-radius: 20px;">Trực tuyến</div>
                 </div>
-            `).join('');
+            `}).join('');
         } else {
             listHTML = `<div style="padding: 20px; color: #64748b; font-weight: 600;">Hiện không có ai online</div>`;
         }
@@ -78,6 +86,13 @@ async function showOnlineStatus() {
         console.error("Lỗi tải danh sách online:", e);
         document.getElementById('onlineCountBadge').innerHTML = `LỖI`;
         document.getElementById('onlineCountBadge').style.background = '#ef4444';
-        document.getElementById('onlineListContainer').innerHTML = `<div style="padding: 20px; color: #ef4444; font-weight: 600;">Không thể kết nối đến máy chủ. Bạn chưa thêm URL Apps Script vào code.</div>`;
+        document.getElementById('onlineListContainer').innerHTML = `
+            <div style="padding: 16px; color: #ef4444; font-weight: 600; text-align:left; font-size:0.88em; background:#fff5f5; border-radius:10px; border:1px solid #fed7d7;">
+                ❌ Không thể kết nối đến máy chủ.<br>
+                <span style="color:#64748b; font-weight:400; font-size:0.92em; display:block; margin-top:6px;">
+                    <b>Chi tiết lỗi:</b> ${e.message || e}<br>
+                    <b>API:</b> ${typeof API_BASE !== 'undefined' ? API_BASE : 'CHƯA ĐỊNH NGHĨA'}
+                </span>
+            </div>`;
     }
 }
