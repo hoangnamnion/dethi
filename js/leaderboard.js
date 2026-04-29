@@ -4,7 +4,7 @@
 // LẤY DỮ LIỆU TỰ ĐỘNG TỪ GOOGLE SHEETS
 // ==========================================
 
-const LEADERBOARD_API = "https://script.google.com/macros/s/AKfycbzMnpTuAY6Et42N1M19wz6sCsLZgZnEAB23rIAwVmq-MQE0NJk92xHKcG9JF2eRur7V/exec";
+// LEADERBOARD_API is now API_BASE from js/api-config.js
 
 // ==========================================
 // TẢI NGẦM DỮ LIỆU ĐỂ HIỂN THỊ TỨC THÌ
@@ -13,7 +13,7 @@ window.preFetchedLeaderboard = null;
 window.fetchLeaderboardBackground = function() {
     try {
         const examName = typeof currentFileName !== 'undefined' ? currentFileName : '';
-        const fetchUrl = `${LEADERBOARD_API}?action=getLeaderboard&examName=${examName}&t=${Date.now()}`;
+        const fetchUrl = `${API_BASE}?action=getLeaderboard&examName=${examName}&t=${Date.now()}`;
         fetch(fetchUrl).then(r => r.json()).then(d => window.preFetchedLeaderboard = d).catch(e => {});
     } catch(e){}
 };
@@ -60,7 +60,7 @@ async function showLeaderboard() {
     // Gọi API
     try {
         const examName = typeof currentFileName !== 'undefined' ? currentFileName : '';
-        const fetchUrl = `${LEADERBOARD_API}?action=getLeaderboard&examName=${examName}&t=${Date.now()}`;
+        const fetchUrl = `${API_BASE}?action=getLeaderboard&examName=${examName}&t=${Date.now()}`;
         
         const response = await fetch(fetchUrl);
         if (!response.ok) throw new Error("Network response was not ok");

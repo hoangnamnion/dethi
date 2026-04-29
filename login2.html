@@ -321,6 +321,7 @@
         </div>
     </div>
 
+    <script src="js/api-config.js"></script>
     <script>
         // ==========================================
         // HÀM HIỂN THỊ MODAL ĐĂNG KÝ (LẤY ID THIẾT BỊ)
@@ -452,11 +453,10 @@
             loginBtn.style.opacity = "0.8";
             loginBtn.disabled = true;
 
-            // XÁC THỰC TÀI KHOẢN TỪ GOOGLE SHEETS
-            const GAS_ACCOUNTS_API = "https://script.google.com/macros/s/AKfycbwV7pg3XCFCGw096kmXBCFPCcZFI2_sryRoxQXWHokzyKHpxeMx3_QSo43D5Snww7Y/exec";
+            // XÁC THỰC TÀI KHOẢN TỪ WORKERS API
             let validAccountsObj = {};
             try {
-                const res = await fetch(GAS_ACCOUNTS_API + "?action=getAccounts");
+            const res = await fetch(API_BASE + "?action=getAccounts");
                 validAccountsObj = await res.json();
             } catch(e) {
                 console.error("Lỗi mạng:", e);

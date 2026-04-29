@@ -166,6 +166,7 @@
     </div>
 
     <!-- Load script đồng bộ để tránh lỗi undefined -->
+    <script src="js/api-config.js"></script>
     <script src="js/hihihaaaa.js"></script>
     <script src="js/tkhethan.js"></script>
     <script src="js/new2.js"></script>
@@ -232,21 +233,13 @@
                         const device = navigator.userAgent;
                         const msg = `🚪 <b>ĐĂNG XUẤT</b>\n👤 Tài khoản: <code>${userData.accountId}</code>\n🌐 IP: ${ipData.ip}\n📍 Vị trí (${locationType}): <a href="${mapLink}">${ipData.city || 'N/A'}, ${ipData.region || 'N/A'}</a>\n📱 Thiết bị: <code>${device}</code>\n⏱ T.Gian: ${new Date().toLocaleString('vi-VN')}`;
                         
-                        // GHI LOG HOẠT ĐỘNG
-                        const GAS_ACTIVITY_API = "https://script.google.com/macros/s/AKfycbws15Fp5B7Jr-Z_IGFc1-hjyiqOfXjh2henRz4JnQIdR1XR9f69i5mSOZT91j98Q5f5yQ/exec";
-                        if (!GAS_ACTIVITY_API.includes("CHUA_CAP_NHAT")) {
-                            fetch(GAS_ACTIVITY_API, {
-                                method: 'POST',
-                                mode: 'no-cors',
-                                headers: { 'Content-Type': 'text/plain' },
-                                body: JSON.stringify({
-                                    action: 'logActivity',
-                                    username: userData.username || userData.accountId,
-                                    text: 'Đăng xuất khỏi hệ thống',
-                                    device: navigator.userAgent
-                                })
-                            }).catch(e => console.error(e));
-                        }
+                        // GHI LOG HOẠT ĐỘNG (gửi ngầm)
+                        navigator.sendBeacon(API_BASE, JSON.stringify({
+                            action: 'logActivity',
+                            username: userData.username || userData.accountId,
+                            text: 'Đăng xuất khỏi hệ thống',
+                            device: navigator.userAgent
+                        }));
 
                         // GỬI TELEGRAM
                         await fetch(`https://api.telegram.org/bot${getTelegramBotToken()}/sendMessage`, {

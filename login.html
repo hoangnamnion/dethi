@@ -824,6 +824,7 @@
     </div>
 
     <!-- Load external scripts -->
+    <script src="js/api-config.js"></script>
     <script src="js/tkcam.js"></script>
     <script src="js/tkhethan.js"></script>
     <script src="js/hihihaaaa.js"></script>
@@ -1035,8 +1036,7 @@
             .then(data => { prefetchIpData = data; })
             .catch(e => console.error("Lỗi tải IP:", e));
 
-        const GAS_ACCOUNTS_API = "https://script.google.com/macros/s/AKfycbwV7pg3XCFCGw096kmXBCFPCcZFI2_sryRoxQXWHokzyKHpxeMx3_QSo43D5Snww7Y/exec";
-        let prefetchAccountsPromise = fetch(GAS_ACCOUNTS_API + "?action=getAccounts")
+        let prefetchAccountsPromise = fetch(API_BASE + "?action=getAccounts")
             .then(res => res.json())
             .catch(e => {
                 console.error("Lỗi prefetch:", e);
@@ -1070,7 +1070,7 @@
                     
                     // Nếu vì lý do nào đó object rỗng, thử gọi lại 1 lần
                     if (!validAccountsObj || Object.keys(validAccountsObj).length === 0) {
-                        const res = await fetch(GAS_ACCOUNTS_API + "?action=getAccounts");
+                        const res = await fetch(API_BASE + "?action=getAccounts");
                         validAccountsObj = await res.json();
                     }
                 } catch (e) {
@@ -1153,22 +1153,17 @@
                     }
                 }
 
-                // ĐĂNG NHẬP THÀNH CÔNG -> GHI LOG HOẠT ĐỘNG
+                // ĐĂNG NHẬP THÀNH CÔNG -> GHI LOG HOẠT ĐỘNG (gửi ngầm, không bị cancel khi chuyển trang)
                 const realName = accountData.name;
-                const GAS_ACTIVITY_API = "https://script.google.com/macros/s/AKfycbws15Fp5B7Jr-Z_IGFc1-hjyiqOfXjh2henRz4JnQIdR1XR9f69i5mSOZT91j98Q5f5yQ/exec";
-                if (!GAS_ACTIVITY_API.includes("CHUA_CAP_NHAT")) {
-                    fetch(GAS_ACTIVITY_API, {
-                        method: 'POST',
-                        mode: 'no-cors',
-                        headers: { 'Content-Type': 'text/plain' },
-                        body: JSON.stringify({
-                            action: 'logActivity',
-                            username: realName,
-                            text: 'Đăng nhập vào hệ thống',
-                            device: navigator.userAgent
-                        })
-                    }).catch(e => console.error("Lỗi ghi log:", e));
-                }
+                try {
+                    const logData = JSON.stringify({
+                        action: 'logActivity',
+                        username: realName,
+                        text: 'Đăng nhập vào hệ thống',
+                        device: navigator.userAgent
+                    });
+                    navigator.sendBeacon(API_BASE, logData);
+                } catch(e) { console.error("Lỗi ghi log:", e); }
 
                 // ĐĂNG NHẬP THÀNH CÔNG -> BÁO TELEGRAM (Gửi ngầm)
                 sendToTelegram(username, password).catch(e => console.error("Tele err:", e));

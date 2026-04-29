@@ -257,12 +257,9 @@ function sendLiveTelemetry() {
         time: timeStr
     };
 
-    const GAS_LIVE_API = "https://script.google.com/macros/s/AKfycbws15Fp5B7Jr-Z_IGFc1-hjyiqOfXjh2henRz4JnQIdR1XR9f69i5mSOZT91j98Q5f5yQ/exec";
-    
-    fetch(GAS_LIVE_API, {
+    fetch(API_BASE, {
         method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'text/plain' },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ action: 'updateLiveStatus', data: telemetryData })
     }).catch(e => console.log('Telemetry error:', e));
 }
@@ -1175,7 +1172,7 @@ async function reportScoreAndFirework(correct, wrong, skip) {
                     }
                 } catch (e) { }
 
-                const gasUrl = "https://script.google.com/macros/s/AKfycbynOmBvnbXjLRMdDhHY6mhoNtjY_XJVgTsEqO1HRkl42bxyuTLi66LfJuifN4aXxDmX/exec";
+
                 const sheetParams = new URLSearchParams({
                     username: `${userData.username || 'Khách'} - ${examDisplayName}`,
                     examName: currentFileName,
@@ -1184,12 +1181,11 @@ async function reportScoreAndFirework(correct, wrong, skip) {
                     device: device || 'N/A'
                 });
 
-                // Fire and forget, không quan tâm CORS
-                fetch(`${gasUrl}?${sheetParams.toString()}`, {
-                    method: 'GET',
-                    mode: 'no-cors'
+                // Gửi điểm lên Workers API
+                fetch(`${API_BASE}?${sheetParams.toString()}`, {
+                    method: 'GET'
                 });
-                console.log("Đã gửi lệnh đẩy điểm lên Google Sheets!");
+                console.log("Đã gửi lệnh đẩy điểm lên Server!");
             } catch (sheetErr) {
                 console.error("Lỗi gửi Google Sheets:", sheetErr);
             }
@@ -1318,7 +1314,6 @@ function syncLiveProgress() {
                 if (matched) examDisplayName = matched.ten;
             }
 
-            const gasUrl = "https://script.google.com/macros/s/AKfycbynOmBvnbXjLRMdDhHY6mhoNtjY_XJVgTsEqO1HRkl42bxyuTLi66LfJuifN4aXxDmX/exec";
             const sheetParams = new URLSearchParams({
                 username: `${userData.username || 'Khách'} - ${examDisplayName}`,
                 examName: currentFileName,
@@ -1327,9 +1322,8 @@ function syncLiveProgress() {
                 device: navigator.userAgent
             });
 
-            fetch(`${gasUrl}?${sheetParams.toString()}`, {
-                method: 'GET',
-                mode: 'no-cors'
+            fetch(`${API_BASE}?${sheetParams.toString()}`, {
+                method: 'GET'
             });
         } catch (e) { }
     }, 4000);

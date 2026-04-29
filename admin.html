@@ -306,8 +306,11 @@
         </div>
 
         <div class="glass-panel" style="margin-top: 1.5rem;">
-            <div class="panel-header">
+            <div class="panel-header" style="flex-wrap: wrap; gap: 1rem;">
                 <h2><i class="fa-solid fa-list" style="color: var(--primary); margin-right: 0.5rem;"></i> Danh sách Tài Khoản</h2>
+                <div style="display: flex; gap: 10px; align-items: center; flex: 1; min-width: 200px;">
+                    <input type="text" id="search-account" class="form-control" placeholder="🔍 Tìm kiếm tài khoản, tên hiển thị..." oninput="filterAccounts()" style="margin-bottom: 0;">
+                </div>
                 <button id="generate-btn" class="btn btn-success" onclick="saveToGoogle()"><i class="fa-solid fa-cloud-arrow-up"></i> Lưu Lên Server (Đồng Bộ)</button>
             </div>
             <div style="overflow-x: auto;">
@@ -329,21 +332,50 @@
                 </table>
             </div>
         </div>
+
+        <!-- Section 3: Leaderboard -->
+        <div class="glass-panel" style="margin-top: 1.5rem;">
+            <div class="panel-header" style="flex-wrap: wrap; gap: 1rem;">
+                <h2><i class="fas fa-trophy" style="color: var(--warning); margin-right: 0.5rem;"></i> Bảng Xếp Hạng</h2>
+                <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                    <select id="leaderboard-exam-filter" class="form-control" style="margin-bottom: 0; min-width: 180px;" onchange="fetchLeaderboard()">
+                        <option value="">🏆 Tất cả đề thi</option>
+                    </select>
+                    <button class="btn btn-outline" onclick="fetchLeaderboard()">
+                        <i class="fas fa-sync-alt"></i> Làm mới
+                    </button>
+                    <button class="btn btn-danger-outline" onclick="clearLeaderboard()" style="background: rgba(239,68,68,0.1); color: var(--danger); border: 1px solid rgba(239,68,68,0.3); border-radius: 8px; padding: 0.5rem 1rem; cursor: pointer; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem;">
+                        <i class="fas fa-trash"></i> Xóa BXH
+                    </button>
+                </div>
+            </div>
+            <div style="overflow-x: auto;">
+                <table id="leaderboard-table" style="min-width: 700px;">
+                    <thead>
+                        <tr>
+                            <th style="width: 60px; text-align: center;">#</th>
+                            <th>Tên học viên</th>
+                            <th>Đề thi</th>
+                            <th>Điểm</th>
+                            <th>Thời gian nộp</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboard-tbody">
+                        <tr><td colspan="5" style="text-align:center; padding: 30px; color: var(--muted);"><i class="fa-solid fa-spinner fa-spin"></i> Đang tải...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 
     <!-- Tải cấu hình file thi cũ -->
     <script src="js/hihihaaaa.js"></script>
+    <script src="js/api-config.js"></script>
     <script>
-        // API URLs
-        const GAS_ACCOUNTS_API = "https://script.google.com/macros/s/AKfycbwV7pg3XCFCGw096kmXBCFPCcZFI2_sryRoxQXWHokzyKHpxeMx3_QSo43D5Snww7Y/exec";
-        const GAS_LEADERBOARD_API = "https://script.google.com/macros/s/AKfycbynOmBvnbXjLRMdDhHY6mhoNtjY_XJVgTsEqO1HRkl42bxyuTLi66LfJuifN4aXxDmX/exec";
-        const GAS_ACTIVITY_API = "https://script.google.com/macros/s/AKfycbws15Fp5B7Jr-Z_IGFc1-hjyiqOfXjh2henRz4JnQIdR1XR9f69i5mSOZT91j98Q5f5yQ/exec";
-        const GAS_LIVE_API = "https://script.google.com/macros/s/AKfycbws15Fp5B7Jr-Z_IGFc1-hjyiqOfXjh2henRz4JnQIdR1XR9f69i5mSOZT91j98Q5f5yQ/exec";
-
         // State
         let currentAccounts = {};
         let editingUsername = null;
-        let prefetchAccountsPromise = fetch(GAS_ACCOUNTS_API + "?action=getAccounts").then(res => res.json()).catch(e => null);
+        let prefetchAccountsPromise = fetch(API_BASE + "?action=getAccounts").then(res => res.json()).catch(e => null);
         
         let liveMonitorInterval = null;
         let isAutoRefresh = true;
@@ -370,6 +402,7 @@
         function checkAdminAuth() {
             const input = document.getElementById('admin-password-input').value;
             if (input === 'Nam2005@') {
+                sessionStorage.setItem('admin_auth', 'true');
                 const overlay = document.getElementById('admin-auth-overlay');
                 overlay.style.transition = 'opacity 0.4s';
                 overlay.style.opacity = '0';
@@ -386,9 +419,11 @@
         // Initialize Dashboard
         function initDashboard() {
             renderExamCheckboxes();
+            populateLeaderboardFilter();
             loadAccountsFromGoogle();
             fetchLiveMonitor();
             fetchActivityLog();
+            fetchLeaderboard();
             startAutoRefresh();
         }
 
@@ -402,7 +437,7 @@
                 
                 let data = await prefetchAccountsPromise;
                 if (!data) {
-                    const res = await fetch(GAS_ACCOUNTS_API + "?action=getAccounts");
+                    const res = await fetch(API_BASE + "?action=getAccounts");
                     data = await res.json();
                 }
                 currentAccounts = data || {};
@@ -414,12 +449,23 @@
             }
         }
 
-        function renderTable() {
+        function filterAccounts() {
+            const searchTerm = document.getElementById('search-account').value;
+            renderTable(searchTerm);
+        }
+
+        function renderTable(searchTerm = '') {
             const tbody = document.querySelector('#accounts-table tbody');
             tbody.innerHTML = '';
             let count = 0;
             
+            const lowerSearch = searchTerm.toLowerCase();
+
             for (const [username, info] of Object.entries(currentAccounts)) {
+                if (searchTerm && !username.toLowerCase().includes(lowerSearch) && !(info.name && info.name.toLowerCase().includes(lowerSearch))) {
+                    continue;
+                }
+
                 count++;
                 let deviceIds = "Không giới hạn";
                 if (info.id) {
@@ -548,7 +594,7 @@
             btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> ĐANG LƯU...';
             btn.disabled = true;
             try {
-                await fetch(GAS_ACCOUNTS_API, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ action: 'updateAccounts', data: currentAccounts }) });
+                await fetch(API_BASE, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ action: 'updateAccounts', data: currentAccounts }) });
                 alert("Đã lưu đồng bộ lên Server!");
             } catch(e) { alert("Lỗi: " + e.message); }
             btn.innerHTML = originalText; btn.disabled = false;
@@ -559,9 +605,9 @@
         // ==========================================
         async function fetchLiveMonitor() {
             try {
-                if (GAS_LIVE_API.includes("CHUA_CAP_NHAT")) return;
+                if (API_BASE.includes("YOUR_SUBDOMAIN")) return;
                 // Fetch API getLiveMonitor
-                const res = await fetch(`${GAS_LIVE_API}?action=getLiveMonitor&t=${Date.now()}`);
+                const res = await fetch(`${API_BASE}?action=getLiveMonitor&t=${Date.now()}`);
                 const data = await res.json();
                 
                 // Mảng chứa các học viên đang thi
@@ -569,7 +615,7 @@
                 renderLiveMonitor(data);
             } catch (e) {
                 console.error("Lỗi lấy dữ liệu giám sát:", e);
-                document.getElementById('live-students').innerHTML = `<div style="text-align:center; padding: 2rem; color: var(--danger);"><i class="fas fa-exclamation-triangle"></i> Lỗi kết nối. Bạn cần cập nhật code Apps Script API getLiveMonitor.</div>`;
+                document.getElementById('live-students').innerHTML = `<div style="text-align:center; padding: 2rem; color: var(--danger);"><i class="fas fa-exclamation-triangle"></i> Lỗi kết nối tới Workers API.</div>`;
             }
         }
 
@@ -625,12 +671,12 @@
         }
 
         async function fetchActivityLog() {
-            if (GAS_ACTIVITY_API.includes("CHUA_CAP_NHAT")) {
-                document.getElementById('activity-log').innerHTML = '<div style="text-align: center; padding: 1rem; color: var(--danger);">Vui lòng cập nhật GAS_ACTIVITY_API</div>';
+            if (API_BASE.includes("YOUR_SUBDOMAIN")) {
+                document.getElementById('activity-log').innerHTML = '<div style="text-align: center; padding: 1rem; color: var(--danger);">Vui lòng cập nhật API_BASE trong api-config.js</div>';
                 return;
             }
             try {
-                const res = await fetch(`${GAS_ACTIVITY_API}?action=getActivityLog&t=${Date.now()}`);
+                const res = await fetch(`${API_BASE}?action=getActivityLog&t=${Date.now()}`);
                 const data = await res.json();
                 activityLog = data;
                 renderActivityLog();
@@ -659,12 +705,13 @@
                     colorStyle = 'color: var(--primary);';
                 }
                 
+                const who = a.username && a.username !== 'Unknown' ? `<strong style="color: var(--text);">${a.username}</strong> ` : '';
                 return `
                 <div class="activity-item">
                     <div class="activity-time">${a.time}</div>
                     <div style="font-size: 0.875rem; display: flex; align-items: center; gap: 8px;">
                         <span style="${colorStyle}">${icon}</span>
-                        <span>${a.text}</span>
+                        <span>${who}${a.text}</span>
                     </div>
                 </div>
             `}).join('');
@@ -694,9 +741,105 @@
             }, 5000); // 5 giây cập nhật 1 lần
         }
 
+        // ==========================================
+        // LEADERBOARD
+        // ==========================================
+        function populateLeaderboardFilter() {
+            const sel = document.getElementById('leaderboard-exam-filter');
+            if (typeof DEFAULT_EXAMS !== 'undefined') {
+                DEFAULT_EXAMS.forEach(exam => {
+                    const opt = document.createElement('option');
+                    const name = exam.ten || exam.file || exam.url || 'Đề không tên';
+                    opt.value = name;
+                    opt.textContent = name;
+                    sel.appendChild(opt);
+                });
+            }
+        }
+
+        async function fetchLeaderboard() {
+            const tbody = document.getElementById('leaderboard-tbody');
+            tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding: 30px; color: var(--muted);"><i class="fa-solid fa-spinner fa-spin"></i> Đang tải...</td></tr>';
+
+            try {
+                const examName = document.getElementById('leaderboard-exam-filter').value;
+                const url = examName
+                    ? `${API_BASE}?action=getLeaderboard&examName=${encodeURIComponent(examName)}`
+                    : `${API_BASE}?action=getLeaderboard`;
+                const res = await fetch(url + '&t=' + Date.now());
+                const data = await res.json();
+
+                if (!data || data.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding: 30px; color: var(--muted);"><i class="fas fa-inbox"></i> Chưa có dữ liệu xếp hạng.</td></tr>';
+                    return;
+                }
+
+                // Sắp xếp theo điểm (rawScore dạng "18/30" -> lấy số đầu)
+                data.sort((a, b) => {
+                    const getScore = s => {
+                        if (!s) return 0;
+                        const parts = String(s).split('/');
+                        return parseFloat(parts[0]) || 0;
+                    };
+                    return getScore(b.rawScore) - getScore(a.rawScore);
+                });
+
+                const medalMap = { 0: '🥇', 1: '🥈', 2: '🥉' };
+                const rowColors = ['rgba(245,158,11,0.15)', 'rgba(148,163,184,0.1)', 'rgba(180,120,60,0.1)'];
+
+                tbody.innerHTML = data.map((entry, idx) => {
+                    const rank = idx + 1;
+                    const medal = medalMap[idx] || '';
+                    const rowStyle = idx < 3 ? `background: ${rowColors[idx]};` : '';
+                    const parts = String(entry.rawScore || '0/0').split('/');
+                    const numerator = parseFloat(parts[0]) || 0;
+                    const denominator = parseFloat(parts[1]) || 1;
+                    const pct = Math.round((numerator / denominator) * 100);
+                    const scoreColor = pct >= 80 ? 'var(--success)' : pct >= 50 ? 'var(--warning)' : 'var(--danger)';
+
+                    return `
+                        <tr style="${rowStyle}">
+                            <td style="text-align: center; font-weight: 700; font-size: 1.1rem;">${medal || rank}</td>
+                            <td style="font-weight: 600;">${entry.name || entry.username || 'N/A'}</td>
+                            <td style="color: var(--muted); font-size: 0.88rem;">${entry.examName || '—'}</td>
+                            <td>
+                                <span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; color: ${scoreColor};">${entry.rawScore || '—'}</span>
+                                <span style="font-size: 0.78rem; color: var(--muted); margin-left: 4px;">(${pct}%)</span>
+                            </td>
+                            <td style="color: var(--muted); font-size: 0.85rem;">${entry.time || '—'}</td>
+                        </tr>
+                    `;
+                }).join('');
+            } catch (e) {
+                tbody.innerHTML = `<tr><td colspan="5" style="text-align:center; padding: 30px; color: var(--danger);"><i class="fas fa-exclamation-triangle"></i> Lỗi tải bảng xếp hạng.</td></tr>`;
+                console.error('Leaderboard error:', e);
+            }
+        }
+
+        async function clearLeaderboard() {
+            const examName = document.getElementById('leaderboard-exam-filter').value;
+            const label = examName || 'tất cả đề thi';
+            if (!confirm(`Bạn có chắc muốn xóa bảng xếp hạng cho "${label}" không?`)) return;
+            try {
+                await fetch(API_BASE, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ action: 'clearLeaderboard', examName })
+                });
+                fetchLeaderboard();
+            } catch(e) { alert('Lỗi: ' + e.message); }
+        }
+
         window.addEventListener('DOMContentLoaded', () => {
             createParticles();
-            setTimeout(() => document.getElementById('admin-password-input').focus(), 100);
+            if (sessionStorage.getItem('admin_auth') === 'true') {
+                const overlay = document.getElementById('admin-auth-overlay');
+                if (overlay) overlay.remove();
+                document.getElementById('main-container').style.display = 'block';
+                initDashboard();
+            } else {
+                setTimeout(() => document.getElementById('admin-password-input').focus(), 100);
+            }
         });
     </script>
 </body>
