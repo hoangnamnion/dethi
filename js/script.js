@@ -691,6 +691,7 @@ function handleAnswer(qIndex, optIndex) {
 function finishRetryMode() {
     isRetryMode = false;
     isSubmitted = true;
+    if (syncTimeout) { clearTimeout(syncTimeout); syncTimeout = null; } // Hủy sync "Đang làm"
     clearInterval(timerInterval);
     saveProgress();
     showResultModal();
@@ -913,6 +914,7 @@ function finishExam(skipConfirm = false) {
     }
 
     isSubmitted = true;
+    if (syncTimeout) { clearTimeout(syncTimeout); syncTimeout = null; } // Hủy sync "Đang làm"
     clearInterval(timerInterval);
 
     // Tính toán kết quả lần đầu
@@ -1291,10 +1293,14 @@ function saveProgress() {
 
 let syncTimeout = null;
 function syncLiveProgress() {
+    // Không đồng bộ nếu đã nộp bài hoặc chưa có câu hỏi
     if (isSubmitted || allQuestions.length === 0) return;
 
     if (syncTimeout) clearTimeout(syncTimeout);
     syncTimeout = setTimeout(() => {
+        // Kiểm tra lại lần nữa trong setTimeout (phòng trường hợp nộp bài trong lúc chờ)
+        if (isSubmitted) return;
+
         try {
             const uStr = sessionStorage.getItem('current_user') || localStorage.getItem('current_user');
             if (!uStr) return;
