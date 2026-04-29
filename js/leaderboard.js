@@ -220,7 +220,7 @@ function renderLeaderboardData(modal, topUsers) {
                     <span style="font-size: 1.6em; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));">🏆</span>
                     <div style="display: flex; flex-direction: column;">
                         <span style="font-size: 0.85em;">${titlePrefix}</span>
-                        <span style="font-size: 0.45em; color: #64748b; letter-spacing: 1px; margin-top: 2px;">TOP 5 CAO THỦ HÀNG ĐẦU</span>
+                        <span style="font-size: 0.45em; color: #64748b; letter-spacing: 1px; margin-top: 2px;">TOP NHỮNG NGƯỜI XUẤT SẮC</span>
                     </div>
                 </div>
                 <span style="font-size: 0.5em; background: linear-gradient(135deg, #6c5ce7, #a29bfe); color: white; padding: 6px 15px; border-radius: 20px; box-shadow: 0 4px 10px rgba(108, 92, 231, 0.3); font-weight: 700; letter-spacing: 0.5px;">LIVE 🔴</span>

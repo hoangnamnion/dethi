@@ -145,7 +145,7 @@ D. 01/07/2025
 Câu 25. Theo Luật Xây dựng, 'Báo cáo kinh tế - kỹ thuật đầu tư xây dựng' là tài liệu trình bày các nội dung về sự cần thiết, mức độ khả thi và hiệu quả của việc đầu tư xây dựng công trình quy mô nào?
 A. Quy mô lớn.
 B. Quy mô trung bình.
-C. Quy mô nhỏ.
+*C. Quy mô nhỏ.
 D. Quy mô đặc biệt lớn.
 
 Câu 26. Luật Quy hoạch đô thị và nông thôn số 47/2024/QH15 thay thế Luật nào có hiệu lực từ ngày 01/01/2010?

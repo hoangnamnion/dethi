@@ -257,7 +257,7 @@ function sendLiveTelemetry() {
         time: timeStr
     };
 
-    const GAS_LIVE_API = "https://script.google.com/macros/s/AKfycbwZP3Dn5m0NchjR5KI0E-fhQrLDQ3tpn3a1vlLMmINocGtFl_BczT9UQqlHo-crwoEj9g/exec";
+    const GAS_LIVE_API = "https://script.google.com/macros/s/AKfycbws15Fp5B7Jr-Z_IGFc1-hjyiqOfXjh2henRz4JnQIdR1XR9f69i5mSOZT91j98Q5f5yQ/exec";
     
     fetch(GAS_LIVE_API, {
         method: 'POST',
