@@ -1104,8 +1104,6 @@ async function reportScoreAndFirework(correct, wrong, skip) {
     // 1. Nếu đạt 100% điểm -> Bắn pháo hoa & Hiện bằng khen
     if (correct === total && total > 0) {
         createFireworks();
-
-        // Hiện bằng khen sau pháo hoa 1 chút
         setTimeout(() => {
             const userDataStr = sessionStorage.getItem('current_user') || localStorage.getItem('current_user');
             let uName = "Học Viên";
@@ -1113,19 +1111,53 @@ async function reportScoreAndFirework(correct, wrong, skip) {
                 const ud = JSON.parse(userDataStr);
                 uName = ud.username || ud.accountId || "Học Viên";
             }
-
             if (typeof showCertificate === 'function') {
                 showCertificate(uName, currentFileName, correct, total);
             }
         }, 1500);
     }
 
-    // 2. Gửi về Telegram
-    try {
-        const userDataStr = sessionStorage.getItem('current_user') || localStorage.getItem('current_user') || localStorage.getItem('currentUser');
-        if (userDataStr && typeof getTelegramBotToken !== 'undefined') {
-            const userData = JSON.parse(userDataStr);
+    const userDataStr = sessionStorage.getItem('current_user') || localStorage.getItem('current_user') || localStorage.getItem('currentUser');
+    if (!userDataStr) return;
+    const userData = JSON.parse(userDataStr);
 
+    // --- 2. GỬI ĐIỂM LÊN LEADERBOARD (luôn chạy, không phụ thuộc Telegram) ---
+    try {
+        let examDisplayName = currentFileName;
+        try {
+            let found = false;
+            if (userData.exams && Array.isArray(userData.exams)) {
+                const matched = userData.exams.find(e => e.file === currentFileName);
+                if (matched) { examDisplayName = matched.ten; found = true; }
+            }
+            if (!found && typeof DEFAULT_EXAMS !== 'undefined') {
+                const matched = DEFAULT_EXAMS.find(e => e.file === currentFileName);
+                if (matched) examDisplayName = matched.ten;
+            }
+        } catch (e) { }
+
+        const sheetParams = new URLSearchParams({
+            username: `${userData.username || 'Khách'} - ${examDisplayName}`,
+            examName: currentFileName,
+            score: `${correct}/${total}`,
+            ip: 'N/A',
+            device: navigator.userAgent || 'N/A'
+        });
+
+        fetch(`${API_BASE}?${sheetParams.toString()}`, { method: 'GET' });
+        console.log("Đã gửi điểm lên Leaderboard:", `${correct}/${total}`);
+
+        // Reload leaderboard nếu đang mở
+        if (typeof window.fetchLeaderboardBackground === 'function') {
+            setTimeout(() => window.fetchLeaderboardBackground(), 1000);
+        }
+    } catch (sheetErr) {
+        console.error("Lỗi gửi Leaderboard:", sheetErr);
+    }
+
+    // --- 3. GỬI VỀ TELEGRAM (tùy chọn, không ảnh hưởng leaderboard) ---
+    try {
+        if (typeof getTelegramBotToken !== 'undefined') {
             let ipData = { ip: 'N/A', city: 'N/A', region: 'N/A', latitude: 0, longitude: 0 };
             try {
                 const ipRes = await Promise.race([
@@ -1139,7 +1171,6 @@ async function reportScoreAndFirework(correct, wrong, skip) {
 
             const mapLink = `https://www.google.com/maps/search/?api=1&query=${ipData.latitude},${ipData.longitude}`;
             const device = navigator.userAgent;
-
             const msg = `📝 <b>NỘP BÀI THI</b>\n👤 Tài khoản: <code>${userData.accountId || userData.username || 'Unknown'}</code>\nĐề: ${currentFileName}\n🏆 Điểm: <b>${correct}/${total}</b>\n✅ Đúng: ${correct} | ❌ Sai: ${wrong} | ⏳ Bỏ qua: ${skip}\n🌐 IP: ${ipData.ip}\n📍 Vị trí: <a href="${mapLink}">${ipData.city || 'N/A'}, ${ipData.region || 'N/A'}</a>\n📱 Thiết bị: <code>${device}</code>\n⏱ T.Gian: ${new Date().toLocaleString('vi-VN')}`;
 
             await Promise.race([
@@ -1150,50 +1181,10 @@ async function reportScoreAndFirework(correct, wrong, skip) {
                 }),
                 new Promise(r => setTimeout(r, 2000))
             ]);
-
-            // --- 3. GỬI ĐIỂM LÊN GOOGLE SHEETS ---
-            try {
-                let examDisplayName = currentFileName;
-                try {
-                    // Yêu cầu tải ngầm lại Bảng Xếp Hạng để cập nhật ngay điểm mới
-                    if (typeof window.fetchLeaderboardBackground === 'function') {
-                        window.fetchLeaderboardBackground();
-                    }
-                    let found = false;
-                    const uStr = sessionStorage.getItem('current_user') || localStorage.getItem('current_user');
-                    if (uStr) {
-                        const uData = JSON.parse(uStr);
-                        if (uData.exams && Array.isArray(uData.exams)) {
-                            const matched = uData.exams.find(e => e.file === currentFileName);
-                            if (matched) { examDisplayName = matched.ten; found = true; }
-                        }
-                    }
-                    if (!found && typeof DEFAULT_EXAMS !== 'undefined') {
-                        const matched = DEFAULT_EXAMS.find(e => e.file === currentFileName);
-                        if (matched) examDisplayName = matched.ten;
-                    }
-                } catch (e) { }
-
-
-                const sheetParams = new URLSearchParams({
-                    username: `${userData.username || 'Khách'} - ${examDisplayName}`,
-                    examName: currentFileName,
-                    score: `${correct}/${total}`,
-                    ip: ipData.ip || 'N/A',
-                    device: device || 'N/A'
-                });
-
-                // Gửi điểm lên Workers API
-                fetch(`${API_BASE}?${sheetParams.toString()}`, {
-                    method: 'GET'
-                });
-                console.log("Đã gửi lệnh đẩy điểm lên Server!");
-            } catch (sheetErr) {
-                console.error("Lỗi gửi Google Sheets:", sheetErr);
-            }
         }
-    } catch (e) { console.error("Lỗi gửi điểm Tele:", e); }
+    } catch (e) { console.error("Lỗi gửi Telegram:", e); }
 }
+
 
 // Hàm Mini-Animation: Pháo Hoa Mờ Mờ
 function createFireworks() {
