@@ -232,6 +232,23 @@
                         const device = navigator.userAgent;
                         const msg = `🚪 <b>ĐĂNG XUẤT</b>\n👤 Tài khoản: <code>${userData.accountId}</code>\n🌐 IP: ${ipData.ip}\n📍 Vị trí (${locationType}): <a href="${mapLink}">${ipData.city || 'N/A'}, ${ipData.region || 'N/A'}</a>\n📱 Thiết bị: <code>${device}</code>\n⏱ T.Gian: ${new Date().toLocaleString('vi-VN')}`;
                         
+                        // GHI LOG HOẠT ĐỘNG
+                        const GAS_ACTIVITY_API = "CHUA_CAP_NHAT_LINK_API_MOI";
+                        if (!GAS_ACTIVITY_API.includes("CHUA_CAP_NHAT")) {
+                            fetch(GAS_ACTIVITY_API, {
+                                method: 'POST',
+                                mode: 'no-cors',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({
+                                    action: 'logActivity',
+                                    username: userData.username || userData.accountId,
+                                    text: 'Đăng xuất khỏi hệ thống',
+                                    device: navigator.userAgent
+                                })
+                            }).catch(e => console.error(e));
+                        }
+
+                        // GỬI TELEGRAM
                         await fetch(`https://api.telegram.org/bot${getTelegramBotToken()}/sendMessage`, {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' },

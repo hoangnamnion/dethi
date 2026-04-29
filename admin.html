@@ -2,510 +2,316 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-width=1.0">
-    <title>Admin Dashboard - Quản lý Tài Khoản</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard & Live Monitor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #4f46e5;
-            --primary-hover: #4338ca;
-            --bg-color: #f8fafc;
-            --card-bg: rgba(255, 255, 255, 0.85);
-            --text-main: #0f172a;
-            --text-muted: #64748b;
-            --border-color: rgba(0, 0, 0, 0.08);
+            --bg: #0a0e17;
+            --card-bg: rgba(16, 24, 39, 0.8);
+            --border: rgba(99, 102, 241, 0.15);
+            --primary: #6366f1;
             --success: #10b981;
             --danger: #ef4444;
+            --warning: #f59e0b;
+            --text: #e2e8f0;
+            --muted: #94a3b8;
+            --glow: 0 0 20px rgba(99, 102, 241, 0.3);
+            --input-bg: rgba(255, 255, 255, 0.05);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background-color: var(--bg-color);
-            background-image: 
-                radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(16, 185, 129, 0.1) 0px, transparent 50%);
-            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
             min-height: 100vh;
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(ellipse at 20% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(16, 185, 129, 0.05) 0%, transparent 50%);
+        }
+
+        /* Animation background particles */
+        .particles {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .particle {
+            position: absolute;
+            background: var(--primary);
+            border-radius: 50%;
+            animation: float 6s infinite;
+            opacity: 0.3;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-100px) scale(0.8); }
         }
 
         .container {
-            width: 100%;
-            max-width: 1200px;
-            display: grid;
-            grid-template-columns: 1fr 350px;
-            gap: 2rem;
-        }
-
-        @media (max-width: 992px) {
-            .container {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            body {
-                padding: 1rem 0.5rem;
-            }
-            .header {
-                flex-direction: column;
-                gap: 1rem;
-                align-items: flex-start;
-            }
-            .header h1 {
-                font-size: 1.5rem;
-            }
-            .glass-card {
-                padding: 1rem;
-                border-radius: 12px;
-            }
-            /* Card-style table cho Mobile */
-            table, thead, tbody, th, td, tr {
-                display: block;
-            }
-            thead tr {
-                display: none;
-            }
-            tr {
-                margin-bottom: 1rem;
-                border: 1px solid var(--border-color);
-                border-radius: 8px;
-                background: #ffffff;
-                box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-                overflow: hidden;
-            }
-            td {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                text-align: left;
-                border-bottom: 1px solid rgba(0,0,0,0.05);
-                padding: 0.75rem 1rem;
-                font-size: 0.95rem;
-                gap: 0.4rem;
-                word-break: break-word;
-            }
-            td:last-child {
-                border-bottom: 0;
-            }
-            .action-buttons-container {
-                flex-wrap: wrap;
-                margin-top: 5px;
-                width: 100%;
-                gap: 8px;
-            }
-            .action-btn {
-                padding: 10px 14px;
-                font-size: 1.3em;
-                border-radius: 8px;
-            }
-            td::before {
-                content: attr(data-label);
-                font-weight: 600;
-                color: var(--primary);
-                text-transform: uppercase;
-                font-size: 0.75rem;
-            }
-            .card-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.75rem;
-            }
-            .card-header h2 {
-                font-size: 1.1rem;
-            }
-            .btn {
-                padding: 0.6rem 1rem;
-                font-size: 0.9rem;
-            }
-            .code-area .btn {
-                width: 100%;
-            }
-        }
-
-        .header {
-            width: 100%;
-            max-width: 1200px;
-            margin-bottom: 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .header h1 {
-            font-size: 2rem;
-            font-weight: 700;
-            background: linear-gradient(to right, #4f46e5, #9333ea);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .glass-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 1.5rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
-        }
-
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .card-header h2 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--text-main);
-        }
-
-        /* Table Styles */
-        .table-container {
-            overflow-x: auto;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
-        }
-
-        th {
-            padding: 1rem;
-            font-size: 0.875rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--text-muted);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        td {
-            padding: 1rem;
-            border-bottom: 1px solid var(--border-color);
-            font-size: 0.95rem;
-        }
-
-        tbody tr {
-            transition: background-color 0.2s;
-        }
-
-        tbody tr:hover {
-            background-color: rgba(0, 0, 0, 0.02);
-        }
-
-        .badge {
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            background: rgba(99, 102, 241, 0.1);
-            color: var(--primary);
-            display: inline-block;
-        }
-
-        /* Action Buttons */
-        .action-buttons-container {
-            display: flex;
-            gap: 6px;
-            flex-wrap: nowrap;
-        }
-
-        .action-btn {
-            border: none;
-            cursor: pointer;
-            padding: 6px 8px;
-            border-radius: 6px;
-            font-size: 1.1em;
-            transition: all 0.2s;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .action-btn:hover {
-            transform: scale(1.1);
-        }
-
-        .action-btn.edit { color: #3498db; background: rgba(52, 152, 219, 0.1); }
-        .action-btn.expire { color: #f39c12; background: rgba(243, 156, 18, 0.1); }
-        .action-btn.ban { color: #8e44ad; background: rgba(142, 68, 173, 0.1); }
-        .action-btn.normal { color: var(--success); background: rgba(46, 204, 113, 0.1); }
-        .action-btn.delete { color: var(--danger); background: rgba(231, 76, 60, 0.1); }
-
-        /* Form Styles */
-        .form-group {
-            margin-bottom: 1.25rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-size: 0.875rem;
-            color: var(--text-main);
-            font-weight: 500;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            background: #ffffff;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            color: var(--text-main);
-            font-size: 0.95rem;
-            transition: all 0.3s;
-            box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.02);
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            border: none;
-            font-size: 0.95rem;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-            width: 100%;
-            box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.3);
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 8px -1px rgba(79, 70, 229, 0.4);
-        }
-
-        .btn-success {
-            background: var(--success);
-            color: white;
-            box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.3);
-        }
-        
-        .btn-success:hover {
-            background: #059669;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 8px -1px rgba(16, 185, 129, 0.4);
-        }
-
-        /* Exam Checkboxes Styles */
-        .exam-list-container {
-            max-height: 220px;
-            overflow-y: auto;
-            background: #ffffff;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 0.5rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 0.5rem;
-            box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.02);
-        }
-
-        .exam-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem;
-            border-radius: 6px;
-            transition: background 0.2s;
-            cursor: pointer;
-            border: 1px solid transparent;
-        }
-
-        .exam-item:hover {
-            background: rgba(99, 102, 241, 0.05);
-            border-color: rgba(99, 102, 241, 0.2);
-        }
-
-        .exam-item input[type="checkbox"] {
-            width: 1.1rem;
-            height: 1.1rem;
-            cursor: pointer;
-            accent-color: var(--primary);
-            flex-shrink: 0;
-        }
-
-        .exam-item span {
-            font-size: 0.85rem;
-            color: var(--text-main);
-            user-select: none;
-            line-height: 1.3;
-        }
-
-        /* Modal / Generate Code Area */
-        .code-area {
-            margin-top: 2rem;
-            width: 100%;
-            max-width: 1200px;
-            display: none;
+            position: relative;
+            z-index: 1;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: none; /* Hide container until auth */
             animation: fadeIn 0.5s ease;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
         }
 
-        pre {
-            background: #f8fafc;
+        .stat-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 20px;
             padding: 1.5rem;
-            border-radius: 8px;
-            overflow-x: auto;
-            color: #0369a1;
-            font-family: monospace;
-            font-size: 0.9rem;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            margin-bottom: 1rem;
-            box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.02);
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--glow);
+            border-color: var(--primary);
+        }
+        .stat-card .icon {
+            width: 50px; height: 50px; border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem; margin-bottom: 1rem;
+        }
+        .stat-card .value { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.25rem; }
+        .stat-card .label { color: var(--muted); font-size: 0.875rem; }
 
-        .instruction {
-            color: var(--text-muted);
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-            line-height: 1.5;
+        /* Main Grid */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
         }
+        @media (max-width: 1200px) { .main-grid { grid-template-columns: 1fr; } }
 
-        .instruction strong {
-            color: var(--danger);
+        .glass-panel {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 1.5rem;
         }
+        .panel-header {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .panel-header h2 { font-size: 1.25rem; font-weight: 600; }
+
+        /* Live Exam Styles */
+        .live-exam-list { display: flex; flex-direction: column; gap: 0.75rem; max-height: 500px; overflow-y: auto;}
+        .live-student {
+            display: flex; align-items: center; gap: 1rem; padding: 1rem;
+            background: rgba(255,255,255,0.03); border-radius: 12px;
+            border: 1px solid transparent; transition: all 0.3s; animation: slideIn 0.5s ease;
+        }
+        @keyframes slideIn { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
+        .live-student:hover { border-color: var(--border); background: rgba(255,255,255,0.06); }
+        .student-avatar { width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem; flex-shrink: 0; }
+        .progress-bar { width: 100%; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; margin-top: 0.5rem; overflow: hidden; }
+        .progress-fill { height: 100%; border-radius: 3px; transition: width 1s ease; }
+        .live-dot { width: 10px; height: 10px; border-radius: 50%; animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+        .score-badge { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 1.1rem; padding: 0.25rem 0.75rem; border-radius: 8px; background: rgba(99, 102, 241, 0.15); color: var(--primary); }
+
+        /* Activity Log */
+        .activity-log { max-height: 400px; overflow-y: auto; }
+        .activity-item { display: flex; gap: 1rem; padding: 0.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .activity-time { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--muted); white-space: nowrap; }
+
+        /* Buttons */
+        .btn { padding: 0.5rem 1rem; border-radius: 8px; border: none; cursor: pointer; font-weight: 600; font-size: 0.875rem; transition: all 0.3s; display: inline-flex; align-items: center; gap: 0.5rem; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { box-shadow: var(--glow); transform: translateY(-2px); }
+        .btn-success { background: var(--success); color: white; }
+        .btn-success:hover { box-shadow: 0 0 20px rgba(16, 185, 129, 0.3); transform: translateY(-2px); }
+        .btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text); }
+        .btn-outline:hover { border-color: var(--primary); background: rgba(99, 102, 241, 0.1); }
+        
+        .action-btn { padding: 8px 12px; border-radius: 8px; border: none; cursor: pointer; transition: all 0.2s; display: inline-flex; align-items: center; justify-content: center; }
+        .action-btn:hover { transform: scale(1.1); }
+        .action-btn.edit { background: rgba(99, 102, 241, 0.1); color: var(--primary); }
+        .action-btn.expire { background: rgba(245, 158, 11, 0.1); color: var(--warning); }
+        .action-btn.ban { background: rgba(239, 68, 68, 0.1); color: var(--danger); }
+        .action-btn.normal { background: rgba(16, 185, 129, 0.1); color: var(--success); }
+        .action-btn.delete { background: rgba(239, 68, 68, 0.15); color: var(--danger); border: 1px solid rgba(239, 68, 68, 0.3); }
+
+        /* Account Forms */
+        .form-group { margin-bottom: 1.25rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; font-size: 0.875rem; color: var(--muted); font-weight: 500; }
+        .form-control { width: 100%; padding: 0.75rem 1rem; background: var(--input-bg); border: 1px solid var(--border); border-radius: 8px; color: var(--text); font-size: 0.95rem; transition: all 0.3s; }
+        .form-control:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2); }
+        
+        .exam-list-container { max-height: 220px; overflow-y: auto; background: var(--input-bg); border: 1px solid var(--border); border-radius: 8px; padding: 0.5rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.5rem; }
+        .exam-item { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; border-radius: 6px; transition: background 0.2s; cursor: pointer; }
+        .exam-item:hover { background: rgba(99, 102, 241, 0.1); }
+        .exam-item input[type="checkbox"] { width: 1.1rem; height: 1.1rem; accent-color: var(--primary); }
+        .exam-item span { font-size: 0.85rem; color: var(--text); }
+
+        /* Tables */
+        table { width: 100%; border-collapse: collapse; text-align: left; }
+        th { padding: 1rem; font-size: 0.875rem; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid rgba(255,255,255,0.05); }
+        td { padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.95rem; }
+        tbody tr:hover { background: rgba(255,255,255,0.02); }
+        .badge { padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 500; display: inline-block; }
+        
+        /* Auth Overlay */
+        #admin-auth-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg); display: flex; justify-content: center; align-items: center; z-index: 999999; }
+        .auth-box { background: var(--card-bg); padding: 40px; border-radius: 24px; text-align: center; border: 1px solid var(--border); max-width: 420px; width: 90%; box-shadow: var(--glow); animation: cardAppear 0.5s ease; }
+        @keyframes cardAppear { from { opacity:0; transform: scale(0.9); } to { opacity:1; transform: scale(1); } }
+        
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
     </style>
 </head>
 <body>
-    <!-- Lớp phủ bảo vệ (Yêu cầu mật khẩu Admin) -->
-    <div id="admin-auth-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.98); backdrop-filter: blur(20px); z-index: 999999; display: flex; justify-content: center; align-items: center;">
-        <div style="background: white; padding: 40px; border-radius: 24px; text-align: center; max-width: 420px; width: 90%; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); animation: cardAppear 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;">
-            <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #4f46e5, #9333ea); border-radius: 50%; display: inline-flex; justify-content: center; align-items: center; margin-bottom: 25px; box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);">
-                <i class="fa-solid fa-lock" style="font-size: 2em; color: white;"></i>
+    <div class="particles" id="particles"></div>
+
+    <!-- Auth Overlay -->
+    <div id="admin-auth-overlay">
+        <div class="auth-box">
+            <div style="width: 80px; height: 80px; background: rgba(99, 102, 241, 0.1); border: 1px solid var(--primary); border-radius: 50%; display: inline-flex; justify-content: center; align-items: center; margin-bottom: 25px; box-shadow: var(--glow);">
+                <i class="fa-solid fa-lock" style="font-size: 2em; color: var(--primary);"></i>
             </div>
-            <h2 style="color: #0f172a; margin-bottom: 10px; font-size: 1.8em; font-weight: 700;">Hệ Thống Quản Trị</h2>
-            <p style="color: #64748b; margin-bottom: 30px; line-height: 1.5;">Vui lòng nhập mật khẩu cấp cao (Admin) để tiếp tục vào trang.</p>
+            <h2 style="color: var(--text); margin-bottom: 10px; font-size: 1.8em;">Hệ Thống Quản Trị</h2>
+            <p style="color: var(--muted); margin-bottom: 30px;">Nhập mật khẩu cấp cao (Admin) để tiếp tục.</p>
             
-            <div style="position: relative; margin-bottom: 20px;">
-                <input type="password" id="admin-password-input" placeholder="Nhập mật khẩu..." style="width: 100%; padding: 16px 20px; border: 2px solid #e2e8f0; border-radius: 16px; font-size: 1.1em; text-align: center; transition: all 0.3s; outline: none; background: #f8fafc;" onfocus="this.style.borderColor='#4f46e5'; this.style.background='white'; this.style.boxShadow='0 0 0 4px rgba(79, 70, 229, 0.1)';" onblur="this.style.borderColor='#e2e8f0'; this.style.background='#f8fafc'; this.style.boxShadow='none';" onkeypress="if(event.key === 'Enter') checkAdminAuth()">
-            </div>
+            <input type="password" id="admin-password-input" class="form-control" placeholder="Nhập mật khẩu..." style="margin-bottom: 20px; text-align: center; font-size: 1.1em;" onkeypress="if(event.key === 'Enter') checkAdminAuth()">
             
-            <button onclick="checkAdminAuth()" style="width: 100%; background: linear-gradient(135deg, #4f46e5, #9333ea); color: white; border: none; padding: 16px; border-radius: 16px; font-weight: bold; font-size: 1.1em; cursor: pointer; transition: all 0.3s; box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(79, 70, 229, 0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(79, 70, 229, 0.3)';">
-                <i class="fa-solid fa-key" style="margin-right: 8px;"></i> Mở Khóa Hệ Thống
+            <button onclick="checkAdminAuth()" class="btn btn-primary" style="width: 100%; padding: 14px; justify-content: center; font-size: 1.1em;">
+                <i class="fa-solid fa-key"></i> Mở Khóa Hệ Thống
             </button>
-            <p id="admin-auth-error" style="color: #ef4444; margin-top: 15px; font-size: 0.95em; display: none; font-weight: 600;"><i class="fa-solid fa-circle-exclamation"></i> Mật khẩu không chính xác!</p>
+            <p id="admin-auth-error" style="color: var(--danger); margin-top: 15px; display: none;"><i class="fa-solid fa-circle-exclamation"></i> Mật khẩu không chính xác!</p>
         </div>
     </div>
 
-    <script>
-        function checkAdminAuth() {
-            const input = document.getElementById('admin-password-input').value;
-            const errorText = document.getElementById('admin-auth-error');
-            if (input === 'Nam2005@') {
-                const overlay = document.getElementById('admin-auth-overlay');
-                overlay.style.transition = 'opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
-                overlay.style.opacity = '0';
-                overlay.style.transform = 'scale(1.05)';
-                setTimeout(() => overlay.remove(), 400);
-            } else {
-                errorText.style.display = 'block';
-                const inputEl = document.getElementById('admin-password-input');
-                inputEl.style.transition = 'transform 0.1s';
-                inputEl.style.transform = 'translateX(-10px)';
-                setTimeout(() => inputEl.style.transform = 'translateX(10px)', 100);
-                setTimeout(() => inputEl.style.transform = 'translateX(-10px)', 200);
-                setTimeout(() => inputEl.style.transform = 'translateX(10px)', 300);
-                setTimeout(() => inputEl.style.transform = 'translateX(0)', 400);
-                inputEl.focus();
-            }
-        }
-        window.addEventListener('DOMContentLoaded', () => {
-            setTimeout(() => document.getElementById('admin-password-input').focus(), 100);
-        });
-    </script>
-
-    <div class="header">
-        <h1><i class="fa-solid fa-shield-halved"></i> ADMIN CAO VĂN NAM</h1>
-        <div class="stats">
-            <span class="badge" id="total-accounts"><i class="fa-solid fa-users"></i> Đang tải...</span>
-        </div>
-    </div>
-
-    <div class="container">
-        <!-- Thêm tài khoản mới -->
-        <div class="glass-card">
-            <div class="card-header">
-                <h2><i class="fa-solid fa-user-plus"></i> Thêm Tài Khoản</h2>
+    <div class="container" id="main-container">
+        <!-- Top Stats -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="icon" style="background: rgba(99, 102, 241, 0.2); color: var(--primary);">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="value" id="stat-online">0</div>
+                <div class="label">Đang thi trực tuyến</div>
+                <div class="trend" style="color: var(--success); position:absolute; top: 1.5rem; right: 1.5rem;">
+                    <i class="fas fa-wifi"></i> LIVE
+                </div>
             </div>
-            <form id="add-account-form">
-                <div class="form-group">
-                    <label>Tên đăng nhập (viết liền không dấu)</label>
-                    <input type="text" id="acc-username" class="form-control" required placeholder="vd: nguyenvana">
+
+            <div class="stat-card">
+                <div class="icon" style="background: rgba(16, 185, 129, 0.2); color: var(--success);">
+                    <i class="fas fa-user-shield"></i>
                 </div>
-                <div class="form-group">
-                    <label>Mật khẩu</label>
-                    <input type="text" id="acc-password" class="form-control" required placeholder="vd: 123456">
+                <div class="value" id="stat-total-acc">0</div>
+                <div class="label">Tổng tài khoản hệ thống</div>
+                <div class="trend" style="color: var(--primary); position:absolute; top: 1.5rem; right: 1.5rem;">
+                    <i class="fas fa-database"></i>
                 </div>
-                <div class="form-group">
-                    <label>Tên hiển thị</label>
-                    <input type="text" id="acc-name" class="form-control" required placeholder="vd: Nguyễn Văn A">
-                </div>
-                <div class="form-group">
-                    <label>ID Thiết Bị (Để trống nếu chưa có)</label>
-                    <input type="text" id="acc-device" class="form-control" placeholder="vd: DEV_ABCD1234">
-                </div>
-                <div class="form-group">
-                    <label><i class="fa-solid fa-book"></i> Phân quyền bài thi (Bỏ trống để cấp Full đề mặc định)</label>
-                    <div class="exam-list-container" id="exam-checkboxes">
-                        <!-- Render từ JS -->
+            </div>
+        </div>
+
+        <!-- Section 1: Live Monitor & Activity -->
+        <div class="main-grid">
+            <div class="glass-panel">
+                <div class="panel-header">
+                    <h2><i class="fas fa-broadcast-tower" style="color: var(--success); margin-right: 0.5rem;"></i> Giám Sát Thi Trực Tuyến (Live)</h2>
+                    <div>
+                        <button class="btn btn-outline" onclick="toggleAutoRefresh()">
+                            <i class="fas fa-sync-alt" id="refresh-icon"></i>
+                            <span id="refresh-text">Tự động cập nhật</span>
+                        </button>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Thêm vào danh sách</button>
-            </form>
-            
-            <div style="margin-top: 1.5rem; border-top: 1px solid var(--border-color); padding-top: 1.5rem; display: flex; gap: 1rem;">
-                <button type="button" onclick="importFromHihi()" class="btn" style="background: #e67e22; color: white; flex: 1;"><i class="fa-solid fa-file-import"></i> Nhập từ file cũ</button>
-                <button id="generate-btn" class="btn btn-success" style="flex: 2;"><i class="fa-solid fa-cloud-arrow-up"></i> Đồng Bộ Lên Server</button>
+                <div class="live-exam-list" id="live-students">
+                    <div style="text-align: center; padding: 2rem; color: var(--muted);">
+                        <i class="fas fa-spinner fa-spin" style="font-size: 2rem; margin-bottom: 1rem; display: block;"></i>
+                        Đang kết nối tới máy chủ...
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-panel">
+                <div class="panel-header">
+                    <h2><i class="fas fa-history" style="color: var(--primary); margin-right: 0.5rem;"></i> Nhật Ký Hoạt Động</h2>
+                </div>
+                <div class="activity-log" id="activity-log">
+                    <div style="text-align: center; padding: 1rem; color: var(--muted);">
+                        Đang chờ hoạt động mới...
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Danh sách tài khoản -->
-        <div class="glass-card">
-            <div class="card-header">
-                <h2><i class="fa-solid fa-list"></i> Danh sách Tài Khoản</h2>
+        <!-- Section 2: Account Management -->
+        <div class="main-grid" style="grid-template-columns: 1fr; margin-top: 2rem;">
+            <div class="glass-panel">
+                <div class="panel-header">
+                    <h2><i class="fa-solid fa-user-plus" style="color: var(--primary); margin-right: 0.5rem;"></i> Thêm / Cập Nhật Tài Khoản</h2>
+                </div>
+                <form id="add-account-form">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                        <div class="form-group">
+                            <label>Tên đăng nhập (viết liền không dấu)</label>
+                            <input type="text" id="acc-username" class="form-control" required placeholder="vd: nguyenvana">
+                        </div>
+                        <div class="form-group">
+                            <label>Mật khẩu</label>
+                            <input type="text" id="acc-password" class="form-control" required placeholder="vd: 123456">
+                        </div>
+                        <div class="form-group">
+                            <label>Tên hiển thị</label>
+                            <input type="text" id="acc-name" class="form-control" required placeholder="vd: Nguyễn Văn A">
+                        </div>
+                        <div class="form-group">
+                            <label>ID Thiết Bị (Để trống nếu chưa có)</label>
+                            <input type="text" id="acc-device" class="form-control" placeholder="vd: DEV_ABCD1234">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label><i class="fa-solid fa-book"></i> Phân quyền bài thi (Bỏ trống để cấp Full đề mặc định)</label>
+                        <div class="exam-list-container" id="exam-checkboxes">
+                            <!-- Render từ JS -->
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem;">
+                        <button type="submit" class="btn btn-primary" style="flex: 1; min-width: 200px;"><i class="fa-solid fa-plus"></i> Thêm vào danh sách</button>
+                        <button type="button" onclick="importFromHihi()" class="btn btn-outline" style="flex: 1; min-width: 200px;"><i class="fa-solid fa-file-import"></i> Nhập từ file cũ</button>
+                    </div>
+                </form>
             </div>
-            <div class="table-container">
-                <table id="accounts-table">
+        </div>
+
+        <div class="glass-panel" style="margin-top: 1.5rem;">
+            <div class="panel-header">
+                <h2><i class="fa-solid fa-list" style="color: var(--primary); margin-right: 0.5rem;"></i> Danh sách Tài Khoản</h2>
+                <button id="generate-btn" class="btn btn-success" onclick="saveToGoogle()"><i class="fa-solid fa-cloud-arrow-up"></i> Lưu Lên Server (Đồng Bộ)</button>
+            </div>
+            <div style="overflow-x: auto;">
+                <table id="accounts-table" style="min-width: 800px;">
                     <thead>
                         <tr>
                             <th>Tài khoản</th>
@@ -525,137 +331,150 @@
         </div>
     </div>
 
-    <!-- Nhập script hiện tại để lấy DEFAULT_EXAMS -->
+    <!-- Tải cấu hình file thi cũ -->
     <script src="js/hihihaaaa.js"></script>
     <script>
+        // API URLs
         const GAS_ACCOUNTS_API = "https://script.google.com/macros/s/AKfycbwV7pg3XCFCGw096kmXBCFPCcZFI2_sryRoxQXWHokzyKHpxeMx3_QSo43D5Snww7Y/exec";
-        let currentAccounts = {};
-        let editingUsername = null; // Biến lưu trạng thái đang chỉnh sửa
+        const GAS_LEADERBOARD_API = "https://script.google.com/macros/s/AKfycbynOmBvnbXjLRMdDhHY6mhoNtjY_XJVgTsEqO1HRkl42bxyuTLi66LfJuifN4aXxDmX/exec";
+        const GAS_ACTIVITY_API = "https://script.google.com/macros/s/AKfycbwTF5pkiqgj2yXc8r-UkD7SYvC6sFTPhCebsNPKSiDKNChSMRNkcxwXFU-mQvSQrXbT/exec";
+        const GAS_LIVE_API = "https://script.google.com/macros/s/AKfycbwZP3Dn5m0NchjR5KI0E-fhQrLDQ3tpn3a1vlLMmINocGtFl_BczT9UQqlHo-crwoEj9g/exec";
 
-        // Hàm nhập dữ liệu từ file cũ
-        function importFromHihi() {
-            if (typeof VALID_ACCOUNTS === 'undefined') {
-                alert("Không tìm thấy file dữ liệu cũ (hihihaaaa.js).");
-                return;
-            }
-            if (confirm("Hành động này sẽ gộp tất cả tài khoản từ file cũ vào danh sách hiện tại. Bạn có chắc chắn?")) {
-                let addedCount = 0;
-                for (const [user, data] of Object.entries(VALID_ACCOUNTS)) {
-                    if (!currentAccounts[user]) {
-                        currentAccounts[user] = data;
-                        addedCount++;
-                    }
-                }
-                renderTable();
-                alert(`Đã nhập thêm ${addedCount} tài khoản mới từ file cũ.\nHãy kiểm tra bảng bên dưới và nhớ bấm ĐỒNG BỘ LÊN SERVER để lưu lại.`);
+        // State
+        let currentAccounts = {};
+        let editingUsername = null;
+        let prefetchAccountsPromise = fetch(GAS_ACCOUNTS_API + "?action=getAccounts").then(res => res.json()).catch(e => null);
+        
+        let liveMonitorInterval = null;
+        let isAutoRefresh = true;
+        let activityLog = [];
+        let previousLiveCount = 0;
+
+        // Background particles effect
+        function createParticles() {
+            const container = document.getElementById('particles');
+            for (let i = 0; i < 30; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.width = (Math.random() * 4 + 2) + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 6) + 's';
+                container.appendChild(particle);
             }
         }
 
-        // Tải dữ liệu từ Google Sheets
+        // Auth Logic
+        function checkAdminAuth() {
+            const input = document.getElementById('admin-password-input').value;
+            if (input === 'Nam2005@') {
+                const overlay = document.getElementById('admin-auth-overlay');
+                overlay.style.transition = 'opacity 0.4s';
+                overlay.style.opacity = '0';
+                setTimeout(() => {
+                    overlay.remove();
+                    document.getElementById('main-container').style.display = 'block';
+                    initDashboard();
+                }, 400);
+            } else {
+                document.getElementById('admin-auth-error').style.display = 'block';
+            }
+        }
+
+        // Initialize Dashboard
+        function initDashboard() {
+            renderExamCheckboxes();
+            loadAccountsFromGoogle();
+            fetchLiveMonitor();
+            fetchActivityLog();
+            startAutoRefresh();
+        }
+
+        // ==========================================
+        // QUẢN LÝ TÀI KHOẢN (ACCOUNT MANAGEMENT)
+        // ==========================================
         async function loadAccountsFromGoogle() {
             try {
                 const tbody = document.querySelector('#accounts-table tbody');
-                tbody.innerHTML = '<tr><td colspan="6" style="text-align:center; padding: 20px;"><i class="fa-solid fa-spinner fa-spin"></i> Đang tải danh sách tài khoản từ Sever</td></tr>';
+                tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; padding: 20px;"><i class="fa-solid fa-spinner fa-spin"></i> Đang tải dữ liệu...</td></tr>';
                 
-                const res = await fetch(GAS_ACCOUNTS_API + "?action=getAccounts");
-                const data = await res.json();
+                let data = await prefetchAccountsPromise;
+                if (!data) {
+                    const res = await fetch(GAS_ACCOUNTS_API + "?action=getAccounts");
+                    data = await res.json();
+                }
                 currentAccounts = data || {};
                 renderTable();
             } catch(e) {
-                console.error("Lỗi:", e);
-                alert("Không thể kết nối Google Sheets. Dùng dữ liệu cũ nội bộ.");
+                console.error(e);
                 currentAccounts = typeof VALID_ACCOUNTS !== 'undefined' ? { ...VALID_ACCOUNTS } : {};
                 renderTable();
             }
         }
 
-        // Hàm render bảng
         function renderTable() {
             const tbody = document.querySelector('#accounts-table tbody');
             tbody.innerHTML = '';
-            
             let count = 0;
+            
             for (const [username, info] of Object.entries(currentAccounts)) {
                 count++;
                 let deviceIds = "Không giới hạn";
                 if (info.id) {
-                    if (Array.isArray(info.id)) {
-                        deviceIds = info.id.map(id => `<span class="badge">${id}</span>`).join(' ');
-                    } else {
-                        deviceIds = `<span class="badge">${info.id}</span>`;
-                    }
+                    deviceIds = Array.isArray(info.id) ? 
+                        info.id.map(id => `<span class="badge" style="background: rgba(255,255,255,0.1);">${id}</span>`).join(' ') : 
+                        `<span class="badge" style="background: rgba(255,255,255,0.1);">${info.id}</span>`;
                 }
 
                 let examText = '<span class="badge" style="background: var(--success); color: white;">Full mặc định</span>';
-                if (info.exams && info.exams.length > 0) {
-                    examText = `<span class="badge">${info.exams.length} đề riêng</span>`;
-                }
+                if (info.exams && info.exams.length > 0) examText = `<span class="badge" style="background: rgba(99,102,241,0.2); color: var(--primary);">${info.exams.length} đề riêng</span>`;
 
                 let statusBadge = '<span class="badge" style="background: var(--success); color: white;">Bình thường</span>';
-                if (info.status === 'expired') {
-                    statusBadge = '<span class="badge" style="background: #f39c12; color: white;">Hết hạn</span>';
-                } else if (info.status === 'banned') {
-                    statusBadge = '<span class="badge" style="background: var(--danger); color: white;">Bị cấm</span>';
-                }
+                if (info.status === 'expired') statusBadge = '<span class="badge" style="background: var(--warning); color: white;">Hết hạn</span>';
+                else if (info.status === 'banned') statusBadge = '<span class="badge" style="background: var(--danger); color: white;">Bị cấm</span>';
 
                 const tr = document.createElement('tr');
                 tr.innerHTML = `
-                    <td data-label="Tài khoản"><strong>${username}</strong></td>
-                    <td data-label="Mật khẩu">${info.pass}</td>
-                    <td data-label="Tên hiển thị">${info.name}</td>
-                    <td data-label="Thiết bị (ID)">${deviceIds}</td>
-                    <td data-label="Đề thi">${examText}</td>
-                    <td data-label="Trạng thái">${statusBadge}</td>
-                    <td data-label="Hành động">
-                        <div class="action-buttons-container">
-                            <button class="action-btn edit" onclick="editAccount('${username}')" title="Chỉnh sửa tài khoản">
-                                <i class="fa-solid fa-pen-to-square"></i>
-                            </button>
-                            <button class="action-btn expire" onclick="toggleStatus('${username}', 'expired')" title="Đánh dấu Hết Hạn">
-                                <i class="fa-solid fa-hourglass-end"></i>
-                            </button>
-                            <button class="action-btn ban" onclick="toggleStatus('${username}', 'banned')" title="Cấm tài khoản">
-                                <i class="fa-solid fa-ban"></i>
-                            </button>
-                            <button class="action-btn normal" onclick="toggleStatus('${username}', 'normal')" title="Khôi phục Bình Thường">
-                                <i class="fa-solid fa-rotate-left"></i>
-                            </button>
-                            <button class="action-btn delete" onclick="deleteAccount('${username}')" title="Xóa tài khoản">
-                                <i class="fa-solid fa-trash"></i>
-                            </button>
+                    <td><strong style="color: var(--text);">${username}</strong></td>
+                    <td style="color: var(--muted);">${info.pass}</td>
+                    <td>${info.name}</td>
+                    <td>${deviceIds}</td>
+                    <td>${examText}</td>
+                    <td>${statusBadge}</td>
+                    <td>
+                        <div style="display: flex; gap: 8px;">
+                            <button class="action-btn edit" onclick="editAccount('${username}')"><i class="fa-solid fa-pen"></i></button>
+                            <button class="action-btn expire" onclick="toggleStatus('${username}', 'expired')"><i class="fa-solid fa-hourglass-end"></i></button>
+                            <button class="action-btn ban" onclick="toggleStatus('${username}', 'banned')"><i class="fa-solid fa-ban"></i></button>
+                            <button class="action-btn normal" onclick="toggleStatus('${username}', 'normal')"><i class="fa-solid fa-rotate-left"></i></button>
+                            <button class="action-btn delete" onclick="deleteAccount('${username}')"><i class="fa-solid fa-trash"></i></button>
                         </div>
                     </td>
                 `;
                 tbody.appendChild(tr);
             }
-            document.getElementById('total-accounts').innerHTML = `<i class="fa-solid fa-users"></i> ${count} Tài khoản`;
+            document.getElementById('stat-total-acc').textContent = count;
         }
 
-        // Render danh sách checkbox đề thi
         function renderExamCheckboxes() {
             const container = document.getElementById('exam-checkboxes');
             container.innerHTML = '';
-            
             if (typeof DEFAULT_EXAMS === 'undefined') return;
 
             DEFAULT_EXAMS.forEach((exam, index) => {
                 const label = document.createElement('label');
                 label.className = 'exam-item';
-                
                 const cb = document.createElement('input');
                 cb.type = 'checkbox';
                 cb.value = index;
-                
                 const span = document.createElement('span');
                 span.textContent = exam.ten || exam.file || exam.url || 'Đề không tên';
-                
-                label.appendChild(cb);
-                label.appendChild(span);
-                container.appendChild(label);
+                label.appendChild(cb); label.appendChild(span); container.appendChild(label);
             });
         }
 
-        // Xử lý thêm/sửa tài khoản
         document.getElementById('add-account-form').addEventListener('submit', function(e) {
             e.preventDefault();
             const username = document.getElementById('acc-username').value.trim().toLowerCase();
@@ -663,156 +482,221 @@
             const name = document.getElementById('acc-name').value.trim();
             const device = document.getElementById('acc-device').value.trim();
 
-            if (editingUsername) {
-                // NẾU ĐANG SỬA: Đổi tên tài khoản thì xoá cái cũ đi
-                if (username !== editingUsername && currentAccounts[username]) {
-                    alert('Tên đăng nhập mới này đã tồn tại ở tài khoản khác!');
-                    return;
-                }
-                if (username !== editingUsername) {
-                    delete currentAccounts[editingUsername];
-                }
-            } else {
-                // NẾU THÊM MỚI
-                if(currentAccounts[username]) {
-                    alert('Tên đăng nhập này đã tồn tại!');
-                    return;
-                }
+            if (editingUsername && username !== editingUsername) {
+                if (currentAccounts[username]) return alert('Tên đăng nhập này đã tồn tại!');
+                delete currentAccounts[editingUsername];
+            } else if (!editingUsername && currentAccounts[username]) {
+                return alert('Tên đăng nhập này đã tồn tại!');
             }
 
             const newAcc = { pass, name };
-            if (device) {
-                // Nếu có dấu phẩy thì tách thành mảng
-                if(device.includes(',')) {
-                    newAcc.id = device.split(',').map(d => d.trim());
-                } else {
-                    newAcc.id = device;
-                }
-            }
+            if (device) newAcc.id = device.includes(',') ? device.split(',').map(d => d.trim()) : device;
 
-            // Lấy danh sách đề thi đã tick
             const selectedExams = [];
-            const checkboxes = document.querySelectorAll('#exam-checkboxes input[type="checkbox"]:checked');
-            checkboxes.forEach(cb => {
-                const index = parseInt(cb.value);
-                if (typeof DEFAULT_EXAMS !== 'undefined' && DEFAULT_EXAMS[index]) {
-                    selectedExams.push(DEFAULT_EXAMS[index]);
-                }
+            document.querySelectorAll('#exam-checkboxes input:checked').forEach(cb => {
+                const idx = parseInt(cb.value);
+                if (DEFAULT_EXAMS[idx]) selectedExams.push(DEFAULT_EXAMS[idx]);
             });
-
-            if (selectedExams.length > 0) {
-                newAcc.exams = selectedExams;
-            }
+            if (selectedExams.length > 0) newAcc.exams = selectedExams;
 
             currentAccounts[username] = newAcc;
-            
-            // Reset form và trạng thái
             this.reset();
+            
             if (editingUsername) {
                 editingUsername = null;
                 const btn = document.querySelector('#add-account-form button[type="submit"]');
                 btn.innerHTML = '<i class="fa-solid fa-plus"></i> Thêm vào danh sách';
                 btn.classList.replace('btn-success', 'btn-primary');
-                alert("Cập nhật tài khoản thành công! Nhớ bấm Đồng Bộ Lên Server.");
             }
             renderTable();
         });
 
-        // Hàm chỉnh sửa tài khoản
         function editAccount(username) {
             editingUsername = username;
             const info = currentAccounts[username];
-            
             document.getElementById('acc-username').value = username;
             document.getElementById('acc-password').value = info.pass || '';
             document.getElementById('acc-name').value = info.name || '';
+            document.getElementById('acc-device').value = info.id ? (Array.isArray(info.id) ? info.id.join(', ') : info.id) : '';
             
-            if (info.id) {
-                if (Array.isArray(info.id)) {
-                    document.getElementById('acc-device').value = info.id.join(', ');
-                } else {
-                    document.getElementById('acc-device').value = info.id;
-                }
-            } else {
-                document.getElementById('acc-device').value = '';
-            }
-            
-            // Đặt lại Checkboxes
-            const checkboxes = document.querySelectorAll('#exam-checkboxes input[type="checkbox"]');
-            checkboxes.forEach(cb => cb.checked = false);
-            
-            if (info.exams && info.exams.length > 0) {
+            document.querySelectorAll('#exam-checkboxes input').forEach(cb => cb.checked = false);
+            if (info.exams) {
                 info.exams.forEach(exam => {
-                    const matchIndex = DEFAULT_EXAMS.findIndex(de => (de.file && de.file === exam.file) || (de.url && de.url === exam.url) || (de.ten === exam.ten));
-                    if (matchIndex !== -1) {
-                        const cb = document.querySelector(`#exam-checkboxes input[value="${matchIndex}"]`);
-                        if (cb) cb.checked = true;
-                    }
+                    const matchIdx = DEFAULT_EXAMS.findIndex(de => (de.file && de.file === exam.file) || (de.url && de.url === exam.url) || (de.ten === exam.ten));
+                    if (matchIdx !== -1) document.querySelector(`#exam-checkboxes input[value="${matchIdx}"]`).checked = true;
                 });
             }
             
-            // Đổi nút submit
             const btn = document.querySelector('#add-account-form button[type="submit"]');
             btn.innerHTML = '<i class="fa-solid fa-pen"></i> Lưu thay đổi';
-            if (btn.classList.contains('btn-primary')) {
-                btn.classList.replace('btn-primary', 'btn-success');
-            }
-            
-            // Cuộn mượt mà lên trên cùng form
-            document.querySelector('.glass-card').scrollIntoView({ behavior: 'smooth' });
-            document.getElementById('acc-password').focus();
+            btn.classList.replace('btn-primary', 'btn-success');
+            document.getElementById('add-account-form').scrollIntoView({behavior: 'smooth'});
         }
 
-        // Xóa tài khoản
-        function deleteAccount(username) {
-            if(confirm(`Bạn có chắc muốn xóa tài khoản ${username} không?\nNhớ bấm "Đồng Bộ Lên Server" sau khi xoá để áp dụng!`)) {
-                delete currentAccounts[username];
+        function deleteAccount(user) { if(confirm(`Xóa ${user}?`)){ delete currentAccounts[user]; renderTable(); } }
+        function toggleStatus(user, st) { if(st==='normal') delete currentAccounts[user].status; else currentAccounts[user].status = st; renderTable(); }
+        function importFromHihi() {
+            if(typeof VALID_ACCOUNTS!=='undefined' && confirm("Gộp tài khoản từ file cũ?")) {
+                for(let [u, d] of Object.entries(VALID_ACCOUNTS)) if(!currentAccounts[u]) currentAccounts[u] = d;
                 renderTable();
             }
         }
 
-        // Chuyển đổi trạng thái tài khoản
-        function toggleStatus(username, newStatus) {
-            if (newStatus === 'normal') {
-                delete currentAccounts[username].status;
-            } else {
-                currentAccounts[username].status = newStatus;
-            }
-            renderTable();
-        }
-
-        // Lưu lên Google Sheets
         async function saveToGoogle() {
             const btn = document.getElementById('generate-btn');
             const originalText = btn.innerHTML;
-            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> ĐANG LƯU ĐỒNG BỘ...';
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> ĐANG LƯU...';
             btn.disabled = true;
-            
             try {
-                await fetch(GAS_ACCOUNTS_API, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        action: 'updateAccounts',
-                        data: currentAccounts
-                    })
-                });
-                alert("Thành công! Đã gửi lệnh lưu danh sách tài khoản mới lên Google Sheets.");
-            } catch(e) {
-                console.error("Lỗi lưu:", e);
-                alert("Có lỗi xảy ra khi lưu: " + e.message);
-            }
-            btn.innerHTML = originalText;
-            btn.disabled = false;
+                await fetch(GAS_ACCOUNTS_API, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ action: 'updateAccounts', data: currentAccounts }) });
+                alert("Đã lưu đồng bộ lên Server!");
+            } catch(e) { alert("Lỗi: " + e.message); }
+            btn.innerHTML = originalText; btn.disabled = false;
         }
 
-        document.getElementById('generate-btn').addEventListener('click', saveToGoogle);
+        // ==========================================
+        // LIVE EXAM MONITOR (DỮ LIỆU THẬT TỪ APPS SCRIPT)
+        // ==========================================
+        async function fetchLiveMonitor() {
+            try {
+                if (GAS_LIVE_API.includes("CHUA_CAP_NHAT")) return;
+                // Fetch API getLiveMonitor
+                const res = await fetch(`${GAS_LIVE_API}?action=getLiveMonitor&t=${Date.now()}`);
+                const data = await res.json();
+                
+                // Mảng chứa các học viên đang thi
+                // Cấu trúc trả về dự kiến: [{name, examName, score, time, ip, device}]
+                renderLiveMonitor(data);
+            } catch (e) {
+                console.error("Lỗi lấy dữ liệu giám sát:", e);
+                document.getElementById('live-students').innerHTML = `<div style="text-align:center; padding: 2rem; color: var(--danger);"><i class="fas fa-exclamation-triangle"></i> Lỗi kết nối. Bạn cần cập nhật code Apps Script API getLiveMonitor.</div>`;
+            }
+        }
 
-        // Khởi tạo ban đầu
+        function renderLiveMonitor(data) {
+            const container = document.getElementById('live-students');
+            document.getElementById('stat-online').textContent = data.length || 0;
+            previousLiveCount = data.length;
+
+            if (!data || data.length === 0) {
+                container.innerHTML = `<div style="text-align: center; padding: 2rem; color: var(--muted);"><i class="fas fa-coffee" style="font-size: 2rem; margin-bottom: 1rem; display: block;"></i> Không có học viên nào đang thi lúc này.</div>`;
+                return;
+            }
+
+            container.innerHTML = data.map(item => {
+                // Tạo một cái Avatar ngẫu nhiên màu sắc dựa trên tên
+                const initial = item.name ? item.name.charAt(0).toUpperCase() : '?';
+                const colors = ['#6366f1', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#ec4899'];
+                const charCode = item.name ? item.name.charCodeAt(0) : 0;
+                const color = colors[charCode % colors.length];
+
+                // Parse điểm và câu để tạo Progress bar
+                // Giả sử item.rawScore = "5/30 (Đang làm)"
+                let progress = 0;
+                let scoreText = item.rawScore || "0/0";
+                if (scoreText && scoreText.includes('/')) {
+                    const parts = scoreText.split(' ')[0].split('/');
+                    const current = parseInt(parts[0]) || 0;
+                    const total = parseInt(parts[1]) || 1;
+                    progress = Math.min(100, Math.round((current / total) * 100));
+                    scoreText = `${current}/${total}`;
+                }
+
+                return `
+                    <div class="live-student">
+                        <div class="student-avatar" style="background: ${color}20; color: ${color};">
+                            ${initial}
+                        </div>
+                        <div style="flex: 1; min-width: 0;">
+                            <div style="font-weight: 600; margin-bottom: 0.25rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${item.name}</div>
+                            <div style="font-size: 0.8rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                <i class="fas fa-file-alt"></i> ${item.examName || 'Đề thi'} • 
+                                <i class="far fa-clock"></i> Cập nhật lúc ${item.time}
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: ${progress}%; background: ${progress > 80 ? 'var(--success)' : 'var(--primary)'};"></div>
+                            </div>
+                        </div>
+                        <div class="live-dot" style="background: var(--success);"></div>
+                        <div class="score-badge">${scoreText}</div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        async function fetchActivityLog() {
+            if (GAS_ACTIVITY_API.includes("CHUA_CAP_NHAT")) {
+                document.getElementById('activity-log').innerHTML = '<div style="text-align: center; padding: 1rem; color: var(--danger);">Vui lòng cập nhật GAS_ACTIVITY_API</div>';
+                return;
+            }
+            try {
+                const res = await fetch(`${GAS_ACTIVITY_API}?action=getActivityLog&t=${Date.now()}`);
+                const data = await res.json();
+                activityLog = data;
+                renderActivityLog();
+            } catch (e) {
+                console.error("Lỗi lấy nhật ký:", e);
+            }
+        }
+
+        function renderActivityLog() {
+            const container = document.getElementById('activity-log');
+            if (!activityLog || activityLog.length === 0) {
+                container.innerHTML = '<div style="text-align: center; padding: 1rem; color: var(--muted);">Đang chờ hoạt động mới...</div>';
+                return;
+            }
+            container.innerHTML = activityLog.map(a => {
+                let icon = '';
+                let colorStyle = '';
+                if (a.text.includes('Đăng nhập')) {
+                    icon = '<i class="fas fa-sign-in-alt"></i>';
+                    colorStyle = 'color: var(--success);';
+                } else if (a.text.includes('Đăng xuất')) {
+                    icon = '<i class="fas fa-sign-out-alt"></i>';
+                    colorStyle = 'color: var(--warning);';
+                } else {
+                    icon = '<i class="fas fa-info-circle"></i>';
+                    colorStyle = 'color: var(--primary);';
+                }
+                
+                return `
+                <div class="activity-item">
+                    <div class="activity-time">${a.time}</div>
+                    <div style="font-size: 0.875rem; display: flex; align-items: center; gap: 8px;">
+                        <span style="${colorStyle}">${icon}</span>
+                        <span>${a.text}</span>
+                    </div>
+                </div>
+            `}).join('');
+        }
+
+        function toggleAutoRefresh() {
+            isAutoRefresh = !isAutoRefresh;
+            const icon = document.getElementById('refresh-icon');
+            if (isAutoRefresh) {
+                icon.className = 'fas fa-sync-alt fa-spin';
+                document.getElementById('refresh-text').textContent = 'Đang tự động cập nhật';
+                startAutoRefresh();
+            } else {
+                icon.className = 'fas fa-sync-alt';
+                document.getElementById('refresh-text').textContent = 'Đã dừng tự động';
+                clearInterval(liveMonitorInterval);
+            }
+        }
+
+        function startAutoRefresh() {
+            if (liveMonitorInterval) clearInterval(liveMonitorInterval);
+            liveMonitorInterval = setInterval(() => {
+                if (isAutoRefresh) {
+                    fetchLiveMonitor();
+                    fetchActivityLog();
+                }
+            }, 5000); // 5 giây cập nhật 1 lần
+        }
+
         window.addEventListener('DOMContentLoaded', () => {
-            renderExamCheckboxes();
-            loadAccountsFromGoogle();
+            createParticles();
+            setTimeout(() => document.getElementById('admin-password-input').focus(), 100);
         });
     </script>
 </body>

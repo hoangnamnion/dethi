@@ -4,18 +4,6 @@
 // Tài khoản hết hạn sẽ nhận được thông báo yêu cầu gia hạn ở giữa màn hình.
 
 const EXPIRED_ACCOUNTS = [
-    "hung",
-    "trung",
-    "quyen",
-    "minhduc",
-    "manh",
-    "quangvu",
-    "anhtuan",
-    "quyvinh",
-    "nga",
-    "vduc",
-    "dat",
-    "thuy",
 
 
     // Thêm các tài khoản khác ở đây, cách nhau bởi dấu phẩy

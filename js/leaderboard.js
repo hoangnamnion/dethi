@@ -4,7 +4,7 @@
 // LẤY DỮ LIỆU TỰ ĐỘNG TỪ GOOGLE SHEETS
 // ==========================================
 
-const LEADERBOARD_API = "https://script.google.com/macros/s/AKfycbwKtxjJBpm9gcV4LLDRVuXWS3LAllU7BGU0VMRpqH-PzIdnMSDMu9LAOtlzdWYnWlNU/exec";
+const LEADERBOARD_API = "https://script.google.com/macros/s/AKfycbzMnpTuAY6Et42N1M19wz6sCsLZgZnEAB23rIAwVmq-MQE0NJk92xHKcG9JF2eRur7V/exec";
 
 // ==========================================
 // TẢI NGẦM DỮ LIỆU ĐỂ HIỂN THỊ TỨC THÌ

