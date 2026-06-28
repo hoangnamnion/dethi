@@ -93,9 +93,9 @@ function startOnlineTracking(username) {
         deviceId = userData.deviceId || "";
     } catch(e) {}
 
-    // Hàm gửi ping
+    // Hàm gửi ping (đã đổi tên action để tránh AdBlock chặn)
     const sendPing = () => {
-        fetch(`${API_BASE}?action=pingOnline&username=${encodedName}&deviceId=${encodeURIComponent(deviceId)}`)
+        fetch(`${API_BASE}?action=syncUserStatus&username=${encodedName}&deviceId=${encodeURIComponent(deviceId)}`)
             .then(res => res.json())
             .then(data => {
                 // Kiểm tra nếu bị kick vì đăng nhập nhiều nơi
@@ -118,8 +118,8 @@ function startOnlineTracking(username) {
     // 1. Ping ngay lập tức khi mở trang
     sendPing();
 
-    // 2. Ping lặp lại mỗi 3 giây để phát hiện nhanh đăng nhập nơi khác
-    setInterval(sendPing, 3000);
+    // 2. Ping lặp lại mỗi 30 giây để tiết kiệm KV writes (free plan: 1,000 writes/ngày)
+    setInterval(sendPing, 30000);
 
     // 3. Offline khi đóng tab/trình duyệt
     window.addEventListener('beforeunload', () => {

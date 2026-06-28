@@ -372,7 +372,7 @@
         // State
         let currentAccounts = {};
         let editingUsername = null;
-        let prefetchAccountsPromise = fetch(API_BASE + "?action=getAccounts").then(res => res.json()).catch(e => null);
+        let prefetchAccountsPromise = fetch(API_BASE + "?action=getAccounts&t=" + Date.now()).then(res => res.json()).catch(e => null);
         
         let liveMonitorInterval = null;
         let isAutoRefresh = true;
@@ -434,7 +434,7 @@
                 
                 let data = await prefetchAccountsPromise;
                 if (!data) {
-                    const res = await fetch(API_BASE + "?action=getAccounts");
+                    const res = await fetch(API_BASE + "?action=getAccounts&t=" + Date.now());
                     data = await res.json();
                 }
                 currentAccounts = data || {};
@@ -553,6 +553,8 @@
                 btn.classList.replace('btn-success', 'btn-primary');
             }
             renderTable();
+            // Tự động lưu lên server ngay sau khi thêm/sửa
+            saveToGoogle();
         });
 
         function editAccount(username) {
@@ -577,8 +579,8 @@
             document.getElementById('add-account-form').scrollIntoView({behavior: 'smooth'});
         }
 
-        function deleteAccount(user) { if(confirm(`Xóa ${user}?`)){ delete currentAccounts[user]; renderTable(); } }
-        function toggleStatus(user, st) { if(st==='normal') delete currentAccounts[user].status; else currentAccounts[user].status = st; renderTable(); }
+        function deleteAccount(user) { if(confirm(`Xóa ${user}?`)){ delete currentAccounts[user]; renderTable(); saveToGoogle(); } }
+        function toggleStatus(user, st) { if(st==='normal') delete currentAccounts[user].status; else currentAccounts[user].status = st; renderTable(); saveToGoogle(); }
         function importFromHihi() {
             if(typeof VALID_ACCOUNTS!=='undefined' && confirm("Gộp tài khoản từ file cũ?")) {
                 for(let [u, d] of Object.entries(VALID_ACCOUNTS)) if(!currentAccounts[u]) currentAccounts[u] = d;
@@ -592,10 +594,35 @@
             btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> ĐANG LƯU...';
             btn.disabled = true;
             try {
-                await fetch(API_BASE, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ action: 'updateAccounts', data: currentAccounts }) });
-                alert("Đã lưu đồng bộ lên Server!");
-            } catch(e) { alert("Lỗi: " + e.message); }
-            btn.innerHTML = originalText; btn.disabled = false;
+                const res = await fetch(API_BASE + '?action=updateAccounts', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ action: 'updateAccounts', data: currentAccounts })
+                });
+
+                // Kiểm tra HTTP status
+                if (!res.ok) {
+                    const errText = await res.text();
+                    throw new Error(`Server trả về lỗi ${res.status}: ${errText}`);
+                }
+
+                const result = await res.json();
+
+                // Kiểm tra kết quả từ Worker
+                if (result.error) {
+                    throw new Error('Worker báo lỗi: ' + result.error);
+                }
+
+                // Xóa cache prefetch để lần tải lại sẽ lấy dữ liệu mới
+                prefetchAccountsPromise = null;
+
+                alert('✅ Đã lưu đồng bộ lên Server thành công!\n\nTổng: ' + Object.keys(currentAccounts).length + ' tài khoản.');
+            } catch(e) {
+                alert('❌ LỖI KHI LƯU!\n\n' + e.message + '\n\nKiểm tra:\n1. Worker đã được Deploy chưa?\n2. API_BASE có đúng không?\n3. Mở F12 > Console để xem chi tiết.');
+                console.error('saveToGoogle error:', e);
+            }
+            btn.innerHTML = originalText;
+            btn.disabled = false;
         }
 
         // ==========================================

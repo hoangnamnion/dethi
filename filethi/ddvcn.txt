@@ -1,0 +1,487 @@
+Phần trắc nghiệm:
+Câu 1: Loại nền nào dưới đây được gọi là nền thiên nhiên?
+A. Nền đệm cát;		          
+B. Nền được gia cố bằng cọc chống;		
+*C. Lớp đất thiên nhiên có khả năng chịu toàn bộ tải trọng mà không cần có sự gia cố của con người;		         
+D. Nền được gia cố bằng xi măng hóa.
+Câu 2: Những loại cọc nào sau đây được coi là cọc gia cố nền?
+*A. Cọc chống;                      B. Cọc tre;                     C. cọc gỗ;		 D. Cọc ma sát.
+Câu 3: Trong cấu tạo của móng gạch, chiều cao mỗi bậc gạch là bội số của bao nhiêu? 
+A. 70mm;	               *B. 75mm;	                 C. 80mm;	                D. ≥ 85mm.
+
+Câu 4: Các bộ phận của sàn gồm những bộ phận nào?
+A. Kết cấu chịu lực;	        B. Mặt sàn;         C. Trần sàn;       *D. Tất cả các đáp án trên
+Câu 5: Loại mặt sàn nào sau đây được cấu tạo không đúng?
+A. Mặt sàn láng;         B. Mặt sàn lát;            C. Mặt sàn sơn;            *D. Mặt sàn xây.       
+Câu 6: Khi phân loại theo kết cấu chịu lực thì có những loại thang nào? 
+A. Thang 1 vế, 2 vế, 3 vế, thang xoắn;                    
+*B. Thang có bản chịu lực, thang có khung chịu lực;                   
+C. Thang trong nhà, thang ngoài nhà;           
+D. Thang chính, thang phụ, thang thoát hiểm, thang phục vụ.
+Câu 7: Cách làm nào dưới đây được dùng để tạo ra hệ mái dốc?
+A. Đổ sàn BTCT có độ dốc;                                         B. Sử dụng hệ tường thu hồi;                     
+C. Sử dụng hệ vì kèo;                           		        *D. Tất cả các phương án trên.            
+Câu 8: Trình tự thi công hệ vì kèo-mái tôn? 
+A. Gác xà gồ, đặt vì kèo, lợp mái tôn;                                        
+B. Lợp mái tôn, đặt vì kèo, gác xà gồ;                                        
+*C. Đặt vì kèo, gác xà gồ, lợp mái tôn;                                        
+D. Đặt vì kèo, gác xà gồ, lợp mái tôn, bắn cầu phong.                                        
+Câu 9: Đáp án nào sau đây giúp chống thấm cho mái bằng? 
+A. Chống thấm bằng giấy dầu;                          B. Chống thấm bằng màng khò nóng;                                   
+C. Chống thấm bằng sơn chống thấm;               *D. Tất cả các đáp án trên.                                        
+Câu 10: Cửa sổ trượt là loại cửa nào sau đây?
+A. Cửa có trục quay bên cạnh cửa;                  B. Cửa có trục quay theo phương ngang;
+C. Cửa có trục quay ở giữa cánh cửa;            *D. Cửa trượt theo phương ngang.
+Câu 11: Phân loại theo chức năng thì có những loại công trình kiến trúc nào?
+*A. Công trình dân dụng, công trình công nghiệp, công trình giao thông, công trình thủy lợi, công trình hạ tầng kỹ thuật;
+B. Công trình bằng tranh, tre, gỗ, gạch, đá, bê tông, bê tông cốt thép, thép;
+C. Công trình nhà thấp tầng, nhà nhiều tầng, nhà cao tầng, nhà siêu cao tầng;
+D. Công trình nhà ở nông thôn, nhà ở biệt thự, nhà ở liền kề, nhà ở chung cư, nhà ở khách sạn, kí túc xá.
+Câu 12: Khi phân cấp công trình theo bậc chịu lửa thì có mấy cấp công trình?
+A. 3;                                 B. 4;                              C. 5;                       *D. 6.
+
+Câu 13: Các yếu tố nào sau đây không phải là yếu tố tạo thành kiến trúc? (Có thể chọn nhiều phương án)
+A. Yếu tố về mặt công năng;
+B. Yếu tố về khoa học kỹ thuật;
+C. Yếu tố về hình tượng nghệ thuật;
+*D. Yếu tố về thị giác.
+Câu 14: Tổng diện tích sàn xây dựng công trình được tính như thế nào?
+*A. Là tổng diện tích các sàn tầng cộng diện tích tầng hầm và mái;
+B. Là tổng diện tích các sàn tầng;
+C. Là tổng diện tích các sàn tầng cộng diện tích tầng hầm;
+D. Tất cả các phương án trên.
+Câu 15: Tổng diện tích sàn xây dựng công trình được tính như thế nào?
+*A. Là tổng diện tích các sàn tầng cộng diện tích tầng hầm và mái;
+B. Là tổng diện tích các sàn tầng;
+C. Là tổng diện tích các sàn tầng cộng diện tích tầng hầm;
+D. Tất cả các phương án trên.
+Câu 16: Phương pháp gia cố nền nào sau đây không thuộc phương pháp gia cố làm chặt đất?
+A. Dùng đầm, nện;		                   *B. Dùng phương pháp hạ mực nước ngầm;	
+C. Dùng cọc đất, cọc cát;		        D. Dùng đệm cát.
+Câu 17: Phân loại móng theo đặc tính thì có những loại móng nào?
+A. Móng cứng, móng mềm; 		              B. Móng đơn, móng băng;
+*C. Móng nông, móng sâu; 		                         D. Móng chịu tải đúng tâm, lệch tâm.
+Câu 18: Mặt sàn không thể làm từ những loại vật liệu nào sau đây?
+A. Gạch                      *B. Thạch cao;                      C. Gỗ;	          D. Chất dẻo, sơn.
+Câu 19: Khoảng đi lọt thang xuống tầng hầm là bao nhiêu?
+A. ≥ 1,5m;                      B. ≥ 1,6m;                       C. ≥ 1,7m;                      *D. ≥ 1,8m;            
+Câu 20: Cửa sổ là bộ phận có chức năng chính là gì?
+A. Lấy sáng, thông gió, bao che, giao thông theo phương ngang của nhà;
+*B. Lấy sáng, thông gió, bao che;
+C. Lấy sáng, thông gió, bao che, giao thông theo phương đứng của nhà;
+D. Lấy sáng, thông gió, bao che, chống cháy.
+Câu 21: Khi phân cấp công trình theo chất lượng sử dụng thì công trình được phân thành mấy cấp?
+A. 2;                                   B. 3;                                    *C. 4;                                  D. 5.
+Câu 22: Mật độ xây dựng thuần được tính như thế nào?
+*A. Là tỷ số giữa diện tích chiếm đất của công trình trên tổng diện tích lô đất;
+B. Là tỷ số giữa diện tích chiếm đất của công trình và các công trình phụ trợ trên tổng diện tích lô đất;
+C. Là tỷ số giữa diện tích chiếm đất của công trình trên tổng diện tích lô đất sau khi đã trừ đi diện tích các công trình phụ trợ;
+D. Tất cả các đáp án trên.
+Câu 23: Loại hình nhà ở nào sau đây dành riêng cho những người lao động nông nghiệp, gắn liền với đồng ruộng?
+* Nhà ở nông thôn
+B. Nhà ở biệt thự thành phố;
+C. Nhà ở liền kề;
+D. Nhà ở chung cư.
+Câu 24: Phòng có chức năng chính là không gian đầu tiên khi bước vào nhà, tiếp nối đến các phòng khác. Là nơi để giày dép, mũ nón và áo khoác để chỉnh trang y phục, là loại phòng nào?
+*. Tiền phòng;            B. Phòng khách;              C. Phòng ngủ;             D. Phòng ăn, bếp.
+Câu 25: Công trình công cộng là công trình như thế nào? 
+A. Là công trình dùng cho mục đích để ở;       
+B. Là các công trình dùng cho mục đích kinh doanh, cho thuê;       
+*. Là các công trình phục vụ sinh hoat tinh thần, vật chất của con người ngoài trừ chức năng để ở;
+D. Tất cả các đáp án trên.
+Câu 26: Tại sao cần thiết kế nhìn rõ trong nhà công cộng? 
+A. Vì ai cũng có nhu cầu nhìn rõ các đối tượng cần quan sát;       
+B. Sự thu nhận mục tiêu phải ở chất lượng cao;       
+C. Có nhiều vị trí bất lợi hơn so với các vị trí khác;
+*. Tất cả các phương án trên;
+Câu 27: Khi phân nhóm các bộ phận chủ yếu của nhà công cộng, nhóm hay bộ phận nào sau đây không phải là bộ phận chủ yếu của nhà công cộng? 
+A. Nhóm các phòng chính;                                         B. Nhóm các phòng phụ;       
+C. Nhóm phương tiện giao thông.                              *. Cửa đi, cửa sổ.
+Câu 28: Loại hình nhà ở nào sau đây là loại nhà ở gia đình độc lập, tiện nghi sang trọng có sân vườn, chủ yếu phục vụ cho người có thu nhập cao, thường xây trong những khu vực yên tĩnh, có nhiều cây xanh?
+A. Nhà ở nông thôn                                                    *B. Nhà ở biệt thự thành phố;
+C. Nhà ở liền kề;                                                          D. Nhà ở chung cư.
+Câu 29: Giai đoạn thoát người thứ nhất là giai đoạn nào? 
+A. Thoát người khỏi hành lang cầu thang;                  *B. Thoát người ra khỏi phòng;       
+C. Thoát người ra khỏi công trình;                               D. Tất cả các phương án trên;
+Câu 30: Phương pháp gia cố nền nào sau đây thuộc phương pháp thay thế đất?
+A. Dùng đầm, nện;		                    B. Dùng phương pháp hạ mực nước ngầm;	
+*C. Dùng đệm cát;	                               D. Dùng cọc ma sát.
+Câu 31: Trần sàn không làm từ những loại vật liệu nào sau đây?
+*A. Gạch                    B. Thạch cao;                C. Gỗ, nhôm;	          D. Chất dẻo, sơn.
+Câu 32: Khoảng đi lọt từ bậc thang làn dưới đi đến sàn thang làn trên là bao nhiêu?
+A. ≥ 2,0m;                      B. ≥ 2,1m;                       *C. ≥ 2,2m;                      D. ≥ 2,3m.            
+Câu 33: Ưu điểm của hệ mái dốc bằng hệ vì kèo-mái tôn là gì? 
+*A. Dễ thi công, tiết kiệm, hệ mái nhẹ, vượt nhịp lớn, vật liệu đa dạng;                                        
+B. Ghép cốt pha, đặt cốt thép, đổ bê tông, xây tường thu hồi, đặt xà gồ, lợp mái tôn;                                        
+C. Ghép cốt pha, đặt cốt thép, đổ bê tông, đặt xà gồ, xây tường thu hồi, lợp mái tôn;                                        
+D. Ghép cốt pha, đặt cốt thép, đổ bê tông, xây tường thu hồi, lợp mái tôn, đặt xà gồ.                                        
+Câu 34: Có mấy cách lắp khuôn cửa vào tường?
+A. 2;                                   *B. 3;                                 C. 4;                                D. 5.
+Câu 35: Đặc điểm nào sau đây là đặc điểm của kiến trúc? (Có thể chọn nhiều đáp án)
+*A. Kiến trúc mang tính tổng hợp giữa khoa học và nghệ thuật;
+*B. Kiến trúc chịu ảnh hưởng của khí hậu và tự nhiên;
+*C. Kiến trúc phản ánh xã hội, mang tính tư tưởng;
+*D. Kiến trúc mang tính dân tộc và hiện đại.
+Câu 36: Loại hình nhà ở nào sau đây là nhà ở khối ghép, nhà phố, nhà kiểu dãy, kiểu băng. Đây là loại nhà gồm các căn đặt cạnh nhau theo từng dãy, cho phép xây dựng hàng loạt, tiết kiệm đất xây dựng?
+A. Nhà ở nông thôn                                                          B. Nhà ở biệt thự thành phố;
+*C. Nhà ở liền kề;                                                              D. Nhà ở chung cư.
+Câu 37: Phòng có chức năng chính là nơi nghỉ ngơi hóng mát, có thể làm sân gia công hoặc phơi phóng là loại phòng nào sau đây?
+A. Phòng vệ sinh;             B. Phòng kho;              C. Phòng ngủ;       *D. Ban công, lô gia.
+Câu 38: Vì sao cần thoát người trong nhà công cộng? 
+A. Vì số lượng người sử dụng quá lớn;       
+B. Thời gian thoát người thường ngắn;       
+C. Khả năng cao xảy ra hỏa hoạn, khủng bố…;
+*D. Tất cả các phương án trên;
+Câu 39: Trong phương pháp thiết kế nền dốc để thỏa mãn yêu cầu nhìn rõ, tia nhìn được hiểu là? 
+*A. Là đường thẳng phóng từ tầm mắt người quan sát đến điểm quan sát thiết kế;
+B. Là điểm cần được thâu nhận;       
+C. Là điểm khó quan sát thấy nhất của đối tượng;       
+D. Là một điểm hay một đường thẳng nằm ngang khó nhìn thấy nhất mà khi người quan sát nhìn thấy được thì tất cả các điểm còn lại của vùng đối tượng cần quan sát sẽ được nhìn thấy;
+Câu 40: Khe lún có cấu tạo như thế nào?
+A. Chiều rộng khe lún 4-8cm, Chiều cao khe lún tính từ mặt móng đến đỉnh 
+B. Chiều rộng khe lún 2-3cm, Chiều cao khe lún tính từ đáy móng đến đỉnh mái của công trình;	     
+*C. Chiều rộng khe lún 4-8cm, Chiều cao khe lún tính từ đáy móng đến đỉnh mái của công trình;	
+D. Chiều rộng khe lún 2-3cm, Chiều cao khe lún tính từ mặt móng đến đỉnh mái của công trình;
+Câu 41: Cấu tạo mái dốc gồm mấy lớp?
+A. 1;                                 B. 2;                               *C. 3;                                 D. 4.            
+Câu 42: Đặc điểm nào sau đây không phải là đặc điểm của kiến trúc? 
+A. Kiến trúc mang tính tổng hợp giữa khoa học và nghệ thuật;
+B. Kiến trúc phản ánh xã hội, mang tính tư tưởng;
+*C. Kiến trúc không chịu ảnh hưởng của khí hậu và tự nhiên;
+D. Kiến trúc mang tính dân tộc và hiện đại.
+Câu 43: Phòng có chức năng chính là nơi dùng để nấu nướng và ăn uống là loại phòng nào sau đây?
+A. Tiền phòng;             B. Phòng khách;            C. Phòng ngủ;             *D. Phòng ăn, bếp.
+Câu 44: Trong phương pháp thiết kế nền dốc để thỏa mãn yêu cầu nhìn rõ, điểm quan sát thiết kế được hiểu là? 
+A. Là điểm cần được thâu nhận;       
+B. Là điểm khó quan sát thấy nhất của đối tượng;       
+*C. Là một điểm hay một đường thẳng nằm ngang khó nhìn thấy nhất mà khi người quan sát nhìn thấy được thì tất cả các điểm còn lại của vùng đối tượng cần quan sát sẽ được nhìn thấy;
+D. Là điểm từ mắt người quan sát đến điểm quan sát thiết kế;
+Câu 45: Những cách làm nào sau đây đúng với phương pháp gia cố nền bằng đệm cát? (Có thể chọn nhiều phương án)
+*A. Đệm cát thay thế toàn bộ;	            B. Đệm cát thay thế từng góc;
+*C. Đệm cát thay thế một phần;                    D. Đệm cát thay thế từng phần theo diện tích
+Câu 46: Mác đá nói đến khả năng chịu lực gì của mẫu đá? 
+A. Cường độ chịu kéo của đá;		                      B. Cường độ chịu uốn của đá;
+C. Cường độ chịu cắt của đá;		                      *D. Cường độ chịu nén của đá.
+Câu 47: Phân loại theo đặc tính thì có những loại sàn nào?
+A. Sàn đặc, sàn rỗng;
+B. Sàn bê tông cốt thép nặng, sàn bê tông cốt thép nhẹ;		      
+*C. Sàn toàn khối, sàn lắp ghép;
+D. Sàn thép, sàn gỗ, sàn bê tông cốt thép;	
+Câu 48: Cấu tạo mặt sàn gồm mấy lớp?
+A. 2;	                           *B. 3;                              C.  4;		              D. 5.
+Câu 49: Khi phân loại theo vị trí thì có những loại thang nào? 
+A. Thang 1 vế, 2 vế, 3 vế, thang xoắn;                    
+B. Thang có bản chịu lực, thang có khung chịu lực;                   
+*C. Thang trong nhà, thang ngoài nhà;           
+D. Thang chính, thang phụ, thang thoát hiểm, thang phục vụ.
+Câu 50: Trình tự thi công hệ mái dốc bằng tường thu hồi? 
+A. Ghép cốt pha, đặt cốt thép, xây tường thu hồi, đổ bê tông, đặt xà gồ, lợp mái tôn;                                        
+*B. Ghép cốt pha, đặt cốt thép, đổ bê tông, xây tường thu hồi, đặt xà gồ, lợp mái tôn;                                        
+C. Ghép cốt pha, đặt cốt thép, đổ bê tông, đặt xà gồ, xây tường thu hồi, lợp mái tôn;                                        
+D. Ghép cốt pha, đặt cốt thép, đổ bê tông, xây tường thu hồi, lợp mái tôn, đặt xà gồ;                                        
+Câu 51: Cửa sổ có những hình thức đóng mở nào?
+A. Cửa đóng mở theo chiều đứng;                           B. Cửa lật;
+C. Cửa trượt;                                                             *D. Tất cả các đáp án trên.
+Câu 52: Theo hình thức khuôn thì có mấy loại khuôn cửa?
+A. 1;                                   B. 2;                                 C. 3;                                D. 4.
+Câu 53: Phân loại theo vật liệu thì có những loại công trình kiến trúc nào?
+A. Công trình dân dụng, công trình công nghiệp, công trình giao thông, công trình thủy lợi, công trình hạ tầng kỹ thuật;
+B. Công trình bằng tranh, tre, gỗ, gạch, đá, bê tông, bê tông cốt thép, thép;
+C. Công trình nhà thấp tầng, nhà nhiều tầng, nhà cao tầng, nhà siêu cao tầng;
+D. Công trình nhà ở nông thôn, nhà ở biệt thự, nhà ở liền kề, nhà ở chung cư, nhà ở khách sạn, kí túc xá.
+Câu 54: Đặc điểm nào sau đây không phải là đặc điểm của kiến trúc?
+A. Kiến trúc mang tính tổng hợp giữa khoa học và nghệ thuật;
+B. Kiến trúc chịu ảnh hưởng của khí hậu và tự nhiên;
+C. Kiến trúc phản ánh xã hội, mang tính tư tưởng;
+D. Kiến trúc không mang tính dân tộc và hiện đại.
+Câu 55: Khoảng lùi của công trình là gì?
+A. Là đường giới hạn cho phép xây dựng nhà, công trình trên đó;
+B. Là khoảng cách giữa chỉ giới đường đỏ và chỉ giới xây dựng;
+C. Là đường ranh giới giữa phần đất giành cho giao thông và phần đất giành cho xây dựng;
+D. Tất cả các phương án trên.
+Câu 56: Nhà siêu cao tầng là nhà có số tầng bằng bao nhiêu?
+A. Trên 30 tầng;          B. Trên 20 tầng;            C. Trên 40 tầng;             D. Trên 35 tầng.
+Câu 57: Phòng có chức năng chính là không gian nghỉ ngơi sau ngày làm việc, là không gian riêng của cá nhân hay vợ chồng là loại phòng nào dưới đây?
+A. Tiền phòng;           B. Phòng khách;             C. Phòng ngủ;            D. Phòng ăn, bếp.
+Câu 58: Giải pháp liên hệ giữa các bộ phận trên một tầng của nhà công cộng? 
+A. Giải pháp không gian kiểu phòng lớn;       
+B. Giải pháp chuỗi không gian liên hệ xuyên phòng;
+C. Giải pháp liên hệ kiểu hành lang;
+D. Tất cả các đáp án trên.
+Câu 59: Giai đoạn thoát người thứ nhất là giai đoạn nào? 
+A. Thoát người khỏi hành lang cầu thang;                   B. Thoát người ra khỏi phòng;       
+C. Thoát người ra khỏi công trình;                               D. Tất cả các phương án trên;
+Câu 60: Nền của công trình là gì?
+A. Nền là lớp đất yếu được bóc đi khi xây dựng công trình;	             
+B. Nền là lớp đất nằm dưới móng chịu toàn bộ hoặc phần lớn tải trọng của công trình;               
+C. Nền là lớp đất đắp vào phần thiếu hụt sau khi xây dựng móng công trình;	          
+D. Nền là lớp đất nằm dưới móng công trình nhưng không chịu tải trọng của công trình.
+Câu 61: Những loại cọc nào sau đây được coi là cọc chịu lực? (Có thể chọn nhiều phương án)
+A. Cọc chống;                      B. Cọc tre;                       C. cọc gỗ;		      D. Cọc ma sát.
+Câu 62: Móng của công trình là gì?
+A. Móng là lớp đất nằm dưới móng chịu toàn bộ hoặc phần lớn tải trọng của công trình; 
+B. Móng là bộ phận thấp nhất của công trình, qua móng tải trọng được truyền xuống đất nền;             
+C. Móng là lớp đất đắp vào phần thiếu hụt sau khi xây dựng móng công trình; 
+D. Móng là bộ phận trung gian của công trình, qua móng tải trọng được truyền xuống đất nền;             
+Câu 62: Khe nhiệt độ có cấu tạo như thế nào?
+A. Chiều rộng khe nhiệt độ 4-8cm, Chiều cao khe nhiệt độ tính từ mặt móng đến đỉnh mái của công trình;		     
+B. Chiều rộng khe nhiệt độ 2-3cm, Chiều cao khe nhiệt độ tính từ đáy móng đến đỉnh mái của công trình;	
+C. Chiều rộng khe nhiệt độ 2-3cm, Chiều cao khe nhiệt độ tính từ mặt móng đến đỉnh mái của công trình;
+D. Chiều rộng khe nhiệt độ 4-8cm, Chiều cao khe nhiệt độ tính từ đáy móng đến đỉnh mái của công trình;
+Câu 63: Kết cấu chịu lực của sàn không thể làm từ loại vật liệu nào sau đây?
+A. Bê tông;	                   B. Gỗ;                      C. Vữa xây;		       D. Thép.
+Câu 64: Phương pháp nào sau đây được sử dụng để để chống thấm sàn vệ sinh? (Có thể chọn nhiều phương án)
+A. Ngâm nước xi măng;                                                            B. Tạo màng chống thấm;                   
+C. Sử dụng bê tông bọt xốp cho phần kết cấu chịu lực;           D. Sơn chống thấm.
+Câu 65: Khi phân loại theo hình dáng thì có những loại thang nào? 
+A. Thang 1 vế, 2 vế, 3 vế, thang xoắn;                    
+B. Thang có bản chịu lực, thang có khung chịu lực;                   
+C. Thang trong nhà, thang ngoài nhà;           
+D. Thang chính, thang phụ, thang thoát hiểm, thang phục vụ.
+Câu 66: Ưu điểm của hệ mái dốc bê tông cốt thép? (Có thể chọn nhiều phương án)
+A. Tăng độ cứng, ổn định;                                         B. Cách âm, cách nhiệt, chống cháy;                     
+C. Chống trộm;                                                        D. Thi công không an toàn.            
+Câu 67: Cấu tạo mái bằng gồm mấy lớp? 
+A. 1;                                  B. 2;                                    C. 3;                                       D. 4.                                        
+Câu 68: Cửa sổ lật là loại cửa nào sau đây?
+A. Cửa có trục quay bên cạnh cửa;                      B. Cửa có trục quay theo phương ngang;
+C. Cửa có trục quay ở giữa cánh cửa;               D. Cửa trượt theo phương ngang.
+Câu 69: Khái niệm môn học kiến trúc được hiểu như thế nào?
+A. Là môn học vừa mang tính khoa học kỹ thuật vừa mang tính nghệ thuật;
+B. Là môn học vừa mang tính khoa học kỹ thuật vừa mang tính kinh tế;
+C. Là môn học vừa mang tính khoa học vừa mang tính kinh tế;
+D. Là môn học vừa mang tính kỹ thuật vừa mang tính kinh tế.
+Câu 70: Khi phân cấp công trình theo độ bền lâu thì công trình được phân thành mấy cấp?
+A. 3;                                   B. 4;                                    C. 5;                                  D. 6.
+Câu 71: Những yêu cầu nào sau đây là yêu cầu của kiến trúc? (Có thể chọn nhiều phương án)
+A. Yêu cầu về sự thích dụng;                               B. Yêu cầu đảm bảo bền vững;
+C. Yêu cầu về mỹ quan;                                       D. Yêu cầu về kinh tế.
+Câu 72: Hệ số sử dụng đất được tính như thế nào?
+A. Là tỷ số giữa diện tích chiếm đất của công trình trên tổng diện tích lô đất;
+B. Là tỷ số giữa diện tích chiếm đất của công trình và các công trình phụ trợ trên tổng diện tích lô đất;
+C. Là tỷ số giữa tổng diện tích sàn xây dựng công trình trên diện tích lô đất;
+D. Tất cả các phương án trên.
+Câu 73: Loại hình nhà ở nào sau đây là nhà ở dành cho tập thể nhiều gia đình. Trong đó căn hộ là một không gian khép kín độc lập cho một gia đình?
+A. Nhà ở nông thôn;                                                       B. Nhà ở biệt thự thành phố;
+C. Nhà ở liền kề;                                                             D. Nhà ở chung cư.
+Câu 74: Độ lún giới hạn cho phép của nền thiên nhiên là bao nhiêu?
+A. 7cm;		 B. 8cm;		  C. 9cm;		  D. 10cm.
+Câu 75: Phân loại móng theo vật liệu thì có những loại móng nào? (Có thể chọn nhiều phương án)
+A. Móng gạch;          B. Móng đá;          C. Móng băng;          D. Móng bê tông cốt thép.
+Câu 76: Phân loại theo phương pháp thi công thì có những loại sàn nào?
+A. Sàn đặc, sàn rỗng;
+B. Sàn bê tông cốt thép nặng, sàn bê tông cốt thép nhẹ;		      
+C. Sàn toàn khối, sàn lắp ghép;
+D. Sàn thép, sàn gỗ, sàn bê tông cốt thép;	
+Câu 77: Khi phân loại theo chức năng sử dụng thì có những loại thang nào? 
+A. Thang 1 vế, 2 vế, 3 vế, thang xoắn;                    
+B. Thang có bản chịu lực, thang có khung chịu lực;                   
+C. Thang trong nhà, thang ngoài nhà;           
+D. Thang chính, thang phụ, thang thoát hiểm, thang phục vụ.
+Câu 78: Trần thạch cao mà toàn bộ khung xương được ẩn giấu bên trong tấm thạch cao được gọi là gì?
+A. Trần thạch cao tiêu âm;                                                  B. Trần thạch cao chịu nước;                                                 
+C. Trần thạch cao nổi;                                                         D. Trần thạch cao chìm.                          
+Câu 79: Phân loại theo hình thức tổ chức công năng thì có những loại công trình kiến trúc nào?
+A. Công trình dân dụng, công trình công nghiệp, công trình giao thông, công trình thủy lợi, công trình hạ tầng kỹ thuật;
+B. Công trình bằng tranh, tre, gỗ, gạch, đá, bê tông, bê tông cốt thép, thép;
+C. Công trình nhà ở nông thôn, nhà ở biệt thự, nhà ở liền kề, nhà ở chung cư, nhà ở khách sạn, kí túc xá.
+D. Công trình nhà thấp tầng, nhà nhiều tầng, nhà cao tầng, nhà siêu cao tầng;
+Câu 80: Có mấy loại mật độ xây dựng?
+A. 1;                                   B. 2;                                C. 3;                              D. 4.
+Câu 81: Lịch sử phát triển của nhà ở trải qua mấy thời kỳ phát triển xã hội?
+A. 3;                                 B. 4;                                 C. 5;                                 D. 6.
+Câu 82: Theo thu nhập của người dân thì nhà được phân thành mấy loại?
+A. 1;                                 B. 2;                                 C. 3;                                   D. 4.
+Câu 83: Phòng có chức năng chính là nơi dùng để tắm giặt, đại tiểu tiện?
+A. Phòng vệ sinh;        B. Phòng khách;            C. Phòng ngủ;              D. Phòng ăn, bếp.
+Câu 84: Loại chung cư mà “có hành lang giữa, các căn hộ đặt dọc 2 bên hành lang, nhà có thể có 1 hoặc nhiều cầu thang.” thuộc loại chung cư nào? 
+A. Chung cư kiểu phân đoạn (kiểu đơn nguyên);       
+B. Chung cư kiểu hành lang;       
+C. Chung cư kiểu có sân trong;
+D. Tất cả các đáp án trên.
+Câu 85: Giai đoạn thoát người thứ ba là giai đoạn nào? 
+A. Thoát người khỏi hành lang cầu thang;                   B. Thoát người ra khỏi phòng;       
+C. Thoát người ra khỏi công trình;                               D. Tất cả các phương án trên;
+Câu 86: Đặc điểm chính của công trình công cộng là gì? 
+A. Mang tính đại chúng;       
+B. Được xây dựng hàng loạt trên quy mô lớn;       
+C. Hệ thống kết cấu phong phú, công năng sớm bị lỗi thời.
+D. Tất cả các đáp án trên
+Câu 87: Khái niệm nhà ở được hiểu như thế nào?
+A. Nhà ở là công trình chuyên dụng dùng để sản xuất hàng hóa;
+B. Nhà ở là công trình chuyên dụng dùng để làm văn phòng cho thuê;
+C. Nhà ở là công trình chuyên dụng dùng để ở;
+D. Nhà ở là công trình chuyên dụng dùng để kinh doanh.
+Câu 88: Giai đoạn thoát người thứ nhất là giai đoạn nào? 
+A. Thoát người khỏi hành lang cầu thang;                   B. Thoát người ra khỏi phòng;       
+C. Thoát người ra khỏi công trình;                               D. Tất cả các phương án trên;
+Câu 89: Phương pháp gia cố nền nào sau đây không thuộc phương pháp gia cố đất bằng hóa chất?
+A. Xi măng hóa;	                                B. Hạ mực nước ngầm;
+C. Silicat hóa;	                                D. Bi tum hóa.
+Câu 90: Đối với loại sàn bản dầm, tải trọng được xem là truyền theo mấy phương?
+A. 4;	                           B. 3;                             C.  2;		             D. 1.
+Câu 91: Mái nhà là bộ phận có chức năng gì?
+A. Là phương tiện giao thông theo phương ngang nhà;
+B. Là bộ phận bao che, chịu lực trên cùng của ngôi nhà;                     
+C. Là phương tiện giao thông theo phương ngang nhà;                      
+D. Là bộ phận chịu lực theo phương đứng của ngôi nhà.            
+Câu 92: Trần thạch cao là loại trần như thế nào?
+A. Là trần sử dụng các tấm thạch cao làm lớp trần thứ hai nằm dưới lớp trần nguyên thủy;   
+B. Là trần sử dụng các tấm vôi làm lớp trần thứ hai nằm dưới lớp trần nguyên thủy;                                                 
+C. Là trần sử dụng các tấm thạch cao làm lớp trần thứ ba nằm dưới lớp trần nguyên thủy và các lớp đệm;                          
+D. Là trần sử dụng các tấm vôi làm lớp trần thứ ba nằm dưới lớp trần nguyên thủy.                          
+Câu 93: Cửa đi là bộ phận có chức năng gì?
+A. Lấy sáng, thông gió, bao che;
+B. Lấy sáng, thông gió, bao che, giao thông theo phương đứng của nhà;
+C. Lấy sáng, thông gió, bao che, chống cháy;
+D. Lấy sáng, thông gió, bao che, giao thông theo phương ngang của nhà.
+Câu 94: Đặc điểm nào sau đây không phải là đặc điểm của kiến trúc? (Có thể chọn nhiều đáp án)
+A. Kiến trúc mang tính tổng hợp giữa khoa học và kinh tế;
+B. Kiến trúc chịu ảnh hưởng của khí hậu và tự nhiên;
+C. Kiến trúc phản ánh xã hội, mang tính tư tưởng;
+D. Kiến trúc mang tính dân tộc và hiện đại.
+Câu 95: Nhà nhiều tầng là nhà có số tầng bằng bao nhiêu?
+A. 1-2 tầng;                     B. 3-7 tầng;                      C. 1-7 tầng;                    D. 1-8 tầng.
+Câu 96: Khu chức năng chính trong một căn nhà?
+A. Khu vực sáng, khu vực chiều;                                 B. Khu vực chiều, khu vực tối;       
+C. Khu vực đêm, khu vực ngày;                                   D. Tất cả các đáp án trên.
+Câu 97: Quy trình thoát người có mấy giai đoạn? 
+A. 2;                             B. 3;                             C. 4;                            D. 5;
+Câu 98: Trong phương pháp thiết kế nền dốc để thỏa mãn yêu cầu nhìn rõ, độ nâng tia nhìn được hiểu là? 
+A. Là điểm cần được thâu nhận;       
+B. Là là khoảng cách giữa hai tia nhìn liền kề để từ mắt của người quan sát ở hàng ghế phía trước dóng thẳng đứng lên một đoạn cắt tia nhìn của người ngồi sau liền kề;       
+C. Là một điểm hay một đường thẳng nằm ngang khó nhìn thấy nhất mà khi người quan sát nhìn thấy được thì tất cả các điểm còn lại của vùng đối tượng cần quan sát sẽ được nhìn thấy;
+D. Là điểm từ mắt người quan sát đến điểm quan sát thiết kế;
+Câu 99: Bộ phận kết cấu nào trực tiếp nhận tải trọng đứng, tác động của công trình?
+A. Cột;	                   B. Dầm;	                         C. Sàn;	                    D. Móng.
+Câu 100: Trình tự thi công hệ mái dốc bê tông cốt thép? 
+A. Ghép cốt pha, đặt cốt thép, đổ bê tông, trát gờ, dán ngói;                                        
+B. Đặt cốt thép, Ghép cốt pha, đổ bê tông, trát gờ, dán ngói;                                        
+C. Ghép cốt pha, đổ bê tông, đặt cốt thép, trát gờ, dán ngói;                                        
+D. Ghép cốt pha, đặt cốt thép, đổ bê tông, dán ngói, trát gờ.                                       
+
+
+Phần tự luận:
+Câu 1: (2 điểm) Anh (chị) hãy trình bày khái niệm và phân loại mái nhà? Độ dốc mái nhà có tác dụng gì?
+Trả lời
+
+
+-	Mái nhà là bộ phận kết cấu nằm ở trên cùng của công trình, có chức năng bao che, chịu lực, chống mưa nắng, cách âm cách nhiệt và tạo hình khối kiến trúc.
+-	Phân loại mái nhà:
+1.	Mái dốC. Mái có độ nghiêng (thường > 5%).
+2.	Mái bằng: Mái có độ nghiêng nhỏ (≤ 5%), thường làm bằng bê tông cốt thép.
+-	Tác dụng của độ dốc mái:
+Thoát nước mưa nhanh chóng, tránh đọng nước gây thấm.
+Tăng khả năng chống thấm, chống nóng.
+Tạo hình khối kiến trúc đẹp, phù hợp với khí hậu và phong cách công trình.
+Giảm tải trọng tuyết (ở vùng lạnh)
+
+
+
+
+
+Câu 2: (3,5 điểm) Anh (chị) hãy nêu các bộ phận cơ bản của cầu thang? Vẽ hình minh họa? ( giống câu 14)
+Trả lời
+
+Các bộ phận cơ bản của cầu thang gồm:
+1.  Bậc thang: Mặt bậc (chiều rộng 25-30cm), gờ bậc (chiều cao 15-18cm).
+2.  Chiếu nghỉ (nghỉ thang): Nền phẳng để chuyển hướng hoặc nghỉ giữa chừng.
+3.  Lan can và tay vịn: Bảo vệ an toàn, chiều cao thường 90-110cm.
+4.  Khoảng thông tầng: Không gian trống giữa các tầng thang.
+5.  Phần kết cấu chịu lựC. Dầm thang, bản thang.
+Câu 3: (2 điểm) Anh (chị) hãy trình bày đặc điểm cấu tạo các lớp của sàn chống thấm toàn khối? Vẽ hình minh họa?
+Trả lời
+
+Sàn chống thấm toàn khối (thường dùng cho vệ sinh, bếp) gồm các lớp từ dưới lên:
+1.  Lớp kết cấu chịu lựC. Bản bê tông cốt thép.
+2.  Lớp chống thấm: Màng khò nóng, sơn chống thấm hoặc vữa chống thấm.
+3.  Lớp bảo vệ và tạo dốC. Vữa xi măng có tạo dốc 1-2% về phía thoát nước.
+4.  Lớp hoàn thiện: Gạch lát ceramic hoặc sàn nhựa.
+Câu 4: (3,5 điểm) Anh (chị) hãy trình bày các loại phòng trong nhà ở? Đặc điểm và chức năng của từng loại? ( giống câu 9)
+Trả lời
+
+Tiền phòng (sảnh): Không gian đầu tiên, dùng để tiếp khách nhẹ, để giày dép, chỉnh trang.
+•  Phòng khách: Không gian chính để giao tiếp, tiếp khách, sum họp gia đình.
+•  Phòng ngủ: Không gian nghỉ ngơi, riêng tư cho cá nhân hoặc vợ chồng.
+•  Phòng ăn + bếp: Nấu nướng và ăn uống.
+•  Phòng vệ sinh: Tắm giặt, vệ sinh cá nhân.
+•  Ban công, lô giA. Không gian mở, hóng mát, phơi phóng, trồng cây.
+•  Phòng kho: Lưu trữ đồ đạc.
+Câu 5: (3,5 điểm) Anh (chị) hãy nêu khái niệm, vị trí, tác dụng của tường, phân loại tường? Trình bày vị trí, chức năng của các bộ phận trong tường: lanh tô, giằng tường, ô văng (Vẽ hình minh họa)?
+Trả lời
+
+Tường là bộ phận bao che, phân chia không gian, chịu lực hoặc không chịu lực, cách âm cách nhiệt.
+Phân loại:
+•  Theo vị trí: Tường ngoài, tường trong.
+•  Theo chức năng: Tường chịu lực, tường ngăn.
+•  Theo vật liệu: Tường gạch, BTCT, kính…
+•  Lanh tô: Phần tường nằm phía trên cửa sổ, cửa đi (chịu lực và phân bố tải).
+•  Giằng tường: Dầm ngang hoặc cột giằng để tăng độ cứng và ổn định cho tường.
+•  Ô văng: Phần sàn hoặc mái nhô ra ngoài tường (ban công, mái che).
+Câu 6: (2 điểm) Anh (chị) hãy trình bày khái niệm mái bằng, cấu tạo mái bằng, các biện pháp chống thấm cho mái bằng? ( giống câu 13)
+Trả lời
+
+Mái bằng là loại mái có độ dốc nhỏ (≤ 5%), thường dùng cho nhà hiện đại, công trình công cộng.
+Cấu tạo (từ dưới lên):
+1.  Lớp kết cấu BTCT.
+2.  Lớp chống thấm (màng khò nóng, sơn chống thấm).
+3.  Lớp cách nhiệt (xốp, bông thủy tinh).
+4.  Lớp bảo vệ và hoàn thiện (sỏi, gạch lát).
+Biện pháp chống thấm: Màng khò nóng, giấy dầu, sơn chống thấm, bê tông chống thấm…
+Câu 7: (3,5 điểm) Anh (chị) hãy trình bày đặc điểm cấu tạo và làm việc của sàn sườn toàn khối (bản dầm và bản kê 4 cạnh)? Vẽ hình minh họa?
+Trả lời
+
+Sàn bản dầm: Bản mỏng + hệ dầm chính và dầm phụ. Tải trọng truyền theo 1 hoặc 2 phương.
+•  Sàn bản kê 4 cạnh: Bản được đỡ 4 cạnh, làm việc uốn 2 phương, tiết kiệm vật liệu hơn.
+Ưu điểm: Thi công liền khối, độ cứng cao, chịu lực tốt.
+Câu 8: (2 điểm) Anh (chị) hãy trình bày khái niệm, yêu cầu đối với móng và phân loại móng công trình?
+Trả lời
+
+Móng là bộ phận thấp nhất của công trình, truyền toàn bộ tải trọng xuống nền đất.
+Yêu cầu: Chịu lực tốt, ổn định, không lún quá giới hạn, kinh tế, dễ thi công.
+Phân loại:
+•  Theo hình dáng: Móng đơn, móng băng, móng bè, móng cọc.
+•  Theo chiều sâu: Móng nông, móng sâu.
+•  Theo vật liệu: Móng gạch, móng BTCT…
+Câu 10: (3,5 điểm) Anh (chị) hãy cho biết vì sao phải thiết kế nền dốc? Trình bày cách thiết kế nền dốc theo phương pháp vẽ dần? Vẽ hình minh họa?
+Trả lời
+
+Thiết kế nền dốc (sân khấu, khán đài) để đảm bảo mọi khán giả đều nhìn rõ sân khấu.
+Phương pháp vẽ dần:
+Xác định điểm khó nhìn nhất → Vẽ tia nhìn → Nâng độ cao dần từng hàng ghế để tia nhìn không bị chắn.
+Câu 11: (2 điểm) Anh (chị) hãy cho biết khái niệm khe lún, khe nhiệt độ là gì? Phạm vi áp dụng, cấu tạo của chúng?
+Trả lời
+.Khe lún: Khe co giãn để tránh nứt do lún không đều. Chiều rộng 4-8cm, chạy suốt chiều cao công trình từ móng đến mái.
+•  Khe nhiệt độ: Khe co giãn do biến đổi nhiệt độ. Chiều rộng 2-3cm, thường không cắt móng.
+Câu 12: (3,5 điểm) Anh (chị) hãy trình bày cấu tạo các loại mái dốc? Trình bày cấu tạo các lớp lợp của mái dốc? Vẽ hình minh họa các loại vì kèo thường dùng?
+Trả lời
+
+Mái dốc gồm: Hệ vì kèo (chịu lực) → Xà gồ → Lớp lợp (ngói, tôn).
+Các loại vì kèo phổ biến: Vì kèo tam giác, vì kèo cầu, vì kèo thép…
+Lớp lợp: Lớp chống thấm + lớp hoàn thiện.
+Câu 15: (2 điểm) Anh (chị) hãy nêu cấu tạo hệ thống thoát nước mái? Vẽ hình minh họa?
+
+Trả lời
+
+Hệ thống thoát nước mái gồm: Máng xối (máng đón nước), ống đứng, miệng thu nước, ống ngầm thoát ra hệ thống thoát nước chung.
+
+
+
+
+
+
+
+
+
+
+Câu 16: (3,5 điểm) Anh (chị) hãy trình bày khái niệm, đặc điểm, tác dụng của cửa đi, cửa sổ? Trình bày cấu tạo khuôn cửa? Vẽ hình minh họa?
+Trả lời
+
+Cửa đi: Giao thông ngang, bao che, lấy sáng một phần.
+•  Cửa sổ: Lấy sáng, thông gió, bao che.
+Cấu tạo khuôn cửA. Khuôn cố định (trụ dọc, thanh ngang) + cánh cửa (khung cánh + mặt cánh).
+Vật liệu: Gỗ, nhôm, nhựa…
+Câu 17: (2 điểm) Anh (chị) hãy trình bày các cách phân loại và phân cấp công trình?
+Trả lời
+Phân loại: Theo chức năng, vật liệu, số tầng, hình thức tổ chức công năng.
+Phân cấp: Theo bậc chịu lửa (6 cấp), độ bền lâu, chất lượng sử dụng, quy mô tầm quan trọng.

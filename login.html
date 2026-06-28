@@ -825,6 +825,7 @@
 
     <!-- Load external scripts -->
     <script src="js/api-config.js"></script>
+    <script src="js/accounts.js"></script>
     <script src="js/tkcam.js"></script>
     <script src="js/tkhethan.js"></script>
     <script src="js/hihihaaaa.js"></script>
@@ -1066,20 +1067,27 @@
                 // Lấy dữ liệu đã tải ngầm từ lúc mở web (Tốc độ ánh sáng ⚡)
                 let validAccountsObj = {};
                 try {
-                    validAccountsObj = await prefetchAccountsPromise;
-                    
-                    // Nếu vì lý do nào đó object rỗng, thử gọi lại 1 lần
-                    if (!validAccountsObj || Object.keys(validAccountsObj).length === 0) {
-                        const res = await fetch(API_BASE + "?action=getAccounts");
-                        validAccountsObj = await res.json();
+                    const kvData = await prefetchAccountsPromise;
+
+                    // Nếu KV rỗng, thử gọi lại 1 lần
+                    if (!kvData || Object.keys(kvData).length === 0) {
+                        const res = await fetch(API_BASE + "?action=getAccounts&t=" + Date.now());
+                        const retryData = await res.json();
+                        if (retryData && Object.keys(retryData).length > 0) {
+                            validAccountsObj = retryData;
+                        }
+                    } else {
+                        validAccountsObj = kvData;
                     }
                 } catch (e) {
-                    console.error("Lỗi lấy danh sách tài khoản từ Google Sheets:", e);
-                    // Fallback nếu lỗi mạng
-                    if (typeof VALID_ACCOUNTS !== 'undefined') {
-                        validAccountsObj = VALID_ACCOUNTS;
-                    }
+                    console.error("Lỗi lấy danh sách tài khoản từ Worker:", e);
                 }
+
+                // Luôn merge VALID_ACCOUNTS từ JS vào (KV có ưu tiên cao hơn nếu cùng username)
+                if (typeof VALID_ACCOUNTS !== 'undefined' && Object.keys(VALID_ACCOUNTS).length > 0) {
+                    validAccountsObj = { ...VALID_ACCOUNTS, ...validAccountsObj };
+                }
+
 
                 // Xác thực tài khoản
                 const accountData = validAccountsObj[username];
@@ -1148,6 +1156,7 @@
                 try {
                     await fetch(API_BASE, {
                         method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({
                             action: 'loginSession',
                             username: username,

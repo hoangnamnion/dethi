@@ -71,10 +71,10 @@ export default {
             case 'getOnlineUsers':
               result = await getOnlineUsers(env);
               break;
-            case 'pingOnline': {
+            case 'syncUserStatus': {
               const username = url.searchParams.get('username');
               const deviceId = url.searchParams.get('deviceId');
-              result = await pingOnline(env, username, deviceId);
+              result = await syncUserStatus(env, username, deviceId);
               break;
             }
             case 'offlineUser': {
@@ -269,7 +269,7 @@ async function loginSession(env, data) {
   return { success: true };
 }
 
-async function pingOnline(env, username, deviceId) {
+async function syncUserStatus(env, username, deviceId) {
   if (!username) return { error: 'Missing username' };
 
   const now = Date.now();
@@ -277,7 +277,7 @@ async function pingOnline(env, username, deviceId) {
   const activeSessions = await env.DB.get('active_sessions', 'json') || {};
   const lockedAccounts = await env.DB.get('locked_accounts', 'json') || {};
 
-  // 1. Kiểm tra xem tài khoản có đang bị khóa do dùng 2 thiết bị không
+  // 1. Kiểm tra tài khoản bị khóa
   if (lockedAccounts[username] && now < lockedAccounts[username]) {
     return { valid: false, action: 'logout', message: 'Phát hiện tài khoản đăng nhập trên nhiều thiết bị cùng lúc! Tất cả đã bị khóa tạm thời 1 phút.' };
   }
@@ -292,54 +292,82 @@ async function pingOnline(env, username, deviceId) {
   }
   if (needsLockCleanup) await env.DB.put('locked_accounts', JSON.stringify(lockedAccounts));
 
-  // 2. Nếu máy này khác với máy login gần nhất -> Trừng phạt khóa cả 2 máy trong 1 phút
+  // 2. Kiểm tra đăng nhập nhiều thiết bị
   if (deviceId && activeSessions[username] && activeSessions[username] !== deviceId) {
     lockedAccounts[username] = now + 60000;
     await env.DB.put('locked_accounts', JSON.stringify(lockedAccounts));
     return { valid: false, action: 'logout', message: 'Phát hiện tài khoản đăng nhập trên nhiều thiết bị cùng lúc! Tất cả đã bị khóa tạm thời 1 phút.' };
   }
 
-  // 3. Nếu chưa có session (do clear data), cập nhật session
+  // 3. Nếu chưa có session, cập nhật session (chỉ ghi 1 lần khi login)
   if (deviceId && !activeSessions[username]) {
     activeSessions[username] = deviceId;
     await env.DB.put('active_sessions', JSON.stringify(activeSessions));
   }
 
-  // Cập nhật trạng thái online tổng quát (cho leaderboard/admin)
-  const allOnline = await env.DB.get('online_users', 'json') || {};
+  // =====================================================
+  // ONLINE TRACKING — Dùng Cache API thay vì KV
+  // Cache API KHÔNG tốn KV write quota!
+  // =====================================================
+  const cacheKey = new Request('https://online-tracker.internal/online_users');
+  const cache = caches.default;
 
-  allOnline[username] = {
-    username: username,
-    timestamp: now
-  };
-
-  // Dọn dẹp user offline chung (quá 3 phút không ping)
-  for (const key of Object.keys(allOnline)) {
-    if (now - allOnline[key].timestamp > 180000) {
-      delete allOnline[key];
-    }
+  let allOnline = {};
+  const cached = await cache.match(cacheKey);
+  if (cached) {
+    try { allOnline = await cached.json(); } catch(e) {}
   }
 
-  await env.DB.put('online_users', JSON.stringify(allOnline));
+  allOnline[username] = { username, timestamp: now };
+
+  // Dọn user offline (quá 4 phút không ping)
+  for (const key of Object.keys(allOnline)) {
+    if (now - allOnline[key].timestamp > 240000) delete allOnline[key];
+  }
+
+  // Lưu vào Cache (TTL 5 phút, không tốn KV write!)
+  await cache.put(cacheKey, new Response(JSON.stringify(allOnline), {
+    headers: { 'Content-Type': 'application/json', 'Cache-Control': 'max-age=300' }
+  }));
+
   return { success: true, valid: true };
 }
 
 async function offlineUser(env, username) {
   if (!username) return { error: 'Missing username' };
 
-  const allOnline = await env.DB.get('online_users', 'json') || {};
+  const cacheKey = new Request('https://online-tracker.internal/online_users');
+  const cache = caches.default;
+
+  let allOnline = {};
+  const cached = await cache.match(cacheKey);
+  if (cached) {
+    try { allOnline = await cached.json(); } catch(e) {}
+  }
+
   delete allOnline[username];
-  await env.DB.put('online_users', JSON.stringify(allOnline));
+
+  await cache.put(cacheKey, new Response(JSON.stringify(allOnline), {
+    headers: { 'Content-Type': 'application/json', 'Cache-Control': 'max-age=300' }
+  }));
+
   return { success: true };
 }
 
 async function getOnlineUsers(env) {
-  const allOnline = await env.DB.get('online_users', 'json') || {};
+  const cacheKey = new Request('https://online-tracker.internal/online_users');
+  const cache = caches.default;
+
+  let allOnline = {};
+  const cached = await cache.match(cacheKey);
+  if (cached) {
+    try { allOnline = await cached.json(); } catch(e) {}
+  }
 
   const now = Date.now();
   const active = [];
   for (const val of Object.values(allOnline)) {
-    if (now - val.timestamp < 180000) {
+    if (now - val.timestamp < 240000) {
       active.push(val.username);
     }
   }

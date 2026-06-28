@@ -52,7 +52,7 @@ async function showOnlineStatus() {
         }
 
         // Lấy danh sách người đang online từ Cloudflare Worker
-        const response = await fetch(API_BASE + "?action=getLiveMonitor&t=" + Date.now());
+        const response = await fetch(API_BASE + "?action=getOnlineUsers&t=" + Date.now());
         const data = await response.json();
 
         let listHTML = '';
