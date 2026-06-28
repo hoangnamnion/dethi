@@ -6,7 +6,9 @@ const DEFAULT_EXAMS = [
 
 
     { ten: 'Luật Xây Dựng', url: 'LXD.html', },
-    { ten: 'Chủ Nghĩa Xã Hội Khoa Học', url: 'CNXHKH.html', }
+    { ten: 'Chủ Nghĩa Xã Hội Khoa Học', url: 'CNXHKH.html', },
+    { ten: 'Kiến Trúc Dân Dụng Và Công Nghiệp', url: 'KTDVCN.html', },
+
 
 ];
 
