@@ -37,6 +37,9 @@ export default {
           case 'updateLiveStatus':
             result = await updateLiveStatus(env, body.data);
             break;
+          case 'loginSession':
+            result = await loginSession(env, body);
+            break;
           case 'clearLeaderboard':
             result = await clearLeaderboard(env, body.examName);
             break;
@@ -70,7 +73,8 @@ export default {
               break;
             case 'pingOnline': {
               const username = url.searchParams.get('username');
-              result = await pingOnline(env, username);
+              const deviceId = url.searchParams.get('deviceId');
+              result = await pingOnline(env, username, deviceId);
               break;
             }
             case 'offlineUser': {
@@ -255,20 +259,61 @@ async function clearLeaderboard(env, examName) {
 }
 
 // =====================================================
-// ONLINE TRACKING — Theo dõi người dùng đang online
+// ONLINE TRACKING & SESSION CHECK
 // =====================================================
-async function pingOnline(env, username) {
+async function loginSession(env, data) {
+  if (!data || !data.username || !data.deviceId) return { error: 'Missing data' };
+  const activeSessions = await env.DB.get('active_sessions', 'json') || {};
+  activeSessions[data.username] = data.deviceId;
+  await env.DB.put('active_sessions', JSON.stringify(activeSessions));
+  return { success: true };
+}
+
+async function pingOnline(env, username, deviceId) {
   if (!username) return { error: 'Missing username' };
 
+  const now = Date.now();
+
+  const activeSessions = await env.DB.get('active_sessions', 'json') || {};
+  const lockedAccounts = await env.DB.get('locked_accounts', 'json') || {};
+
+  // 1. Kiểm tra xem tài khoản có đang bị khóa do dùng 2 thiết bị không
+  if (lockedAccounts[username] && now < lockedAccounts[username]) {
+    return { valid: false, action: 'logout', message: 'Phát hiện tài khoản đăng nhập trên nhiều thiết bị cùng lúc! Tất cả đã bị khóa tạm thời 1 phút.' };
+  }
+
+  // Dọn dẹp khóa cũ
+  let needsLockCleanup = false;
+  for (const key of Object.keys(lockedAccounts)) {
+    if (now > lockedAccounts[key]) {
+      delete lockedAccounts[key];
+      needsLockCleanup = true;
+    }
+  }
+  if (needsLockCleanup) await env.DB.put('locked_accounts', JSON.stringify(lockedAccounts));
+
+  // 2. Nếu máy này khác với máy login gần nhất -> Trừng phạt khóa cả 2 máy trong 1 phút
+  if (deviceId && activeSessions[username] && activeSessions[username] !== deviceId) {
+    lockedAccounts[username] = now + 60000;
+    await env.DB.put('locked_accounts', JSON.stringify(lockedAccounts));
+    return { valid: false, action: 'logout', message: 'Phát hiện tài khoản đăng nhập trên nhiều thiết bị cùng lúc! Tất cả đã bị khóa tạm thời 1 phút.' };
+  }
+
+  // 3. Nếu chưa có session (do clear data), cập nhật session
+  if (deviceId && !activeSessions[username]) {
+    activeSessions[username] = deviceId;
+    await env.DB.put('active_sessions', JSON.stringify(activeSessions));
+  }
+
+  // Cập nhật trạng thái online tổng quát (cho leaderboard/admin)
   const allOnline = await env.DB.get('online_users', 'json') || {};
 
   allOnline[username] = {
     username: username,
-    timestamp: Date.now()
+    timestamp: now
   };
 
-  // Dọn dẹp user offline (quá 3 phút không ping)
-  const now = Date.now();
+  // Dọn dẹp user offline chung (quá 3 phút không ping)
   for (const key of Object.keys(allOnline)) {
     if (now - allOnline[key].timestamp > 180000) {
       delete allOnline[key];
@@ -276,7 +321,7 @@ async function pingOnline(env, username) {
   }
 
   await env.DB.put('online_users', JSON.stringify(allOnline));
-  return { success: true };
+  return { success: true, valid: true };
 }
 
 async function offlineUser(env, username) {
