@@ -285,10 +285,7 @@
                             <label>Tên hiển thị</label>
                             <input type="text" id="acc-name" class="form-control" required placeholder="vd: Nguyễn Văn A">
                         </div>
-                        <div class="form-group">
-                            <label>ID Thiết Bị (Để trống nếu chưa có)</label>
-                            <input type="text" id="acc-device" class="form-control" placeholder="vd: DEV_ABCD1234">
-                        </div>
+
                     </div>
                     
                     <div class="form-group">
@@ -467,12 +464,13 @@
                 }
 
                 count++;
-                let deviceIds = "Không giới hạn";
-                if (info.id) {
-                    deviceIds = Array.isArray(info.id) ? 
-                        info.id.map(id => `<span class="badge" style="background: rgba(255,255,255,0.1);">${id}</span>`).join(' ') : 
-                        `<span class="badge" style="background: rgba(255,255,255,0.1);">${info.id}</span>`;
-                }
+                // Device ID display removed
+                // let deviceIds = "Không giới hạn";
+                // if (info.id) {
+                //     deviceIds = Array.isArray(info.id) ? 
+                //         info.id.map(id => `<span class="badge" style="background: rgba(255,255,255,0.1);">${id}</span>`).join(' ') : 
+                //         `<span class="badge" style="background: rgba(255,255,255,0.1);">${info.id}</span>`;
+                // }
 
                 let examText = '<span class="badge" style="background: var(--success); color: white;">Full mặc định</span>';
                 if (info.exams && info.exams.length > 0) examText = `<span class="badge" style="background: rgba(99,102,241,0.2); color: var(--primary);">${info.exams.length} đề riêng</span>`;
@@ -486,7 +484,7 @@
                     <td><strong style="color: var(--text);">${username}</strong></td>
                     <td style="color: var(--muted);">${info.pass}</td>
                     <td>${info.name}</td>
-                    <td>${deviceIds}</td>
+<!-- <td></td> -->
                     <td>${examText}</td>
                     <td>${statusBadge}</td>
                     <td>
@@ -526,7 +524,7 @@
             const username = document.getElementById('acc-username').value.trim().toLowerCase();
             const pass = document.getElementById('acc-password').value.trim();
             const name = document.getElementById('acc-name').value.trim();
-            const device = document.getElementById('acc-device').value.trim();
+
 
             if (editingUsername && username !== editingUsername) {
                 if (currentAccounts[username]) return alert('Tên đăng nhập này đã tồn tại!');
@@ -536,7 +534,7 @@
             }
 
             const newAcc = { pass, name };
-            if (device) newAcc.id = device.includes(',') ? device.split(',').map(d => d.trim()) : device;
+            // Device ID handling removed
 
             const selectedExams = [];
             document.querySelectorAll('#exam-checkboxes input:checked').forEach(cb => {
@@ -563,7 +561,7 @@
             document.getElementById('acc-username').value = username;
             document.getElementById('acc-password').value = info.pass || '';
             document.getElementById('acc-name').value = info.name || '';
-            document.getElementById('acc-device').value = info.id ? (Array.isArray(info.id) ? info.id.join(', ') : info.id) : '';
+            // Device ID input removed; no device field to populate
             
             document.querySelectorAll('#exam-checkboxes input').forEach(cb => cb.checked = false);
             if (info.exams) {

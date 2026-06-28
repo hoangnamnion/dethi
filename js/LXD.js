@@ -3,10 +3,14 @@
 
 // 2. DANH SÁCH ĐỀ THI MẶC ĐỊNH (Dành cho ai không được gán đề riêng)
 const DEFAULT_EXAMS = [
+    { ten: 'Trang Chủ', url: 'index.html', IMG: 'img/muiten.jpg' },
+    { file: 'luatxd1', ten: 'Luật Xây Dựng 1-30 câu' },
+    { file: 'luatxd2', ten: 'Luật Xây Dựng 31-64 câu' },
+    { file: 'luatxd3', ten: 'Luật Xây Dựng 61-90 câu' },
+    { file: 'luatxd4', ten: 'Luật Xây Dựng 91-120 câu' },
+    { file: 'luatxd5', ten: 'Luật Xây Dựng 121-137 câu' },
+    { file: 'luatxd', ten: 'Full Luật Xây Dựng 137 câu' },
 
-
-    { ten: 'Luật Xây Dựng', url: 'LXD.html', },
-    { ten: 'Chủ Nghĩa Xã Hội Khoa Học', url: 'CNXHKH.html', }
 
 ];
 

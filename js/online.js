@@ -47,16 +47,16 @@ async function showOnlineStatus() {
     document.body.appendChild(modal);
 
     try {
-        if (!ONLINE_GAS_URL || !ONLINE_GAS_URL.startsWith("http")) {
-            throw new Error("Chưa cấu hình ONLINE_GAS_URL trong js/tkhethan.js");
+        if (typeof API_BASE === 'undefined') {
+            throw new Error("Chưa cấu hình API_BASE trong js/api-config.js");
         }
 
-        // Lấy danh sách người đang online từ Google Sheets
-        const response = await fetch(ONLINE_GAS_URL + "?action=get_online&t=" + Date.now());
+        // Lấy danh sách người đang online từ Cloudflare Worker
+        const response = await fetch(API_BASE + "?action=getLiveMonitor&t=" + Date.now());
         const data = await response.json();
 
         let listHTML = '';
-        const onlineUsers = data.users || [];
+        const onlineUsers = Array.isArray(data) ? data : (data.users || []);
         const totalOnline = data.onlineCount || onlineUsers.length || 0;
 
         if (onlineUsers.length > 0) {

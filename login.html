@@ -1122,36 +1122,7 @@
                     return;
                 }
 
-                // Kiểm tra mã thiết bị (Device Binding)
-                const unlimitedAccounts = ['admin', 'thuy','tkfree']; // Thêm các tài khoản khác vào đây, ví dụ: ['admin', 'tk1', 'tk2']
-                if (!unlimitedAccounts.includes(username)) {
-                    const currentDeviceId = getOrCreateDeviceId();
-                    if (!accountData.id) {
-                        loginBtn.innerHTML = prevText;
-                        loginBtn.disabled = false;
-                        showActivationModal(username, password, 1);
-                        return;
-                    } else {
-                        let isAllowed = false;
-                        let registeredCount = 1;
-                        if (Array.isArray(accountData.id)) {
-                            // Nếu admin cấu hình nhiều ID dưới dạng mảng
-                            isAllowed = accountData.id.includes(currentDeviceId);
-                            registeredCount = accountData.id.length;
-                        } else {
-                            // Nếu admin chỉ cấu hình 1 ID dưới dạng chuỗi
-                            isAllowed = (accountData.id === currentDeviceId);
-                            registeredCount = 1;
-                        }
-
-                        if (!isAllowed) {
-                            loginBtn.innerHTML = prevText;
-                            loginBtn.disabled = false;
-                            showActivationModal(username, password, registeredCount + 1);
-                            return;
-                        }
-                    }
-                }
+// Device binding logic removed – users can log in from any device
 
                 // ĐĂNG NHẬP THÀNH CÔNG -> GHI LOG HOẠT ĐỘNG (gửi ngầm, không bị cancel khi chuyển trang)
                 const realName = accountData.name;
@@ -1172,12 +1143,26 @@
                 loginBtn.innerHTML = prevText;
                 loginBtn.disabled = false;
 
+                // Ghi nhận Device ID lên server để chặn 1 tài khoản 2 thiết bị
+                const currentDeviceId = getOrCreateDeviceId();
+                try {
+                    await fetch(API_BASE, {
+                        method: 'POST',
+                        body: JSON.stringify({
+                            action: 'loginSession',
+                            username: username,
+                            deviceId: currentDeviceId
+                        })
+                    });
+                } catch(e) { console.error("Lỗi lưu session:", e); }
+
                 // Lưu session
                 const userData = {
                     username: realName,
                     accountId: username,
                     loginTime: new Date().toISOString(),
                     lastActivity: new Date().toISOString(),
+                    deviceId: currentDeviceId,
                     exams: accountData.exams || []
                 };
 
@@ -1215,9 +1200,7 @@
     </script>
 
     <!-- External effect scripts -->
-    <script src="js/hihihaaaa.js"></script>
     <script src="js/thongbao.js"></script>
-    <script src="js/new2.js"></script>
     <script src="js/tet.js"></script>
     <script src="js/no-refresh.js"></script>
 </body>
