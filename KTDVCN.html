@@ -225,13 +225,9 @@
                     headerUserName.innerHTML = `👨‍🎓 <b>${user.username}</b>`;
                 }
 
-                // 🌟 NẠP ĐỀ THI TƯƠNG ỨNG VỚI TÀI KHOẢN
-                // Dữ liệu exams đã được lưu sẵn trong sessionStorage lúc đăng nhập thành công
-                if (user && user.exams && user.exams.length > 0) {
-                    danhSachDeThi = user.exams;
-                } else {
-                    danhSachDeThi = DEFAULT_EXAMS;
-                }
+                // 🌟 NẠP ĐỀ THI — Luôn dùng DEFAULT_EXAMS của trang này (danh sách đề con)
+                // KHÔNG dùng user.exams vì đó là danh sách môn cấp 1 từ index.html
+                danhSachDeThi = DEFAULT_EXAMS;
 
             } catch (e) {
                 console.error("Lỗi đọc thông tin người dùng:", e);
