@@ -75,8 +75,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ==========================================
-// ONLINE TRACKING & SINGLE DEVICE CHECK (CLOUDFLARE WORKER)
-// Ping mỗi 30 giây — offline nếu lệch > 4 phút
+// ONLINE TRACKING (CLOUDFLARE WORKER)
+// Chỉ theo dõi trạng thái online, không kiểm tra thiết bị
 // ==========================================
 function startOnlineTracking(username) {
     if (typeof API_BASE === 'undefined') {
@@ -85,56 +85,27 @@ function startOnlineTracking(username) {
     }
 
     const encodedName = encodeURIComponent(username);
-    
-    // Lấy deviceId từ session (đã lưu lúc login)
-    let deviceId = "";
-    let loginTime = 0;
-    try {
-        const userData = JSON.parse(sessionStorage.getItem('current_user') || '{}');
-        deviceId = userData.deviceId || "";
-        loginTime = new Date(userData.loginTime || 0).getTime();
-    } catch(e) {}
 
-    // Hàm gửi ping (đã đổi tên action để tránh AdBlock chặn)
+    // Hàm gửi ping
     const sendPing = () => {
-        fetch(`${API_BASE}?action=syncUserStatus&username=${encodedName}&deviceId=${encodeURIComponent(deviceId)}`)
-            .then(res => res.json())
-            .then(data => {
-                // Kiểm tra nếu bị kick vì đăng nhập nhiều nơi
-                if (data.valid === false && data.action === 'logout') {
-                    sessionStorage.removeItem('current_user');
-                    alert(data.message || 'Phát hiện tài khoản đăng nhập trên nhiều thiết bị cùng lúc! Bạn đã bị đăng xuất.');
-                    window.location.href = "login.html";
-                }
-            })
+        fetch(`${API_BASE}?action=syncUserStatus&username=${encodedName}`)
             .catch(() => {});
     };
 
-    // Hàm báo offline (dùng keepalive để gửi được khi đóng tab)
+    // Hàm báo offline
     const sendOffline = () => {
         fetch(`${API_BASE}?action=offlineUser&username=${encodedName}`, {
             keepalive: true
         }).catch(() => {});
     };
 
-    // Tính thời gian kể từ khi login
-    const msSinceLogin = Date.now() - loginTime;
-    const FRESH_LOGIN_THRESHOLD = 20000; // 20 giây
+    // Ping ngay khi mở trang
+    sendPing();
 
-    if (msSinceLogin < FRESH_LOGIN_THRESHOLD) {
-        // Vừa đăng nhập xong: delay ping đầu tiên 6 giây
-        // để Worker KV có thời gian đồng bộ session mới
-        setTimeout(() => {
-            sendPing();
-            setInterval(sendPing, 30000);
-        }, 6000);
-    } else {
-        // Đã vào từ trước: ping ngay
-        sendPing();
-        setInterval(sendPing, 30000);
-    }
+    // Ping lặp lại mỗi 30 giây
+    setInterval(sendPing, 30000);
 
-    // Offline khi đóng tab/trình duyệt
+    // Offline khi đóng tab
     window.addEventListener('beforeunload', () => {
         sendOffline();
     });
