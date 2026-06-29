@@ -88,7 +88,7 @@ function startOnlineTracking(username) {
 
     // Hàm gửi ping
     const sendPing = () => {
-        fetch(`${API_BASE}?action=syncUserStatus&username=${encodedName}`)
+        fetch(`${API_BASE}?action=pingOnline&username=${encodedName}`)
             .catch(() => {});
     };
 

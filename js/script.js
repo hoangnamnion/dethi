@@ -424,6 +424,10 @@ function renderQuestion(index) {
     const q = questionsToShow[index];
     let processedText = q.text.replace(/\[IMG:(.*?)\]/g, '<div class="q-image"><img src="$1"></div>');
 
+    // Ẩn nút báo lỗi khi chuyển câu
+    const btnReport = document.getElementById('btnReportFloat');
+    if (btnReport) btnReport.style.display = 'none';
+
     let qNumberText = `Câu ${index + 1}/${questionsToShow.length}`;
 
     if (questionOrder === 'random') {
@@ -597,6 +601,10 @@ function handleAnswer(qIndex, optIndex) {
             currentStreak = 0; // Sai khi làm lại cũng reset streak
             showComboFire(0);
             renderQuestion(qIndex);
+            
+            // Hiện nút báo lỗi khi sai
+            const btnReport = document.getElementById('btnReportFloat');
+            if (btnReport) btnReport.style.display = 'block';
         }
 
         saveProgress();
@@ -613,6 +621,10 @@ function handleAnswer(qIndex, optIndex) {
         if (examMode === 'survival') {
             if (!selectedOption.isCorrect) {
                 showDeathEffect();
+
+                // Hiện nút báo lỗi khi sai
+                const btnReport = document.getElementById('btnReportFloat');
+                if (btnReport) btnReport.style.display = 'block';
 
                 setTimeout(() => {
                     performSurvivalReset();
@@ -638,6 +650,10 @@ function handleAnswer(qIndex, optIndex) {
                 showWrongEffect();
                 currentStreak = 0; // Reset chuỗi khi sai
                 showComboFire(0);
+                
+                // Hiện nút báo lỗi khi sai
+                const btnReport = document.getElementById('btnReportFloat');
+                if (btnReport) btnReport.style.display = 'block';
             }
             saveProgress();
         }

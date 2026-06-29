@@ -96,6 +96,25 @@
         </div>
     </div>
 
+    <!-- Nút Báo Lỗi Nổi (Ẩn mặc định) -->
+    <button id="btnReportFloat" onclick="openReportModal()" style="display:none; position:fixed; bottom:80px; right:20px; background:#e74c3c; color:white; border:none; padding:12px 18px; border-radius:30px; font-weight:bold; box-shadow:0 5px 15px rgba(231,76,60,0.4); z-index:100; cursor:pointer; transition:0.3s;">
+        ⚠️ Báo lỗi câu này
+    </button>
+
+    <!-- Modal Báo Lỗi -->
+    <div class="modal" id="modalReport" style="display:none; align-items:center; justify-content:center; background: rgba(0,0,0,0.5); z-index:1000;">
+        <div class="result-box" style="padding: 20px;">
+            <div style="font-size:1.2em; font-weight:bold; color:#d63031; margin-bottom:15px;">⚠️ Yêu cầu chỉnh lại câu</div>
+            <p style="font-size:0.9em; color:#636e72; text-align:left; margin-bottom:10px;">Phát hiện sai sót? Điền yêu cầu chỉnh sửa vào bên dưới:</p>
+            <textarea id="reportContent" rows="4" style="width:100%; padding:10px; border-radius:10px; border:1px solid #ccc; font-family:inherit; resize:none; margin-bottom: 15px;" placeholder="Ví dụ: Đáp án đúng phải là A, hoặc lỗi chính tả..."></textarea>
+            
+            <div style="display:flex; gap:10px; justify-content:center;">
+                <button class="btn-close-res" onclick="submitReport()" style="background:#00b894; flex:1;">Gửi Yêu Cầu</button>
+                <button class="btn-close-res" onclick="document.getElementById('modalReport').style.display='none'" style="background:#636e72; flex:1;">Hủy</button>
+            </div>
+        </div>
+    </div>
+
     <script src="js/api-config.js"></script>
     <script src="js/hihihaaaa.js"></script>
     <script src="js/tkhethan.js"></script>
@@ -228,13 +247,47 @@
             });
             if(target) obs.observe(target, { childList: true, subtree: true });
             
-            // Auto hide filter bar if exam is restarted
             setInterval(() => {
                 const fb = document.getElementById('reviewFilterBar');
                 if (fb && typeof isSubmitted !== 'undefined' && !isSubmitted) {
                     fb.style.display = 'none';
                 }
             }, 500);
+        }
+
+        // --- BÁO LỖI CÂU HỎI ---
+        function openReportModal() {
+            document.getElementById('modalReport').style.display = 'flex';
+        }
+
+        async function submitReport() {
+            const text = document.getElementById('reportContent').value.trim();
+            if (!text) return alert('Vui lòng nhập nội dung!');
+            
+            let qText = 'Không xác định';
+            if (typeof allQuestions !== 'undefined' && typeof currentIndex !== 'undefined' && allQuestions[currentIndex]) {
+                qText = allQuestions[currentIndex].text;
+            }
+            
+            const ud = JSON.parse(sessionStorage.getItem('current_user') || '{}');
+            const msg = `⚠️ <b>BÁO LỖI CÂU HỎI</b>\n👤 User: <code>${ud.username || 'Unknown'}</code>\n📚 Đề: ${typeof currentFileName !== 'undefined' ? currentFileName : 'N/A'}\n📍 Câu ${typeof currentIndex !== 'undefined' ? currentIndex + 1 : '?'}: ${qText.substring(0, 50)}...\n\n💬 <b>Nội dung góp ý:</b>\n${text}`;
+            
+            try {
+                // Ensure api-config.js variables are available
+                const token = typeof getTelegramBotToken === 'function' ? getTelegramBotToken() : '7709393354:AAGC5vNq2U8H7bYpMv29aE9_rZ5sY1G14vI';
+                const chatId = typeof getTelegramChatId === 'function' ? getTelegramChatId() : '-4582962386';
+                
+                await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ chat_id: chatId, text: msg, parse_mode: 'HTML' })
+                });
+                alert('Cảm ơn bạn đã góp ý! Yêu cầu đã được gửi đến ban quản trị.');
+                document.getElementById('modalReport').style.display = 'none';
+                document.getElementById('reportContent').value = '';
+            } catch(e) {
+                alert('Có lỗi xảy ra khi gửi yêu cầu.');
+            }
         }
 
     </script>
