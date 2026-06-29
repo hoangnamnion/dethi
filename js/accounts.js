@@ -39,6 +39,14 @@ const VALID_ACCOUNTS = {
             { ten: 'Chủ Nghĩa Xã Hội Khoa Học', url: 'CNXHKH.html' }
         ]
     },
+        "hung": {
+        pass: "hung123",
+        name: "Phạm Văn Công",
+        exams: [
+            { ten: 'Luật Xây Dựng', url: 'LXD.html' },
+            { ten: 'Chủ Nghĩa Xã Hội Khoa Học', url: 'CNXHKH.html' }
+        ]
+    },
     // Ví dụ phân quyền thẳng vào 1 chương (Đề thi con):
     "vidu": {
         pass: "vidu123",
