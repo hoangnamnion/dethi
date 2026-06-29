@@ -41,7 +41,7 @@ const VALID_ACCOUNTS = {
     },
         "hung": {
         pass: "hung123",
-        name: "Phạm Văn Công",
+        name: "Đinh Duy Hưng",
         exams: [
             { ten: 'Luật Xây Dựng', url: 'LXD.html' },
             { ten: 'Chủ Nghĩa Xã Hội Khoa Học', url: 'CNXHKH.html' }
