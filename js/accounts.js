@@ -23,6 +23,7 @@ const VALID_ACCOUNTS = {
     "minhkhang": { pass: "minhkhang123", name: "Nguyễn Minh Khang" },
     "thuy": { pass: "thuy123", name: "Nguyễn Thị Thủy" },
     "manh": { pass: "manh123", name: "Lương Thế Mạnh" },
+    "anhtuan":{"pass":"anhtuan123","name":"Lương Thế Mạnh","exams":[{"ten":"Luật Xây Dựng","url":"LXD.html"},{"ten":"Chủ Nghĩa Xã Hội Khoa Học","url":"CNXHKH.html"}],
 
 
 };
