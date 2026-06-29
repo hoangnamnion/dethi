@@ -23,7 +23,31 @@ const VALID_ACCOUNTS = {
     "minhkhang": { pass: "minhkhang123", name: "Nguyễn Minh Khang" },
     "thuy": { pass: "thuy123", name: "Nguyễn Thị Thủy" },
     "manh": { pass: "manh123", name: "Lương Thế Mạnh" },
-    "anhtuan":{"pass":"anhtuan123",name:"Lương Thế Mạnh",exams:[{"ten":"Luật Xây Dựng","url":"LXD.html"},{"ten":"Chủ Nghĩa Xã Hội Khoa Học","url":"CNXHKH.html"}],
+    "anhtuan": {
+        pass: "anhtuan123",
+        name: "Nguyễn Anh Tuấn",
+        exams: [
+            { ten: 'Luật Xây Dựng', url: 'LXD.html' },
+            { ten: 'Chủ Nghĩa Xã Hội Khoa Học', url: 'CNXHKH.html' }
+        ]
+    },
+    "cong": {
+        pass: "cong123",
+        name: "Phạm Văn Công",
+        exams: [
+            { ten: 'Luật Xây Dựng', url: 'LXD.html' },
+            { ten: 'Chủ Nghĩa Xã Hội Khoa Học', url: 'CNXHKH.html' }
+        ]
+    },
+    // Ví dụ phân quyền thẳng vào 1 chương (Đề thi con):
+    "vidu": {
+        pass: "vidu123",
+        name: "Học Sinh Ví Dụ",
+        exams: [
+            { file: 'cnxhkhchuong1', ten: 'Chương I' },
+            { file: 'cnxhkhchuong2', ten: 'Chương II' }
+        ]
+    },
 
 
 };
