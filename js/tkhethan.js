@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ==========================================
 // ONLINE TRACKING & SINGLE DEVICE CHECK (CLOUDFLARE WORKER)
-// Ping mỗi 3 giây — offline nếu lệch > 3 phút
+// Ping mỗi 30 giây — offline nếu lệch > 4 phút
 // ==========================================
 function startOnlineTracking(username) {
     if (typeof API_BASE === 'undefined') {
@@ -88,9 +88,11 @@ function startOnlineTracking(username) {
     
     // Lấy deviceId từ session (đã lưu lúc login)
     let deviceId = "";
+    let loginTime = 0;
     try {
         const userData = JSON.parse(sessionStorage.getItem('current_user') || '{}');
         deviceId = userData.deviceId || "";
+        loginTime = new Date(userData.loginTime || 0).getTime();
     } catch(e) {}
 
     // Hàm gửi ping (đã đổi tên action để tránh AdBlock chặn)
@@ -115,13 +117,24 @@ function startOnlineTracking(username) {
         }).catch(() => {});
     };
 
-    // 1. Ping ngay lập tức khi mở trang
-    sendPing();
+    // Tính thời gian kể từ khi login
+    const msSinceLogin = Date.now() - loginTime;
+    const FRESH_LOGIN_THRESHOLD = 20000; // 20 giây
 
-    // 2. Ping lặp lại mỗi 30 giây để tiết kiệm KV writes (free plan: 1,000 writes/ngày)
-    setInterval(sendPing, 30000);
+    if (msSinceLogin < FRESH_LOGIN_THRESHOLD) {
+        // Vừa đăng nhập xong: delay ping đầu tiên 6 giây
+        // để Worker KV có thời gian đồng bộ session mới
+        setTimeout(() => {
+            sendPing();
+            setInterval(sendPing, 30000);
+        }, 6000);
+    } else {
+        // Đã vào từ trước: ping ngay
+        sendPing();
+        setInterval(sendPing, 30000);
+    }
 
-    // 3. Offline khi đóng tab/trình duyệt
+    // Offline khi đóng tab/trình duyệt
     window.addEventListener('beforeunload', () => {
         sendOffline();
     });
