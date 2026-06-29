@@ -89,15 +89,15 @@ const comboStyle = document.createElement('style');
 comboStyle.innerHTML = `
     .combo-badge {
         position: absolute;
-        top: -10px; 
+        top: -8px; 
         right: 0px;
-        background: linear-gradient(135deg, #ff9a9e, #fecfef); /* Mặc định < 10 */
+        background: linear-gradient(135deg, #ff9a9e, #fecfef);
         color: #d63031;
-        padding: 8px 25px;
-        border-radius: 30px;
+        padding: 4px 14px;
+        border-radius: 20px;
         font-weight: 800;
-        font-size: 1.3em;
-        box-shadow: 0 4px 15px rgba(255, 100, 100, 0.4);
+        font-size: 0.78em;
+        box-shadow: 0 3px 10px rgba(255, 100, 100, 0.3);
         z-index: 9999;
         transform: rotate(5deg);
         animation: popCombo 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);

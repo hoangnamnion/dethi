@@ -503,10 +503,10 @@ function renderQuestion(index) {
         if (match) {
             const label = match[1];
             const content = match[2];
-            displayText = `<span style="font-weight:bold; margin-right:8px; color:#d63031;">${label}.</span> ${content}`;
+            displayText = `<span style="font-weight:bold; margin-right:8px; color:#d63031;">${label}</span> ${content}`;
         } else {
             const label = String.fromCharCode(65 + idx);
-            displayText = `<span style="font-weight:bold; margin-right:8px; color:#d63031;">${label}.</span> ${optionText}`;
+            displayText = `<span style="font-weight:bold; margin-right:8px; color:#d63031;">${label}</span> ${optionText}`;
         }
 
         btn.innerHTML = displayText;
@@ -521,38 +521,22 @@ function renderQuestion(index) {
                 if (q.retrySelected === idx) {
                     if (opt.isCorrect) {
                         btn.classList.add('correct');
-                        statusText = '✓ Làm lại đúng';
-                        statusColor = '#00b894';
                     } else {
                         btn.classList.add('wrong');
-                        statusText = '✗ Làm lại sai';
-                        statusColor = '#d63031';
                     }
                 } else if (opt.isCorrect) {
                     btn.classList.add('correct');
-                    statusText = '✓ Đáp án đúng';
-                    statusColor = '#00b894';
                 }
             } else {
                 if (q.userSelected === idx) {
                     if (opt.isCorrect) {
                         btn.classList.add('correct');
-                        statusText = '✓ Bạn chọn đúng';
-                        statusColor = '#00b894';
                     } else {
                         btn.classList.add('wrong');
-                        statusText = '✗ Bạn chọn sai';
-                        statusColor = '#d63031';
                     }
                 } else if (opt.isCorrect) {
                     btn.classList.add('correct');
-                    statusText = '✓ Đáp án đúng';
-                    statusColor = '#00b894';
                 }
-            }
-
-            if (statusText) {
-                btn.innerHTML += ` <span style="color:${statusColor}; margin-left:10px; font-weight:bold;">${statusText}</span>`;
             }
         } else {
             btn.onclick = () => handleAnswer(index, idx);

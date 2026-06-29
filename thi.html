@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Làm Bài Thi</title>
-    <!-- Preconnect cho Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/thi-premium.css">
     <style>
         body.low-graphics .mesh-bg { display: none !important; }
         body.low-graphics .falling-icon { display: none !important; }
@@ -26,91 +26,103 @@
         <div class="mesh-blob blob-3"></div>
     </div>
     <div class="app-full">
-        <div class="header">
+        <!-- ====== HEADER ====== -->
+        <div class="header exam-header">
             <button class="home-btn" onclick="goBack()" title="Quay lại">
-                <img src="img/muiten.jpg" alt="Logo" class="logo-img">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6C5CE7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             </button>
 
-            <div style="flex:1; text-align:center; padding:0 10px">
-                <div style="font-weight:700; font-size:0.9em; white-space:nowrap; overflow:hidden; text-overflow:ellipsis"
-                    id="sectionTitle">Loading...</div>
-                <div id="timer" style="font-size: 0.8em; color: var(--primary); font-weight: 800; margin-top: 2px;">Thời
-                    gian: 00:00</div>
+            <div class="header-center">
+                <div class="header-title" id="sectionTitle">Loading...</div>
+                <div class="header-timer" id="timer">⏱ 00:00</div>
             </div>
 
-            <div style="display:flex; align-items:center; gap: 8px;">
-                <button class="reset-btn" onclick="resetExam()" title="Làm lại từ đầu"
-                    style="background:none; border:none; cursor:pointer; font-size:1.2em">🔄</button>
-                <button class="submit-btn" onclick="finishExam()">✨ Nộp bài</button>
+            <div class="header-actions">
+                <button class="icon-btn" onclick="resetExam()" title="Làm lại từ đầu">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 4v6h6M23 20v-6h-6"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"/></svg>
+                </button>
+                <button class="submit-btn-new" onclick="finishExam()">
+                    Nộp bài
+                </button>
             </div>
         </div>
 
+        <!-- ====== CONTENT ====== -->
         <div class="content">
-            <div style="text-align: right; margin-bottom: 5px;">
-                <button class="low-graphics-btn" id="btnLowGraphics" onclick="toggleLowGraphics()" title="Tắt bớt hiệu ứng để đỡ giật lag cho máy yếu"
-                    style="background:var(--white); border:1px solid #cbd5e1; padding:4px 10px; border-radius:8px; cursor:pointer; font-size:0.8em; font-weight:700; color:#e74c3c; box-shadow: 0 2px 5px rgba(0,0,0,0.05); transition: 0.2s;">⚡ Tắt Hiệu Ứng</button>
+            <div class="toolbar-row">
+                <button class="chip-btn danger" id="btnLowGraphics" onclick="toggleLowGraphics()" title="Tắt bớt hiệu ứng">
+                    ⚡ Hiệu ứng
+                </button>
             </div>
             <div id="loading" style="text-align:center; margin-top:30px">Đang tải câu hỏi...</div>
             <div id="quizArea" style="display:none">
-                <div style="color:var(--primary); font-weight:bold; margin-bottom:5px" id="qNumber"></div>
+                <div class="q-number-row" id="qNumber"></div>
                 <div class="question-text" id="qText"></div>
                 <div class="options-grid" id="optionsArea"></div>
             </div>
         </div>
 
-        <div class="footer">
-            <button class="btn" onclick="toggleModal()" style="background:#dfe6e9">☰</button>
-            <button class="btn btn-nav" id="btnPrev" onclick="changeQuestion(-1)">❮ Trước</button>
-            <button class="btn btn-nav" id="btnNext" onclick="changeQuestion(1)">Tiếp ❯</button>
+        <!-- ====== FOOTER ====== -->
+        <div class="footer exam-footer">
+            <button class="footer-btn menu-btn-footer" onclick="toggleModal()">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
+            <button class="footer-btn nav-prev" id="btnPrev" onclick="changeQuestion(-1)">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Trước
+            </button>
+            <button class="footer-btn nav-next" id="btnNext" onclick="changeQuestion(1)">
+                Tiếp
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
         </div>
 
+        <!-- ====== MODAL: QUESTION LIST ====== -->
         <div class="modal" id="modalList">
-            <div class="header">
-                <h3>Danh sách câu hỏi</h3>
-                <button class="btn" onclick="toggleModal()"
-                    style="color:red; background:none; font-size:1.5em">✕</button>
+            <div class="modal-header">
+                <h3>📋 Danh sách câu hỏi</h3>
+                <button class="modal-close-btn" onclick="toggleModal()">✕</button>
             </div>
             <div class="grid-map" id="gridMap"></div>
         </div>
 
-        <div class="modal" id="modalResult"
-            style="display:none; align-items:center; justify-content:center; background: rgba(0,0,0,0.5);">
+        <!-- ====== MODAL: RESULT ====== -->
+        <div class="modal result-modal" id="modalResult"
+            style="display:none; align-items:center; justify-content:center; background: rgba(0,0,0,0.45);">
             <div class="result-box">
-                <div style="font-size:1.2em; font-weight:bold; color:#2d3436">KẾT QUẢ BÀI THI</div>
+                <div class="result-title">📊 KẾT QUẢ BÀI THI</div>
                 <div class="res-score" id="resScore">0</div>
                 <div class="res-detail">
-                    <div class="res-item" style="color:#00b894"><b id="resRight">0</b>Đúng</div>
-                    <div class="res-item" style="color:#d63031"><b id="resWrong">0</b>Sai</div>
-                    <div class="res-item" style="color:#636e72"><b id="resSkip">0</b>Bỏ qua</div>
+                    <div class="res-item correct-item"><b id="resRight">0</b>Đúng</div>
+                    <div class="res-item wrong-item"><b id="resWrong">0</b>Sai</div>
+                    <div class="res-item skip-item"><b id="resSkip">0</b>Bỏ qua</div>
                 </div>
-                <div id="resTime" style="margin-bottom: 20px; font-weight: 600; color: var(--text-gray);">Tổng thời
-                    gian: 00:00</div>
+                <div id="resTime" class="res-time">Tổng thời gian: 00:00</div>
 
-                <div style="display:flex; gap:10px; justify-content:center; flex-wrap: wrap;">
-                    <button class="btn-close-res" onclick="closeResult()" style="background:var(--primary)">Xem
-                        lại</button>
-                    <button class="btn-close-res" onclick="resetExam()" style="background:#e17055">🔄 Thi lại</button>
-                    <button class="btn-close-res" onclick="goBack()" style="background:#636e72">Thoát</button>
+                <div class="result-actions">
+                    <button class="result-btn primary" onclick="closeResult()">👁 Xem lại</button>
+                    <button class="result-btn warning" onclick="resetExam()">🔄 Thi lại</button>
+                    <button class="result-btn muted" onclick="goBack()">Thoát</button>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Nút Báo Lỗi Nổi (Ẩn mặc định) -->
-    <button id="btnReportFloat" onclick="openReportModal()" style="display:none; position:fixed; bottom:80px; right:20px; background:#e74c3c; color:white; border:none; padding:12px 18px; border-radius:30px; font-weight:bold; box-shadow:0 5px 15px rgba(231,76,60,0.4); z-index:100; cursor:pointer; transition:0.3s;">
+    <button id="btnReportFloat" onclick="openReportModal()" style="display:none; position:fixed; bottom:80px; right:16px; background:linear-gradient(135deg,#FF6B6B,#EE5A24); color:white; border:none; padding:10px 16px; border-radius:25px; font-weight:bold; font-size:0.82em; box-shadow:0 6px 20px rgba(255,107,107,0.35); z-index:100; cursor:pointer; transition:0.3s;">
         ⚠️ Báo lỗi câu này
     </button>
 
     <!-- Modal Báo Lỗi -->
-    <div class="modal" id="modalReport" style="display:none; align-items:center; justify-content:center; background: rgba(0,0,0,0.5); z-index:1000;">
-        <div class="result-box" style="padding: 20px;">
-            <div style="font-size:1.2em; font-weight:bold; color:#d63031; margin-bottom:15px;">⚠️ Yêu cầu chỉnh lại câu</div>
-            <p style="font-size:0.9em; color:#636e72; text-align:left; margin-bottom:10px;">Phát hiện sai sót? Điền yêu cầu chỉnh sửa vào bên dưới:</p>
-            <textarea id="reportContent" rows="4" style="width:100%; padding:10px; border-radius:10px; border:1px solid #ccc; font-family:inherit; resize:none; margin-bottom: 15px;" placeholder="Ví dụ: Đáp án đúng phải là A, hoặc lỗi chính tả..."></textarea>
+    <div class="modal" id="modalReport" style="display:none; align-items:center; justify-content:center; background: rgba(0,0,0,0.45); z-index:1000;">
+        <div class="result-box" style="padding: 24px; text-align:left;">
+            <div style="font-size:1.1em; font-weight:800; color:#d63031; margin-bottom:12px;">⚠️ Yêu cầu chỉnh lại câu</div>
+            <p style="font-size:0.88em; color:#636e72; margin-bottom:10px;">Phát hiện sai sót? Điền yêu cầu chỉnh sửa:</p>
+            <textarea id="reportContent" rows="4" style="width:100%; padding:12px; border-radius:12px; border:2px solid #EDF2F7; font-family:inherit; font-size:0.9em; resize:none; margin-bottom:15px; background:#F8F9FA;" placeholder="Ví dụ: Đáp án đúng phải là A, hoặc lỗi chính tả..."></textarea>
             
-            <div style="display:flex; gap:10px; justify-content:center;">
-                <button class="btn-close-res" onclick="submitReport()" style="background:#00b894; flex:1;">Gửi Yêu Cầu</button>
-                <button class="btn-close-res" onclick="document.getElementById('modalReport').style.display='none'" style="background:#636e72; flex:1;">Hủy</button>
+            <div style="display:flex; gap:10px;">
+                <button class="result-btn primary" onclick="submitReport()" style="flex:1; background:#00B894;">Gửi</button>
+                <button class="result-btn muted" onclick="document.getElementById('modalReport').style.display='none'" style="flex:1;">Hủy</button>
             </div>
         </div>
     </div>
@@ -291,6 +303,7 @@
         }
 
     </script>
+    <script src="js/tet.js"></script>
     <script src="js/music.js"></script>
     <script src="js/no-refresh.js"></script>
 </body>
