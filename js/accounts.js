@@ -63,6 +63,13 @@ const VALID_ACCOUNTS = {
             { ten: 'Chủ Nghĩa Xã Hội Khoa Học', url: 'CNXHKH.html' }
         ]
     },
+                "tinhoc": {
+        pass: "tinhoc123",
+        name: "Tài Khoản Cấp Riêng",
+        exams: [
+            { file: 'tinhoc', ten: 'Full Tin Học' },
+        ]
+    },
     // Ví dụ phân quyền thẳng vào 1 chương (Đề thi con):
     "vidu": {
         pass: "vidu123",
