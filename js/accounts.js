@@ -19,7 +19,6 @@ const VALID_ACCOUNTS = {
     "dat": { pass: "dat123", name: "Nguyễn Cũng Đạt" },
     "duc": { pass: "duc123", name: "Đặng Minh Đức" },
     "quyen": { pass: "quyen123", name: "Nguyễn Văn Quyến" },
-    "lanh": { pass: "lanh123", name: "Lê Văn Lanh" },
     "minhkhang": { pass: "minhkhang123", name: "Nguyễn Minh Khang" },
     "thuy": { pass: "thuy123", name: "Nguyễn Thị Thủy" },
     "manh": { pass: "manh123", name: "Lương Thế Mạnh" },
@@ -45,6 +44,15 @@ const VALID_ACCOUNTS = {
         exams: [
             { ten: 'Luật Xây Dựng', url: 'LXD.html' },
             { ten: 'Chủ Nghĩa Xã Hội Khoa Học', url: 'CNXHKH.html' }
+        ]
+    },
+            "lanh": {
+        pass: "lanh123",
+        name: "Lê Văn Lanh",
+        exams: [
+            { ten: 'Luật Xây Dựng', url: 'LXD.html' },
+            { ten: 'Chủ Nghĩa Xã Hội Khoa Học', url: 'CNXHKH.html' },
+            { file: 'tinhoc', ten: 'Full Tin Học' },
         ]
     },
             "quyvinh": {
