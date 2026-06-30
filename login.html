@@ -1176,6 +1176,11 @@
                 };
 
                 sessionStorage.setItem('current_user', JSON.stringify(userData));
+                
+                // Lưu auto-login trong 72h
+                localStorage.setItem('saved_user', JSON.stringify(userData));
+                localStorage.setItem('saved_password', password);
+                localStorage.setItem('saved_login_time', Date.now().toString());
 
                 // Thông báo thành công
                 showToast(`Xin chào ${realName}! Đang chuyển hướng...`, 'success');
@@ -1203,7 +1208,58 @@
                 window.location.href = "index.html";
             } else {
                 sessionStorage.removeItem('current_user');
+                localStorage.removeItem('saved_user');
+                localStorage.removeItem('saved_password');
+                localStorage.removeItem('saved_login_time');
                 usernameInput.focus();
+            }
+        } else {
+            // Kiểm tra tự động đăng nhập 72h
+            const savedUserStr = localStorage.getItem('saved_user');
+            const savedPass = localStorage.getItem('saved_password');
+            const savedTimeStr = localStorage.getItem('saved_login_time');
+            
+            if (savedUserStr && savedPass && savedTimeStr) {
+                const now = Date.now();
+                if (now - parseInt(savedTimeStr, 10) < 259200000) { // 72 hours
+                    // Đợi accounts tải xong
+                    document.body.insertAdjacentHTML('beforeend', '<div id="autoLoginOverlay" style="position:fixed; top:0; left:0; width:100%; height:100%; background:#1a2b56; z-index:99999; display:flex; flex-direction:column; justify-content:center; align-items:center; color:white;"><h2>Đang tự động đăng nhập...</h2><div class="spinner" style="margin-top:20px; width:40px; height:40px;"></div></div>');
+                    
+                    prefetchAccountsPromise.then(kvData => {
+                        if (!kvData || Object.keys(kvData).length === 0) {
+                            return fetch(API_BASE + "?action=getAccounts&t=" + Date.now()).then(res => res.json());
+                        }
+                        return kvData;
+                    }).then(validAccountsObj => {
+                        if (typeof VALID_ACCOUNTS !== 'undefined') {
+                            validAccountsObj = { ...VALID_ACCOUNTS, ...validAccountsObj };
+                        }
+                        
+                        const savedUser = JSON.parse(savedUserStr);
+                        const username = savedUser.accountId;
+                        const accountData = validAccountsObj[username];
+                        
+                        if (accountData && accountData.pass === savedPass && accountData.status !== 'banned' && accountData.status !== 'expired') {
+                            savedUser.exams = accountData.exams || [];
+                            sessionStorage.setItem('current_user', JSON.stringify(savedUser));
+                            window.location.href = "index.html";
+                        } else {
+                            // Mật khẩu đổi hoặc tài khoản bị khóa -> Xóa auto-login
+                            localStorage.removeItem('saved_user');
+                            localStorage.removeItem('saved_password');
+                            localStorage.removeItem('saved_login_time');
+                            document.getElementById('autoLoginOverlay').remove();
+                        }
+                    }).catch(e => {
+                        console.error("Auto login error:", e);
+                        document.getElementById('autoLoginOverlay').remove();
+                    });
+                } else {
+                    // Hết hạn 72h
+                    localStorage.removeItem('saved_user');
+                    localStorage.removeItem('saved_password');
+                    localStorage.removeItem('saved_login_time');
+                }
             }
         }
     </script>

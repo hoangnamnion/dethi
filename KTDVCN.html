@@ -270,6 +270,9 @@
                 } catch (e) { console.error(e); }
 
                 sessionStorage.removeItem('current_user');
+                localStorage.removeItem('saved_user');
+                localStorage.removeItem('saved_password');
+                localStorage.removeItem('saved_login_time');
                 window.location.href = "login.html";
             }
         }
