@@ -15,7 +15,7 @@ const VALID_ACCOUNTS = {
 
     // ===== THÊM TÀI KHOẢN VÀO ĐÂY =====
     "admin": { pass: "admin123", name: "CAO VĂN NAM" },
-    "doanha": { pass: "doanhan123", name: "Đoàn Thị Hà" },
+    "doanha": { pass: "doanha123", name: "Đoàn Thị Hà" },
     "dat": { pass: "dat123", name: "Nguyễn Cũng Đạt" },
     "duc": { pass: "duc123", name: "Đặng Minh Đức" },
     "quyen": { pass: "quyen123", name: "Nguyễn Văn Quyến" },
