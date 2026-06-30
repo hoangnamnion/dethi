@@ -56,6 +56,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     showExpiredModal(currentUser.accountId);
                     // Xóa session để đăng xuất
                     sessionStorage.removeItem('current_user');
+                    localStorage.removeItem('saved_user');
+                    localStorage.removeItem('saved_password');
+                    localStorage.removeItem('saved_login_time');
                     // Nếu không ở trang login thì sau vài giây sẽ chuyển về login
                     if (!window.location.pathname.includes('login')) {
                         setTimeout(() => {
