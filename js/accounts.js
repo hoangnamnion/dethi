@@ -15,10 +15,11 @@ const VALID_ACCOUNTS = {
 
     // ===== THÊM TÀI KHOẢN VÀO ĐÂY =====
     "admin": { pass: "admin123", name: "CAO VĂN NAM" },
-    "doanha": { pass: "doanha123", name: "Đoàn Thị Hà" },
+    "doanha": { pass: "doanhan123", name: "Đoàn Thị Hà" },
     "dat": { pass: "dat123", name: "Nguyễn Cũng Đạt" },
     "duc": { pass: "duc123", name: "Đặng Minh Đức" },
     "quyen": { pass: "quyen123", name: "Nguyễn Văn Quyến" },
+    "lanh": { pass: "lanh123", name: "Lê Văn Lanh" },
     "minhkhang": { pass: "minhkhang123", name: "Nguyễn Minh Khang" },
     "thuy": { pass: "thuy123", name: "Nguyễn Thị Thủy" },
     "manh": { pass: "manh123", name: "Lương Thế Mạnh" },
@@ -46,28 +47,12 @@ const VALID_ACCOUNTS = {
             { ten: 'Chủ Nghĩa Xã Hội Khoa Học', url: 'CNXHKH.html' }
         ]
     },
-            "lanh": {
-        pass: "lanh123",
-        name: "Lê Văn Lanh",
-        exams: [
-            { ten: 'Luật Xây Dựng', url: 'LXD.html' },
-            { ten: 'Chủ Nghĩa Xã Hội Khoa Học', url: 'CNXHKH.html' },
-            { file: 'tinhoc', ten: 'Full Tin Học' },
-        ]
-    },
             "quyvinh": {
         pass: "quyvinh123",
         name: "Lê Quý Vinh",
         exams: [
             { ten: 'Luật Xây Dựng', url: 'LXD.html' },
             { ten: 'Chủ Nghĩa Xã Hội Khoa Học', url: 'CNXHKH.html' }
-        ]
-    },
-                "tinhoc": {
-        pass: "tinhoc123",
-        name: "Tài Khoản Cấp Riêng",
-        exams: [
-            { file: 'tinhoc', ten: 'Full Tin Học' },
         ]
     },
     // Ví dụ phân quyền thẳng vào 1 chương (Đề thi con):

@@ -156,12 +156,19 @@ async function getActivityLog(env) {
 }
 
 // =====================================================
-// LIVE MONITOR — Giám sát thi trực tuyến
+// LIVE MONITOR — Giám sát thi trực tuyến (Đã chuyển sang Cache API)
 // =====================================================
 async function updateLiveStatus(env, data) {
   if (!data || !data.username) return { error: 'Missing username' };
 
-  const allLive = await env.DB.get('live_students', 'json') || {};
+  const cacheKey = new Request('https://online-tracker.internal/live_students');
+  const cache = caches.default;
+
+  let allLive = {};
+  const cached = await cache.match(cacheKey);
+  if (cached) {
+    try { allLive = await cached.json(); } catch(e) {}
+  }
 
   allLive[data.username] = {
     name: data.name || data.username,
@@ -180,12 +187,22 @@ async function updateLiveStatus(env, data) {
     }
   }
 
-  await env.DB.put('live_students', JSON.stringify(allLive));
+  await cache.put(cacheKey, new Response(JSON.stringify(allLive), {
+    headers: { 'Content-Type': 'application/json', 'Cache-Control': 'max-age=60' }
+  }));
+
   return { success: true };
 }
 
 async function getLiveMonitor(env) {
-  const allLive = await env.DB.get('live_students', 'json') || {};
+  const cacheKey = new Request('https://online-tracker.internal/live_students');
+  const cache = caches.default;
+
+  let allLive = {};
+  const cached = await cache.match(cacheKey);
+  if (cached) {
+    try { allLive = await cached.json(); } catch(e) {}
+  }
 
   const now = Date.now();
   const active = [];
@@ -262,75 +279,18 @@ async function clearLeaderboard(env, examName) {
 // ONLINE TRACKING & SESSION CHECK
 // =====================================================
 async function loginSession(env, data) {
-  if (!data || !data.username || !data.deviceId) return { error: 'Missing data' };
-
-  // Ghi session mới kèm timestamp để syncUserStatus biết đây là login mới
-  const activeSessions = await env.DB.get('active_sessions', 'json') || {};
-  activeSessions[data.username] = {
-    deviceId: data.deviceId,
-    loginTime: Date.now()  // Dùng để tạo grace period tránh false-positive
-  };
-  await env.DB.put('active_sessions', JSON.stringify(activeSessions));
-
-  // Xóa khóa tạm thời nếu có (user đăng nhập lại sau khi bị khóa)
-  const lockedAccounts = await env.DB.get('locked_accounts', 'json') || {};
-  if (lockedAccounts[data.username]) {
-    delete lockedAccounts[data.username];
-    await env.DB.put('locked_accounts', JSON.stringify(lockedAccounts));
-  }
-
+  // Chức năng kiểm tra thiết bị đã bị vô hiệu hóa
+  // Chỉ ghi nhận để tương thích ngược với client
   return { success: true };
 }
 
 async function syncUserStatus(env, username, deviceId) {
   if (!username) return { error: 'Missing username' };
 
+  // Chức năng kiểm tra đa thiết bị đã bị vô hiệu hóa
+  // Hàm này chỉ còn dùng để cập nhật trạng thái online
+
   const now = Date.now();
-  const GRACE_PERIOD_MS = 15000; // 15 giây grace period sau khi login mới
-
-  const activeSessions = await env.DB.get('active_sessions', 'json') || {};
-  const lockedAccounts = await env.DB.get('locked_accounts', 'json') || {};
-
-  // 1. Kiểm tra tài khoản bị khóa
-  if (lockedAccounts[username] && now < lockedAccounts[username]) {
-    return { valid: false, action: 'logout', message: 'Phát hiện tài khoản đăng nhập trên nhiều thiết bị cùng lúc! Tất cả đã bị khóa tạm thời 1 phút.' };
-  }
-
-  // Dọn dẹp khóa cũ
-  let needsLockCleanup = false;
-  for (const key of Object.keys(lockedAccounts)) {
-    if (now > lockedAccounts[key]) {
-      delete lockedAccounts[key];
-      needsLockCleanup = true;
-    }
-  }
-  if (needsLockCleanup) await env.DB.put('locked_accounts', JSON.stringify(lockedAccounts));
-
-  // 2. Kiểm tra đăng nhập nhiều thiết bị
-  if (deviceId && activeSessions[username]) {
-    const sessionEntry = activeSessions[username];
-
-    // Hỗ trợ cả format cũ (string) lẫn format mới (object {deviceId, loginTime})
-    const storedDeviceId = (typeof sessionEntry === 'object') ? sessionEntry.deviceId : sessionEntry;
-    const loginTime = (typeof sessionEntry === 'object') ? sessionEntry.loginTime : 0;
-
-    // Nếu còn trong grace period (15 giây sau login), bỏ qua kiểm tra
-    // → tránh false-positive do KV eventual consistency
-    const isWithinGracePeriod = (now - loginTime) < GRACE_PERIOD_MS;
-
-    if (!isWithinGracePeriod && storedDeviceId && storedDeviceId !== deviceId) {
-      // Đây là thiết bị khác, khóa cả hai
-      lockedAccounts[username] = now + 60000;
-      await env.DB.put('locked_accounts', JSON.stringify(lockedAccounts));
-      return { valid: false, action: 'logout', message: 'Phát hiện tài khoản đăng nhập trên nhiều thiết bị cùng lúc! Tất cả đã bị khóa tạm thời 1 phút.' };
-    }
-  }
-
-  // 3. Nếu chưa có session, cập nhật session
-  if (deviceId && !activeSessions[username]) {
-    activeSessions[username] = { deviceId, loginTime: now };
-    await env.DB.put('active_sessions', JSON.stringify(activeSessions));
-  }
 
   // =====================================================
   // ONLINE TRACKING — Dùng Cache API thay vì KV
