@@ -108,17 +108,20 @@
         </div>
     </div>
 
-    <!-- Nút Báo Lỗi Nổi (Ẩn mặc định) -->
-    <button id="btnReportFloat" onclick="openReportModal()" style="display:none; position:fixed; bottom:80px; right:16px; background:linear-gradient(135deg,#FF6B6B,#EE5A24); color:white; border:none; padding:10px 16px; border-radius:25px; font-weight:bold; font-size:0.82em; box-shadow:0 6px 20px rgba(255,107,107,0.35); z-index:100; cursor:pointer; transition:0.3s;">
+    <!-- Nút Báo Lỗi Nổi (Luôn hiện) -->
+    <button id="btnReportFloat" onclick="openReportModal()" style="display:block; position:fixed; bottom:80px; right:16px; background:linear-gradient(135deg,#FF6B6B,#EE5A24); color:white; border:none; padding:10px 16px; border-radius:25px; font-weight:bold; font-size:0.82em; box-shadow:0 6px 20px rgba(255,107,107,0.35); z-index:100; cursor:pointer; transition:0.3s;">
         ⚠️ Báo lỗi câu này
     </button>
 
     <!-- Modal Báo Lỗi -->
     <div class="modal" id="modalReport" style="display:none; align-items:center; justify-content:center; background: rgba(0,0,0,0.45); z-index:1000;">
-        <div class="result-box" style="padding: 24px; text-align:left;">
+        <div class="result-box" style="padding: 24px; text-align:left; max-width: 500px; width: 90%; max-height: 90vh; overflow-y: auto;">
             <div style="font-size:1.1em; font-weight:800; color:#d63031; margin-bottom:12px;">⚠️ Yêu cầu chỉnh lại câu</div>
-            <p style="font-size:0.88em; color:#636e72; margin-bottom:10px;">Phát hiện sai sót? Điền yêu cầu chỉnh sửa:</p>
-            <textarea id="reportContent" rows="4" style="width:100%; padding:12px; border-radius:12px; border:2px solid #EDF2F7; font-family:inherit; font-size:0.9em; resize:none; margin-bottom:15px; background:#F8F9FA;" placeholder="Ví dụ: Đáp án đúng phải là A, hoặc lỗi chính tả..."></textarea>
+            <div id="reportQuestionContent" style="margin-bottom: 15px; font-size: 0.9em; background: #f8f9fa; padding: 10px; border-radius: 8px; border: 1px solid #e9ecef;">
+                <!-- Nội dung câu hỏi và các đáp án sẽ được inject vào đây -->
+            </div>
+            <p style="font-size:0.88em; color:#636e72; margin-bottom:10px;">Ghi chú thêm (tùy chọn):</p>
+            <textarea id="reportContent" rows="3" style="width:100%; padding:12px; border-radius:12px; border:2px solid #EDF2F7; font-family:inherit; font-size:0.9em; resize:none; margin-bottom:15px; background:#F8F9FA;" placeholder="Ví dụ: Lỗi chính tả, v.v..."></textarea>
             
             <div style="display:flex; gap:10px;">
                 <button class="result-btn primary" onclick="submitReport()" style="flex:1; background:#00B894;">Gửi</button>
@@ -269,20 +272,69 @@
 
         // --- BÁO LỖI CÂU HỎI ---
         function openReportModal() {
+            if (typeof allQuestions === 'undefined' || typeof currentIndex === 'undefined' || !allQuestions[currentIndex]) {
+                alert('Không thể tải dữ liệu câu hỏi!');
+                return;
+            }
+            
+            const q = allQuestions[currentIndex];
+            let qText = q.text.replace(/\[IMG:(.*?)\]/g, '<br><img src="$1" style="max-width:100%;"><br>');
+            
+            let optionsHtml = '';
+            q.options.forEach((opt, idx) => {
+                const label = String.fromCharCode(65 + idx);
+                let optText = opt.text;
+                const match = optText.match(/^([A-D])\.\s*(.*)/);
+                if (match) optText = match[2];
+                
+                optionsHtml += `
+                    <label style="display:flex; margin: 8px 0; cursor:pointer; align-items: flex-start; gap: 8px; line-height: 1.4;">
+                        <input type="radio" name="reportOption" value="${label}" style="margin-top:3px;">
+                        <span><b>${label}.</b> ${optText}</span>
+                    </label>
+                `;
+            });
+            
+            document.getElementById('reportQuestionContent').innerHTML = `
+                <div style="font-weight:bold; margin-bottom:10px; color:#2d3436;">${qText}</div>
+                <div style="font-weight:600; color:#0984e3; margin-top:15px; margin-bottom:8px;">Theo bạn đáp án đúng là:</div>
+                <div>${optionsHtml}</div>
+                <label style="display:flex; margin: 8px 0; cursor:pointer; align-items: flex-start; gap: 8px;">
+                    <input type="radio" name="reportOption" value="Other" style="margin-top:3px;">
+                    <span><b>Khác</b> (ghi rõ ở phần ghi chú)</span>
+                </label>
+            `;
+            
             document.getElementById('modalReport').style.display = 'flex';
         }
 
         async function submitReport() {
             const text = document.getElementById('reportContent').value.trim();
-            if (!text) return alert('Vui lòng nhập nội dung!');
+            const selectedRadio = document.querySelector('input[name="reportOption"]:checked');
+            
+            if (!selectedRadio && !text) {
+                return alert('Vui lòng chọn đáp án bạn cho là đúng hoặc nhập ghi chú!');
+            }
+            
+            let suggested = selectedRadio ? selectedRadio.value : 'Không chọn';
             
             let qText = 'Không xác định';
+            let optionsText = '';
             if (typeof allQuestions !== 'undefined' && typeof currentIndex !== 'undefined' && allQuestions[currentIndex]) {
-                qText = allQuestions[currentIndex].text;
+                const q = allQuestions[currentIndex];
+                qText = q.text;
+                q.options.forEach((opt, idx) => {
+                    const label = String.fromCharCode(65 + idx);
+                    let optText = opt.text;
+                    const match = optText.match(/^([A-D])\.\s*(.*)/);
+                    if (match) optText = match[2];
+                    optionsText += `\n${label}. ${optText}`;
+                    if (opt.isCorrect) optionsText += ` (ĐÚNG)`;
+                });
             }
             
             const ud = JSON.parse(sessionStorage.getItem('current_user') || '{}');
-            const msg = `⚠️ <b>BÁO LỖI CÂU HỎI</b>\n👤 User: <code>${ud.username || 'Unknown'}</code>\n📚 Đề: ${typeof currentFileName !== 'undefined' ? currentFileName : 'N/A'}\n📍 Câu ${typeof currentIndex !== 'undefined' ? currentIndex + 1 : '?'}: ${qText.substring(0, 50)}...\n\n💬 <b>Nội dung góp ý:</b>\n${text}`;
+            const msg = `⚠️ <b>BÁO LỖI CÂU HỎI</b>\n👤 User: <code>${ud.username || 'Unknown'}</code>\n📚 Đề: ${typeof currentFileName !== 'undefined' ? currentFileName : 'N/A'}\n📍 Câu ${typeof currentIndex !== 'undefined' ? currentIndex + 1 : '?'}:\n${qText}\n${optionsText}\n\n💡 <b>Đề xuất Đ.Án:</b> ${suggested}\n💬 <b>Nội dung góp ý:</b>\n${text || 'Không có'}`;
             
             try {
                 // Ensure api-config.js variables are available
@@ -297,6 +349,9 @@
                 alert('Cảm ơn bạn đã góp ý! Yêu cầu đã được gửi đến ban quản trị.');
                 document.getElementById('modalReport').style.display = 'none';
                 document.getElementById('reportContent').value = '';
+                
+                // Bỏ chọn radio button
+                if (selectedRadio) selectedRadio.checked = false;
             } catch(e) {
                 alert('Có lỗi xảy ra khi gửi yêu cầu.');
             }
