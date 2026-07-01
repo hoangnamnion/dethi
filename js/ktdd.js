@@ -1,3 +1,3 @@
 const docList = [
-    { file: 'update.docx', ten: 'Đang update' },
+    { file: 'ktdd.docx', ten: 'Full Tự Luận' },
 ];
