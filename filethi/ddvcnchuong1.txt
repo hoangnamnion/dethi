@@ -1,0 +1,349 @@
+Câu 1. Kiến trúc là gì?
+
+*A. Là ngành vừa mang tính khoa học kỹ thuật vừa mang tính nghệ thuật.
+B. Là ngành chỉ nghiên cứu mỹ thuật.
+C. Là ngành chỉ nghiên cứu xây dựng.
+D. Là ngành chỉ nghiên cứu nội thất.
+
+Câu 2. Ba yêu cầu cơ bản của kiến trúc là gì?
+
+A. Kinh tế, vật liệu, mỹ thuật.
+*B. Thích dụng, bền vững, mỹ quan.
+C. Kết cấu, vật liệu, tiến độ.
+D. Thi công, quy hoạch, nội thất.
+
+Câu 3. Công trình kiến trúc trước hết phải đáp ứng yêu cầu nào?
+
+*A. Phù hợp công năng sử dụng.
+B. Có hình thức đẹp.
+C. Chi phí thấp nhất.
+D. Cao tầng.
+
+Câu 4. Yêu cầu "bền vững" của công trình thể hiện ở yếu tố nào?
+
+A. Có nhiều tầng.
+*B. Đảm bảo cường độ, ổn định và tuổi thọ.
+C. Có màu sắc đẹp.
+D. Có diện tích lớn.
+
+Câu 5. Yêu cầu "mỹ quan" trong kiến trúc nhằm mục đích gì?
+
+A. Giảm giá thành.
+B. Tăng diện tích sử dụng.
+*C. Tạo giá trị thẩm mỹ cho công trình.
+D. Giảm thời gian thi công.
+
+Câu 6. Kiến trúc chịu ảnh hưởng trực tiếp của yếu tố nào?
+
+A. Chỉ khí hậu.
+B. Chỉ kinh tế.
+C. Chỉ văn hóa.
+*D. Điều kiện tự nhiên, xã hội, kinh tế và kỹ thuật.
+
+Câu 7. Nhà ở thuộc loại công trình nào?
+
+*A. Công trình dân dụng.
+B. Công trình công nghiệp.
+C. Công trình giao thông.
+D. Công trình thủy lợi.
+
+Câu 8. Công trình phục vụ sản xuất được xếp vào loại nào?
+
+A. Công trình dân dụng.
+*B. Công trình công nghiệp.
+C. Công trình văn hóa.
+D. Công trình thương mại.
+
+Câu 9. Nhà thấp tầng có số tầng là bao nhiêu?
+
+*A. 1–3 tầng.
+B. 4–6 tầng.
+C. 7–10 tầng.
+D. Trên 10 tầng.
+
+Câu 10. Nhà nhiều tầng theo tài liệu có số tầng là?
+
+A. 1–3 tầng.
+*B. 4–6 tầng (đôi khi 7 tầng).
+C. 8–15 tầng.
+D. Trên 30 tầng.
+
+Câu 11. Nhà cao tầng thường có bao nhiêu tầng?
+
+A. 3 tầng trở lên.
+B. 5 tầng trở lên.
+*C. 7 tầng đến khoảng 30 tầng.
+D. Trên 50 tầng.
+
+Câu 12. Nhà siêu cao tầng là nhà có:
+
+A. Trên 15 tầng.
+B. Trên 20 tầng.
+C. Trên 25 tầng.
+*D. Trên 30 tầng.
+
+Câu 13. Môđun gốc trong xây dựng là:
+
+A. 10 mm.
+B. 50 mm.
+*C. 100 mm.
+D. 1000 mm.
+
+Câu 14. Trục định vị dùng để làm gì?
+
+A. Chia phòng.
+*B. Xác định vị trí tường, cột và các bộ phận công trình.
+C. Trang trí mặt đứng.
+D. Bố trí nội thất.
+
+Câu 15. Bước gian là:
+
+A. Chiều cao tầng.
+*B. Khoảng cách giữa hai trục theo phương ngang.
+C. Chiều rộng cửa.
+D. Chiều dài mái.
+
+Câu 16. Nhịp nhà là:
+
+A. Khoảng cách giữa hai cửa.
+B. Chiều cao công trình.
+*C. Khoảng cách giữa hai trục chịu lực theo phương còn lại.
+D. Chiều rộng hành lang.
+
+Câu 17. Mặt bằng công trình thể hiện điều gì?
+
+A. Hình dáng mái.
+*B. Cách bố trí các phòng và kích thước theo mặt cắt ngang.
+C. Hình thức mặt đứng.
+D. Phối cảnh công trình.
+
+Câu 18. Mặt đứng dùng để thể hiện:
+
+A. Nội thất.
+*B. Hình dáng bên ngoài công trình.
+C. Móng nhà.
+D. Kết cấu dầm.
+
+Câu 19. Mặt cắt nhằm mục đích:
+
+A. Thể hiện màu sắc.
+*B. Thể hiện không gian bên trong theo phương đứng.
+C. Thể hiện sân vườn.
+D. Thể hiện quy hoạch.
+
+Câu 20. Cao độ hoàn thiện tầng 1 được quy ước là:
+
+A. +1.000
+B. -0.500
+*C. ±0.000
+D. +0.500
+
+Câu 21. Trong mặt cắt, các bộ phận nằm dưới ±0.000 có cao độ:
+
+A. Dương.
+*B. Âm.
+C. Không xác định.
+D. Bằng 0.
+
+Câu 22. Thiết kế cơ sở được thực hiện ở giai đoạn nào?
+
+*A. Giai đoạn đầu của dự án.
+B. Sau thi công.
+C. Sau hoàn công.
+D. Sau nghiệm thu.
+
+Câu 23. Thiết kế kỹ thuật được lập trên cơ sở:
+
+A. Thiết kế hoàn công.
+*B. Thiết kế cơ sở đã được phê duyệt.
+C. Thiết kế nội thất.
+D. Thiết kế cảnh quan.
+
+Câu 24. Thiết kế bản vẽ thi công nhằm mục đích:
+
+A. Lập dự toán.
+B. Xin giấy phép.
+*C. Triển khai thi công công trình.
+D. Trang trí nội thất.
+
+Câu 25. Nhà ở là:
+
+*A. Công trình chuyên dùng để ở.
+B. Công trình phục vụ sản xuất.
+C. Công trình giao thông.
+D. Công trình thương mại.
+
+Câu 26. Nhà ở nông thôn thường sử dụng vật liệu:
+
+A. Kính và nhôm.
+*B. Vật liệu địa phương như tre, gỗ, đá.
+C. Thép không gỉ.
+D. Composite.
+
+Câu 27. Nhà biệt thự thường dành cho:
+
+A. Sinh viên.
+B. Công nhân.
+*C. Người có thu nhập cao.
+D. Công nhân khu công nghiệp.
+
+Câu 28. Nhà liền kề còn được gọi là:
+
+A. Nhà tháp.
+*B. Nhà phố hoặc nhà khối ghép.
+C. Nhà công vụ.
+D. Nhà xưởng.
+
+Câu 29. Chung cư là loại nhà:
+
+A. Chỉ dành cho một gia đình.
+*B. Dành cho nhiều gia đình.
+C. Chỉ dành cho sinh viên.
+D. Chỉ dành cho công nhân.
+
+Câu 30. Ký túc xá chủ yếu phục vụ:
+
+A. Gia đình đông người.
+*B. Sinh viên, công nhân, người độc thân.
+C. Khách du lịch.
+D. Doanh nghiệp.
+
+Câu 31. Bộ phận ở của nhà gồm:
+
+A. Kho và WC.
+*B. Phòng khách, phòng ngủ, phòng ăn, phòng thờ.
+C. Hành lang.
+D. Cầu thang.
+
+Câu 32. Bộ phận giao thông đứng là:
+
+A. Hành lang.
+B. Nhà cầu.
+*C. Cầu thang.
+D. Ban công.
+
+Câu 33. Tiền phòng có chức năng:
+
+A. Nấu ăn.
+*B. Đón tiếp ban đầu, để giày dép và chỉnh trang.
+C. Nghỉ ngơi.
+D. Giặt phơi.
+
+Câu 34. Diện tích tiền phòng thường là:
+
+A. 2–4 m².
+*B. 6–8 m².
+C. 10–12 m².
+D. 15–20 m².
+
+Câu 35. Phòng khách là:
+
+A. Không gian phụ.
+*B. Bộ mặt đối ngoại của chủ nhà.
+C. Kho chứa đồ.
+D. Nơi để xe.
+
+Câu 36. Diện tích phòng khách thường là:
+
+A. 8–10 m².
+B. 10–12 m².
+*C. 16–20 m².
+D. 25–30 m².
+
+Câu 37. Phòng ngủ thường có diện tích:
+
+A. 6–8 m².
+B. 8–10 m².
+*C. 12–18 m².
+D. 25–30 m².
+
+Câu 38. Phòng ngủ nên bố trí:
+
+A. Gần bếp.
+*B. Gần cửa sổ, gần vệ sinh và cầu thang.
+C. Trên mái.
+D. Trong tầng hầm.
+
+Câu 39. Phòng ăn và bếp nên bố trí:
+
+A. Đầu hướng gió.
+*B. Cuối hướng gió.
+C. Giữa sân.
+D. Trên mái.
+
+Câu 40. Phòng bếp cần đảm bảo:
+
+A. Không cần thông gió.
+*B. Thông gió và hút mùi tốt.
+C. Không cần cửa sổ.
+D. Không cần chống cháy.
+
+Câu 41. Diện tích bếp và phòng ăn thường là:
+
+A. 8–10 m².
+B. 10–12 m².
+*C. 16–20 m².
+D. 30–35 m².
+
+Câu 42. Khu vệ sinh nên bố trí:
+
+A. Xa cầu thang.
+*B. Gần cầu thang.
+C. Ngoài sân.
+D. Trên mái.
+
+Câu 43. Nhà 1–2 tầng nên bố trí:
+
+A. Một WC duy nhất.
+*B. Hai khu vệ sinh.
+C. Không cần WC.
+D. Ba WC.
+
+Câu 44. Diện tích khu vệ sinh thường là:
+
+A. 1–2 m².
+*B. 2,5–5 m².
+C. 8–10 m².
+D. 15–20 m².
+
+Câu 45. Kho trong nhà thường bố trí:
+
+A. Giữa phòng khách.
+*B. Gầm cầu thang hoặc phía trên khu vệ sinh.
+C. Trên mái.
+D. Giữa sân.
+
+Câu 46. Diện tích kho thường là:
+
+A. 1–2 m².
+*B. 4–5 m².
+C. 8–10 m².
+D. 12–15 m².
+
+Câu 47. Ban công và lô gia có chức năng:
+
+A. Đặt máy phát điện.
+*B. Nghỉ ngơi, hóng mát và phơi phóng.
+C. Làm gara.
+D. Làm phòng ngủ.
+
+Câu 48. Diện tích ban công, lô gia thường là:
+
+A. 1–2 m².
+*B. 4–5 m².
+C. 8–10 m².
+D. 15–20 m².
+
+Câu 49. Lô gia là:
+
+A. Ban công nhô ra ngoài.
+*B. Không gian nghỉ ngơi chỉ có một mặt nhìn ra ngoài.
+C. Mái hiên.
+D. Hành lang.
+
+Câu 50. Nguyên tắc chung khi bố trí thiết bị trong nhà là:
+
+A. Chỉ cần đẹp.
+B. Chỉ cần rẻ.
+*C. Phù hợp tâm sinh lý và nhân trắc học của người sử dụng.
+D. Chỉ cần tiết kiệm diện tích.

@@ -1,0 +1,542 @@
+Chương 5: CẤU TẠO NHÀ VÀ CÔNG TRÌNH (Tổng quan và Phần Nền, Móng)
+Câu 71: Hệ sườn chịu lực của nhà có nhiệm vụ gì?
+A. Trang trí và làm đẹp
+*B. Chịu lực, tạo sự ổn định và truyền tải trọng xuống móng
+C. Ngăn cách không gian
+D. Chống thấm và cách nhiệt
+
+Câu 72: Tường chịu lực thường làm dày bao nhiêu khi xây bằng gạch nung?
+A. 110mm
+B. 150mm
+*C. 220mm
+D. 500mm
+
+Câu 73: Kết cấu tường ngang chịu lực có ưu điểm gì?
+A. Bố trí không gian linh hoạt
+*B. Độ cứng ngang lớn, ít dầm
+C. Tiết kiệm vật liệu so với tường dọc chịu lực
+D. Tường mỏng hơn
+
+Câu 74: Khung chịu lực toàn khối có đặc điểm gì?
+A. Thi công nhanh
+*B. Liên kết tốt, chịu lực tốt
+C. Công nghiệp hóa cao
+D. Cấu kiện chế tạo sẵn
+
+Câu 75: Nền móng là gì?
+*A. Lớp đất nằm dưới móng chịu toàn bộ hoặc phần lớn tải trọng công trình
+B. Bộ phận thấp nhất của công trình
+C. Lớp bê tông lót dưới móng
+D. Lớp đất mặt trên cùng
+
+Câu 76: Nền thiên nhiên là gì?
+A. Lớp đất đã được gia cố
+*B. Lớp đất có đủ khả năng chịu tải mà không cần gia cố
+C. Lớp đất được đầm nện bằng thủ công
+D. Nền nhà đã được xây dựng
+
+Câu 77: Độ lún cho phép (S) của nền nhà là bao nhiêu?
+A. 5 cm
+*B. 8 cm
+C. 15 cm
+D. 20 cm
+
+Câu 78: Phương pháp gia cố nền nhân tạo nào sử dụng dung dịch Silicat Natri và Clorua Canxi?
+A. Phương pháp thay đất
+*B. Phương pháp Silicát hoá
+C. Phương pháp xi măng hóa
+D. Phương pháp đóng cọc
+
+Câu 79: Cọc được đóng xuyên qua lớp đất mềm đến lớp đất cứng gọi là loại cọc gì?
+*A. Cọc chống
+B. Cọc ma sát
+C. Cọc tre
+D. Cọc bê tông
+
+Câu 80: Chiều cao nền nhà dân dụng so với mặt đất thường nằm trong khoảng nào?
+A. 10 - 20cm
+B. 50 - 100cm
+*C. 20 - 120cm
+D. 200 - 300cm
+
+Câu 81: Khi nào nên làm nền nhà rỗng thay vì nền nhà đặc?
+A. Khi nền chịu tải trọng lớn
+B. Khi công trình ở vùng khô ráo
+*C. Khi có yêu cầu chống ẩm cao hoặc mặt nền cao hơn mặt đất nhiều (≥60cm)
+D. Khi công trình có nhiều tầng
+
+Câu 82: Cấu tạo nền nhà công nghiệp thường có lớp nào sau đây?
+A. Lớp cách âm bằng xỉ
+*B. Lớp mặt, lớp đệm, lớp trung gian
+C. Lớp ván sàn và dầm gỗ
+D. Lớp vôi rơm
+
+Câu 83: Yêu cầu nào sau đây KHÔNG phải của nền nhà công nghiệp?
+A. Đủ cường độ chịu lực
+B. Ít bị mài mòn
+*C. Có tính dẫn điện tốt
+D. Chịu được tác dụng hóa học
+
+Câu 84: Móng là bộ phận như thế nào?
+*A. Là bộ phận nằm ngầm dưới mặt đất, truyền tải trọng công trình xuống đất nền
+B. Là lớp đất nằm dưới móng
+C. Là lớp bê tông lót
+D. Là bộ phận tường trên mặt đất
+
+Câu 85: Giá thành móng thường chiếm bao nhiêu phần trăm giá trị căn nhà?
+A. 5 - 10%
+B. 30 - 50%
+*C. Khoảng 20%
+D. Trên 50%
+
+Câu 86: Móng chịu tải đúng tâm là móng có đặc điểm gì?
+A. Hợp lực lệch khỏi trọng tâm đáy móng
+*B. Hướng truyền lực trùng với trọng tâm của đáy móng
+C. Móng bị lún lệch
+D. Móng có hình dạng phức tạp
+
+Câu 87: Móng đơn (móng độc lập) thường được sử dụng cho loại kết cấu nào?
+A. Nhà có tường chịu lực
+*B. Nhà có kết cấu khung chịu lực
+C. Nhà có tường ngang chịu lực
+D. Nhà không có cột
+
+Câu 88: Móng băng là loại móng có đặc điểm gì?
+*A. Chạy dài dọc dưới chân tường hoặc các cột, truyền tải trọng đều xuống nền
+B. Liên kết các móng thành một mảng
+C. Được đóng sâu xuống đất bằng cọc
+D. Có hình vuông dưới chân cột
+
+Câu 89: Khi sức chịu tải của đất quá yếu và các móng gần sát nhau, người ta dùng loại móng gì?
+A. Móng đơn
+B. Móng băng
+*C. Móng bè
+D. Móng cọc
+
+Câu 90: Móng cọc chống được sử dụng trong trường hợp nào?
+*A. Dưới lớp đất yếu có lớp đất rắn, cọc tựa lên đó
+B. Lớp đất rắn ở quá sâu
+C. Khi cần giảm giá thành
+D. Khi móng chịu tải trọng ngang lớn
+
+Câu 91: Móng nông là móng có chiều sâu chôn móng như thế nào?
+A. Lớn hơn 5m
+*B. Nhỏ hơn 5m
+C. Nằm dưới mực nước ngầm
+D. Được đóng bằng cọc
+
+Câu 92: Chiều sâu chôn móng trong đất được tính từ đâu?
+*A. Từ đáy móng đến mặt đất tự nhiên
+B. Từ mặt móng đến mặt đất
+C. Từ đỉnh cột đến mặt móng
+D. Từ tầng hầm đến đáy móng
+
+Câu 93: Móng gạch được sử dụng hợp lý khi chiều rộng đế móng như thế nào?
+A. Lớn hơn 1500mm
+B. Lớn hơn 2000mm
+*C. Nhỏ hơn 1500mm
+D. Nhỏ hơn 1000mm
+
+Câu 94: Góc cứng của móng bê tông có thể đạt giá trị bao nhiêu?
+A. 30°
+*B. 45°
+C. 60°
+D. 90°
+
+Câu 95: Khe lún được thiết kế trong công trình để làm gì?
+A. Chống lại hiện tượng giãn nở vì nhiệt
+*B. Chống lại khả năng nứt, gãy do lún không đều
+C. Tạo sự thông thoáng cho công trình
+D. Phân chia các giai đoạn thi công
+
+Câu 96: Khe nhiệt độ (khe co giãn) có đặc điểm gì về móng?
+A. Móng được tách rời thành hai phần
+*B. Móng được làm chung không tách rời
+C. Móng được đổ sau cùng
+D. Móng có cấu tạo đặc biệt chống nóng
+
+Câu 97: Khi nào cần làm móng giật cấp?
+A. Khi nhà có tầng hầm
+*B. Khi xây nhà trên sườn dốc
+C. Khi đất nền yếu
+D. Khi nhà có khe lún
+
+Câu 98: Biện pháp chống ẩm cho tường móng thường làm bằng cách nào?
+A. Trát vữa xi măng dày 5cm
+*B. Láng một lớp vữa xi măng mác 75 dày 20mm tại cổ móng
+C. Quét bitum lên toàn bộ tường móng
+D. Ốp gạch men chống thấm
+
+Câu 99: Khi mực nước ngầm cao hơn nền tầng hầm, cần làm gì để chống thấm?
+A. Chỉ cần trát vữa chống thấm bên trong
+*B. Hạ thấp mực nước ngầm, đắp đất sét bên ngoài và láng vữa trong
+C. Đổ bê tông dày hơn
+D. Không cần xử lý đặc biệt
+
+Câu 100: Móng bê tông cốt thép có ưu điểm gì so với móng cứng?
+A. Giá thành rẻ hơn
+B. Thi công đơn giản hơn
+*C. Chịu được lực uốn tốt, cường độ cao
+D. Không cần đệm móng
+
+Chương 5: CẤU TẠO NHÀ VÀ CÔNG TRÌNH (Phần Tường)
+Câu 101: Chức năng của tường trong công trình là gì?
+A. Chỉ để trang trí
+*B. Bao che, ngăn cách và chịu lực
+C. Chỉ để chống mưa nắng
+D. Chỉ để làm khung nhà
+
+Câu 102: Theo vị trí, tường được phân thành những loại nào?
+A. Tường chịu lực và tường không chịu lực
+*B. Tường trong nhà và tường ngoài nhà
+C. Tường gạch và tường bê tông
+D. Tường xây và tường lắp ghép
+
+Câu 103: Kích thước viên gạch tiêu chuẩn của Việt Nam là bao nhiêu?
+A. 220 x 110 x 60 mm
+B. 200 x 100 x 50 mm
+*C. 220 x 105 x 55 mm
+D. 250 x 120 x 60 mm
+
+Câu 104: Tường 1/4 gạch có chiều dày là bao nhiêu?
+A. 110mm
+*B. 60mm
+C. 220mm
+D. 335mm
+
+Câu 105: Tường 1 gạch có chiều dày là bao nhiêu?
+A. 110mm
+B. 335mm
+*C. 220mm
+D. 450mm
+
+Câu 106: Bệ tường thường được làm nhỏ hơn hay dày hơn thân tường khi làm bằng gạch thông thường?
+A. Nhỏ hơn
+*B. Dày hơn
+C. Bằng nhau
+D. Không có quy định
+
+Câu 107: Giằng tường thường được làm bằng vật liệu gì?
+A. Gạch
+B. Đá
+*C. Bê tông cốt thép (BTCT)
+D. Gỗ
+
+Câu 108: Lanh tô có tác dụng gì?
+A. Trang trí cho cửa sổ
+*B. Đỡ phần tường bên trên lỗ cửa, tránh biến dạng
+C. Cách nhiệt cho tường
+D. Chống thấm cho tường
+
+Câu 109: Lanh tô gạch cuốn vòm thường áp dụng cho chiều rộng lỗ cửa bao nhiêu?
+A. Nhỏ hơn 1200mm
+B. Lớn hơn 2000mm
+*C. 1500 - 1800mm
+D. 1800 - 2500mm
+
+Câu 110: Mái hắt (ô-văng) có tác dụng gì?
+A. Làm lanh tô đỡ tường
+B. Trang trí cho mặt đứng
+*C. Che mưa, nắng hắt vào cửa và đỡ phần tường bên trên
+D. Thoát nước mưa cho mái
+
+Câu 111: Để chống nước mưa thấm từ đỉnh vào tường, người ta làm gì?
+A. Xây tường cao hơn mái
+B. Lợp ngói lên đỉnh tường
+*C. Làm diềm bảo vệ bằng gạch láng vữa hoặc BTCT
+D. Sơn chống thấm
+
+Câu 112: Mặt tường không trát (xây trần) có yêu cầu gì?
+*A. Gạch tốt, vuông vắn, mạch vữa phẳng đều
+B. Trát thêm một lớp vữa ngoài
+C. Phải dùng gạch mộc
+D. Không cần yêu cầu đặc biệt
+
+Câu 113: Khi trát tường chống thấm, thường trát làm bao nhiêu lớp?
+A. 1 lớp
+B. 2 lớp
+C. 3 lớp
+*D. 2 lớp (lớp lót và lớp hoàn thiện)
+
+Câu 114: Tường blốc có kích thước và trọng lượng như thế nào?
+A. Kích thước lớn, trọng lượng > 5 tấn
+*B. Kích thước nhỏ, trọng lượng < 3 tấn
+C. Kích thước bằng panen, trọng lượng 5 tấn
+D. Không có quy định cụ thể
+
+Câu 115: Tường panen là loại tường lắp ghép có đặc điểm gì?
+A. Dày hơn 16cm
+B. Trọng lượng nhỏ hơn 3 tấn
+*C. Kích thước lớn, thường bằng chiều rộng một gian
+D. Làm bằng gạch đặc
+
+Câu 116: Panen tường ngoài không chịu lực thường được gọi là gì?
+A. Panen tự mang
+*B. Panen treo
+C. Panen chịu lực
+D. Panen cách nhiệt
+
+Câu 117: Để liên kết các tấm panen tường với nhau và với sàn, người ta thường dùng cách nào?
+A. Dùng vữa dán
+B. Dùng đinh vít
+*C. Dùng liên kết hàn (mối nối khô) hoặc lắp ghép toàn khối
+D. Dùng keo dán chuyên dụng
+
+Câu 118: Mạch vữa đứng giữa các panen tường thường chừa khoảng bao nhiêu?
+A. 10mm
+B. 20mm
+*C. 30mm
+D. 50mm
+
+Câu 119: Ưu điểm nổi bật của tường lắp ghép là gì?
+A. Tính ổn định và độ cứng cao
+*B. Đẩy nhanh tốc độ thi công, chất lượng cấu kiện cao
+C. Giá thành cực rẻ
+D. Dễ dàng thay đổi mặt bằng
+
+Câu 120: Loại tường nào trong nhà công nghiệp có thể xây bằng gạch rỗng để giảm trọng lượng?
+A. Tường chịu lực
+*B. Tường tự mang
+C. Tường treo
+D. Tường hồi
+
+Chương 5: CẤU TẠO NHÀ VÀ CÔNG TRÌNH (Phần Sàn, Cầu thang, Mái)
+Câu 121: Sàn nhà là bộ phận có chức năng gì?
+A. Bao che ngôi nhà từ trên xuống
+*B. Phân không gian nhà thành các tầng, tăng diện tích sử dụng
+C. Là bộ phận chịu lực đứng
+D. Là bộ phận ngăn cách giữa các phòng
+
+Câu 122: Yêu cầu cơ bản nào KHÔNG phải của sàn nhà?
+A. Đảm bảo cường độ
+B. Cách âm và cách nhiệt
+C. Chống cháy
+*D. Không cần tính thẩm mỹ
+
+Câu 123: Sàn bản là loại sàn chịu lực theo mấy phương?
+A. Một phương
+B. Hai phương
+C. Cả một và hai phương
+*D. Tùy thuộc vào tỷ lệ chiều dài và chiều rộng của bản
+
+Câu 124: Sàn sườn có đặc điểm gì?
+A. Không có dầm
+*B. Có hệ thống dầm làm sườn chịu lực và bản sàn
+C. Là một bản đặc liền khối
+D. Chỉ làm bằng gỗ
+
+Câu 125: Sàn không dầm (sàn nấm) là loại sàn như thế nào?
+A. Có dầm chính và dầm phụ
+*B. Các tấm phẳng đặt trực tiếp lên cột
+C. Có bản sàn kê lên tường chịu lực
+D. Là sàn lắp ghép bằng panen
+
+Câu 126: Loại sàn nào thường được sử dụng phổ biến nhất hiện nay?
+A. Sàn gỗ
+*B. Sàn bê tông cốt thép
+C. Sàn dầm thép
+D. Sàn gạch đá
+
+Câu 127: Sàn bê tông cốt thép toàn khối có ưu điểm gì?
+*A. Độ cứng lớn, liên kết tốt
+B. Thi công nhanh
+C. Ít tốn ván khuôn
+D. Sửa chữa dễ dàng
+
+Câu 128: Sàn bê tông cốt thép lắp ghép có nhược điểm gì?
+A. Thi công chậm
+B. Chất lượng kém
+*C. Độ cứng không bằng sàn toàn khối, cần gia cố mối nối
+D. Giá thành cao hơn toàn khối
+
+Câu 129: Chiều dày của sàn bản kê hai cạnh thường là bao nhiêu?
+A. 80 - 120mm
+B. 50 - 60mm
+*C. 60 - 100mm
+D. 150 - 200mm
+
+Câu 130: Dầm chính trong sàn bản dầm thường có chiều cao khoảng bao nhiêu lần chiều dài nhịp?
+A. 1/12 - 1/20
+*B. 1/8 - 1/15
+C. 1/2 - 1/3
+D. 1/30 - 1/35
+
+Câu 131: Sàn ô cờ (két sông) có ưu điểm gì về mặt kiến trúc?
+A. Giá thành rẻ
+B. Thi công đơn giản
+*C. Mặt trần có hệ dầm đều đẹp, dễ trang trí
+D. Chịu được tải trọng cực lớn
+
+Câu 132: Sàn nấm thường được áp dụng cho công trình nào?
+A. Nhà ở gia đình
+*B. Siêu thị, chợ, xưởng có mặt bằng lớn
+C. Nhà thấp tầng
+D. Các phòng nhỏ hẹp
+
+Câu 133: Mặt sàn láng vữa xi măng có nhược điểm gì?
+A. Giá thành cao
+B. Dễ chống thấm
+*C. Không đẹp, dễ rạn nứt, sinh bụi
+D. Thi công phức tạp
+
+Câu 134: Mặt sàn trát granitô có ưu điểm gì?
+A. Dễ thi công, giá rẻ
+*B. Bền, đẹp, sạch, chống thấm tốt
+C. Đàn hồi tốt
+D. Cách nhiệt cao
+
+Câu 135: Mặt sàn lát gạch men thường được dùng ở đâu?
+A. Phòng khách
+B. Phòng ngủ
+*C. Khu vệ sinh, nhà bếp
+D. Phòng thờ
+
+Câu 136: Để chống thấm cho sàn khu vệ sinh, cần làm gì?
+A. Dùng sàn gỗ
+B. Đổ bê tông dày hơn
+*C. Lớp mặt sàn bằng gạch men, xử lý chống thấm các vị trí tiếp giáp
+D. Không cần xử lý đặc biệt
+
+Câu 137: Cầu thang là phương tiện giao thông theo hướng nào?
+A. Ngang
+*B. Đứng
+C. Chéo
+D. Cong
+
+Câu 138: Độ dốc thích hợp nhất cho cầu thang trong nhà ở là bao nhiêu?
+A. ≤ 25°
+B. ≤ 30°
+*C. ≤ 40°
+D. ≤ 45°
+
+Câu 139: Chiều cao bậc thang thích hợp nhất thường nằm trong khoảng nào?
+A. 100 - 120mm
+*B. 150 - 180mm
+C. 200 - 220mm
+D. 250 - 300mm
+
+Câu 140: Chiều rộng của chiếu nghỉ cầu thang cần đảm bảo yêu cầu gì?
+A. Nhỏ hơn chiều rộng thân thang
+*B. Lớn hơn hoặc bằng chiều rộng thân thang
+C. Bằng một nửa chiều rộng thân thang
+D. Không cần quy định
+
+Câu 141: Số bậc tối đa trong một vế thang không được vượt quá bao nhiêu?
+A. 12 bậc
+B. 15 bậc
+*C. 18 bậc
+D. 20 bậc
+
+Câu 142: Tay vịn cầu thang cho người lớn thường có chiều cao bao nhiêu?
+A. 0.5 - 0.6m
+B. 1.0 - 1.2m
+*C. 0.8 - 1.0m
+D. 0.3 - 0.4m
+
+Câu 143: Mái nhà là bộ phận như thế nào?
+A. Nền của tầng trên cùng
+*B. Bao che và chịu lực ở trên cùng của ngôi nhà
+C. Phần trang trí trên đỉnh nhà
+D. Bộ phận thoát nước
+
+Câu 144: Yêu cầu quan trọng nhất của kết cấu bao che mái là gì?
+A. Chịu lực tốt
+*B. Chống thấm, dột
+C. Cách âm
+D. Thẩm mỹ
+
+Câu 145: Độ dốc mái bằng thường được chọn trong khoảng bao nhiêu?
+A. 10% - 15%
+B. 5% - 10%
+*C. 1% - 7%
+D. 0%
+
+Câu 146: Độ dốc mái lợp ngói thường là bao nhiêu?
+A. 10° - 15°
+*B. 30° - 35°
+C. 45° - 50°
+D. 20° - 25°
+
+Câu 147: Vì kèo là kết cấu gì?
+A. Bộ phận đỡ tấm lợp
+*B. Kết cấu mang lực chính của mái dốc
+C. Bộ phận trang trí mái
+D. Lớp cách nhiệt cho mái
+
+Câu 148: Trong kết cấu mái dốc, xà gồ có tác dụng gì?
+A. Làm lớp chống thấm
+B. Liên kết các vì kèo với nhau
+*C. Đỡ cầu phong và tấm lợp
+D. Trang trí cho mái
+
+Câu 149: Mái bằng có ưu điểm gì so với mái dốc?
+A. Thoát nước nhanh hơn
+B. Cách nhiệt tốt hơn
+*C. Chịu áp lực gió bão ít, kết cấu bền chắc
+D. Giá thành rẻ hơn
+
+Câu 150: Lớp tạo dốc trong mái bằng có tác dụng gì?
+A. Chống thấm
+*B. Tạo độ dốc cần thiết cho mái và làm phẳng mặt
+C. Cách nhiệt
+D. Bảo vệ các lớp khác
+
+Câu 151: Vật liệu chống thấm truyền thống cho mái bằng là gì?
+A. Gạch lá nem
+*B. Giấy dầu (tẩm bitum)
+C. Sơn chống thấm
+D. Bê tông nhựa đường
+
+Câu 152: Để chống nóng cho mái bằng, biện pháp nào có hiệu quả nhất?
+A. Dùng mái tôn sáng màu
+*B. Tạo lớp không khí thông lưu hoặc dùng vật liệu cách nhiệt
+C. Giảm độ dốc mái
+D. Tăng cường hệ thống thoát nước
+
+Câu 153: Sê nô là bộ phận gì trên mái?
+A. Ống thoát nước đứng
+*B. Máng thu nước ở mép mái hoặc giữa nhà
+C. Tấm lợp
+D. Lan can mái
+
+Câu 154: Ống thoát nước mưa thường có tiết diện bao nhiêu?
+A. 50mm
+B. 75mm
+*C. 100mm
+D. 200mm
+
+Câu 155: Trần treo có tác dụng gì?
+A. Chống thấm
+*B. Tạo mặt trần phẳng đẹp, che khuất kết cấu mái
+C. Tăng cường độ cứng cho mái
+D. Thoát nước
+
+Câu 156: Ưu điểm của mái lợp tôn là gì?
+A. Cách nhiệt tốt
+*B. Bền, nhẹ, thi công nhanh
+C. Cách âm tốt
+D. Không bị ăn mòn
+
+Câu 157: Trong mái bằng BTCT, bề dày của lớp bê tông chống thấm thường là bao nhiêu?
+A. 20mm
+*B. 40mm
+C. 60mm
+D. 100mm
+
+Câu 158: Mái đua có công dụng chính là gì?
+A. Tăng diện tích sử dụng
+*B. Bảo vệ tường, cửa và tổ chức thoát nước mái
+C. Tạo hình kiến trúc đẹp
+D. Để đặt máy lạnh
+
+Câu 159: Tường chắn mái là gì?
+A. Tường bao quanh nhà
+*B. Tường ngoài xây cao che mái dọc theo biên đầu hồi
+C. Tường chịu lực của nhà
+D. Tường ngăn cách các phòng
+
+Câu 160: Khi chiều cao mái xuống mặt đất quá 5m, cần tổ chức thoát nước bằng cách nào?
+A. Thoát tự do
+*B. Thoát nước mưa vào máng và ống xuống
+C. Dùng mái bằng không dốc
+D. Làm mái đua rộng

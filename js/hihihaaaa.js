@@ -9,6 +9,7 @@ const DEFAULT_EXAMS = [
     { ten: 'Chủ Nghĩa Xã Hội Khoa Học', url: 'CNXHKH.html', },
     { ten: 'Kiến Trúc Dân Dụng Và Công Nghiệp', url: 'KTDVCN.html', },
     { file: 'tinhoc', ten: 'Full Tin Học' },
+    { ten: 'Kiến Trúc Dân Dụng Và Công Nghiệpp', url: 'KTDDVCN.html', },
 
 
 ];

@@ -1,0 +1,422 @@
+Chương 1: NHỮNG KHÁI NIỆM CHUNG VỀ KIẾN TRÚC
+Câu 1: Kiến trúc là môn học mang tính chất gì?
+A. Thuần túy nghệ thuật
+*B. Vừa khoa học kỹ thuật, vừa nghệ thuật
+C. Thuần túy khoa học kỹ thuật
+D. Khoa học xã hội
+
+Câu 2: Tính khoa học trong kiến trúc thể hiện ở việc phải tính toán về các yếu tố nào?
+A. Thẩm mỹ và hình khối
+*B. Vật liệu, kết cấu, công năng và kinh tế
+C. Phong thủy và tâm linh
+D. Màu sắc và ánh sáng
+
+Câu 3: Đặc điểm nào sau đây KHÔNG phải là đặc điểm của kiến trúc?
+A. Mang tính tổng hợp giữa khoa học và nghệ thuật
+B. Chịu ảnh hưởng của điều kiện khí hậu tự nhiên
+C. Phản ánh xã hội và mang tính tư tưởng
+*D. Mang tính bất biến, không thay đổi theo thời gian
+
+Câu 4: Yêu cầu về "sự thích dụng" trong kiến trúc là gì?
+A. Công trình phải đẹp và hiện đại
+*B. Công trình phải phục vụ đúng đối tượng và mục đích sử dụng
+C. Công trình phải rẻ tiền nhất
+D. Công trình phải bền vững nhất
+
+Câu 5: Để đảm bảo yêu cầu bền vững cho công trình, cần chú ý những gì?
+A. Màu sắc và hình dáng bên ngoài
+*B. Cường độ, độ ổn định và độ bền lâu
+C. Chi phí đầu tư thấp
+D. Diện tích sử dụng lớn
+
+Câu 6: Các yếu tố tạo thành kiến trúc bao gồm?
+A. Yếu tố thẩm mỹ và kinh tế
+*B. Công năng, khoa học kỹ thuật và hình tượng nghệ thuật
+C. Vật liệu và kết cấu
+D. Khí hậu và địa hình
+
+Câu 7: Theo chức năng sử dụng, nhà dân dụng được phân thành những loại nào?
+A. Nhà ở và nhà công nghiệp
+*B. Nhà ở và nhà công cộng
+C. Nhà công cộng và nhà công nghiệp
+D. Nhà ở và nhà nông nghiệp
+
+Câu 8: Theo chiều cao tầng, nhà có số tầng từ 8 đến 30 tầng được gọi là gì?
+A. Nhà thấp tầng
+B. Nhà nhiều tầng
+*C. Nhà cao tầng
+D. Nhà siêu cao
+
+Câu 9: Phân cấp công trình theo độ bền lâu bậc 1 có niên hạn sử dụng là bao nhiêu?
+*A. Trên 100 năm
+B. Trên 70 năm
+C. Trên 30 năm
+D. Trên 15 năm
+
+Câu 10: Mật độ xây dựng thuần (net-tô) là gì?
+A. Tỷ lệ diện tích chiếm đất của công trình trên tổng diện tích bao gồm cả sân đường
+*B. Tỷ lệ diện tích chiếm đất của công trình trên tổng diện tích lô đất (không bao gồm các tiểu cảnh)
+C. Tỷ lệ diện tích sàn xây dựng trên diện tích lô đất
+D. Tỷ lệ diện tích đất trống trên tổng diện tích lô đất
+
+Câu 11: Chỉ giới đường đỏ là gì?
+A. Đường giới hạn cho phép xây dựng công trình
+*B. Đường ranh giới phân định giữa lô đất xây dựng và đất dành cho đường giao thông
+C. Đường giới hạn cho phép xây dựng ngầm
+D. Đường ranh giới giữa các lô đất
+
+Câu 12: Modun gốc trong ngành xây dựng là bao nhiêu?
+A. 1m
+B. 10mm
+*C. 100mm
+D. 1cm
+
+Câu 13: Trong hệ trục định vị, các trục theo phương ngang được kí hiệu như thế nào?
+*A. 1, 2, 3, 4...
+B. A, B, C, D...
+C. a, b, c, d...
+D. I, II, III, IV...
+
+Câu 14: Bước gian (B) là gì?
+A. Khoảng cách giữa hai trục định vị liền kề theo phương dọc nhà
+*B. Khoảng cách giữa hai trục định vị liền kề theo phương ngang nhà
+C. Chiều cao của một tầng nhà
+D. Chiều dài của một phòng
+
+Câu 15: Chiều cao tầng (H) được tính như thế nào?
+A. Từ mặt đất lên đến đỉnh mái
+*B. Từ mặt sàn tầng này lên mặt sàn tầng kia liền kề
+C. Từ móng lên đến mặt sàn tầng 1
+D. Từ nền nhà lên đến trần nhà
+
+Câu 16: Thiết kế cơ sở là bước thiết kế nào trong quy trình?
+*A. Bước đầu tiên sau khi có dự án được phê duyệt, đưa ra các phương án sơ bộ
+B. Bước thiết kế chi tiết để thi công
+C. Bước thiết kế cuối cùng trước khi xây dựng
+D. Bước kiểm tra và nghiệm thu công trình
+
+Câu 17: Bản vẽ thiết kế kỹ thuật được thực hiện trên cơ sở nào?
+A. Ý tưởng của chủ đầu tư
+*B. Thiết kế cơ sở đã được phê duyệt
+C. Bản vẽ thi công
+D. Khảo sát địa chất
+
+Câu 18: Hệ số sử dụng đất (HSSDĐ) là gì?
+A. Tỷ lệ diện tích đất xây dựng trên tổng diện tích đất
+*B. Tỷ số của tổng diện tích sàn xây dựng công trình trên diện tích lô đất
+C. Tỷ lệ diện tích cây xanh trên tổng diện tích đất
+D. Tỷ số giữa chiều cao và chiều rộng công trình
+
+Câu 19: Khoảng lùi của công trình là khoảng cách giữa các yếu tố nào?
+*A. Chỉ giới đường đỏ và chỉ giới xây dựng
+B. Chỉ giới xây dựng và tim đường
+C. Công trình này và công trình khác
+D. Móng và tường
+
+Câu 20: Mục đích của việc phân cấp công trình là gì?
+A. Để xác định độ cao của công trình
+B. Để phân biệt công trình mới và cũ
+*C. Để phục vụ cho việc đầu tư và quản lý đầu tư
+D. Để lựa chọn vật liệu xây dựng
+
+Chương 2: NHÀ Ở
+Câu 21: Nhà ở là công trình chuyên dụng để làm gì?
+A. Sản xuất hàng hóa
+*B. Ở, sinh hoạt gia đình và tái tạo sức lao động
+C. Tổ chức các sự kiện văn hóa
+D. Buôn bán và thương mại
+
+Câu 22: Điểm khác biệt cơ bản giữa nhà ở và nhà công cộng là gì?
+*A. Người dùng có quan hệ hôn nhân hoặc huyết thống và mang tính lâu dài
+B. Nhà ở có số tầng ít hơn
+C. Nhà ở rẻ hơn nhà công cộng
+D. Nhà ở không có hệ thống kỹ thuật
+
+Câu 23: Nhà ở dành cho nhiều gia đình, các căn hộ tập hợp quanh cầu thang hoặc hành lang công cộng được gọi là gì?
+A. Nhà ở nông thôn
+B. Nhà ở liền kề
+*C. Nhà ở chung cư
+D. Nhà ở ký túc xá
+
+Câu 24: Loại nhà ở nào dành cho đối tượng độc thân, công nhân, sinh viên?
+A. Nhà ở biệt thự
+B. Nhà ở liền kề
+C. Nhà ở chung cư
+*D. Nhà ở ký túc xá
+
+Câu 25: Bộ phận nào sau đây là bộ phận chức năng của nhà?
+A. Cột, dầm, móng
+*B. Phòng khách, phòng ngủ, phòng ăn
+C. Cửa sổ, cửa đi
+D. Mái nhà
+
+Câu 26: Diện tích của tiền phòng trong nhà ở thường được thiết kế khoảng bao nhiêu?
+A. 12 - 18 m2
+B. 16 - 20 m2
+*C. 6 - 8 m2
+D. 2.5 - 5 m2
+
+Câu 27: Phòng khách thường được bố trí ở vị trí nào trong nhà?
+A. Cuối nhà, cuối hướng gió
+*B. Gần cửa chính, nơi tiếp đón khách
+C. Tầng trên cùng
+D. Cạnh khu vệ sinh
+
+Câu 28: Diện tích thông thủy tối thiểu của phòng khách là bao nhiêu?
+A. 3.5m
+B. 2.5m
+*C. 3.0m
+D. 4.0m
+
+Câu 29: Phòng ngủ thường có diện tích thiết kế khoảng bao nhiêu?
+A. 6 - 8 m2
+B. 16 - 20 m2
+*C. 12 - 18 m2
+D. 20 - 25 m2
+
+Câu 30: Phòng ăn và bếp thường được bố trí ở vị trí nào để đảm bảo vệ sinh?
+A. Đầu nhà, đón gió chính
+*B. Cuối nhà, cuối hướng gió
+C. Tầng 2, gần phòng khách
+D. Giữa nhà
+
+Câu 31: Khu vệ sinh (WC) trong nhà nhiều tầng nên được bố trí như thế nào để tiện cho đường ống kỹ thuật?
+*A. Gộp chung thành một khu vực theo các tầng
+B. Bố trí xen kẽ giữa các phòng ngủ
+C. Bố trí ở mỗi tầng một vị trí khác nhau
+D. Bố trí riêng cho từng phòng
+
+Câu 32: Diện tích khu vệ sinh (WC) thường thiết kế khoảng bao nhiêu?
+A. 6 - 8 m2
+B. 4 - 5 m2
+*C. 2.5 - 5 m2
+D. 1 - 2 m2
+
+Câu 33: Lô gia là không gian như thế nào?
+*A. Không gian nghỉ ngơi chỉ có một mặt nhìn ra ngoài
+B. Không gian mở có ban công ở phía trước
+C. Không gian được bao bọc bởi kính
+D. Không gian để phơi quần áo
+
+Câu 34: Loại nhà ở nào có hành lang ở giữa, các căn hộ đặt dọc theo hai bên?
+A. Chung cư nhiều tầng kiểu đơn nguyên
+*B. Chung cư nhiều tầng kiểu hành lang giữa
+C. Chung cư nhiều tầng kiểu hành lang bên
+D. Chung cư cao tầng kiểu tháp
+
+Câu 35: Nhược điểm chính của chung cư kiểu hành lang bên là gì?
+A. Kết cấu phức tạp
+*B. Tốn diện tích hành lang
+C. Thông gió kém
+D. Cấu trúc không kinh tế
+
+Câu 36: Một nhà ở biệt thự thường có đặc điểm gì?
+A. Là nhà ở nhiều căn hộ
+*B. Là nhà ở cao cấp, biệt lập, có sân vườn
+C. Là nhà ở cho thu nhập thấp
+D. Là nhà ở tập thể
+
+Câu 37: Khoảng cách giữa các ống xuống (thoát nước mưa) thường chọn là bao nhiêu?
+*A. 15-24m
+B. 5-10m
+C. 30-50m
+D. 2-5m
+
+Câu 38: Nhà ở nhiều căn hộ có từ 4 đến 6 tầng không có thang máy được gọi là gì?
+A. Nhà cao tầng
+*B. Nhà chung cư nhiều tầng
+C. Nhà siêu cao
+D. Nhà chung cư cao tầng
+
+Câu 39: Giao thông trong nhà ở bao gồm những loại nào?
+A. Giao thông công cộng và riêng
+*B. Giao thông đứng (cầu thang) và giao thông ngang (hành lang)
+C. Giao thông cơ giới và thủ công
+D. Giao thông nội bộ và đối ngoại
+
+Câu 40: Phòng khách trong nhà ở thường có diện tích khoảng bao nhiêu cho 4-5 người?
+A. 12 - 18m2
+*B. 16 - 20m2
+C. 20 - 25m2
+D. 6 - 8m2
+
+Chương 3: NHÀ CÔNG CỘNG
+Câu 41: Công trình công cộng là công trình phục vụ các sinh hoạt gì của con người?
+A. Sinh hoạt gia đình
+*B. Văn hóa tinh thần và vật chất (ngoại trừ chức năng ở)
+C. Sản xuất công nghiệp
+D. Nông nghiệp
+
+Câu 42: Công trình nào sau đây là công trình công cộng?
+A. Nhà phố
+B. Biệt thự
+*C. Trường học
+D. Kho xưởng
+
+Câu 43: Tính chất nào sau đây KHÔNG phải là tính chất của nhà công cộng?
+A. Mang tính chất phổ biến và hàng loạt
+B. Mỗi công trình mang tính đặc thù riêng
+*C. Có chức năng sử dụng ổn định, không thay đổi
+D. Chức năng sử dụng thay đổi theo khoa học kỹ thuật
+
+Câu 44: Theo tính chất sử dụng, nhà ga, bến xe thuộc nhóm công trình gì?
+*A. Công trình giao thông vận tải
+B. Công trình văn hóa
+C. Công trình y tế
+D. Công trình thương mại
+
+Câu 45: Nhóm các phòng chính trong trường học là gì?
+A. Phòng hiệu bộ, WC
+*B. Các phòng học
+C. Phòng nghỉ giáo viên
+D. Thư viện
+
+Câu 46: Trong nhà công cộng, bộ phận nào quyết định tính chất đặc thù của công trình và chiếm phần lớn diện tích?
+A. Bộ phận giao thông
+*B. Bộ phận chính
+C. Bộ phận phụ
+D. Bộ phận kỹ thuật
+
+Câu 47: WC và phòng dụng cụ trực quan trong trường học là bộ phận gì?
+*A. Bộ phận phụ trực tiếp
+B. Bộ phận phụ gián tiếp
+C. Bộ phận chính
+D. Bộ phận giao thông
+
+Câu 48: Giao thông đứng trong nhà công cộng bao gồm?
+A. Hành lang, lối đi lộ thiên
+*B. Thang bộ, thang máy, thang cuốn
+C. Đường dốc
+D. Nhà cầu, băng chuyền
+
+Câu 49: Nút giao thông trong công trình cần đảm bảo bán kính phục vụ tối đa là bao nhiêu?
+A. 50m
+B. 40m
+*C. 30m
+D. 20m
+
+Câu 50: Giải pháp không gian kiểu phòng lớn có ưu điểm gì?
+A. Quan hệ công năng chặt chẽ
+*B. Không gian sử dụng mềm dẻo, linh hoạt
+C. Chiếm ít diện tích xây dựng
+D. Kết cấu đơn giản
+
+Câu 51: Giải pháp liên hệ kiểu hành lang có nhược điểm gì?
+A. Sơ đồ kết cấu phức tạp
+*B. Chiếm nhiều diện tích xây dựng
+C. Quan hệ công năng thiếu chặt chẽ
+D. Giao thông ngắn
+
+Câu 52: Giải pháp phân khu theo từng tòa nhà riêng có ưu điểm gì?
+A. Liên hệ giữa các khu chặt chẽ
+*B. Cách ly giữa các khu tốt
+C. Tiết kiệm diện tích xây dựng
+D. Hình khối đồ sộ
+
+Câu 53: Thoát người trong nhà công cộng ra khỏi phòng được quy định như thế nào?
+A. Mỗi phòng phải có ít nhất 3 cửa
+*B. Cứ 100 người phải có ít nhất 2 cửa, rộng ≥1,2m, mở ra ngoài
+C. Cửa có thể mở vào trong để tiện lợi
+D. Người xa nhất đến cửa < 50m
+
+Câu 54: Bề rộng hành lang tối thiểu cho hành lang bên dùng để đi lại chính là bao nhiêu?
+*A. 1.5m
+B. 1.8m
+C. 1.2m
+D. 0.6m
+
+Câu 55: Khoảng cách tối đa từ người xa nhất đến cầu thang đối với công trình cấp phòng hóa cấp 2 là bao nhiêu?
+A. 40m
+*B. 30m
+C. 25m
+D. 20m
+
+Câu 56: Công thức tính tổng bề rộng vế thang khi N ≤ 250 là gì?
+A. ΣBvt = N/125
+*B. ΣBvt = N/100
+C. ΣBvt = 250/100
+D. ΣBvt = (N-200)/125
+
+Câu 57: Bề rộng tối thiểu của một vế thang dùng để đi lại chính là bao nhiêu?
+*A. >1.4m
+B. >1.0m
+C. >1.2m
+D. >1.8m
+
+Câu 58: Thời gian thoát người cho mỗi giai đoạn thường là bao nhiêu?
+A. 2-3 giây
+*B. 2-3 phút
+C. 5-6 phút
+D. 1-2 giờ
+
+Câu 59: Để thiết kế nhìn rõ trong nhà công cộng, giải pháp nào được ưu tiên nhất?
+A. Nâng vật cần quan sát lên cao
+B. Tăng chiều cao ghế
+*C. Thiết kế nền dốc
+D. Giảm số lượng hàng ghế
+
+Câu 60: Điểm quan sát thiết kế (Đ) trong giảng đường là gì?
+A. Mép trên của bảng
+*B. Mép dưới của bảng
+C. Tâm của bảng
+D. Góc của bảng
+
+Câu 61: Độ nâng cao tia nhìn (C) cho giảng đường thường được lấy bao nhiêu?
+A. 180mm
+*B. 60-80mm
+C. 80-110mm
+D. 100-150mm
+
+Câu 62: Trong thiết kế nền dốc bằng phương pháp vẽ dần, M1 là vị trí gì?
+A. Điểm Đ
+*B. Mắt người quan sát ở hàng ghế đầu tiên
+C. Vị trí sân khấu
+D. Nền của hàng ghế đầu tiên
+
+Câu 63: Khoảng cách từ hàng ghế đầu tiên (G1) đến vùng đối tượng cần quan sát (L) thường là bao nhiêu?
+A. 1.5 - 2.0m
+B. 5.0 - 6.0m
+*C. 2.7 - 3.6m
+D. 0.8 - 1.2m
+
+Câu 64: Vị trí của mắt người quan sát (Hqsl) so với nền thường được lấy là bao nhiêu?
+A. 0.9 - 1.05m
+B. 1.5 - 1.8m
+*C. 1.15 - 1.2m
+D. 1.8 - 2.0m
+
+Câu 65: Giải pháp phân khu theo tầng nhà có nhược điểm gì?
+A. Tốn thiết bị kỹ thuật
+B. Hình khối tản mạn
+*C. Thông thoáng tự nhiên bị hạn chế
+D. Chiếm nhiều diện tích xây dựng
+
+Câu 66: Khi thiết kế nhìn rõ, để hạn chế độ dốc của nền, có thể làm gì?
+A. Giảm số hàng ghế
+B. Tăng chiều cao sân khấu
+*C. Hạ C của các hàng ghế đầu (15-20%) so với quy định
+D. Tăng khoảng cách giữa các hàng ghế
+
+Câu 67: Công trình bệnh viện thuộc nhóm phân loại nào theo tính chất sử dụng?
+A. Công trình giao thông vận tải
+B. Công trình văn hóa
+*C. Công trình y tế
+D. Công trình thương mại
+
+Câu 68: Trong nhà công cộng, điểm tia nhìn Đ của bể bơi thuộc vị trí nào?
+A. Điểm sâu nhất của bể
+*B. Đường bơi trong cùng gần khán giả
+C. Thành bể bơi
+D. Mặt nước bể bơi
+
+Câu 69: Giải pháp phân khu theo cánh nhà, đoạn khối có ưu điểm gì?
+A. Chiếm nhiều diện tích xây dựng
+*B. Phân khu rõ ràng, cách ly tốt, quan hệ nội bộ chặt chẽ
+C. Liên hệ trong khu dễ dàng
+D. Mức độ cách ly khó khăn
+
+Câu 70: Yêu cầu về bề rộng luồng chạy thoát người là bao nhiêu?
+*A. ≥ 0.6m
+B. ≥ 1.2m
+C. ≥ 1.5m
+D. ≥ 2.4m
