@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trình Đọc Truyện / Text - Premium</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #f8fafc;
+            --text: #334155;
+            --surface: #ffffff;
+            --border: #e2e8f0;
+            --primary: #3b82f6;
+            --font-main: 'Inter', sans-serif;
+            --content-width: 800px;
+        }
+
+        [data-theme="dark"] {
+            --bg: #0f172a;
+            --text: #cbd5e1;
+            --surface: #1e293b;
+            --border: #334155;
+            --primary: #3b82f6;
+        }
+
+        [data-theme="sepia"] {
+            --bg: #fdf6e3;
+            --text: #5c4b37;
+            --surface: #f4e8d1;
+            --border: #eaddc5;
+            --primary: #d97706;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background: var(--bg);
+            color: var(--text);
+            transition: background 0.3s, color 0.3s;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Toolbar */
+        .toolbar {
+            position: sticky;
+            top: 0;
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 12px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            z-index: 100;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text);
+            font-weight: 700;
+            font-size: 1.2em;
+        }
+
+        .brand svg {
+            width: 22px;
+            height: 22px;
+            color: var(--primary);
+        }
+
+        .controls {
+            display: flex;
+            flex: 1;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Premium Search Box */
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            padding: 4px 6px 4px 15px;
+            width: 90%;
+            max-width: 400px;
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 99;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .search-box:focus-within {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            outline: none;
+            flex: 1;
+            min-width: 50px;
+            font-family: var(--font-main);
+            color: var(--text);
+            padding: 8px 0;
+            font-size: 0.95em;
+        }
+
+        .search-box .match-count {
+            font-size: 0.8em;
+            color: #94a3b8;
+            margin: 0 8px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .search-nav-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: none;
+            background: var(--surface);
+            color: var(--text);
+            cursor: pointer;
+            transition: 0.2s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            margin-left: 4px;
+        }
+
+        .search-nav-btn:hover {
+            background: var(--border);
+        }
+
+        .search-nav-btn svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        /* Action Buttons */
+        .action-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 0.9em;
+            cursor: pointer;
+            transition: 0.2s;
+            white-space: nowrap;
+            box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+        }
+
+        .action-btn.success {
+            background: #10b981;
+            box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+        }
+
+        .action-btn:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.1);
+        }
+
+        .action-btn svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        button {
+            background: var(--surface);
+            color: var(--text);
+            border: 1px solid var(--border);
+            padding: 8px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        button:hover {
+            background: var(--border);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+            background: var(--primary);
+        }
+
+        /* Upload Zone */
+        .upload-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .drop-zone {
+            width: 100%;
+            max-width: 600px;
+            padding: 60px 20px;
+            border: 2px dashed var(--border);
+            border-radius: 20px;
+            text-align: center;
+            background: var(--surface);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .drop-zone.dragover {
+            border-color: var(--primary);
+            background: rgba(59, 130, 246, 0.05);
+        }
+
+        .drop-zone svg {
+            width: 60px;
+            height: 60px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .drop-zone p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            color: var(--text);
+            opacity: 0.8;
+        }
+
+        /* Reader Zone */
+        .reader-container {
+            display: none;
+            flex: 1;
+            padding: 40px 20px;
+            width: 100%;
+            max-width: var(--content-width);
+            margin: 0 auto;
+        }
+
+        .file-title {
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 15px;
+        }
+
+        .reader-content {
+            font-size: 18px;
+            line-height: 1.8;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        /* Floating tools */
+        .floating-tools {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 10px 20px;
+            border-radius: 50px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            gap: 15px;
+            align-items: center;
+            z-index: 99;
+        }
+
+        .font-toggle {
+            font-family: 'Merriweather', serif;
+            font-weight: bold;
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            .brand span {
+                display: none;
+            }
+
+            .action-btn span {
+                display: none;
+            }
+
+            .action-btn {
+                padding: 8px;
+                border-radius: 50%;
+                width: 36px;
+                height: 36px;
+            }
+
+            .action-btn svg {
+                width: 18px;
+                height: 18px;
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="toolbar">
+        <div class="brand">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
+            </svg>
+            <span>TxtReader</span>
+        </div>
+        <div class="controls">
+            <button class="action-btn success" onclick="saveOffline()" title="Lưu trạng thái offline">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                    <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                    <polyline points="7 3 7 8 15 8"></polyline>
+                </svg>
+                <span>Lưu Offline</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Floating Search Box -->
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Tìm kiếm..." oninput="liveSearch()"
+            onkeydown="handleSearchKey(event)">
+        <span id="matchCount" class="match-count" style="display: none;">0/0</span>
+        <button class="search-nav-btn" onclick="prevMatch()" title="Trỏ lên">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="18 15 12 9 6 15"></polyline>
+            </svg>
+        </button>
+        <button class="search-nav-btn" onclick="nextMatch()" title="Trỏ xuống">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Upload View -->
+    <div class="upload-container" id="uploadView">
+        <div class="drop-zone" id="dropZone" onclick="document.getElementById('fileInput').click()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="17 8 12 3 7 8"></polyline>
+                <line x1="12" y1="3" x2="12" y2="15"></line>
+            </svg>
+            <p>Kéo thả file .txt vào đây hoặc nhấn để chọn file</p>
+            <button class="btn-primary" style="margin: 0 auto;">Tải lên từ thiết bị</button>
+        </div>
+        <input type="file" id="fileInput" accept=".txt, text/plain">
+    </div>
+
+    <!-- Reader View -->
+    <div class="reader-container" id="readerView">
+        <div class="file-title" id="fileTitle">Tên file.txt</div>
+        <div class="reader-content" id="textContent"></div>
+    </div>
+
+    <script>
+        const dropZone = document.getElementById('dropZone');
+        const fileInput = document.getElementById('fileInput');
+        const uploadView = document.getElementById('uploadView');
+        const readerView = document.getElementById('readerView');
+        const textContent = document.getElementById('textContent');
+        const fileTitle = document.getElementById('fileTitle');
+
+        let isSerif = false;
+        let originalText = "";
+        let matches = [];
+        let currentMatchIndex = -1;
+
+        // Chuyển đổi an toàn HTML
+        function escapeHTML(str) {
+            return str.replace(/[&<>'"]/g,
+                tag => ({
+                    '&': '&amp;',
+                    '<': '&lt;',
+                    '>': '&gt;',
+                    "'": '&#39;',
+                    '"': '&quot;'
+                }[tag] || tag)
+            );
+        }
+
+        // Tính năng Live Search (Tìm đến đâu sáng đến đó, giống MS Word)
+        function liveSearch() {
+            const keyword = document.getElementById('searchInput').value.trim();
+            const matchCountSpan = document.getElementById('matchCount');
+            const safeText = escapeHTML(originalText);
+
+            if (!keyword) {
+                textContent.innerHTML = safeText;
+                matchCountSpan.style.display = 'none';
+                matches = [];
+                currentMatchIndex = -1;
+                return;
+            }
+
+            const safeKeyword = escapeHTML(keyword);
+            const regexKeyword = safeKeyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            const regex = new RegExp(`(${regexKeyword})`, 'gi');
+
+            // Thay thế và đính kèm class
+            let matchIndex = 0;
+            textContent.innerHTML = safeText.replace(regex, (match) => {
+                const mark = `<mark class="search-match" style="background: #ffeb3b; color: #000; padding: 0 2px; border-radius: 3px;">${match}</mark>`;
+                matchIndex++;
+                return mark;
+            });
+
+            matches = document.querySelectorAll('.search-match');
+            if (matches.length > 0) {
+                matchCountSpan.style.display = 'inline';
+                currentMatchIndex = 0;
+                highlightCurrentMatch();
+            } else {
+                matchCountSpan.style.display = 'inline';
+                matchCountSpan.textContent = '0/0';
+                currentMatchIndex = -1;
+            }
+        }
+
+        // Đánh dấu từ khóa đang chọn giống MS Word
+        function highlightCurrentMatch() {
+            if (matches.length === 0) return;
+
+            // Xóa highlight của thẻ cũ
+            matches.forEach(m => {
+                m.style.background = '#ffeb3b';
+                m.style.color = '#000';
+            });
+
+            // Tô màu cam cho từ khóa đang trỏ tới
+            const current = matches[currentMatchIndex];
+            current.style.background = '#ff9800';
+            current.style.color = '#fff';
+
+            // Cuộn mượt đến vị trí đó
+            current.scrollIntoView({ behavior: 'auto', block: 'center' });
+
+            // Cập nhật số đếm (vd: 1/5)
+            document.getElementById('matchCount').textContent = `${currentMatchIndex + 1}/${matches.length}`;
+        }
+
+        function nextMatch() {
+            if (matches.length === 0) return;
+            currentMatchIndex = (currentMatchIndex + 1) % matches.length;
+            highlightCurrentMatch();
+        }
+
+        function prevMatch() {
+            if (matches.length === 0) return;
+            currentMatchIndex = (currentMatchIndex - 1 + matches.length) % matches.length;
+            highlightCurrentMatch();
+        }
+
+        // Bắt sự kiện phím Enter
+        function handleSearchKey(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                if (e.shiftKey) {
+                    prevMatch();
+                } else {
+                    nextMatch();
+                }
+            }
+        }
+
+        // Tính năng Lưu Trạng Thái Offline
+        function saveOffline() {
+            if (textContent.textContent.trim() === "") {
+                alert("Chưa có nội dung để lưu!");
+                return;
+            }
+            const content = textContent.textContent;
+            const scrollPos = window.scrollY || document.documentElement.scrollTop;
+
+            localStorage.setItem('txt_offline_content', content);
+            localStorage.setItem('txt_offline_scroll', scrollPos);
+            alert("✅ Đã lưu trạng thái (nội dung và vị trí đang đọc)!\nLần sau mở lại trang này không có mạng vẫn đọc tiếp được bình thường.");
+        }
+
+        // Xử lý kéo thả
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropZone.classList.add('dragover');
+        });
+
+        dropZone.addEventListener('dragleave', () => {
+            dropZone.classList.remove('dragover');
+        });
+
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropZone.classList.remove('dragover');
+            if (e.dataTransfer.files.length > 0) {
+                handleFile(e.dataTransfer.files[0]);
+            }
+        });
+
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                handleFile(e.target.files[0]);
+            }
+        });
+
+        function handleFile(file) {
+            if (file.type !== "text/plain" && !file.name.endsWith('.txt')) {
+                alert("Vui lòng chọn file .txt!");
+                return;
+            }
+
+            fileTitle.textContent = file.name;
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                originalText = e.target.result;
+                textContent.innerHTML = escapeHTML(originalText);
+                uploadView.style.display = 'none';
+                readerView.style.display = 'block';
+                window.scrollTo(0, 0);
+            };
+
+            reader.readAsText(file);
+        }
+
+        // Tự động đọc file 1.txt khi mở trang hoặc Khôi phục Offline
+        window.addEventListener('DOMContentLoaded', async () => {
+            // Kiểm tra xem có cần khôi phục trạng thái offline không
+            const savedContent = localStorage.getItem('txt_offline_content');
+            const savedScroll = localStorage.getItem('txt_offline_scroll');
+
+            try {
+                // Luôn ưu tiên tải bản mới nhất từ server nếu có mạng
+                const response = await fetch('1.txt');
+                if (response.ok) {
+                    const text = await response.text();
+                    fileTitle.textContent = 'PHAO ONLINE';
+                    originalText = text;
+                    textContent.innerHTML = escapeHTML(originalText);
+                    uploadView.style.display = 'none';
+                    readerView.style.display = 'block';
+
+                    // Cố gắng khôi phục vị trí đọc nếu bản cũ giống bản mới
+                    if (savedContent && savedContent.length === text.length && savedScroll) {
+                        setTimeout(() => window.scrollTo(0, parseInt(savedScroll)), 100);
+                    }
+                }
+            } catch (error) {
+                console.log('Lỗi tải file 1.txt:', error);
+                // Mất mạng -> Khôi phục từ Offline Cache
+                if (savedContent) {
+                    fileTitle.textContent = '1.txt (Đang đọc Offline)';
+                    originalText = savedContent;
+                    textContent.innerHTML = escapeHTML(originalText);
+                    uploadView.style.display = 'none';
+                    readerView.style.display = 'block';
+
+                    if (savedScroll) {
+                        setTimeout(() => window.scrollTo(0, parseInt(savedScroll)), 100);
+                    }
+                } else {
+                    console.log('Không có dữ liệu offline.');
+                }
+            }
+        });
+
+        // Cài đặt đọc truyện
+        function changeTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+        }
+    </script>
+</body>
+
+</html>
