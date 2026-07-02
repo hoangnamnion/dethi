@@ -1,243 +1,26 @@
+
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Quiz Trắc Nghiệm</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- CSS QUIZ -->
-    <style>
-        * {
-            box-sizing: border-box;
-            font-family: "Segoe UI", Tahoma, sans-serif;
-        }
-
-        body {
-            margin: 0;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .quiz-container {
-            width: 420px;
-            max-width: 95%;
-            background: #fff;
-            border-radius: 14px;
-            padding: 25px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
-            animation: fadeIn 0.5s ease;
-        }
-
-        .quiz-header h2 {
-            margin: 0;
-            font-size: 20px;
-            color: #333;
-        }
-
-        .progress {
-            height: 6px;
-            background: #eee;
-            border-radius: 5px;
-            overflow: hidden;
-            margin-top: 10px;
-        }
-
-        .progress-bar {
-            height: 100%;
-            width: 0%;
-            background: #4caf50;
-            transition: width 0.3s;
-        }
-
-        .answers {
-            list-style: none;
-            padding: 0;
-            margin: 20px 0;
-        }
-
-        .answers li {
-            margin-bottom: 12px;
-        }
-
-        .answer-btn {
-            width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #ddd;
-            border-radius: 10px;
-            background: #f9f9f9;
-            cursor: pointer;
-            text-align: left;
-            font-size: 15px;
-            transition: all 0.25s ease;
-        }
-
-        .answer-btn:hover {
-            background: #eef3ff;
-            border-color: #4f7cff;
-        }
-
-        .answer-btn.correct {
-            background: #e7f9ee;
-            border-color: #2ecc71;
-            color: #1e8449;
-        }
-
-        .answer-btn.wrong {
-            background: #fdecea;
-            border-color: #e74c3c;
-            color: #922b21;
-        }
-
-        .quiz-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .score {
-            font-weight: 600;
-            color: #555;
-        }
-
-        .next-btn {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 8px;
-            background: #4f7cff;
-            color: white;
-            font-size: 14px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .next-btn:hover {
-            background: #365ee6;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-    </style>
+    <meta charset="utf-8"/>
+    <link rel="icon" href="https://stc-zpl.zdn.vn/favicon.ico"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="theme-color" content="#000000"/>
+    <meta name="description" content="Zalo - Nhắn Gửi Yêu Thương (Nhắn tin thoại - Trò chuyện nhóm ...)">
+    <meta property="og:title" content="Zalo - Cao Văn Nam"/>
+    <meta property="og:description" content="Zalo - Nhắn Gửi Yêu Thương (Nhắn tin thoại - Trò chuyện nhóm ...)"/>
+    <meta property="og:image" content="https://qr.zalo.me/sl/2/240a1715274ace14975b"/>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet"/>
+    <title>Zalo - Cao Văn Nam</title>
+    <script src="https://za.zdn.vn/v3/za.js"></script>
+    <script defer="defer" src="https://stc-zpl.zdn.vn/static/js/main.1.0.7.js"></script>
+    <link href="https://stc-zpl.zdn.vn/static/css/main.1.0.7.css" rel="stylesheet"/>
 </head>
-
 <body>
-
-<div class="quiz-container">
-    <div class="quiz-header">
-        <h2 id="question">Câu hỏi</h2>
-        <div class="progress">
-            <div class="progress-bar" id="progress"></div>
-        </div>
-    </div>
-
-    <ul class="answers" id="answers"></ul>
-
-    <div class="quiz-footer">
-        <div class="score">Điểm: <span id="score">0</span></div>
-        <button class="next-btn" onclick="nextQuestion()">Tiếp</button>
-    </div>
+<div id="root" data-p="c099cec8dec99981c099d2c8f9cec8d2d5dec8c89981cfc9cede9799c8d3d4ccf9dad5d5dec99981dddad7c8de9799d8dacfdef5dad6de998199ff5a0030d8d39bcd5a001e9bd0d3781ad8999799d8dacfdef5dad6defed5998199f4cfd3dec99bc8dec9cdd2d8dec899c69799cfc2cbde9981899799d5dad6de998199f8dad49bed7f38d59bf5dad6999799dacddacfdac9998199d3cfcfcbc8819494c8898f8b96dacdda96cfdad7d095c1dadfd595cdd594899488948b9483948f94898f8b948e898cdf8b88de8adfd98f82d9dd8fdedad9de8eda8f8b8e88d9d9d88f8382dd95d1cbdc999799dfdec8d8c9d2cbcfd2d4d59981994b242f0b9bf35a002c9bcfc95a00189bf8ced5dc9bd85a011ecb9bdf5a0030d8d39bcd5a001e9bf6e3f39b4b243735e7d54b2429209bf7d4d8d0decf9bfcd4d7df9bebc9ded6d2ced6e7d5ef781bd29bf0d3d45a0118d59bebc9d49bf0d3781ad89bf5d37d0be7d5939bf8d3dacffcebef97f8dad5cddaebc9d497f8dacbd8cecfcbc9d497f5decfddd7d2c39b8ff097959595959595959b92e7d59bf35a002c9befc95a00189bf75a011ec29bf75a011ad29bfddad8ded9d4d4d09b979befd2d0cfd4d09b7f39d59bfc5a0116c29be7d5ef7f38d5dc9bef7d0b7d1ad5dc9bef781ad89bf8781ad89bf57811d59bef5a0118d5dc9befd2d0cfd4d0979bfddad8ded9d4d4d0999799cac9f8d4dfdeeec9d7998199d3cfcfcbc8819494cac996cfdad7d095c1dfd595cdd5948a948f8a888e8889898c8f9483dd8f8ed9d88eda83d88b8e8d8e8ed988d88a8f95d1cbdc999799dfdecfdad2d79981c0c69799d6dec8c8dadcdef2d5ddd49981c099cfc2cbde998199cbd3d4d5de999799dac9dccd9981998b888c838c838c8a8e8f999799d3dac8e1ecded9e8dec8c8d2d4d59981cfc9cede9799d8d4d5cdf2df9981998f8c898c8c888388888f8e88838b898e898f8c99c6c6">
 </div>
-
-<!-- JS QUIZ -->
-<script>
-    const quizData = [
-        {
-            question: "HTML là viết tắt của?",
-            answers: [
-                "Hyper Text Markup Language",
-                "High Text Machine Language",
-                "Hyperlinks Text Mark Language",
-                "Home Tool Markup Language"
-            ],
-            correct: 0
-        },
-        {
-            question: "CSS dùng để làm gì?",
-            answers: [
-                "Tạo cấu trúc web",
-                "Lưu dữ liệu",
-                "Trang trí giao diện",
-                "Viết logic"
-            ],
-            correct: 2
-        },
-        {
-            question: "JavaScript chạy ở đâu?",
-            answers: [
-                "Trình duyệt",
-                "Word",
-                "Excel",
-                "Paint"
-            ],
-            correct: 0
-        }
-    ];
-
-    let current = 0;
-    let score = 0;
-
-    const questionEl = document.getElementById("question");
-    const answersEl = document.getElementById("answers");
-    const scoreEl = document.getElementById("score");
-    const progressEl = document.getElementById("progress");
-
-    loadQuestion();
-
-    function loadQuestion() {
-        const q = quizData[current];
-        questionEl.textContent = q.question;
-        answersEl.innerHTML = "";
-
-        q.answers.forEach((ans, index) => {
-            const li = document.createElement("li");
-            const btn = document.createElement("button");
-            btn.className = "answer-btn";
-            btn.textContent = ans;
-
-            btn.onclick = () => checkAnswer(btn, index);
-            li.appendChild(btn);
-            answersEl.appendChild(li);
-        });
-
-        progressEl.style.width = ((current + 1) / quizData.length) * 100 + "%";
-    }
-
-    function checkAnswer(button, index) {
-        const correct = quizData[current].correct;
-        const buttons = document.querySelectorAll(".answer-btn");
-
-        buttons.forEach(btn => btn.disabled = true);
-
-        if (index === correct) {
-            button.classList.add("correct");
-            score++;
-            scoreEl.textContent = score;
-        } else {
-            button.classList.add("wrong");
-            buttons[correct].classList.add("correct");
-        }
-    }
-
-    function nextQuestion() {
-        current++;
-        if (current < quizData.length) {
-            loadQuestion();
-        } else {
-            questionEl.textContent = "🎉 Hoàn thành quiz!";
-            answersEl.innerHTML = "";
-        }
-    }
-</script>
-
 </body>
 </html>

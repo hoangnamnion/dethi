@@ -1,185 +1,120 @@
-Câu 31. Theo Luật Xây dựng, 'Hoạt động xây dựng' gồm những hoạt động nào?
+II. Chương 2: 
+Câu 16: Luật Xây dựng số 50/2014/QH13, được Quốc hội khóa XIII thông qua ngày 18/06/2014, có hiệu lực thi hành từ ngày nào?
+*A. 01/01/2015
+B. 01/01/2021
+C. 01/01/2014
+D. 18/06/2014
+
+Câu17: Theo Luật Xây dựng, 'Chỉ giới xây dựng' được hiểu là gì?
+A.Cao độ xây dựng tối thiểu bắt buộc phải tuân thủ.
+*B. Đường giới hạn cho phép xây dựng công trình chính trên thửa đất.
+C. Chỉ tiêu quản lý phát triển không gian, kiến trúc cho một khu vực hay một lô đất.
+D. Đường ranh giới giữa phần đất được xây dựng công trình và phần đất dành cho đường giao thông.
+
+Câu 18: Hành vi nào sau đây bị nghiêm cấm trong hoạt động đầu tư xây dựng theo Luật Xây dựng?
+*A. Khởi công xây dựng công trình khi chưa đủ điều kiện khởi công.
+B. Thực hiện việc thẩm tra thiết kế xây dựng.
+C. Sử dụng vật liệu xây dựng được sản xuất trong nước.
+D. Ứng dụng khoa học và công nghệ trong hoạt động đầu tư xây dựng.
+
+Câu 19: Luật Quy hoạch số 21/2017/QH14 được Quốc hội thông qua ngày 24/11/2017 có hiệu lực thi hành toàn bộ từ ngày nào?
+*A. 01/01/2019
+B. 01/03/2018
+C. 01/07/2020
+D. 24/11/2017
+
+Câu 20: Luật Quy hoạch đô thị và nông thôn số 47/2024/QH15 có hiệu lực thi hành từ ngày nào?
+A. 29/11/2024
+B. 01/01/2025
+*C. 01/07/2025
+D. 01/01/2024
+
+Câu 21: Hành vi nào sau đây bị nghiêm cấm trong hoạt động quy hoạch theo Luật Quy hoạch?
+A. Bảo đảm tính độc lập giữa cơ quan lập quy hoạch với Hội đồng thẩm định quy hoạch.
+B. Ứng dụng công nghệ hiện đại trong lập quy hoạch.
+C. Thực hiện đánh giá, điều chỉnh quy hoạch.
+D. Lập quy hoạch về đầu tư phát triển hàng hóa cụ thể, ấn định khối lượng sản phẩm được sản xuất, tiêu thụ.
+
+Câu 22: Luật Kiến trúc số 40/2019/QH14 gồm bao nhiêu chương và bao nhiêu điều?
+A. 6 chương, 59 điều.
+*B. 5 chương, 41 điều.
+C. 10 chương, 96 điều.
+D. 10 chương, 168 điều.
+
+Câu 23: Theo Luật Đấu thầu sửa đổi 2024 (Luật số 57/2024/QH15), trường hợp chỉ định thầu đối với gói thầu thuộc dự toán mua sắm không hình thành dự án, hạn mức giá gói thầu không quá là bao nhiêu?
+A. 3 00 triệu đồng.
+B. 01 tỷ đồng.
+*C. 500 triệu đồng.
+D. 800 triệu đồng.
+
+Câu 24: Luật Đấu thầu số 22/2023/QH15 được Quốc hội khóa XV thông qua có hiệu lực thi hành từ ngày nào?
+*A. 01/01/2024
+B. 23/06/2023
+C. 15/01/2025
+D. 01/07/2025
+
+Câu 25: Theo Luật Xây dựng, 'Báo cáo kinh tế - kỹ thuật đầu tư xây dựng' là tài liệu trình bày các nội dung về sự cần thiết, mức độ khả thi và hiệu quả của việc đầu tư xây dựng công trình quy mô nào?
+A. Quy mô lớn.
+B. Quy mô trung bình.
+*C. Quy mô nhỏ.
+D. Quy mô đặc biệt lớn.
+
+Câu 26: Luật Quy hoạch đô thị và nông thôn số 47/2024/QH15 thay thế Luật nào có hiệu lực từ ngày 01/01/2010?
+A. Luật Quy hoạch số 21/2017/QH14.
+*B. Luật Quy hoạch đô thị 2009 (số 30/2009/QH12).
+C. Luật Kiến trúc số 40/2019/QH14.
+D. Luật Xây dựng số 50/2014/QH13.
+
+Câu 27: Theo Luật Đất đai số 31/2024/QH15, việc lập, phê duyệt quy hoạch sử dụng đất được tiếp tục thực hiện theo quy định của văn bản nào?
+*A. Nghị quyết số 61/2022/QH15 của Quốc hội.
+B. Nghị quyết số 49/2013/QH13 của Quốc hội.
+C. Luật Đất đai số 45/2013/QH13.
+D. Chỉ thị số 15/CT-TTg của Thủ tướng Chính phủ.
+
+Câu 28: Theo Luật Đấu thầu sửa đổi 2024 (Luật số 57/2024/QH15), một trong các hành vi không bảo đảm công bằng, minh bạch là gì?
+A. Nêu yêu cầu chung chung về nhãn hiệu hàng hóa trong hồ sơ mời thầu.
+B. Nhà thầu tham dự thầu với tư cách liên danh.
+*C. Nhà thầu tham gia lập, đồng thời tham gia thẩm định hồ sơ mời thầu đối với cùng một gói thầu.
+D. Thẩm định hồ sơ mời thầu trước khi phê duyệt.
+
+Câu 29: Theo Luật Quy hoạch, nguyên tắc nào sau đây là nguyên tắc cơ bản trong hoạt động quy hoạch?
+A. Ưu tiên lợi ích của người dân là cao nhất.
+*B. Đảm bảo tính nhân dân, sự tham gia của cơ quan, tổ chức, cộng đồng, cá nhân.
+C. Không cần bảo đảm tính kế thừa, ổn định giữa các cấp quy hoạch.
+D. Phân quyền quản lý tuyệt đối cho chính quyền địa phương.
+
+Câu 30: Luật Phòng cháy, chữa cháy và cứu nạn, cứu hộ mới nhất (Luật số 55/2024/QH15) có hiệu lực thi hành từ ngày nào?
+*A. 01/07/2025
+B. 01/07/2014
+C. 01/01/2024
+D. 29/6/2001
+
+Câu 31: Theo Luật Xây dựng, 'Hoạt động xây dựng' gồm những hoạt động nào?
 A. Chỉ gồm thi công xây dựng và giám sát xây dựng.
 *B. Lập quy hoạch xây dựng, lập dự án đầu tư xây dựng, khảo sát xây dựng, thiết kế xây dựng, thi công xây dựng và các hoạt động khác có liên quan.
 C. Chỉ gồm xây dựng mới, sửa chữa, cải tạo công trình xây dựng.
 D. Chỉ gồm hoạt động tư vấn đầu tư xây dựng.
 
-Câu 32. Theo Nghị định 214/2025/NĐ-CP, hạn mức áp dụng chào hàng cạnh tranh được nâng lên không quá là bao nhiêu?
+Câu 32: Theo Nghị định 214/2025/NĐ-CP, hạn mức áp dụng chào hàng cạnh tranh được nâng lên không quá là bao nhiêu?
 A. 05 tỷ đồng.
 B. 02 tỷ đồng.
 C. 500 triệu đồng.
 *D. 10 tỷ đồng.
 
-Câu 33. Trong các hành vi bị nghiêm cấm trong hoạt động đấu thầu, hành vi nào sau đây thuộc nhóm Gian lận?
+Câu 33: Trong các hành vi bị nghiêm cấm trong hoạt động đấu thầu, hành vi nào sau đây thuộc nhóm Gian lận?
 A. Chuyển nhượng cho nhà thầu khác phần công việc ngoài giá trị tối đa dành cho nhà thầu phụ.
 B. Dàn xếp, thỏa thuận để một bên trúng thầu.
 *C. Làm giả hoặc làm sai lệch thông tin, hồ sơ, tài liệu trong đấu thầu.
 D. Cản trở người có thẩm quyền trong lựa chọn nhà thầu.
 
-
-Câu 34. Luật Kiến trúc quy định về các hoạt động nào?
+Câu 34: Luật Kiến trúc quy định về các hoạt động nào?
 A. Lập quy hoạch xây dựng và cấp giấy phép xây dựng.
 B. Đấu thầu xây lắp, mua sắm hàng hóa và dịch vụ tư vấn.
 *C. Quản lý kiến trúc, hành nghề kiến trúc và quản lý nhà nước về kiến trúc.
 D. Thiết kế kỹ thuật, thiết kế bản vẽ thi công và nghiệm thu công trình.
 
-Câu 35. Theo Luật Đấu thầu, trường hợp nào sau đây được coi là gói thầu có tính chất cấp bách, khẩn cấp để áp dụng hình thức chỉ định thầu theo Nghị định 214/2025/NĐ-CP?
+Câu 35: Theo Luật Đấu thầu, trường hợp nào sau đây được coi là gói thầu có tính chất cấp bách, khẩn cấp để áp dụng hình thức chỉ định thầu theo Nghị định 214/2025/NĐ-CP?
 A. Gói thầu thuộc dự toán mua sắm không hình thành dự án có giá gói thầu không quá 500 triệu đồng.
 B. Gói thầu chỉ có duy nhất 1 nhà thầu thực hiện được trên thị trường do yêu cầu về giải pháp công nghệ.
 *C. Gói thầu cần thực hiện để ngăn chặn, khắc phục ngay hoặc để xử lý kịp thời hậu quả gây ra do thiên tai, hỏa hoạn, tai nạn bất ngờ.
 D. Gói thầu xây lắp có quy mô, tính chất tương tự với gói thầu đã thực hiện đáp ứng tiến độ, chất lượng trong thời gian 05 năm.
-
-III. Chương 3
-Câu 36. Việc giám sát đánh giá đầu tư đối với các dự án đầu tư xây dựng sử dụng vốn nhà nước căn cứ vào các quy định nào?
-A. Pháp luật về xây dựng
-B. Pháp luật về đầu tư công
-C. Pháp luật về đầu tư công và pháp luật về xây dựng
-*D. Pháp luật về đầu tư công, pháp luật về xây dựng và pháp luật khác có liên quan
-
-Câu 37. Những chủ thể nào bắt buộc phải mua bảo hiểm công trình trong thời gian thi công xây dựng đối với công trình có ảnh hưởng đến an toàn cộng đồng, môi trường, công trình có yêu cầu kỹ thuật đặc thù, điều kiện thi công xây dựng phức tạp ?
-*A. Chủ đầu tư xây dựng công trình
-B. Nhà thầu thi công xây dựng công trình
-C. Nhà thầu tư vấn thiết kế xây dựng công trình
-D. Cả 3 chủ thể nêu tại a, b và c
-
-Câu 38. Những chủ thể nào bắt buộc phải mua bảo hiểm trách nhiệm nghề nghiệp trong hoạt động đầu tư xây dựng?
-A. Nhà thầu khảo sát xây dựng
-B. Nhà thầu tư vấn thiết kế xây dựng công trình
-*C. Nhà thầu khảo sát xây dựng và Nhà thầu tư vấn thiết kế xây dựng công trình
-D. Chủ đầu tư xây dựng công trình và Nhà thầu khảo sát xây dựng
-
-Câu 39. Theo quy định của pháp luật về xây dựng, những công tác gì được liệt kê dưới đây thuộc giai đoạn chuẩn bị đầu tư xây dựng ?
-A. Xin chủ trương đầu tư xây dựng
-B. Lập, thẩm định, phê duyệt Báo cáo nghiên cứu khả thi đầu tư xây dựng
-C. Xin phép xây dựng
-*D. Bao gồm công tác a và b
-
-
-
-
-Câu 40. Theo quy định của pháp luật về xây dựng, công tác nào sau đây ở giai đoạn thực hiện đầu tư xây dựng?
-A.  Tổ chức lựa chọn nhà thầu, tổng thầu xây dựng để thực hiện các bước thiết kế bản vẽ thi công, thi công xây dựng công trình
-B. Thiết kế bản vẽ thi công và dự toán xây dựng
-C. Lựa chọn nhà thầu giám sát thi công xây dựng
-*D. Tất cả các công tác trên
-
-Câu 41. Theo quy định của pháp luật về xây dựng, công trình xây dựng được phân cấp trên cơ sở các căn cứ nào?
-A. Quy mô, tầm quan trọng áp dụng cho từng loại công trình
-B. Thời hạn sử dụng, vật liệu
-C. Yêu cầu kỹ thuật xây dựng công trình
-*D. Tất cả các căn cứ trên
-
-Câu 42. Việc phân loại công trình xây dựng theo quy định của pháp luật về xây dựng trên cơ sở tiêu chí nào?
-*A. Theo công năng sử dụng
-B. Theo kiến trúc công trình
-C. Do người quyết định đầu tư quy định
-D. Do chủ đầu tư quy định
-
-Câu 43. Dự án đầu tư xây dựng phải đáp ứng các yêu cầu nào dưới đây?
-A. Phù hợp với quy hoạch
-B. Có phương án công nghệ và phương án thiết kế xây dựng phù hợp
-C. Bảo đảm chất lượng, an toàn trong xây dựng và bảo vệ môi trường
-*D. Cả 3 phương án trên
-
-Câu 44. Các dự án đầu tư xây dựng có quy mô nhóm nào yêu cầu phải lập Báo cáo nghiên cứu tiền khả thi để trình cấp có thẩm quyền cho phép đầu tư hoặc chấp thuận chủ trương đầu tư?
-A. Dự án quan trọng quốc gia
-B. Dự án nhóm A
-*C. Dự án quan trọng quốc gia và dự án nhóm A
-D. Dự án quan trọng quốc gia, dự án nhóm A, nhóm B và nhóm C
-
-Câu 45. Dự án đầu tư xây dựng có tổng mức đầu tư bao nhiêu (Trừ công trình xây dựng sử dụng cho mục đích tôn giáo) thì Chủ đầu tư phải lập Báo cáo nghiên cứu khả thi đầu tư xây dựng?
-A. Từ 45 tỷ đồng trở lên
-*B. Từ 20 tỷ đồng trở lên
-C. Từ 15 tỷ đồng trở lên
-D. Từ 80 tỷ trở lên
-
-Câu 46. Khi thẩm định dự án đầu tư xây dựng sử dụng vốn nhà nước ngoài ngân sách, cơ quan chuyên môn về xây dựng phải thẩm định những nội dung nào dưới đây?
-A.Nội dung khác của báo cáo nghiên cứu khả thi đầu tư xây dựng
-*B. Thiết kế cơ sở phần xây dựng của báo cáo nghiên cứu khả thi đầu tư xây dựng
-C. Thiết kế công nghệ của báo cáo nghiên cứu khả thi đầu tư xây dựng
-D. Tất cả các nội dung trên tại A, B, C
-
-Câu 47. Cơ quan nào chủ trì tổ chức thẩm định dự án đầu tư xây dựng (không thuộc diện dự án quan trọng quốc gia) sử dụng vốn ngân sách nhà nước?
-*A. Cơ quan chuyên môn về xây dựng theo phân cấp
-B. Cơ quan chuyên môn trực thuộc người quyết định đầu tư
-C. Cả phương án A, B
-D. Chủ đầu tư xây dựng công trình
-
-Câu 48. Đối với dự án sử dụng vốn nhà nước ngoài ngân sách thì cơ quan nào chủ trì thẩm định thiết kế công nghệ và các nội dung khác của Báo cáo nghiên cứu khả thi đầu tư xây dựng?
-A. Sở Xây dựng
-*B. Cơ quan chuyên môn trực thuộc người quyết định đầu tư
-C. Chủ đầu tư xây dựng
-D. Văn phòng UBND tỉnh
-
-Câu 49. Dự án đầu tư xây dựng nào dưới đây không bắt buộc phải lập báo cáo nghiên cứu khả thi mà chỉ cần lập Báo cáo kinh tế - kỹ thuật?
-A. Dự án đầu tư xây dựng công trình tôn giáo và nhà ở riêng lẻ của hộ gia đình
-*B. Dự án đầu tư xây dựng công trình tôn giáo và dự án đầu tư xây dựng có tổng mức đầu tư dưới 20 tỷ đồng (không tính tiền sử dụng đất)
-C. Cả trường hợp A và B
-D. Các trường hợp A, B và C đều không đúng
-
-Câu 50. Hợp đồng trong hoạt động xây dựng theo hình thức giá có những loại nào?
-A. Hình thức trọn gói, hình thức theo thời gian
-B. Hình thức điều chỉnh giá, hình thức theo đơn giá cố định
-*C. Bao gồm các hình thức nêu tại A và B
-D. Không có hình thức nào nêu tại A và B
-
-Câu 51. Chức năng, nhiệm vụ của Ban QLDA chuyên ngành, ban QLDA khu vực do ai quy định?
-A. Người có thẩm quyền quyết định đầu tư
-*B. Người có thẩm quyền quyết định thành lập Ban QLDA chuyên ngành, ban QLDA khu vực
-C. Cơ quan chuyên môn về xây dựng
-D. Chủ đầu tư
-
-Câu 52. Đối với dự án đầu tư xây dựng chỉ yêu cầu lập Báo cáo kinh tế kỹ thuật đầu tư xây dựng thì chủ thể nào phê duyệt thiết kế bản vẽ thi công?
-*A. Người có thẩm quyền quyết định đầu tư
-B. Chủ đầu tư
-C. Ban quản lý dự án đầu tư xây dựng
-D. Cơ quan chuyên môn về xây dựng
-
-Câu 53. Chủ thể nào phải chịu trách nhiệm chính về an toàn lao động trên công trường?
-A. Chủ đầu tư
-*B. Nhà thầu thi công xây dựng công trình
-C. Nhà thầu tư vấn giám sát thi công xây dựng công trình
-D. Tất cả các phương án A, B và C
-Câu 54. Theo quy định của pháp luật về xây dựng, đối với các gói thầu sử dụng vốn nhà nước thì hợp đồng xây dựng được ký kết vào thời điểm nào?
-A. Sau khi hoàn thành việc lựa chọn nhà thầu
-*B. Sau khi hoàn thành việc lựa chọn nhà thầu và kết thúc đàm phán hợp đồng
-C. Trước khi khởi công xây dựng công trình
-D. Cả 3 phương án A, B và C
-
-Câu 55. Theo quy định của pháp luật về xây dựng, đối với các gói thầu sử dụng vốn nhà nước thì hiệu lực của hợp đồng xây dựng được tính từ thời điểm nào?
-*A.Từ ngày ký kết hợp đồng
-B. Từ ngày bên giao thầu nhận được bảo đảm thực hiện hợp đồng của bên nhận thầu
-C. Từ ngày do bên giao thầu và bên nhận thầu thỏa thuận trong hợp đồng.
-D. Bao gồm cả A, B và C
-
-Câu 56. Đối với các gói thầu sử dụng vốn nhà nước, việc điều chỉnh giá hợp đồng chỉ được áp dụng đối với loại hợp đồng nào?
-A.Hợp đồng theo đơn giá cố định, hợp đồng theo thời gian
-*B. Hợp đồng theo đơn giá điều chỉnh, hợp đồng theo thời gian
-C. Cả a và b
-D. a hoặc b
-
-Câu 57. Đối với các gói thầu thi công xây dựng sử dụng vốn nhà nước, tiến độ thực hiện hợp đồng được điều chỉnh trong các trường hợp nào?
-A.Trong quá trình thực hiện hợp đồng xảy ra các trường hợp bất khả kháng
-B. Do bên giao thầu thay đổi thiết kế hoặc bàn giao mặt bằng không đúng với thỏa thuận trong hợp đồng
-C. Do nhà thầu thực hiện không tuân thủ các biện pháp thi công để xảy ra sự cố phải tạm dừng thi công để xử lý sự cố
-*D. Cả 3 trường hợp trên
-
-Câu 58. Đối với các gói thầu sử dụng vốn nhà nước, nhà thầu chính có quyền giao 100% công việc của hợp đồng đã ký kết với bên giao thầu cho nhà thầu phụ không?
-A. Có
-*B. Không
-C. Tùy thuộc vào tình hình cụ thể và nhà thầu chính quyết định
-D. Do bên giao thầu và bên nhận thầu thỏa thuận
-
-Câu 59. Theo quy định của pháp luật Xây dựng hiện hành, nhà thầu nào có trách nhiệm lập biện pháp an toàn cho người và thiết bị thi công công trình trên công trường xây dựng?
-A.Nhà thầu thiết kế
-*B. Nhà thầu thi công xây dựng
-C. Chủ đầu tư
-D. Tư vấn giám sát thi công xây dựng
-
-
-
-Câu 60. Công tác nào sau đây không nằm trong giai đoạn thực hiện dự án đầu tư xây dựng?
-A.Thẩm định, phê duyệt thiết kế bản vẽ thi công và dự toán
-B. Lựa chọn nhà thầu thi công xây dựng
-C. Thẩm định, phê duyệt dự án
-*D. Thẩm định, phê duyệt quyết toán vốn đầu tư xây dựng

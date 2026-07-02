@@ -62,6 +62,8 @@ function loadExam(fileName) {
 
     if (examMode === 'survival') {
         titleElement.innerHTML = title + ' <span class="survival-badge">💀 1 MẠNG</span>' + autoBadge;
+    } else if (examMode === 'scoring') {
+        titleElement.innerHTML = title + ' <span class="normal-badge" style="background:#e67e22; color:white; padding:2px 8px; border-radius:10px; font-size:0.7em; font-weight:bold; margin-left:5px;">💯 TÍNH ĐIỂM</span>' + autoBadge;
     } else {
         titleElement.innerHTML = title + ' <span class="normal-badge">😊 THƯỜNG</span>' + autoBadge;
     }
@@ -72,6 +74,8 @@ function loadExam(fileName) {
         setTimeout(() => {
             if (examMode === 'survival') {
                 alert("💀 BẮT ĐẦU LÀM MỚI - CHẾ ĐỘ SINH TỬ\nBạn chỉ có 1 mạng duy nhất!\nSai 1 câu sẽ LÀM LẠI TỪ ĐẦU!");
+            } else if (examMode === 'scoring') {
+                alert("💯 BẮT ĐẦU LÀM MỚI - CHẾ ĐỘ TÍNH ĐIỂM\nLàm không hiện đúng sai, khi nộp bài mới biết kết quả!");
             } else {
                 alert("😊 BẮT ĐẦU LÀM MỚI - CHẾ ĐỘ THƯỜNG\nSai vẫn làm tiếp được, không sửa lại được đáp án!");
             }
@@ -236,7 +240,8 @@ function sendLiveTelemetry() {
             correct++;
         }
     });
-    const rawScore = `${correct}/${totalQuestions} (Đang làm)`;
+    const scale10 = parseFloat(((correct / totalQuestions) * 10).toFixed(2));
+    const rawScore = `${correct}/${totalQuestions} (${scale10} Điểm - Đang làm)`;
 
     let userData = {};
     try {
@@ -409,6 +414,8 @@ function updateTitleWithAutoStatus() {
 
         if (examMode === 'survival') {
             titleElement.innerHTML = title + ' <span class="survival-badge">💀 1 MẠNG</span>' + autoBadge;
+        } else if (examMode === 'scoring') {
+            titleElement.innerHTML = title + ' <span class="normal-badge" style="background:#e67e22; color:white; padding:2px 8px; border-radius:10px; font-size:0.7em; font-weight:bold; margin-left:5px;">💯 TÍNH ĐIỂM</span>' + autoBadge;
         } else {
             titleElement.innerHTML = title + ' <span class="normal-badge">😊 THƯỜNG</span>' + autoBadge;
         }
@@ -529,12 +536,14 @@ function renderQuestion(index) {
                 }
             } else {
                 if (q.userSelected === idx) {
-                    if (opt.isCorrect) {
+                    if (examMode === 'scoring' && !isSubmitted) {
+                        btn.classList.add('selected');
+                    } else if (opt.isCorrect) {
                         btn.classList.add('correct');
                     } else {
                         btn.classList.add('wrong');
                     }
-                } else if (opt.isCorrect) {
+                } else if (opt.isCorrect && (examMode !== 'scoring' || isSubmitted)) {
                     btn.classList.add('correct');
                 }
             }
@@ -593,7 +602,7 @@ function handleAnswer(qIndex, optIndex) {
 
         saveProgress();
     }
-    // CHẾ ĐỘ THƯỜNG / SINH TỬ
+    // CHẾ ĐỘ THƯỜNG / SINH TỬ / TÍNH ĐIỂM
     else {
         q.userSelected = optIndex;
 
@@ -622,6 +631,9 @@ function handleAnswer(qIndex, optIndex) {
                 showCorrectEffect();
                 saveProgress();
             }
+        } else if (examMode === 'scoring') {
+            renderQuestion(qIndex);
+            saveProgress();
         } else {
             renderQuestion(qIndex);
             if (selectedOption.isCorrect) {
@@ -1029,7 +1041,11 @@ function showResultModal() {
     const mins = Math.floor(totalSeconds / 60);
     const secs = totalSeconds % 60;
 
-    document.getElementById('resScore').innerHTML = `<span style="font-size:1em">${correct}</span><span style="font-size:0.6em; color:#636e72">/${allQuestions.length}</span>`;
+    const scale10 = parseFloat(((correct / allQuestions.length) * 10).toFixed(2));
+    document.getElementById('resScore').innerHTML = `
+        <div style="font-size:1.2em; color:#e74c3c; font-weight:bold">${scale10} <span style="font-size:0.5em; color:#636e72">Điểm</span></div>
+        <div style="font-size:0.5em; color:#636e72; margin-top:5px;">(Đúng ${correct}/${allQuestions.length} câu)</div>
+    `;
     document.getElementById('resRight').innerText = correct;
     document.getElementById('resWrong').innerText = wrong;
     document.getElementById('resSkip').innerText = skip;
@@ -1139,7 +1155,7 @@ async function reportScoreAndFirework(correct, wrong, skip) {
         const sheetParams = new URLSearchParams({
             username: `${userData.username || 'Khách'} - ${examDisplayName}`,
             examName: currentFileName,
-            score: `${correct}/${total}`,
+            score: `${correct}/${total} (${parseFloat(((correct / total) * 10).toFixed(2))} Điểm)`,
             ip: 'N/A',
             device: navigator.userAgent || 'N/A'
         });

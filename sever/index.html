@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ Thống Tài Khoản</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; display: flex; align-items: center; justify-content: center; margin: 0; color: #333; }
+        .container { background: rgba(255, 255, 255, 0.95); padding: 40px; border-radius: 15px; box-shadow: 0 15px 35px rgba(0,0,0,0.2); width: 100%; max-width: 400px; text-align: center; overflow: hidden;}
+        
+        /* Chuyển Tab Đăng Nhập / Đăng Ký */
+        .tabs { display: flex; margin-bottom: 20px; border-bottom: 2px solid #ddd; }
+        .tab { flex: 1; padding: 10px; cursor: pointer; font-weight: bold; color: #888; transition: 0.3s; font-size: 18px; }
+        .tab.active { color: #667eea; border-bottom: 3px solid #667eea; margin-bottom: -2px; }
+        .tab:hover:not(.active) { color: #555; }
+        
+        .form-section { display: none; animation: fadeIn 0.3s ease; }
+        .form-section.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; font-size: 16px; transition: 0.3s; }
+        input:focus { border-color: #667eea; outline: none; box-shadow: 0 0 5px rgba(102, 126, 234, 0.5); }
+        button { width: 100%; padding: 12px; background-color: #667eea; border: none; border-radius: 8px; color: white; font-size: 16px; cursor: pointer; transition: 0.3s; margin-top: 10px; font-weight: bold; }
+        button:hover { background-color: #764ba2; transform: translateY(-2px); }
+        
+        .message { margin-top: 15px; font-weight: bold; min-height: 24px; font-size: 14px;}
+        .success { color: #2ecc71; }
+        .error { color: #e74c3c; }
+        
+        .links { margin-top: 25px; font-size: 14px; padding-top: 15px; border-top: 1px solid #eee; }
+        .links a { color: #667eea; text-decoration: none; font-weight: bold; }
+        .links a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="tabs">
+        <div class="tab active" onclick="switchTab('login')">Đăng Nhập</div>
+        <div class="tab" onclick="switchTab('register')">Đăng Ký</div>
+    </div>
+
+    <!-- Form Đăng Nhập -->
+    <div id="login-form" class="form-section active">
+        <input type="text" id="login-username" placeholder="Tên đăng nhập" required>
+        <input type="password" id="login-password" placeholder="Mật khẩu" required>
+        <button onclick="login()">🚀 Đăng Nhập Ngay</button>
+        <div id="login-message" class="message"></div>
+    </div>
+
+    <!-- Form Đăng Ký -->
+    <div id="register-form" class="form-section">
+        <input type="text" id="reg-username" placeholder="Tên đăng nhập mới" required>
+        <input type="password" id="reg-password" placeholder="Mật khẩu" required>
+        <input type="text" id="reg-name" placeholder="Họ và tên hiển thị">
+        <button onclick="register()">✨ Tạo Tài Khoản</button>
+        <div id="reg-message" class="message"></div>
+    </div>
+    
+    <div class="links">
+        <a href="admin.html">👉 Chuyển sang Bảng Quản Trị (Admin)</a>
+    </div>
+</div>
+
+<script>
+    // Đã thay thế bằng link Cloudflare Worker xịn xò của bạn!
+    const SERVER_URL = 'https://severtkdethi.caovannamutt.workers.dev';
+
+    // Hàm chuyển đổi tab
+    function switchTab(tabName) {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.form-section').forEach(f => f.classList.remove('active'));
+        
+        // Reset thông báo khi chuyển tab
+        document.getElementById('login-message').innerHTML = '';
+        document.getElementById('reg-message').innerHTML = '';
+        
+        if (tabName === 'login') {
+            document.querySelectorAll('.tab')[0].classList.add('active');
+            document.getElementById('login-form').classList.add('active');
+        } else {
+            document.querySelectorAll('.tab')[1].classList.add('active');
+            document.getElementById('register-form').classList.add('active');
+        }
+    }
+
+    // Hàm Xử lý Đăng Nhập (MỚI)
+    async function login() {
+        const user = document.getElementById('login-username').value;
+        const pass = document.getElementById('login-password').value;
+        const msg = document.getElementById('login-message');
+
+        if (!user || !pass) return msg.innerHTML = '<span class="error">⚠️ Vui lòng nhập đủ tài khoản và mật khẩu!</span>';
+        msg.innerHTML = 'Đang kiểm tra... ⏳';
+
+        try {
+            const res = await fetch(SERVER_URL + '/api/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username: user, password: pass })
+            });
+            const data = await res.json();
+            
+            if (res.ok) {
+                msg.innerHTML = `<span class="success">${data.message}</span>`;
+            } else {
+                msg.innerHTML = `<span class="error">❌ ${data.error}</span>`;
+            }
+        } catch (e) {
+            msg.innerHTML = `<span class="error">❌ Lỗi kết nối tới Server Pikamc!</span>`;
+        }
+    }
+
+    // Hàm Xử lý Đăng Ký (GIỮ NGUYÊN)
+    async function register() {
+        const user = document.getElementById('reg-username').value;
+        const pass = document.getElementById('reg-password').value;
+        const name = document.getElementById('reg-name').value;
+        const msg = document.getElementById('reg-message');
+
+        if (!user || !pass) return msg.innerHTML = '<span class="error">⚠️ Nhập đủ tài khoản và mật khẩu bạn nhé!</span>';
+        msg.innerHTML = 'Đang tạo tài khoản... ⏳';
+
+        try {
+            const res = await fetch(SERVER_URL + '/api/accounts', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username: user, password: pass, name: name })
+            });
+            const data = await res.json();
+            
+            if (res.ok) {
+                msg.innerHTML = `<span class="success">✅ ${data.message} Tự động chuyển qua Đăng nhập...</span>`;
+                document.getElementById('reg-username').value = '';
+                document.getElementById('reg-password').value = '';
+                document.getElementById('reg-name').value = '';
+                
+                // Sau 2 giây tự động chuyển sang tab Login
+                setTimeout(() => switchTab('login'), 2000);
+            } else {
+                msg.innerHTML = `<span class="error">❌ ${data.error}</span>`;
+            }
+        } catch (e) {
+            msg.innerHTML = `<span class="error">❌ Lỗi kết nối tới Server Pikamc!</span>`;
+        }
+    }
+</script>
+</body>
+</html>

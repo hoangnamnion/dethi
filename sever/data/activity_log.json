@@ -1,0 +1,14 @@
+[
+    {
+        "username": "Hệ thống",
+        "text": "🎉 Máy chủ Python Pikamc đã khởi chạy thành công!",
+        "device": "Server",
+        "time": "Bây giờ"
+    },
+    {
+        "username": "Admin",
+        "text": "⚡️ Đã chuyển đổi dữ liệu từ Cloudflare về Server an toàn.",
+        "device": "Trình duyệt",
+        "time": "Vài phút trước"
+    }
+]

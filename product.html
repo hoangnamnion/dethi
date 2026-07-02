@@ -346,6 +346,16 @@
                 </div>
             </div>
 
+            <div class="mode-option" onclick="selectMode('scoring')" id="scoringOption">
+                <div class="mode-header">
+                    <div class="mode-icon">💯</div>
+                    <div class="mode-name">Chế độ Tính điểm</div>
+                </div>
+                <div class="mode-desc">
+                    Làm không hiện đúng sai khi nộp bài mới biết kết quả.
+                </div>
+            </div>
+
             <div class="mode-sub-options">
                 <div class="sub-option" onclick="selectOrder('normal')" id="orderNormal">
                     Giữ nguyên câu hỏi
@@ -365,6 +375,7 @@
     </div>
 
     <!-- Thêm các file cần thiết cho Bảng xếp hạng -->
+    <script src="js/api-config.js"></script>
     <script src="js/hihihaaaa.js"></script>
     <script src="js/leaderboard.js"></script>
     
@@ -455,6 +466,9 @@
 
             document.getElementById('survivalOption').style.borderColor = mode === 'survival' ? '#d63031' : '#e9ecef';
             document.getElementById('survivalOption').style.background = mode === 'survival' ? '#fff5f5' : '#f8f9fa';
+
+            document.getElementById('scoringOption').style.borderColor = mode === 'scoring' ? '#d63031' : '#e9ecef';
+            document.getElementById('scoringOption').style.background = mode === 'scoring' ? '#fff5f5' : '#f8f9fa';
         }
 
         // Chọn thứ tự câu hỏi
@@ -597,7 +611,13 @@
             let autoText = '';
             if (savedMode) {
                 const modeData = JSON.parse(savedMode);
-                modeText = modeData.mode === 'survival' ? '💀 Sinh tử' : '😊 Thường';
+                if (modeData.mode === 'survival') {
+                    modeText = '💀 Sinh tử';
+                } else if (modeData.mode === 'scoring') {
+                    modeText = '💯 Tính điểm';
+                } else {
+                    modeText = '😊 Thường';
+                }
                 if (modeData.autoNext) {
                     autoText = '<div style="color:#0984e3; margin-top:2px;">⚡ Auto Next</div>';
                 }
