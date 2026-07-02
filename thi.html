@@ -1,1 +1,136 @@
-404
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>arc.pikamc.vn - Không thể truy cập trang web này</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+            color: #202124;
+            background-color: #fff;
+            font-size: 15px;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        .interstitial-wrapper {
+            box-sizing: border-box;
+            max-width: 600px;
+            width: 100%;
+            padding: 10vh 24px 0;
+        }
+        .icon {
+            width: 44px;
+            height: 44px;
+            margin-bottom: 24px;
+        }
+        h1 {
+            font-size: 1.6em;
+            font-weight: 500;
+            line-height: 1.25;
+            margin-bottom: 16px;
+            margin-top: 0;
+            color: #202124;
+        }
+        p {
+            color: #5f6368;
+            line-height: 1.5;
+            margin: 0 0 16px;
+        }
+        strong {
+            color: #202124;
+            font-weight: 500;
+        }
+        .suggestions {
+            margin-top: 20px;
+        }
+        .suggestions ul {
+            color: #5f6368;
+            margin: 0;
+            padding-left: 20px;
+            list-style-type: disc;
+        }
+        .suggestions li {
+            line-height: 1.5;
+            margin-bottom: 5px;
+        }
+        .suggestions a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        .suggestions a:hover {
+            text-decoration: underline;
+        }
+        .error-code {
+            color: #80868b;
+            font-size: 0.9em;
+            margin-top: 30px;
+        }
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 60px;
+        }
+        .button {
+            border-radius: 20px;
+            box-sizing: border-box;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 8px 24px;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.2s;
+            outline: none;
+        }
+        .button-primary {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 9px 24px;
+        }
+        .button-primary:hover {
+            background-color: #43A047;
+        }
+        .button-secondary {
+            background-color: transparent;
+            border: 1px solid #4CAF50;
+            color: #4CAF50;
+        }
+        .button-secondary:hover {
+            background-color: rgba(76, 175, 80, 0.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="interstitial-wrapper">
+        <svg class="icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#5f6368" stroke-width="1.5" stroke-linejoin="round">
+            <path d="M5 2h9l5 5v15H5V2z"/>
+            <path d="M14 2v5h5"/>
+            <path d="M9 12h1v2H9zM14 12h1v2h-1z"/>
+            <path d="M9 17c1-1.5 3-1.5 4 0" stroke-linecap="round"/>
+        </svg>
+
+        <h1>Không thể truy cập trang web này</h1>
+        
+        <p><strong>https://hoangnem.vercel.app/</strong> đã từ chối kết nối.</p>
+        
+        <div class="suggestions">
+            <p>Hãy thử:</p>
+            <ul>
+                <li>Kiểm tra kết nối</li>
+                <li><a href="#">Kiểm tra proxy và tường lửa</a></li>
+            </ul>
+        </div>
+        
+        <div class="error-code">ERR_CONNECTION_REFUSED</div>
+        
+        <div class="nav-wrapper">
+            <button class="button button-primary" onclick="location.reload()">Tải lại</button>
+            <button class="button button-secondary">Chi tiết</button>
+        </div>
+    </div>
+</body>
+</html>
