@@ -89,6 +89,8 @@ function loadExam(fileName) {
             document.getElementById('quizArea').style.display = 'block';
             parseData(text);
 
+            originalQuestions = JSON.parse(JSON.stringify(allQuestions));
+
             const saved = localStorage.getItem('quiz_data_' + currentFileName);
             if (!saved) {
                 if (questionOrder === 'random') {
@@ -97,7 +99,6 @@ function loadExam(fileName) {
                 } else if (questionOrder === 'shuffle_options') {
                     shuffleOptions();
                 }
-                originalQuestions = JSON.parse(JSON.stringify(allQuestions));
             }
 
             loadProgress();
@@ -1390,6 +1391,9 @@ function loadProgress() {
 
         if (examMode === 'survival' && isSurvivalFailed && !isSubmitted) {
             performSurvivalReset();
+            saveProgress();
+            renderQuestion(0);
+            return;
         }
 
         updateTimerDisplay();
@@ -1419,7 +1423,6 @@ function loadProgress() {
             });
             if (restoredQuestions.length > 0) {
                 allQuestions = restoredQuestions;
-                originalQuestions = JSON.parse(JSON.stringify(allQuestions));
             }
         }
 
