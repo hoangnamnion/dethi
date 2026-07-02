@@ -143,10 +143,10 @@ function renderLeaderboardData(modal, topUsers) {
             subjectName = parts.slice(1).join(' - ').trim();
         }
         
-        // Nếu đang xem Xếp hạng của 1 môn cụ thể, bỏ qua các môn khác
-        if (isSpecificExam && subjectName && subjectName !== examDisplayName) {
-            return;
-        }
+        // Đã yêu cầu hiển thị TẤT CẢ các môn nên bỏ filter này
+        // if (isSpecificExam && subjectName && subjectName !== examDisplayName) {
+        //     return;
+        // }
 
         let rawScore = user.rawScore || "0";
         let scoreValue = 0;
@@ -170,8 +170,8 @@ function renderLeaderboardData(modal, topUsers) {
     // 2. Chuyển Map thành mảng và sắp xếp lại theo điểm
     topUsers = Array.from(userMap.values()).sort((a, b) => b.scoreValue - a.scoreValue);
 
-    // Cắt lấy Top 50
-    if (topUsers.length > 50) topUsers = topUsers.slice(0, 50);
+    // Không giới hạn số lượng hiển thị, hiện tất cả
+    // if (topUsers.length > 15) topUsers = topUsers.slice(0, 15);
 
     // 3. Gắn màu sắc theo thứ hạng
     topUsers.forEach((user, index) => {
@@ -185,6 +185,17 @@ function renderLeaderboardData(modal, topUsers) {
     let listHTML = topUsers.map(user => {
         let realName = user.realName || user.name;
         let subjectName = user.subjectName || "";
+
+        let rawScoreStr = user.rawScore || "0";
+        let displayFractions = rawScoreStr;
+        let displayPoints = "CÂU";
+        
+        // Cố gắng tách "8/15 (5.33 Điểm)" thành "8/15" và "5.33 ĐIỂM"
+        let match = rawScoreStr.match(/^([0-9]+\/[0-9]+)\s*\((.*?)\)/);
+        if (match) {
+            displayFractions = match[1];
+            displayPoints = match[2].trim();
+        }
 
         return `
         <div style="display:flex; align-items:center; gap: 12px; margin-bottom: 12px; padding: 15px; background: #fff; border: 1px solid #f1f5f9; border-radius: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); transition: 0.3s;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 15px rgba(0,0,0,0.05)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.02)';">
@@ -200,14 +211,14 @@ function renderLeaderboardData(modal, topUsers) {
                 ${subjectName ? `<div style="font-size: 0.7em; color: #64748b; margin-top: 4px; display: flex; align-items: center; gap: 4px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><span style="color: #8b5cf6;">📘</span> Môn: ${subjectName}</div>` : ''}
             </div>
             <div style="text-align: right; background: #f0fdf4; padding: 8px 14px; border-radius: 12px; border: 1px solid #dcfce7; min-width: 65px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                <div style="font-size: 1.15em; font-weight: 800; color: #16a34a; line-height: 1;">${user.rawScore}</div>
-                <div style="font-size: 0.6em; color: #16a34a; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px;">Câu</div>
+                <div style="font-size: 1.15em; font-weight: 800; color: #16a34a; line-height: 1;">${displayFractions}</div>
+                <div style="font-size: 0.65em; color: #16a34a; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px;">${displayPoints}</div>
             </div>
         </div>
         `;
     }).join('');
 
-    const titlePrefix = examDisplayName ? `ĐỀ: ${examDisplayName.toUpperCase()}` : 'BẢNG VÀNG';
+    const titlePrefix = 'BẢNG VÀNG CHUNG';
 
     modal.innerHTML = `
         <div style="background: #f8fafc; width: 90%; max-width: 440px; border-radius: 32px; padding: 25px; box-shadow: 0 30px 70px rgba(0,0,0,0.4); animation: popModal 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; position: relative; overflow: hidden;">
@@ -223,7 +234,10 @@ function renderLeaderboardData(modal, topUsers) {
                         <span style="font-size: 0.45em; color: #64748b; letter-spacing: 1px; margin-top: 2px;">TOP NHỮNG NGƯỜI XUẤT SẮC</span>
                     </div>
                 </div>
-                <span style="font-size: 0.5em; background: linear-gradient(135deg, #6c5ce7, #a29bfe); color: white; padding: 6px 15px; border-radius: 20px; box-shadow: 0 4px 10px rgba(108, 92, 231, 0.3); font-weight: 700; letter-spacing: 0.5px;">LIVE 🔴</span>
+                <span style="display: flex; align-items: center; gap: 8px; font-size: 0.55em; background: linear-gradient(135deg, #8b5cf6, #a78bfa); color: white; padding: 6px 16px; border-radius: 20px; box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3); font-weight: 800; letter-spacing: 0.5px; margin-right: 5px;">
+                    LIVE 
+                    <span style="width: 10px; height: 10px; background: radial-gradient(circle at 30% 30%, #ff7675, #d63031); border-radius: 50%; box-shadow: 0 2px 4px rgba(214, 48, 49, 0.5); animation: pulse-live 1.5s infinite;"></span>
+                </span>
             </h3>
             
             <div style="max-height: 420px; overflow-y: auto; padding: 15px 5px; margin-top: 5px; scrollbar-width: thin; position: relative; z-index: 10;">
@@ -242,6 +256,11 @@ function renderLeaderboardData(modal, topUsers) {
             @keyframes popModal {
                 0% { transform: scale(0.85) translateY(20px); opacity: 0; }
                 100% { transform: scale(1) translateY(0); opacity: 1; }
+            }
+            @keyframes pulse-live {
+                0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(214, 48, 49, 0.5); }
+                70% { transform: scale(1); box-shadow: 0 0 0 5px rgba(214, 48, 49, 0); }
+                100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(214, 48, 49, 0); }
             }
             /* Tùy chỉnh thanh cuộn cho đẹp */
             #leaderboardModal div::-webkit-scrollbar { width: 5px; }

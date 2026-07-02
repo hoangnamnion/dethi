@@ -683,19 +683,10 @@ function handleAnswer(qIndex, optIndex) {
     const totalQuestions = allQuestions.length;
 
     if (answeredCount === totalQuestions && !isRetryMode && !isSubmitted) {
-        // Hiển thị thông báo trên tiêu đề để người dùng biết
-        const titleElement = document.getElementById('sectionTitle');
-        if (titleElement) {
-            titleElement.innerHTML = '<span style="color:#e74c3c; font-weight:bold; animation: pulse-badge 1s infinite;">🚀 ĐÃ XONG! TỰ ĐỘNG NỘP BÀI...</span>';
+        if (!isSubmitted) {
+            console.log("Hệ thống: Đã trả lời hết, tự động nộp bài ngay lập tức...");
+            finishExam(true); // Nộp bài không cần confirm
         }
-
-        // Đợi 1.5 giây để người dùng thấy kết quả câu cuối cùng rồi tự nộp
-        setTimeout(() => {
-            if (!isSubmitted) {
-                console.log("Hệ thống: Đã trả lời hết, tự động nộp bài...");
-                finishExam(true); // Nộp bài không cần confirm
-            }
-        }, 1500);
     }
 }
 
