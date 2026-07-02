@@ -727,32 +727,30 @@ function performSurvivalReset() {
 }
 
 function showDeathEffect() {
+    if (document.getElementById('survivalRetryOverlay')) return;
+
     const overlay = document.createElement('div');
     overlay.id = 'survivalRetryOverlay';
     overlay.style.cssText = `
-        position: fixed;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
         background: linear-gradient(135deg, #d63031, #e17055);
         color: white;
-        padding: 20px 30px;
+        padding: 20px;
         border-radius: 15px;
         font-weight: bold;
         text-align: center;
-        z-index: 9999;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        box-shadow: 0 5px 15px rgba(214, 48, 49, 0.4);
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 15px;
-        width: 80%;
-        max-width: 400px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        animation: fadeIn 0.3s;
     `;
 
     overlay.innerHTML = `
         <div style="font-size: 1.2em;">💀 SAI RỒI!</div>
-        <div style="font-size: 0.9em; font-weight: normal;">Đáp án đúng đã được hiển thị. Bạn không thể làm tiếp!</div>
+        <div style="font-size: 0.9em; font-weight: normal;">Cố Gắng Học Thuộc Nhé Bồ Đọc Lại cho kỹ</div>
         <button id="btnRetrySurvival" style="
             background: white;
             color: #d63031;
@@ -764,10 +762,16 @@ function showDeathEffect() {
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
             transition: 0.3s;
             width: 100%;
+            max-width: 250px;
         ">🔄 Làm lại từ đầu</button>
     `;
 
-    document.body.appendChild(overlay);
+    const quizArea = document.getElementById('quizArea');
+    quizArea.appendChild(overlay);
+
+    setTimeout(() => {
+        overlay.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 100);
 
     document.getElementById('btnRetrySurvival').onclick = () => {
         overlay.remove();
