@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Thông Báo Hoàn Tiền - Đóng Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background: #f8f9fa;
+            color: #2d3436;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+        /* Mesh Background Elements */
+        .mesh-blob {
+            position: absolute;
+            filter: blur(80px);
+            opacity: 0.4;
+            z-index: 0;
+            border-radius: 50%;
+        }
+        .blob-1 { top: -10%; left: -20%; width: 400px; height: 400px; background: #ff7675; animation: float 8s infinite alternate; }
+        .blob-2 { bottom: -10%; right: -20%; width: 500px; height: 500px; background: #ffeaa7; animation: float 10s infinite alternate-reverse; }
+        
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(40px, 60px) scale(1.1); }
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 40px 30px;
+            border-radius: 24px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            border: 1px solid rgba(255,255,255,1);
+            max-width: 420px;
+            width: 85%;
+            z-index: 1;
+            animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes fadeInUp {
+            from { transform: translateY(40px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .icon {
+            font-size: 70px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 10px 20px rgba(255,71,87,0.4));
+            animation: pulseWarning 2s infinite;
+        }
+
+        @keyframes pulseWarning {
+            0% { transform: scale(1); filter: drop-shadow(0 10px 20px rgba(255,71,87,0.4)); }
+            50% { transform: scale(1.08); filter: drop-shadow(0 15px 30px rgba(255,71,87,0.7)); }
+            100% { transform: scale(1); filter: drop-shadow(0 10px 20px rgba(255,71,87,0.4)); }
+        }
+
+        h1 {
+            font-size: 26px;
+            font-weight: 900;
+            margin: 0 0 12px 0;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            background: linear-gradient(to right, #d63031, #ff7675);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p {
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 0 0 30px 0;
+            color: #636e72;
+        }
+
+        .contact-card {
+            background: #ffffff;
+            color: #2d3436;
+            padding: 25px 20px;
+            border-radius: 16px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #f1f2f6;
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 4px;
+            background: linear-gradient(90deg, #ff4757, #ffa502);
+        }
+
+        .label {
+            font-size: 13px;
+            font-weight: 600;
+            color: #636e72;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .name {
+            font-size: 22px;
+            font-weight: 800;
+            color: #2d3436;
+            margin-bottom: 5px;
+        }
+
+        .phone {
+            font-size: 28px;
+            font-weight: 900;
+            color: #ff4757;
+            letter-spacing: 1px;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-decoration: none;
+            padding: 14px 10px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+
+        .btn-call {
+            background: #2ed573;
+            color: #fff;
+            box-shadow: 0 6px 15px rgba(46, 213, 115, 0.3);
+        }
+
+        .btn-call:hover {
+            background: #27ae60;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(46, 213, 115, 0.4);
+        }
+
+        .btn-zalo {
+            background: #1e90ff;
+            color: #fff;
+            box-shadow: 0 6px 15px rgba(30, 144, 255, 0.3);
+        }
+
+        .btn-zalo:hover {
+            background: #0984e3;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(30, 144, 255, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="mesh-blob blob-1"></div>
+    <div class="mesh-blob blob-2"></div>
+
+    <div class="container">
+        <div class="icon">⚠️</div>
+        <h1>Đóng Website</h1>
+        <p>Hệ thống hiện tại đã ngừng hoạt động. Rất xin lỗi vì sự bất tiện này.</p>
+        
+        <div class="contact-card">
+            <span class="label">Liên hệ để được hoàn tiền</span>
+            <div class="name">Cao Văn Nam</div>
+            <div class="phone">0378787154</div>
+        </div>
+        
+        <div class="action-buttons">
+            <a href="tel:0378787154" class="btn btn-call">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                Gọi ngay
+            </a>
+            <a href="https://zalo.me/0378787154" class="btn btn-zalo" target="_blank">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                Nhắn Zalo
+            </a>
+        </div>
+    </div>
+</body>
+</html>
