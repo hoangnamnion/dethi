@@ -363,7 +363,10 @@
                 <div class="sub-option" onclick="selectOrder('random')" id="orderRandom">
                     Đảo lộn câu hỏi
                 </div>
-                <div class="sub-option" onclick="toggleAutoNext()" id="optAutoNext">
+                <div class="sub-option" onclick="selectOrder('shuffle_options')" id="orderShuffleOptions">
+                    Đảo lộn đáp án
+                </div>
+                <div class="sub-option" onclick="toggleAutoNext()" id="optAutoNext" style="flex: 100%;">
                     ⚡ Tự động Next (2s)
                 </div>
             </div>
@@ -477,6 +480,9 @@
 
             document.getElementById('orderNormal').classList.toggle('active', order === 'normal');
             document.getElementById('orderRandom').classList.toggle('active', order === 'random');
+            if (document.getElementById('orderShuffleOptions')) {
+                document.getElementById('orderShuffleOptions').classList.toggle('active', order === 'shuffle_options');
+            }
         }
 
         // Toggle Auto Next
