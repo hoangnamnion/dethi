@@ -89,9 +89,14 @@ function loadExam(fileName) {
             document.getElementById('quizArea').style.display = 'block';
             parseData(text);
 
-            if (questionOrder === 'random') {
-                shuffleQuestions();
-                shuffleOptions();
+            const saved = localStorage.getItem('quiz_data_' + currentFileName);
+            if (!saved) {
+                if (questionOrder === 'random') {
+                    shuffleQuestions();
+                    shuffleOptions();
+                } else if (questionOrder === 'shuffle_options') {
+                    shuffleOptions();
+                }
                 originalQuestions = JSON.parse(JSON.stringify(allQuestions));
             }
 
@@ -717,6 +722,8 @@ function performSurvivalReset() {
 
     if (questionOrder === 'random') {
         shuffleQuestions();
+        shuffleOptions();
+    } else if (questionOrder === 'shuffle_options') {
         shuffleOptions();
     }
 
@@ -1388,22 +1395,32 @@ function loadProgress() {
         updateTimerDisplay();
 
         if (data.history) {
-            data.history.forEach((h, i) => {
-                if (allQuestions[i]) {
-                    allQuestions[i].userSelected = h.userSelected;
-                    allQuestions[i].firstAttemptSelected = h.firstAttemptSelected;
-                    allQuestions[i].isCorrectFirstTime = h.isCorrectFirstTime;
-                    allQuestions[i].retrySelected = h.retrySelected;
-                    allQuestions[i].isRetryMode = h.isRetryMode;
-                    allQuestions[i].originalIndex = h.originalIndex || i;
-                    allQuestions[i].shuffledOptionIndices = h.shuffledOptionIndices;
+            const originalParsed = JSON.parse(JSON.stringify(allQuestions));
+            const restoredQuestions = [];
 
-                    if (h.shuffledOptionIndices && questionOrder === 'random') {
-                        const newOptions = h.shuffledOptionIndices.map(idx => allQuestions[i].options[idx]);
-                        allQuestions[i].options = newOptions;
+            data.history.forEach((h, i) => {
+                let q = originalParsed[h.originalIndex !== undefined ? h.originalIndex : i];
+                if (q) {
+                    q = JSON.parse(JSON.stringify(q));
+                    if (h.shuffledOptionIndices) {
+                        q.options = h.shuffledOptionIndices.map(idx => q.options[idx]);
                     }
+
+                    q.userSelected = h.userSelected;
+                    q.firstAttemptSelected = h.firstAttemptSelected;
+                    q.isCorrectFirstTime = h.isCorrectFirstTime;
+                    q.retrySelected = h.retrySelected;
+                    q.isRetryMode = h.isRetryMode;
+                    q.originalIndex = h.originalIndex !== undefined ? h.originalIndex : i;
+                    q.shuffledOptionIndices = h.shuffledOptionIndices;
+                    
+                    restoredQuestions.push(q);
                 }
             });
+            if (restoredQuestions.length > 0) {
+                allQuestions = restoredQuestions;
+                originalQuestions = JSON.parse(JSON.stringify(allQuestions));
+            }
         }
 
         if (isRetryMode) {
