@@ -493,6 +493,18 @@ function renderQuestion(index) {
     document.getElementById('btnPrev').disabled = (index === 0);
     document.getElementById('btnNext').disabled = (index === questionsToShow.length - 1);
 
+    if (examMode === 'survival') {
+        const hasWrongAnswer = allQuestions.some(q => q.userSelected !== null && !q.options[q.userSelected].isCorrect);
+        if (hasWrongAnswer) {
+            isSurvivalFailed = true;
+            document.getElementById('btnPrev').disabled = true;
+            document.getElementById('btnNext').disabled = true;
+            if (!document.getElementById('survivalRetryOverlay')) {
+                showDeathEffect();
+            }
+        }
+    }
+
     const optsArea = document.getElementById('optionsArea');
     optsArea.innerHTML = '';
 
@@ -613,18 +625,12 @@ function handleAnswer(qIndex, optIndex) {
 
         if (examMode === 'survival') {
             if (!selectedOption.isCorrect) {
-                showDeathEffect();
-
-                // Hiện nút báo lỗi khi sai
-                // const btnReport = document.getElementById('btnReportFloat');
-                // if (btnReport) btnReport.style.display = 'block';
-
-                setTimeout(() => {
-                    performSurvivalReset();
-                    renderQuestion(0);
-                    saveProgress();
-                }, 2000);
-
+                isSurvivalFailed = true;
+                renderQuestion(qIndex);
+                if (!document.getElementById('survivalRetryOverlay')) {
+                    showDeathEffect();
+                }
+                saveProgress();
                 return; // Kết thúc luôn, không chạy Auto Next
             } else {
                 renderQuestion(qIndex);
@@ -722,42 +728,57 @@ function performSurvivalReset() {
 
 function showDeathEffect() {
     const overlay = document.createElement('div');
+    overlay.id = 'survivalRetryOverlay';
     overlay.style.cssText = `
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.9);
-        z-index: 9998;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    `;
-
-    const deathMessage = document.createElement('div');
-    deathMessage.style.cssText = `
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
         background: linear-gradient(135deg, #d63031, #e17055);
         color: white;
-        padding: 30px 40px;
-        border-radius: 20px;
+        padding: 20px 30px;
+        border-radius: 15px;
         font-weight: bold;
-        font-size: 1.5em;
         text-align: center;
         z-index: 9999;
-        animation: deathPulse 0.5s infinite alternate;
-        box-shadow: 0 15px 40px rgba(0,0,0,0.5);
-        max-width: 80%;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        width: 80%;
+        max-width: 400px;
     `;
 
-    deathMessage.innerHTML = '💀 SAI RỒI!<br>LÀM LẠI TỪ ĐẦU!';
+    overlay.innerHTML = `
+        <div style="font-size: 1.2em;">💀 SAI RỒI!</div>
+        <div style="font-size: 0.9em; font-weight: normal;">Đáp án đúng đã được hiển thị. Bạn không thể làm tiếp!</div>
+        <button id="btnRetrySurvival" style="
+            background: white;
+            color: #d63031;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: 0.3s;
+            width: 100%;
+        ">🔄 Làm lại từ đầu</button>
+    `;
 
-    overlay.appendChild(deathMessage);
     document.body.appendChild(overlay);
 
-    setTimeout(() => {
+    document.getElementById('btnRetrySurvival').onclick = () => {
         overlay.remove();
-    }, 2000);
+        performSurvivalReset();
+        renderQuestion(0);
+        saveProgress();
+    };
+
+    // Vô hiệu hóa nút chuyển câu
+    document.getElementById('btnNext').disabled = true;
+    document.getElementById('btnPrev').disabled = true;
 }
 
 function spawnEmojis(emojiList) {
