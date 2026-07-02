@@ -369,8 +369,8 @@ C. Thẩm định, phê duyệt dự án
 *D. Thẩm định, phê duyệt quyết toán vốn đầu tư xây dựng
 
 Câu 61. Theo quy định của pháp luật xây dựng hiện hành, hợp đồng xây dựng không có hình thức nào dưới đây?
-*A. Hợp đồng theo giá trọn gói
-B. Hợp đồng theo tỷ lệ %
+A. Hợp đồng theo giá trọn gói
+*B. Hợp đồng theo tỷ lệ %
 C. Hợp đồng theo đơn giá điều chỉnh
 D. Hợp đồng theo đơn giá cố định
 
