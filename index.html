@@ -203,6 +203,18 @@
                     headerUserName.innerHTML = `👨‍🎓 <b>${user.username}</b>`;
                 }
 
+                // 🌟 KIỂM TRA BẮT BUỘC CẬP NHẬT AVATAR
+                if (typeof API_BASE !== 'undefined') {
+                    fetch(API_BASE + "?action=getAvatars")
+                        .then(r => r.json())
+                        .then(avatars => {
+                            if (!avatars[user.username]) {
+                                alert("⚠️ YÊU CẦU BẮT BUỘC: Bạn chưa có Ảnh Đại Diện!\nVui lòng tải lên Ảnh Đại Diện để tiếp tục sử dụng hệ thống.");
+                                window.location.href = "profile.html";
+                            }
+                        }).catch(e => console.log("Lỗi check avatar:", e));
+                }
+
                 // 🌟 NẠP ĐỀ THI TƯƠNG ỨNG VỚI TÀI KHOẢN
                 // Dữ liệu exams đã được lưu sẵn trong sessionStorage lúc đăng nhập thành công
                 if (user && user.exams && user.exams.length > 0) {

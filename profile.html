@@ -318,6 +318,7 @@
     </div>
 
     <!-- Scripts cần thiết -->
+    <script src="js/api-config.js"></script>
     <script src="js/hihihaaaa.js"></script>
     <script src="js/tkhethan.js"></script>
     <script src="js/certificate.js"></script>
@@ -338,7 +339,7 @@
             document.getElementById('profName').innerText = username;
             document.getElementById('profId').innerText = `Tài khoản: ${accountId}`;
 
-            // --- XỬ LÝ ẢNH BÌA VÀ AVATAR (LƯU LOCALSTORAGE) ---
+            // --- XỬ LÝ ẢNH BÌA VÀ AVATAR (LƯU LOCALSTORAGE VÀ ĐỒNG BỘ SERVER) ---
             const profileHeader = document.getElementById('profileHeader');
             const bgUpload = document.getElementById('bgUpload');
             const savedBg = localStorage.getItem('profile_bg_' + accountId);
@@ -368,7 +369,7 @@
                         let width = img.width;
                         let height = img.height;
 
-                        // Crop hình vuông cho avatar nếu cần (tùy chọn, ở đây dùng CSS object-fit/background-size cover nên chỉ cần nén)
+                        // Crop hình vuông cho avatar nếu cần
                         if (width > MAX_WIDTH) {
                             height *= MAX_WIDTH / width;
                             width = MAX_WIDTH;
@@ -386,6 +387,19 @@
                                 localStorage.setItem('profile_avatar_' + accountId, dataUrl);
                                 avatarCircle.style.backgroundImage = `url(${dataUrl})`;
                                 avatarEmoji.style.display = 'none';
+                                
+                                // Đồng bộ avatar lên server
+                                if (typeof API_BASE !== 'undefined') {
+                                    fetch(API_BASE, {
+                                        method: 'POST',
+                                        body: JSON.stringify({
+                                            action: 'updateAvatar',
+                                            username: username,
+                                            avatar: dataUrl
+                                        })
+                                    }).catch(e => console.log('Lỗi đồng bộ avatar:', e));
+                                }
+                                
                             } else {
                                 localStorage.setItem('profile_bg_' + accountId, dataUrl);
                                 profileHeader.style.backgroundImage = `url(${dataUrl})`;

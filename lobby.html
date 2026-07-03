@@ -285,6 +285,18 @@
                 }
             });
 
+        let globalAvatars = {};
+        
+        // Tải danh sách avatar từ server
+        fetch(API_BASE + "?action=getAvatars")
+            .then(r => r.json())
+            .then(data => {
+                if (data && typeof data === 'object') {
+                    globalAvatars = data;
+                    if (roomData) updateUI(); // Cập nhật lại UI nếu đã có roomData
+                }
+            }).catch(e => console.log('Không thể tải avatars:', e));
+
         function startPolling() {
             pollInterval = setInterval(fetchRoomInfo, 1000);
         }
@@ -308,7 +320,12 @@
 
         function getAvatarHTML(username) {
             let avatarUrl = `https://api.dicebear.com/7.x/adventurer/svg?seed=${encodeURIComponent(username)}&backgroundColor=b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf`;
-            if (username === currentUser) {
+            
+            // Ưu tiên avatar từ server nếu có
+            if (globalAvatars[username]) {
+                avatarUrl = globalAvatars[username];
+            } else if (username === currentUser) {
+                // Nếu chưa có trên server, lấy từ local (phòng khi chưa đồng bộ kịp)
                 try {
                     const ud = sessionStorage.getItem('current_user');
                     if (ud) {

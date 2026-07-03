@@ -10,11 +10,13 @@
 // TẢI NGẦM DỮ LIỆU ĐỂ HIỂN THỊ TỨC THÌ
 // ==========================================
 window.preFetchedLeaderboard = null;
+window.preFetchedAvatars = null;
 window.fetchLeaderboardBackground = function() {
     try {
         const examName = typeof currentFileName !== 'undefined' ? currentFileName : '';
         const fetchUrl = `${API_BASE}?action=getLeaderboard&examName=${examName}&t=${Date.now()}`;
         fetch(fetchUrl).then(r => r.json()).then(d => window.preFetchedLeaderboard = d).catch(e => {});
+        fetch(`${API_BASE}?action=getAvatars`).then(r => r.json()).then(d => window.preFetchedAvatars = d).catch(e => {});
     } catch(e){}
 };
 setTimeout(window.fetchLeaderboardBackground, 2000);
@@ -37,7 +39,7 @@ async function showLeaderboard() {
         if (topUsers && topUsers.length > 0) {
             topUsers = topUsers.filter(u => !(u.rawScore && String(u.rawScore).includes('(Đang làm)')));
         }
-        renderLeaderboardData(modal, topUsers);
+        renderLeaderboardData(modal, topUsers, window.preFetchedAvatars || {});
         window.fetchLeaderboardBackground(); // Tải lại ngầm để cập nhật dữ liệu mới cho lần sau
         return;
     }
@@ -62,10 +64,15 @@ async function showLeaderboard() {
         const examName = typeof currentFileName !== 'undefined' ? currentFileName : '';
         const fetchUrl = `${API_BASE}?action=getLeaderboard&examName=${examName}&t=${Date.now()}`;
         
-        const response = await fetch(fetchUrl);
-        if (!response.ok) throw new Error("Network response was not ok");
+        const [res, avaRes] = await Promise.all([
+            fetch(fetchUrl),
+            fetch(`${API_BASE}?action=getAvatars`)
+        ]);
+        if (!res.ok) throw new Error("Network response was not ok");
         
-        let topUsers = await response.json();
+        let topUsers = await res.json();
+        let avatarsData = {};
+        try { avatarsData = await avaRes.json(); } catch(e){}
         
         // Lọc bỏ những người đang thi dở (chỉ hiển thị những bài Đã nộp)
         if (topUsers && topUsers.length > 0) {
@@ -73,7 +80,7 @@ async function showLeaderboard() {
         }
         
         // Render Dữ liệu
-        renderLeaderboardData(modal, topUsers);
+        renderLeaderboardData(modal, topUsers, avatarsData);
         
     } catch (error) {
         console.error("Lỗi lấy dữ liệu bảng xếp hạng:", error);
@@ -89,7 +96,7 @@ async function showLeaderboard() {
     }
 }
 
-function renderLeaderboardData(modal, topUsers) {
+function renderLeaderboardData(modal, topUsers, avatars = {}) {
     if (!topUsers || topUsers.length === 0) {
         modal.innerHTML = `
             <div style="background: #f8fafc; width: 90%; max-width: 420px; border-radius: 32px; padding: 25px; box-shadow: 0 30px 70px rgba(0,0,0,0.4); text-align: center; animation: popModal 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;">
@@ -143,11 +150,6 @@ function renderLeaderboardData(modal, topUsers) {
             subjectName = parts.slice(1).join(' - ').trim();
         }
         
-        // Đã yêu cầu hiển thị TẤT CẢ các môn nên bỏ filter này
-        // if (isSpecificExam && subjectName && subjectName !== examDisplayName) {
-        //     return;
-        // }
-
         let rawScore = user.rawScore || "0";
         let scoreValue = 0;
         let baseScoreStr = rawScore.replace('(Đang làm)', '').trim();
@@ -170,9 +172,6 @@ function renderLeaderboardData(modal, topUsers) {
     // 2. Chuyển Map thành mảng và sắp xếp lại theo điểm
     topUsers = Array.from(userMap.values()).sort((a, b) => b.scoreValue - a.scoreValue);
 
-    // Không giới hạn số lượng hiển thị, hiện tất cả
-    // if (topUsers.length > 15) topUsers = topUsers.slice(0, 15);
-
     // 3. Gắn màu sắc theo thứ hạng
     topUsers.forEach((user, index) => {
         user.rank = index + 1;
@@ -190,17 +189,21 @@ function renderLeaderboardData(modal, topUsers) {
         let displayFractions = rawScoreStr;
         let displayPoints = "CÂU";
         
-        // Cố gắng tách "8/15 (5.33 Điểm)" thành "8/15" và "5.33 ĐIỂM"
         let match = rawScoreStr.match(/^([0-9]+\/[0-9]+)\s*\((.*?)\)/);
         if (match) {
             displayFractions = match[1];
             displayPoints = match[2].trim();
         }
 
+        let avatarUrl = avatars[realName] || `https://api.dicebear.com/7.x/adventurer/svg?seed=${encodeURIComponent(realName)}&backgroundColor=b6e3f4,c0aede,d1d4f9,ffd5dc,ffdfbf`;
+
         return `
-        <div style="display:flex; align-items:center; gap: 8px; margin-bottom: 12px; padding: 12px 10px; background: #fff; border: 1px solid #f1f5f9; border-radius: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); transition: 0.3s;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 15px rgba(0,0,0,0.05)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.02)';">
-            <div style="width: 38px; height: 38px; min-width: 38px; background: ${user.rank <= 3 ? user.color : '#f1f5f9'}; color: ${user.rank <= 3 ? 'white' : '#64748b'}; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1em; box-shadow: ${user.rank <= 3 ? '0 4px 10px ' + user.color + '66' : 'none'};">
-                ${user.rank === 1 ? '🥇' : user.rank === 2 ? '🥈' : user.rank === 3 ? '🥉' : user.rank}
+        <div style="display:flex; align-items:center; gap: 12px; margin-bottom: 12px; padding: 12px 10px; background: #fff; border: 1px solid #f1f5f9; border-radius: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); transition: 0.3s;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 15px rgba(0,0,0,0.05)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.02)';">
+            <div style="position: relative; width: 42px; height: 42px; min-width: 42px;">
+                <img src="${avatarUrl}" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 2px solid ${user.rank <= 3 ? user.color : '#e2e8f0'};">
+                <div style="position: absolute; bottom: -4px; right: -4px; width: 22px; height: 22px; background: ${user.rank <= 3 ? user.color : '#f8fafc'}; color: ${user.rank <= 3 ? 'white' : '#64748b'}; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 0.7em; box-shadow: 0 2px 5px rgba(0,0,0,0.2); border: 1.5px solid white;">
+                    ${user.rank === 1 ? '🥇' : user.rank === 2 ? '🥈' : user.rank === 3 ? '🥉' : user.rank}
+                </div>
             </div>
             <div style="flex: 1; min-width: 0;">
                 <div style="font-weight: 800; color: #1e293b; font-size: 0.85em; line-height: 1.3; margin-bottom: 4px; text-transform: uppercase; word-break: break-word;">${realName}</div>
