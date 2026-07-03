@@ -10,6 +10,9 @@ const DEFAULT_EXAMS = [
     { file: 'ddvcnchuong8', ten: 'CHƯƠNG 8' },
     { file: 'ddvcnfull', ten: 'Full 8 Chương' },
 
+     { ten: 'Full Tự luận', url: 'ktddd.html' },
+
+
 
 
 
