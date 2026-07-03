@@ -10,6 +10,7 @@ const DEFAULT_EXAMS = [
     { ten: 'Kiến Trúc Dân Dụng Và Công Nghiệp', url: 'KTDVCN.html', },
     { file: 'tinhoc', ten: 'Full Tin Học' },
     { ten: 'Kiến Trúc Dân Dụng Và Công Nghiệpp', url: 'KTDDVCN.html', },
+    { ten: 'Kiến Trúc Dân Dụng Và Công Nghiệp VIP', url: 'KTDDVIP.html', },
 
 
 ];

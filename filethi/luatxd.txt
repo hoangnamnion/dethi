@@ -668,9 +668,9 @@ B. Thiết kế sơ bộ, Thiết kế cơ sở và Thiết kế bản vẽ thi 
 C. Thiết kế cơ sở và Thiết kế bản vẽ thi công;
 *D. Thiết kế sơ bộ, Thiết kế cơ sở, Thiết kế bản vẽ thi công và các bước thiết kế khác (nếu có).
 
-Câu112: Nhiệm vụ khảo sát xây dựng phải phù hợp với các nội dung nào sau đây?
+Câu 112: Nhiệm vụ khảo sát xây dựng phải phù hợp với các nội dung nào sau đây?
 A. Loại và nhóm dự án đầu tư xây dựng
-B. Nhiệm vụ thiết kế xây dựng công trình
+B.  Nhiệm vụ thiết kế xây dựng công trình
 C. Chủ trương đầu tư xây dựng
 *D. Loại, cấp công trình xây dựng, loại hình khảo sát và bước thiết kế
 
