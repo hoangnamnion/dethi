@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>⚔️ Đấu Trường PvP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/thi-premium.css">
+    <script src="js/api-config.js"></script>
+    <style>
+        :root {
+            --primary: #3b82f6; --danger: #ef4444; --bg: #0f172a; --panel: #1e293b;
+        }
+        body.low-graphics .mesh-bg { display: none !important; }
+        body.low-graphics .falling-icon { display: none !important; }
+        body.low-graphics canvas { display: none !important; }
+        body.low-graphics * { animation: none !important; transition: none !important; }
+        body.low-graphics { background: #0f172a !important; }
+        
+        /* Sử dụng exam-header thay cho header-vs */
+        .player { width: 35%; }
+        .player-name {
+            font-size: 1.1em; font-weight: 900; margin-bottom: 6px; text-transform: uppercase;
+        }
+        .me .player-name { color: #2563eb; text-align: left; }
+        .opp .player-name { color: #dc2626; text-align: right; }
+        
+        .progress-bg {
+            background: rgba(0,0,0,0.06); height: 18px; border-radius: 9px;
+            overflow: hidden; position: relative; box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .progress-bar {
+            height: 100%; width: 0%; transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex; align-items: center; justify-content: flex-end; padding-right: 6px;
+            font-weight: 900; font-size: 0.75em; color: white;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+        .me .progress-bar { background: linear-gradient(90deg, #3b82f6, #2563eb); box-shadow: 0 0 10px rgba(37,99,235,0.5); }
+        .opp .progress-bar { background: linear-gradient(90deg, #ef4444, #dc2626); box-shadow: 0 0 10px rgba(220,38,38,0.5); float: right;}
+        
+        .vs-badge {
+            font-size: 1.5em; font-weight: 900; background: linear-gradient(to bottom, #fbbf24, #d97706);
+            -webkit-background-clip: text; color: transparent; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+            animation: pulse 1s infinite alternate; margin: 0 10px;
+        }
+
+        .result-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85); backdrop-filter: blur(10px); z-index: 1000;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            display: none;
+        }
+        .result-box {
+            background: white !important;
+            padding: 40px; border-radius: 30px; text-align: center;
+            border: none; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            animation: pop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            max-width: 90%; color: #1e293b; width: 450px;
+        }
+
+        /* Sử dụng hoàn toàn premium css cho question và options */
+    </style>
+</head>
+<body>
+    <div class="mesh-bg">
+        <div class="mesh-blob blob-1"></div>
+        <div class="mesh-blob blob-2"></div>
+        <div class="mesh-blob blob-3"></div>
+    </div>
+    
+    <div class="app-full">
+        <!-- HEADER VS -->
+        <div class="header exam-header">
+            <div class="player me" style="width: 30%">
+                <div class="player-name" id="myName">Bạn</div>
+                <div class="progress-bg"><div class="progress-bar" id="myProg">0%</div></div>
+            </div>
+            <div class="header-center">
+                <div class="vs-badge">VS</div>
+            </div>
+            <div class="player opp" style="width: 30%">
+                <div class="player-name" id="oppName">Đối Thủ</div>
+                <div class="progress-bg"><div class="progress-bar" id="oppProg">0%</div></div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div id="qContainer" style="margin-top: 10px; max-width: 800px; margin-inline: auto;">
+                <div class="q-number-row" id="qNum" style="justify-content: center; font-size: 1.2em; font-weight: bold;">Câu 1/10</div>
+                <div class="question-text" id="qText" style="text-align: center; font-size: 1.3em;">Đang tải câu hỏi...</div>
+                <div class="options-grid" id="qOptions">
+                    <!-- Render by JS -->
+                </div>
+            </div>
+        </div>
+
+        <div class="footer exam-footer" style="justify-content: center;">
+            <button class="chip-btn danger" onclick="surrenderMatch()" style="display:flex; align-items:center; gap:8px; font-weight:bold;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                ĐẦU HÀNG / THOÁT
+            </button>
+        </div>
+    </div>
+
+    <div class="result-overlay" id="resultScreen">
+        <div class="result-box">
+            <div id="resultIcon" style="font-size: 80px; margin-bottom: 20px;">🏆</div>
+            <h1 id="resultTitle" style="margin: 0; font-size: 40px; font-weight: 900; text-transform: uppercase;">CHIẾN THẮNG!</h1>
+            <p id="resultDesc" style="font-size: 18px; color: #94a3b8; margin: 20px 0 30px;">Bạn đã đánh bại đối thủ với tốc độ kinh hoàng!</p>
+            <button onclick="window.location.href='index.html'" style="background: var(--primary); color: white; border: none; padding: 15px 40px; font-size: 18px; font-weight: bold; border-radius: 50px; cursor: pointer; box-shadow: 0 10px 20px rgba(59, 130, 246, 0.4);">Trở Về Trang Chủ</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const roomId = urlParams.get('room') || 'DEFAULT_ROOM';
+        let opponent = urlParams.get('opponent') || 'Đối Thủ';
+        const fileId = urlParams.get('file');
+        
+        let currentUser = "Tôi";
+        try {
+            const ud = sessionStorage.getItem('current_user');
+            if (ud) currentUser = JSON.parse(ud).username || JSON.parse(ud).accountId;
+        } catch(e){}
+
+        if(!urlParams.has('opponent')) {
+            opponent = "Kẻ Thách Đấu";
+        }
+
+        document.getElementById('myName').innerText = currentUser;
+        document.getElementById('oppName').innerText = opponent;
+
+        let questions = [];
+        let currQIndex = 0;
+        let myScore = 0;
+        let totalQ = 0;
+        let isEnded = false;
+        let syncInterval = null;
+        let myTime = 0;
+        let meFinished = false;
+        let oppScore = 0;
+        let oppFinished = false;
+        let oppTime = 0;
+        let startTime = Date.now();
+
+        function parseData(text) {
+            text = text.replace(/(\s+)(\*?[A-D]\.)/g, "\n$2");
+            const lines = text.split('\n');
+            let currentQ = null;
+            let tempQuestions = [];
+            const qStartRegex = /^(Câu\s+\d+|Bài\s+\d+|Question\s+\d+)/i;
+            const optRegex = /^(\*)?([A-D])\./;
+
+            lines.forEach(line => {
+                line = line.trim();
+                if (!line) return;
+                if (qStartRegex.test(line)) {
+                    if (currentQ) tempQuestions.push(currentQ);
+                    currentQ = { q: line, opts: [], ans: 0 };
+                } else if (optRegex.test(line) && currentQ) {
+                    let isCorrect = line.startsWith('*');
+                    const textWithoutLabel = line.replace(/^(\*)?[A-D]\.\s*/, '').trim();
+                    currentQ.opts.push(textWithoutLabel);
+                    if (isCorrect) currentQ.ans = currentQ.opts.length - 1;
+                } else {
+                    if (currentQ && currentQ.opts.length === 0) {
+                        currentQ.q += " " + line;
+                    }
+                }
+            });
+            if (currentQ) tempQuestions.push(currentQ);
+            return tempQuestions;
+        }
+
+        if (fileId) {
+            fetch('filethi/' + fileId + '.txt')
+                .then(res => res.text())
+                .then(text => {
+                    questions = parseData(text);
+                    totalQ = questions.length;
+                    
+                    for (let i = questions.length - 1; i > 0; i--) {
+                        const j = Math.floor(Math.random() * (i + 1));
+                        [questions[i], questions[j]] = [questions[j], questions[i]];
+                    }
+
+                    startTime = Date.now();
+                    loadQuestion();
+                })
+                .catch(e => {
+                    alert("Lỗi tải đề thi!");
+                    window.location.href = "index.html";
+                });
+        } else {
+            alert("Không tìm thấy mã đề thi!");
+            window.location.href = "index.html";
+        }
+
+        function loadQuestion() {
+            if (currQIndex >= totalQ) {
+                markMeFinished();
+                return;
+            }
+            const qData = questions[currQIndex];
+            document.getElementById('qNum').innerText = `Câu ${currQIndex + 1} / ${totalQ}`;
+            document.getElementById('qText').innerText = qData.q;
+            
+            const optsDiv = document.getElementById('qOptions');
+            optsDiv.innerHTML = '';
+            
+            qData.opts.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = 'option-item';
+                const label = String.fromCharCode(65 + idx);
+                btn.innerHTML = `<span style="font-weight:bold;">${label}</span> ${opt}`;
+                btn.onclick = () => checkAnswer(idx, qData.ans, btn);
+                optsDiv.appendChild(btn);
+            });
+        }
+
+        function checkAnswer(selected, correct, btn) {
+            const btns = document.querySelectorAll('.option-item');
+            btns.forEach(b => b.disabled = true);
+
+            if (selected === correct) {
+                btn.classList.add('correct');
+                myScore++;
+                updateMyProgress(currQIndex + 1);
+                syncMyScore(currQIndex + 1);
+                
+                setTimeout(() => {
+                    currQIndex++;
+                    loadQuestion();
+                }, 500);
+            } else {
+                btn.classList.add('wrong');
+                btns[correct].classList.add('correct');
+                updateMyProgress(currQIndex + 1);
+                syncMyScore(currQIndex + 1);
+
+                setTimeout(() => {
+                    currQIndex++;
+                    loadQuestion();
+                }, 1500);
+            }
+        }
+        
+        function surrenderMatch() {
+            if (confirm("Bạn có chắc chắn muốn đầu hàng/thoát trận đấu không? Bạn sẽ bị xử thua.")) {
+                finishMatch(false, "Bạn đã đầu hàng. Đừng bỏ cuộc lần sau nhé!");
+            }
+        }
+
+        function markMeFinished() {
+            if (meFinished) return;
+            meFinished = true;
+            myTime = Date.now() - startTime;
+            
+            document.getElementById('qContainer').innerHTML = `
+                <div style="font-size: 60px; margin-bottom: 20px;">⏱️</div>
+                <h2 style="font-size: 24px; font-weight: 800; color: #fbbf24;">ĐÃ XONG!</h2>
+                <p style="font-size: 18px; color: #cbd5e1;">Đang chờ đối thủ nộp bài...</p>
+                <div style="margin-top: 20px; display:flex; justify-content:center;"><div style="width:16px; height:16px; background:#22c55e; border-radius:50%; animation:pulse 1s infinite alternate;"></div></div>
+            `;
+            
+            syncMyScore();
+            checkMatchResult();
+        }
+
+        function updateMyProgress(completedQ = null) {
+            const q = completedQ !== null ? completedQ : currQIndex;
+            const pct = Math.round((q / totalQ) * 100);
+            document.getElementById('myProg').style.width = pct + '%';
+            document.getElementById('myProg').innerText = pct + '%';
+        }
+
+        function syncMyScore(completedQ = null) {
+            if (typeof API_BASE === 'undefined') return;
+            const q = completedQ !== null ? completedQ : currQIndex;
+            const payload = {
+                action: 'updateLiveStatus',
+                data: {
+                    username: currentUser,
+                    name: currentUser,
+                    examName: roomId,
+                    rawScore: myScore + '|' + totalQ + '|' + myTime + '|' + (meFinished ? 1 : 0) + '|' + q
+                }
+            };
+            fetch(API_BASE, { method: 'POST', body: JSON.stringify(payload) }).catch(e=>{});
+        }
+
+        function startPollingOpponent() {
+            syncInterval = setInterval(() => {
+                if(isEnded) return;
+                fetch(API_BASE + "?action=getLiveMonitor")
+                    .then(r=>r.json())
+                    .then(data => {
+                        const oppData = data.find(s => s.examName === roomId && s.username !== currentUser);
+                        if (oppData && oppData.rawScore) {
+                            const parts = oppData.rawScore.split('|');
+                            if(parts.length >= 4) {
+                                oppScore = parseInt(parts[0]);
+                                oppTime = parseInt(parts[2]);
+                                oppFinished = (parts[3] === '1');
+                                let oppQ = parseInt(parts[4] || oppScore);
+                                
+                                const pct = Math.round((oppQ / totalQ) * 100);
+                                const oppBar = document.getElementById('oppProg');
+                                oppBar.style.width = pct + '%';
+                                oppBar.innerText = pct + '%';
+                                
+                                checkMatchResult();
+                            } else {
+                                const oppS = parseInt(oppData.rawScore.split('/')[0]);
+                                const pct = Math.round((oppS / totalQ) * 100);
+                                const oppBar = document.getElementById('oppProg');
+                                oppBar.style.width = pct + '%';
+                                oppBar.innerText = pct + '%';
+                            }
+                        }
+                    }).catch(e=>{});
+            }, 1500);
+        }
+
+        function checkMatchResult() {
+            if (isEnded) return;
+            
+            // Xử lý trường hợp đối phương đầu hàng
+            if (oppScore === -1 && oppFinished) {
+                finishMatch(true, "Đối phương đã bỏ cuộc. Bạn giành chiến thắng dễ dàng!");
+                return;
+            }
+            // Trường hợp mình đầu hàng
+            if (myScore === -1 && meFinished) {
+                finishMatch(false, "Bạn đã đầu hàng. Đối thủ giành chiến thắng!");
+                return;
+            }
+
+            if (meFinished && oppFinished) {
+                if (myScore > oppScore) {
+                    finishMatch(true); 
+                } else if (myScore < oppScore) {
+                    finishMatch(false); 
+                } else {
+                    if (myTime < oppTime) {
+                        finishMatch(true); 
+                    } else if (myTime > oppTime) {
+                        finishMatch(false); 
+                    } else {
+                        finishMatch(true); 
+                    }
+                }
+            }
+        }
+
+        function surrenderMatch() {
+            if (isEnded) return;
+            if (confirm("Bạn có chắc chắn muốn đầu hàng? Trận đấu sẽ kết thúc ngay lập tức và đối phương sẽ thắng.")) {
+                meFinished = true;
+                myScore = -1; // Đánh dấu là đầu hàng
+                myTime = 99999999;
+                syncMyScore();
+                checkMatchResult();
+            }
+        }
+
+        function finishMatch(isWin, customDesc = null) {
+            if (isEnded) return;
+            isEnded = true;
+            clearInterval(syncInterval);
+            document.getElementById('resultScreen').style.display = 'flex';
+            
+            const winner = isWin ? currentUser : opponent;
+            const loser = isWin ? opponent : currentUser;
+            const resultMsg = `
+                <div style="font-size: 24px; font-weight: 900; margin: 20px 0; display: flex; align-items: center; justify-content: center; gap: 12px; background: #f8fafc; padding: 18px; border-radius: 20px; border: 2px solid #e2e8f0; box-shadow: inset 0 2px 10px rgba(0,0,0,0.02);">
+                    <span style="color: #d97706; display: flex; align-items: center; gap: 6px;">👑 ${winner}</span>
+                    <span style="color: #94a3b8; font-size: 14px; font-weight: 800; text-transform: uppercase; background: #f1f5f9; padding: 4px 12px; border-radius: 12px; border: 1px solid #cbd5e1;">VS</span>
+                    <span style="color: #ef4444; display: flex; align-items: center; gap: 6px;">${loser} 💀</span>
+                </div>
+                <div style="color: #64748b; font-size: 17px; font-weight: 600; line-height: 1.5; padding: 0 10px; margin-bottom: 30px;">
+                    ${customDesc || (isWin ? "Bạn đã chiến đấu xuất sắc và hạ gục đối thủ!" : "Đối thủ đã nhanh tay hơn. Hãy phục thù ở ván sau!")}
+                </div>
+            `;
+
+            if (isWin) {
+                document.getElementById('resultTitle').innerText = "CHIẾN THẮNG!";
+                document.getElementById('resultTitle').style.color = "#4ade80";
+                document.getElementById('resultDesc').innerHTML = resultMsg;
+                document.getElementById('resultIcon').innerText = "🏆";
+                
+                const duration = 3000;
+                const end = Date.now() + duration;
+                (function frame() {
+                    confetti({ particleCount: 5, angle: 60, spread: 55, origin: { x: 0 }, colors: ['#ff0', '#0f0'] });
+                    confetti({ particleCount: 5, angle: 120, spread: 55, origin: { x: 1 }, colors: ['#f00', '#00f'] });
+                    if (Date.now() < end) requestAnimationFrame(frame);
+                }());
+                
+                // Gửi kết quả lên server (chỉ người thắng gửi để tránh trùng lặp)
+                if (typeof API_BASE !== 'undefined') {
+                    fetch(API_BASE, {
+                        method: 'POST',
+                        body: JSON.stringify({
+                            action: 'savePvPResult',
+                            winner: winner,
+                            loser: loser,
+                            desc: customDesc || "Chiến thắng áp đảo"
+                        })
+                    }).catch(e=>{});
+                }
+            } else {
+                document.getElementById('resultTitle').innerText = "THẤT BẠI!";
+                document.getElementById('resultTitle').style.color = "#ef4444";
+                document.getElementById('resultDesc').innerHTML = resultMsg;
+                document.getElementById('resultIcon').innerText = "💀";
+            }
+        }
+
+        syncMyScore();
+        startPollingOpponent();
+    </script>
+</body>
+</html>

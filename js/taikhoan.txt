@@ -1,0 +1,184 @@
+{
+    "admin": {
+        "name": "Cao Văn Nam",
+        "pass": "hoangnam123"
+    },
+    "adminnam": {
+        "name": "Quỳnh",
+        "pass": "hoangnam123"
+    },
+    "anhtuan": {
+        "pass": "anhtuan123",
+        "name": "Nguyễn Anh Tuấn",
+        "exams": [
+            {
+                "ten": "Kiến Trúc Dân Dụng Và Công Nghiệp",
+                "url": "KTDDVCN.html"
+            }
+        ]
+    },
+    "cong": {
+        "pass": "cong123",
+        "name": "Phạm Văn Công",
+        "exams": [
+            {
+                "ten": "Kiến Trúc Dân Dụng Và Công Nghiệp",
+                "url": "KTDDVCN.html"
+            }
+        ]
+    },
+    "congthanh": {
+        "pass": "congthanh123",
+        "name": "Phạm Công Thành",
+        "exams": [
+            {
+                "ten": "Kiến Trúc Dân Dụng Và Công Nghiệp",
+                "url": "KTDDVCN.html"
+            }
+        ]
+    },
+    "dat": {
+        "pass": "dat123",
+        "name": "Nguyễn Cung Đạt",
+        "exams": [
+            {
+                "ten": "Kiến Trúc Dân Dụng Và Công Nghiệp",
+                "url": "KTDDVCN.html"
+            }
+        ]
+    },
+    "doanha": {
+        "pass": "doanha123",
+        "name": "Đoàn Thị Hà",
+        "exams": [
+            {
+                "ten": "Kiến Trúc Dân Dụng Và Công Nghiệpp",
+                "url": "KTDDVCN.html"
+            }
+        ]
+    },
+    "duc": {
+        "pass": "duc123",
+        "name": "Đặng Minh Đức",
+        "exams": [
+            {
+                "ten": "Kiến Trúc Dân Dụng Và Công Nghiệp",
+                "url": "KTDDVCN.html"
+            }
+        ]
+    },
+    "hung": {
+        "pass": "hung123",
+        "name": "Đinh Duy Hưng",
+        "exams": [
+            {
+                "ten": "Kiến Trúc Dân Dụng Và Công Nghiệp",
+                "url": "KTDDVCN.html"
+            }
+        ]
+    },
+    "lanh": {
+        "pass": "lanh123",
+        "name": "Lê Văn Lanh",
+        "exams": [
+            {
+                "ten": "Kiến Trúc Dân Dụng Và Công Nghiệp",
+                "url": "KTDDVCN.html"
+            }
+        ]
+    },
+    "manh": {
+        "pass": "manh123",
+        "name": "Lương Thế Mạnh",
+        "exams": [
+            {
+                "ten": "Kiến Trúc Dân Dụng Và Công Nghiệp",
+                "url": "KTDDVCN.html"
+            }
+        ]
+    },
+    "minh": {
+        "pass": "minh123",
+        "name": "Phạm Ngọc Tuấn Minh",
+        "exams": [
+            {
+                "ten": "Kiến Trúc Dân Dụng Và Công Nghiệp",
+                "url": "KTDDVCN.html"
+            }
+        ]
+    },
+    "minhkhang": {
+        "pass": "minhkhang123",
+        "name": "Vũ Minh Khang",
+        "exams": [
+            {
+                "ten": "Kiến Trúc Dân Dụng Và Công Nghiệp",
+                "url": "KTDDVCN.html"
+            }
+        ]
+    },
+    "nghia": {
+        "pass": "nghia123",
+        "name": "Nguyễn Văn Nghĩa",
+        "exams": [
+            {
+                "ten": "Kiến Trúc Dân Dụng Và Công Nghiệp",
+                "url": "KTDDVCN.html"
+            }
+        ]
+    },
+    "quyen": {
+        "pass": "quyen",
+        "name": "Nguyễn Văn Quyến",
+        "exams": [
+            {
+                "ten": "Kiến Trúc Dân Dụng Và Công Nghiệp",
+                "url": "KTDDVCN.html"
+            }
+        ]
+    },
+    "quyvinh": {
+        "pass": "quyvinh123",
+        "name": "Lê Quý Vinh",
+        "exams": [
+            {
+                "ten": "Luật Xây Dựng",
+                "url": "LXD.html"
+            },
+            {
+                "ten": "Kiến Trúc Dân Dụng Và Công Nghiệp",
+                "url": "KTDDVCN.html"
+            }
+        ]
+    },
+    "thuy": {
+        "pass": "thuy123",
+        "name": "Nguyễn Thị Thủy",
+        "exams": [
+            {
+                "ten": "Kiến Trúc Dân Dụng Và Công Nghiệp VIP",
+                "url": "KTDDVIP.html"
+            }
+        ]
+    },
+    "trung": {
+        "pass": "trung123",
+        "name": "Phùng Văn Quang Trung",
+        "exams": [
+            {
+                "ten": "Kiến Trúc Dân Dụng Và Công Nghiệp",
+                "url": "KTDDVCN.html"
+            }
+        ]
+    },
+    "vanduc": {
+        "pass": "vanduc123",
+        "name": "Nguyễn Văn Đức",
+        "exams": [
+            {
+                "ten": "Kiến Trúc Dân Dụng Và Công Nghiệp",
+                "url": "KTDDVCN.html"
+            }
+        ]
+    }
+}
