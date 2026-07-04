@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Tài Liệu Học Tập</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Override body cho trang này */
+        body {
+            overflow-y: auto;
+        }
+
+        /* Header trang */
+        .page-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+            font-size: 1.2em;
+            color: #64748b;
+            transition: 0.2s;
+            padding: 8px;
+            border-radius: 12px;
+        }
+
+        .back-btn:hover {
+            background: rgba(0, 123, 255, 0.08);
+            color: #007bff;
+        }
+
+        /* Tiêu đề */
+        .doc-hero {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .doc-hero-icon {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.1));
+        }
+
+        .doc-hero-title {
+            font-size: 1.6em;
+            font-weight: 800;
+            background: linear-gradient(135deg, #007bff 0%, #00d2ff 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+
+        .doc-hero-desc {
+            font-size: 0.9em;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        /* Grid tài liệu */
+        .doc-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .doc-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.75));
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(0, 123, 255, 0.08);
+            border-radius: 20px;
+            padding: 22px 24px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .doc-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.6), transparent);
+            transform: skewX(-20deg);
+            transition: 0.6s;
+        }
+
+        .doc-card:hover::before {
+            left: 150%;
+        }
+
+        .doc-card:hover {
+            transform: translateY(-4px) scale(1.01);
+            border-color: rgba(0, 123, 255, 0.3);
+            box-shadow: 0 12px 35px rgba(0, 123, 255, 0.12);
+        }
+
+        .doc-card:active {
+            transform: translateY(-1px) scale(0.99);
+        }
+
+        .doc-card-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6em;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .doc-card-icon.pdf {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+        }
+
+        .doc-card-icon.blue {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+        }
+
+        .doc-card-icon.green {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+
+        .doc-card-icon.purple {
+            background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+        }
+
+        .doc-card-icon.orange {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        }
+
+        .doc-card-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .doc-card-title {
+            font-weight: 700;
+            font-size: 1em;
+            color: #1e293b;
+            margin-bottom: 4px;
+            line-height: 1.3;
+        }
+
+        .doc-card-meta {
+            font-size: 0.8em;
+            color: #94a3b8;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .doc-card-arrow {
+            font-size: 1.2em;
+            color: #cbd5e1;
+            transition: all 0.3s;
+            flex-shrink: 0;
+        }
+
+        .doc-card:hover .doc-card-arrow {
+            color: #3b82f6;
+            transform: translateX(3px);
+        }
+
+        /* Badge mới */
+        .doc-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.7em;
+            font-weight: 700;
+            z-index: 2;
+        }
+
+        .doc-badge.new {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+        }
+
+        .doc-badge.hot {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: white;
+            box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+            animation: pulse-badge 2s infinite;
+        }
+
+        @keyframes pulse-badge {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        /* Separator */
+        .doc-separator {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 24px 0 16px;
+        }
+
+        .doc-separator-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #cbd5e1, transparent);
+        }
+
+        .doc-separator-text {
+            font-size: 0.8em;
+            font-weight: 700;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+
+        /* Contact section */
+        .contact-section {
+            margin-top: 25px;
+            padding: 18px;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(139, 92, 246, 0.05));
+            border-radius: 16px;
+            border: 1px dashed rgba(59, 130, 246, 0.2);
+            text-align: center;
+        }
+
+        .contact-section p {
+            margin: 0 0 10px;
+            font-size: 0.85em;
+            color: #64748b;
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.85em;
+            transition: all 0.2s;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(59, 130, 246, 0.4);
+        }
+
+        /* Responsive */
+        @media (min-width: 600px) {
+            .doc-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mesh-bg">
+        <div class="mesh-blob blob-1"></div>
+        <div class="mesh-blob blob-2"></div>
+        <div class="mesh-blob blob-3"></div>
+    </div>
+
+    <div class="container-box">
+        <!-- Header -->
+        <div class="page-header">
+            <a href="index.html" class="back-btn">🔙</a>
+        </div>
+
+        <!-- Hero -->
+        <div class="doc-hero">
+            <div class="doc-hero-icon">📚</div>
+            <div class="doc-hero-title">Tài Liệu Học Tập</div>
+            <div class="doc-hero-desc">Chọn tài liệu bạn muốn xem bên dưới</div>
+        </div>
+
+        <!-- Danh sách tài liệu PDF -->
+        <div class="doc-separator">
+            <div class="doc-separator-line"></div>
+            <div class="doc-separator-text">📄 Tài liệu PDF</div>
+            <div class="doc-separator-line"></div>
+        </div>
+
+        <div class="doc-grid" id="docGrid">
+            <!-- Sẽ render bằng JS -->
+        </div>
+
+        <!-- Liên hệ -->
+        <div class="contact-section">
+            <p>📌 Cần thêm tài liệu? Liên hệ ngay!</p>
+            <a href="https://zalo.me/0378787154" target="_blank" class="contact-btn">
+                💬 Liên hệ Zalo
+            </a>
+        </div>
+    </div>
+
+    <script src="js/ktdd.js"></script>
+    <script>
+        // =============================================
+        // RENDER DANH SÁCH
+        // =============================================
+        const docGrid = document.getElementById('docGrid');
+
+        docList.forEach(doc => {
+            const card = document.createElement('div');
+            card.className = 'doc-card';
+
+            const title = doc.ten || doc.name || 'Tài liệu';
+            const meta = doc.meta || 'PDF';
+
+            card.onclick = () => {
+                window.location.href = `productpdf.html?file=${encodeURIComponent(doc.file)}&name=${encodeURIComponent(title)}`;
+            };
+
+            let badgeHTML = '';
+            if (doc.badge) {
+                badgeHTML = `<div class="doc-badge ${doc.badge}">${doc.badgeText || ''}</div>`;
+            }
+
+            card.innerHTML = `
+                ${badgeHTML}
+                <div class="doc-card-icon" style="background: transparent; box-shadow: none;">
+                    <img src="anhnen/Booke.gif" alt="icon" style="width: 56px; height: 56px; object-fit: contain; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));">
+                </div>
+                <div class="doc-card-info">
+                    <div class="doc-card-title">${title}</div>
+                    <div class="doc-card-meta">
+                        ${meta}
+                    </div>
+                </div>
+                <div class="doc-card-arrow">→</div>
+            `;
+
+            docGrid.appendChild(card);
+        });
+
+        // Nếu không có tài liệu
+        if (docList.length === 0) {
+            docGrid.innerHTML = `
+                <div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: #94a3b8;">
+                    <div style="font-size: 2em; margin-bottom: 10px;">📭</div>
+                    <div>Chưa có tài liệu nào</div>
+                </div>
+            `;
+        }
+    </script>
+
+    <script src="js/tet.js"></script>
+    <script src="js/no-refresh.js"></script>
+</body>
+
+</html>
