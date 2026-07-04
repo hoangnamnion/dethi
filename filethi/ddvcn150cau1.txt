@@ -1,0 +1,1048 @@
+Câu 1. Kiến trúc là gì?
+
+*A. Là ngành vừa mang tính khoa học kỹ thuật vừa mang tính nghệ thuật.
+B. Là ngành chỉ nghiên cứu mỹ thuật.
+C. Là ngành chỉ nghiên cứu xây dựng.
+D. Là ngành chỉ nghiên cứu nội thất.
+
+Câu 2. Ba yêu cầu cơ bản của kiến trúc là gì?
+
+A. Kinh tế, vật liệu, mỹ thuật.
+*B. Thích dụng, bền vững, mỹ quan.
+C. Kết cấu, vật liệu, tiến độ.
+D. Thi công, quy hoạch, nội thất.
+
+Câu 3. Công trình kiến trúc trước hết phải đáp ứng yêu cầu nào?
+
+*A. Phù hợp công năng sử dụng.
+B. Có hình thức đẹp.
+C. Chi phí thấp nhất.
+D. Cao tầng.
+
+Câu 4. Yêu cầu "bền vững" của công trình thể hiện ở yếu tố nào?
+
+A. Có nhiều tầng.
+*B. Đảm bảo cường độ, ổn định và tuổi thọ.
+C. Có màu sắc đẹp.
+D. Có diện tích lớn.
+
+Câu 5. Yêu cầu "mỹ quan" trong kiến trúc nhằm mục đích gì?
+
+A. Giảm giá thành.
+B. Tăng diện tích sử dụng.
+*C. Tạo giá trị thẩm mỹ cho công trình.
+D. Giảm thời gian thi công.
+
+Câu 6. Kiến trúc chịu ảnh hưởng trực tiếp của yếu tố nào?
+
+A. Chỉ khí hậu.
+B. Chỉ kinh tế.
+C. Chỉ văn hóa.
+*D. Điều kiện tự nhiên, xã hội, kinh tế và kỹ thuật.
+
+Câu 7. Nhà ở thuộc loại công trình nào?
+
+*A. Công trình dân dụng.
+B. Công trình công nghiệp.
+C. Công trình giao thông.
+D. Công trình thủy lợi.
+
+Câu 8. Công trình phục vụ sản xuất được xếp vào loại nào?
+
+A. Công trình dân dụng.
+*B. Công trình công nghiệp.
+C. Công trình văn hóa.
+D. Công trình thương mại.
+
+Câu 9. Nhà thấp tầng có số tầng là bao nhiêu?
+
+*A. 1–3 tầng.
+B. 4–6 tầng.
+C. 7–10 tầng.
+D. Trên 10 tầng.
+
+Câu 10. Nhà nhiều tầng theo tài liệu có số tầng là?
+
+A. 1–3 tầng.
+*B. 4–6 tầng (đôi khi 7 tầng).
+C. 8–15 tầng.
+D. Trên 30 tầng.
+
+Câu 11. Nhà cao tầng thường có bao nhiêu tầng?
+
+A. 3 tầng trở lên.
+B. 5 tầng trở lên.
+*C. 7 tầng đến khoảng 30 tầng.
+D. Trên 50 tầng.
+
+Câu 12. Nhà siêu cao tầng là nhà có:
+
+A. Trên 15 tầng.
+B. Trên 20 tầng.
+C. Trên 25 tầng.
+*D. Trên 30 tầng.
+
+Câu 13. Môđun gốc trong xây dựng là:
+
+A. 10 mm.
+B. 50 mm.
+*C. 100 mm.
+D. 1000 mm.
+
+Câu 14. Trục định vị dùng để làm gì?
+
+A. Chia phòng.
+*B. Xác định vị trí tường, cột và các bộ phận công trình.
+C. Trang trí mặt đứng.
+D. Bố trí nội thất.
+
+Câu 15. Bước gian là:
+
+A. Chiều cao tầng.
+*B. Khoảng cách giữa hai trục theo phương ngang.
+C. Chiều rộng cửa.
+D. Chiều dài mái.
+
+Câu 16. Nhịp nhà là:
+
+A. Khoảng cách giữa hai cửa.
+B. Chiều cao công trình.
+*C. Khoảng cách giữa hai trục chịu lực theo phương còn lại.
+D. Chiều rộng hành lang.
+
+Câu 17. Mặt bằng công trình thể hiện điều gì?
+
+A. Hình dáng mái.
+*B. Cách bố trí các phòng và kích thước theo mặt cắt ngang.
+C. Hình thức mặt đứng.
+D. Phối cảnh công trình.
+
+Câu 18. Mặt đứng dùng để thể hiện:
+
+A. Nội thất.
+*B. Hình dáng bên ngoài công trình.
+C. Móng nhà.
+D. Kết cấu dầm.
+
+Câu 19. Mặt cắt nhằm mục đích:
+
+A. Thể hiện màu sắc.
+*B. Thể hiện không gian bên trong theo phương đứng.
+C. Thể hiện sân vườn.
+D. Thể hiện quy hoạch.
+
+Câu 20. Cao độ hoàn thiện tầng 1 được quy ước là:
+
+A. +1.000
+B. -0.500
+*C. ±0.000
+D. +0.500
+
+Câu 21. Trong mặt cắt, các bộ phận nằm dưới ±0.000 có cao độ:
+
+A. Dương.
+*B. Âm.
+C. Không xác định.
+D. Bằng 0.
+
+Câu 22. Thiết kế cơ sở được thực hiện ở giai đoạn nào?
+
+*A. Giai đoạn đầu của dự án.
+B. Sau thi công.
+C. Sau hoàn công.
+D. Sau nghiệm thu.
+
+Câu 23. Thiết kế kỹ thuật được lập trên cơ sở:
+
+A. Thiết kế hoàn công.
+*B. Thiết kế cơ sở đã được phê duyệt.
+C. Thiết kế nội thất.
+D. Thiết kế cảnh quan.
+
+Câu 24. Thiết kế bản vẽ thi công nhằm mục đích:
+
+A. Lập dự toán.
+B. Xin giấy phép.
+*C. Triển khai thi công công trình.
+D. Trang trí nội thất.
+
+Câu 25. Nhà ở là:
+
+*A. Công trình chuyên dùng để ở.
+B. Công trình phục vụ sản xuất.
+C. Công trình giao thông.
+D. Công trình thương mại.
+
+Câu 26. Nhà ở nông thôn thường sử dụng vật liệu:
+
+A. Kính và nhôm.
+*B. Vật liệu địa phương như tre, gỗ, đá.
+C. Thép không gỉ.
+D. Composite.
+
+Câu 27. Nhà biệt thự thường dành cho:
+
+A. Sinh viên.
+B. Công nhân.
+*C. Người có thu nhập cao.
+D. Công nhân khu công nghiệp.
+
+Câu 28. Nhà liền kề còn được gọi là:
+
+A. Nhà tháp.
+*B. Nhà phố hoặc nhà khối ghép.
+C. Nhà công vụ.
+D. Nhà xưởng.
+
+Câu 29. Chung cư là loại nhà:
+
+A. Chỉ dành cho một gia đình.
+*B. Dành cho nhiều gia đình.
+C. Chỉ dành cho sinh viên.
+D. Chỉ dành cho công nhân.
+
+Câu 30. Ký túc xá chủ yếu phục vụ:
+
+A. Gia đình đông người.
+*B. Sinh viên, công nhân, người độc thân.
+C. Khách du lịch.
+D. Doanh nghiệp.
+
+Câu 31. Bộ phận ở của nhà gồm:
+
+A. Kho và WC.
+*B. Phòng khách, phòng ngủ, phòng ăn, phòng thờ.
+C. Hành lang.
+D. Cầu thang.
+
+Câu 32. Bộ phận giao thông đứng là:
+
+A. Hành lang.
+B. Nhà cầu.
+*C. Cầu thang.
+D. Ban công.
+
+Câu 33. Tiền phòng có chức năng:
+
+A. Nấu ăn.
+*B. Đón tiếp ban đầu, để giày dép và chỉnh trang.
+C. Nghỉ ngơi.
+D. Giặt phơi.
+
+Câu 34. Diện tích tiền phòng thường là:
+
+A. 2–4 m².
+*B. 6–8 m².
+C. 10–12 m².
+D. 15–20 m².
+
+Câu 35. Phòng khách là:
+
+A. Không gian phụ.
+*B. Bộ mặt đối ngoại của chủ nhà.
+C. Kho chứa đồ.
+D. Nơi để xe.
+
+Câu 36. Diện tích phòng khách thường là:
+
+A. 8–10 m².
+B. 10–12 m².
+*C. 16–20 m².
+D. 25–30 m².
+
+Câu 37. Phòng ngủ thường có diện tích:
+
+A. 6–8 m².
+B. 8–10 m².
+*C. 12–18 m².
+D. 25–30 m².
+
+Câu 38. Phòng ngủ nên bố trí:
+
+A. Gần bếp.
+*B. Gần cửa sổ, gần vệ sinh và cầu thang.
+C. Trên mái.
+D. Trong tầng hầm.
+
+Câu 39. Phòng ăn và bếp nên bố trí:
+
+A. Đầu hướng gió.
+*B. Cuối hướng gió.
+C. Giữa sân.
+D. Trên mái.
+
+Câu 40. Phòng bếp cần đảm bảo:
+
+A. Không cần thông gió.
+*B. Thông gió và hút mùi tốt.
+C. Không cần cửa sổ.
+D. Không cần chống cháy.
+
+Câu 41. Diện tích bếp và phòng ăn thường là:
+
+A. 8–10 m².
+B. 10–12 m².
+*C. 16–20 m².
+D. 30–35 m².
+
+Câu 42. Khu vệ sinh nên bố trí:
+
+A. Xa cầu thang.
+*B. Gần cầu thang.
+C. Ngoài sân.
+D. Trên mái.
+
+Câu 43. Nhà 1–2 tầng nên bố trí:
+
+A. Một WC duy nhất.
+*B. Hai khu vệ sinh.
+C. Không cần WC.
+D. Ba WC.
+
+Câu 44. Diện tích khu vệ sinh thường là:
+
+A. 1–2 m².
+*B. 2,5–5 m².
+C. 8–10 m².
+D. 15–20 m².
+
+Câu 45. Kho trong nhà thường bố trí:
+
+A. Giữa phòng khách.
+*B. Gầm cầu thang hoặc phía trên khu vệ sinh.
+C. Trên mái.
+D. Giữa sân.
+
+Câu 46. Diện tích kho thường là:
+
+A. 1–2 m².
+*B. 4–5 m².
+C. 8–10 m².
+D. 12–15 m².
+
+Câu 47. Ban công và lô gia có chức năng:
+
+A. Đặt máy phát điện.
+*B. Nghỉ ngơi, hóng mát và phơi phóng.
+C. Làm gara.
+D. Làm phòng ngủ.
+
+Câu 48. Diện tích ban công, lô gia thường là:
+
+A. 1–2 m².
+*B. 4–5 m².
+C. 8–10 m².
+D. 15–20 m².
+
+Câu 49. Lô gia là:
+
+A. Ban công nhô ra ngoài.
+*B. Không gian nghỉ ngơi chỉ có một mặt nhìn ra ngoài.
+C. Mái hiên.
+D. Hành lang.
+
+Câu 50. Nguyên tắc chung khi bố trí thiết bị trong nhà là:
+
+A. Chỉ cần đẹp.
+B. Chỉ cần rẻ.
+*C. Phù hợp tâm sinh lý và nhân trắc học của người sử dụng.
+D. Chỉ cần tiết kiệm diện tích.
+
+Câu 51. Nhà ở nhiều căn, nhà tầng thường được xây dựng từ:
+
+A. 1 tầng trở lên
+B. 2 tầng trở lên
+*C. 3 tầng trở lên
+D. 10 tầng trở lên
+
+Câu 52. Mục đích chính của nhà ở nhiều căn là:
+
+A. Tăng diện tích sân vườn
+*B. Tiết kiệm đất xây dựng
+C. Tăng chiều cao tầng
+D. Giảm số hộ dân
+
+Câu 53. Trên một mặt bằng nhà ở nhiều căn thường bố trí:
+
+A. 1 căn hộ
+B. 1–2 căn hộ
+*C. 2–6 căn hộ
+D. Trên 20 căn hộ
+
+Câu 54. Các căn hộ trong nhà ở nhiều căn thường xoay quanh:
+
+A. Sân trong
+*B. Cụm cầu thang
+C. Nhà xe
+D. Khu thương mại
+
+Câu 55. Không gian công cộng của nhà ở nhiều căn thường được bố trí:
+
+A. Trên mái
+*B. Xung quanh công trình với cây xanh
+C. Trong từng căn hộ
+D. Dưới móng
+
+Câu 56. Biệt thự là loại nhà ở:
+
+A. Cho người thu nhập thấp
+*B. Cao cấp, có sân vườn riêng
+C. Chỉ xây 1 tầng
+D. Chỉ dùng để nghỉ dưỡng
+
+Câu 57. Diện tích sân vườn biệt thự thường khoảng:
+
+A. 20–50 m²
+B. 50–100 m²
+*C. 150–300 m²
+D. Trên 1000 m²
+
+Câu 58. Biệt thự thường được xây dựng tại:
+
+A. Khu công nghiệp
+*B. Nơi có cảnh quan đẹp, yên tĩnh
+C. Trong nhà máy
+D. Khu khai thác mỏ
+
+Câu 59. Số tầng biệt thự thường là:
+
+A. 1–2 tầng
+B. 1–3 tầng
+*C. 1–5 tầng
+D. Trên 20 tầng
+
+Câu 60. Loại biệt thự phổ biến gồm:
+
+A. Biệt thự tròn
+B. Biệt thự chữ L
+*C. Biệt thự đơn lập và song lập
+D. Biệt thự công nghiệp
+
+Câu 61. Chung cư nhiều tầng thường có:
+
+A. 1–3 tầng
+*B. 4–6 tầng
+C. Trên 20 tầng
+D. Trên 50 tầng
+
+Câu 62. Chung cư nhiều tầng thường:
+
+A. Có 2 thang máy
+*B. Không cần thang máy
+C. Có 4 thang máy
+D. Bắt buộc có thang cuốn
+
+Câu 63. Chung cư cao tầng thường:
+
+A. Không có thang máy
+*B. Có thang máy kết hợp thang bộ
+C. Chỉ có thang bộ
+D. Chỉ có thang cuốn
+
+Câu 64. Chung cư kiểu đơn nguyên có đặc điểm:
+
+A. Không có cầu thang
+*B. Mỗi đơn nguyên có một cầu thang chung
+C. Chỉ có một căn hộ
+D. Không có hành lang
+
+Câu 65. Ưu điểm của chung cư kiểu đơn nguyên là:
+
+A. Tốn diện tích giao thông
+*B. Hiệu quả kinh tế cao
+C. Khó tổ chức căn hộ
+D. Không đảm bảo riêng tư
+
+Câu 66. Nhược điểm của chung cư kiểu đơn nguyên là:
+
+A. Không có cầu thang
+B. Chi phí thấp
+*C. Khó thông gió xuyên phòng
+D. Không có căn hộ
+
+Câu 67. Chung cư hành lang giữa có:
+
+A. Hành lang bên ngoài
+*B. Hành lang ở giữa công trình
+C. Không có hành lang
+D. Hành lang trên mái
+
+Câu 68. Chiều rộng hành lang giữa thường:
+
+A. 0,5–1,0 m
+B. 1,0–1,2 m
+*C. 1,4–1,6 m
+D. 3–4 m
+
+Câu 69. Ưu điểm của chung cư hành lang giữa:
+
+A. Tốn diện tích
+*B. Tiết kiệm diện tích giao thông
+C. Khó thi công
+D. Chi phí lớn
+
+Câu 70. Nhược điểm của chung cư hành lang giữa là:
+
+A. Dễ thông gió
+*B. Một dãy căn hộ có hướng bất lợi
+C. Có quá nhiều ánh sáng
+D. Không có hành lang
+
+Câu 71. Chung cư hành lang bên có ưu điểm:
+
+A. Tốn diện tích sử dụng
+*B. Thông gió và chiếu sáng tốt
+C. Không có hành lang
+D. Khó thoát hiểm
+
+Câu 72. Nhược điểm của chung cư hành lang bên là:
+
+A. Không có hành lang
+B. Không có cầu thang
+*C. Tốn diện tích hành lang
+D. Không có căn hộ
+
+Câu 73. Chung cư cao tầng dạng tháp có:
+
+A. Lõi kỹ thuật ở góc nhà
+*B. Lõi thang và kỹ thuật ở giữa
+C. Không có lõi kỹ thuật
+D. Không có thang
+
+Câu 74. Ưu điểm của nhà tháp là:
+
+A. Xây thấp tầng
+*B. Tăng mật độ sử dụng đất
+C. Không cần thang máy
+D. Không cần kết cấu chịu lực
+
+Câu 75. Nhược điểm của nhà tháp là:
+
+A. Dễ thi công nhất
+B. Không cần kỹ thuật
+*C. Thi công và tổ chức phức tạp
+D. Không cần hành lang
+
+Câu 76. Công trình công cộng là:
+
+A. Công trình dùng để ở
+*B. Công trình phục vụ nhu cầu vật chất và tinh thần ngoài chức năng ở
+C. Nhà máy sản xuất
+D. Công trình quân sự
+
+Câu 77. Ví dụ công trình công cộng là:
+
+A. Nhà ở riêng lẻ
+*B. Trường học
+C. Chuồng trại
+D. Nhà kho
+
+Câu 78. Công trình giao thông vận tải gồm:
+
+A. Bệnh viện
+B. Thư viện
+*C. Bến xe, ga, sân bay
+D. Nhà ở
+
+Câu 79. Công trình văn hóa gồm:
+
+A. Nhà máy
+*B. Bảo tàng, thư viện
+C. Trạm điện
+D. Gara
+
+Câu 80. Công trình thương mại gồm:
+
+A. Trường học
+B. Bệnh viện
+*C. Chợ và siêu thị
+D. Nhà ở
+
+Câu 81. Bộ phận chính của công trình công cộng là:
+
+A. Bộ phận phụ
+*B. Bộ phận quyết định tính chất công trình
+C. Bộ phận giao thông
+D. Bộ phận kỹ thuật
+
+Câu 82. Trong trường học, bộ phận chính là:
+
+A. WC
+B. Hành lang
+*C. Phòng học
+D. Cầu thang
+
+Câu 83. Trong bệnh viện, bộ phận chính là:
+
+A. Nhà xe
+B. Hành lang
+*C. Phòng khám, điều trị
+D. Cầu thang
+
+Câu 84. Bộ phận phụ trực tiếp thường:
+
+A. Bố trí xa khu chính
+*B. Bố trí gần khu chính
+C. Không liên quan khu chính
+D. Bố trí ngoài công trình
+
+Câu 85. Ví dụ bộ phận phụ trực tiếp là:
+
+A. Trạm điện
+B. Bể nước
+*C. WC
+D. Kho vật liệu
+
+Câu 86. Ví dụ bộ phận phụ gián tiếp là:
+
+A. WC
+B. Phòng nghỉ giáo viên
+*C. Trạm điện nước
+D. Hành lang
+
+Câu 87. Giao thông ngang gồm:
+
+A. Thang bộ
+B. Thang máy
+*C. Hành lang
+D. Cầu thang cuốn
+
+Câu 88. Giao thông đứng gồm:
+
+A. Hành lang
+B. Nhà cầu
+*C. Thang bộ
+D. Lối đi
+
+Câu 89. Đường dốc trong công trình công cộng nên nhỏ hơn:
+
+A. 5%
+*B. 8%
+C. 15%
+D. 20%
+
+Câu 90. Vị trí giao giữa giao thông đứng và ngang gọi là:
+
+A. Điểm nút kết cấu
+*B. Nút giao thông
+C. Nút kỹ thuật
+D. Nút chịu lực
+
+Câu 91. Bán kính phục vụ của nút giao thông nên:
+
+A. ≤10 m
+B. ≤20 m
+*C. ≤30 m
+D. ≤50 m
+
+Câu 92. Khi tổ chức mặt bằng công trình công cộng cần:
+
+A. Chỉ quan tâm hình thức
+*B. Xem xét nhiệm vụ thiết kế và công năng
+C. Chỉ quan tâm kết cấu
+D. Chỉ quan tâm màu sắc
+
+Câu 93. Giải pháp phòng lớn có ưu điểm:
+
+A. Tốn giao thông
+*B. Không gian linh hoạt
+C. Khó sử dụng
+D. Chiếu sáng kém
+
+Câu 94. Giải pháp phòng lớn còn giúp:
+
+A. Tăng số tường
+*B. Tiết kiệm diện tích giao thông
+C. Giảm diện tích sử dụng
+D. Giảm ánh sáng
+
+Câu 95. Giải pháp tập trung quanh trung tâm có ưu điểm:
+
+A. Kết cấu đơn giản
+*B. Tận dụng tốt không gian
+C. Không cần thông gió
+D. Không cần chiếu sáng
+
+Câu 96. Nhược điểm của giải pháp tập trung là:
+
+A. Không tận dụng không gian
+*B. Kết cấu phức tạp
+C. Không có phòng
+D. Không có giao thông
+
+Câu 97. Giải pháp chuỗi không gian xuyên phòng có ưu điểm:
+
+A. Tốn diện tích giao thông
+*B. Quan hệ các phòng chặt chẽ
+C. Không thông gió
+D. Không có ánh sáng
+
+Câu 98. Giải pháp xuyên phòng thích hợp khi:
+
+A. Không cần trình tự sử dụng
+*B. Có trình tự sử dụng bắt buộc
+C. Không có người sử dụng
+D. Không có phòng
+
+Câu 99. Giải pháp hành lang có ưu điểm:
+
+A. Kết cấu phức tạp
+*B. Quan hệ các phòng rõ ràng
+C. Không có giao thông
+D. Tốn diện tích lớn
+
+Câu 100. Giải pháp hành lang thường có:
+
+A. Kết cấu khó thi công
+*B. Sơ đồ kết cấu đơn giản
+C. Không có thông thoáng
+D. Không có cửa
+Câu 101. Công trình công cộng được định nghĩa là:
+
+A. Công trình dùng để ở.
+*B. Công trình phục vụ các sinh hoạt vật chất và tinh thần của con người, trừ chức năng ở.
+C. Công trình sản xuất công nghiệp.
+D. Công trình giao thông.
+
+Câu 102. Ví dụ nào sau đây là công trình công cộng?
+
+A. Nhà biệt thự.
+B. Nhà liền kề.
+*C. Bệnh viện.
+D. Nhà ở nông thôn.
+
+Câu 103. Công trình nào thuộc nhóm giao thông vận tải?
+
+A. Thư viện.
+*B. Sân bay.
+C. Chợ.
+D. Nhà ở.
+
+Câu 104. Công trình nào thuộc nhóm văn hóa?
+
+A. Bệnh viện.
+*B. Bảo tàng.
+C. Siêu thị.
+D. Nhà máy.
+
+Câu 105. Công trình nào thuộc nhóm y tế?
+
+A. Trường học.
+B. Nhà thi đấu.
+*C. Trung tâm y tế.
+D. Nhà ga.
+
+Câu 106. Công trình nào thuộc nhóm thương mại?
+
+A. Thư viện.
+B. Bệnh viện.
+*C. Chợ.
+D. Nhà văn hóa.
+
+Câu 107. Đặc điểm đầu tiên của công trình công cộng là:
+
+*A. Mang tính phổ biến và hàng loạt.
+B. Chỉ phục vụ cá nhân.
+C. Chỉ phục vụ sản xuất.
+D. Không thay đổi theo thời gian.
+
+Câu 108. Mỗi công trình công cộng có:
+
+A. Công năng giống nhau.
+*B. Tính đặc thù riêng.
+C. Kết cấu giống nhau.
+D. Diện tích giống nhau.
+
+Câu 109. Chức năng sử dụng của công trình công cộng:
+
+A. Không bao giờ thay đổi.
+*B. Có thể thay đổi theo sự phát triển khoa học kỹ thuật.
+C. Chỉ thay đổi theo khí hậu.
+D. Chỉ thay đổi theo vật liệu.
+
+Câu 110. Bộ phận chính của công trình công cộng là:
+
+A. Hành lang.
+*B. Nhóm các phòng chính quyết định tính chất công trình.
+C. Nhà vệ sinh.
+D. Kho.
+
+Câu 111. Trong trường học, bộ phận chính là:
+
+A. Phòng giáo viên.
+B. Nhà xe.
+*C. Phòng học.
+D. WC.
+
+Câu 112. Trong chợ, bộ phận chính là:
+
+A. Hành lang.
+B. WC.
+*C. Quầy, sạp.
+D. Kho.
+
+Câu 113. Trong bệnh viện, bộ phận chính là:
+
+A. Nhà xe.
+B. Hành lang.
+*C. Phòng khám và phòng điều trị.
+D. Căng tin.
+
+Câu 114. Bộ phận phụ của công trình công cộng có nhiệm vụ:
+
+A. Quyết định tính chất công trình.
+*B. Hỗ trợ hoạt động của bộ phận chính.
+C. Chỉ dùng để trang trí.
+D. Không có chức năng.
+
+Câu 115. Bộ phận phụ được chia thành:
+
+A. 3 loại.
+*B. 2 loại.
+C. 4 loại.
+D. 5 loại.
+
+Câu 116. Bộ phận phụ gián tiếp của trường học là:
+
+A. WC.
+B. Phòng dụng cụ.
+*C. Phòng hiệu bộ.
+D. Phòng học.
+
+Câu 117. Bộ phận phụ trực tiếp của trường học là:
+
+A. Phòng hiệu trưởng.
+*B. WC.
+C. Trạm điện.
+D. Nhà xe.
+
+Câu 118. Bộ phận phụ trực tiếp thường bố trí:
+
+A. Xa bộ phận chính.
+*B. Gần bộ phận chính.
+C. Ngoài khuôn viên.
+D. Trên mái.
+
+Câu 119. Bộ phận giao thông có nhiệm vụ:
+
+A. Chứa thiết bị.
+*B. Liên hệ các không gian chức năng.
+C. Trang trí công trình.
+D. Chống nóng.
+
+Câu 120. Giao thông ngang gồm:
+
+A. Thang máy.
+B. Thang bộ.
+*C. Hành lang.
+D. Thang cuốn.
+
+Câu 121. Giao thông đứng gồm:
+
+A. Hành lang.
+*B. Thang bộ.
+C. Nhà cầu.
+D. Lối đi.
+
+Câu 122. Đường dốc trong giao thông đứng nên có độ dốc:
+
+A. Dưới 15%.
+B. Dưới 10%.
+*C. Dưới 8%.
+D. Dưới 20%.
+
+Câu 123. Giao điểm giữa giao thông đứng và ngang gọi là:
+
+A. Điểm kết cấu.
+*B. Nút giao thông.
+C. Điểm chịu lực.
+D. Điểm kỹ thuật.
+
+Câu 124. Bán kính phục vụ của nút giao thông nên:
+
+A. ≤20m.
+*B. ≤30m.
+C. ≤40m.
+D. ≤50m.
+
+Câu 125. Khi tổ chức mặt bằng công trình công cộng cần:
+
+A. Chỉ quan tâm hình thức.
+*B. Xét yêu cầu của nhiệm vụ thiết kế.
+C. Chỉ quan tâm kinh phí.
+D. Chỉ quan tâm vật liệu.
+
+Câu 126. Khi bố trí mặt bằng cần:
+
+A. Bỏ qua sức chứa.
+*B. Đề cập sức chứa hợp lý của các phòng chính.
+C. Chỉ tính diện tích hành lang.
+D. Chỉ quan tâm mặt đứng.
+
+Câu 127. Giải pháp liên hệ phải:
+
+A. Chỉ đẹp.
+*B. Phù hợp sơ đồ công năng.
+C. Chỉ rẻ.
+D. Chỉ dễ thi công.
+
+Câu 128. Các bộ phận công trình nên:
+
+A. Bố trí ngẫu nhiên.
+*B. Phân thành từng khu vực rõ ràng.
+C. Đặt chồng lên nhau.
+D. Chỉ theo hình vuông.
+
+Câu 129. Giải pháp không gian kiểu phòng lớn có ưu điểm:
+
+A. Khó sử dụng.
+*B. Không gian linh hoạt.
+C. Tốn giao thông.
+D. Ít diện tích sử dụng.
+
+Câu 130. Giải pháp phòng lớn còn giúp:
+
+A. Tăng diện tích hành lang.
+*B. Tiết kiệm diện tích giao thông.
+C. Giảm diện tích phòng.
+D. Tăng số cầu thang.
+
+Câu 131. Giải pháp tập trung quanh trung tâm có ưu điểm:
+
+A. Kết cấu đơn giản.
+*B. Tận dụng được không gian.
+C. Không có giao thông.
+D. Không có ánh sáng.
+
+Câu 132. Nhược điểm của giải pháp tập trung là:
+
+A. Không có phòng.
+*B. Kết cấu phức tạp.
+C. Không có hành lang.
+D. Không có cửa.
+
+Câu 133. Giải pháp tập trung thường:
+
+A. Thông gió tự nhiên hoàn toàn.
+*B. Thông gió bằng biện pháp nhân tạo.
+C. Không cần thông gió.
+D. Không cần chiếu sáng.
+
+Câu 134. Giải pháp chuỗi không gian xuyên phòng có ưu điểm:
+
+A. Tốn diện tích giao thông.
+*B. Quan hệ các phòng chặt chẽ.
+C. Không có ánh sáng.
+D. Khó tổ chức.
+
+Câu 135. Giải pháp xuyên phòng còn giúp:
+
+A. Tăng diện tích hành lang.
+*B. Dễ tổ chức thông gió và chiếu sáng tự nhiên.
+C. Giảm diện tích phòng.
+D. Tăng chi phí.
+
+Câu 136. Giải pháp xuyên phòng phù hợp với:
+
+A. Công trình không có trình tự sử dụng.
+*B. Công trình có trình tự sử dụng bắt buộc.
+C. Nhà kho.
+D. Nhà xe.
+
+Câu 137. Giải pháp hành lang có ưu điểm:
+
+A. Quan hệ phòng phức tạp.
+*B. Quan hệ giữa các phòng rõ ràng.
+C. Khó thi công.
+D. Tốn nhiều kết cấu.
+
+Câu 138. Giải pháp hành lang có:
+
+A. Kết cấu phức tạp.
+*B. Sơ đồ kết cấu đơn giản.
+C. Không thông thoáng.
+D. Không có giao thông.
+
+Câu 139. Khi thiết kế công trình công cộng cần đảm bảo:
+
+A. Chỉ đẹp.
+*B. Phù hợp công năng và điều kiện khu đất.
+C. Chỉ rẻ.
+D. Chỉ hiện đại.
+
+Câu 140. Bộ phận chính thường chiếm:
+
+A. Ít diện tích nhất.
+*B. Phần lớn diện tích sử dụng.
+C. Không có diện tích cố định.
+D. Chỉ dưới tầng hầm.
+
+Câu 141. Hành lang thuộc nhóm:
+
+A. Bộ phận chính.
+B. Bộ phận phụ.
+*C. Bộ phận giao thông.
+D. Bộ phận kỹ thuật.
+
+Câu 142. Nhà cầu thuộc:
+
+A. Giao thông đứng.
+*B. Giao thông ngang.
+C. Bộ phận chính.
+D. Bộ phận phụ.
+
+Câu 143. Thang cuốn thuộc:
+
+A. Giao thông ngang.
+*B. Giao thông đứng.
+C. Bộ phận chính.
+D. Bộ phận phụ.
+
+Câu 144. Thang máy thuộc:
+
+A. Giao thông ngang.
+*B. Giao thông đứng.
+C. Bộ phận phụ.
+D. Bộ phận chính.
+
+Câu 145. Một nút giao thông tốt phải:
+
+A. Chỉ đẹp.
+*B. Đủ diện tích phục vụ, tránh ùn người.
+C. Chỉ rộng.
+D. Chỉ có cầu thang.
+
+Câu 146. Các nút giao thông cần:
+
+A. Tách biệt hoàn toàn.
+*B. Liên hệ được với nhau.
+C. Không cần kết nối.
+D. Chỉ có một nút.
+
+Câu 147. Khi tổ chức không gian cần:
+
+A. Bố trí tùy ý.
+*B. Tạo bố cục chặt chẽ.
+C. Chỉ quan tâm mặt đứng.
+D. Chỉ quan tâm mái.
+
+Câu 148. Không gian phòng lớn thích hợp với:
+
+A. Công trình nhiều phòng nhỏ.
+*B. Công trình cần không gian linh hoạt.
+C. Nhà kho.
+D. Nhà ở.
+
+Câu 149. Giải pháp hành lang thường được áp dụng khi:
+
+A. Không cần phân chia phòng.
+*B. Cần nhiều phòng độc lập.
+C. Không có giao thông.
+D. Không có cửa.
+
+Câu 150. Theo giáo trình, khi thiết kế nhà công cộng, yếu tố quan trọng nhất là:
+
+A. Hình thức bên ngoài.
+*B. Đảm bảo công năng sử dụng hợp lý.
+C. Giá thành thấp nhất.
+D. Chiều cao công trình.

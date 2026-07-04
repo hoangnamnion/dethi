@@ -1,0 +1,905 @@
+Chương 1: NHỮNG KHÁI NIỆM CHUNG VỀ KIẾN TRÚC
+Câu 1: Kiến trúc là môn học mang tính chất gì?
+A. Thuần túy nghệ thuật
+*B. Vừa khoa học kỹ thuật, vừa nghệ thuật
+C. Thuần túy khoa học kỹ thuật
+D. Khoa học xã hội
+
+Câu 2: Tính khoa học trong kiến trúc thể hiện ở việc phải tính toán về các yếu tố nào?
+A. Thẩm mỹ và hình khối
+*B. Vật liệu, kết cấu, công năng và kinh tế
+C. Phong thủy và tâm linh
+D. Màu sắc và ánh sáng
+
+Câu 3: Đặc điểm nào sau đây KHÔNG phải là đặc điểm của kiến trúc?
+A. Mang tính tổng hợp giữa khoa học và nghệ thuật
+B. Chịu ảnh hưởng của điều kiện khí hậu tự nhiên
+C. Phản ánh xã hội và mang tính tư tưởng
+*D. Mang tính bất biến, không thay đổi theo thời gian
+
+Câu 4: Yêu cầu về "sự thích dụng" trong kiến trúc là gì?
+A. Công trình phải đẹp và hiện đại
+*B. Công trình phải phục vụ đúng đối tượng và mục đích sử dụng
+C. Công trình phải rẻ tiền nhất
+D. Công trình phải bền vững nhất
+
+Câu 5: Để đảm bảo yêu cầu bền vững cho công trình, cần chú ý những gì?
+A. Màu sắc và hình dáng bên ngoài
+*B. Cường độ, độ ổn định và độ bền lâu
+C. Chi phí đầu tư thấp
+D. Diện tích sử dụng lớn
+
+Câu 6: Các yếu tố tạo thành kiến trúc bao gồm?
+A. Yếu tố thẩm mỹ và kinh tế
+*B. Công năng, khoa học kỹ thuật và hình tượng nghệ thuật
+C. Vật liệu và kết cấu
+D. Khí hậu và địa hình
+
+Câu 7: Theo chức năng sử dụng, nhà dân dụng được phân thành những loại nào?
+A. Nhà ở và nhà công nghiệp
+*B. Nhà ở và nhà công cộng
+C. Nhà công cộng và nhà công nghiệp
+D. Nhà ở và nhà nông nghiệp
+
+Câu 8: Theo chiều cao tầng, nhà có số tầng từ 8 đến 30 tầng được gọi là gì?
+A. Nhà thấp tầng
+B. Nhà nhiều tầng
+*C. Nhà cao tầng
+D. Nhà siêu cao
+
+Câu 9: Phân cấp công trình theo độ bền lâu bậc 1 có niên hạn sử dụng là bao nhiêu?
+*A. Trên 100 năm
+B. Trên 70 năm
+C. Trên 30 năm
+D. Trên 15 năm
+
+Câu 10: Mật độ xây dựng thuần (net-tô) là gì?
+A. Tỷ lệ diện tích chiếm đất của công trình trên tổng diện tích bao gồm cả sân đường
+*B. Tỷ lệ diện tích chiếm đất của công trình trên tổng diện tích lô đất (không bao gồm các tiểu cảnh)
+C. Tỷ lệ diện tích sàn xây dựng trên diện tích lô đất
+D. Tỷ lệ diện tích đất trống trên tổng diện tích lô đất
+
+Câu 11: Chỉ giới đường đỏ là gì?
+A. Đường giới hạn cho phép xây dựng công trình
+*B. Đường ranh giới phân định giữa lô đất xây dựng và đất dành cho đường giao thông
+C. Đường giới hạn cho phép xây dựng ngầm
+D. Đường ranh giới giữa các lô đất
+
+Câu 12: Modun gốc trong ngành xây dựng là bao nhiêu?
+A. 1m
+B. 10mm
+*C. 100mm
+D. 1cm
+
+Câu 13: Trong hệ trục định vị, các trục theo phương ngang được kí hiệu như thế nào?
+*A. 1, 2, 3, 4...
+B. A, B, C, D...
+C. a, b, c, d...
+D. I, II, III, IV...
+
+Câu 14: Bước gian (B) là gì?
+A. Khoảng cách giữa hai trục định vị liền kề theo phương dọc nhà
+*B. Khoảng cách giữa hai trục định vị liền kề theo phương ngang nhà
+C. Chiều cao của một tầng nhà
+D. Chiều dài của một phòng
+
+Câu 15: Chiều cao tầng (H) được tính như thế nào?
+A. Từ mặt đất lên đến đỉnh mái
+*B. Từ mặt sàn tầng này lên mặt sàn tầng kia liền kề
+C. Từ móng lên đến mặt sàn tầng 1
+D. Từ nền nhà lên đến trần nhà
+
+Câu 16: Thiết kế cơ sở là bước thiết kế nào trong quy trình?
+*A. Bước đầu tiên sau khi có dự án được phê duyệt, đưa ra các phương án sơ bộ
+B. Bước thiết kế chi tiết để thi công
+C. Bước thiết kế cuối cùng trước khi xây dựng
+D. Bước kiểm tra và nghiệm thu công trình
+
+Câu 17: Bản vẽ thiết kế kỹ thuật được thực hiện trên cơ sở nào?
+A. Ý tưởng của chủ đầu tư
+*B. Thiết kế cơ sở đã được phê duyệt
+C. Bản vẽ thi công
+D. Khảo sát địa chất
+
+Câu 18: Hệ số sử dụng đất (HSSDĐ) là gì?
+A. Tỷ lệ diện tích đất xây dựng trên tổng diện tích đất
+*B. Tỷ số của tổng diện tích sàn xây dựng công trình trên diện tích lô đất
+C. Tỷ lệ diện tích cây xanh trên tổng diện tích đất
+D. Tỷ số giữa chiều cao và chiều rộng công trình
+
+Câu 19: Khoảng lùi của công trình là khoảng cách giữa các yếu tố nào?
+*A. Chỉ giới đường đỏ và chỉ giới xây dựng
+B. Chỉ giới xây dựng và tim đường
+C. Công trình này và công trình khác
+D. Móng và tường
+
+Câu 20: Mục đích của việc phân cấp công trình là gì?
+A. Để xác định độ cao của công trình
+B. Để phân biệt công trình mới và cũ
+*C. Để phục vụ cho việc đầu tư và quản lý đầu tư
+D. Để lựa chọn vật liệu xây dựng
+
+Chương 2: NHÀ Ở
+Câu 21: Nhà ở là công trình chuyên dụng để làm gì?
+A. Sản xuất hàng hóa
+*B. Ở, sinh hoạt gia đình và tái tạo sức lao động
+C. Tổ chức các sự kiện văn hóa
+D. Buôn bán và thương mại
+
+Câu 22: Điểm khác biệt cơ bản giữa nhà ở và nhà công cộng là gì?
+*A. Người dùng có quan hệ hôn nhân hoặc huyết thống và mang tính lâu dài
+B. Nhà ở có số tầng ít hơn
+C. Nhà ở rẻ hơn nhà công cộng
+D. Nhà ở không có hệ thống kỹ thuật
+
+Câu 23: Nhà ở dành cho nhiều gia đình, các căn hộ tập hợp quanh cầu thang hoặc hành lang công cộng được gọi là gì?
+A. Nhà ở nông thôn
+B. Nhà ở liền kề
+*C. Nhà ở chung cư
+D. Nhà ở ký túc xá
+
+Câu 24: Loại nhà ở nào dành cho đối tượng độc thân, công nhân, sinh viên?
+A. Nhà ở biệt thự
+B. Nhà ở liền kề
+C. Nhà ở chung cư
+*D. Nhà ở ký túc xá
+
+Câu 25: Bộ phận nào sau đây là bộ phận chức năng của nhà?
+A. Cột, dầm, móng
+*B. Phòng khách, phòng ngủ, phòng ăn
+C. Cửa sổ, cửa đi
+D. Mái nhà
+
+Câu 26: Diện tích của tiền phòng trong nhà ở thường được thiết kế khoảng bao nhiêu?
+A. 12 - 18 m2
+B. 16 - 20 m2
+*C. 6 - 8 m2
+D. 2.5 - 5 m2
+
+Câu 27: Phòng khách thường được bố trí ở vị trí nào trong nhà?
+A. Cuối nhà, cuối hướng gió
+*B. Gần cửa chính, nơi tiếp đón khách
+C. Tầng trên cùng
+D. Cạnh khu vệ sinh
+
+Câu 28: Diện tích thông thủy tối thiểu của phòng khách là bao nhiêu?
+A. 3.5m
+B. 2.5m
+*C. 3.0m
+D. 4.0m
+
+Câu 29: Phòng ngủ thường có diện tích thiết kế khoảng bao nhiêu?
+A. 6 - 8 m2
+B. 16 - 20 m2
+*C. 12 - 18 m2
+D. 20 - 25 m2
+
+Câu 30: Phòng ăn và bếp thường được bố trí ở vị trí nào để đảm bảo vệ sinh?
+A. Đầu nhà, đón gió chính
+*B. Cuối nhà, cuối hướng gió
+C. Tầng 2, gần phòng khách
+D. Giữa nhà
+
+Câu 31: Khu vệ sinh (WC) trong nhà nhiều tầng nên được bố trí như thế nào để tiện cho đường ống kỹ thuật?
+*A. Gộp chung thành một khu vực theo các tầng
+B. Bố trí xen kẽ giữa các phòng ngủ
+C. Bố trí ở mỗi tầng một vị trí khác nhau
+D. Bố trí riêng cho từng phòng
+
+Câu 32: Diện tích khu vệ sinh (WC) thường thiết kế khoảng bao nhiêu?
+A. 6 - 8 m2
+B. 4 - 5 m2
+*C. 2.5 - 5 m2
+D. 1 - 2 m2
+
+Câu 33: Lô gia là không gian như thế nào?
+*A. Không gian nghỉ ngơi chỉ có một mặt nhìn ra ngoài
+B. Không gian mở có ban công ở phía trước
+C. Không gian được bao bọc bởi kính
+D. Không gian để phơi quần áo
+
+Câu 34: Loại nhà ở nào có hành lang ở giữa, các căn hộ đặt dọc theo hai bên?
+A. Chung cư nhiều tầng kiểu đơn nguyên
+*B. Chung cư nhiều tầng kiểu hành lang giữa
+C. Chung cư nhiều tầng kiểu hành lang bên
+D. Chung cư cao tầng kiểu tháp
+
+Câu 35: Nhược điểm chính của chung cư kiểu hành lang bên là gì?
+A. Kết cấu phức tạp
+*B. Tốn diện tích hành lang
+C. Thông gió kém
+D. Cấu trúc không kinh tế
+
+Câu 36: Một nhà ở biệt thự thường có đặc điểm gì?
+A. Là nhà ở nhiều căn hộ
+*B. Là nhà ở cao cấp, biệt lập, có sân vườn
+C. Là nhà ở cho thu nhập thấp
+D. Là nhà ở tập thể
+
+Câu 37: Khoảng cách giữa các ống xuống (thoát nước mưa) thường chọn là bao nhiêu?
+*A. 15-24m
+B. 5-10m
+C. 30-50m
+D. 2-5m
+
+Câu 38: Nhà ở nhiều căn hộ có từ 4 đến 6 tầng không có thang máy được gọi là gì?
+A. Nhà cao tầng
+*B. Nhà chung cư nhiều tầng
+C. Nhà siêu cao
+D. Nhà chung cư cao tầng
+
+Câu 39: Giao thông trong nhà ở bao gồm những loại nào?
+A. Giao thông công cộng và riêng
+*B. Giao thông đứng (cầu thang) và giao thông ngang (hành lang)
+C. Giao thông cơ giới và thủ công
+D. Giao thông nội bộ và đối ngoại
+
+Câu 40: Phòng khách trong nhà ở thường có diện tích khoảng bao nhiêu cho 4-5 người?
+A. 12 - 18m2
+*B. 16 - 20m2
+C. 20 - 25m2
+D. 6 - 8m2
+
+Chương 3: NHÀ CÔNG CỘNG
+Câu 41: Công trình công cộng là công trình phục vụ các sinh hoạt gì của con người?
+A. Sinh hoạt gia đình
+*B. Văn hóa tinh thần và vật chất (ngoại trừ chức năng ở)
+C. Sản xuất công nghiệp
+D. Nông nghiệp
+
+Câu 42: Công trình nào sau đây là công trình công cộng?
+A. Nhà phố
+B. Biệt thự
+*C. Trường học
+D. Kho xưởng
+
+Câu 43: Tính chất nào sau đây KHÔNG phải là tính chất của nhà công cộng?
+A. Mang tính chất phổ biến và hàng loạt
+B. Mỗi công trình mang tính đặc thù riêng
+*C. Có chức năng sử dụng ổn định, không thay đổi
+D. Chức năng sử dụng thay đổi theo khoa học kỹ thuật
+
+Câu 44: Theo tính chất sử dụng, nhà ga, bến xe thuộc nhóm công trình gì?
+*A. Công trình giao thông vận tải
+B. Công trình văn hóa
+C. Công trình y tế
+D. Công trình thương mại
+
+Câu 45: Nhóm các phòng chính trong trường học là gì?
+A. Phòng hiệu bộ, WC
+*B. Các phòng học
+C. Phòng nghỉ giáo viên
+D. Thư viện
+
+Câu 46: Trong nhà công cộng, bộ phận nào quyết định tính chất đặc thù của công trình và chiếm phần lớn diện tích?
+A. Bộ phận giao thông
+*B. Bộ phận chính
+C. Bộ phận phụ
+D. Bộ phận kỹ thuật
+
+Câu 47: WC và phòng dụng cụ trực quan trong trường học là bộ phận gì?
+*A. Bộ phận phụ trực tiếp
+B. Bộ phận phụ gián tiếp
+C. Bộ phận chính
+D. Bộ phận giao thông
+
+Câu 48: Giao thông đứng trong nhà công cộng bao gồm?
+A. Hành lang, lối đi lộ thiên
+*B. Thang bộ, thang máy, thang cuốn
+C. Đường dốc
+D. Nhà cầu, băng chuyền
+
+Câu 49: Nút giao thông trong công trình cần đảm bảo bán kính phục vụ tối đa là bao nhiêu?
+A. 50m
+B. 40m
+*C. 30m
+D. 20m
+
+Câu 50: Giải pháp không gian kiểu phòng lớn có ưu điểm gì?
+A. Quan hệ công năng chặt chẽ
+*B. Không gian sử dụng mềm dẻo, linh hoạt
+C. Chiếm ít diện tích xây dựng
+D. Kết cấu đơn giản
+
+Câu 51: Giải pháp liên hệ kiểu hành lang có nhược điểm gì?
+A. Sơ đồ kết cấu phức tạp
+*B. Chiếm nhiều diện tích xây dựng
+C. Quan hệ công năng thiếu chặt chẽ
+D. Giao thông ngắn
+
+Câu 52: Giải pháp phân khu theo từng tòa nhà riêng có ưu điểm gì?
+A. Liên hệ giữa các khu chặt chẽ
+*B. Cách ly giữa các khu tốt
+C. Tiết kiệm diện tích xây dựng
+D. Hình khối đồ sộ
+
+Câu 53: Thoát người trong nhà công cộng ra khỏi phòng được quy định như thế nào?
+A. Mỗi phòng phải có ít nhất 3 cửa
+*B. Cứ 100 người phải có ít nhất 2 cửa, rộng ≥1,2m, mở ra ngoài
+C. Cửa có thể mở vào trong để tiện lợi
+D. Người xa nhất đến cửa < 50m
+
+Câu 54: Bề rộng hành lang tối thiểu cho hành lang bên dùng để đi lại chính là bao nhiêu?
+*A. 1.5m
+B. 1.8m
+C. 1.2m
+D. 0.6m
+
+Câu 55: Khoảng cách tối đa từ người xa nhất đến cầu thang đối với công trình cấp phòng hóa cấp 2 là bao nhiêu?
+A. 40m
+*B. 30m
+C. 25m
+D. 20m
+
+Câu 56: Công thức tính tổng bề rộng vế thang khi N ≤ 250 là gì?
+A. ΣBvt = N/125
+*B. ΣBvt = N/100
+C. ΣBvt = 250/100
+D. ΣBvt = (N-200)/125
+
+Câu 57: Bề rộng tối thiểu của một vế thang dùng để đi lại chính là bao nhiêu?
+*A. >1.4m
+B. >1.0m
+C. >1.2m
+D. >1.8m
+
+Câu 58: Thời gian thoát người cho mỗi giai đoạn thường là bao nhiêu?
+A. 2-3 giây
+*B. 2-3 phút
+C. 5-6 phút
+D. 1-2 giờ
+
+Câu 59: Để thiết kế nhìn rõ trong nhà công cộng, giải pháp nào được ưu tiên nhất?
+A. Nâng vật cần quan sát lên cao
+B. Tăng chiều cao ghế
+*C. Thiết kế nền dốc
+D. Giảm số lượng hàng ghế
+
+Câu 60: Điểm quan sát thiết kế (Đ) trong giảng đường là gì?
+A. Mép trên của bảng
+*B. Mép dưới của bảng
+C. Tâm của bảng
+D. Góc của bảng
+
+Câu 61: Độ nâng cao tia nhìn (C) cho giảng đường thường được lấy bao nhiêu?
+A. 180mm
+*B. 60-80mm
+C. 80-110mm
+D. 100-150mm
+
+Câu 62: Trong thiết kế nền dốc bằng phương pháp vẽ dần, M1 là vị trí gì?
+A. Điểm Đ
+*B. Mắt người quan sát ở hàng ghế đầu tiên
+C. Vị trí sân khấu
+D. Nền của hàng ghế đầu tiên
+
+Câu 63: Khoảng cách từ hàng ghế đầu tiên (G1) đến vùng đối tượng cần quan sát (L) thường là bao nhiêu?
+A. 1.5 - 2.0m
+B. 5.0 - 6.0m
+*C. 2.7 - 3.6m
+D. 0.8 - 1.2m
+
+Câu 64: Vị trí của mắt người quan sát (Hqsl) so với nền thường được lấy là bao nhiêu?
+A. 0.9 - 1.05m
+B. 1.5 - 1.8m
+*C. 1.15 - 1.2m
+D. 1.8 - 2.0m
+
+Câu 65: Giải pháp phân khu theo tầng nhà có nhược điểm gì?
+A. Tốn thiết bị kỹ thuật
+B. Hình khối tản mạn
+*C. Thông thoáng tự nhiên bị hạn chế
+D. Chiếm nhiều diện tích xây dựng
+
+Câu 66: Khi thiết kế nhìn rõ, để hạn chế độ dốc của nền, có thể làm gì?
+A. Giảm số hàng ghế
+B. Tăng chiều cao sân khấu
+*C. Hạ C của các hàng ghế đầu (15-20%) so với quy định
+D. Tăng khoảng cách giữa các hàng ghế
+
+Câu 67: Công trình bệnh viện thuộc nhóm phân loại nào theo tính chất sử dụng?
+A. Công trình giao thông vận tải
+B. Công trình văn hóa
+*C. Công trình y tế
+D. Công trình thương mại
+
+Câu 68: Trong nhà công cộng, điểm tia nhìn Đ của bể bơi thuộc vị trí nào?
+A. Điểm sâu nhất của bể
+*B. Đường bơi trong cùng gần khán giả
+C. Thành bể bơi
+D. Mặt nước bể bơi
+
+Câu 69: Giải pháp phân khu theo cánh nhà, đoạn khối có ưu điểm gì?
+A. Chiếm nhiều diện tích xây dựng
+*B. Phân khu rõ ràng, cách ly tốt, quan hệ nội bộ chặt chẽ
+C. Liên hệ trong khu dễ dàng
+D. Mức độ cách ly khó khăn
+
+Câu 70: Yêu cầu về bề rộng luồng chạy thoát người là bao nhiêu?
+*A. ≥ 0.6m
+B. ≥ 1.2m
+C. ≥ 1.5m
+D. ≥ 2.4m
+
+Chương 5: CẤU TẠO NHÀ VÀ CÔNG TRÌNH (Tổng quan và Phần Nền, Móng)
+Câu 71: Hệ sườn chịu lực của nhà có nhiệm vụ gì?
+A. Trang trí và làm đẹp
+*B. Chịu lực, tạo sự ổn định và truyền tải trọng xuống móng
+C. Ngăn cách không gian
+D. Chống thấm và cách nhiệt
+
+Câu 72: Tường chịu lực thường làm dày bao nhiêu khi xây bằng gạch nung?
+A. 110mm
+B. 150mm
+*C. 220mm
+D. 500mm
+
+Câu 73: Kết cấu tường ngang chịu lực có ưu điểm gì?
+A. Bố trí không gian linh hoạt
+*B. Độ cứng ngang lớn, ít dầm
+C. Tiết kiệm vật liệu so với tường dọc chịu lực
+D. Tường mỏng hơn
+
+Câu 74: Khung chịu lực toàn khối có đặc điểm gì?
+A. Thi công nhanh
+*B. Liên kết tốt, chịu lực tốt
+C. Công nghiệp hóa cao
+D. Cấu kiện chế tạo sẵn
+
+Câu 75: Nền móng là gì?
+*A. Lớp đất nằm dưới móng chịu toàn bộ hoặc phần lớn tải trọng công trình
+B. Bộ phận thấp nhất của công trình
+C. Lớp bê tông lót dưới móng
+D. Lớp đất mặt trên cùng
+
+Câu 76: Nền thiên nhiên là gì?
+A. Lớp đất đã được gia cố
+*B. Lớp đất có đủ khả năng chịu tải mà không cần gia cố
+C. Lớp đất được đầm nện bằng thủ công
+D. Nền nhà đã được xây dựng
+
+Câu 77: Độ lún cho phép (S) của nền nhà là bao nhiêu?
+A. 5 cm
+*B. 8 cm
+C. 15 cm
+D. 20 cm
+
+Câu 78: Phương pháp gia cố nền nhân tạo nào sử dụng dung dịch Silicat Natri và Clorua Canxi?
+A. Phương pháp thay đất
+*B. Phương pháp Silicát hoá
+C. Phương pháp xi măng hóa
+D. Phương pháp đóng cọc
+
+Câu 79: Cọc được đóng xuyên qua lớp đất mềm đến lớp đất cứng gọi là loại cọc gì?
+*A. Cọc chống
+B. Cọc ma sát
+C. Cọc tre
+D. Cọc bê tông
+
+Câu 80: Chiều cao nền nhà dân dụng so với mặt đất thường nằm trong khoảng nào?
+A. 10 - 20cm
+B. 50 - 100cm
+*C. 20 - 120cm
+D. 200 - 300cm
+
+Câu 81: Khi nào nên làm nền nhà rỗng thay vì nền nhà đặc?
+A. Khi nền chịu tải trọng lớn
+B. Khi công trình ở vùng khô ráo
+*C. Khi có yêu cầu chống ẩm cao hoặc mặt nền cao hơn mặt đất nhiều (≥60cm)
+D. Khi công trình có nhiều tầng
+
+Câu 82: Cấu tạo nền nhà công nghiệp thường có lớp nào sau đây?
+A. Lớp cách âm bằng xỉ
+*B. Lớp mặt, lớp đệm, lớp trung gian
+C. Lớp ván sàn và dầm gỗ
+D. Lớp vôi rơm
+
+Câu 83: Yêu cầu nào sau đây KHÔNG phải của nền nhà công nghiệp?
+A. Đủ cường độ chịu lực
+B. Ít bị mài mòn
+*C. Có tính dẫn điện tốt
+D. Chịu được tác dụng hóa học
+
+Câu 84: Móng là bộ phận như thế nào?
+*A. Là bộ phận nằm ngầm dưới mặt đất, truyền tải trọng công trình xuống đất nền
+B. Là lớp đất nằm dưới móng
+C. Là lớp bê tông lót
+D. Là bộ phận tường trên mặt đất
+
+Câu 85: Giá thành móng thường chiếm bao nhiêu phần trăm giá trị căn nhà?
+A. 5 - 10%
+B. 30 - 50%
+*C. Khoảng 20%
+D. Trên 50%
+
+Câu 86: Móng chịu tải đúng tâm là móng có đặc điểm gì?
+A. Hợp lực lệch khỏi trọng tâm đáy móng
+*B. Hướng truyền lực trùng với trọng tâm của đáy móng
+C. Móng bị lún lệch
+D. Móng có hình dạng phức tạp
+
+Câu 87: Móng đơn (móng độc lập) thường được sử dụng cho loại kết cấu nào?
+A. Nhà có tường chịu lực
+*B. Nhà có kết cấu khung chịu lực
+C. Nhà có tường ngang chịu lực
+D. Nhà không có cột
+
+Câu 88: Móng băng là loại móng có đặc điểm gì?
+*A. Chạy dài dọc dưới chân tường hoặc các cột, truyền tải trọng đều xuống nền
+B. Liên kết các móng thành một mảng
+C. Được đóng sâu xuống đất bằng cọc
+D. Có hình vuông dưới chân cột
+
+Câu 89: Khi sức chịu tải của đất quá yếu và các móng gần sát nhau, người ta dùng loại móng gì?
+A. Móng đơn
+B. Móng băng
+*C. Móng bè
+D. Móng cọc
+
+Câu 90: Móng cọc chống được sử dụng trong trường hợp nào?
+*A. Dưới lớp đất yếu có lớp đất rắn, cọc tựa lên đó
+B. Lớp đất rắn ở quá sâu
+C. Khi cần giảm giá thành
+D. Khi móng chịu tải trọng ngang lớn
+
+Câu 91: Móng nông là móng có chiều sâu chôn móng như thế nào?
+A. Lớn hơn 5m
+*B. Nhỏ hơn 5m
+C. Nằm dưới mực nước ngầm
+D. Được đóng bằng cọc
+
+Câu 92: Chiều sâu chôn móng trong đất được tính từ đâu?
+*A. Từ đáy móng đến mặt đất tự nhiên
+B. Từ mặt móng đến mặt đất
+C. Từ đỉnh cột đến mặt móng
+D. Từ tầng hầm đến đáy móng
+
+Câu 93: Móng gạch được sử dụng hợp lý khi chiều rộng đế móng như thế nào?
+A. Lớn hơn 1500mm
+B. Lớn hơn 2000mm
+*C. Nhỏ hơn 1500mm
+D. Nhỏ hơn 1000mm
+
+Câu 94: Góc cứng của móng bê tông có thể đạt giá trị bao nhiêu?
+A. 30°
+*B. 45°
+C. 60°
+D. 90°
+
+Câu 95: Khe lún được thiết kế trong công trình để làm gì?
+A. Chống lại hiện tượng giãn nở vì nhiệt
+*B. Chống lại khả năng nứt, gãy do lún không đều
+C. Tạo sự thông thoáng cho công trình
+D. Phân chia các giai đoạn thi công
+
+Câu 96: Khe nhiệt độ (khe co giãn) có đặc điểm gì về móng?
+A. Móng được tách rời thành hai phần
+*B. Móng được làm chung không tách rời
+C. Móng được đổ sau cùng
+D. Móng có cấu tạo đặc biệt chống nóng
+
+Câu 97: Khi nào cần làm móng giật cấp?
+A. Khi nhà có tầng hầm
+*B. Khi xây nhà trên sườn dốc
+C. Khi đất nền yếu
+D. Khi nhà có khe lún
+
+Câu 98: Biện pháp chống ẩm cho tường móng thường làm bằng cách nào?
+A. Trát vữa xi măng dày 5cm
+*B. Láng một lớp vữa xi măng mác 75 dày 20mm tại cổ móng
+C. Quét bitum lên toàn bộ tường móng
+D. Ốp gạch men chống thấm
+
+Câu 99: Khi mực nước ngầm cao hơn nền tầng hầm, cần làm gì để chống thấm?
+A. Chỉ cần trát vữa chống thấm bên trong
+*B. Hạ thấp mực nước ngầm, đắp đất sét bên ngoài và láng vữa trong
+C. Đổ bê tông dày hơn
+D. Không cần xử lý đặc biệt
+
+Câu 100: Móng bê tông cốt thép có ưu điểm gì so với móng cứng?
+A. Giá thành rẻ hơn
+B. Thi công đơn giản hơn
+*C. Chịu được lực uốn tốt, cường độ cao
+D. Không cần đệm móng
+
+Chương 5: CẤU TẠO NHÀ VÀ CÔNG TRÌNH (Phần Tường)
+Câu 101: Chức năng của tường trong công trình là gì?
+A. Chỉ để trang trí
+*B. Bao che, ngăn cách và chịu lực
+C. Chỉ để chống mưa nắng
+D. Chỉ để làm khung nhà
+
+Câu 102: Theo vị trí, tường được phân thành những loại nào?
+A. Tường chịu lực và tường không chịu lực
+*B. Tường trong nhà và tường ngoài nhà
+C. Tường gạch và tường bê tông
+D. Tường xây và tường lắp ghép
+
+Câu 103: Kích thước viên gạch tiêu chuẩn của Việt Nam là bao nhiêu?
+A. 220 x 110 x 60 mm
+B. 200 x 100 x 50 mm
+*C. 220 x 105 x 55 mm
+D. 250 x 120 x 60 mm
+
+Câu 104: Tường 1/4 gạch có chiều dày là bao nhiêu?
+A. 110mm
+*B. 60mm
+C. 220mm
+D. 335mm
+
+Câu 105: Tường 1 gạch có chiều dày là bao nhiêu?
+A. 110mm
+B. 335mm
+*C. 220mm
+D. 450mm
+
+Câu 106: Bệ tường thường được làm nhỏ hơn hay dày hơn thân tường khi làm bằng gạch thông thường?
+A. Nhỏ hơn
+*B. Dày hơn
+C. Bằng nhau
+D. Không có quy định
+
+Câu 107: Giằng tường thường được làm bằng vật liệu gì?
+A. Gạch
+B. Đá
+*C. Bê tông cốt thép (BTCT)
+D. Gỗ
+
+Câu 108: Lanh tô có tác dụng gì?
+A. Trang trí cho cửa sổ
+*B. Đỡ phần tường bên trên lỗ cửa, tránh biến dạng
+C. Cách nhiệt cho tường
+D. Chống thấm cho tường
+
+Câu 109: Lanh tô gạch cuốn vòm thường áp dụng cho chiều rộng lỗ cửa bao nhiêu?
+A. Nhỏ hơn 1200mm
+B. Lớn hơn 2000mm
+*C. 1500 - 1800mm
+D. 1800 - 2500mm
+
+Câu 110: Mái hắt (ô-văng) có tác dụng gì?
+A. Làm lanh tô đỡ tường
+B. Trang trí cho mặt đứng
+*C. Che mưa, nắng hắt vào cửa và đỡ phần tường bên trên
+D. Thoát nước mưa cho mái
+
+Câu 111: Để chống nước mưa thấm từ đỉnh vào tường, người ta làm gì?
+A. Xây tường cao hơn mái
+B. Lợp ngói lên đỉnh tường
+*C. Làm diềm bảo vệ bằng gạch láng vữa hoặc BTCT
+D. Sơn chống thấm
+
+Câu 112: Mặt tường không trát (xây trần) có yêu cầu gì?
+*A. Gạch tốt, vuông vắn, mạch vữa phẳng đều
+B. Trát thêm một lớp vữa ngoài
+C. Phải dùng gạch mộc
+D. Không cần yêu cầu đặc biệt
+
+Câu 113: Khi trát tường chống thấm, thường trát làm bao nhiêu lớp?
+A. 1 lớp
+B. 2 lớp
+C. 3 lớp
+*D. 2 lớp (lớp lót và lớp hoàn thiện)
+
+Câu 114: Tường blốc có kích thước và trọng lượng như thế nào?
+A. Kích thước lớn, trọng lượng > 5 tấn
+*B. Kích thước nhỏ, trọng lượng < 3 tấn
+C. Kích thước bằng panen, trọng lượng 5 tấn
+D. Không có quy định cụ thể
+
+Câu 115: Tường panen là loại tường lắp ghép có đặc điểm gì?
+A. Dày hơn 16cm
+B. Trọng lượng nhỏ hơn 3 tấn
+*C. Kích thước lớn, thường bằng chiều rộng một gian
+D. Làm bằng gạch đặc
+
+Câu 116: Panen tường ngoài không chịu lực thường được gọi là gì?
+A. Panen tự mang
+*B. Panen treo
+C. Panen chịu lực
+D. Panen cách nhiệt
+
+Câu 117: Để liên kết các tấm panen tường với nhau và với sàn, người ta thường dùng cách nào?
+A. Dùng vữa dán
+B. Dùng đinh vít
+*C. Dùng liên kết hàn (mối nối khô) hoặc lắp ghép toàn khối
+D. Dùng keo dán chuyên dụng
+
+Câu 118: Mạch vữa đứng giữa các panen tường thường chừa khoảng bao nhiêu?
+A. 10mm
+B. 20mm
+*C. 30mm
+D. 50mm
+
+Câu 119: Ưu điểm nổi bật của tường lắp ghép là gì?
+A. Tính ổn định và độ cứng cao
+*B. Đẩy nhanh tốc độ thi công, chất lượng cấu kiện cao
+C. Giá thành cực rẻ
+D. Dễ dàng thay đổi mặt bằng
+
+Câu 120: Loại tường nào trong nhà công nghiệp có thể xây bằng gạch rỗng để giảm trọng lượng?
+A. Tường chịu lực
+*B. Tường tự mang
+C. Tường treo
+D. Tường hồi
+
+Chương 5: CẤU TẠO NHÀ VÀ CÔNG TRÌNH (Phần Sàn, Cầu thang, Mái)
+Câu 121: Sàn nhà là bộ phận có chức năng gì?
+A. Bao che ngôi nhà từ trên xuống
+*B. Phân không gian nhà thành các tầng, tăng diện tích sử dụng
+C. Là bộ phận chịu lực đứng
+D. Là bộ phận ngăn cách giữa các phòng
+
+Câu 122: Yêu cầu cơ bản nào KHÔNG phải của sàn nhà?
+A. Đảm bảo cường độ
+B. Cách âm và cách nhiệt
+C. Chống cháy
+*D. Không cần tính thẩm mỹ
+
+Câu 123: Sàn bản là loại sàn chịu lực theo mấy phương?
+A. Một phương
+B. Hai phương
+C. Cả một và hai phương
+*D. Tùy thuộc vào tỷ lệ chiều dài và chiều rộng của bản
+
+Câu 124: Sàn sườn có đặc điểm gì?
+A. Không có dầm
+*B. Có hệ thống dầm làm sườn chịu lực và bản sàn
+C. Là một bản đặc liền khối
+D. Chỉ làm bằng gỗ
+
+Câu 125: Sàn không dầm (sàn nấm) là loại sàn như thế nào?
+A. Có dầm chính và dầm phụ
+*B. Các tấm phẳng đặt trực tiếp lên cột
+C. Có bản sàn kê lên tường chịu lực
+D. Là sàn lắp ghép bằng panen
+
+Câu 126: Loại sàn nào thường được sử dụng phổ biến nhất hiện nay?
+A. Sàn gỗ
+*B. Sàn bê tông cốt thép
+C. Sàn dầm thép
+D. Sàn gạch đá
+
+Câu 127: Sàn bê tông cốt thép toàn khối có ưu điểm gì?
+*A. Độ cứng lớn, liên kết tốt
+B. Thi công nhanh
+C. Ít tốn ván khuôn
+D. Sửa chữa dễ dàng
+
+Câu 128: Sàn bê tông cốt thép lắp ghép có nhược điểm gì?
+A. Thi công chậm
+B. Chất lượng kém
+*C. Độ cứng không bằng sàn toàn khối, cần gia cố mối nối
+D. Giá thành cao hơn toàn khối
+
+Câu 129: Chiều dày của sàn bản kê hai cạnh thường là bao nhiêu?
+A. 80 - 120mm
+B. 50 - 60mm
+*C. 60 - 100mm
+D. 150 - 200mm
+
+Câu 130: Dầm chính trong sàn bản dầm thường có chiều cao khoảng bao nhiêu lần chiều dài nhịp?
+A. 1/12 - 1/20
+*B. 1/8 - 1/15
+C. 1/2 - 1/3
+D. 1/30 - 1/35
+
+Câu 131: Sàn ô cờ (két sông) có ưu điểm gì về mặt kiến trúc?
+A. Giá thành rẻ
+B. Thi công đơn giản
+*C. Mặt trần có hệ dầm đều đẹp, dễ trang trí
+D. Chịu được tải trọng cực lớn
+
+Câu 132: Sàn nấm thường được áp dụng cho công trình nào?
+A. Nhà ở gia đình
+*B. Siêu thị, chợ, xưởng có mặt bằng lớn
+C. Nhà thấp tầng
+D. Các phòng nhỏ hẹp
+
+Câu 133: Mặt sàn láng vữa xi măng có nhược điểm gì?
+A. Giá thành cao
+B. Dễ chống thấm
+*C. Không đẹp, dễ rạn nứt, sinh bụi
+D. Thi công phức tạp
+
+Câu 134: Mặt sàn trát granitô có ưu điểm gì?
+A. Dễ thi công, giá rẻ
+*B. Bền, đẹp, sạch, chống thấm tốt
+C. Đàn hồi tốt
+D. Cách nhiệt cao
+
+Câu 135: Mặt sàn lát gạch men thường được dùng ở đâu?
+A. Phòng khách
+B. Phòng ngủ
+*C. Khu vệ sinh, nhà bếp
+D. Phòng thờ
+
+Câu 136: Để chống thấm cho sàn khu vệ sinh, cần làm gì?
+A. Dùng sàn gỗ
+B. Đổ bê tông dày hơn
+*C. Lớp mặt sàn bằng gạch men, xử lý chống thấm các vị trí tiếp giáp
+D. Không cần xử lý đặc biệt
+
+Câu 137: Cầu thang là phương tiện giao thông theo hướng nào?
+A. Ngang
+*B. Đứng
+C. Chéo
+D. Cong
+
+Câu 138: Độ dốc thích hợp nhất cho cầu thang trong nhà ở là bao nhiêu?
+A. ≤ 25°
+B. ≤ 30°
+*C. ≤ 40°
+D. ≤ 45°
+
+Câu 139: Chiều cao bậc thang thích hợp nhất thường nằm trong khoảng nào?
+A. 100 - 120mm
+*B. 150 - 180mm
+C. 200 - 220mm
+D. 250 - 300mm
+
+Câu 140: Chiều rộng của chiếu nghỉ cầu thang cần đảm bảo yêu cầu gì?
+A. Nhỏ hơn chiều rộng thân thang
+*B. Lớn hơn hoặc bằng chiều rộng thân thang
+C. Bằng một nửa chiều rộng thân thang
+D. Không cần quy định
+
+Câu 141: Số bậc tối đa trong một vế thang không được vượt quá bao nhiêu?
+A. 12 bậc
+B. 15 bậc
+*C. 18 bậc
+D. 20 bậc
+
+Câu 142: Tay vịn cầu thang cho người lớn thường có chiều cao bao nhiêu?
+A. 0.5 - 0.6m
+B. 1.0 - 1.2m
+*C. 0.8 - 1.0m
+D. 0.3 - 0.4m
+
+Câu 143: Mái nhà là bộ phận như thế nào?
+A. Nền của tầng trên cùng
+*B. Bao che và chịu lực ở trên cùng của ngôi nhà
+C. Phần trang trí trên đỉnh nhà
+D. Bộ phận thoát nước
+
+Câu 144: Yêu cầu quan trọng nhất của kết cấu bao che mái là gì?
+A. Chịu lực tốt
+*B. Chống thấm, dột
+C. Cách âm
+D. Thẩm mỹ
+
+Câu 145: Độ dốc mái bằng thường được chọn trong khoảng bao nhiêu?
+A. 10% - 15%
+B. 5% - 10%
+*C. 1% - 7%
+D. 0%
+
+Câu 146: Độ dốc mái lợp ngói thường là bao nhiêu?
+A. 10° - 15°
+*B. 30° - 35°
+C. 45° - 50°
+D. 20° - 25°
+
+Câu 147: Vì kèo là kết cấu gì?
+A. Bộ phận đỡ tấm lợp
+*B. Kết cấu mang lực chính của mái dốc
+C. Bộ phận trang trí mái
+D. Lớp cách nhiệt cho mái
+
+Câu 148: Trong kết cấu mái dốc, xà gồ có tác dụng gì?
+A. Làm lớp chống thấm
+B. Liên kết các vì kèo với nhau
+*C. Đỡ cầu phong và tấm lợp
+D. Trang trí cho mái
+
+Câu 149: Mái bằng có ưu điểm gì so với mái dốc?
+A. Thoát nước nhanh hơn
+B. Cách nhiệt tốt hơn
+*C. Chịu áp lực gió bão ít, kết cấu bền chắc
+D. Giá thành rẻ hơn
+
+Câu 150: Lớp tạo dốc trong mái bằng có tác dụng gì?
+A. Chống thấm
+*B. Tạo độ dốc cần thiết cho mái và làm phẳng mặt
+C. Cách nhiệt
+D. Bảo vệ các lớp khác

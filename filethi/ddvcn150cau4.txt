@@ -1,0 +1,545 @@
+Câu 310: Trong nhà công nghiệp, nền bằng vữa và bê tông chịu axít có lớp đệm được phủ bằng gì?
+A. Xi măng
+*B. Bitum
+C. Sơn chống thấm
+D. Cát
+
+Câu 311: Nền bằng đá hộc có ưu điểm gì?
+A. Bằng phẳng, sạch sẽ
+*B. Chịu lực lớn, chịu va chạm, chi phí thấp
+C. Đàn hồi tốt
+D. Cách âm tốt
+
+Câu 312: Lớp trung gian trong cấu tạo nền công nghiệp có chức năng gì?
+A. Chịu lực trực tiếp
+*B. Làm phẳng lớp đệm và liên kết các lớp khác
+C. Chống thấm
+D. Trang trí
+
+Câu 313: Để chống mao dẫn nước ngầm trong nền công nghiệp, lớp đệm cần được làm như thế nào?
+A. Bằng đất sét chặt
+*B. Bằng vật liệu to (cát, sỏi) để tạo độ rỗng
+C. Bằng bê tông đặc chắc
+D. Bằng bitum
+
+Câu 314: Nền cấp phối thường được sử dụng ở những nơi nào?
+A. Phòng thí nghiệm
+*B. Nơi xe cộ qua lại, nhà kho
+C. Phòng sạch
+D. Khu văn phòng
+
+Câu 315: Nền bằng các tấm kim loại thường được sử dụng cho phân xưởng nào?
+A. Dệt may
+*B. Luyện kim, nơi có tải trọng lớn tác động
+C. Thực phẩm
+D. Điện tử
+
+Câu 316: Nền bằng vật liệu từ nhựa tổng hợp có ưu điểm gì?
+A. Chịu lực tốt
+*B. Đáp ứng yêu cầu vệ sinh, cách âm và chống thấm nước
+C. Giá thành rẻ
+D. Chịu nhiệt cao
+
+Câu 317: Trong các phòng thường xuyên ẩm ướt, nền cần thiết kế như thế nào?
+A. Bằng phẳng
+*B. Có độ dốc về phía thoát nước (0.5% - 8%)
+C. Láng vữa xi măng trơn
+D. Lát gạch men trơn
+
+Câu 318: Khe phân chia nền giữa các loại nền khác nhau cần có biện pháp gì?
+*A. Xử lý thích hợp để bảo vệ các mép nền
+B. Không cần xử lý
+C. Đổ bê tông lấp kín
+D. Đặt một tấm kim loại che phủ
+
+Câu 319: Trong nền nhà công nghiệp, mương rãnh được bố trí để làm gì?
+A. Thoát nước mưa mái
+*B. Đặt các loại đường dây, đường ống kỹ thuật
+C. Làm hố thu nước
+D. Trang trí sân
+
+Câu 320: Cấu tạo khe co dãn nhiệt trong nền nhà công nghiệp thường được chèn bằng vật liệu gì?
+A. Vữa xi măng
+B. Đất sét
+*C. Bitum
+D. Cát
+
+Câu 321: Trong nhà công nghiệp, khi chiều cao nhà dưới 30m và có cửa mái chồng diêm, thang chữa cháy được đặt như thế nào?
+A. Nghiêng một góc 45°
+*B. Thẳng đứng, rộng 0.6m, có lan can kiểu lồng
+C. Nghiêng một góc 60°
+D. Không cần thang chữa cháy
+
+Câu 322: Khoảng cách tối đa giữa cầu thang chữa cháy theo chu vi cửa mái của nhà công nghiệp là bao nhiêu?
+A. 150m
+B. 100m
+*C. 80m
+D. 50m
+
+Câu 323: Cầu thang an toàn (thoát người khi sự cố) nên được bố trí ở đâu để đạt hiệu quả nhất?
+A. Bên trong nhà, gần khu sản xuất chính
+*B. Bên ngoài nhà
+C. Trên mái nhà
+D. Ở tầng hầm
+
+Câu 324: Tường ngăn lửng thường được làm bằng vật liệu gì?
+A. Chỉ bằng gạch đặc
+*B. Gỗ, kim loại, gạch, BTCT, kín hoặc không hoàn toàn
+C. Chỉ bằng kính
+D. Chỉ bằng tôn
+
+Câu 325: Tường ngăn kín thường được sử dụng để xây dựng các phòng như thế nào?
+A. Có yêu cầu lấy sáng và thông gió tự nhiên
+*B. Có yêu cầu cách ly cao về ồn, độc hại, khí hậu
+C. Không có yêu cầu đặc biệt
+D. Dùng để làm nhà kho thông thường
+
+Câu 326: Tầng kỹ thuật hoàn chỉnh giữa các tầng trong nhà công nghiệp có thể được sử dụng để làm gì?
+A. Làm nhà ở cho công nhân
+*B. Bố trí hệ thống kỹ thuật, kho tàng, phòng phụ
+C. Làm nhà để xe
+D. Làm khu vui chơi
+
+Câu 327: Không gian giữa các giàn mái hoặc dàn đỡ sàn có thể được tận dụng để làm gì?
+A. Sân thượng
+*B. Tầng kỹ thuật
+C. Nhà kho nặng
+D. Xưởng sản xuất
+
+Câu 328: Trần treo trong nhà công nghiệp, ngoài việc che giấu hệ thống kỹ thuật, còn có chức năng gì?
+*A. Tổ hợp nội thất và trang trí
+B. Chịu tải trọng mái
+C. Cách âm và cách nhiệt cho mái
+D. Chống thấm
+
+Câu 329: Sàn thao tác trong nhà công nghiệp được sử dụng để làm gì?
+A. Đặt máy móc sản xuất
+*B. Đi lại, sửa chữa, kiểm tra thiết bị
+C. Làm kho chứa nguyên vật liệu
+D. Làm văn phòng
+
+Câu 330: Kết cấu đỡ sàn công tác trong nhà sản xuất có bậc chịu lửa I và II phải tuân thủ yêu cầu gì?
+A. Làm bằng vật liệu khó cháy
+*B. Làm bằng vật liệu không cháy
+C. Làm bằng vật liệu cháy được
+D. Không có quy định
+
+Câu 331: Móng của thiết bị, máy móc có tải trọng lớn thường được làm bằng vật liệu gì?
+A. Gạch
+B. Đá hộc
+*C. Bê tông cốt thép toàn khối
+D. Thép hình
+
+Câu 332: Việc bố trí hệ thống ống sưởi ấm trong nền nhà công nghiệp nhằm mục đích gì?
+A. Làm mát không khí
+*B. Đáp ứng yêu cầu đặc biệt về vi khí hậu cho một số quy trình sản xuất
+C. Tiết kiệm năng lượng
+D. Trang trí
+
+Câu 333: Sàn kép tạo không gian kỹ thuật dưới sàn rất phù hợp cho công trình nào?
+A. Nhà xưởng cơ khí nặng
+*B. Công trình sử dụng công nghệ cao, cần hệ thống cáp thông tin rộng khắp
+C. Kho lạnh
+D. Xưởng dệt
+
+Câu 334: Trong nhà công nghiệp, các mương rãnh kín trên nền thường được đậy bằng gì?
+A. Gạch
+B. Bê tông đặc
+*C. Tấm đan hoặc tấm thép dễ tháo lắp
+D. Cát đầm chặt
+
+Câu 335: Lớp cách nước trong nền nhà công nghiệp có tác dụng gì?
+A. Tăng cường độ
+B. Cách âm
+*C. Ngăn nước từ trên thấm xuống và nước ngầm thấm lên
+D. Trang trí
+
+Câu 336: Để đảm bảo mỹ quan và vệ sinh, nền nhà công nghiệp cần có yêu cầu gì?
+A. Có màu sắc sặc sỡ
+B. Thô nhám
+*C. Dễ làm vệ sinh, không trơn trượt, màu sắc phù hợp
+D. Bằng phẳng tuyệt đối
+
+Câu 337: Trong nhà công nghiệp, kết cấu chịu lực dạng khung cứng bằng thép có thể vượt nhịp lên đến bao nhiêu?
+A. 60m
+B. 80m
+*C. 100m
+D. 150m
+
+Câu 338: Nhược điểm chính của mái bằng BTCT trong nhà công nghiệp là gì?
+A. Không chịu lửa
+B. Thi công nhanh
+*C. Nặng nề, thi công kéo dài, khó sửa chữa
+D. Cách nhiệt kém
+
+Câu 339: Đối với nhà có cửa mái suốt cả đoạn nhiệt độ, cần bố trí hệ giằng gì?
+*A. Hệ giằng mặt phẳng cánh trên
+B. Hệ giằng mặt phẳng cánh dưới
+C. Hệ giằng đứng
+D. Hệ giằng cột
+
+Câu 340: Khi nhịp nhà ≥ 24m, cần thêm hệ giằng đứng gì trong hệ giàn mái?
+A. Hệ giằng liên tục ở đầu dầm
+*B. Hệ giằng đứng giữa các giàn (liên tục hoặc bán liên tục)
+C. Hệ giằng ngang
+D. Hệ giằng cột
+
+Câu 341: Trong kết cấu khung cứng, tại các mắt cứng cột - dầm xuất hiện điều gì?
+A. Lực cắt lớn
+B. Lực kéo lớn
+*C. Mô men uốn rất lớn
+D. Không có nội lực đặc biệt
+
+Câu 342: Để tránh biến dạng tại mắt cứng trong khung cứng BTCT, cần làm gì?
+A. Giảm tiết diện đầu cột
+*B. Tăng cường tiết diện và cốt thép tại đầu cột và mút dầm
+C. Tăng chiều cao cột
+D. Dùng cốt thép nhỏ hơn
+
+Câu 343: Trong khung cứng BTCT, nếu liên kết cột với móng là liên kết cứng, tại chân cột xuất hiện gì?
+A. Không có mô men
+*B. Mô men uốn, cốt thép phải kéo thẳng vào móng
+C. Lực cắt lớn
+D. Lực nén lệch tâm
+
+Câu 344: Khi nào nên sử dụng vòm thép trong nhà công nghiệp?
+A. Nhịp nhỏ dưới 30m
+*B. Nhịp từ 50m (vòm ba khớp) đến 200m (vòm hai hoặc không khớp)
+C. Công trình tạm
+D. Khi cần giảm chi phí
+
+Câu 345: Trong vòm thép, chiều cao tiết diện đặc thường bằng bao nhiêu lần nhịp vòm?
+A. 1/10 - 1/20
+*B. 1/50 - 1/80
+C. 1/30 - 1/60
+D. 1/100 - 1/200
+
+Câu 346: Vòm ba khớp ít được sử dụng trong xây dựng công nghiệp vì lý do gì?
+A. Kết cấu đơn giản
+*B. Cấu tạo khớp phức tạp
+C. Không chịu được tải trọng lớn
+D. Nhịp bị hạn chế
+
+Câu 347: Khi sử dụng vòm BTCT, vận chuyển nâng thường sử dụng loại cầu trục nào?
+A. Cầu trục dầm
+*B. Cầu trục cổng hoặc cầu trục treo tải nhẹ (đến 5T)
+C. Cầu trục hai dầm
+D. Cầu trục treo tải nặng
+
+Câu 348: Chiều cao hợp lý của vòm không khớp (f) khi có dây căng là bao nhiêu?
+A. 1/2 - 1/4 nhịp
+B. 1/5 - 1/8 nhịp
+*C. 1/7 - 1/10 nhịp
+D. 1/3 - 1/6 nhịp
+
+Câu 349: Kết cấu vòm làm việc chủ yếu dưới dạng chịu lực gì?
+A. Kéo
+*B. Nén
+C. Uốn
+D. Cắt
+
+Câu 350: Đặc điểm của kết cấu khung cứng là gì?
+*A. Dầm (giàn) ngang liên kết cứng với cột, tạo độ cứng lớn
+B. Dầm (giàn) ngang liên kết khớp với cột
+C. Chỉ có cột không có dầm
+D. Chịu kéo là chính
+
+Câu 351: Khi nào nên sử dụng kết cấu đỡ kết cấu mang lực mái (trốn cột) trong nhà công nghiệp một tầng?
+*A. Khi muốn giảm bớt cột giữa nhà để tạo không gian rộng hơn
+B. Khi nhà có nhiều tầng
+C. Khi mái có độ dốc lớn
+D. Khi sử dụng cầu trục treo
+
+Câu 352: Hệ giằng đứng ở cột trong nhà công nghiệp có tác dụng chính là gì?
+A. Chống lại lực gió tác động lên mái
+*B. Chống lại biến dạng dọc nhà do lực hãm của cầu trục và gió
+C. Đỡ tường bao che
+D. Liên kết các dầm cầu chạy
+
+Câu 353: Loại panen tường nào thường được sử dụng cho các không gian sản xuất không có yêu cầu đặc biệt về vi khí hậu?
+A. Panen tường cách nhiệt
+*B. Panen tường không cách nhiệt
+C. Panen tường chịu lực
+D. Panen tường kính
+
+Câu 354: Trong tường panen BTCT, liên kết panen vào cột thường được thực hiện bằng cách nào?
+A. Keo dán
+B. Vữa trát
+*C. Bulông móc, móc neo hoặc hàn
+D. Đinh
+
+Câu 355: Mái bằng với độ dốc thoát nước i = 0% thường được sử dụng để làm gì?
+A. Thoát nước nhanh
+B. Trồng cây xanh
+*C. Chứa nước cách nhiệt (ít dùng ở Việt Nam)
+D. Làm sân thể thao
+
+Câu 356: Trong mái BTCT, khi nào mái được gọi là mái cách nhiệt?
+A. Khi chiều cao tầng đến mái > 6m
+*B. Khi chiều cao tầng đến mái < 6m hoặc có yêu cầu đặc biệt về vi khí hậu
+C. Khi sử dụng mái tôn
+D. Khi có cửa mái
+
+Câu 357: Mái BTCT loại toàn khối có ưu điểm gì nổi bật so với loại lắp ghép?
+A. Thi công nhanh hơn
+B. Công nghiệp hóa cao hơn
+*C. Độ bền cao, tiết kiệm thép
+D. Dễ sửa chữa hơn
+
+Câu 358: Lớp cách nước bằng vữa xi măng - cát hoặc vữa bitum dưới lớp cách nhiệt trong mái BTCT có tác dụng gì?
+A. Tăng cường độ
+*B. Bảo vệ lớp cách nhiệt khỏi bị ẩm, đảm bảo khả năng cách nhiệt
+C. Chịu lực cho mái
+D. Trang trí
+
+Câu 359: Khi sử dụng giấy dầu hoặc màng nhựa polymer để chống thấm mái, ưu điểm là gì?
+A. Thi công phức tạp
+B. Tăng tải trọng mái
+*C. Chống thấm tốt, trọng lượng nhẹ, thi công nhanh
+D. Bền vững với thời gian
+
+Câu 360: Cấu tạo mái tôn cách nhiệt thường bao gồm các lớp nào?
+A. Chỉ có lớp tôn ngoài
+*B. Tôn ngoài, lớp cách nhiệt ở giữa và có thể có tôn trong hoặc lớp phủ hoàn thiện
+C. Lớp BTCT và tôn
+D. Chỉ có lớp cách nhiệt
+
+Câu 361: Khi hệ thống thoát nước mái đặt giữa nhà (thu nước giữa nhịp), nước mưa sẽ chảy vào đâu?
+A. Máng nước ở biên nhà
+*B. Sê nô hoặc máng thu đặt tại vị trí thấp nhất giữa các nhịp
+C. Ống xuống đặt ngoài nhà
+D. Thoát tự do
+
+Câu 362: Chi tiết cấu tạo tại khe lún của mái nhà công nghiệp cần đảm bảo yêu cầu gì?
+A. Không cần xử lý đặc biệt
+*B. Không làm ảnh hưởng đến khả năng chịu lực và chống thấm của hai khối nhà
+C. Phải đổ bê tông liền mạch
+D. Phải có một rãnh nước riêng
+
+Câu 363: Cửa mái hình răng cưa có cánh thẳng đứng nên được bố trí theo hướng nào để đạt hiệu quả chiếu sáng cao nhất ở Việt Nam?
+A. Hướng Bắc - Nam
+*B. Hướng Đông - Tây ± 15°
+C. Hướng Tây Bắc - Đông Nam
+D. Hướng Đông Bắc - Tây Nam
+
+Câu 364: Chiều rộng khung cửa mái chồng diêm thẳng đứng (Lcm) nên lấy bằng bao nhiêu so với nhịp nhà?
+A. 0.2 - 0.3 nhịp
+*B. 0.3 - 0.6 nhịp
+C. 0.6 - 0.8 nhịp
+D. 0.8 - 1.0 nhịp
+
+Câu 365: Để cửa mái thông gió tạo hiệu ứng hút gió (áp lực âm), chiều cao tấm chắn gió (ht) thường lấy như thế nào so với chiều cao cửa mái (hc)?
+*A. ht ≈ hc
+B. ht = 0.5 hc
+C. ht = 2 hc
+D. Không có quy định
+
+Câu 366: Khi sử dụng cửa mái chiếu sáng đỉnh đầu, vấn đề cần được quan tâm là gì?
+A. Chống dột
+B. Thông gió
+*C. Chống chói
+D. Cách nhiệt
+
+Câu 367: Cấu tạo cửa mái chiếu sáng bằng các panen kính thường được gọi là dạng gì?
+A. Cửa mái chồng diêm
+*B. Chiếu sáng đỉnh đầu kiểu phẳng hoặc lồi
+C. Cửa mái răng cưa
+D. Cửa mái hỗn hợp
+
+Câu 368: Máy móc, thiết bị sản xuất có trọng lượng nhẹ thường được đặt ở vị trí nào trong nhà công nghiệp?
+A. Móng máy riêng
+*B. Trực tiếp lên nền hoặc sàn
+C. Dầm cầu trục
+D. Sàn thao tác
+
+Câu 369: Trong nhà công nghiệp, móng máy khung có đặc điểm gì?
+A. Là móng toàn khối đặt sâu
+B. Là móng băng dưới tường
+*C. Phần trên của móng có thể làm bằng thép
+D. Chỉ dùng cho máy nhẹ
+
+Câu 370: Mái màng mỏng là một vật liệu xây dựng có đặc điểm gì?
+A. Cứng và nặng
+*B. Linh hoạt, có thể tạo hình phức tạp
+C. Không có khả năng truyền ánh sáng
+D. Dễ bị thấm nước
+
+Câu 371: Trong các nhà công nghiệp có hạng sản xuất A, B, F, thiết kế kết cấu bao che cần đảm bảo yêu cầu gì về khả năng bung?
+A. Không cần đảm bảo
+*B. Có khả năng bung khi có sự cố nổ
+C. Phải thật kín
+D. Phải chịu được áp lực lớn
+
+Câu 372: Khi thiết kế cửa sổ cho nhà công nghiệp, chiều cao thường lấy theo bội số của bao nhiêu?
+A. 0.3m
+B. 1.0m
+*C. 0.6m
+D. 0.2m
+
+Câu 373: Đối với cửa sổ kính hai lớp trong nhà công nghiệp, khoảng không giữa hai lớp kính thường có tác dụng gì?
+A. Cách nhiệt
+*B. Thông thoáng
+C. Chống trộm
+D. Cách âm
+
+Câu 374: Ống thoát nước mái (ống xuống) thường được liên kết vào tường bằng cách nào?
+*A. Bằng thép chôn sâu vào tường, cách nhau khoảng 1m
+B. Bằng keo dán
+C. Bằng đinh
+D. Để tự do
+
+Câu 375: Để tính diện tích lấy sáng cho phòng, người ta thường sử dụng chỉ tiêu nào?
+A. Diện tích tường
+*B. Hệ số chiếu sáng (tỷ lệ diện tích cửa/diện tích nền)
+C. Số lượng cửa sổ
+D. Chiều cao cửa sổ
+
+Câu 376: Trong nhà công nghiệp, vì kèo thép thường được làm từ vật liệu gì?
+A. Gỗ
+B. BTCT
+*C. Thép góc (liên kết hàn hoặc bulông)
+D. Nhựa
+
+Câu 377: Khi tường gạch trong nhà công nghiệp quá cao, để tăng ổn định cần bố trí gì?
+A. Trụ bê tông cốt thép
+*B. Bổ trụ và giằng BTCT
+C. Tăng chiều dày tường
+D. Không cần biện pháp đặc biệt
+
+Câu 378: Móng nhà công nghiệp cần được đảm bảo yêu cầu gì?
+A. Kiên cố, bền chắc
+B. Ổn định
+C. Phù hợp với sơ đồ chịu lực và tiết kiệm
+*D. Tất cả các yêu cầu trên
+
+Câu 379: Trong nhà công nghiệp, cột BTCT và cột thép được phân loại theo vật liệu. Loại nào có ưu điểm nhẹ, chịu lực cao?
+A. Cột BTCT
+*B. Cột thép
+C. Cột gỗ
+D. Cột đá
+
+Câu 380: Đối với nhà công nghiệp một tầng không có cầu trục, loại cột BTCT nào thường được sử dụng?
+A. Cột hai thân
+*B. Cột đặc tiết diện vuông, chữ nhật
+C. Cột thép rỗng
+D. Cột BTCT ứng lực trước
+
+Câu 381: Khi thiết kế cầu thang chính trong nhà công nghiệp, chiều cao lan can tối thiểu được quy định là bao nhiêu?
+A. 0.6m
+B. 1.0m
+*C. 0.8m
+D. 1.2m
+
+Câu 382: Trong nhà công nghiệp, để tăng cường độ chiếu sáng và thông gió cho các xưởng rộng, giải pháp kiến trúc thường sử dụng là gì?
+A. Tăng chiều cao tường
+B. Sử dụng hệ thống đèn nhân tạo
+*C. Sử dụng cửa mái
+D. Mở rộng cửa sổ
+
+Câu 383: Kết cấu bao che nhà công nghiệp thường chịu tác động nào từ điều kiện khí hậu?
+A. Mưa, gió
+B. Nhiệt độ
+C. Bức xạ mặt trời
+*D. Tất cả các yếu tố trên
+
+Câu 384: Lớp phủ mặt nền bằng bê tông xi măng cần có yêu cầu gì về độ trơn?
+A. Thật nhẵn
+B. Thật sần
+*C. Không được trơn trượt
+D. Không yêu cầu
+
+Câu 385: Khi xây dựng nhà công nghiệp trên nền đất yếu, loại móng nào thường được sử dụng để truyền tải trọng xuống lớp đất chịu lực sâu?
+A. Móng băng
+*B. Móng cọc
+C. Móng đơn
+D. Móng bè
+
+Câu 386: Trong nhà công nghiệp, dầm cầu chạy bằng thép thường có tiết diện gì?
+A. Chữ T
+*B. Chữ I
+C. Chữ U
+D. Hình tròn
+
+Câu 387: Yêu cầu về độ bền lâu của móng nhà công nghiệp là gì?
+A. Chỉ cần bền trong quá trình thi công
+*B. Phải bền vững trong suốt thời gian sử dụng công trình
+C. Không cần quan tâm
+D. Chỉ cần bền 10 năm
+
+Câu 388: Khi bố trí khung chống gió trong nhà công nghiệp, cột chống gió thường được liên kết như thế nào với móng?
+*A. Liên kết ngàm
+B. Liên kết khớp
+C. Liên kết tạm
+D. Không liên kết
+
+Câu 389: Trong nhà công nghiệp, cửa đi thường được thiết kế để phục vụ mục đích gì?
+A. Lấy sáng và thông gió
+*B. Đi lại cho công nhân và thoát người khi sự cố
+C. Vận chuyển hàng hóa lớn
+D. Chống trộm
+
+Câu 390: Khi mái nhà công nghiệp lợp bằng panen BTCT, các khe hở giữa các panen được xử lý như thế nào?
+A. Để hở cho thông gió
+B. Đổ vữa xi măng
+*C. Chèn bằng vữa hoặc bê tông và có thể có biện pháp chống thấm
+D. Hàn lại với nhau
+
+Câu 391: Trong nhà công nghiệp, cầu thang chữa cháy thường được làm bằng vật liệu gì để đảm bảo an toàn?
+A. Gỗ
+B. BTCT
+*C. Kim loại
+D. Nhựa
+
+Câu 392: Khi thiết kế nền nhà công nghiệp, để đảm bảo an toàn và vệ sinh, mặt nền cần có đặc điểm gì?
+A. Nhẵn bóng
+B. Sần sùi
+*C. Không trơn, dễ quét dọn
+D. Có màu sắc tối
+
+Câu 393: Giải pháp kết cấu tường chịu lực trong nhà công nghiệp thường phù hợp với quy mô công trình như thế nào?
+A. Quy mô lớn, nhiều tầng
+*B. Quy mô nhỏ, một tầng
+C. Nhịp lớn, cần cầu trục
+D. Công trình cao tầng
+
+Câu 394: Trong nhà công nghiệp, để tăng khả năng chống thấm cho mái BTCT, sau khi đổ bê tông cần thực hiện biện pháp gì?
+A. Dùng máy sấy khô
+B. Đổ thêm một lớp bê tông nữa
+*C. Ngâm nước xi măng
+D. Sơn phủ chống thấm
+
+Câu 395: Sàn công tác trong nhà công nghiệp thường được bố trí ở vị trí nào?
+A. Ngay trên nền nhà
+*B. Trên cao để phục vụ sửa chữa, kiểm tra thiết bị
+C. Ở tầng hầm
+D. Ngoài trời
+
+Câu 396: Việc sử dụng tường panen BTCT trong nhà công nghiệp có tác dụng gì trong công nghiệp hóa xây dựng?
+*A. Đáp ứng yêu cầu công nghiệp hóa cao, rút ngắn thời gian thi công
+B. Làm tăng thời gian thi công
+C. Không ảnh hưởng
+D. Chỉ dùng cho nhà ở
+
+Câu 397: Trong nhà công nghiệp, móng máy thường được thiết kế như thế nào để hạn chế truyền rung động?
+*A. Có cấu tạo đặc biệt, tách khỏi nền sàn
+B. Đặt chung với nền nhà
+C. Treo lên dầm cầu trục
+D. Không cần xử lý
+
+Câu 398: Khi thiết kế cửa sổ trong nhà công nghiệp, yếu tố nào sau đây cần được xem xét?
+A. Yêu cầu chiếu sáng và thông gió của sản xuất
+B. Giải pháp kiến trúc mặt đứng
+C. Khả năng cung ứng của thị trường
+*D. Tất cả các yếu tố trên
+
+Câu 399: Trong nhà công nghiệp, lưới cột được xác định dựa trên các thông số nào?
+A. Bước gian (B) và nhịp nhà (L)
+B. Chiều cao nhà
+C. Loại mái
+*D. Công nghệ sản xuất và yêu cầu không gian
+
+Câu 400: Mục tiêu chính của việc thiết kế cấu tạo kiến trúc nhà công nghiệp là gì?
+A. Làm cho công trình thật đẹp
+*B. Cụ thể hóa giải pháp mặt bằng, hình khối thành các bản vẽ kỹ thuật để thi công
+C. Tiết kiệm chi phí tối đa
+D. Tăng cường độ chịu lực
