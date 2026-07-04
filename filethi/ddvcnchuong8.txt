@@ -521,7 +521,7 @@ C. Không ảnh hưởng
 D. Chỉ dùng cho nhà ở
 
 Câu 397: Trong nhà công nghiệp, móng máy thường được thiết kế như thế nào để hạn chế truyền rung động?
-A. Có cấu tạo đặc biệt, tách khỏi nền sàn
+*A. Có cấu tạo đặc biệt, tách khỏi nền sàn
 B. Đặt chung với nền nhà
 C. Treo lên dầm cầu trục
 D. Không cần xử lý
