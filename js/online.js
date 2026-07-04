@@ -317,3 +317,91 @@ async function showPvPHistory() {
         document.getElementById('pvpHistoryList').innerHTML = `<div style="color:#ef4444; padding:20px;">Lỗi khi tải lịch sử.</div>`;
     }
 }
+
+// ==========================================
+// THÔNG BÁO TỪ ADMIN (GLOBAL CHAT)
+// ==========================================
+let lastGlobalMsgId = null;
+
+function pollGlobalMessages() {
+    if (typeof API_BASE === 'undefined') return;
+    fetch(API_BASE + "?action=getGlobalMessages&t=" + Date.now())
+        .then(r => r.json())
+        .then(messages => {
+            if (messages && messages.length > 0) {
+                const latest = messages[0];
+                if (lastGlobalMsgId !== latest.id) {
+                    if (lastGlobalMsgId !== null) {
+                        // Hiện toast/popup vì có tin nhắn MỚI
+                        showGlobalMessageToast(latest);
+                    }
+                    lastGlobalMsgId = latest.id;
+                    
+                    // Cập nhật thông báo ngang banner nếu có
+                    const marquee = document.querySelector('.marquee-text');
+                    if (marquee) {
+                        marquee.innerHTML = `[${latest.time}] ${latest.author}: ${latest.message}`;
+                    }
+                }
+            }
+        }).catch(e => {});
+}
+
+// Chạy 5s / lần
+setInterval(pollGlobalMessages, 5000);
+// Chạy lần đầu sau 1s
+setTimeout(pollGlobalMessages, 1000);
+
+function showGlobalMessageToast(msg) {
+    let container = document.getElementById('global-toast-container');
+    if (!container) {
+        container = document.createElement('div');
+        container.id = 'global-toast-container';
+        container.style.cssText = 'position: fixed; top: 20px; right: 20px; z-index: 999999; display: flex; flex-direction: column; gap: 10px; pointer-events: none;';
+        document.body.appendChild(container);
+    }
+    
+    const toast = document.createElement('div');
+    toast.style.cssText = `
+        background: linear-gradient(135deg, #1e293b, #0f172a);
+        color: white; padding: 15px 20px; border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.3); border-left: 5px solid #3b82f6;
+        animation: toastSlideIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        pointer-events: auto; max-width: 300px;
+    `;
+    toast.innerHTML = `
+        <div style="font-size: 0.8em; color: #94a3b8; font-weight: 700; margin-bottom: 5px; display: flex; align-items: center; gap: 5px;">
+            <span style="font-size: 1.2em;">📢</span> THÔNG BÁO HỆ THỐNG
+        </div>
+        <div style="font-size: 0.95em; line-height: 1.4; margin-bottom: 5px;">
+            <b style="color: #3b82f6;">${msg.author}:</b> ${msg.message}
+        </div>
+        <div style="font-size: 0.75em; color: #64748b; text-align: right;">
+            🕒 ${msg.time}
+        </div>
+    `;
+    
+    if (!document.getElementById('toastStyles')) {
+        const style = document.createElement('style');
+        style.id = 'toastStyles';
+        style.innerHTML = `
+            @keyframes toastSlideIn {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            @keyframes toastFadeOut {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(120%); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+    
+    container.appendChild(toast);
+    
+    // Tự động đóng sau 10s
+    setTimeout(() => {
+        toast.style.animation = 'toastFadeOut 0.4s forwards';
+        setTimeout(() => toast.remove(), 400);
+    }, 10000);
+}

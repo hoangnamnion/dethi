@@ -13,6 +13,9 @@ const DEFAULT_EXAMS = [
     { file: 'ktddvip10', ten: 'Đề 10' },
     { file: 'ktddvip', ten: 'FULL 10 Đề' },
 
+    { ten: 'FULL TỰ LUẬN', url: 'ktddvip1.html' },
+
+
 
 
 ];

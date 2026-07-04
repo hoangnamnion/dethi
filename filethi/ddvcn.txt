@@ -49,11 +49,7 @@ Câu 14: Tổng diện tích sàn xây dựng công trình được tính như t
 B. Là tổng diện tích các sàn tầng;
 C. Là tổng diện tích các sàn tầng cộng diện tích tầng hầm;
 D. Tất cả các phương án trên.
-Câu 15: Tổng diện tích sàn xây dựng công trình được tính như thế nào?
-*A. Là tổng diện tích các sàn tầng cộng diện tích tầng hầm và mái;
-B. Là tổng diện tích các sàn tầng;
-C. Là tổng diện tích các sàn tầng cộng diện tích tầng hầm;
-D. Tất cả các phương án trên.
+
 Câu 16: Phương pháp gia cố nền nào sau đây không thuộc phương pháp gia cố làm chặt đất?
 A. Dùng đầm, nện;		                   *B. Dùng phương pháp hạ mực nước ngầm;	
 C. Dùng cọc đất, cọc cát;		        D. Dùng đệm cát.
@@ -77,25 +73,25 @@ B. Là tỷ số giữa diện tích chiếm đất của công trình và các 
 C. Là tỷ số giữa diện tích chiếm đất của công trình trên tổng diện tích lô đất sau khi đã trừ đi diện tích các công trình phụ trợ;
 D. Tất cả các đáp án trên.
 Câu 23: Loại hình nhà ở nào sau đây dành riêng cho những người lao động nông nghiệp, gắn liền với đồng ruộng?
-* Nhà ở nông thôn
+*A. Nhà ở nông thôn
 B. Nhà ở biệt thự thành phố;
 C. Nhà ở liền kề;
 D. Nhà ở chung cư.
 Câu 24: Phòng có chức năng chính là không gian đầu tiên khi bước vào nhà, tiếp nối đến các phòng khác. Là nơi để giày dép, mũ nón và áo khoác để chỉnh trang y phục, là loại phòng nào?
-*. Tiền phòng;            B. Phòng khách;              C. Phòng ngủ;             D. Phòng ăn, bếp.
+*A. Tiền phòng;            B. Phòng khách;              C. Phòng ngủ;             D. Phòng ăn, bếp.
 Câu 25: Công trình công cộng là công trình như thế nào? 
 A. Là công trình dùng cho mục đích để ở;       
 B. Là các công trình dùng cho mục đích kinh doanh, cho thuê;       
-*. Là các công trình phục vụ sinh hoat tinh thần, vật chất của con người ngoài trừ chức năng để ở;
+*C. Là các công trình phục vụ sinh hoat tinh thần, vật chất của con người ngoài trừ chức năng để ở;
 D. Tất cả các đáp án trên.
 Câu 26: Tại sao cần thiết kế nhìn rõ trong nhà công cộng? 
 A. Vì ai cũng có nhu cầu nhìn rõ các đối tượng cần quan sát;       
 B. Sự thu nhận mục tiêu phải ở chất lượng cao;       
 C. Có nhiều vị trí bất lợi hơn so với các vị trí khác;
-*. Tất cả các phương án trên;
+*D. Tất cả các phương án trên;
 Câu 27: Khi phân nhóm các bộ phận chủ yếu của nhà công cộng, nhóm hay bộ phận nào sau đây không phải là bộ phận chủ yếu của nhà công cộng? 
 A. Nhóm các phòng chính;                                         B. Nhóm các phòng phụ;       
-C. Nhóm phương tiện giao thông.                              *. Cửa đi, cửa sổ.
+C. Nhóm phương tiện giao thông.                              *C. Cửa đi, cửa sổ.
 Câu 28: Loại hình nhà ở nào sau đây là loại nhà ở gia đình độc lập, tiện nghi sang trọng có sân vườn, chủ yếu phục vụ cho người có thu nhập cao, thường xây trong những khu vực yên tĩnh, có nhiều cây xanh?
 A. Nhà ở nông thôn                                                    *B. Nhà ở biệt thự thành phố;
 C. Nhà ở liền kề;                                                          D. Nhà ở chung cư.
@@ -290,7 +286,7 @@ A. 1;                                   *B. 2;                                C.
 Câu 81: Lịch sử phát triển của nhà ở trải qua mấy thời kỳ phát triển xã hội?
 A. 3;                                 *B. 4;                                 C. 5;                                 D. 6.
 Câu 82: Theo thu nhập của người dân thì nhà được phân thành mấy loại?
-A. 1;                                 B. 2;                                 C. 3;                                   D. 4.
+A. 1;                                 B. 2;                                 *C. 3;                                   D. 4.
 Câu 83: Phòng có chức năng chính là nơi dùng để tắm giặt, đại tiểu tiện?
 *A. Phòng vệ sinh;        B. Phòng khách;            C. Phòng ngủ;              D. Phòng ăn, bếp.
 Câu 84: Loại chung cư mà “có hành lang giữa, các căn hộ đặt dọc 2 bên hành lang, nhà có thể có 1 hoặc nhiều cầu thang.” thuộc loại chung cư nào? 

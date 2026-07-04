@@ -265,6 +265,22 @@
             </div>
         </div>
 
+        <!-- Section: Global Chat -->
+        <div class="main-grid" style="grid-template-columns: 1fr; margin-top: 2rem;">
+            <div class="glass-panel">
+                <div class="panel-header">
+                    <h2><i class="fa-solid fa-comments" style="color: var(--primary); margin-right: 0.5rem;"></i> Chat Tổng (Thông báo hệ thống)</h2>
+                </div>
+                <div style="display: flex; gap: 10px; margin-bottom: 1rem;">
+                    <input type="text" id="global-chat-input" class="form-control" placeholder="Nhập thông báo gửi tới tất cả người dùng..." onkeypress="if(event.key === 'Enter') sendGlobalMessage()" style="margin-bottom: 0;">
+                    <button class="btn btn-primary" onclick="sendGlobalMessage()" style="white-space: nowrap;"><i class="fa-solid fa-paper-plane"></i> Gửi Gấp</button>
+                </div>
+                <div class="activity-log" id="global-chat-log" style="max-height: 250px; background: rgba(0,0,0,0.2); padding: 10px; border-radius: 12px; border: 1px solid var(--border);">
+                    <div style="text-align: center; padding: 1rem; color: var(--muted);">Đang tải thông báo...</div>
+                </div>
+            </div>
+        </div>
+
         <!-- Section 2: Account Management -->
         <div class="main-grid" style="grid-template-columns: 1fr; margin-top: 2rem;">
             <div class="glass-panel">
@@ -420,6 +436,7 @@
             loadAccountsFromGoogle();
             fetchLiveMonitor();
             fetchActivityLog();
+            fetchGlobalMessages();
             fetchLeaderboard();
             startAutoRefresh();
         }
@@ -742,6 +759,54 @@
             `}).join('');
         }
 
+        async function fetchGlobalMessages() {
+            try {
+                if (API_BASE.includes("YOUR_SUBDOMAIN")) return;
+                const res = await fetch(`${API_BASE}?action=getGlobalMessages&t=${Date.now()}`);
+                const data = await res.json();
+                renderGlobalMessages(data);
+            } catch(e){}
+        }
+
+        function renderGlobalMessages(data) {
+            const container = document.getElementById('global-chat-log');
+            if(!data || data.length === 0) {
+                container.innerHTML = '<div style="text-align: center; padding: 1rem; color: var(--muted);">Chưa có thông báo nào.</div>';
+                return;
+            }
+            container.innerHTML = data.map(m => {
+                return `<div class="activity-item" style="border-bottom: 1px solid rgba(255,255,255,0.05); padding: 8px 0; align-items: center;">
+                    <span style="color: var(--warning); font-size: 0.85em; margin-right: 10px; flex-shrink: 0;">[${m.time}]</span>
+                    <strong style="color: var(--success); flex-shrink: 0; margin-right: 5px;">${m.author}:</strong>
+                    <span style="color: var(--text);">${m.message}</span>
+                </div>`;
+            }).join('');
+        }
+
+        async function sendGlobalMessage() {
+            const input = document.getElementById('global-chat-input');
+            const msg = input.value.trim();
+            if(!msg) return;
+            input.value = '';
+            
+            const btn = input.nextElementSibling;
+            btn.disabled = true;
+            try {
+                await fetch(API_BASE, {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        action: 'sendGlobalMessage',
+                        message: msg,
+                        author: 'Admin'
+                    })
+                });
+                fetchGlobalMessages();
+            } catch(e) {
+                alert("Lỗi gửi thông báo!");
+            }
+            btn.disabled = false;
+        }
+
         function toggleAutoRefresh() {
             isAutoRefresh = !isAutoRefresh;
             const icon = document.getElementById('refresh-icon');
@@ -762,6 +827,7 @@
                 if (isAutoRefresh) {
                     fetchLiveMonitor();
                     fetchActivityLog();
+                    fetchGlobalMessages();
                 }
             }, 5000); // 5 giây cập nhật 1 lần
         }
