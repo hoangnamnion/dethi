@@ -156,6 +156,8 @@
         .action-btn.ban { background: rgba(239, 68, 68, 0.1); color: var(--danger); }
         .action-btn.normal { background: rgba(16, 185, 129, 0.1); color: var(--success); }
         .action-btn.delete { background: rgba(239, 68, 68, 0.15); color: var(--danger); border: 1px solid rgba(239, 68, 68, 0.3); }
+        .action-btn.info { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
+        .action-btn.offline { background: rgba(100, 116, 139, 0.2); color: #94a3b8; }
 
         /* Account Forms */
         .form-group { margin-bottom: 1.25rem; }
@@ -220,7 +222,16 @@
                     <i class="fas fa-wifi"></i> LIVE
                 </div>
             </div>
-
+            <div class="stat-card">
+                <div class="icon" style="background: rgba(59, 130, 246, 0.2); color: #3b82f6;">
+                    <i class="fas fa-signal"></i>
+                </div>
+                <div class="value" id="stat-current-online">0</div>
+                <div class="label">Đang online trên toàn hệ thống</div>
+                <div class="trend" style="color: #3b82f6; position:absolute; top: 1.5rem; right: 1.5rem;">
+                    <i class="fas fa-globe"></i>
+                </div>
+            </div>
             <div class="stat-card">
                 <div class="icon" style="background: rgba(16, 185, 129, 0.2); color: var(--success);">
                     <i class="fas fa-user-shield"></i>
@@ -438,12 +449,28 @@
             fetchActivityLog();
             fetchGlobalMessages();
             fetchLeaderboard();
+            fetchOnlineUsersForTable();
             startAutoRefresh();
         }
 
         // ==========================================
         // QUẢN LÝ TÀI KHOẢN (ACCOUNT MANAGEMENT)
         // ==========================================
+        let globalOnlineUsers = [];
+        async function fetchOnlineUsersForTable() {
+            try {
+                if (API_BASE.includes("YOUR_SUBDOMAIN")) return;
+                const res = await fetch(`${API_BASE}?action=getOnlineUsers&t=${Date.now()}`);
+                const data = await res.json();
+                globalOnlineUsers = data.userIds || (data.users || []).map(u => u.username || u);
+                const el = document.getElementById('stat-current-online');
+                if(el) el.textContent = data.onlineCount || globalOnlineUsers.length;
+                
+                const searchTerm = document.getElementById('search-account').value || '';
+                if(Object.keys(currentAccounts).length > 0) renderTable(searchTerm);
+            } catch(e) {}
+        }
+
         async function loadAccountsFromGoogle() {
             try {
                 const tbody = document.querySelector('#accounts-table tbody');
@@ -496,6 +523,10 @@
                 if (info.status === 'expired') statusBadge = '<span class="badge" style="background: var(--warning); color: white;">Hết hạn</span>';
                 else if (info.status === 'banned') statusBadge = '<span class="badge" style="background: var(--danger); color: white;">Bị cấm</span>';
 
+                let onlineStatus = globalOnlineUsers.includes(username) 
+                    ? '<span class="badge" style="background: rgba(59, 130, 246, 0.2); color: #3b82f6; border: 1px solid #3b82f6;"><i class="fa-solid fa-circle" style="font-size: 0.6em; margin-right:4px;"></i>Online</span>' 
+                    : '<span class="badge" style="background: rgba(100, 116, 139, 0.2); color: #94a3b8;"><i class="fa-regular fa-circle" style="font-size: 0.6em; margin-right:4px;"></i>Offline</span>';
+
                 const tr = document.createElement('tr');
                 tr.innerHTML = `
                     <td><strong style="color: var(--text);">${username}</strong></td>
@@ -503,14 +534,21 @@
                     <td>${info.name}</td>
 <!-- <td></td> -->
                     <td>${examText}</td>
-                    <td>${statusBadge}</td>
+                    <td>
+                        <div style="display: flex; gap: 5px; flex-wrap: wrap;">
+                            ${statusBadge}
+                            ${onlineStatus}
+                        </div>
+                    </td>
                     <td>
                         <div style="display: flex; gap: 8px;">
-                            <button class="action-btn edit" onclick="editAccount('${username}')"><i class="fa-solid fa-pen"></i></button>
-                            <button class="action-btn expire" onclick="toggleStatus('${username}', 'expired')"><i class="fa-solid fa-hourglass-end"></i></button>
-                            <button class="action-btn ban" onclick="toggleStatus('${username}', 'banned')"><i class="fa-solid fa-ban"></i></button>
-                            <button class="action-btn normal" onclick="toggleStatus('${username}', 'normal')"><i class="fa-solid fa-rotate-left"></i></button>
-                            <button class="action-btn delete" onclick="deleteAccount('${username}')"><i class="fa-solid fa-trash"></i></button>
+                            <button class="action-btn info" title="Kích hoạt Online" onclick="forceOnlineUser('${username}')"><i class="fa-solid fa-wifi"></i></button>
+                            <button class="action-btn offline" title="Tắt Online" onclick="forceOfflineUser('${username}')"><i class="fa-solid fa-power-off"></i></button>
+                            <button class="action-btn edit" title="Sửa" onclick="editAccount('${username}')"><i class="fa-solid fa-pen"></i></button>
+                            <button class="action-btn expire" title="Hết hạn" onclick="toggleStatus('${username}', 'expired')"><i class="fa-solid fa-hourglass-end"></i></button>
+                            <button class="action-btn ban" title="Cấm" onclick="toggleStatus('${username}', 'banned')"><i class="fa-solid fa-ban"></i></button>
+                            <button class="action-btn normal" title="Bình thường" onclick="toggleStatus('${username}', 'normal')"><i class="fa-solid fa-rotate-left"></i></button>
+                            <button class="action-btn delete" title="Xóa" onclick="deleteAccount('${username}')"><i class="fa-solid fa-trash"></i></button>
                         </div>
                     </td>
                 `;
@@ -598,6 +636,59 @@
 
         function deleteAccount(user) { if(confirm(`Xóa ${user}?`)){ delete currentAccounts[user]; renderTable(); saveToGoogle(); } }
         function toggleStatus(user, st) { if(st==='normal') delete currentAccounts[user].status; else currentAccounts[user].status = st; renderTable(); saveToGoogle(); }
+        
+        async function forceOnlineUser(username) {
+            const btn = event.currentTarget;
+            const originalHtml = btn.innerHTML;
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>';
+            btn.disabled = true;
+            try {
+                if (API_BASE.includes("YOUR_SUBDOMAIN")) {
+                    alert('Chưa cấu hình API_BASE');
+                    return;
+                }
+                // Ép tài khoản hiển thị Online bằng cách ping lên server
+                const res = await fetch(`${API_BASE}?action=pingOnline&username=${encodeURIComponent(username)}&t=${Date.now()}`);
+                const data = await res.json();
+                if (data.success) {
+                    alert(`✅ Đã thêm ${username} vào danh sách ĐANG ONLINE!`);
+                    // Load lại danh sách online nếu có
+                    fetchLiveMonitor();
+                } else {
+                    alert('❌ Không thành công.');
+                }
+            } catch(e) {
+                alert('Lỗi kích hoạt online: ' + e.message);
+            }
+            btn.innerHTML = originalHtml;
+            btn.disabled = false;
+        }
+
+        async function forceOfflineUser(username) {
+            const btn = event.currentTarget;
+            const originalHtml = btn.innerHTML;
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>';
+            btn.disabled = true;
+            try {
+                if (API_BASE.includes("YOUR_SUBDOMAIN")) {
+                    alert('Chưa cấu hình API_BASE');
+                    return;
+                }
+                const res = await fetch(`${API_BASE}?action=offlineUser&username=${encodeURIComponent(username)}&t=${Date.now()}`);
+                const data = await res.json();
+                if (data.success) {
+                    alert(`🔌 Đã xóa ${username} khỏi danh sách Online!`);
+                    fetchLiveMonitor();
+                } else {
+                    alert('❌ Không thành công.');
+                }
+            } catch(e) {
+                alert('Lỗi tắt online: ' + e.message);
+            }
+            btn.innerHTML = originalHtml;
+            btn.disabled = false;
+        }
+
         function importFromHihi() {
             if(typeof VALID_ACCOUNTS!=='undefined' && confirm("Gộp tài khoản từ file cũ?")) {
                 for(let [u, d] of Object.entries(VALID_ACCOUNTS)) if(!currentAccounts[u]) currentAccounts[u] = d;
@@ -828,6 +919,7 @@
                     fetchLiveMonitor();
                     fetchActivityLog();
                     fetchGlobalMessages();
+                    fetchOnlineUsersForTable();
                 }
             }, 5000); // 5 giây cập nhật 1 lần
         }
