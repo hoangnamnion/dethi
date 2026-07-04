@@ -648,7 +648,7 @@
                     return;
                 }
                 // Ép tài khoản hiển thị Online bằng cách ping lên server
-                const res = await fetch(`${API_BASE}?action=pingOnline&username=${encodeURIComponent(username)}&t=${Date.now()}`);
+                const res = await fetch(`${API_BASE}?action=forceOnline&username=${encodeURIComponent(username)}&t=${Date.now()}`);
                 const data = await res.json();
                 if (data.success) {
                     alert(`✅ Đã thêm ${username} vào danh sách ĐANG ONLINE!`);
