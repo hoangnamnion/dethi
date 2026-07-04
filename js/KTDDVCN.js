@@ -1,14 +1,10 @@
 const DEFAULT_EXAMS = [
     { ten: 'Trang Chủ', url: 'index.html', IMG: 'img/muiten.jpg' },
-    { file: 'ddvcnchuong1', ten: 'CHƯƠNG 1' },
-    { file: 'ddvcnchuong2', ten: 'CHƯƠNG 2' },
-    { file: 'ddvcnchuong3', ten: 'CHƯƠNG 3' },
-    { file: 'ddvcnchuong4', ten: 'CHƯƠNG 4' },
-    { file: 'ddvcnchuong5', ten: 'CHƯƠNG 5' },
-    { file: 'ddvcnchuong6', ten: 'CHƯƠNG 6' },
-    { file: 'ddvcnchuong7', ten: 'CHƯƠNG 7' },
-    { file: 'ddvcnchuong8', ten: 'CHƯƠNG 8' },
-    { file: 'ddvcnfull', ten: 'Full 8 Chương' },
+    { file: 'ddvcn150cau1', ten: 'Phần 1' },
+    { file: 'ddvcn150cau2', ten: 'Phần 2' },
+    { file: 'ddvcn150cau3', ten: 'Phần 3' },
+    { file: 'ddvcn150cau4', ten: 'Phần 4' },
+    { file: 'ddvcnfull', ten: 'Full 4 Phần' },
 
      { ten: 'Full Tự luận', url: 'ktddd.html' },
 
