@@ -16,11 +16,3 @@ const VALID_ACCOUNTS = {
     // ===== THÊM TÀI KHOẢN VÀO ĐÂY =====
 
     // Ví dụ phân quyền thẳng vào 1 chương (Đề thi con):
-    "admin": {
-        pass: "admin123",
-        name: "Học Sinh Ví Dụ",
-    },
-
-    
-
-};
