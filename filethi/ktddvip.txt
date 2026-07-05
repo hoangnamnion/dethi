@@ -188,7 +188,7 @@ Câu 2: (0.3 điểm) Trần sàn không làm từ những loại vật liệu n
 *A. Gạch                    B. Thạch cao;                C. Gỗ, nhôm;	          D. Chất dẻo, sơn.
  
 Câu 3: (0.3 điểm) Khoảng đi lọt từ bậc thang làn dưới đi đến sàn thang làn trên là bao nhiêu?
-A. ≥ 2,0m;                      B. ≥ 2,1m;                       C. ≥ 2,2m;                      D. ≥ 2,3m.            
+*A. ≥ 2,0m;                      B. ≥ 2,1m;                       C. ≥ 2,2m;                      D. ≥ 2,3m.            
  
 Câu 4: (0.3 điểm) Kết cấu khung thép có ưu điểm gì nổi bật trong xây dựng? 
 A. Chi phí đầu tư thấp và dễ thi công. 
