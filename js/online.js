@@ -399,9 +399,9 @@ function showGlobalMessageToast(msg) {
     
     container.appendChild(toast);
     
-    // Tự động đóng sau 10s
+    // Tự động đóng sau 60s
     setTimeout(() => {
         toast.style.animation = 'toastFadeOut 0.4s forwards';
         setTimeout(() => toast.remove(), 400);
-    }, 10000);
+    }, 60000);
 }
