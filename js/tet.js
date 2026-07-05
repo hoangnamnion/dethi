@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .premium-falling-inner {
             display: inline-block;
             animation: swayAnimation var(--sway-duration) ease-in-out infinite alternate;
-            filter: drop-shadow(0 5px 15px rgba(255, 107, 107, 0.4));
+            /* Bỏ drop-shadow để chống giật lag */
         }
 
         @keyframes fallAnimation {
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
     document.head.appendChild(tetStyle);
 
-    const MAX_ICONS = 35;
+    const MAX_ICONS = 15; // Giảm xuống 15 để đỡ lag
     let currentIconCount = 0;
     window.updateTetIconCount = function(delta) { currentIconCount += delta; }
 
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (currentIconCount < MAX_ICONS && (!localStorage.getItem('low_graphics') || localStorage.getItem('low_graphics') === 'false')) {
             createFallingIcon();
         }
-        const nextSpawnTime = Math.random() * 400 + 250;
+        const nextSpawnTime = Math.random() * 800 + 600; // Giãn thời gian rơi
         setTimeout(spawnIcon, nextSpawnTime);
     }
     spawnIcon();
@@ -136,12 +136,11 @@ function createFallingIcon() {
     const size = Math.random() * 18 + 12; // Kích thước từ 12px đến 30px
     inner.style.fontSize = `${size}px`;
     
-    // Đảo ngược kích thước đôi chút để tạo hiệu ứng 3D (blur cho icon nhỏ, rõ cho icon to)
+    // Đảo ngược kích thước đôi chút để tạo hiệu ứng 3D (bỏ blur/shadow để chống giật)
     if (size < 16) {
-        inner.style.filter = 'drop-shadow(0 2px 4px rgba(255,107,107,0.2)) blur(1px)';
         inner.style.opacity = '0.6';
     } else if (size > 24) {
-        inner.style.filter = 'drop-shadow(0 8px 20px rgba(255,107,107,0.6))';
+        inner.style.opacity = '0.9';
     }
     
     // Vị trí xuất hiện ngang ngẫu nhiên
