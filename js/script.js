@@ -23,12 +23,164 @@ let firstAttemptScore = 0;
 let retryCount = 0;
 let wrongQuestions = [];
 let isRetryMode = false;
+let isReviewFilterMode = false;
+let hasReportedScore = false;
 let filteredQuestions = [];
 
 // --- BIẾN MỚI CHO TÍNH NĂNG AUTO NEXT ---
-let isAutoNextEnabled = false;
+let isAutoNextEnabled = true;
 let autoNextTimer = null;
 let currentStreak = 0; // Luôn theo dõi chuỗi câu đúng liên tiếp
+
+// --- HỆ THỐNG CẮM CỜ PHÂN VÂN (BOOKMARK & REVIEW) ---
+let currentPaletteFilter = 'all'; // 'all' | 'flagged' | 'unanswered'
+
+function getBookmarks() {
+    try {
+        const raw = localStorage.getItem('bookmarks_' + currentFileName);
+        if (!raw) return [];
+        const parsed = JSON.parse(raw);
+        if (Array.isArray(parsed)) {
+            return parsed.map(n => Number(n)).filter(n => !isNaN(n));
+        }
+        if (typeof parsed === 'object') {
+            const arr = [];
+            for (let k in parsed) {
+                if (parsed[k]) {
+                    const num = parseInt(k.replace(/\D/g, ''), 10);
+                    if (!isNaN(num)) arr.push(num >= 1 ? num - 1 : num);
+                }
+            }
+            return arr;
+        }
+        return [];
+    } catch (e) {
+        return [];
+    }
+}
+
+function setBookmarks(bm) {
+    try {
+        localStorage.setItem('bookmarks_' + currentFileName, JSON.stringify(bm));
+    } catch (e) {}
+    updateBookmarkBadge();
+}
+
+function isQuestionBookmarked(q) {
+    if (!q) return false;
+    const bm = getBookmarks();
+    const idx = Number(q.originalIndex !== undefined ? q.originalIndex : q);
+    return bm.includes(idx);
+}
+
+function toggleBookmark(q) {
+    if (!q) return false;
+    const bm = getBookmarks();
+    const targetIdx = Number(q.originalIndex !== undefined ? q.originalIndex : q);
+    const pos = bm.indexOf(targetIdx);
+    let bookmarked = false;
+    if (pos === -1) {
+        bm.push(targetIdx);
+        bookmarked = true;
+    } else {
+        bm.splice(pos, 1);
+        bookmarked = false;
+    }
+    setBookmarks(bm);
+    return bookmarked;
+}
+
+function updateBookmarkBadge() {
+    const bm = getBookmarks();
+    const count = bm.length;
+
+    // 1. Badge số câu phân vân trên icon bảng câu hỏi (Footer)
+    const badge = document.getElementById('flagCounterBadge');
+    if (badge) {
+        if (count > 0) {
+            badge.style.display = 'inline-flex';
+            badge.innerHTML = `${count}`;
+        } else {
+            badge.style.display = 'none';
+        }
+    }
+
+    // 2. Nút bấm xem nhanh câu phân vân trên Toolbar (Header) - LUÔN HIỂN THỊ RÕ RÀNG
+    const toolbarBtn = document.getElementById('btnToolbarFlagged');
+    const toolbarCount = document.getElementById('toolbarFlagCount');
+    if (toolbarBtn) {
+        toolbarBtn.style.display = 'inline-flex';
+        if (toolbarCount) toolbarCount.innerText = count;
+        if (count > 0) {
+            toolbarBtn.style.background = '#fef08a';
+            toolbarBtn.style.color = '#854d0e';
+            toolbarBtn.style.borderColor = '#141414';
+        } else {
+            toolbarBtn.style.background = '#ffffff';
+            toolbarBtn.style.color = '#64748b';
+            toolbarBtn.style.borderColor = '#141414';
+        }
+    }
+
+    // 3. Cập nhật số đếm trên tab modal
+    if (typeof updatePaletteCounts === 'function') {
+        updatePaletteCounts();
+    }
+}
+
+let bookmarkToastTimer = null;
+function showBookmarkToast(msg) {
+    const toast = document.getElementById('bookmarkToast');
+    if (!toast) return;
+    toast.innerHTML = msg;
+    toast.classList.add('show');
+    if (bookmarkToastTimer) clearTimeout(bookmarkToastTimer);
+    bookmarkToastTimer = setTimeout(() => {
+        toast.classList.remove('show');
+    }, 2000);
+}
+
+function handleBookmarkToggle() {
+    const questionsToShow = isRetryMode ? filteredQuestions : allQuestions;
+    const q = questionsToShow[currentIndex];
+    if (!q) return;
+    const isNowBookmarked = toggleBookmark(q);
+    const btn = document.getElementById('btnBookmarkFlag');
+    const indicator = document.getElementById('qFlagIndicator');
+    const banner = document.getElementById('qFlagBanner');
+
+    if (isNowBookmarked) {
+        if (btn) {
+            btn.classList.add('flagged');
+            btn.innerHTML = `<span class="flag-icon">⭐</span><span class="flag-label">ĐÃ CẮM CỜ (BẤM ĐỂ BỎ)</span>`;
+        }
+        if (indicator) {
+            indicator.style.display = 'inline-flex';
+        }
+        if (banner) {
+            banner.style.display = 'flex';
+        }
+        showBookmarkToast(`⭐ Đã cắm cờ Câu ${currentIndex + 1} (Bấm vào bảng câu hỏi để xem lại)`);
+    } else {
+        if (btn) {
+            btn.classList.remove('flagged');
+            btn.innerHTML = `<span class="flag-icon">☆</span><span class="flag-label">CẮM CỜ PHÂN VÂN</span>`;
+        }
+        if (indicator) {
+            indicator.style.display = 'none';
+        }
+        if (banner) {
+            banner.style.display = 'none';
+        }
+        showBookmarkToast(`Đã bỏ cắm cờ Câu ${currentIndex + 1}`);
+    }
+}
+
+function openFlaggedModal() {
+    setPaletteFilter('flagged');
+    const modal = document.getElementById('modalList');
+    if (modal) modal.style.display = 'flex';
+}
 
 // --- 1. TẢI ĐỀ THI ---
 function loadExam(fileName) {
@@ -38,18 +190,26 @@ function loadExam(fileName) {
     examMode = params.get('mode') || 'normal';
     questionOrder = params.get('order') || 'normal';
 
-    // NHẬN CẤU HÌNH AUTO NEXT TỪ URL
-    isAutoNextEnabled = params.get('auto') === 'true';
+    // NHẬN CẤU HÌNH AUTO NEXT TỪ URL (Mặc định là true nếu không chỉ định false)
+    const autoParam = params.get('auto');
+    isAutoNextEnabled = (autoParam === null || autoParam === '' || autoParam === 'true');
 
     if (!params.get('mode')) {
         const savedMode = localStorage.getItem('exam_mode_' + fileName);
         if (savedMode) {
-            const modeData = JSON.parse(savedMode);
-            examMode = modeData.mode;
-            questionOrder = modeData.order;
-            // Nếu lưu cả cấu hình auto trong localStorage thì lấy ra ở đây
-            if (modeData.autoNext !== undefined) {
-                isAutoNextEnabled = modeData.autoNext;
+            try {
+                const modeData = JSON.parse(savedMode);
+                if (modeData && typeof modeData === 'object') {
+                    if (modeData.mode) examMode = modeData.mode;
+                    if (modeData.order) questionOrder = modeData.order;
+                    // Nếu lưu cả cấu hình auto trong localStorage thì lấy ra ở đây
+                    if (modeData.autoNext !== undefined) {
+                        isAutoNextEnabled = modeData.autoNext;
+                    }
+                }
+            } catch (e) {
+                console.warn('Corrupted exam_mode in localStorage, resetting:', e);
+                localStorage.removeItem('exam_mode_' + fileName);
             }
         }
     }
@@ -102,11 +262,13 @@ function loadExam(fileName) {
             }
 
             loadProgress();
+            updateBookmarkBadge();
 
             if (!isSubmitted) {
                 startTimer();
-                // Thêm nút toggle Auto Next
-                createAutoNextToggle();
+                syncAutoNextButtonUI();
+            } else {
+                showResultModal();
             }
         })
         .catch(err => {
@@ -129,8 +291,8 @@ function shuffleQuestions() {
     for (let i = allQuestions.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [allQuestions[i], allQuestions[j]] = [allQuestions[j], allQuestions[i]];
-        if (!allQuestions[i].originalIndex) allQuestions[i].originalIndex = i;
-        if (!allQuestions[j].originalIndex) allQuestions[j].originalIndex = j;
+        if (allQuestions[i].originalIndex === undefined) allQuestions[i].originalIndex = i;
+        if (allQuestions[j].originalIndex === undefined) allQuestions[j].originalIndex = j;
     }
 }
 
@@ -202,22 +364,40 @@ function parseData(text) {
     if (currentQ) allQuestions.push(currentQ);
 }
 
-// --- 3. QUẢN LÝ THỜI GIAN ---
+// --- 3. QUẢN LÝ THỜI GIAN & HIỆU NĂNG NHIỆT (COOLING / ECO TIMING) ---
+let timerStartTimestamp = null;
+
 function startTimer() {
     clearInterval(timerInterval);
-    timerInterval = setInterval(() => {
-        totalSeconds++;
-        updateTimerDisplay();
+    timerStartTimestamp = Date.now() - (totalSeconds * 1000);
 
-        // Gửi dữ liệu giám sát mỗi 10 giây
-        if (totalSeconds % 10 === 0) {
-            sendLiveTelemetry();
+    const tick = () => {
+        // Nếu người dùng đang khóa màn hình hoặc chạy ngầm tab -> KHÔNG ép reflow DOM để tiết kiệm 100% pin
+        if (document.hidden) return;
+
+        const currentSec = Math.floor((Date.now() - timerStartTimestamp) / 1000);
+        if (currentSec !== totalSeconds) {
+            totalSeconds = currentSec;
+            updateTimerDisplay();
+
+            // Gửi dữ liệu giám sát định kỳ 60s (chỉ khi có người dùng đăng nhập)
+            if (totalSeconds % 60 === 0) {
+                sendLiveTelemetry();
+            }
         }
-    }, 1000);
+    };
 
-    // Gửi ngay lần đầu tiên
+    timerInterval = setInterval(tick, 1000);
     sendLiveTelemetry();
 }
+
+// Bắt sự kiện chuyển tab: Cập nhật đồng hồ tức thì khi quay lại màn hình
+document.addEventListener('visibilitychange', () => {
+    if (!document.hidden && timerStartTimestamp && !isSubmitted) {
+        totalSeconds = Math.floor((Date.now() - timerStartTimestamp) / 1000);
+        updateTimerDisplay();
+    }
+});
 
 function updateTimerDisplay() {
     const mins = Math.floor(totalSeconds / 60);
@@ -234,27 +414,29 @@ function updateTimerDisplay() {
     return timeStr;
 }
 
-// --- TELEMETRY GIÁM SÁT THI TRỰC TUYẾN ---
+// --- TELEMETRY GIÁM SÁT THI TRỰC TUYẾN (SIÊU TỐI ƯU BĂNG THÔNG & PIN) ---
 function sendLiveTelemetry() {
     if (isSubmitted || allQuestions.length === 0) return;
-
-    // Tính điểm hiện tại dựa trên số câu đã làm đúng
-    const totalQuestions = allQuestions.length;
-    let correct = 0;
-    allQuestions.forEach(q => {
-        if (q.userSelected !== null && q.options[q.userSelected] && q.options[q.userSelected].isCorrect) {
-            correct++;
-        }
-    });
-    const scale10 = parseFloat(((correct / totalQuestions) * 10).toFixed(2));
-    const rawScore = `${correct}/${totalQuestions} (${scale10} Điểm - Đang làm)`;
 
     let userData = {};
     try {
         userData = JSON.parse(sessionStorage.getItem('current_user')) || {};
     } catch (e) { }
 
-    if (!userData.username) return;
+    // THOÁT NGAY LẬP TỨC nếu không có user đăng nhập -> Không tốn chu kỳ CPU và không đánh thức modem WiFi/4G
+    if (!userData || !userData.username) return;
+
+    // Tính điểm hiện tại dựa trên số câu đã làm đúng
+    const totalQuestions = allQuestions.length;
+    let correct = 0;
+    for (let i = 0; i < totalQuestions; i++) {
+        const q = allQuestions[i];
+        if (q.userSelected !== null && q.options[q.userSelected] && q.options[q.userSelected].isCorrect) {
+            correct++;
+        }
+    }
+    const scale10 = parseFloat(((correct / totalQuestions) * 10).toFixed(2));
+    const rawScore = `${correct}/${totalQuestions} (${scale10} Điểm - Đang làm)`;
 
     const mins = Math.floor(totalSeconds / 60);
     const secs = totalSeconds % 60;
@@ -271,114 +453,132 @@ function sendLiveTelemetry() {
     fetch(API_BASE, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ action: 'updateLiveStatus', data: telemetryData })
-    }).catch(e => console.log('Telemetry error:', e));
+        body: JSON.stringify({ action: 'updateLiveStatus', data: telemetryData }),
+        keepalive: true
+    }).catch(() => {});
 }
 
-// --- 4. TẠO NÚT TOGGLE AUTO NEXT ---
-function createAutoNextToggle() {
-    // Tìm phần tử controls hoặc tự tạo container
-    let controlsContainer = document.querySelector('.controls');
-    if (!controlsContainer) {
-        // Tìm phần tử chứa timer để thêm toggle bên cạnh
-        const timerElement = document.getElementById('timer');
-        if (timerElement && timerElement.parentNode) {
-            controlsContainer = timerElement.parentNode;
+// --- CHẾ ĐỘ MÁT MÁY / SIÊU TIẾT KIỆM PIN (ECO COOLING MODE) ---
+function initEcoMode() {
+    const isEco = localStorage.getItem('neo_eco_mode') === 'true';
+    if (isEco) {
+        document.body.classList.add('low-graphics');
+    }
+    updateEcoButtonUI(isEco);
+}
+
+function toggleLowGraphics() {
+    const isEco = document.body.classList.toggle('low-graphics');
+    localStorage.setItem('neo_eco_mode', isEco ? 'true' : 'false');
+    updateEcoButtonUI(isEco);
+}
+
+function updateEcoButtonUI(isEco) {
+    const btn = document.getElementById('btnLowGraphics');
+    if (btn) {
+        if (isEco) {
+            btn.innerHTML = '❄️ Mát máy: BẬT';
+            btn.style.background = '#10b981';
+            btn.style.color = '#ffffff';
+            btn.style.borderColor = '#065f46';
         } else {
-            // Tạo container mới nếu không tìm thấy
-            controlsContainer = document.createElement('div');
-            controlsContainer.style.cssText = `
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                margin-bottom: 20px;
-                padding: 10px 15px;
-                background: white;
-                border-radius: 12px;
-                box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            `;
-            const quizArea = document.getElementById('quizArea');
-            if (quizArea) {
-                const firstChild = quizArea.firstChild;
-                quizArea.insertBefore(controlsContainer, firstChild);
-            }
+            btn.innerHTML = '⚡ Hiệu ứng: BẬT';
+            btn.style.background = '';
+            btn.style.color = '';
+            btn.style.borderColor = '';
         }
     }
+}
 
-    // Tạo toggle container
-    const toggleContainer = document.createElement('div');
-    toggleContainer.style.cssText = `
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        padding: 5px 10px;
-        background: #f8f9fa;
-        border-radius: 20px;
-        cursor: pointer;
-        user-select: none;
-        transition: 0.3s;
-    `;
 
-    toggleContainer.innerHTML = `
-        <div style="font-size: 0.85em; color: #636e72; font-weight: 600;">AUTO</div>
-        <div class="toggle-switch ${isAutoNextEnabled ? 'active' : ''}">
-            <div class="toggle-slider"></div>
-        </div>
-    `;
-
-    toggleContainer.onclick = function () {
-        isAutoNextEnabled = !isAutoNextEnabled;
-        const toggleSwitch = this.querySelector('.toggle-switch');
-        toggleSwitch.classList.toggle('active');
-
-        // Hiển thị thông báo
-        showAutoNextStatus();
-        saveProgress();
-
-        // Cập nhật tiêu đề
-        updateTitleWithAutoStatus();
-    };
-
-    // Thêm vào container
-    controlsContainer.appendChild(toggleContainer);
-
-    // Thêm CSS cho toggle
-    if (!document.querySelector('#auto-next-toggle-style')) {
-        const style = document.createElement('style');
-        style.id = 'auto-next-toggle-style';
-        style.textContent = `
-            .toggle-switch {
-                width: 50px;
-                height: 26px;
-                background: #ddd;
-                border-radius: 13px;
-                position: relative;
-                transition: 0.3s;
-            }
-            .toggle-switch.active {
-                background: #00b894;
-            }
-            .toggle-slider {
-                width: 22px;
-                height: 22px;
-                background: white;
-                border-radius: 50%;
-                position: absolute;
-                top: 2px;
-                left: 2px;
-                transition: 0.3s;
-                box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            }
-            .toggle-switch.active .toggle-slider {
-                left: 26px;
-            }
-        `;
-        document.head.appendChild(style);
+// --- CHẾ ĐỘ TẬP TRUNG ÔN / GIẢM MÀU MÈ ---
+function initFocusTheme() {
+    const isFocus = localStorage.getItem('neo_focus_theme') === 'true';
+    if (isFocus) {
+        document.body.classList.add('theme-focus');
+    } else {
+        document.body.classList.remove('theme-focus');
     }
+    updateThemeUI(isFocus);
+}
+
+function toggleFocusTheme() {
+    const isFocus = document.body.classList.toggle('theme-focus');
+    localStorage.setItem('neo_focus_theme', isFocus ? 'true' : 'false');
+    updateThemeUI(isFocus);
+    showThemeToast(isFocus);
+}
+
+function updateThemeUI(isFocus) {
+    const toolbarBtn = document.getElementById('btnFocusThemeToolbar');
+    const toolbarText = document.getElementById('themeToolbarText');
+    const toolbarIcon = document.getElementById('themeToolbarIcon');
+    if (toolbarText) toolbarText.textContent = isFocus ? 'Màu Pop Art' : 'Giảm màu mè';
+    if (toolbarIcon) toolbarIcon.textContent = isFocus ? '🎨' : '🌱';
+    if (toolbarBtn) {
+        toolbarBtn.style.background = isFocus ? '#e2e8f0' : '#ffffff';
+        toolbarBtn.title = isFocus ? 'Chuyển về giao diện Pop Art rực rỡ' : 'Chuyển sang giao diện giảm màu mè để tập trung ôn';
+    }
+
+    const modalBtn = document.getElementById('btnToggleThemeInModal');
+    const modalText = document.getElementById('themeModalText');
+    const modalIcon = document.getElementById('themeModalIcon');
+    if (modalText) modalText.textContent = isFocus ? 'Theme: Pop Art' : 'Theme: Giảm màu mè';
+    if (modalIcon) modalIcon.textContent = isFocus ? '🎨' : '🌱';
+    if (modalBtn) {
+        modalBtn.style.background = isFocus ? '#e2e8f0' : '#ffffff';
+    }
+
+    const tuluanHeaderBtn = document.getElementById('btnTuluanThemeHeader');
+    const tuluanHeaderIcon = document.getElementById('themeTuluanIcon');
+    const tuluanHeaderText = document.getElementById('themeTuluanText');
+    if (tuluanHeaderText) tuluanHeaderText.textContent = isFocus ? 'Màu Pop Art' : 'Giảm màu mè';
+    if (tuluanHeaderIcon) tuluanHeaderIcon.textContent = isFocus ? '🎨' : '🌱';
+    if (tuluanHeaderBtn) tuluanHeaderBtn.style.background = isFocus ? '#e2e8f0' : '#ffffff';
+
+    const tuluanDrawerBtn = document.getElementById('btnTuluanDrawerTheme');
+    if (tuluanDrawerBtn) {
+        tuluanDrawerBtn.textContent = isFocus ? '🎨 Màu Pop Art' : '🌱 Giảm màu mè';
+        tuluanDrawerBtn.style.background = isFocus ? '#e2e8f0' : '#ffffff';
+    }
+}
+
+function showThemeToast(isFocus) {
+    const toast = document.getElementById('bookmarkToast');
+    if (toast) {
+        toast.textContent = isFocus ? '🌱 Đã bật Theme Giảm màu mè (Tập trung ôn)' : '🎨 Đã chuyển về Theme Neo-Brutalism rực rỡ';
+        toast.style.display = 'block';
+        toast.style.animation = 'none';
+        void toast.offsetWidth;
+        toast.style.animation = 'fadeInOut 2s forwards';
+        setTimeout(() => { toast.style.display = 'none'; }, 2000);
+    }
+}
+
+window.initFocusTheme = initFocusTheme;
+window.toggleFocusTheme = toggleFocusTheme;
+
+// Tự động kích hoạt ngay khi load
+if (typeof window !== 'undefined') {
+    initFocusTheme();
+    initEcoMode();
+}
+
+// --- 4. ĐỒNG BỘ NÚT AUTO NEXT TRÊN THANH CÔNG CỤ ---
+function syncAutoNextButtonUI() {
+    const btn = document.getElementById('btnToggleAutoNext');
+    if (btn) {
+        btn.innerHTML = isAutoNextEnabled ? '⚡ Auto Next: BẬT' : '⚡ Auto Next: TẮT';
+        btn.style.background = isAutoNextEnabled ? '#ffd23f' : '#ffffff';
+    }
+}
+
+function createAutoNextToggle() {
+    // Đã hợp nhất vào nút duy nhất trên thanh công cụ
+    syncAutoNextButtonUI();
 }
 
 function showAutoNextStatus() {
-    // Xóa thông báo cũ nếu có
     const oldMsg = document.querySelector('.auto-next-status');
     if (oldMsg) oldMsg.remove();
 
@@ -388,49 +588,50 @@ function showAutoNextStatus() {
         position: fixed;
         top: 20px;
         right: 20px;
-        background: ${isAutoNextEnabled ? '#00b894' : '#636e72'};
+        background: ${isAutoNextEnabled ? '#10b981' : '#64748b'};
         color: white;
-        padding: 12px 18px;
+        padding: 10px 16px;
         border-radius: 10px;
-        z-index: 1000;
-        font-weight: bold;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        animation: fadeInOut 2s forwards;
+        z-index: 10000;
+        font-weight: 800;
+        box-shadow: 3px 3px 0 #141414;
+        border: 2px solid #141414;
         display: flex;
         align-items: center;
         gap: 8px;
+        animation: fadeIn 0.2s;
     `;
-    msg.innerHTML = `⚡ Auto NEXT CÂU: <strong>${isAutoNextEnabled ? 'BẬT' : 'TẮT'}</strong>`;
+    msg.innerHTML = `⚡ Auto NEXT: <strong>${isAutoNextEnabled ? 'BẬT' : 'TẮT'}</strong>`;
     document.body.appendChild(msg);
 
     setTimeout(() => {
         if (msg.parentNode) {
             msg.style.opacity = '0';
             msg.style.transform = 'translateY(-10px)';
+            msg.style.transition = 'all 0.3s ease';
             setTimeout(() => msg.remove(), 300);
         }
-    }, 1700);
+    }, 1500);
 }
 
 function updateTitleWithAutoStatus() {
     const titleElement = document.getElementById('sectionTitle');
-    if (titleElement) {
-        let title = "Đề số " + currentFileName;
-        let autoBadge = isAutoNextEnabled ? ' <span class="auto-badge">⚡ AUTO</span>' : '';
+    if (!titleElement) return;
+    let title = "Đề số " + (currentFileName || '');
+    let autoBadge = isAutoNextEnabled ? ' <span class="auto-badge">⚡ AUTO</span>' : '';
 
-        if (examMode === 'survival') {
-            titleElement.innerHTML = title + ' <span class="survival-badge">💀 1 MẠNG</span>' + autoBadge;
-        } else if (examMode === 'scoring') {
-            titleElement.innerHTML = title + ' <span class="normal-badge" style="background:#e67e22; color:white; padding:2px 8px; border-radius:10px; font-size:0.7em; font-weight:bold; margin-left:5px;">💯 TÍNH ĐIỂM</span>' + autoBadge;
-        } else {
-            titleElement.innerHTML = title + ' <span class="normal-badge">😊 THƯỜNG</span>' + autoBadge;
-        }
+    if (examMode === 'survival') {
+        titleElement.innerHTML = title + ' <span class="survival-badge">💀 1 MẠNG</span>' + autoBadge;
+    } else if (examMode === 'scoring') {
+        titleElement.innerHTML = title + ' <span class="normal-badge" style="background:#e67e22; color:white; padding:2px 8px; border-radius:10px; font-size:0.7em; font-weight:bold; margin-left:5px;">💯 TÍNH ĐIỂM</span>' + autoBadge;
+    } else {
+        titleElement.innerHTML = title + ' <span class="normal-badge">😊 THƯỜNG</span>' + autoBadge;
     }
 }
 
 // --- 5. HIỂN THỊ CÂU HỎI ---
 function renderQuestion(index) {
-    let questionsToShow = isRetryMode ? filteredQuestions : allQuestions;
+    let questionsToShow = (isRetryMode || isReviewFilterMode) ? filteredQuestions : allQuestions;
 
     if (index < 0 || index >= questionsToShow.length) return;
     currentIndex = index;
@@ -448,52 +649,31 @@ function renderQuestion(index) {
     }
 
     if (isRetryMode) {
-        qNumberText += ` | Câu gốc: ${q.originalIndex + 1}`;
+        qNumberText += ` | Câu gốc: ${(q.originalIndex !== undefined ? q.originalIndex : index) + 1}`;
+    } else if (isReviewFilterMode) {
+        qNumberText += ` | Câu gốc: ${(q.originalIndex !== undefined ? q.originalIndex : index) + 1}`;
     }
 
     const qNumberElement = document.getElementById('qNumber');
-    let qNumberHTML = qNumberText;
-
-    // Nút Bookmark
-    const bookmarkBtn = document.createElement('button');
-    bookmarkBtn.className = 'bookmark-btn';
-    bookmarkBtn.style.cssText = `background:none; border:none; cursor:pointer; font-size:1.2em; margin-left:8px; display:inline-flex; align-items:center; vertical-align:middle; outline:none; transition:transform 0.2s;`;
-
-    let bookmarks = [];
-    try {
-        bookmarks = JSON.parse(localStorage.getItem('bookmarks_' + currentFileName)) || [];
-        if (!Array.isArray(bookmarks)) bookmarks = [];
-    } catch (e) { bookmarks = []; }
-
-    const isBookmarked = bookmarks.includes(q.originalIndex);
-    bookmarkBtn.innerHTML = isBookmarked ? '⭐' : '☆';
-    bookmarkBtn.title = isBookmarked ? 'Bỏ đánh dấu' : 'Đánh dấu câu hỏi';
-    bookmarkBtn.onclick = () => {
-        let bm = [];
-        try {
-            bm = JSON.parse(localStorage.getItem('bookmarks_' + currentFileName)) || [];
-            if (!Array.isArray(bm)) bm = [];
-        } catch (e) { bm = []; }
-
-        const idx = bm.indexOf(q.originalIndex);
-        if (idx === -1) {
-            bm.push(q.originalIndex);
-            bookmarkBtn.innerHTML = '⭐';
-            bookmarkBtn.style.transform = 'scale(1.2)';
-            setTimeout(() => bookmarkBtn.style.transform = 'scale(1)', 200);
-        } else {
-            bm.splice(idx, 1);
-            bookmarkBtn.innerHTML = '☆';
-        }
-        localStorage.setItem('bookmarks_' + currentFileName, JSON.stringify(bm));
-    };
-
-    if (isRetryMode) {
-        qNumberHTML += ` <span style="background:#f39c12; color:white; padding:2px 6px; border-radius:8px; font-size:0.8em;">Làm lại lần ${retryCount}</span>`;
+    const isBookmarked = isQuestionBookmarked(q);
+    const qFlagBanner = document.getElementById('qFlagBanner');
+    if (qFlagBanner) {
+        qFlagBanner.style.display = isBookmarked ? 'flex' : 'none';
     }
+    let retryBadge = isRetryMode ? ` <span style="background:#f39c12; color:white; padding:2px 8px; border-radius:8px; font-size:0.8em; font-weight:800;">Làm lại lần ${retryCount}</span>` : (isReviewFilterMode ? ` <span style="background:#02a9ea; color:white; padding:2px 8px; border-radius:8px; font-size:0.8em; font-weight:800;">Xem lại</span>` : '');
 
-    qNumberElement.innerHTML = qNumberHTML;
-    qNumberElement.appendChild(bookmarkBtn);
+    qNumberElement.innerHTML = `
+        <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; flex-wrap: wrap; gap: 8px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-weight: 900; font-size: 1.05rem;">${qNumberText}</span>${retryBadge}
+                <span id="qFlagIndicator" class="flag-indicator-badge" style="background: #fde047; border: 1.5px solid #141414; color: #854d0e; font-size: 0.75rem; font-weight: 900; padding: 2px 8px; border-radius: 6px; box-shadow: 1.5px 1.5px 0 #141414; display: ${isBookmarked ? 'inline-flex' : 'none'};">⭐ ĐANG PHÂN VÂN</span>
+            </div>
+            <button class="neo-flag-btn ${isBookmarked ? 'flagged' : ''}" id="btnBookmarkFlag" onclick="handleBookmarkToggle()" title="Bấm để cắm cờ hoặc bỏ cắm cờ phân vân">
+                <span class="flag-icon">${isBookmarked ? '⭐' : '☆'}</span>
+                <span class="flag-label">${isBookmarked ? 'ĐÃ CẮM CỜ' : 'CẮM CỜ PHÂN VÂN'}</span>
+            </button>
+        </div>
+    `;
 
     document.getElementById('qText').innerHTML = processedText;
     document.getElementById('btnPrev').disabled = (index === 0);
@@ -514,7 +694,9 @@ function renderQuestion(index) {
     const optsArea = document.getElementById('optionsArea');
     optsArea.innerHTML = '';
 
-    const isAnswered = isRetryMode ? (q.retrySelected !== null) : (q.userSelected !== null);
+    const isAnswered = isRetryMode ? 
+        (q.retrySelected !== null && q.options[q.retrySelected]?.isCorrect) : 
+        (q.userSelected !== null);
 
     q.options.forEach((opt, idx) => {
         const btn = document.createElement('div');
@@ -536,11 +718,26 @@ function renderQuestion(index) {
 
         btn.innerHTML = displayText;
 
-        if (isAnswered) {
+        if (examMode === 'survival' && isSurvivalFailed) {
             btn.style.pointerEvents = 'none';
-
-            let statusText = '';
-            let statusColor = '';
+        } else if (isSubmitted) {
+            btn.style.pointerEvents = 'none';
+            if (q.userSelected === idx) {
+                if (opt.isCorrect) {
+                    btn.classList.add('correct', 'user-correct');
+                } else {
+                    btn.classList.add('wrong', 'user-wrong');
+                }
+            } else if (opt.isCorrect) {
+                btn.classList.add('correct');
+            }
+        } else if (examMode === 'scoring') {
+            if (q.userSelected === idx) {
+                btn.classList.add('selected');
+            }
+            btn.onclick = () => handleAnswer(index, idx);
+        } else if (isAnswered) {
+            btn.style.pointerEvents = 'none';
 
             if (isRetryMode) {
                 if (q.retrySelected === idx) {
@@ -554,14 +751,12 @@ function renderQuestion(index) {
                 }
             } else {
                 if (q.userSelected === idx) {
-                    if (examMode === 'scoring' && !isSubmitted) {
-                        btn.classList.add('selected');
-                    } else if (opt.isCorrect) {
+                    if (opt.isCorrect) {
                         btn.classList.add('correct');
                     } else {
                         btn.classList.add('wrong');
                     }
-                } else if (opt.isCorrect && (examMode !== 'scoring' || isSubmitted)) {
+                } else if (opt.isCorrect) {
                     btn.classList.add('correct');
                 }
             }
@@ -575,6 +770,7 @@ function renderQuestion(index) {
 
 function handleAnswer(qIndex, optIndex) {
     if (isSubmitted) return;
+    if (examMode === 'survival' && isSurvivalFailed) return;
 
     // --- 1. XÓA TIMER CŨ (Tránh lỗi click nhanh) ---
     if (autoNextTimer) {
@@ -587,10 +783,14 @@ function handleAnswer(qIndex, optIndex) {
     const selectedOption = q.options[optIndex];
 
     if (isRetryMode) {
-        q.retrySelected = optIndex;
-
         if (selectedOption.isCorrect) {
-            const wrongIndex = wrongQuestions.findIndex(item => item.index === q.originalIndex);
+            q.retrySelected = optIndex;
+            const wrongIndex = wrongQuestions.findIndex(item =>
+                item.question === q ||
+                item.index === q.originalIndex ||
+                item.originalIndex === q.originalIndex ||
+                item.index === qIndex
+            );
             if (wrongIndex !== -1) {
                 wrongQuestions.splice(wrongIndex, 1);
             }
@@ -611,11 +811,11 @@ function handleAnswer(qIndex, optIndex) {
             showWrongEffect();
             currentStreak = 0; // Sai khi làm lại cũng reset streak
             showComboFire(0);
-            renderQuestion(qIndex);
-            
-            // Hiện nút báo lỗi khi sai
-            // const btnReport = document.getElementById('btnReportFloat');
-            // if (btnReport) btnReport.style.display = 'block';
+            q.retrySelected = null;
+            const opts = document.querySelectorAll('.option-item');
+            if (opts[optIndex]) {
+                opts[optIndex].classList.add('wrong');
+            }
         }
 
         saveProgress();
@@ -625,6 +825,9 @@ function handleAnswer(qIndex, optIndex) {
         q.userSelected = optIndex;
 
         if (q.firstAttemptSelected === null) {
+            q.firstAttemptSelected = optIndex;
+            q.isCorrectFirstTime = selectedOption.isCorrect;
+        } else if (examMode === 'scoring') {
             q.firstAttemptSelected = optIndex;
             q.isCorrectFirstTime = selectedOption.isCorrect;
         }
@@ -681,23 +884,44 @@ function handleAnswer(qIndex, optIndex) {
     }
 
     if (shouldAutoNext) {
+        // Tốc độ next câu: Đúng -> nhanh thêm x2 (600ms); Sai -> giữ tốc độ hiện tại (1200ms) để kịp xem lại đáp án
+        const autoNextDelay = (selectedOption && selectedOption.isCorrect) ? 600 : (examMode === 'scoring' ? 600 : 1200);
         autoNextTimer = setTimeout(() => {
             // Kiểm tra lại lần nữa index (vì có thể user đã bấm nút Next thủ công)
             if (currentIndex < questionsToShow.length - 1) {
                 changeQuestion(1);
             }
-        }, 500); // 2 giây
+        }, autoNextDelay);
     }
 
     // --- 3. LOGIC AUTO SUBMIT (NỘP BÀI TỰ ĐỘNG) ---
     // Tự động nộp bài khi đã trả lời hết tất cả các câu
     const answeredCount = allQuestions.filter(q => q.userSelected !== null).length;
     const totalQuestions = allQuestions.length;
+    const bookmarkedCount = getBookmarks().length;
 
     if (answeredCount === totalQuestions && !isRetryMode && !isSubmitted) {
-        if (!isSubmitted) {
-            console.log("Hệ thống: Đã trả lời hết, tự động nộp bài ngay lập tức...");
-            finishExam(true); // Nộp bài không cần confirm
+        // Kiểm tra câu cắm cờ phân vân (bookmarked/flagged) trước khi nộp bài
+        const bookmarkedCount = getBookmarks().length;
+        if (autoNextTimer) { clearTimeout(autoNextTimer); autoNextTimer = null; }
+        if (bookmarkedCount > 0) {
+            setTimeout(() => {
+                if (!isSubmitted) {
+                    if (confirm(`⚠️ Bạn đã hoàn thành tất cả câu hỏi, nhưng đang có ${bookmarkedCount} câu cắm cờ phân vân (⭐) chưa kiểm tra lại!\n\nNhấn "OK" để nộp bài luôn.\nNhấn "Cancel" để xem lại các câu phân vân.`)) {
+                        finishExam(true);
+                    } else {
+                        toggleModal();
+                        setPaletteFilter('flagged');
+                    }
+                }
+            }, 600);
+        } else {
+            setTimeout(() => {
+                if (!isSubmitted) {
+                    console.log("Hệ thống: Đã trả lời hết, tự động nộp bài...");
+                    finishExam(true);
+                }
+            }, 800);
         }
     }
 }
@@ -864,7 +1088,26 @@ function showWrongEffect() {
     }, 1000);
 }
 
+function showComboFire(streak) {
+    let comboEl = document.getElementById('comboFireBadge');
+    if (!comboEl) {
+        comboEl = document.createElement('div');
+        comboEl.id = 'comboFireBadge';
+        comboEl.style.cssText = 'position:fixed; bottom:70px; right:20px; z-index:99; font-weight:900; font-size:1rem; padding:6px 14px; background:#ffd23f; border:2.5px solid #141414; border-radius:999px; box-shadow:3px 3px 0 #141414; display:none; pointer-events:none; transition:transform 0.15s ease;';
+        document.body.appendChild(comboEl);
+    }
+    if (streak >= 3) {
+        comboEl.innerHTML = `🔥 COMBO x${streak}`;
+        comboEl.style.display = 'block';
+        comboEl.style.transform = 'scale(1.15)';
+        setTimeout(() => { if (comboEl) comboEl.style.transform = 'scale(1)'; }, 150);
+    } else {
+        comboEl.style.display = 'none';
+    }
+}
+
 function changeQuestion(step) {
+    if (examMode === 'survival' && isSurvivalFailed) return;
     // Xóa timer nếu người dùng tự chuyển câu
     if (autoNextTimer) {
         clearTimeout(autoNextTimer);
@@ -886,7 +1129,22 @@ function resetExam() {
 }
 
 function performFullReset() {
+    closeResult();
+
+    if (autoNextTimer) {
+        clearTimeout(autoNextTimer);
+        autoNextTimer = null;
+    }
+
+    const modalResult = document.getElementById('modalResult');
+    if (modalResult) modalResult.style.display = 'none';
+
+    const filterBar = document.getElementById('reviewFilterBar');
+    if (filterBar) filterBar.remove();
+
     localStorage.removeItem('quiz_data_' + currentFileName);
+    localStorage.removeItem('bookmarks_' + currentFileName);
+    updateBookmarkBadge();
 
     if (originalQuestions.length > 0) {
         allQuestions = JSON.parse(JSON.stringify(originalQuestions));
@@ -901,6 +1159,8 @@ function performFullReset() {
     }
 
     isRetryMode = false;
+    isReviewFilterMode = false;
+    hasReportedScore = false;
     filteredQuestions = [];
     wrongQuestions = [];
     retryCount = 0;
@@ -910,6 +1170,7 @@ function performFullReset() {
     currentIndex = 0;
     isSubmitted = false;
     isAutoNextEnabled = false;
+    syncAutoNextButtonUI();
     currentStreak = 0; // Reset hỏa lực
     showComboFire(0);
 
@@ -931,6 +1192,10 @@ function performFullReset() {
 }
 
 function finishExam(skipConfirm = false) {
+    if (autoNextTimer) {
+        clearTimeout(autoNextTimer);
+        autoNextTimer = null;
+    }
     if (isSubmitted) {
         showResultModal();
         return;
@@ -938,8 +1203,16 @@ function finishExam(skipConfirm = false) {
 
     const answeredCount = allQuestions.filter(q => q.userSelected !== null).length;
     const totalQuestions = allQuestions.length;
+    const bookmarkedCount = getBookmarks().length;
 
     if (!skipConfirm) {
+        if (bookmarkedCount > 0) {
+            if (!confirm(`⚠️ Boss man đang có ${bookmarkedCount} câu cắm cờ phân vân (⭐) chưa kiểm tra lại!\n\nNhấn "OK" để vẫn nộp bài luôn.\nNhấn "Cancel" để mở danh sách kiểm tra lại.`)) {
+                toggleModal();
+                setPaletteFilter('flagged');
+                return;
+            }
+        }
         if (answeredCount < totalQuestions) {
             if (!confirm(`Bạn mới trả lời ${answeredCount}/${totalQuestions} câu. Bạn có chắc muốn nộp bài không?`)) {
                 return;
@@ -966,6 +1239,9 @@ function finishExam(skipConfirm = false) {
     });
 
     firstAttemptScore = correct;
+
+    // Lưu tiến độ ngay lập tức để đảm bảo trạng thái nộp bài được ghi nhận trước confirm/timeout
+    saveProgress();
 
     // Nếu chế độ thường và có câu sai, hỏi có muốn làm lại không
     if (examMode === 'normal' && wrong > 0) {
@@ -1003,7 +1279,8 @@ function startRetryMode() {
         if (!q.isCorrectFirstTime && q.firstAttemptSelected !== null) {
             q.isRetryMode = true;
             wrongQuestions.push({
-                index: index,
+                index: q.originalIndex !== undefined ? q.originalIndex : index,
+                originalIndex: q.originalIndex !== undefined ? q.originalIndex : index,
                 question: q
             });
         } else {
@@ -1031,7 +1308,6 @@ function startRetryMode() {
     document.getElementById('sectionTitle').innerHTML =
         `LÀM LẠI CÂU SAI | Đề ${currentFileName} <span class="normal-badge" style="background:#f39c12">🔄 Lần ${retryCount}</span>`;
 
-    totalSeconds = 0;
     startTimer();
 }
 
@@ -1040,7 +1316,7 @@ function updateFilteredQuestions() {
     filteredQuestions = allQuestions.filter(q =>
         !q.isCorrectFirstTime &&
         q.firstAttemptSelected !== null &&
-        q.retrySelected === null  // Chỉ lấy câu chưa làm lại đúng
+        !(q.retrySelected !== null && q.options[q.retrySelected]?.isCorrect)  // Chỉ loại bỏ câu đã làm lại ĐÚNG
     );
 
     filteredQuestions.forEach((q, idx) => {
@@ -1075,7 +1351,14 @@ function showResultModal() {
     document.getElementById('resSkip').innerText = skip;
     document.getElementById('resTime').innerText = `Tổng thời gian: ${mins} phút ${secs} giây`;
 
+    const resultBox = document.querySelector('.result-box');
+    const oldModeInfo = resultBox.querySelector('.mode-info-card');
+    if (oldModeInfo) {
+        oldModeInfo.remove();
+    }
+
     const modeInfo = document.createElement('div');
+    modeInfo.className = 'mode-info-card';
     modeInfo.style.cssText = `
         margin-bottom: 15px;
         padding: 12px;
@@ -1086,8 +1369,9 @@ function showResultModal() {
         border: 2px solid #2196f3;
     `;
 
+    const modeLabel = examMode === 'survival' ? '💀 Sinh tử' : (examMode === 'scoring' ? '💯 Tính điểm' : '😊 Thường');
     let modeText = `<div style="font-weight:bold; margin-bottom:5px;">📊 THÔNG TIN KẾT QUẢ</div>`;
-    modeText += `<div>🎮 Chế độ: <strong>${examMode === 'survival' ? '💀 Sinh tử' : '😊 Thường'}</strong></div>`;
+    modeText += `<div>🎮 Chế độ: <strong>${modeLabel}</strong></div>`;
     modeText += `<div>🔀 Thứ tự: <strong>${questionOrder === 'random' ? 'Đảo lộn' : 'Nguyên bản'}</strong></div>`;
     modeText += `<div>⚡ Auto Next: <strong>${isAutoNextEnabled ? 'BẬT' : 'TẮT'}</strong></div>`;
     modeText += `<div>🏆 Điểm lần đầu: <strong>${firstAttemptScore}/${allQuestions.length}</strong></div>`;
@@ -1102,7 +1386,6 @@ function showResultModal() {
 
     modeInfo.innerHTML = modeText;
 
-    const resultBox = document.querySelector('.result-box');
     const timeElement = document.getElementById('resTime');
     resultBox.insertBefore(modeInfo, timeElement);
 
@@ -1113,29 +1396,29 @@ function showResultModal() {
 
     if (examMode === 'normal' && wrong > 0 && !isRetryMode) {
         const retryButton = document.createElement('button');
-        retryButton.className = 'btn-close-res retry-button ripple';
-        retryButton.style.background = '#f39c12';
-        retryButton.style.marginTop = '10px';
-        retryButton.style.width = '100%';
+        retryButton.className = 'result-btn retry-button';
+        retryButton.style.cssText = 'background: #02a9ea !important; color: #ffffff !important; width: 100%; flex-basis: 100%; margin-top: 10px; cursor: pointer;';
         retryButton.innerText = '🔄 Làm lại câu sai';
         retryButton.onclick = function (e) {
-            createRipple(e, this);
             closeResult();
             setTimeout(() => {
                 startRetryMode();
             }, 300);
         };
 
-        const buttonContainer = resultBox.querySelector('div[style*="display:flex; gap:10px"]');
-        if (buttonContainer) {
-            buttonContainer.parentNode.insertBefore(retryButton, buttonContainer.nextSibling);
+        const actionsContainer = resultBox.querySelector('.result-actions');
+        if (actionsContainer) {
+            actionsContainer.appendChild(retryButton);
         }
     }
 
     document.getElementById('modalResult').style.display = 'flex';
 
     // --- GỬI ĐIỂM VỀ TELEGRAM & HIỆU ỨNG PHÁO HOA ---
-    reportScoreAndFirework(correct, wrong, skip);
+    if (!hasReportedScore) {
+        hasReportedScore = true;
+        reportScoreAndFirework(correct, wrong, skip);
+    }
 }
 
 async function reportScoreAndFirework(correct, wrong, skip) {
@@ -1369,24 +1652,43 @@ function syncLiveProgress() {
 function loadProgress() {
     const saved = localStorage.getItem('quiz_data_' + currentFileName);
     if (saved) {
-        const data = JSON.parse(saved);
-        isSubmitted = data.isSubmitted || false;
-        totalSeconds = data.totalSeconds || 0;
+        let data = null;
+        try {
+            data = JSON.parse(saved);
+        } catch (e) {
+            console.warn('Corrupted quiz_data JSON in localStorage, resetting:', e);
+            localStorage.removeItem('quiz_data_' + currentFileName);
+            renderQuestion(0);
+            return;
+        }
+
+        if (!data || typeof data !== 'object') {
+            console.warn('Malformed quiz_data in localStorage (not an object), resetting');
+            localStorage.removeItem('quiz_data_' + currentFileName);
+            renderQuestion(0);
+            return;
+        }
+
+        isSubmitted = Boolean(data.isSubmitted);
+        totalSeconds = typeof data.totalSeconds === 'number' && !isNaN(data.totalSeconds) ? data.totalSeconds : 0;
         examMode = data.examMode || examMode;
         questionOrder = data.questionOrder || questionOrder;
-        isSurvivalFailed = data.isSurvivalFailed || false;
-        isRetryMode = data.isRetryMode || false;
-        retryCount = data.retryCount || 0;
-        firstAttemptScore = data.firstAttemptScore || 0;
-        currentStreak = data.currentStreak || 0; // Phục hồi Combo Hỏa lực
+        isSurvivalFailed = Boolean(data.isSurvivalFailed);
+        isRetryMode = Boolean(data.isRetryMode);
+        retryCount = typeof data.retryCount === 'number' ? data.retryCount : 0;
+        firstAttemptScore = typeof data.firstAttemptScore === 'number' ? data.firstAttemptScore : 0;
+        currentStreak = typeof data.currentStreak === 'number' ? data.currentStreak : 0; // Phục hồi Combo Hỏa lực
 
-        if (data.autoNext !== undefined) isAutoNextEnabled = data.autoNext;
+        if (data.autoNext !== undefined) isAutoNextEnabled = Boolean(data.autoNext);
 
-        if (data.wrongQuestions) {
-            wrongQuestions = data.wrongQuestions.map(index => ({
-                index,
-                question: allQuestions[index]
-            }));
+        if (Array.isArray(data.wrongQuestions)) {
+            wrongQuestions = data.wrongQuestions.map(idx => ({
+                index: idx,
+                originalIndex: idx,
+                question: allQuestions.find(q => q.originalIndex === idx) || allQuestions[idx]
+            })).filter(item => item.question);
+        } else {
+            wrongQuestions = [];
         }
 
         if (examMode === 'survival' && isSurvivalFailed && !isSubmitted) {
@@ -1398,23 +1700,24 @@ function loadProgress() {
 
         updateTimerDisplay();
 
-        if (data.history) {
+        if (Array.isArray(data.history)) {
             const originalParsed = JSON.parse(JSON.stringify(allQuestions));
             const restoredQuestions = [];
 
             data.history.forEach((h, i) => {
+                if (!h || typeof h !== 'object') return;
                 let q = originalParsed[h.originalIndex !== undefined ? h.originalIndex : i];
                 if (q) {
                     q = JSON.parse(JSON.stringify(q));
-                    if (h.shuffledOptionIndices) {
-                        q.options = h.shuffledOptionIndices.map(idx => q.options[idx]);
+                    if (Array.isArray(h.shuffledOptionIndices)) {
+                        q.options = h.shuffledOptionIndices.map(idx => q.options[idx]).filter(Boolean);
                     }
 
-                    q.userSelected = h.userSelected;
-                    q.firstAttemptSelected = h.firstAttemptSelected;
-                    q.isCorrectFirstTime = h.isCorrectFirstTime;
-                    q.retrySelected = h.retrySelected;
-                    q.isRetryMode = h.isRetryMode;
+                    q.userSelected = (typeof h.userSelected === 'number') ? h.userSelected : null;
+                    q.firstAttemptSelected = (typeof h.firstAttemptSelected === 'number') ? h.firstAttemptSelected : null;
+                    q.isCorrectFirstTime = (typeof h.isCorrectFirstTime === 'boolean') ? h.isCorrectFirstTime : null;
+                    q.retrySelected = (typeof h.retrySelected === 'number') ? h.retrySelected : null;
+                    q.isRetryMode = Boolean(h.isRetryMode);
                     q.originalIndex = h.originalIndex !== undefined ? h.originalIndex : i;
                     q.shuffledOptionIndices = h.shuffledOptionIndices;
                     
@@ -1424,6 +1727,9 @@ function loadProgress() {
             if (restoredQuestions.length > 0) {
                 allQuestions = restoredQuestions;
             }
+        } else if (data.history !== undefined && !Array.isArray(data.history)) {
+            console.warn('Corrupted data.history in quiz_data (not an array), resetting stored corrupted data');
+            localStorage.removeItem('quiz_data_' + currentFileName);
         }
 
         if (isRetryMode) {
@@ -1450,46 +1756,137 @@ function loadProgress() {
     }
 }
 
-// --- 8. MODAL DANH SÁCH ---
+// --- 8. MODAL DANH SÁCH & BỘ LỌC PALETTE (ALL / FLAGGED / UNANSWERED) ---
 function toggleModal() {
     const modal = document.getElementById('modalList');
+    if (!modal) return;
     if (modal.style.display === 'flex') {
         modal.style.display = 'none';
     } else {
-        const grid = document.getElementById('gridMap');
-        grid.innerHTML = '';
-
-        const questionsToShow = isRetryMode ? filteredQuestions : allQuestions;
-
-        questionsToShow.forEach((q, idx) => {
-            const div = document.createElement('div');
-            div.className = 'grid-item';
-            div.innerText = idx + 1;
-
-            if (questionOrder === 'random') {
-                div.title = `Câu gốc: ${q.originalIndex + 1}`;
-            }
-
-            if (idx === currentIndex) div.classList.add('current');
-
-            if (isRetryMode) {
-                if (q.retrySelected !== null) {
-                    div.classList.add(q.options[q.retrySelected]?.isCorrect ? 'done-correct' : 'done-wrong');
-                }
-            } else {
-                if (q.userSelected !== null) {
-                    if (q.options[q.userSelected]?.isCorrect) div.classList.add('done-correct');
-                    else div.classList.add('done-wrong');
-                }
-            }
-
-            div.onclick = () => {
-                renderQuestion(idx);
-                modal.style.display = 'none';
-            };
-            grid.appendChild(div);
-        });
+        updatePaletteCounts();
+        renderPaletteGrid();
         modal.style.display = 'flex';
+    }
+}
+
+function setPaletteFilter(filterType) {
+    currentPaletteFilter = filterType || 'all';
+
+    ['palTabAll', 'palTabFlagged', 'palTabUnanswered'].forEach(id => {
+        const tab = document.getElementById(id);
+        if (tab) tab.classList.remove('active');
+    });
+
+    if (currentPaletteFilter === 'flagged') {
+        const tab = document.getElementById('palTabFlagged');
+        if (tab) tab.classList.add('active');
+    } else if (currentPaletteFilter === 'unanswered') {
+        const tab = document.getElementById('palTabUnanswered');
+        if (tab) tab.classList.add('active');
+    } else {
+        const tab = document.getElementById('palTabAll');
+        if (tab) tab.classList.add('active');
+    }
+
+    updatePaletteCounts();
+    renderPaletteGrid();
+}
+
+function updatePaletteCounts() {
+    const questionsToShow = (isRetryMode || isReviewFilterMode) ? filteredQuestions : allQuestions;
+    const total = questionsToShow.length;
+    const flagged = questionsToShow.filter(q => isQuestionBookmarked(q)).length;
+    const unanswered = questionsToShow.filter(q => {
+        return isRetryMode ? (q.retrySelected === null) : (q.userSelected === null);
+    }).length;
+
+    const elAll = document.getElementById('palCountAll');
+    const elFlag = document.getElementById('palCountFlagged');
+    const elUn = document.getElementById('palCountUnanswered');
+
+    if (elAll) elAll.innerText = total;
+    if (elFlag) elFlag.innerText = flagged;
+    if (elUn) elUn.innerText = unanswered;
+}
+
+function renderPaletteGrid() {
+    const grid = document.getElementById('gridMap');
+    if (!grid) return;
+    grid.innerHTML = '';
+
+    const questionsToShow = (isRetryMode || isReviewFilterMode) ? filteredQuestions : allQuestions;
+    let visibleCount = 0;
+
+    questionsToShow.forEach((q, idx) => {
+        const isBm = isQuestionBookmarked(q);
+        const isAnswered = isRetryMode ? (q.retrySelected !== null) : (q.userSelected !== null);
+
+        // Lọc theo tab
+        if (currentPaletteFilter === 'flagged' && !isBm) return;
+        if (currentPaletteFilter === 'unanswered' && isAnswered) return;
+
+        visibleCount++;
+
+        const div = document.createElement('div');
+        div.className = 'grid-item';
+        div.style.position = 'relative';
+        div.innerHTML = `<span class="q-num" style="font-weight:900; font-size:0.88rem;">${idx + 1}</span>${isBm ? '<span class="q-star-badge" style="position:absolute; top:-6px; right:-5px; font-size:13px; line-height:1; filter:drop-shadow(1px 1px 0 #141414); pointer-events:none; z-index:5;">⭐</span>' : ''}`;
+
+        let titleStr = `Câu ${idx + 1}`;
+        if (questionOrder === 'random') {
+            titleStr += ` (Gốc: ${q.originalIndex + 1})`;
+        }
+        if (isBm) {
+            titleStr += ` • ⭐ Đang phân vân`;
+            div.classList.add('bookmarked');
+            div.style.borderColor = '#eab308';
+            div.style.borderWidth = '2.5px';
+            div.style.borderStyle = 'solid';
+            if (!isAnswered) {
+                div.style.background = '#fef08a';
+                div.style.color = '#854d0e';
+                div.style.fontWeight = '900';
+            }
+        }
+        div.title = titleStr;
+
+        if (idx === currentIndex) div.classList.add('current');
+
+        if (isRetryMode) {
+            if (q.retrySelected !== null) {
+                div.classList.add(q.options[q.retrySelected]?.isCorrect ? 'done-correct' : 'done-wrong');
+            }
+        } else {
+            if (q.userSelected !== null) {
+                if (examMode === 'scoring' && !isSubmitted) {
+                    div.classList.add('done-answered'); // Chế độ tính điểm: hiện đã làm
+                } else if (q.options[q.userSelected]?.isCorrect) {
+                    div.classList.add('done-correct');
+                } else {
+                    div.classList.add('done-wrong');
+                }
+            }
+        }
+
+        div.onclick = () => {
+            renderQuestion(idx);
+            const modal = document.getElementById('modalList');
+            if (modal) modal.style.display = 'none';
+        };
+        grid.appendChild(div);
+    });
+
+    if (visibleCount === 0) {
+        const emptyMsg = document.createElement('div');
+        emptyMsg.style.cssText = 'grid-column: 1/-1; padding: 32px 16px; text-align: center; color: #64748b; font-weight: 800; font-size: 0.95rem; line-height: 1.6;';
+        if (currentPaletteFilter === 'flagged') {
+            emptyMsg.innerHTML = '⭐ Chưa có câu nào được cắm cờ phân vân!<br><span style="font-size:0.82rem; font-weight:600; color:#94a3b8;">Bấm nút "CẮM CỜ PHÂN VÂN" ở trên câu hỏi để gom các câu cần xem lại vào đây.</span>';
+        } else if (currentPaletteFilter === 'unanswered') {
+            emptyMsg.innerHTML = '🎉 Tuyệt vời! Bạn đã trả lời hết toàn bộ các câu hỏi!';
+        } else {
+            emptyMsg.innerHTML = 'Không có câu hỏi nào để hiển thị.';
+        }
+        grid.appendChild(emptyMsg);
     }
 }
 
@@ -1570,8 +1967,12 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// --- 10. ĐIỀU KHIỂN BÀN PHÍM ---
+// --- 10. ĐIỀU KHIỂN BÀN PHÍM SIÊU TỐC ---
 document.addEventListener('keydown', (event) => {
+    // Bỏ qua nếu đang gõ input hoặc mở modal
+    if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') return;
+    if (examMode === 'survival' && isSurvivalFailed) return;
+
     const modalList = document.getElementById('modalList');
     const modalResult = document.getElementById('modalResult');
     if ((modalList && modalList.style.display === 'flex') ||
@@ -1579,14 +1980,31 @@ document.addEventListener('keydown', (event) => {
         return;
     }
 
-    if (event.key === 'ArrowRight') {
+    if (event.key === 'ArrowRight' || event.key === ' ') {
+        if (event.key === ' ') event.preventDefault();
         changeQuestion(1);
     } else if (event.key === 'ArrowLeft') {
         changeQuestion(-1);
+    } else if (['1', 'a', 'A'].includes(event.key)) {
+        const opts = document.querySelectorAll('.option-item');
+        if (opts[0]) opts[0].click();
+    } else if (['2', 'b', 'B'].includes(event.key)) {
+        const opts = document.querySelectorAll('.option-item');
+        if (opts[1]) opts[1].click();
+    } else if (['3', 'c', 'C'].includes(event.key)) {
+        const opts = document.querySelectorAll('.option-item');
+        if (opts[2]) opts[2].click();
+    } else if (['4', 'd', 'D'].includes(event.key)) {
+        const opts = document.querySelectorAll('.option-item');
+        if (opts[3]) opts[3].click();
     }
 });
 
 // --- 11. HÀM ĐÓNG KẾT QUẢ ---
 function closeResult() {
-    document.getElementById('modalResult').style.display = 'none';
+    const modal = document.getElementById('modalResult');
+    if (modal) modal.style.display = 'none';
+    if (typeof showReviewFilterBar === 'function' && isSubmitted) {
+        showReviewFilterBar();
+    }
 }

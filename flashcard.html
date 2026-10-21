@@ -3,17 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Flashcards - Thẻ Ghi Nhớ</title>
+    <title>Flashcards - Thẻ Ghi Nhớ | Hệ Thống Khảo Thí VIP 2026</title>
+    <meta name="theme-color" content="#ffd23f">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
         .flashcard-container {
             perspective: 1000px;
             width: 100%;
-            max-width: 500px;
-            height: 500px; /* Tăng chiều cao để chứa cả đáp án */
-            margin: 30px auto;
+            max-width: 520px;
+            min-height: 380px;
+            height: 500px;
+            max-height: calc(100vh - 220px);
+            margin: 20px auto;
             cursor: pointer;
+            user-select: none;
+            -webkit-user-select: none;
         }
 
         .flashcard-inner {
@@ -41,15 +47,20 @@
             flex-direction: column;
             align-items: center;
             justify-content: flex-start; /* Để text bắt đầu từ trên xuống */
-            padding: 40px 25px 30px 25px;
+            padding: 35px 25px 35px 25px;
             border-radius: 28px;
             background: white;
             overflow-y: auto;
-            scrollbar-width: none; /* Ẩn scrollbar trên Firefox */
+            scrollbar-width: thin;
+            scrollbar-color: rgba(148, 163, 184, 0.4) transparent;
         }
         
         .flashcard-front::-webkit-scrollbar, .flashcard-back::-webkit-scrollbar {
-            display: none; /* Ẩn scrollbar trên Chrome/Safari */
+            width: 6px;
+        }
+        .flashcard-front::-webkit-scrollbar-thumb, .flashcard-back::-webkit-scrollbar-thumb {
+            background: rgba(148, 163, 184, 0.4);
+            border-radius: 4px;
         }
 
         .flashcard-back {
@@ -142,11 +153,16 @@
         <div style="position: absolute; top: 20px; left: 20px;">
             <button onclick="goBack()" style="background:none; border:none; font-size: 1.5em; cursor:pointer;">🔙</button>
         </div>
+        <div style="position: absolute; top: 16px; right: 20px;">
+            <button class="nav-btn btn-focus-theme-toggle" id="btnFlashcardThemeToggle" onclick="toggleFocusTheme()" style="background: #ffffff; border: 2px solid var(--neo-black); border-radius: 999px; box-shadow: 2px 2px 0 var(--neo-black); padding: 6px 14px; font-size: 0.82rem; font-weight: 800; cursor: pointer; width: auto; height: auto;" title="Đổi theme: Giảm màu mè tập trung ôn">
+                <span class="theme-toggle-icon">🌱</span> <span class="theme-toggle-text">Giảm màu mè</span>
+            </button>
+        </div>
 
         <div class="big-title" style="margin-bottom: 5px;">HỌC THẺ GHI NHỚ</div>
         <div id="examName" style="font-weight: 700; color: #64748b; font-size: 0.9em; margin-bottom: 20px;">Đang tải...</div>
 
-        <div class="flashcard-container" id="cardContainer" onclick="this.classList.toggle('flipped')">
+        <div class="flashcard-container" id="cardContainer" onclick="handleCardClick(event)">
             <div class="flashcard-inner">
                 <div class="flashcard-front">
                     <div class="category-badge">CÂU HỎI</div>
@@ -161,9 +177,10 @@
         </div>
 
         <div class="controls-bar">
-            <button class="nav-btn" onclick="event.stopPropagation(); changeCard(-1)">👈</button>
+            <button class="nav-btn" id="btnPrev" title="Câu trước (←)" onclick="event.stopPropagation(); changeCard(-1)">👈</button>
+            <button class="nav-btn" id="btnShuffle" title="Trộn câu hỏi" onclick="event.stopPropagation(); shuffleCards()" style="width: auto; padding: 0 16px; border-radius: 30px; font-size: 0.95rem; font-weight: 700;">🔀 Trộn</button>
             <div class="progress-label" id="progressLabel">0/0</div>
-            <button class="nav-btn" onclick="event.stopPropagation(); changeCard(1)">👉</button>
+            <button class="nav-btn" id="btnNext" title="Câu sau (→)" onclick="event.stopPropagation(); changeCard(1)">👉</button>
         </div>
 
         <div style="margin-top: 30px; font-size: 0.85em; color: #94a3b8; line-height: 1.6; text-align: center;">
@@ -171,19 +188,13 @@
         </div>
     </div>
 
+    <script src="js/api-config.js"></script>
     <script src="js/flashcard.js"></script>
     <script>
-        // KIỂM TRA ĐĂNG NHẬP
-        const userData = sessionStorage.getItem('current_user');
-        if (!userData) {
-            window.location.href = "login.html";
-        }
-
         const params = new URLSearchParams(window.location.search);
-        const fileID = params.get('id');
-        const fileName = params.get('name');
+        const fileID = params.get('id') || 'KTCQ';
+        const fileName = params.get('name') || fileID;
 
-        if (!fileID) window.location.href = "index.html";
         document.getElementById('examName').innerText = fileName || ("Đề số " + fileID);
 
         function goBack() {
@@ -193,6 +204,5 @@
         // Tải dữ liệu
         loadFlashcards(fileID);
     </script>
-    <script src="js/tkhethan.js"></script>
 </body>
 </html>

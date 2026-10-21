@@ -3,40 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Ôn Tập</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <title>Ôn Tập Đề Thi | Hệ Thống Khảo Thí VIP 2026</title>
+    <meta name="theme-color" content="#ffd23f">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/thi-premium.css">
+    <style>
+        .review-toolbar {
+            background: var(--neo-yellow);
+            border-bottom: 3.5px solid var(--neo-black);
+            padding: 12px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            gap: 10px;
+        }
+        .review-card {
+            background: #ffffff;
+            border: 3px solid var(--neo-black);
+            border-radius: var(--neo-radius-md);
+            box-shadow: 4px 4px 0 var(--neo-black);
+            padding: 18px;
+            margin-bottom: 18px;
+            text-align: left;
+        }
+        .is-correct {
+            background: #d1fae5 !important;
+            border: 2px solid #10b981;
+            border-radius: 8px;
+            font-weight: 800 !important;
+            color: #065f46 !important;
+            padding: 6px 10px !important;
+            margin: 4px 0;
+        }
+        .hide-mode .is-correct {
+            background: transparent !important;
+            border: 1px solid transparent !important;
+            font-weight: 500 !important;
+            color: inherit !important;
+        }
+        :root {
+            --primary: var(--neo-black, #111827);
+        }
+        .hide-mode .is-correct:hover,
+        .hide-mode .is-correct:active,
+        .hide-mode .is-correct.revealed {
+            background: #d1fae5 !important;
+            border: 2px solid #10b981 !important;
+            color: #065f46 !important;
+        }
+    </style>
 </head>
 <body>
-    <div class="mesh-bg">
-        <div class="mesh-blob blob-1"></div>
-        <div class="mesh-blob blob-2"></div>
-        <div class="mesh-blob blob-3"></div>
-    </div>
-    <div class="app-full">
-        <div class="toolbar">
-            <button onclick="goBack()" class="home-btn"><img src="img/muiten.jpg" class="logo-img"></button>
-            <div style="font-weight:bold" id="titleBar">Đang tải...</div>
-            <button class="toggle-btn" id="btnToggle" onclick="toggleAnswers()">👁️ Che Đáp Án</button>
+    <header class="review-toolbar">
+        <button onclick="goBack()" class="nav-btn" style="padding: 6px 12px; font-size: 0.88rem;">
+            ← Quay lại
+        </button>
+        <div style="font-family:'Fredoka',sans-serif; font-weight: 900; font-size: 1.15rem;" id="titleBar">Đang tải đề...</div>
+        <div style="display: flex; gap: 8px; align-items: center;">
+            <button class="nav-btn btn-focus-theme-toggle" id="btnReviewThemeToggle" onclick="toggleFocusTheme()" style="background: #ffffff; padding: 6px 12px; font-size: 0.88rem;" title="Đổi theme: Giảm màu mè tập trung ôn">
+                <span class="theme-toggle-icon">🌱</span> <span class="theme-toggle-text">Giảm màu mè</span>
+            </button>
+            <button class="nav-btn" id="btnToggle" onclick="toggleAnswers()" style="background: #ffffff; padding: 6px 12px; font-size: 0.88rem;">
+                👁️ Che Đáp Án
+            </button>
         </div>
-        <div class="content" id="listContent"></div>
-    </div>
+    </header>
 
+    <main class="container" style="max-width: 780px; padding-top: 20px;">
+        <div id="listContent"></div>
+    </main>
+
+    <script src="js/api-config.js"></script>
     <script src="js/review.js"></script>
     <script>
-        // KIỂM TRA ĐĂNG NHẬP
-        const userData = sessionStorage.getItem('current_user');
-        if (!userData) {
-            window.location.href = "login.html";
-        }
-
         const p = new URLSearchParams(window.location.search);
-        const fid = p.get('id');
-        if(fid) { loadReview(fid); }
-        function goBack() { window.location.href = `product.html?id=${fid}`; }
+        const fid = p.get('id') || 'KTCQ';
+        const name = p.get('name') || fid;
+        document.getElementById('titleBar').innerText = "Ôn tập: " + name;
+        loadReview(fid);
+        function goBack() { 
+            window.location.href = `product.html?id=${fid}&name=${encodeURIComponent(name)}`; 
+        }
     </script>
-    <script src="js/tkhethan.js"></script>
-    <script src="js/tet.js"></script>
-    <script src="js/no-refresh.js"></script>
 </body>
 </html>

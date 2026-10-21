@@ -1,8 +1,15 @@
 // js/flashcard.js
 let flashcards = [];
 let currentCardIndex = 0;
+let renderTimer = null;
+let touchStartX = 0;
+let touchStartY = 0;
+let touchEndX = 0;
+let touchEndY = 0;
+let isSwipingOrScrolling = false;
 
 function loadFlashcards(fileName) {
+    setupTouchEvents();
     fetch('filethi/' + fileName + '.txt')
         .then(res => res.text())
         .then(text => {
@@ -59,19 +66,37 @@ function parseFlashcardData(text) {
     const shouldShuffle = params.get('shuffle') === 'true';
 
     if (shouldShuffle) {
-        flashcards.sort(() => Math.random() - 0.5);
+        shuffleCards();
     }
 }
 
+function shuffleCards() {
+    if (flashcards.length <= 1) return;
+    for (let i = flashcards.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [flashcards[i], flashcards[j]] = [flashcards[j], flashcards[i]];
+    }
+    currentCardIndex = 0;
+    renderFlashcard();
+}
+
 function renderFlashcard() {
-    if (flashcards.length === 0) return;
+    const container = document.getElementById('cardContainer');
+    if (!container) return;
+    container.classList.remove('flipped');
+
+    if (renderTimer) clearTimeout(renderTimer);
+
+    if (flashcards.length === 0) {
+        document.getElementById('qText').innerHTML = "Không có câu hỏi nào trong đề thi này.";
+        document.getElementById('aText').innerHTML = "Chưa có đáp án.";
+        document.getElementById('progressLabel').innerText = "0/0";
+        return;
+    }
     
     const card = flashcards[currentCardIndex];
-    const container = document.getElementById('cardContainer');
     
-    container.classList.remove('flipped');
-    
-    setTimeout(() => {
+    renderTimer = setTimeout(() => {
         // Hiển thị câu hỏi + các lựa chọn ở mặt trước
         let optionsHTML = '<div style="text-align: left; margin-top: 15px; width: 100%;">';
         card.options.forEach(opt => {
@@ -94,6 +119,7 @@ function renderFlashcard() {
 }
 
 function changeCard(step) {
+    if (flashcards.length === 0) return;
     currentCardIndex += step;
     
     if (currentCardIndex >= flashcards.length) {
@@ -105,11 +131,79 @@ function changeCard(step) {
     renderFlashcard();
 }
 
-// Hỗ trợ phím mũi tên
+function updateCard(step) {
+    changeCard(step);
+}
+
+function flipCurrentCard() {
+    const container = document.getElementById('cardContainer');
+    if (container) container.classList.toggle('flipped');
+}
+
+function handleCardClick(e) {
+    if (isSwipingOrScrolling) {
+        isSwipingOrScrolling = false;
+        return;
+    }
+    flipCurrentCard();
+}
+
+function setupTouchEvents() {
+    const container = document.getElementById('cardContainer');
+    if (!container || container.dataset.touchBound) return;
+    container.dataset.touchBound = 'true';
+
+    container.addEventListener('touchstart', (e) => {
+        if (e.touches && e.touches.length === 1) {
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+            touchEndX = touchStartX;
+            touchEndY = touchStartY;
+            isSwipingOrScrolling = false;
+        }
+    }, { passive: true });
+
+    container.addEventListener('touchmove', (e) => {
+        if (e.touches && e.touches.length === 1) {
+            touchEndX = e.touches[0].clientX;
+            touchEndY = e.touches[0].clientY;
+            const dist = Math.hypot(touchEndX - touchStartX, touchEndY - touchStartY);
+            if (dist > 10) {
+                isSwipingOrScrolling = true;
+            }
+        }
+    }, { passive: true });
+
+    container.addEventListener('touchend', (e) => {
+        const deltaX = touchEndX - touchStartX;
+        const deltaY = touchEndY - touchStartY;
+        // Vuốt ngang > 50px và góc ngang áp đảo
+        if (Math.abs(deltaX) > 50 && Math.abs(deltaX) > Math.abs(deltaY) * 1.2) {
+            if (deltaX > 0) {
+                changeCard(-1);
+            } else {
+                changeCard(1);
+            }
+        }
+    }, { passive: true });
+}
+
+// Hỗ trợ phím mũi tên & Space/Enter (chống scroll trang ngoài ý muốn)
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft') changeCard(-1);
-    if (e.key === 'ArrowRight') changeCard(1);
-    if (e.key === ' ' || e.key === 'Enter') {
-        document.getElementById('cardContainer').classList.toggle('flipped');
+    if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        changeCard(-1);
+    } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        changeCard(1);
+    } else if (e.key === ' ' || e.key === 'Enter') {
+        e.preventDefault();
+        flipCurrentCard();
     }
 });
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupTouchEvents);
+} else {
+    setupTouchEvents();
+}

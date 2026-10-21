@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Ôn Sai Tự Động</title>
+    <title>Ôn Lại Câu Sai | Hệ Thống Khảo Thí VIP 2026</title>
+    <meta name="theme-color" content="#ffd23f">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -186,6 +188,9 @@
     <!-- Back button -->
     <div style="margin-bottom: 15px;">
         <a href="index.html" style="text-decoration:none; font-size:1.4em;">🔙</a>
+        <button class="nav-btn btn-focus-theme-toggle" id="btnOnsaiThemeToggle" onclick="toggleFocusTheme()" style="background: #ffffff; border: 2px solid var(--neo-black); border-radius: var(--neo-radius-sm); box-shadow: 2px 2px 0 var(--neo-black); padding: 6px 12px; font-size: 0.82rem; font-weight: 800; cursor: pointer;" title="Đổi theme: Giảm màu mè tập trung ôn">
+            <span class="theme-toggle-icon">🌱</span> <span class="theme-toggle-text">Giảm màu mè</span>
+        </button>
     </div>
 
     <div class="onsai-header">
@@ -254,7 +259,6 @@
 </div>
 
 <script src="js/api-config.js"></script>
-<script src="js/tkhethan.js"></script>
 <script>
 // ============================================================
 // ÔN SAI TỰ ĐỘNG — CORE LOGIC
@@ -295,7 +299,10 @@ function init() {
 
             data.history.forEach((h, idx) => {
                 if (h.firstAttemptSelected !== null && h.isCorrectFirstTime === false) {
-                    wrongIndices.push(idx);
+                    const originalIdx = (h.originalIndex !== undefined && h.originalIndex !== null) ? h.originalIndex : idx;
+                    if (!wrongIndices.includes(originalIdx)) {
+                        wrongIndices.push(originalIdx);
+                    }
                 }
             });
 
@@ -348,9 +355,15 @@ function init() {
             });
         });
 
+        const urlParams = new URLSearchParams(window.location.search);
+        const initialFilter = urlParams.get('id');
         updateStats();
         buildSourceFilter(srcKeys);
-        applyFilter('all');
+        if (initialFilter && srcKeys.includes(initialFilter)) {
+            applyFilter(initialFilter);
+        } else {
+            applyFilter('all');
+        }
     });
 }
 
@@ -372,7 +385,7 @@ function parseTxt(text) {
             if (cur) questions.push(cur);
             cur = { text: line, options: [] };
         } else if (optReg.test(line) && cur) {
-            cur.options.push({ text: line.replace(/^\*/, '').trim(), isCorrect: line.startsWith('*') });
+            cur.options.push({ text: line.replace(/^\*?[A-D]\.\s*/i, '').trim(), isCorrect: line.startsWith('*') });
         } else if (cur && cur.options.length === 0) {
             cur.text += ' ' + line;
         }
@@ -398,17 +411,19 @@ function showEmpty() {
             </a>
         </div>`;
 }
+const renderEmptyState = showEmpty;
 
 function updateStats() {
     const total = wrongPool.length;
-    const done  = wrongPool.filter(q => q.sessionDone).length;
+    const answered = wrongPool.filter(q => q.userAnswered !== null).length;
+    const correct = wrongPool.filter(q => q.isSessionCorrect || (q.userAnswered !== null && q.options[q.userAnswered]?.isCorrect)).length;
     document.getElementById('statTotal').textContent = total;
-    document.getElementById('statDone').textContent  = done;
-    document.getElementById('statLeft').textContent  = total - done;
+    document.getElementById('statDone').textContent  = correct;
+    document.getElementById('statLeft').textContent  = Math.max(0, total - answered);
 
     if (total > 0) {
         document.getElementById('progressWrap').style.display = 'block';
-        document.getElementById('progressFill').style.width = Math.round(done / total * 100) + '%';
+        document.getElementById('progressFill').style.width = Math.round(answered / total * 100) + '%';
         document.getElementById('ctrlBar').style.display = 'flex';
     }
 }
@@ -519,18 +534,18 @@ function renderCard(q, i, container) {
 function handleAnswer(q, cardIdx, optIdx) {
     q.userAnswered = optIdx;
     const isCorrect = q.options[optIdx].isCorrect;
+    q.sessionDone = true;
+    q.isSessionCorrect = isCorrect;
 
     if (isCorrect) {
-        q.sessionDone = true;
         sessionCorrect++;
     }
 
-    // Re-render card
+    // Re-render card border
     const card = document.getElementById('card-' + cardIdx);
-    const newCard = document.createElement('div');
-    newCard.className = 'q-card';
-    newCard.id = 'card-' + cardIdx;
-    card.style.borderLeftColor = isCorrect ? 'var(--correct)' : 'var(--wrong)';
+    if (card) {
+        card.style.borderLeftColor = isCorrect ? 'var(--correct)' : 'var(--wrong)';
+    }
 
     // Re-render options
     q.options.forEach((opt, idx) => {
@@ -551,10 +566,10 @@ function handleAnswer(q, cardIdx, optIdx) {
     updateStats();
     updateFloatNext();
 
-    // Kiểm tra hoàn thành
+    // Kiểm tra hoàn thành: kích hoạt modal khi tất cả câu hỏi trong displayPool đã được làm
     const totalInPool = displayPool.length;
-    const doneInPool = displayPool.filter(q => q.sessionDone).length;
-    if (doneInPool === totalInPool) {
+    const answeredInPool = displayPool.filter(q => q.userAnswered !== null).length;
+    if (totalInPool > 0 && answeredInPool === totalInPool) {
         setTimeout(showResult, 600);
     }
 }
@@ -589,19 +604,20 @@ function shuffleQuestions() {
         [wrongPool[i], wrongPool[j]] = [wrongPool[j], wrongPool[i]];
     }
     // Reset session
-    wrongPool.forEach(q => { q.userAnswered = null; q.sessionDone = false; });
+    wrongPool.forEach(q => { q.userAnswered = null; q.sessionDone = false; q.isSessionCorrect = false; });
     sessionCorrect = 0;
     updateStats();
     applyFilter(currentFilter);
 }
 
 function resetSession() {
-    wrongPool.forEach(q => { q.userAnswered = null; q.sessionDone = false; });
+    wrongPool.forEach(q => { q.userAnswered = null; q.sessionDone = false; q.isSessionCorrect = false; });
     sessionCorrect = 0;
     document.getElementById('resultModal').style.display = 'none';
     updateStats();
     applyFilter(currentFilter);
 }
+const resetProgress = resetSession;
 
 function clearAllWrong() {
     if (!confirm('Xóa toàn bộ lịch sử câu sai?\nDữ liệu kết quả các đề sẽ bị reset câu sai.')) return;
@@ -633,8 +649,8 @@ function clearAllWrong() {
 // ============================================================
 function showResult() {
     const total = displayPool.length;
-    const correct = displayPool.filter(q => q.sessionDone).length;
-    const pct = Math.round(correct / total * 100);
+    const correct = displayPool.filter(q => q.isSessionCorrect || (q.userAnswered !== null && q.options[q.userAnswered]?.isCorrect)).length;
+    const pct = total > 0 ? Math.round(correct / total * 100) : 0;
 
     document.getElementById('resultScore').textContent = correct + '/' + total;
 
@@ -652,8 +668,5 @@ function showResult() {
 // ============================================================
 init();
 </script>
-
-<script src="js/new2.js"></script>
-<script src="js/tet.js"></script>
 </body>
 </html>

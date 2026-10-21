@@ -4,415 +4,329 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Thông Tin Đề</title>
+    <title>Chi Tiết Môn Thi | Hệ Thống Khảo Thí VIP 2026</title>
+    <meta name="description" content="Luyện đề thi trực tuyến, xem lại lịch sử làm bài, ôn tập câu sai và chế độ sinh tử 1 mạng.">
+    <meta name="theme-color" content="#ffd23f">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="📚 Chi Tiết Môn Thi - Khảo Thí VIP 2026">
+    <meta property="og:description" content="Luyện đề thi trực tuyến, xem lại lịch sử làm bài, ôn tập câu sai và chế độ sinh tử 1 mạng.">
+    <meta property="og:image" content="https://onthivip.vercel.app/img/og-banner.png">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
     <!-- Preconnect cho Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/api-config.js"></script>
     <style>
-        /* Modal chọn chế độ */
-        .mode-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
+        .product-meta-badge {
+            display: inline-block;
+            background: var(--neo-yellow);
+            border: 2px solid var(--neo-black);
+            box-shadow: 2px 2px 0 var(--neo-black);
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 0.82rem;
+            font-weight: 800;
+            margin-bottom: 14px;
         }
 
-        .mode-box {
-            background: white;
-            width: 90%;
-            max-width: 400px;
-            padding: 25px;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .mode-title {
-            font-size: 1.3em;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: var(--primary);
-        }
-
-        .mode-option {
-            background: #f8f9fa;
-            border: 2px solid #e9ecef;
-            border-radius: 12px;
-            padding: 15px;
-            margin-bottom: 12px;
-            cursor: pointer;
-            transition: 0.3s;
-            text-align: left;
-        }
-
-        .mode-option:hover {
-            transform: translateY(-3px);
-            border-color: var(--primary);
-            background: #fff5f5;
-        }
-
-        .mode-header {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 8px;
-        }
-
-        .mode-icon {
-            font-size: 1.5em;
-        }
-
-        .mode-name {
-            font-weight: 700;
-            font-size: 1em;
-        }
-
-        .mode-desc {
-            font-size: 0.85em;
-            color: var(--text-gray);
-            line-height: 1.4;
-            padding-left: 35px;
-        }
-
-        .mode-sub-options {
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px dashed #ddd;
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .sub-option {
-            flex: 1;
-            padding: 10px;
-            background: white;
-            border: 2px solid #e9ecef;
-            border-radius: 8px;
-            font-size: 0.85em;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.2s;
-            min-width: 120px;
-            text-align: center;
-        }
-
-        .sub-option.active {
-            border-color: var(--primary);
-            background: #ffeaa7;
-            color: #d63031;
-        }
-
-        .sub-option.auto-active {
-            border-color: #0984e3;
-            background: #e3f2fd;
-            color: #0984e3;
-        }
-
-        .btn-start-mode {
-            background: linear-gradient(90deg, #97cbdd 30%, #5398ab 70%);
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 12px;
-            font-weight: 700;
-            font-size: 1em;
-            cursor: pointer;
-            margin-top: 20px;
-            width: 100%;
-            transition: 0.3s;
-        }
-
-        .btn-start-mode:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
-        }
-
-        .btn-close-mode {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: none;
-            border: none;
-            font-size: 1.5em;
-            color: #636e72;
-            cursor: pointer;
-        }
-
-        /* Các nút trên product */
-        .resume-card {
-            background: linear-gradient(90deg, #97cbdd 30%, #5398ab 70%);
-            color: white;
+        .resume-box {
+            background: #fffdf5;
+            border: 3px solid var(--neo-black);
+            border-radius: 14px;
+            box-shadow: 5px 5px 0 var(--neo-black);
             padding: 20px;
-            border-radius: 16px;
-            margin: 15px 0;
-            cursor: pointer;
-            border: none;
-            font-weight: 700;
-            font-size: 1em;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .resume-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
             gap: 10px;
-            transition: 0.3s;
-            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
-        }
-
-        .resume-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 123, 255, 0.4);
-        }
-
-        .resume-stats {
-            display: flex;
-            justify-content: space-around;
-            margin: 10px 0;
-            font-size: 0.9em;
-            color: #636e72;
-        }
-
-        .stat-item {
+            margin: 15px 0;
             text-align: center;
         }
 
-        .stat-value {
-            font-weight: bold;
-            color: var(--primary);
-            font-size: 1.2em;
+        .resume-stat-col {
+            background: #ffffff;
+            border: 2px solid var(--neo-black);
+            box-shadow: 2px 2px 0 var(--neo-black);
+            padding: 8px 6px;
+            border-radius: 10px;
         }
 
-        .stat-label {
-            font-size: 0.8em;
-            margin-top: 2px;
+        .resume-stat-val {
+            font-size: 1.15rem;
+            font-weight: 900;
+            color: var(--neo-black);
         }
 
-        .action-buttons {
-            display: flex;
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        .btn-resume,
-        .btn-new {
-            flex: 1;
-            padding: 12px;
-            border-radius: 12px;
-            border: none;
+        .resume-stat-lbl {
+            font-size: 0.72rem;
             font-weight: 700;
-            cursor: pointer;
-            transition: 0.3s;
+            color: #64748b;
+            margin-top: 2px;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 600px) {
+            .resume-stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .neo-sub-actions {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        @media (max-width: 480px) {
+            .neo-sub-actions {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+        }
+
+        .neo-sub-btn {
+            background: #ffffff;
+            border: 2.5px solid var(--neo-black);
+            border-radius: 12px;
+            box-shadow: 2.5px 2.5px 0 var(--neo-black);
+            padding: 12px 6px;
+            text-decoration: none;
+            color: var(--neo-black);
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            gap: 8px;
+            gap: 4px;
+            text-align: center;
+            font-weight: 800;
+            transition: all 0.15s ease;
         }
 
-        .btn-resume {
-            background: #007bff;
-            color: white;
+        .neo-sub-btn:hover {
+            transform: translate(-1px, -1px);
+            box-shadow: 3.5px 3.5px 0 var(--neo-black) !important;
+            background: #fef9c3 !important;
         }
 
-        .btn-new {
-            background: #ffeaa7;
-            color: var(--text-dark);
+        .neo-sub-btn:active {
+            transform: translate(2px, 2px);
+            box-shadow: 0 0 0 var(--neo-black) !important;
         }
 
-        .btn-resume:hover {
-            background: #0056b3;
-            transform: translateY(-2px);
+        .tuluan-highlight {
+            background: #fffbeb !important;
+            border-color: var(--neo-black) !important;
+            position: relative;
         }
 
-        .btn-new:hover {
-            background: #fdcb6e;
-            transform: translateY(-2px);
+        .tuluan-highlight:hover {
+            background: #fef3c7 !important;
         }
     </style>
 </head>
 
 <body>
-    <div class="mesh-bg">
-        <div class="mesh-blob blob-1"></div>
-        <div class="mesh-blob blob-2"></div>
-        <div class="mesh-blob blob-3"></div>
-    </div>
-    <div class="container-box">
-        <div style="position: absolute; top: 20px; left: 20px;">
-            <a href="index.html" style="text-decoration: none; font-size: 1.5em;">🔙</a>
-        </div>
-
-        <div class="big-title" id="examName" style="margin-top:20px">Loading...</div>
-        <div class="sub-title">Kết quả lần nộp bài gần nhất</div>
-
-        <div class="score-circle" id="scoreCircle">
-            <div class="score-inner">
-                <div class="score-val" id="scoreDisplay">?</div>
-                <div class="score-lbl">Điểm số</div>
+    <!-- TOP NAVBAR -->
+    <header class="neo-navbar">
+        <div class="nav-container">
+            <div style="display: flex; align-items: center; gap: 12px;">
+                <a href="index.html" class="nav-btn" style="text-decoration: none; padding: 6px 14px; font-size: 0.88rem;" title="Quay lại danh sách đề thi">
+                    ← QUAY LẠI
+                </a>
+                <span class="brand-title" style="font-size: 1.25rem;">CHI TIẾT MÔN THI</span>
             </div>
-        </div>
-
-        <!-- Hiển thị nếu có bài đang làm dở -->
-        <div id="resumeSection" style="display: none;">
-            <div style="font-weight: 700; color: var(--primary); margin: 20px 0 10px 0;">
-                📌 BÀI ĐANG LÀM DỞ
-            </div>
-
-            <div class="resume-stats" id="progressStats">
-                <!-- Sẽ được cập nhật bằng JS -->
-            </div>
-
-            <div class="action-buttons">
-                <button class="btn-resume" onclick="resumeExam()">
-                    ▶️ Tiếp tục làm bài
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <button type="button" class="nav-btn btn-update-notice" id="btnProductUpdateNotice" onclick="openUpdateModal()" style="padding: 6px 12px; font-size: 0.82rem;" title="Xem nội dung bản cập nhật mới">
+                    <span style="position: relative;">🔔<span class="update-pulse-dot"></span></span>
+                    <span>Cập nhật</span>
                 </button>
-                <button class="btn-new" onclick="openModeModal()">
-                    🔄 Làm mới
+                <button type="button" class="nav-btn btn-focus-theme-toggle" id="btnProductThemeToggle" onclick="toggleFocusTheme()" style="padding: 6px 12px; font-size: 0.82rem;" title="Đổi theme: Giảm màu mè tập trung ôn">
+                    <span class="theme-toggle-icon">🌱</span> <span class="theme-toggle-text">Giảm màu mè</span>
                 </button>
+                <a href="index.html" class="brand-pill" style="text-decoration: none; font-size: 0.78rem;">
+                    VIP 2026
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container" style="max-width: 650px; padding-top: 25px;">
+        <div class="neo-card" style="text-align: center;">
+            <div class="product-meta-badge">KHOẢO THÍ CHÍNH THỨC 2026</div>
+            <h1 class="hero-main-title" id="examName" style="font-size: 1.9rem; margin-bottom: 6px;">Đang tải thông
+                tin...</h1>
+            <p style="font-weight: 600; color: #4b5563; font-size: 0.95rem; margin-bottom: 22px;">Kết quả khảo thí &
+                lịch sử làm bài gần nhất</p>
+
+            <!-- HỘP ĐIỂM SỐ NEO-BRUTALISM -->
+            <div class="score-box-neo" id="scoreCircle">
+                <div class="score-val" id="scoreDisplay">--</div>
+                <div class="score-lbl">ĐIỂM SỐ</div>
+            </div>
+
+            <!-- NẾU CÓ BÀI DỞ DANG -->
+            <div id="resumeSection" class="resume-box" style="display: none;">
+                <div
+                    style="font-weight: 900; font-size: 1.05rem; display: flex; align-items: center; justify-content: center; gap: 6px; color: var(--neo-black);">
+                    <span>📌</span> PHÁT HIỆN BÀI ĐANG LÀM DỞ
+                </div>
+
+                <div class="resume-stats-grid" id="progressStats">
+                    <!-- Được cập nhật tự động bằng JS -->
+                </div>
+
+                <div style="display: flex; gap: 10px; margin-top: 15px;">
+                    <button class="btn-neo btn-yellow" onclick="resumeExam()" style="flex: 1.2; font-size: 0.95rem;">
+                        ▶️ TIẾP TỤC LÀM BÀI
+                    </button>
+                    <button class="btn-neo btn-white" onclick="openModeModal()" style="flex: 0.8; font-size: 0.95rem;">
+                        🔄 LÀM MỚI
+                    </button>
+                </div>
+            </div>
+
+            <!-- NÚT BẮT ĐẦU CHÍNH & CÁC CHẾ ĐỘ ÔN TẬP -->
+            <div id="normalActions" style="max-width: 480px; margin: 10px auto 0;">
+                <button id="btnStart" class="btn-neo btn-yellow"
+                    style="padding: 16px; font-size: 1.15rem; width: 100%; margin-bottom: 14px;">
+                    <span>🚀</span> BẮT ĐẦU LÀM BÀI
+                </button>
+
+                <div class="neo-sub-actions" id="subActionsGrid">
+                    <a href="#" id="btnReview" class="neo-sub-btn" title="Ôn Tập">
+                        <span style="font-size: 1.5rem;">📖</span>
+                        <span style="font-size: 0.88rem;">Ôn Tập</span>
+                        <span style="font-size: 0.68rem; color: #64748b; font-weight: 600;">Xem đáp án</span>
+                    </a>
+
+                    <a href="#" id="btnFlashcard" class="neo-sub-btn" title="Flashcard">
+                        <span style="font-size: 1.5rem;">🗂️</span>
+                        <span style="font-size: 0.88rem;">Flashcard</span>
+                        <span style="font-size: 0.68rem; color: #64748b; font-weight: 600;">Lật thẻ nhớ</span>
+                    </a>
+
+                    <a href="tuluan.html" id="btnTuluan" class="neo-sub-btn tuluan-highlight" title="Học Tự Luận" aria-label="Học Tự Luận">
+                        <span style="font-size: 1.5rem;">📝</span>
+                        <span style="font-size: 0.88rem;">Học Tự Luận</span>
+                        <span style="font-size: 0.68rem; color: #d97706; font-weight: 700;">Active Recall</span>
+                    </a>
+
+                    <a href="onsai.html" id="btnWrong" class="neo-sub-btn" title="Ôn Sai">
+                        <span style="font-size: 1.5rem;">🧠</span>
+                        <span style="font-size: 0.88rem;">Ôn Sai</span>
+                        <span style="font-size: 0.68rem; color: #64748b; font-weight: 600;">Luyện câu sai</span>
+                    </a>
+                </div>
             </div>
         </div>
 
-        <!-- Các nút chức năng chính (hiển thị khi không có bài dở) -->
-        <div id="normalActions" class="action-grid">
-            <a href="#" id="btnStart" class="action-card">
-                <div class="card-icon">📝</div>
-                <div class="card-title">Làm Ngay</div>
-            </a>
-            <a href="#" id="btnReview" class="action-card">
-                <div class="card-icon">📖</div>
-                <div class="card-title">Ôn Tập</div>
-            </a>
-            <a href="#" id="btnFlashcard" class="action-card" onclick="openFlashcardModal(); return false;">
-                <div class="card-icon">🗂️</div>
-                <div class="card-title">Học Thẻ</div>
-            </a>
-            <a href="#" id="btnLeaderboard" class="action-card" onclick="showLeaderboardProduct(); return false;">
-                <div class="card-icon">🏆</div>
-                <div class="card-title">Xếp Hạng</div>
-            </a>
-            <a href="#" class="action-card" onclick="openPvPModal(); return false;" style="border: 2px solid #f59e0b; background: linear-gradient(135deg, #fffbeb, #fff);">
-                <div class="card-icon">⚔️</div>
-                <div class="card-title" style="color:#d97706;">Thi Đấu</div>
-            </a>
-            <a href="onsai.html" class="action-card" style="border: 2px solid #e74c3c; background: linear-gradient(135deg, #fff5f5, #fff);">
-                <div class="card-icon">🧠</div>
-                <div class="card-title" style="color:#e74c3c;">Ôn Sai</div>
-            </a>
-        </div>
-
-        <!-- Phân tích & Gợi ý (Tính năng 6) -->
-        <div id="analyticsSection" style="margin-top: 25px; padding: 20px; background: white; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); text-align: left; display: none; border-left: 5px solid #00b894;">
-            <div style="font-weight: 800; color: #2d3436; margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
-                <span style="font-size: 1.2em;">📊</span> Phân Tích Lộ Trình
+        <!-- PHÂN TÍCH & GỢI Ý HỌC TẬP -->
+        <div id="analyticsSection" class="neo-card" style="display: none; padding: 20px 22px;">
+            <div class="card-head" style="margin-bottom: 12px; padding-bottom: 10px;">
+                <div class="card-head-icon" style="width: 38px; height: 38px; font-size: 1.2rem;">📊</div>
+                <div>
+                    <div class="card-head-title" style="font-size: 1.15rem;">Phân Tích Lộ Trình Ôn Luyện</div>
+                    <div style="font-size: 0.8rem; color: #64748b; font-weight: 600;">Dữ liệu tự động tính từ lịch sử
+                        làm bài</div>
+                </div>
             </div>
-            <div id="analyticsText" style="font-size: 0.9em; color: #636e72; line-height: 1.5;">
+            <div id="analyticsText" style="font-size: 0.95rem; font-weight: 600; line-height: 1.6; color: #334155;">
                 Đang phân tích dữ liệu học tập...
             </div>
-            <div id="analyticsProgress" style="margin-top: 15px; height: 8px; background: #dfe6e9; border-radius: 4px; overflow: hidden;">
-                <div id="analyticsBar" style="height: 100%; width: 0%; background: linear-gradient(90deg, #00b894, #00cec9); transition: width 1s;"></div>
+            <div
+                style="margin-top: 15px; height: 14px; background: #f1f5f9; border: 2.5px solid var(--neo-black); border-radius: 999px; overflow: hidden; box-shadow: 2px 2px 0 var(--neo-black);">
+                <div id="analyticsBar"
+                    style="height: 100%; width: 0%; background: var(--neo-green); transition: width 0.8s ease;"></div>
             </div>
         </div>
-    </div>
+    </main>
 
-    <!-- Modal chọn chế độ làm bài -->
-    <div class="mode-modal" id="modeModal">
+    <!-- MODAL CHỌN CHẾ ĐỘ THI -->
+    <div class="mode-modal" id="modeModal" onclick="if(event.target===this) closeModeModal()">
         <div class="mode-box">
             <button class="btn-close-mode" onclick="closeModeModal()">✕</button>
             <div class="mode-title">📋 CHỌN CHẾ ĐỘ THI</div>
 
             <div class="mode-option" onclick="selectMode('normal')" id="normalOption">
-                <div class="mode-header">
-                    <div class="mode-icon">😊</div>
-                    <div class="mode-name">Chế độ Thường</div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <span style="font-size: 1.3rem;">😊</span>
+                    <span class="mode-name">Chế độ Thường</span>
                 </div>
-                <div class="mode-desc">
-                    Sai vẫn làm tiếp được, không sửa lại được đáp án đã chọn.
-                </div>
+                <div class="mode-desc">Sai vẫn làm tiếp được, không sửa lại đáp án đã chọn.</div>
             </div>
 
             <div class="mode-option" onclick="selectMode('survival')" id="survivalOption">
-                <div class="mode-header">
-                    <div class="mode-icon">💀</div>
-                    <div class="mode-name">Chế độ Sinh tử</div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <span style="font-size: 1.3rem;">💀</span>
+                    <span class="mode-name">Chế độ Sinh tử</span>
                 </div>
-                <div class="mode-desc">
-                    Chỉ có 1 mạng duy nhất! Sai 1 câu là LÀM LẠI TỪ ĐẦU ngay lập tức!
-                </div>
+                <div class="mode-desc">Chỉ 1 mạng duy nhất! Sai 1 câu là làm lại từ đầu ngay lập tức!</div>
             </div>
 
             <div class="mode-option" onclick="selectMode('scoring')" id="scoringOption">
-                <div class="mode-header">
-                    <div class="mode-icon">💯</div>
-                    <div class="mode-name">Chế độ Tính điểm</div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <span style="font-size: 1.3rem;">💯</span>
+                    <span class="mode-name">Chế độ Tính điểm</span>
                 </div>
-                <div class="mode-desc">
-                    Làm không hiện đúng sai khi nộp bài mới biết kết quả.
-                </div>
+                <div class="mode-desc">Làm bài bảo mật, chỉ hiện điểm số và đáp án khi nộp bài.</div>
             </div>
 
             <div class="mode-sub-options">
-                <div class="sub-option" onclick="selectOrder('normal')" id="orderNormal">
-                    Giữ nguyên câu hỏi
+                <div class="sub-option" onclick="selectOrder('normal')" id="orderNormal">Giữ nguyên câu</div>
+                <div class="sub-option" onclick="selectOrder('random')" id="orderRandom">Đảo câu hỏi</div>
+                <div class="sub-option" onclick="selectOrder('shuffle_options')" id="orderShuffleOptions">Đảo đáp án
                 </div>
-                <div class="sub-option" onclick="selectOrder('random')" id="orderRandom">
-                    Đảo lộn câu hỏi
-                </div>
-                <div class="sub-option" onclick="selectOrder('shuffle_options')" id="orderShuffleOptions">
-                    Đảo lộn đáp án
-                </div>
-                <div class="sub-option" onclick="toggleAutoNext()" id="optAutoNext" style="flex: 100%;">
-                    ⚡ Tự động Next (2s)
-                </div>
+                <div class="sub-option" onclick="toggleAutoNext()" id="optAutoNext" style="flex: 100%;">⚡ Tự động Next
+                    (2s)</div>
             </div>
 
-            <button class="btn-start-mode" onclick="startExam(true)">
-                🚀 BẮT ĐẦU THI
+            <button class="btn-neo btn-yellow" onclick="startExam(true)" style="margin-top: 15px;">
+                🚀 BẮT ĐẦU THI NGAY
             </button>
         </div>
     </div>
 
-    <!-- Thêm các file cần thiết cho Bảng xếp hạng -->
-    <script src="js/api-config.js"></script>
     <script src="js/hihihaaaa.js"></script>
-    <script src="js/online.js"></script>
-    <script src="js/leaderboard.js"></script>
-    
     <script>
-        // KIỂM TRA ĐĂNG NHẬP
-        const userData = sessionStorage.getItem('current_user');
-        if (!userData) {
-            window.location.href = "login.html";
-        }
-
         const params = new URLSearchParams(window.location.search);
-        const fileID = params.get('id');
-        const fileName = params.get('name');
+        const fileID = params.get('id') || 'KTCQ';
+        let fileName = params.get('name');
+        if (!fileName && typeof DEFAULT_EXAMS !== 'undefined') {
+            const found = DEFAULT_EXAMS.find(e => e.file === fileID);
+            if (found) fileName = found.ten;
+        }
+        if (!fileName) fileName = fileID;
 
-        if (!fileID) window.location.href = "index.html";
 
-        document.getElementById('examName').innerText = fileName || ("Đề số " + fileID);
-        document.getElementById('btnReview').href = `ontap.html?id=${fileID}&name=${encodeURIComponent(fileName)}`;
+        document.getElementById('examName').innerText = fileName;
 
-        // Hàm gọi Bảng Xếp Hạng cho đúng môn hiện tại
-        window.currentFileName = fileID;
-        function showLeaderboardProduct() {
-            if (typeof showLeaderboard === 'function') {
-                showLeaderboard();
-            } else {
-                alert("Đang tải dữ liệu Bảng vàng, vui lòng thử lại sau!");
-            }
+        // Cập nhật liên kết cho các chế độ Ôn Tập & Luyện Thẻ
+        const btnReview = document.getElementById('btnReview');
+        if (btnReview) {
+            btnReview.href = `ontap.html?id=${fileID}&name=${encodeURIComponent(fileName)}`;
+        }
+        const btnFlashcard = document.getElementById('btnFlashcard');
+        if (btnFlashcard) {
+            btnFlashcard.href = `flashcard.html?id=${fileID}&name=${encodeURIComponent(fileName)}`;
+        }
+        const btnTuluan = document.getElementById('btnTuluan');
+        if (btnTuluan) {
+            btnTuluan.href = `tuluan.html?id=${fileID}&name=${encodeURIComponent(fileName)}`;
+        }
+        const btnWrong = document.getElementById('btnWrong');
+        if (btnWrong) {
+            btnWrong.href = `onsai.html?id=${fileID}&name=${encodeURIComponent(fileName)}`;
         }
 
-        // Biến lưu chế độ được chọn
         let selectedMode = 'normal';
         let selectedOrder = 'normal';
-        let isAutoNextEnabled = false;
+        let isAutoNextEnabled = true;
 
         // Kiểm tra có bài đang làm dở không
         const savedData = localStorage.getItem('quiz_data_' + fileID);
@@ -420,65 +334,72 @@
         let examData = null;
 
         if (savedData) {
-            examData = JSON.parse(savedData);
-            // Có bài chưa nộp và đã làm ít nhất 1 câu
-            if (!examData.isSubmitted &&
-                (examData.history?.some(h => h.userSelected !== null) || examData.currentIndex > 0)) {
-                hasUnsubmittedExam = true;
-            }
+            try {
+                examData = JSON.parse(savedData);
+                if (!examData.isSubmitted &&
+                    (examData.history?.some(h => h.userSelected !== null) || examData.currentIndex > 0)) {
+                    hasUnsubmittedExam = true;
+                }
+            } catch (e) { }
         }
 
-        // Hiển thị giao diện phù hợp
         if (hasUnsubmittedExam) {
-            // Hiển thị phần tiếp tục bài cũ
             document.getElementById('resumeSection').style.display = 'block';
             document.getElementById('normalActions').style.display = 'none';
-
-            // Hiển thị thông tin tiến độ
             displayProgressInfo(examData);
         } else {
-            // Hiển thị nút làm bài bình thường
             document.getElementById('resumeSection').style.display = 'none';
-            document.getElementById('normalActions').style.display = 'grid';
+            document.getElementById('normalActions').style.display = 'block';
         }
 
-        // Mở modal khi click "Làm Ngay"
         document.getElementById('btnStart').addEventListener('click', function (e) {
             e.preventDefault();
             openModeModal();
         });
 
-        // Mở modal chọn chế độ
         function openModeModal() {
-            document.getElementById('modeModal').style.display = 'flex';
+            const modal = document.getElementById('modeModal');
+            if (modal) {
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
             selectMode('normal');
             selectOrder('normal');
             updateAutoNextButton();
         }
 
-        // Đóng modal chọn chế độ
         function closeModeModal() {
-            document.getElementById('modeModal').style.display = 'none';
+            const modal = document.getElementById('modeModal');
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = '';
+            }
         }
 
-        // Chọn chế độ làm bài
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModeModal();
+            }
+        });
+
         function selectMode(mode) {
             selectedMode = mode;
-
-            document.getElementById('normalOption').style.borderColor = mode === 'normal' ? '#d63031' : '#e9ecef';
-            document.getElementById('normalOption').style.background = mode === 'normal' ? '#fff5f5' : '#f8f9fa';
-
-            document.getElementById('survivalOption').style.borderColor = mode === 'survival' ? '#d63031' : '#e9ecef';
-            document.getElementById('survivalOption').style.background = mode === 'survival' ? '#fff5f5' : '#f8f9fa';
-
-            document.getElementById('scoringOption').style.borderColor = mode === 'scoring' ? '#d63031' : '#e9ecef';
-            document.getElementById('scoringOption').style.background = mode === 'scoring' ? '#fff5f5' : '#f8f9fa';
+            ['normal', 'survival', 'scoring'].forEach(m => {
+                const el = document.getElementById(m + 'Option');
+                if (el) {
+                    if (m === mode) {
+                        el.classList.add('active');
+                        el.style.background = 'var(--neo-yellow)';
+                    } else {
+                        el.classList.remove('active');
+                        el.style.background = '#ffffff';
+                    }
+                }
+            });
         }
 
-        // Chọn thứ tự câu hỏi
         function selectOrder(order) {
             selectedOrder = order;
-
             document.getElementById('orderNormal').classList.toggle('active', order === 'normal');
             document.getElementById('orderRandom').classList.toggle('active', order === 'random');
             if (document.getElementById('orderShuffleOptions')) {
@@ -486,7 +407,6 @@
             }
         }
 
-        // Toggle Auto Next
         function toggleAutoNext() {
             isAutoNextEnabled = !isAutoNextEnabled;
             updateAutoNextButton();
@@ -495,177 +415,92 @@
         function updateAutoNextButton() {
             const btn = document.getElementById('optAutoNext');
             btn.classList.toggle('active', isAutoNextEnabled);
-            btn.classList.toggle('auto-active', isAutoNextEnabled);
-
-            if (isAutoNextEnabled) {
-                btn.innerHTML = '⚡ Tự động Next Câu ✅';
-            } else {
-                btn.innerHTML = '⚡ Tự động Next Câu ';
-            }
+            btn.innerHTML = isAutoNextEnabled ? '⚡ Tự động Next: BẬT ✅' : '⚡ Tự động Next: TẮT';
         }
 
-        // Tiếp tục bài cũ
         function resumeExam() {
-            // Lấy thông tin chế độ từ bài cũ
             const savedMode = localStorage.getItem('exam_mode_' + fileID);
             let mode = 'normal';
             let order = 'normal';
             let auto = false;
 
             if (savedMode) {
-                const modeData = JSON.parse(savedMode);
-                mode = modeData.mode;
-                order = modeData.order;
-                auto = modeData.autoNext || false;
+                try {
+                    const modeData = JSON.parse(savedMode);
+                    mode = modeData.mode || 'normal';
+                    order = modeData.order || 'normal';
+                    auto = modeData.autoNext || false;
+                } catch (e) { }
             }
-
-            // Chuyển đến trang thi với chế độ cũ
             window.location.href = `thi.html?id=${fileID}&name=${encodeURIComponent(fileName)}&mode=${mode}&order=${order}&auto=${auto}`;
         }
 
-        // Bắt đầu làm mới
         function startExam(isNewAttempt) {
             closeModeModal();
-
+            if (isNewAttempt) {
+                localStorage.removeItem('quiz_data_' + fileID);
+                localStorage.removeItem('bookmarks_' + fileID);
+            }
             const modeData = {
                 mode: selectedMode,
                 order: selectedOrder,
                 autoNext: isAutoNextEnabled,
-                timestamp: new Date().getTime()
+                timestamp: Date.now()
             };
             localStorage.setItem('exam_mode_' + fileID, JSON.stringify(modeData));
-
-            // Nếu là làm mới, xóa dữ liệu bài cũ
-            if (isNewAttempt) {
-                localStorage.removeItem('quiz_data_' + fileID);
-            }
-
             window.location.href = `thi.html?id=${fileID}&name=${encodeURIComponent(fileName)}&mode=${selectedMode}&order=${selectedOrder}&auto=${isAutoNextEnabled}`;
         }
+        const startExamWithMode = startExam;
 
-        // CHỨC NĂNG CHỌN CHẾ ĐỘ FLASHCARDS
-        function openFlashcardModal() {
-            let fcModal = document.getElementById('flashcardModal');
-            if (!fcModal) {
-                fcModal = document.createElement('div');
-                fcModal.id = 'flashcardModal';
-                fcModal.className = 'mode-modal';
-                fcModal.style.cssText = "display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:1000; align-items:center; justify-content:center;";
-                fcModal.innerHTML = `
-                    <div class="mode-box">
-                        <button class="btn-close-mode" onclick="document.getElementById('flashcardModal').style.display='none'">✕</button>
-                        <div class="mode-title">🗂️ THỨ TỰ HỌC THẺ</div>
-                        
-                        <div class="mode-option" onclick="startFlashcard('normal')">
-                            <div class="mode-header">
-                                <div class="mode-icon">📋</div>
-                                <div class="mode-name">Theo thứ tự gốc</div>
-                            </div>
-                            <div class="mode-desc">Học theo đúng trình tự trong file đề thi.</div>
-                        </div>
-
-                        <div class="mode-option" onclick="startFlashcard('shuffle')">
-                            <div class="mode-header">
-                                <div class="mode-icon">🔀</div>
-                                <div class="mode-name">Đảo câu ngẫu nhiên</div>
-                            </div>
-                            <div class="mode-desc">Xáo trộn câu hỏi để tăng hiệu quả ghi nhớ.</div>
-                        </div>
-                    </div>
-                `;
-                document.body.appendChild(fcModal);
-            }
-            fcModal.style.display = 'flex';
-        }
-
-        function startFlashcard(type) {
-            const shuffle = (type === 'shuffle');
-            window.location.href = `flashcard.html?id=${fileID}&name=${encodeURIComponent(fileName)}&shuffle=${shuffle}`;
-        }
-
-        // Hiển thị thông tin tiến độ bài cũ
         function displayProgressInfo(data) {
+            const mode = data.examMode || 'normal';
+            const modeLabel = mode === 'survival' ? '💀 Sinh tử' : (mode === 'scoring' ? '💯 Tính điểm' : '😊 Thường');
             const statsElement = document.getElementById('progressStats');
-
-            // Tính toán thống kê
             let answered = 0;
-            let correct = 0;
-            let progress = 0;
-            let retryInfo = '';
-
             if (data.history) {
                 answered = data.history.filter(h => h.userSelected !== null).length;
-                correct = data.score || 0;
-
-                // Hiển thị thông tin làm lại nếu có
-                if (data.retryCount && data.retryCount > 0) {
-                    retryInfo = `<div style="background:#f39c12; color:white; padding:5px; border-radius:8px; margin-top:5px; font-size:0.8em;">
-                        🔄 Đã làm lại: ${data.retryCount} lần
-                    </div>`;
-                }
             }
-
             const totalQuestions = data.history?.length || 0;
-            progress = totalQuestions > 0 ? Math.round((answered / totalQuestions) * 100) : 0;
-
-            // Tính thời gian
+            const progress = totalQuestions > 0 ? Math.round((answered / totalQuestions) * 100) : 0;
             const mins = Math.floor((data.totalSeconds || 0) / 60);
             const secs = (data.totalSeconds || 0) % 60;
 
-            // Lấy chế độ
-            const savedMode = localStorage.getItem('exam_mode_' + fileID);
-            let modeText = 'Thường';
-            let autoText = '';
-            if (savedMode) {
-                const modeData = JSON.parse(savedMode);
-                if (modeData.mode === 'survival') {
-                    modeText = '💀 Sinh tử';
-                } else if (modeData.mode === 'scoring') {
-                    modeText = '💯 Tính điểm';
-                } else {
-                    modeText = '😊 Thường';
-                }
-                if (modeData.autoNext) {
-                    autoText = '<div style="color:#0984e3; margin-top:2px;">⚡ Auto Next</div>';
-                }
-            }
-
             statsElement.innerHTML = `
-                <div class="stat-item">
-                    <div class="stat-value">${answered}/${totalQuestions}</div>
-                    <div class="stat-label">Đã làm</div>
+                <div class="resume-stat-col">
+                    <div class="resume-stat-val">${answered}/${totalQuestions}</div>
+                    <div class="resume-stat-lbl">Đã làm</div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-value">${progress}%</div>
-                    <div class="stat-label">Tiến độ</div>
+                <div class="resume-stat-col">
+                    <div class="resume-stat-val">${progress}%</div>
+                    <div class="resume-stat-lbl">Tiến độ</div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-value">${mins}:${secs.toString().padStart(2, '0')}</div>
-                    <div class="stat-label">Thời gian</div>
+                <div class="resume-stat-col">
+                    <div class="resume-stat-val">${mins}:${secs.toString().padStart(2, '0')}</div>
+                    <div class="resume-stat-lbl">Thời gian</div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-value">${modeText}</div>
-                    <div class="stat-label">Chế độ</div>
-                    ${autoText}
+                <div class="resume-stat-col">
+                    <div class="resume-stat-val" style="font-size: 0.95rem;">${modeLabel}</div>
+                    <div class="resume-stat-lbl">Chế độ</div>
                 </div>
-                ${retryInfo}
             `;
         }
 
-        // Lấy điểm bài đã nộp
+        // Lấy điểm bài đã nộp gần nhất
         let score = 0;
         let isSubmitted = false;
         if (savedData) {
-            const data = JSON.parse(savedData);
-            if (data.isSubmitted) {
-                score = data.score || 0;
-                isSubmitted = true;
-            }
+            try {
+                const data = JSON.parse(savedData);
+                if (data.isSubmitted) {
+                    score = data.score || 0;
+                    isSubmitted = true;
+                }
+            } catch (e) { }
         }
 
+        const scoreDisplay = document.getElementById('scoreDisplay');
         if (isSubmitted) {
             let current = 0;
-            const display = document.getElementById('scoreDisplay');
             const interval = setInterval(() => {
                 if (current >= score) {
                     current = score;
@@ -673,44 +508,27 @@
                 } else {
                     current++;
                 }
-                display.innerText = current;
+                scoreDisplay.innerText = current;
             }, 30);
-
-            const percent = Math.min(score * 5, 100);
-            document.getElementById('scoreCircle').style.background =
-                `conic-gradient(#007bff ${percent}%, #dfe6e9 ${percent}% 100%)`;
         } else {
-            document.getElementById('scoreDisplay').innerText = "--";
-            document.getElementById('scoreCircle').style.background = "#dfe6e9";
+            scoreDisplay.innerText = "--";
         }
 
-        // TÍNH NĂNG 6: Phân tích & Gợi ý lộ trình
+        // Phân tích học tập
         function renderAnalytics() {
             let totalExams = 0;
             let totalScoreAvg = 0;
-            let retryIssues = 0;
-            
             for (let i = 0; i < localStorage.length; i++) {
                 const key = localStorage.key(i);
                 if (key.startsWith('quiz_data_')) {
                     try {
                         const data = JSON.parse(localStorage.getItem(key));
-                        if (data.isSubmitted && data.history) {
+                        if (data.isSubmitted && data.history && data.history.length > 0) {
                             totalExams++;
-                            const totalQ = data.history.length;
-                            if (totalQ > 0) {
-                                const pct = Math.round((data.score / totalQ) * 100);
-                                totalScoreAvg += pct;
-                                
-                                // Phân tích first attempt
-                                let wrongFirstTime = 0;
-                                data.history.forEach(q => {
-                                    if (q.isCorrectFirstTime === false) wrongFirstTime++;
-                                });
-                                retryIssues += wrongFirstTime;
-                            }
+                            const numScore = Number(data.score) || 0;
+                            totalScoreAvg += Math.round((numScore / data.history.length) * 100);
                         }
-                    } catch(e) {}
+                    } catch (e) { }
                 }
             }
 
@@ -719,64 +537,96 @@
                 const analyticsSec = document.getElementById('analyticsSection');
                 const metricsText = document.getElementById('analyticsText');
                 const progBar = document.getElementById('analyticsBar');
-                
-                analyticsSec.style.display = 'block';
-                setTimeout(() => {
-                    progBar.style.width = avgPct + '%';
-                }, 300);
 
-                if (totalExams < 3) {
-                    metricsText.innerHTML = `Bạn đã hoàn thành <b>${totalExams}/3</b> đề cần thiết. Cố gắng thêm để hệ thống chẩn đoán chính xác mức độ hiểu bài của bạn.`;
-                    progBar.style.background = 'linear-gradient(90deg, #fdcb6e, #ffeaa7)';
+                analyticsSec.style.display = 'block';
+                setTimeout(() => { progBar.style.width = avgPct + '%'; }, 200);
+
+                if (avgPct >= 80) {
+                    metricsText.innerHTML = `🌟 <b>Rất Tốt!</b> Điểm trung bình của bạn là <b>${avgPct}%</b> qua <b>${totalExams}</b> lượt làm. Kiến thức rất vững chắc!`;
+                    progBar.style.background = 'var(--neo-green)';
+                } else if (avgPct >= 50) {
+                    metricsText.innerHTML = `⚡ <b>Cố Lên!</b> Điểm trung bình là <b>${avgPct}%</b>. Hãy rà soát lại các câu sai để cải thiện tốc độ và sự chính xác.`;
+                    progBar.style.background = 'var(--neo-yellow)';
                 } else {
-                    let text = `Bạn đã hoàn thành <b>${totalExams}</b> đề. Điểm trung bình của bạn là <b>${avgPct}%</b>. <br><br>`;
-                    
-                    if (avgPct >= 80) {
-                        text += `<span style="color: #00b894; font-weight: bold;">🌱 Tuyệt vời!</span> Kiến thức của bạn rất vững. Chăm chỉ duy trì phong độ này để tiến vào kỳ thi nhé.`;
-                        progBar.style.background = 'linear-gradient(90deg, #00b894, #00cec9)';
-                    } else if (avgPct >= 50) {
-                        text += `<span style="color: #e17055; font-weight: bold;">⚡ Cần tập trung hơn!</span> Bạn đang yếu nhất ở các câu làm lại, tỷ lệ sai ngay lần đầu là khá cao. Cần tập trung đọc kỹ đề và cải thiện tốc độ!`;
-                        progBar.style.background = 'linear-gradient(90deg, #e17055, #fab1a0)';
-                    } else {
-                        text += `<span style="color: #d63031; font-weight: bold;">🚨 Báo động đỏ!</span> Bạn đang hổng kiến thức khá nhiều. Cứ bình tĩnh xem lại phần Ôn Tập (📖) nhiều lần để nắm cốt lõi trước nhé!`;
-                        progBar.style.background = 'linear-gradient(90deg, #d63031, #ff7675)';
-                    }
-                    
-                    metricsText.innerHTML = text;
+                    metricsText.innerHTML = `🚨 <b>Cần Ôn Tập Thêm!</b> Điểm trung bình là <b>${avgPct}%</b>. Nên luyện tập thêm nhiều lần để củng cố các câu cốt lõi.`;
+                    progBar.style.background = 'var(--neo-pink)';
                 }
             }
         }
-        
-        // Render phân tích ngay khi tải xong file script
-        setTimeout(renderAnalytics, 200);
+        setTimeout(renderAnalytics, 150);
 
-    </script>
-    <script src="js/tkhethan.js"></script>
-    <script src="js/new2.js"></script>
-    <script src="js/tet.js"></script>
-    <script src="js/no-refresh.js"></script>
-
-    <script>
-        // Mở phòng chờ thi đấu
-        function openPvPModal() {
-            const fromUser = typeof getCurrentUsername === 'function' ? getCurrentUsername() : null;
-            if (!fromUser) return alert("Vui lòng đăng nhập để thi đấu!");
-
-            // Gọi API tạo phòng mới
-            fetch(API_BASE + "?action=createRoom&host=" + encodeURIComponent(fromUser) + "&file=" + encodeURIComponent(fileID) + "&filename=" + encodeURIComponent(fileName))
-                .then(r => r.json())
-                .then(res => {
-                    if (res.success) {
-                        window.location.href = "lobby.html?room=" + encodeURIComponent(res.roomId) + "&file=" + encodeURIComponent(fileID) + "&filename=" + encodeURIComponent(fileName);
-                    } else {
-                        alert("Không thể tạo phòng!");
-                    }
-                }).catch(e => {
-                    alert("Lỗi kết nối mạng!");
-                });
+        if ('serviceWorker' in navigator && window.location.protocol.startsWith('http')) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js').catch(() => { });
+            });
         }
-
     </script>
+
+    <!-- MODAL THÔNG BÁO BẢN CẬP NHẬT MỚI (UPDATE MODAL) -->
+    <div class="neo-modal-overlay" id="updateModal" style="display: none;" onclick="if(event.target===this) closeUpdateModal()">
+        <div class="neo-modal-card update-modal-card" role="dialog" aria-modal="true" aria-labelledby="updateModalTitle" style="max-width: 480px; text-align: left; padding: 22px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; border-bottom: 2.5px solid var(--neo-black); padding-bottom: 10px;">
+                <div id="updateModalTitle" style="font-family: 'Fredoka', sans-serif; font-size: 1.25rem; font-weight: 800; display: flex; align-items: center; gap: 8px; color: var(--neo-black);">
+                    <span style="font-size: 1.35rem;">🎉</span> BẢN CẬP NHẬT MỚI
+                    <span style="background: #10b981; color: #fff; font-size: 0.72rem; padding: 2px 8px; border-radius: 999px; font-weight: 900; margin-left: 2px;">v2.6</span>
+                </div>
+                <button type="button" onclick="closeUpdateModal()" style="border: 2px solid var(--neo-black); background: var(--neo-pink); color: #fff; width: 32px; height: 32px; border-radius: 8px; font-weight: 900; cursor: pointer; box-shadow: 2px 2px 0 var(--neo-black); font-size: 1rem; line-height: 1;" title="Đóng">✕</button>
+            </div>
+
+            <div style="max-height: 380px; overflow-y: auto; padding-right: 4px; margin-bottom: 18px; display: flex; flex-direction: column; gap: 10px;">
+                <!-- Feature 1 -->
+                <div class="update-item-card">
+                    <div style="font-weight: 800; font-size: 0.95rem; color: #b45309; display: flex; align-items: center; gap: 6px; margin-bottom: 3px;">
+                        <span>📝</span> Module Học Tự Luận Thông Minh
+                    </div>
+                    <div style="font-size: 0.85rem; font-weight: 600; color: #374151; line-height: 1.5;">
+                        Trọn bộ 23 câu tự luận Kiến Trúc Cảnh Quan với 4 chế độ: Xương sống luận điểm, Giấu chữ Active Recall, Tự gõ đối chiếu dàn ý & Đánh dấu câu trọng tâm.
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="update-item-card">
+                    <div style="font-weight: 800; font-size: 0.95rem; color: #047857; display: flex; align-items: center; gap: 6px; margin-bottom: 3px;">
+                        <span>🌱</span> Theme Giảm Màu Mè (Tập Trung Ôn)
+                    </div>
+                    <div style="font-size: 0.85rem; font-weight: 600; color: #374151; line-height: 1.5;">
+                        1 chạm chuyển toàn bộ website sang giao diện dịu mắt, chống chói, ẩn bớt hiệu ứng để tập trung ôn thi tối đa không mỏi mắt.
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="update-item-card">
+                    <div style="font-weight: 800; font-size: 0.95rem; color: #0369a1; display: flex; align-items: center; gap: 6px; margin-bottom: 3px;">
+                        <span>⚡</span> Tăng Tốc Auto Next x2
+                    </div>
+                    <div style="font-size: 0.85rem; font-weight: 600; color: #374151; line-height: 1.5;">
+                        Tự động chuyển câu nhanh gấp đôi (0.6s) khi làm đúng; giữ nguyên tốc độ khi làm sai để người học kịp xem lại giải thích.
+                    </div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="update-item-card">
+                    <div style="font-weight: 800; font-size: 0.95rem; color: #6d28d9; display: flex; align-items: center; gap: 6px; margin-bottom: 3px;">
+                        <span>🚀</span> Hiệu Năng 120 FPS & SafeStorage
+                    </div>
+                    <div style="font-size: 0.85rem; font-weight: 600; color: #374151; line-height: 1.5;">
+                        Tải trang mượt mà 120 FPS, tối ưu bộ nhớ và bảo toàn tiến độ làm bài an toàn trong cả chế độ ẩn danh (Incognito).
+                    </div>
+                </div>
+            </div>
+
+            <!-- Actions -->
+            <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                <button type="button" class="btn-neo btn-yellow" onclick="closeUpdateModal()" style="flex: 1.2; min-width: 140px; padding: 11px 14px; font-size: 0.92rem; font-weight: 900; justify-content: center;">
+                    🚀 Trải nghiệm ngay
+                </button>
+                <button type="button" class="btn-neo btn-white" onclick="snoozeUpdateModal(2)" title="Không tự động hiện lại trong 2 giờ" style="flex: 1; min-width: 140px; padding: 11px 12px; font-size: 0.88rem; font-weight: 800; justify-content: center; background: #fef08a;">
+                    ⏰ Tắt 2 tiếng
+                </button>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>
